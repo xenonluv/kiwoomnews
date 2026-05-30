@@ -94,15 +94,15 @@ export function SignalCard({
       className={cn(
         "relative overflow-hidden h-full transition-shadow",
         isSignal
-          ? // 시그널: 서리유리(backdrop-blur로 뒤 색블롭 굴절) + 레드 오라 + 상단 하이라이트
-            "border border-white/25 bg-gradient-to-br from-white/[0.16] to-white/[0.05] backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_0_1px_rgba(242,54,69,0.22),0_28px_60px_-20px_rgba(242,54,69,0.50)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_0_0_1px_rgba(242,54,69,0.35),0_34px_70px_-18px_rgba(242,54,69,0.6)]"
-          : // 후보: 옅은 서리유리 (시그널보다 약하게 → 등급 구분)
-            "border border-white/10 bg-white/[0.05] backdrop-blur-md shadow-none"
+          ? // 시그널: 세련된 블루 서리유리(backdrop-blur로 뒤 색블롭 굴절) + 블루 오라 + 상단 하이라이트
+            "border border-[rgba(125,176,255,0.32)] bg-gradient-to-br from-[rgba(59,130,246,0.15)] to-[rgba(255,255,255,0.04)] backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_0_1px_rgba(59,130,246,0.32),0_28px_60px_-20px_rgba(59,130,246,0.55)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_0_0_1px_rgba(59,130,246,0.5),0_34px_72px_-18px_rgba(59,130,246,0.7)]"
+          : // 후보: 무광 뉴트럴 평면 (블루·발광 없음 → 시그널과 확실히 구분)
+            "border border-white/10 bg-white/[0.045] backdrop-blur-md shadow-none"
       )}
     >
       {isSignal && (
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-up to-up/30"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#3b82f6] to-[rgba(59,130,246,0.3)]"
           aria-hidden
         />
       )}
