@@ -70,4 +70,40 @@
     background-attachment: fixed;
     min-height: 100vh;
   }
+
+  /* 글래스 굴절용 움직이는 색 블롭 — 카드 backdrop-blur가 이걸 refract → 유리감.
+     순수 CSS·GPU 처리라 서버/Vercel 부하 0 (동시접속과 무관). */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(440px 440px at 20% 28%, hsl(355 88% 58% / 0.26), transparent 60%),
+      radial-gradient(480px 480px at 80% 22%, hsl(223 100% 58% / 0.24), transparent 60%),
+      radial-gradient(400px 400px at 62% 82%, hsl(280 80% 62% / 0.18), transparent 60%);
+    filter: blur(40px);
+    animation: blob-drift 20s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+}
+
+@keyframes blob-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -2.5%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-3%, 2.5%, 0) scale(1.05);
+  }
+}
+
+/* 접근성: 모션 최소화 설정 시 애니메이션 끔 */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }

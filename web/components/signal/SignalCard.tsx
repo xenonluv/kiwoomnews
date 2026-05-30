@@ -94,10 +94,10 @@ export function SignalCard({
       className={cn(
         "relative overflow-hidden h-full transition-shadow",
         isSignal
-          ? // 시그널: 서리유리(backdrop-blur) + 은은한 레드 오라 + 상단 하이라이트
-            "border border-white/15 bg-transparent bg-gradient-to-br from-white/[0.10] to-white/[0.03] backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_0_0_1px_rgba(242,54,69,0.20),0_24px_55px_-22px_rgba(242,54,69,0.45)]"
-          : // 후보: 무광 평면 (발광·유리감 없음 → 시그널과 구분)
-            "border border-white/[0.07] bg-white/[0.022] shadow-none"
+          ? // 시그널: 서리유리(backdrop-blur로 뒤 색블롭 굴절) + 레드 오라 + 상단 하이라이트
+            "border border-white/25 bg-gradient-to-br from-white/[0.16] to-white/[0.05] backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_0_1px_rgba(242,54,69,0.22),0_28px_60px_-20px_rgba(242,54,69,0.50)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_0_0_1px_rgba(242,54,69,0.35),0_34px_70px_-18px_rgba(242,54,69,0.6)]"
+          : // 후보: 옅은 서리유리 (시그널보다 약하게 → 등급 구분)
+            "border border-white/10 bg-white/[0.05] backdrop-blur-md shadow-none"
       )}
     >
       {isSignal && (
