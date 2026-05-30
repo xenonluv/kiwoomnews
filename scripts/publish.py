@@ -44,34 +44,55 @@ def score(importance, phase, gc_recent, disp, sentiment):
     return max(10, min(95, round(p)))
 
 
-def build_posts(scr, maxn):
+def _post(r, tier, stamp_full, today):
+    code, name = r["code"], r["name"]
+    ctx = compute_context(code, name)
+    phase = ctx.get("market_status_hint", "분석불가")
+    c = r.get("C", {})
+    disp = c.get("disparity_pct")
+    prob = score(r.get("importance"), phase, c.get("gc_recent"), disp, r.get("sentiment"))
+    news = r.get("news", [])
+    headline = (news[0]["title"][:60] if news else f"{name} 스크리너 포착")
+    if tier == "signal":
+        gc_txt = "갓 골든크로스" if c.get("gc_recent") else "정배열"
+        summary = (f"[시그널] 일봉 {phase} · 3분봉 {gc_txt}(이격도 {disp}%) · "
+                   f"재료 {r.get('sentiment')}(중요도 {r.get('importance')}). 일봉 국면도 함께 확인.")
+    else:
+        summary = (f"[후보] 재료+거래대금 포착(중요도 {r.get('importance')}, {r.get('sentiment')}) · "
+                   f"일봉 {phase}. 3분봉 골든크로스 진입신호는 아직 대기 중.")
+    return {
+        "post_id": f"POST_{today}_{code}",
+        "status": "PUBLISHED",
+        "tier": tier,
+        "target_stock": name,
+        "signal_probability": f"{prob}%",
+        "position_type": phase,
+        "headline": headline,
+        "summary": summary,
+        "disclaimer": DISCLAIMER,
+        "published_at": stamp_full,
+    }
+
+
+def build_posts(scr, maxn, max_cand, news_min):
     stamp_full = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
     today = datetime.now(KST).strftime("%Y%m%d")
     posts = []
+    seen = set()
+    # Tier 1: 시그널 (A+B+C 통과)
     for r in scr.get("passed", [])[:maxn]:
-        code, name = r["code"], r["name"]
-        ctx = compute_context(code, name)
-        phase = ctx.get("market_status_hint", "분석불가")
-        c = r.get("C", {})
-        disp = c.get("disparity_pct")
-        prob = score(r.get("importance"), phase, c.get("gc_recent"), disp, r.get("sentiment"))
-        news = r.get("news", [])
-        headline = (news[0]["title"][:60] if news else f"{name} 스크리너 포착")
-        gc_txt = "갓 골든크로스" if c.get("gc_recent") else "정배열"
-        summary = (f"[자동 스코어] 일봉 {phase} · 3분봉 {gc_txt}(이격도 {disp}%) · "
-                   f"재료 {r.get('sentiment')}(중요도 {r.get('importance')}). "
-                   f"단기 진입 타이밍 신호이며 일봉 국면을 함께 확인하세요.")
-        posts.append({
-            "post_id": f"POST_{today}_{code}",
-            "status": "PUBLISHED",
-            "target_stock": name,
-            "signal_probability": f"{prob}%",
-            "position_type": phase,
-            "headline": headline,
-            "summary": summary,
-            "disclaimer": DISCLAIMER,
-            "published_at": stamp_full,
-        })
+        posts.append(_post(r, "signal", stamp_full, today))
+        seen.add(r["code"])
+    # Tier 2: 후보 (A+B 통과, C 대기) — by_sector에서 재료(B) 통과분, 중요도순
+    cands = []
+    for recs in scr.get("by_sector", {}).values():
+        for r in recs:
+            if r.get("A_hit") and r["code"] not in seen and (r.get("B_news") or 0) >= news_min:
+                cands.append(r)
+                seen.add(r["code"])
+    cands.sort(key=lambda r: -(r.get("importance") or 0))
+    for r in cands[:max_cand]:
+        posts.append(_post(r, "candidate", stamp_full, today))
     return posts
 
 
@@ -83,6 +104,8 @@ def main():
     args = sys.argv[1:]
     dry = "--dry-run" in args
     maxn = int(args[args.index("--max") + 1]) if "--max" in args else 6
+    max_cand = int(args[args.index("--max-candidates") + 1]) if "--max-candidates" in args else 8
+    news_min = int(args[args.index("--news-min") + 1]) if "--news-min" in args else 2
     # 스크리너에 전달할 임계값(기본: 느슨)
     passthru = []
     for k in ("--vol-x", "--gain", "--news-min", "--gc-window", "--disp-max", "--topn"):
@@ -93,7 +116,7 @@ def main():
                     "--gc-window", "40", "--disp-max", "2.0", "--topn", "20"]
 
     scr = run_screener(passthru)
-    posts = build_posts(scr, maxn)
+    posts = build_posts(scr, maxn, max_cand, news_min)
     new = json.dumps(posts, ensure_ascii=False, indent=2)
 
     if not posts:

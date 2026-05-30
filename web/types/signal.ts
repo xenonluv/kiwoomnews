@@ -14,9 +14,13 @@ export interface PublishData {
   published_at: string;
 }
 
+/** 게시 등급: 시그널(A+B+C 통과) / 후보(A+B, C 대기) */
+export type SignalTier = "signal" | "candidate";
+
 /** 웹 게시물 (팀원5 → 팀원6 API) */
 export interface SignalPost extends PublishData {
   post_id: string;
+  tier?: SignalTier;
   summary: string;
   disclaimer: string;
 }

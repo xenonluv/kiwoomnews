@@ -2,11 +2,47 @@ import Link from "next/link";
 
 import { signalService } from "@/services/signal.service";
 import { SignalCard, toSignalCardProps } from "@/components/signal/SignalCard";
-import { Pagination } from "@/components/signal/Pagination";
+import type { SignalPost } from "@/types/signal";
 
 export const dynamic = "force-dynamic";
 
-const DEFAULT_LIMIT = 9;
+function Section({
+  title,
+  desc,
+  items,
+}: {
+  title: string;
+  desc: string;
+  items: SignalPost[];
+}) {
+  if (items.length === 0) return null;
+  return (
+    <section className="mb-10">
+      <div className="mb-4">
+        <h2 className="text-xl font-bold tracking-tight">
+          {title}{" "}
+          <span className="text-sm font-normal text-muted-foreground tabular-nums">
+            {items.length}
+          </span>
+        </h2>
+        <p className="text-xs text-muted-foreground">{desc}</p>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((s) => (
+          <Link
+            key={s.post_id}
+            href={`/signals/${s.post_id}`}
+            className="block rounded-lg transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <SignalCard {...toSignalCardProps(s)} />
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const DEFAULT_LIMIT = 50;
 
 function parseIntParam(raw: string | string[] | undefined, fallback: number): number {
   const v = Array.isArray(raw) ? raw[0] : raw;
@@ -44,21 +80,15 @@ export default async function Home({
         </div>
       ) : (
         <>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {signals.map((s) => (
-              <Link
-                key={s.post_id}
-                href={`/signals/${s.post_id}`}
-                className="block rounded-lg transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <SignalCard {...toSignalCardProps(s)} />
-              </Link>
-            ))}
-          </div>
-          <Pagination
-            currentPage={pagination.page}
-            totalPages={pagination.totalPages}
-            limit={limit}
+          <Section
+            title="📌 시그널"
+            desc="3조건 통과 (거래량 이력 + 재료 + 3분봉 골든크로스)"
+            items={signals.filter((s) => s.tier !== "candidate")}
+          />
+          <Section
+            title="👀 후보 종목군"
+            desc="재료 + 거래대금 포착, 3분봉 진입신호 대기 중"
+            items={signals.filter((s) => s.tier === "candidate")}
           />
         </>
       )}
