@@ -53,4 +53,5 @@ ARGS=( exec --skip-git-repo-check --disable memories -s "${SANDBOX:-read-only}" 
 [[ -n "${SCHEMA:-}" ]] && ARGS+=( --output-schema "$SCHEMA" )
 [[ -n "${OUT:-}" ]] && ARGS+=( --output-last-message "$OUT" )
 
-exec codex "${ARGS[@]}" "$FULL_PROMPT"
+# 프롬프트는 stdin으로 전달 (대용량 입력 시 'Argument list too long' 방지)
+printf '%s' "$FULL_PROMPT" | codex "${ARGS[@]}"

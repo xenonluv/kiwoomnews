@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ticker_name": { "type": "string" },
+          "ticker_code": { "type": "string" },
+          "direction": { "type": "string", "enum": ["상승", "하락", "중립"] },
+          "phase": { "type": "string", "enum": ["저점", "눌림목", "과열", "박스", "분석불가"] },
+          "confidence": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "reason": { "type": "string" }
+        },
+        "required": ["ticker_name", "ticker_code", "direction", "phase", "confidence", "reason"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["results"],
+  "additionalProperties": false
+}

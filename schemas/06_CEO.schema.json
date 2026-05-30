@@ -17,6 +17,6 @@
       "additionalProperties": false
     }
   },
-  "required": ["approval_status", "publish_data"],
+  "required": ["approval_status", "reject_reason", "publish_data"],
   "additionalProperties": false
 }
