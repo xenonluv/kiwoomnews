@@ -54,20 +54,47 @@ CEO (Codex) ─ 승인 게이트 (APPROVED만 통과)  {status, target_stock, si
 
 "오늘 오를 종목 예측기"가 아니라 **안전 셋업 스크리너 + 리스크 필터**로 포지셔닝. 3조건 AND:
 
-- **A 이력**: 최근 5거래일 중 하루라도 거래량 급증(기본 ≥2배) + 강한 상승(기본 ≥5%). (정확화는 `snapshot_ranks.py` 일별 누적)
+- **A 이력**: 최근 5거래일 중 하루라도 거래량 급증(기본 ≥2배) + 강한 상승(기본 ≥5%), **AND 최근 5일 일봉 거래대금 최대치 ≥ 500억**(잡주 제외 게이트, `MIN_TRADING_VALUE`). 거래대금은 종가×거래량 근사. (정확화는 `snapshot_ranks.py` 일별 누적)
 - **B 재료**: `team2_relevance.py` 자동필터 통과 뉴스 ≥ N건.
 - **C 차트**: 3분봉 MA60 ≥ MA120(정배열) + 최근 골든크로스 발생 + 이격도 작음(갓 교차). 3분봉은 fchart 멀티데이 1분봉을 3분 합성.
 
-임계값은 CLI 인자로 튜닝: `--vol-x --gain --news-min --gc-window --disp-max --topn --names`.
-결과는 업종(섹터)별로 그룹핑, `screener_report.py`로 뉴스 링크 포함 마크다운 리포트 생성.
+임계값 CLI 튜닝: `--vol-x --gain --min-value --news-min --gc-window --disp-max --topn --names`.
+- `--min-value`는 원 단위(기본 50000000000 = 500억). 예: 1000억 → `--min-value 100000000000`.
+- `--names 종목명...`: 랭킹 유니버스에 watchlist 종목 강제 포함(랭킹 top-N 밖이어도 평가). **랭킹 top-N엔 초대형주에 밀려 누락되는 중형주(예: 한온시스템)는 반드시 `--names`로 넣어야 함.**
+
+결과는 업종(섹터)별 그룹핑, `screener_report.py`로 뉴스 링크 포함 마크다운 리포트.
 
 ```bash
 # WSL 터미널에서 (python3 + 네트워크 필요)
-python3 scripts/screener.py --vol-x 1.5 --gain 3.0 --news-min 2 --gc-window 40 --disp-max 2.0 \
-  --names 삼성전자 한온시스템 > out.json
+python3 scripts/screener.py --vol-x 1.5 --gain 3.0 --min-value 50000000000 \
+  --news-min 2 --gc-window 40 --disp-max 2.0 --names 삼성전자 한온시스템 > out.json
 python3 scripts/screener_report.py out.json
 ```
 > ⚠️ C(3분봉 GC)는 **최신 장 세션 기준**(주말이면 직전 거래일). 실전은 장중 실행.
+
+## 게시 자동화 (`scripts/publish.py` + cron)
+
+스크리너 결과를 사이트에 자동 게시. **순수 Python(LLM 미사용)** 으로 cron 안정성 확보.
+
+- 흐름: `스크리너 → 결정론 스코어 → web/data/signals.json → 변경 시에만 git commit+push → Vercel 자동 재빌드(~30초)`.
+- **2등급(tier)**: `signal`(A+B+C 통과) / `candidate`(A+B 통과, C 대기). 사이트가 "📌 시그널 / 👀 후보 종목군" 2섹션으로 표시.
+- 결정론 스코어(`signal_probability`): 재료 중요도 + 일봉 국면(저점/눌림목 가점·과열 감점) + 3분봉 타이밍 + 호악재. (자동 루프는 Codex 미사용 — Codex 팀원3 심층분석은 수동/별도)
+- `position_type`은 일봉 국면(`MarketStatus`: 저점/눌림목/과다상승/분석불가)을 정직 표기. 사이트는 "매수 추천 아님(참고용)".
+- **`--names`를 반드시 스크리너로 전달**(publish가 forward). 미전달 시 한온시스템 등 누락됨(과거 버그).
+
+```bash
+# 1회 실행(미리보기): python3 scripts/publish.py --dry-run --names 한온시스템 ...
+# 실제 게시:        python3 scripts/publish.py --max-candidates 8 --names <watchlist...>
+```
+
+**cron (WSL, KST, 평일 장중 15분 주기)** — `crontab -l`로 설치됨:
+```
+*/15 9-15 * * 1-5 cd /home/xenonluv/stocknews && /usr/bin/python3 scripts/publish.py \
+  --max-candidates 8 --names 한온시스템 삼성전자 현대차 NAVER LG전자 삼성전기 노타 코칩 로보스타 로보티즈 >> /tmp/publish.log 2>&1
+```
+- 15분 주기 = 하루 ~26회 ≪ Vercel 무료 100배포/일 → **무료·안정**. 1회 사이클 ~3~5분 < 15분(겹침 없음). "변경 시에만 push"로 빌드 절약.
+- ⚠️ **PC가 켜져 있어야** 발동. **WSL cron은 재부팅 후 자동 시작 안 될 수 있음**(`sudo service cron start` 또는 `/etc/wsl.conf` 부팅 설정; 더 견고히는 Windows 작업 스케줄러로 `wsl.exe ... publish.py` 호출).
+- 첫 자동 실행 후 `/tmp/publish.log`로 push 성공 확인.
 
 ## Scripts 카탈로그 (`scripts/`)
 
@@ -77,8 +104,9 @@ python3 scripts/screener_report.py out.json
 | `team1_fetch_news.py` | 네이버 검색 API 뉴스 수집 (팀원1 출력 스키마). |
 | `team2_relevance.py` | 팀원2 자동 재료필터: HARD(시황/지수/칼럼) 제외 + 종목명 **별칭 매칭** + 호악재/중요도. `MANUAL_ALIAS`에 영문/약어 종목 보강. |
 | `team3_price_context.py` | 일봉 → 이평선(5/20/60)·이격도·거래량비·52주위치·국면힌트. `compute_context(code,name)` 재사용. |
-| `screener.py` | 3조건 스크리너 (위). |
+| `screener.py` | 3조건 스크리너 (A 거래량+상승+거래대금≥500억 / B 재료 / C 3분봉 GC). |
 | `screener_report.py` | 스크리너 JSON → 마크다운 리포트(뉴스 링크·호악재·중요도). |
+| `publish.py` | **게시 자동화**: 스크리너→결정론 스코어→signals.json→변경 시 push. 2등급(signal/candidate). cron용. |
 | `snapshot_ranks.py` | 거래대금/상승률 상위 일별 스냅샷 (`data/ranks/`) — A조건 정확화. |
 | `codex-agent.sh` | Codex 에이전트 headless 러너 (아래). |
 
