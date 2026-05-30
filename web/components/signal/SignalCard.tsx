@@ -1,4 +1,4 @@
-import { Clock } from "lucide-react";
+import { Clock, Newspaper } from "lucide-react";
 
 import {
   Card,
@@ -22,6 +22,7 @@ export function toSignalCardProps(s: SignalPost): SignalCardProps {
     summary: s.summary,
     disclaimer: s.disclaimer,
     publishedAt: s.published_at,
+    newsCount: s.news?.length ?? 0,
   };
 }
 
@@ -33,6 +34,7 @@ export interface SignalCardProps {
   summary: string;
   disclaimer?: string;
   publishedAt: string;
+  newsCount?: number; // 관련 뉴스 건수 (카드 클릭 시 상세에서 노출)
 }
 
 /**
@@ -47,6 +49,7 @@ export function SignalCard({
   summary,
   disclaimer,
   publishedAt,
+  newsCount = 0,
 }: SignalCardProps) {
   return (
     <Card className="overflow-hidden">
@@ -67,6 +70,12 @@ export function SignalCard({
           {targetStock}
         </h2>
         <p className="text-sm font-medium text-muted-foreground">{headline}</p>
+        {newsCount > 0 && (
+          <span className="flex items-center gap-1 text-xs text-muted-foreground">
+            <Newspaper className="size-3" aria-hidden />
+            관련 뉴스 <span className="tabular-nums">{newsCount}</span>건
+          </span>
+        )}
       </CardHeader>
 
       <CardContent className="flex items-center gap-5">

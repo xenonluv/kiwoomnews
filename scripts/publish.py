@@ -71,6 +71,11 @@ def _post(r, tier, stamp_full, today):
         "summary": summary,
         "disclaimer": DISCLAIMER,
         "published_at": stamp_full,
+        "news": [
+            {"title": n.get("title"), "url": n.get("url"),
+             "office": n.get("office"), "sentiment": n.get("sentiment")}
+            for n in news[:6] if n.get("title")
+        ],
     }
 
 

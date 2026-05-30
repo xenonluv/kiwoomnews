@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 
 import { signalService } from "@/services/signal.service";
 import { SignalCard, toSignalCardProps } from "@/components/signal/SignalCard";
+import { NewsList } from "@/components/signal/NewsList";
 
 export const dynamic = "force-dynamic";
 
@@ -48,6 +49,7 @@ export default async function SignalDetailPage({
         목록으로
       </Link>
       <SignalCard {...toSignalCardProps(signal)} />
+      <NewsList news={signal.news} />
     </main>
   );
 }
