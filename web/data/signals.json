@@ -4,13 +4,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "LG",
-    "signal_probability": "53%",
+    "signal_probability": "51%",
     "position_type": "과다상승",
-    "day_change": 22.71,
+    "day_change": 22.37,
     "headline": "젠슨 황·구광모 회동 앞두고 LG전자 주가 상한가…LG계열사 주가 급등",
-    "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 8.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "젠슨 황·구광모 회동 앞두고 LG전자 주가 상한가…LG계열사 주가 급등",
@@ -45,11 +45,11 @@
     "target_stock": "NHN",
     "signal_probability": "50%",
     "position_type": "과다상승",
-    "day_change": 12.57,
+    "day_change": 12.77,
     "headline": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
     "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
@@ -84,11 +84,11 @@
     "target_stock": "SKC",
     "signal_probability": "45%",
     "position_type": "과다상승",
-    "day_change": 19.45,
+    "day_change": 19.74,
     "headline": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
     "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 혼재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -127,7 +127,7 @@
     "headline": "젠슨 황·구광모 회동 앞두고 LG전자 주가 상한가…LG계열사 주가 급등",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "젠슨 황·구광모 회동 앞두고 LG전자 주가 상한가…LG계열사 주가 급등",
@@ -156,11 +156,11 @@
     "target_stock": "나무기술",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 20.5,
+    "day_change": 19.93,
     "headline": "나무기술, 1분기 매출 370억원…가상화·클라우드 전환 수요에 수익성...",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "나무기술, 1분기 매출 370억원…가상화·클라우드 전환 수요에 수익성...",
@@ -195,11 +195,11 @@
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 0.26,
+    "day_change": 1.04,
     "headline": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
@@ -234,11 +234,11 @@
     "target_stock": "두산",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 21.55,
+    "day_change": 23.43,
     "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
@@ -277,7 +277,7 @@
     "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:00 KST",
+    "published_at": "2026-06-01 12:15 KST",
     "news": [
       {
         "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
