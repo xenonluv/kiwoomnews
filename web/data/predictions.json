@@ -1,13 +1,13 @@
 {
-  "as_of": "2026-06-01 14:37 KST",
+  "as_of": "2026-06-01 14:52 KST",
   "intraday_rank": [
     {
       "ticker": "LG",
       "code": "003550",
       "tomorrow_up_prob": "83%",
-      "entry": 169500.0,
-      "target": 177975,
-      "stop": 164415,
+      "entry": 171200.0,
+      "target": 179760,
+      "stop": 166064,
       "confidence": "상",
       "reasons": [
         "정배열",
@@ -15,103 +15,87 @@
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 12.82
+      "day_change": 17.05
     },
     {
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "79%",
-      "entry": 5250.0,
-      "target": 5512,
-      "stop": 5092,
+      "entry": 5290.0,
+      "target": 5554,
+      "stop": 5131,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.2 강세"
+        "RSI56.8 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.28
-    },
-    {
-      "ticker": "NHN",
-      "code": "181710",
-      "tomorrow_up_prob": "78%",
-      "entry": 58800.0,
-      "target": 61740,
-      "stop": 57036,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 14.73
+      "day_change": -6.57
     },
     {
       "ticker": "SKC",
       "code": "011790",
       "tomorrow_up_prob": "77%",
-      "entry": 156800.0,
-      "target": 164640,
-      "stop": 152096,
+      "entry": 158600.0,
+      "target": 166530,
+      "stop": 153842,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI61.0 강세",
+        "RSI61.6 강세",
         "Stoch골든"
       ],
       "risk": "약한 마감",
-      "day_change": 11.63
+      "day_change": 13.85
     },
     {
       "ticker": "한미약품",
       "code": "128940",
-      "tomorrow_up_prob": "75%",
-      "entry": 561000.0,
-      "target": 589050,
-      "stop": 544170,
+      "tomorrow_up_prob": "76%",
+      "entry": 553000.0,
+      "target": 580650,
+      "stop": 536410,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.72)",
         "MACD강세",
-        "RSI67.9 강세"
+        "RSI66.9 강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 13.65
+      "day_change": 11.2
     },
     {
       "ticker": "CJ",
       "code": "001040",
-      "tomorrow_up_prob": "70%",
-      "entry": 181700.0,
-      "target": 190785,
-      "stop": 176249,
+      "tomorrow_up_prob": "71%",
+      "entry": 181800.0,
+      "target": 190890,
+      "stop": 176346,
       "confidence": "상",
       "reasons": [
         "강세마감(0.86)",
         "Stoch골든",
-        "거래량1.65배"
+        "거래량1.75배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 11.44
+      "day_change": 12.37
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "69%",
-      "entry": 280000.0,
-      "target": 294000,
-      "stop": 271600,
-      "confidence": "중",
+      "tomorrow_up_prob": "70%",
+      "entry": 281500.0,
+      "target": 295575,
+      "stop": 273055,
+      "confidence": "상",
       "reasons": [
         "MACD강세",
-        "거래량6.4배",
+        "거래량6.66배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.44
+      "day_change": 21.58
     },
     {
       "ticker": "LG전자",
@@ -130,20 +114,36 @@
       "day_change": 29.86
     },
     {
-      "ticker": "노타",
-      "code": "486990",
-      "tomorrow_up_prob": "62%",
-      "entry": 39350.0,
-      "target": 41318,
-      "stop": 38170,
+      "ticker": "NHN",
+      "code": "181710",
+      "tomorrow_up_prob": "66%",
+      "entry": 60200.0,
+      "target": 63210,
+      "stop": 58394,
       "confidence": "중",
       "reasons": [
-        "RSI63.8 강세",
-        "거래량3.61배",
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI80.7 과매수, Stoch 과매수",
+      "day_change": 17.68
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "64%",
+      "entry": 38950.0,
+      "target": 40898,
+      "stop": 37782,
+      "confidence": "중",
+      "reasons": [
+        "RSI63.2 강세",
+        "거래량3.7배",
         "호재"
       ],
-      "risk": "Stoch 과매수",
-      "day_change": 2.73
+      "risk": "약한 마감",
+      "day_change": 2.21
     }
   ],
   "closing_bet": [
@@ -151,9 +151,9 @@
       "ticker": "LG",
       "code": "003550",
       "tomorrow_up_prob": "83%",
-      "entry": 169500.0,
-      "target": 177975,
-      "stop": 164415,
+      "entry": 171200.0,
+      "target": 179760,
+      "stop": 166064,
       "confidence": "상",
       "reasons": [
         "정배열",
@@ -161,71 +161,71 @@
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 12.82
+      "day_change": 17.05
     },
     {
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "79%",
-      "entry": 5250.0,
-      "target": 5512,
-      "stop": 5092,
+      "entry": 5290.0,
+      "target": 5554,
+      "stop": 5131,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.2 강세"
+        "RSI56.8 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.28
-    },
-    {
-      "ticker": "NHN",
-      "code": "181710",
-      "tomorrow_up_prob": "78%",
-      "entry": 58800.0,
-      "target": 61740,
-      "stop": 57036,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 14.73
+      "day_change": -6.57
     },
     {
       "ticker": "SKC",
       "code": "011790",
       "tomorrow_up_prob": "77%",
-      "entry": 156800.0,
-      "target": 164640,
-      "stop": 152096,
+      "entry": 158600.0,
+      "target": 166530,
+      "stop": 153842,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI61.0 강세",
+        "RSI61.6 강세",
         "Stoch골든"
       ],
       "risk": "약한 마감",
-      "day_change": 11.63
+      "day_change": 13.85
     },
     {
       "ticker": "한미약품",
       "code": "128940",
-      "tomorrow_up_prob": "75%",
-      "entry": 561000.0,
-      "target": 589050,
-      "stop": 544170,
+      "tomorrow_up_prob": "76%",
+      "entry": 553000.0,
+      "target": 580650,
+      "stop": 536410,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.72)",
         "MACD강세",
-        "RSI67.9 강세"
+        "RSI66.9 강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 13.65
+      "day_change": 11.2
+    },
+    {
+      "ticker": "CJ",
+      "code": "001040",
+      "tomorrow_up_prob": "71%",
+      "entry": 181800.0,
+      "target": 190890,
+      "stop": 176346,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.86)",
+        "Stoch골든",
+        "거래량1.75배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 12.37
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
