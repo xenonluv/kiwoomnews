@@ -6,11 +6,11 @@
     "target_stock": "NHN",
     "signal_probability": "50%",
     "position_type": "과다상승",
-    "day_change": 22.3,
+    "day_change": 22.4,
     "headline": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
     "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
@@ -43,13 +43,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SKC",
-    "signal_probability": "65%",
-    "position_type": "상승추세",
-    "day_change": 17.73,
+    "signal_probability": "45%",
+    "position_type": "과다상승",
+    "day_change": 18.95,
     "headline": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
-    "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 혼재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 혼재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -84,11 +84,11 @@
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 3.64,
+    "day_change": 3.77,
     "headline": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
@@ -123,11 +123,11 @@
     "target_stock": "두산",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 20.18,
+    "day_change": 21.25,
     "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
@@ -162,11 +162,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "67%",
     "position_type": "상승추세",
-    "day_change": -5.15,
+    "day_change": -4.8,
     "headline": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -193,7 +193,7 @@
     "headline": "LG TV 구독하면 넷플릭스 따라온다",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "LG TV 구독하면 넷플릭스 따라온다",
@@ -226,7 +226,7 @@
     "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
@@ -249,11 +249,11 @@
     "target_stock": "LG",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 22.85,
+    "day_change": 23.06,
     "headline": "LG TV 구독하면 넷플릭스 따라온다",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 13:15 KST",
+    "published_at": "2026-06-01 13:30 KST",
     "news": [
       {
         "title": "LG TV 구독하면 넷플릭스 따라온다",
