@@ -8,20 +8,29 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
-from team1_collect import fetch_news  # noqa: E402
-from team2_relevance import score_news, make_aliases  # noqa: E402
+from team1_collect import fetch_news, fetch_cause_candidates  # noqa: E402
+from team2_relevance import score_news, score_cause_news, make_aliases  # noqa: E402
 
 
 def analyze(code, name, k=12):
     """종목 뉴스 → {importance, sentiment, count, top_titles}."""
     try:
         news = [n for n in fetch_news(code, k) if n.get("title")]
-        res = score_news(news, make_aliases(name))
+        aliases = make_aliases(name)
+        res = score_news(news, aliases)
+        try:
+            candidates = fetch_cause_candidates(code, name, base_news=news, k=12)
+            cause = score_cause_news(candidates, aliases)
+        except Exception:
+            cause = {"cause_news": [], "cause_confidence": "낮음", "cause_summary": ""}
         return {
             "importance": res["importance_score"],   # 1~10
             "sentiment": res["sentiment"],            # 호재/악재/혼재/중립
             "count": res["relevant_count"],
             "top_titles": [n["title"] for n in res["relevant"][:3]],
+            "cause_news": cause.get("cause_news", []),
+            "cause_confidence": cause.get("cause_confidence"),
+            "cause_summary": cause.get("cause_summary"),
         }
     except Exception as e:
         return {"importance": 0, "sentiment": "중립", "count": 0, "error": str(e)}

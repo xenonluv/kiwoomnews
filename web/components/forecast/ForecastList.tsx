@@ -80,7 +80,8 @@ export function ForecastList({
                 key={it.code}
                 item={it}
                 rank={i + 1}
-                news={newsByCode[it.code] ?? []}
+                news={it.cause_news?.length ? it.cause_news : (newsByCode[it.code] ?? [])}
+                newsLabel={it.cause_news?.length ? "상승 원인 뉴스" : "관련 뉴스"}
               />
             ))}
           </div>

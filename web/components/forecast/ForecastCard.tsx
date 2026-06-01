@@ -23,10 +23,12 @@ export function ForecastCard({
   item,
   rank,
   news = [],
+  newsLabel = "관련 뉴스",
 }: {
   item: ForecastItem;
   rank?: number;
   news?: NewsItem[];
+  newsLabel?: string;
 }) {
   const [newsOpen, setNewsOpen] = useState(false);
   const newsPanelId = useId();
@@ -107,7 +109,7 @@ export function ForecastCard({
             className="mt-1 inline-flex items-center gap-1 rounded-sm text-xs font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <Newspaper className="size-3" aria-hidden />
-            관련 뉴스 {news.length}
+            {newsLabel} {news.length}
           </button>
         )}
         {hasNews && newsOpen && (

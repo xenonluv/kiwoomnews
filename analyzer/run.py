@@ -121,7 +121,7 @@ def build(top, bet_n):
         raw, reasons, risks = score(ind, sent, persist)
         prob = apply_calibration(raw, calib)  # 검증된 확률로 치환(데이터 누적 후)
         last = ind.get("last_close")
-        rows.append({
+        row = {
             "ticker": u["name"], "code": u["code"],
             "tomorrow_up_prob": f"{prob}%", "_p": prob, "_raw": raw,
             "entry": last,
@@ -131,7 +131,23 @@ def build(top, bet_n):
             "reasons": reasons or ["근거 부족"],
             "risk": ", ".join(risks) if risks else "특이 위험 낮음",
             "day_change": u["day_change"],
-        })
+        }
+        cause_news = sent.get("cause_news") or []
+        if cause_news:
+            cause_items = [
+                {"title": n.get("title"), "url": n.get("url"),
+                 "office": n.get("office"), "sentiment": n.get("sentiment"),
+                 "cause_score": n.get("cause_score"),
+                 "cause_reason": n.get("cause_reason")}
+                for n in cause_news[:3] if n.get("title")
+            ]
+            if cause_items:
+                row["cause_news"] = cause_items
+                if sent.get("cause_confidence"):
+                    row["cause_confidence"] = sent.get("cause_confidence")
+                if sent.get("cause_summary"):
+                    row["cause_summary"] = sent.get("cause_summary")
+        rows.append(row)
     rows.sort(key=lambda r: -r["_p"])
     closing = [r for r in rows if r["_p"] >= 55][:bet_n]  # 확신 일정 이상만 종가베팅
     record_history(closing, now)  # 익일 백테스트용 이력 기록(_raw 보존)

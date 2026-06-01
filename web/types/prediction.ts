@@ -1,5 +1,12 @@
 // analyzer가 생성하는 '내일 상승 예측' 데이터 (web/data/predictions.json)
 
+import type { NewsItem } from "@/types/signal";
+
+export interface ForecastNewsItem extends NewsItem {
+  cause_score?: number;
+  cause_reason?: string;
+}
+
 export interface ForecastItem {
   ticker: string;
   code: string;
@@ -11,6 +18,9 @@ export interface ForecastItem {
   reasons: string[];
   risk: string;
   day_change?: number | null;
+  cause_news?: ForecastNewsItem[];
+  cause_confidence?: "높음" | "중간" | "낮음";
+  cause_summary?: string;
 }
 
 export interface BacktestSummary {
