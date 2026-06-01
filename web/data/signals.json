@@ -6,11 +6,11 @@
     "target_stock": "NHN",
     "signal_probability": "50%",
     "position_type": "과다상승",
-    "day_change": 12.18,
+    "day_change": 18.27,
     "headline": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
     "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "NHN, 이틀째 강세 ‘19%↑’…클라우드 사업 기대감",
@@ -43,13 +43,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SKC",
-    "signal_probability": "45%",
-    "position_type": "과다상승",
-    "day_change": 19.53,
+    "signal_probability": "65%",
+    "position_type": "상승추세",
+    "day_change": 16.73,
     "headline": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
-    "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 혼재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 혼재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -78,56 +78,17 @@
     ]
   },
   {
-    "post_id": "POST_20260601_242040",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "나무기술",
-    "signal_probability": "48%",
-    "position_type": "과다상승",
-    "day_change": 3.76,
-    "headline": "나무기술, 1분기 매출 370억원…가상화·클라우드 전환 수요에 수익성...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
-    "news": [
-      {
-        "title": "나무기술, 1분기 매출 370억원…가상화·클라우드 전환 수요에 수익성...",
-        "url": "https://n.news.naver.com/mnews/article/138/0002227897",
-        "office": "디지털데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "중복상장 발목 잡았나…나무기술 子 에스케이팩, 스팩 합병 무산",
-        "url": "https://n.news.naver.com/mnews/article/018/0006264469",
-        "office": "이데일리",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[메자닌 투자파일] 나무기술, 60억 BW로 AI 투자 실탄 확보",
-        "url": "https://n.news.naver.com/mnews/article/293/0000083097",
-        "office": "블로터",
-        "sentiment": "호재"
-      },
-      {
-        "title": "나무기술, 김화중 신임 사장 선임…공동대표 체제로 AX 승부수",
-        "url": "https://n.news.naver.com/mnews/article/092/0002417295",
-        "office": "지디넷코리아",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260601_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 3.77,
+    "day_change": 2.08,
     "headline": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
@@ -162,11 +123,11 @@
     "target_stock": "두산",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 23.33,
+    "day_change": 18.81,
     "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
@@ -205,7 +166,7 @@
     "headline": "젠슨 황·구광모 회동 예고에…LG 계열사 주가 일제히 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "젠슨 황·구광모 회동 예고에…LG 계열사 주가 일제히 강세",
@@ -234,11 +195,11 @@
     "target_stock": "LG",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 24.73,
+    "day_change": 23.67,
     "headline": "젠슨 황·구광모 회동 예고에…LG 계열사 주가 일제히 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "젠슨 황·구광모 회동 예고에…LG 계열사 주가 일제히 강세",
@@ -273,11 +234,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "67%",
     "position_type": "상승추세",
-    "day_change": -5.15,
+    "day_change": -5.86,
     "headline": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-01 12:45 KST",
+    "published_at": "2026-06-01 13:00 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -289,6 +250,33 @@
         "title": "한온시스템 “2030년 매출 14조 7000억원, 영업이익률 9% 달성”",
         "url": "https://n.news.naver.com/mnews/article/011/0004624552",
         "office": "서울경제",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
+    "post_id": "POST_20260601_454910",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "두산로보틱스",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 29.95,
+    "headline": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-01 13:00 KST",
+    "news": [
+      {
+        "title": "'젠슨황 시구설'에 두산그룹주 급등…두산로보틱스 상한가",
+        "url": "https://n.news.naver.com/mnews/article/437/0000493894",
+        "office": "JTBC",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;이번엔 피지컬 AI&quot; 로봇株 강세…두산로보틱스 '上' [핫종목]",
+        "url": "https://n.news.naver.com/mnews/article/421/0008977227",
+        "office": "뉴스1",
         "sentiment": "호재"
       }
     ]
