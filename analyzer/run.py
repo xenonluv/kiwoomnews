@@ -27,6 +27,7 @@ REPO = os.path.join(HERE, "..")
 PRED = os.path.join(REPO, "web", "data", "predictions.json")
 STATE = os.path.join(HERE, "state")
 HIST = os.path.join(STATE, "history")
+MIN_TRADING_VALUE = 50_000_000_000  # 최근 5거래일 최대 거래대금 500억 미만 제외
 DISCLAIMER = "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요."
 
 
@@ -116,6 +117,10 @@ def build(top, bet_n):
     rows = []
     for u in cand:
         ind = compute_indicators(u["code"], u["name"])
+        if ind.get("error"):
+            continue
+        if (ind.get("max_trading_value_5d") or 0) < MIN_TRADING_VALUE:
+            continue
         sent = analyze_news(u["code"], u["name"])
         persist = state.get(u["code"], {})
         raw, reasons, risks = score(ind, sent, persist)

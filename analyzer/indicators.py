@@ -134,12 +134,14 @@ def compute_indicators(code, name=None, days=200):
     close_strength = round((last - lo) / (hi - lo), 2) if hi > lo else None  # 마감강도(1=고가마감)
     vol_avg20 = sma(vols, 20)
     vol_ratio = round(vols[-1] / vol_avg20, 2) if vol_avg20 else None
+    max_value5 = max((closes[i] * vols[i] for i in range(len(d) - 5, len(d))), default=None)
 
     return {
         "code": code, "name": name, "last_close": last,
         "ma_aligned": aligned, "ma5": ma5, "ma20": ma20, "ma60": ma60,
         "close_strength": close_strength,  # 0~1, 0.8+ = 강세 마감
         "volume_vs_20d": vol_ratio,
+        "max_trading_value_5d": max_value5,
         "macd": macd(closes),
         "rsi": rsi(closes),
         "stochastic_slow": stochastic_slow(highs, lows, closes),
