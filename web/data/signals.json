@@ -1,16 +1,55 @@
 [
   {
+    "post_id": "POST_20260602_066570",
+    "status": "PUBLISHED",
+    "tier": "signal",
+    "target_stock": "LG전자",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 3.55,
+    "headline": "[특징주] 나인테크, LG전자와 254억원 공급계약… 주가 15% 급등",
+    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-02 15:30 KST",
+    "news": [
+      {
+        "title": "고수들의 장중 줍줍…삼성전자·SK하이닉스·LG전자 순매수 상위권",
+        "url": "https://n.news.naver.com/mnews/article/003/0013982432",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "나인테크, 254억 규모 디스플레이 제조장비 공급계약",
+        "url": "https://n.news.naver.com/mnews/article/016/0002651289",
+        "office": "헤럴드경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 나인테크, LG전자와 254억원 공급계약… 주가 15% 급등",
+        "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=354333",
+        "office": "biztribune",
+        "sentiment": "호재",
+        "cause_score": 15,
+        "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 나인테크, LG전자와 254억원 공급계약… 주가 15% 급등"
+  },
+  {
     "post_id": "POST_20260602_007390",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "네이처셀",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 12.82,
+    "day_change": 12.64,
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -67,11 +106,11 @@
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -7.79,
+    "day_change": -7.66,
     "headline": "엔비디아와 영상 AI 에이전트 시장 공략…노타 5%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -128,6 +167,33 @@
     "cause_summary": "엔비디아와 영상 AI 에이전트 시장 공략…노타 5%↑[특징주]"
   },
   {
+    "post_id": "POST_20260602_004170",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "신세계",
+    "signal_probability": "67%",
+    "position_type": "상승추세",
+    "day_change": 10.08,
+    "headline": "백화점 3사 주가 동반 강세…4월 매출 전년비 21%↑",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-02 15:30 KST",
+    "news": [
+      {
+        "title": "백화점 3사 주가 동반 강세…4월 매출 전년비 21%↑",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294007",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'지갑 열리네' 백화점주, 4월 매출 뛰면서 동반 상승",
+        "url": "https://n.news.naver.com/mnews/article/008/0005366026",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
     "post_id": "POST_20260602_018880",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -138,7 +204,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -177,7 +243,7 @@
     "headline": "로봇주 차별화?...로보스타 등 일부 로봇주 '장중 껑충'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
       {
         "title": "&quot;한국 로보틱스 관심&quot; 젠슨황 한마디에 이틀째 상한가 친 종목",
@@ -212,11 +278,11 @@
     "target_stock": "SK텔레콤",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 10.78,
+    "day_change": 12.39,
     "headline": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
       {
         "title": "SKT 새 요금제 무조건 싸지 않다…갈아타기 득실따져보니",
@@ -279,22 +345,22 @@
     "target_stock": "성호전자",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 21.93,
+    "day_change": 21.8,
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 15:15 KST",
+    "published_at": "2026-06-02 15:30 KST",
     "news": [
+      {
+        "title": "[단독] 세아FSI 인수 우협에 성호전자... 매각가 2000억대",
+        "url": "https://n.news.naver.com/mnews/article/366/0001168856",
+        "office": "조선비즈",
+        "sentiment": "호재"
+      },
       {
         "title": "박성재 부회장, 성호전자 지분 추가 매입…“주가 여전히 져평가” [...",
         "url": "https://n.news.naver.com/mnews/article/011/0004622845",
         "office": "서울경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "엔비디아·브로드컴 이어 코닝까지... 성호전자, 광통신 장비 수주 '봇...",
-        "url": "https://n.news.naver.com/mnews/article/008/0005359846",
-        "office": "머니투데이",
         "sentiment": "호재"
       }
     ],
