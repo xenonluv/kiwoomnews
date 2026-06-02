@@ -6,11 +6,11 @@
     "target_stock": "네이처셀",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 13.19,
+    "day_change": 13.0,
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -39,6 +39,14 @@
         "sentiment": "호재",
         "cause_score": 11,
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "네이처셀 주가 다시 반등...'조인트스템' 美 허가 신청 기대감",
+        "url": "https://www.gukjenews.com/news/articleView.html?idxno=3598547",
+        "office": "gukjenews",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "높음",
@@ -51,11 +59,11 @@
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -7.13,
+    "day_change": -8.59,
     "headline": "엔비디아와 영상 AI 에이전트 시장 공략…노타 5%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -116,13 +124,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "한온시스템",
-    "signal_probability": "67%",
-    "position_type": "상승추세",
-    "day_change": -2.49,
+    "signal_probability": "69%",
+    "position_type": "눌림목",
+    "day_change": -3.45,
     "headline": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -149,7 +157,7 @@
     "headline": "이브이첨단소재, 전고체 배터리 핵심 소재 개발 가속… 차세대 배터리 ...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "EV첨단소재 투자사 프롤로지움 나스닥 상장",
@@ -194,7 +202,7 @@
     "headline": "로봇주, 종목별 희비 엇갈려…두산로보틱스 급등·로보스타 상한가, 휴...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "&quot;한국 로보틱스 관심&quot; 젠슨황 한마디에 이틀째 상한가 친 종목",
@@ -235,13 +243,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "성호전자",
-    "signal_probability": "52%",
-    "position_type": "분석불가",
-    "day_change": 20.15,
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 21.93,
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "박성재 부회장, 성호전자 지분 추가 매입…“주가 여전히 져평가” [...",
@@ -286,17 +294,64 @@
     "cause_summary": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'"
   },
   {
+    "post_id": "POST_20260602_066570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "LG전자",
+    "signal_probability": "40%",
+    "position_type": "과다상승",
+    "day_change": -7.23,
+    "headline": "[ET특징주] 차익 실현 매물에…LG전자, 2연상 이어 하락 전환",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 중립) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-02 12:15 KST",
+    "news": [
+      {
+        "title": "상한가 뒤 급락한 LG전자…엔비디아 협력 기대감은 '현재진행형'",
+        "url": "https://n.news.naver.com/mnews/article/629/0000504302",
+        "office": "더팩트",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "[ET특징주] 차익 실현 매물에…LG전자, 2연상 이어 하락 전환",
+        "url": "https://n.news.naver.com/mnews/article/030/0003433674",
+        "office": "전자신문",
+        "sentiment": "혼재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[ET특징주] 차익 실현 매물에…LG전자, 2연상 이어 하락 전환",
+        "url": "https://www.etnews.com/20260602000162",
+        "office": "etnews",
+        "sentiment": "악재",
+        "cause_score": 10,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "상한가 뒤 급락한 LG전자…엔비디아 협력 기대감은 '현재진행형'",
+        "url": "https://news.tf.co.kr/read/economy/2328676.htm",
+        "office": "news",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[ET특징주] 차익 실현 매물에…LG전자, 2연상 이어 하락 전환"
+  },
+  {
     "post_id": "POST_20260602_017670",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SK텔레콤",
     "signal_probability": "44%",
     "position_type": "과다상승",
-    "day_change": 13.19,
+    "day_change": 19.96,
     "headline": "SK텔레콤, 젠슨 황 '피지컬AI 협력' 언급에 장중 7%대 급등[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
+    "published_at": "2026-06-02 12:15 KST",
     "news": [
       {
         "title": "앤트로픽이 끌고 젠슨 황이 띄웠다…SKT 주가 '훨훨'",
@@ -339,60 +394,5 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "SK텔레콤, 젠슨 황 '피지컬AI 협력' 언급에 장중 7%대 급등[특징주]"
-  },
-  {
-    "post_id": "POST_20260602_034220",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG디스플레이",
-    "signal_probability": "44%",
-    "position_type": "과다상승",
-    "day_change": 5.95,
-    "headline": "LG디스플레이, 자동차SW 국제표준인증에 장초반 6%대 상승",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-02 12:00 KST",
-    "news": [
-      {
-        "title": "게이머 마음 잡아라…삼성D·LGD OLED 기술력 뽐내(종합)",
-        "url": "https://n.news.naver.com/mnews/article/018/0006295645",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "삼성D·LGD, 대만서 OLED 격돌… 게이밍 시장 주도권 기싸움",
-        "url": "https://n.news.naver.com/mnews/article/029/0003029626",
-        "office": "디지털타임스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "LG디스플레이, 자동차SW 국제표준인증에 장초반 6%대 상승",
-        "url": "https://www.mt.co.kr/stock/2026/06/02/2026060210220426122",
-        "office": "mt",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 인과표현, 당일"
-      },
-      {
-        "title": "LG디스플레이 주가, 6월 2일 장중 17,200원 8.86% 상승",
-        "url": "https://www.joongangenews.com/news/articleView.html?idxno=523201",
-        "office": "joongangenews",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-      },
-      {
-        "title": "LG디스플레이 주가, 웃음꽃... 왜?",
-        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161536",
-        "office": "ggilbo",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "LG디스플레이, 자동차SW 국제표준인증에 장초반 6%대 상승"
   }
 ]
