@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-03 13:22 KST",
+  "as_of": "2026-06-03 13:37 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
@@ -112,14 +112,6 @@
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
-        },
-        {
-          "title": "네이처셀, 줄기세포 치료제 가치 재조명…차세대 바이오 시장서 부각",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457146",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -164,7 +156,7 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "84%",
+      "tomorrow_up_prob": "83%",
       "entry": 280500.0,
       "target": 294525,
       "stop": 272085,
@@ -208,7 +200,7 @@
     {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "81%",
+      "tomorrow_up_prob": "80%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
@@ -450,14 +442,6 @@
       "day_change": 3.15,
       "cause_news": [
         {
-          "title": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
-          "url": "https://www.tokenpost.kr/news/economy/365419",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "AI 다음은 로봇?…LG전자 327%·두산로보틱스 114% 뛰었다",
           "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02151686645478112",
           "office": "edaily",
@@ -474,8 +458,8 @@
           "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확..."
+      "cause_confidence": "중간",
+      "cause_summary": "AI 다음은 로봇?…LG전자 327%·두산로보틱스 114% 뛰었다"
     },
     {
       "ticker": "동양고속",
@@ -488,7 +472,7 @@
       "reasons": [
         "거래량2.37배",
         "호재",
-        "장중 18회 지속"
+        "장중 19회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -524,7 +508,7 @@
       "reasons": [
         "MACD강세",
         "거래량15.33배",
-        "장중 18회 지속"
+        "장중 19회 지속"
       ],
       "risk": "RSI82.4 과매수",
       "day_change": null
@@ -642,14 +626,6 @@
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
-        },
-        {
-          "title": "네이처셀, 줄기세포 치료제 가치 재조명…차세대 바이오 시장서 부각",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457146",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -694,7 +670,7 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "84%",
+      "tomorrow_up_prob": "83%",
       "entry": 280500.0,
       "target": 294525,
       "stop": 272085,
