@@ -10,7 +10,7 @@
     "headline": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "“200만원 넘자마자 14% 빠졌다”…삼성전기 급락에 투자자 ‘술렁’",
@@ -43,19 +43,11 @@
         "url": "https://www.ajunews.com/view/20260602101549959",
         "office": "ajunews",
         "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-      },
-      {
-        "title": "[특징주]삼성전기, '680% 급등' 뒤 16% 폭락…숨고르기 들어간 AI 대장주",
-        "url": "https://www.namdonews.com/news/articleView.html?idxno=912325",
-        "office": "namdonews",
-        "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
+        "cause_score": 6,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재"
       }
     ],
-    "cause_confidence": "높음",
+    "cause_confidence": "중간",
     "cause_summary": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락"
   },
   {
@@ -69,7 +61,7 @@
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -130,7 +122,7 @@
     "headline": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -173,14 +165,6 @@
         "sentiment": "호재",
         "cause_score": 9,
         "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-      },
-      {
-        "title": "엔비디아 AI PC 출시에 노타 '주목'…'ARM' CPU 경량화 기술 공급",
-        "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4417936",
-        "office": "news",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "높음",
@@ -197,7 +181,7 @@
     "headline": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "LG전자·삼성SDS, 증권사 목표가 초과…더 오를 다음 종목은?",
@@ -240,14 +224,6 @@
         "sentiment": "호재",
         "cause_score": 5,
         "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-      },
-      {
-        "title": "S&P, LG전자 신용등급 12년 만에 상향…BBB+로 올려",
-        "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=842681",
-        "office": "newsworks",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "높음",
@@ -264,7 +240,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -303,7 +279,7 @@
     "headline": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "앤스로픽, AI ‘미토스’ 15개국 150곳으로 확대…&quot;韓 삼성도 포함&quot;",
@@ -370,7 +346,7 @@
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
@@ -425,12 +401,12 @@
     "headline": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
-        "title": "신세계백화점, 21일까지 '5메이징 카드 위크' 연다",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433932",
-        "office": "전자신문",
+        "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
+        "url": "https://n.news.naver.com/mnews/article/008/0005366553",
+        "office": "머니투데이",
         "sentiment": "호재"
       },
       {
@@ -470,7 +446,7 @@
     "headline": "[특징주] 두산로보틱스, 젠슨 황 \"한국 로보틱스 중요\" 방한 앞두고 로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 10:15 KST",
+    "published_at": "2026-06-03 10:30 KST",
     "news": [
       {
         "title": "젠슨 황, 방한 임박…두산로보틱스 방문 가능성에 'AI 로봇' 협력 확대...",
