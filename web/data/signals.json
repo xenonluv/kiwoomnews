@@ -10,7 +10,7 @@
     "headline": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "“200만원 넘자마자 14% 빠졌다”…삼성전기 급락에 투자자 ‘술렁’",
@@ -61,7 +61,7 @@
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -122,7 +122,7 @@
     "headline": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -181,7 +181,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -210,73 +210,6 @@
     "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
   },
   {
-    "post_id": "POST_20260603_017670",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "SK텔레콤",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 11.59,
-    "headline": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
-    "news": [
-      {
-        "title": "앤스로픽, 한국 포함 15개국에 ‘미토스’ 개방",
-        "url": "https://n.news.naver.com/mnews/article/009/0005688664",
-        "office": "매일경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;1300억 투자해 3조5000억 됐다&quot;…SKT '뜻밖의 잭팟'",
-        "url": "https://n.news.naver.com/mnews/article/015/0005294314",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "'지직' 끊기던 카폰에서 손주 해외 영통까지…40년 SKT만, 왜?",
-        "url": "https://n.news.naver.com/mnews/article/008/0005366473",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      },
-      {
-        "title": "앤트로픽 '글래스윙' 150곳으로 확대…韓, KISA·삼성·SK 포함(종합)",
-        "url": "https://n.news.naver.com/mnews/article/003/0013983124",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
-        "url": "https://www.widedaily.com/news/articleView.html?idxno=295065",
-        "office": "widedaily",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] SK텔레콤 '엔비디아 파트너' 부각 영향 +10%대 상승",
-        "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1261535",
-        "office": "jeonmae",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)",
-        "url": "https://www.yna.co.kr/view/AKR20260602041951008?input=1195m",
-        "office": "yna",
-        "sentiment": "호재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 리스트감점, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가..."
-  },
-  {
     "post_id": "POST_20260603_043260",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -287,7 +220,7 @@
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
@@ -308,8 +241,8 @@
         "url": "https://www.g-enews.com/view.php?ud=20260602104342527244093b5d4e_1",
         "office": "g-enews",
         "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락"
       },
       {
         "title": "숨어있는 프리미엄 가전 강자…성호전자, 공기청정기 부품 공급 잭팟 터...",
@@ -334,24 +267,24 @@
     "headline": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
-        "title": "S&amp;P, LG전자 신용등급 12년 만에 BBB+로 상향",
-        "url": "https://n.news.naver.com/mnews/article/374/0000513795",
-        "office": "SBS Biz",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;프리마켓 폭등에 샀더니 –25%, 젠슨 황 효과 벌써 끝났나요?&quot; 식겁한...",
-        "url": "https://n.news.naver.com/mnews/article/014/0005529883",
-        "office": "파이낸셜뉴스",
+        "title": "S&amp;P, LG전자 신용등급 BBB→BBB+…12년 만에 상향",
+        "url": "https://n.news.naver.com/mnews/article/366/0001169016",
+        "office": "조선비즈",
         "sentiment": "호재"
       },
       {
         "title": "전자업계 컨설팅 내역 봤더니…SK하이닉스 ‘원자재 변동성 대응’, ...",
         "url": "https://n.news.naver.com/mnews/article/016/0002651441",
         "office": "헤럴드경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;프리마켓 폭등에 샀더니 –25%, 젠슨 황 효과 벌써 끝났나요?&quot; 식겁한...",
+        "url": "https://n.news.naver.com/mnews/article/014/0005529883",
+        "office": "파이낸셜뉴스",
         "sentiment": "호재"
       },
       {
@@ -391,6 +324,67 @@
     "cause_summary": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확..."
   },
   {
+    "post_id": "POST_20260603_017670",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "SK텔레콤",
+    "signal_probability": "45%",
+    "position_type": "과다상승",
+    "day_change": 11.59,
+    "headline": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-03 11:15 KST",
+    "news": [
+      {
+        "title": "앤스로픽, 한국 포함 15개국에 ‘미토스’ 개방",
+        "url": "https://n.news.naver.com/mnews/article/009/0005688664",
+        "office": "매일경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;1300억 투자해 3조5000억 됐다&quot;…SKT '뜻밖의 잭팟'",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294314",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'지직' 끊기던 카폰에서 손주 해외 영통까지…40년 SKT만, 왜?",
+        "url": "https://n.news.naver.com/mnews/article/008/0005366473",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=295065",
+        "office": "widedaily",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] SK텔레콤 '엔비디아 파트너' 부각 영향 +10%대 상승",
+        "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1261535",
+        "office": "jeonmae",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)",
+        "url": "https://www.yna.co.kr/view/AKR20260602041951008?input=1195m",
+        "office": "yna",
+        "sentiment": "호재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 리스트감점, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가..."
+  },
+  {
     "post_id": "POST_20260603_004170",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -401,7 +395,7 @@
     "headline": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
@@ -446,7 +440,7 @@
     "headline": "[특징주] 두산로보틱스, 젠슨 황 \"한국 로보틱스 중요\" 방한 앞두고 로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 11:00 KST",
+    "published_at": "2026-06-03 11:15 KST",
     "news": [
       {
         "title": "젠슨 황, 방한 임박…두산로보틱스 방문 가능성에 'AI 로봇' 협력 확대...",
