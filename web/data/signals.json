@@ -10,7 +10,7 @@
     "headline": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "“200만원 넘자마자 14% 빠졌다”…삼성전기 급락에 투자자 ‘술렁’",
@@ -61,7 +61,7 @@
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -114,7 +114,7 @@
     "headline": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -173,7 +173,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -212,7 +212,7 @@
     "headline": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "목표가마저 추월한 급등주 속출…LG전자 상회율 1위",
@@ -265,7 +265,7 @@
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
@@ -302,6 +302,53 @@
     "cause_summary": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'"
   },
   {
+    "post_id": "POST_20260603_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 3.31,
+    "headline": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-03 15:15 KST",
+    "news": [
+      {
+        "title": "디지털플랫폼 매출 161조…검색 1위는 네이버, AI 1위는 챗GPT",
+        "url": "https://n.news.naver.com/mnews/article/029/0003029844",
+        "office": "디지털타임스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "한국인이 가장 많이 쓴 플랫폼은…네이버·카톡·배민·쿠팡",
+        "url": "https://n.news.naver.com/mnews/article/014/0005530003",
+        "office": "파이낸셜뉴스",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
+        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
+        "office": "cbci",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
+        "url": "https://www.sedaily.com/article/20051189?ref=naver",
+        "office": "sedaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
+  },
+  {
     "post_id": "POST_20260603_454910",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -312,7 +359,7 @@
     "headline": "[특징주] 두산로보틱스, 젠슨 황 \"한국 로보틱스 중요\" 방한 앞두고 로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
         "title": "엔비디아 AI 생태계 올라탄 두산…'이것' 뛰어넘는 게 관건",
@@ -349,30 +396,42 @@
     "cause_summary": "[특징주] 두산로보틱스, 젠슨 황 \"한국 로보틱스 중요\" 방한 앞두고 로..."
   },
   {
-    "post_id": "POST_20260603_004170",
+    "post_id": "POST_20260603_017670",
     "status": "PUBLISHED",
     "tier": "candidate",
-    "target_stock": "신세계",
-    "signal_probability": "64%",
-    "position_type": "상승추세",
-    "day_change": 10.27,
-    "headline": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 상승추세.",
+    "target_stock": "SK텔레콤",
+    "signal_probability": "44%",
+    "position_type": "과다상승",
+    "day_change": 11.59,
+    "headline": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 15:00 KST",
+    "published_at": "2026-06-03 15:15 KST",
     "news": [
       {
-        "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
-        "url": "https://n.news.naver.com/mnews/article/008/0005366553",
-        "office": "머니투데이",
+        "title": "SK텔레콤, 엔비디아와 '피지컬 AI' 정기 회의체 구성",
+        "url": "https://n.news.naver.com/mnews/article/030/0003434033",
+        "office": "전자신문",
         "sentiment": "호재"
       },
       {
-        "title": "'탈팡'은 실패했는데…'탈벅'은 성공할까",
-        "url": "https://n.news.naver.com/mnews/article/648/0000047672",
-        "office": "비즈워치",
+        "title": "&quot;1300억 투자해 3조5000억 됐다&quot;…SKT '뜻밖의 잭팟'",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294314",
+        "office": "한국경제",
         "sentiment": "호재"
       }
-    ]
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)",
+        "url": "https://www.yna.co.kr/view/AKR20260602041951008?input=1195m",
+        "office": "yna",
+        "sentiment": "호재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 리스트감점, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)"
   }
 ]
