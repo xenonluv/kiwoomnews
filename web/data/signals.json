@@ -10,7 +10,7 @@
     "headline": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "“200만원 넘자마자 14% 빠졌다”…삼성전기 급락에 투자자 ‘술렁’",
@@ -51,67 +51,6 @@
     "cause_summary": "[특징주] 삼성전기, 차익실현 매물에 12%대 급락"
   },
   {
-    "post_id": "POST_20260603_035420",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "NAVER",
-    "signal_probability": "49%",
-    "position_type": "과다상승",
-    "day_change": 3.31,
-    "headline": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
-    "news": [
-      {
-        "title": "디지털플랫폼 매출 161조 돌파…검색 네이버·AI 챗GPT 쏠림 뚜렷",
-        "url": "https://n.news.naver.com/mnews/article/016/0002651535",
-        "office": "헤럴드경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "국내 부가통신사업 매출 500조 돌파…디지털플랫폼 161조 차지",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433999",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "“청량리도 국평 20억” 서울 상승률 1위 동대문, 줍줍도 18억부터[부...",
-        "url": "https://n.news.naver.com/mnews/article/016/0002651529",
-        "office": "헤럴드경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
-        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
-        "office": "cbci",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
-        "url": "https://www.asiatime.co.kr/article/20260601500273",
-        "office": "asiatime",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-      },
-      {
-        "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
-        "url": "https://www.sedaily.com/article/20051189?ref=naver",
-        "office": "sedaily",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
-  },
-  {
     "post_id": "POST_20260603_066570",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -122,12 +61,12 @@
     "headline": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
-        "title": "S&amp;P, LG전자 신용등급 BBB+ 상향“주력 사업 견조한 성장으로 재무구조...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004627248",
-        "office": "서울경제",
+        "title": "S&amp;P, LG전자 신용등급 상향",
+        "url": "https://n.news.naver.com/mnews/article/382/0001276499",
+        "office": "스포츠동아",
         "sentiment": "호재"
       },
       {
@@ -189,7 +128,7 @@
     "headline": "[특징주] 네이처셀, 미 FDA 허가 기대감에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "네이처셀, 연이틀 상한가…디앤디파마텍도 간생검 공개 앞두고 ‘강세...",
@@ -250,7 +189,7 @@
     "headline": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -299,6 +238,61 @@
     "cause_summary": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세"
   },
   {
+    "post_id": "POST_20260603_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 3.31,
+    "headline": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-03 13:30 KST",
+    "news": [
+      {
+        "title": "국내 부가통신사업 매출 500조 돌파…디지털플랫폼 161조 차지",
+        "url": "https://n.news.naver.com/mnews/article/030/0003433999",
+        "office": "전자신문",
+        "sentiment": "호재"
+      },
+      {
+        "title": "“청량리도 국평 20억” 서울 상승률 1위 동대문, 줍줍도 18억부터[부...",
+        "url": "https://n.news.naver.com/mnews/article/016/0002651529",
+        "office": "헤럴드경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
+        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
+        "office": "cbci",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
+        "url": "https://www.asiatime.co.kr/article/20260601500273",
+        "office": "asiatime",
+        "sentiment": "호재",
+        "cause_score": 15,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+      },
+      {
+        "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
+        "url": "https://www.sedaily.com/article/20051189?ref=naver",
+        "office": "sedaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
+  },
+  {
     "post_id": "POST_20260603_018880",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -309,7 +303,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -338,45 +332,6 @@
     "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
   },
   {
-    "post_id": "POST_20260603_004170",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "신세계",
-    "signal_probability": "66%",
-    "position_type": "상승추세",
-    "day_change": 10.27,
-    "headline": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
-    "news": [
-      {
-        "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
-        "url": "https://n.news.naver.com/mnews/article/008/0005366553",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      },
-      {
-        "title": "신세계백화점, 21일까지 '5메이징 카드 위크' 연다",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433932",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "'탈팡'은 실패했는데…'탈벅'은 성공할까",
-        "url": "https://n.news.naver.com/mnews/article/648/0000047672",
-        "office": "비즈워치",
-        "sentiment": "호재"
-      },
-      {
-        "title": "신세계, 고배당·CAPEX·이자비용 '삼중 부담'…재무 압박 커진다",
-        "url": "https://n.news.naver.com/mnews/article/293/0000085687",
-        "office": "블로터",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260603_043260",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -387,7 +342,7 @@
     "headline": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
@@ -424,6 +379,39 @@
     "cause_summary": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'"
   },
   {
+    "post_id": "POST_20260603_004170",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "신세계",
+    "signal_probability": "65%",
+    "position_type": "상승추세",
+    "day_change": 10.27,
+    "headline": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-03 13:30 KST",
+    "news": [
+      {
+        "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
+        "url": "https://n.news.naver.com/mnews/article/008/0005366553",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'탈팡'은 실패했는데…'탈벅'은 성공할까",
+        "url": "https://n.news.naver.com/mnews/article/648/0000047672",
+        "office": "비즈워치",
+        "sentiment": "호재"
+      },
+      {
+        "title": "신세계, 고배당·CAPEX·이자비용 '삼중 부담'…재무 압박 커진다",
+        "url": "https://n.news.naver.com/mnews/article/293/0000085687",
+        "office": "블로터",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
     "post_id": "POST_20260603_454910",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -434,7 +422,7 @@
     "headline": "[특징주] 두산로보틱스, 젠슨 황 \"한국 로보틱스 중요\" 방한 앞두고 로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-03 13:15 KST",
+    "published_at": "2026-06-03 13:30 KST",
     "news": [
       {
         "title": "젠슨 황, 방한 임박…두산로보틱스 방문 가능성에 'AI 로봇' 협력 확대...",
