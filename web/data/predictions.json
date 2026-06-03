@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-03 11:22 KST",
+  "as_of": "2026-06-03 11:37 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
@@ -32,7 +32,7 @@
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "89%",
+      "tomorrow_up_prob": "90%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -156,7 +156,7 @@
     {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "81%",
+      "tomorrow_up_prob": "82%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
@@ -384,7 +384,7 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "64%",
+      "tomorrow_up_prob": "65%",
       "entry": 392500.0,
       "target": 412125,
       "stop": 380725,
@@ -397,14 +397,6 @@
       "risk": "RSI83.4 과매수, Stoch 과매수",
       "day_change": 3.15,
       "cause_news": [
-        {
-          "title": "LG전자·삼성SDS, 증권사 목표가 초과…더 오를 다음 종목은?",
-          "url": "https://www.dt.co.kr/article/12065592?ref=naver",
-          "office": "dt",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        },
         {
           "title": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확...",
           "url": "https://www.tokenpost.kr/news/economy/365419",
@@ -420,10 +412,18 @@
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "젠슨 황 방한 앞두고 LG전자와 현대차의 패러다임 전환 주목돼",
+          "url": "https://www.news2day.co.kr/article/20260603500016",
+          "office": "news2day",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "LG전자·삼성SDS, 증권사 목표가 초과…더 오를 다음 종목은?"
+      "cause_summary": "[특징주] 나인테크, LG전자 254억 장비 수주에 강세…디스플레이 사업 확..."
     },
     {
       "ticker": "로보스타",
@@ -464,7 +464,7 @@
       "reasons": [
         "거래량2.37배",
         "호재",
-        "장중 10회 지속"
+        "장중 11회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -500,7 +500,7 @@
       "reasons": [
         "MACD강세",
         "거래량15.33배",
-        "장중 10회 지속"
+        "장중 11회 지속"
       ],
       "risk": "RSI82.4 과매수",
       "day_change": null
@@ -538,7 +538,7 @@
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "89%",
+      "tomorrow_up_prob": "90%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -662,7 +662,7 @@
     {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "81%",
+      "tomorrow_up_prob": "82%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
