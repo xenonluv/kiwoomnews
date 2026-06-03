@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-03 11:52 KST",
+  "as_of": "2026-06-03 12:07 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
@@ -16,23 +16,31 @@
       ],
       "risk": "특이 위험 낮음",
       "day_change": 10.27,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전...",
-          "url": "https://www.etoday.co.kr/news/view/2590035",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
+          "url": "https://n.news.naver.com/mnews/article/008/0005366553",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "'탈팡'은 실패했는데…'탈벅'은 성공할까",
+          "url": "https://n.news.naver.com/mnews/article/648/0000047672",
+          "office": "비즈워치",
+          "sentiment": "호재"
+        },
+        {
+          "title": "신세계, 고배당·CAPEX·이자비용 '삼중 부담'…재무 압박 커진다",
+          "url": "https://n.news.naver.com/mnews/article/293/0000085687",
+          "office": "블로터",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전..."
+      ]
     },
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "90%",
+      "tomorrow_up_prob": "89%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -156,7 +164,7 @@
     {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "82%",
+      "tomorrow_up_prob": "81%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
@@ -384,7 +392,7 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "65%",
+      "tomorrow_up_prob": "64%",
       "entry": 392500.0,
       "target": 412125,
       "stop": 380725,
@@ -464,7 +472,7 @@
       "reasons": [
         "거래량2.37배",
         "호재",
-        "장중 12회 지속"
+        "장중 13회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -500,7 +508,7 @@
       "reasons": [
         "MACD강세",
         "거래량15.33배",
-        "장중 12회 지속"
+        "장중 13회 지속"
       ],
       "risk": "RSI82.4 과매수",
       "day_change": null
@@ -522,23 +530,31 @@
       ],
       "risk": "특이 위험 낮음",
       "day_change": 10.27,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전...",
-          "url": "https://www.etoday.co.kr/news/view/2590035",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "title": "신세계백화점, '5메이징 카드 위크' 개최…리워드·무이자할부 혜택",
+          "url": "https://n.news.naver.com/mnews/article/008/0005366553",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "'탈팡'은 실패했는데…'탈벅'은 성공할까",
+          "url": "https://n.news.naver.com/mnews/article/648/0000047672",
+          "office": "비즈워치",
+          "sentiment": "호재"
+        },
+        {
+          "title": "신세계, 고배당·CAPEX·이자비용 '삼중 부담'…재무 압박 커진다",
+          "url": "https://n.news.naver.com/mnews/article/293/0000085687",
+          "office": "블로터",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "“양극화에도 수혜가?”…신세계, 백화점 날개 달고 역대 최대 실적 전..."
+      ]
     },
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "90%",
+      "tomorrow_up_prob": "89%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -662,7 +678,7 @@
     {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "82%",
+      "tomorrow_up_prob": "81%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
