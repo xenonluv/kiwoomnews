@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-03 12:52 KST",
+  "as_of": "2026-06-03 13:07 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
@@ -274,12 +274,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "[특징주] NC, 현대로템과 국방 피지컬 AI 개발 소식에 4% 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/05/28/Z7EE4GY7VRDVHGM47V6H5BEAMU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
+          "title": "[AI프리뷰] 3일 대구 삼성-NC전, 최원태 등판 삼성 NC전 전승 이어가나",
+          "url": "https://www.newspim.com/news/view/20260603000115",
+          "office": "newspim",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -488,7 +488,7 @@
       "reasons": [
         "거래량2.37배",
         "호재",
-        "장중 16회 지속"
+        "장중 17회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -524,7 +524,7 @@
       "reasons": [
         "MACD강세",
         "거래량15.33배",
-        "장중 16회 지속"
+        "장중 17회 지속"
       ],
       "risk": "RSI82.4 과매수",
       "day_change": null
