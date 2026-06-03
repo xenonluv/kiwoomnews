@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-06-03 09:37 KST",
+  "as_of": "2026-06-03 09:52 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "87%",
+      "tomorrow_up_prob": "88%",
       "entry": 569000.0,
       "target": 597450,
       "stop": 551930,
@@ -32,7 +32,7 @@
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "84%",
+      "tomorrow_up_prob": "85%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -68,7 +68,7 @@
     {
       "ticker": "네이처셀",
       "code": "007390",
-      "tomorrow_up_prob": "83%",
+      "tomorrow_up_prob": "84%",
       "entry": 30750.0,
       "target": 32288,
       "stop": 29828,
@@ -134,65 +134,29 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "숨어있는 프리미엄 가전 강자…성호전자, 공기청정기 부품 공급 잭팟 터...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457062",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
           "title": "성호전자 10%대↑…삼성전자 기술개발 파트너사로 부각",
           "url": "https://www.mt.co.kr/stock/2026/06/02/2026060210375075066",
           "office": "mt",
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        },
+        {
+          "title": "숨어있는 프리미엄 가전 강자…성호전자, 공기청정기 부품 공급 잭팟 터...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457062",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "77%",
-      "entry": 280500.0,
-      "target": 294525,
-      "stop": 272085,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 3.31,
-      "cause_news": [
-        {
-          "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
-          "url": "https://www.sedaily.com/article/20051189?ref=naver",
-          "office": "sedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
-    },
-    {
       "ticker": "SK텔레콤",
       "code": "017670",
-      "tomorrow_up_prob": "76%",
+      "tomorrow_up_prob": "78%",
       "entry": 125200.0,
       "target": 131460,
       "stop": 121444,
@@ -234,9 +198,45 @@
       "cause_summary": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가..."
     },
     {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "78%",
+      "entry": 280500.0,
+      "target": 294525,
+      "stop": 272085,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.8)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.31,
+      "cause_news": [
+        {
+          "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
+          "url": "https://www.sedaily.com/article/20051189?ref=naver",
+          "office": "sedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
+    },
+    {
       "ticker": "NC",
       "code": "036570",
-      "tomorrow_up_prob": "71%",
+      "tomorrow_up_prob": "72%",
       "entry": 338000.0,
       "target": 354900,
       "stop": 327860,
@@ -272,7 +272,7 @@
     {
       "ticker": "삼성전기",
       "code": "009150",
-      "tomorrow_up_prob": "68%",
+      "tomorrow_up_prob": "69%",
       "entry": 1813000.0,
       "target": 1903650,
       "stop": 1758610,
@@ -308,7 +308,7 @@
     {
       "ticker": "한온시스템",
       "code": "018880",
-      "tomorrow_up_prob": "67%",
+      "tomorrow_up_prob": "68%",
       "entry": 5000.0,
       "target": 5250,
       "stop": 4850,
@@ -336,7 +336,7 @@
     {
       "ticker": "노타",
       "code": "486990",
-      "tomorrow_up_prob": "66%",
+      "tomorrow_up_prob": "67%",
       "entry": 34900.0,
       "target": 36645,
       "stop": 33853,
@@ -380,7 +380,7 @@
     {
       "ticker": "SK네트웍스",
       "code": "001740",
-      "tomorrow_up_prob": "66%",
+      "tomorrow_up_prob": "67%",
       "entry": 12840.0,
       "target": 13482,
       "stop": 12455,
@@ -416,7 +416,7 @@
     {
       "ticker": "삼성생명",
       "code": "032830",
-      "tomorrow_up_prob": "61%",
+      "tomorrow_up_prob": "62%",
       "entry": 480000.0,
       "target": 504000,
       "stop": 465600,
@@ -444,7 +444,7 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "59%",
+      "tomorrow_up_prob": "60%",
       "entry": 392500.0,
       "target": 412125,
       "stop": 380725,
@@ -488,7 +488,7 @@
     {
       "ticker": "동양고속",
       "code": "084670",
-      "tomorrow_up_prob": "56%",
+      "tomorrow_up_prob": "57%",
       "entry": 38900.0,
       "target": 40845,
       "stop": 37733,
@@ -496,7 +496,7 @@
       "reasons": [
         "거래량2.37배",
         "호재",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -524,7 +524,7 @@
     {
       "ticker": "LG헬로비전",
       "code": "037560",
-      "tomorrow_up_prob": "44%",
+      "tomorrow_up_prob": "45%",
       "entry": 3170.0,
       "target": 3328,
       "stop": 3075,
@@ -532,7 +532,7 @@
       "reasons": [
         "MACD강세",
         "거래량15.33배",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "RSI82.4 과매수",
       "day_change": null
@@ -542,7 +542,7 @@
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "87%",
+      "tomorrow_up_prob": "88%",
       "entry": 569000.0,
       "target": 597450,
       "stop": 551930,
@@ -570,7 +570,7 @@
     {
       "ticker": "두산로보틱스",
       "code": "454910",
-      "tomorrow_up_prob": "84%",
+      "tomorrow_up_prob": "85%",
       "entry": 166700.0,
       "target": 175035,
       "stop": 161699,
@@ -606,7 +606,7 @@
     {
       "ticker": "네이처셀",
       "code": "007390",
-      "tomorrow_up_prob": "83%",
+      "tomorrow_up_prob": "84%",
       "entry": 30750.0,
       "target": 32288,
       "stop": 29828,
@@ -672,60 +672,68 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "숨어있는 프리미엄 가전 강자…성호전자, 공기청정기 부품 공급 잭팟 터...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457062",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
           "title": "성호전자 10%대↑…삼성전자 기술개발 파트너사로 부각",
           "url": "https://www.mt.co.kr/stock/2026/06/02/2026060210375075066",
           "office": "mt",
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        },
+        {
+          "title": "숨어있는 프리미엄 가전 강자…성호전자, 공기청정기 부품 공급 잭팟 터...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457062",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "77%",
-      "entry": 280500.0,
-      "target": 294525,
-      "stop": 272085,
+      "ticker": "SK텔레콤",
+      "code": "017670",
+      "tomorrow_up_prob": "78%",
+      "entry": 125200.0,
+      "target": 131460,
+      "stop": 121444,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 3.31,
+      "day_change": 11.59,
       "cause_news": [
         {
-          "title": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579133",
-          "office": "cbci",
+          "title": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295065",
+          "office": "widedaily",
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "젠슨 황 방한 D-1… 5년 물린 네이버 주주들, ‘전원 구조’ 가능할까 [...",
-          "url": "https://www.sedaily.com/article/20051189?ref=naver",
-          "office": "sedaily",
+          "title": "[특징주] SK텔레콤 '엔비디아 파트너' 부각 영향 +10%대 상승",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1261535",
+          "office": "jeonmae",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SKT, '엔비디아 파트너' 부각에 11% 급등 마감(종합)",
+          "url": "https://www.yna.co.kr/view/AKR20260602041951008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 리스트감점, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "NAVER네이버, 30만원 돌파 후 숨고르기…AI·클라우드 기대감에 재평가 ..."
+      "cause_summary": "[특징주] SK텔레콤, 젠슨 황 \"피지컬 AI 협력사\" 언급에 장중 52주 최고가..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
