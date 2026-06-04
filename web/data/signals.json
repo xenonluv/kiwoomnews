@@ -1,60 +1,5 @@
 [
   {
-    "post_id": "POST_20260604_084670",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "동양고속",
-    "signal_probability": "67%",
-    "position_type": "상승추세",
-    "day_change": 14.78,
-    "headline": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등",
-    "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
-    "news": [
-      {
-        "title": "오세훈 역전승에 ‘고터 테마주 상한가’…동양고속, 천일고속 두자릿...",
-        "url": "https://n.news.naver.com/mnews/article/021/0002795411",
-        "office": "문화일보",
-        "sentiment": "호재"
-      },
-      {
-        "title": "천일·동양고속, 지방선거 앞두고 20%대 급등",
-        "url": "https://n.news.naver.com/mnews/article/003/0013981880",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등",
-        "url": "https://www.newsis.com/view/NISX20260604_0003655981",
-        "office": "newsis",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 동양고속·천일고속, '서울고터' 재개발 기대감에 ↑",
-        "url": "https://www.cstimes.com/news/articleView.html?idxno=708415",
-        "office": "cstimes",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-      },
-      {
-        "title": "천일고속·동양고속 급등…서울고속터미널 재개발 기대감",
-        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439224",
-        "office": "econonews",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등"
-  },
-  {
     "post_id": "POST_20260604_077360",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -65,7 +10,7 @@
     "headline": "반도체 재료·부품株 전방위 랠리…덕산하이메탈 17% 폭등",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "중복상장 모회사 주주 … 자회사 상장안 첫 승인",
@@ -114,11 +59,11 @@
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 11.89,
+    "day_change": 12.03,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -185,7 +130,7 @@
     "headline": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭...",
@@ -236,11 +181,11 @@
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 29.34,
+    "day_change": 29.15,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -263,11 +208,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "69%",
     "position_type": "눌림목",
-    "day_change": -3.0,
+    "day_change": -2.3,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -296,56 +241,17 @@
     "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
   },
   {
-    "post_id": "POST_20260604_066570",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG전자",
-    "signal_probability": "47%",
-    "position_type": "과다상승",
-    "day_change": -12.99,
-    "headline": "젠슨 황 수혜주 급락, 왜?…LG전자 14% ↓",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
-    "news": [
-      {
-        "title": "'젠슨 황 효과' 끝났나…급등했던 관련주 동반 약세",
-        "url": "https://n.news.naver.com/mnews/article/586/0000130688",
-        "office": "시사저널",
-        "sentiment": "호재"
-      },
-      {
-        "title": "젠슨 황 수혜주 급락, 왜?…LG전자 14% ↓",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297163",
-        "office": "이데일리",
-        "sentiment": "혼재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "젠슨 황 수혜주 급락, 왜?…LG전자 14% ↓",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03562086645478440",
-        "office": "edaily",
-        "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 인과표현, 재료, 악재, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "젠슨 황 수혜주 급락, 왜?…LG전자 14% ↓"
-  },
-  {
     "post_id": "POST_20260604_011790",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SKC",
     "signal_probability": "51%",
     "position_type": "상승추세",
-    "day_change": 14.48,
+    "day_change": 15.05,
     "headline": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 악재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -412,7 +318,7 @@
     "headline": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 12:45 KST",
+    "published_at": "2026-06-04 13:00 KST",
     "news": [
       {
         "title": "반도체 ‘투 톱’ 쉬자 장비株 질주…유진테크·원익IPS 상한가 ‘눈앞...",
@@ -455,5 +361,52 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중"
+  },
+  {
+    "post_id": "POST_20260604_009150",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "삼성전기",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": -2.92,
+    "headline": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 13:00 KST",
+    "news": [
+      {
+        "title": "초고수들, 삼성전자·NAVER ‘젠슨 황 깐부주’ 담았다 [주식 초고수는...",
+        "url": "https://n.news.naver.com/mnews/article/011/0004627643",
+        "office": "서울경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…&quot;삼성전기, ...",
+        "url": "https://n.news.naver.com/mnews/article/014/0005530477",
+        "office": "파이낸셜뉴스",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주...",
+        "url": "http://www.fnnews.com/news/202606040900081686",
+        "office": "fnnews",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "AI 부품 수혜 삼성전기 200만원대 안착 실패…단기 차익실현매물에 주가...",
+        "url": "http://www.newsworker.co.kr/news/articleView.html?idxno=429635",
+        "office": "newsworker",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주..."
   }
 ]
