@@ -4,13 +4,13 @@
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "SKC",
-    "signal_probability": "65%",
+    "signal_probability": "51%",
     "position_type": "상승추세",
-    "day_change": 9.84,
+    "day_change": 10.49,
     "headline": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]",
-    "summary": "[시그널] 일봉 상승추세 · 재료 혼재(중요도 8.0). 일봉 국면을 함께 확인.",
+    "summary": "[시그널] 일봉 상승추세 · 재료 악재(중요도 5.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
+    "published_at": "2026-06-04 10:15 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -47,6 +47,14 @@
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 오래됨"
       },
       {
+        "title": "[특징주] SKC, 유증 흥행·실적 개선 기대에 27% ↑",
+        "url": "https://www.newspim.com/news/view/20260601000242",
+        "office": "newspim",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 오래됨"
+      },
+      {
         "title": "SKC 주가, 6월 4일 장중 152,400원 8.70% 상승",
         "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079537",
         "office": "topstarnews",
@@ -59,89 +67,17 @@
     "cause_summary": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]"
   },
   {
-    "post_id": "POST_20260604_035420",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "NAVER",
-    "signal_probability": "48%",
-    "position_type": "과다상승",
-    "day_change": -8.2,
-    "headline": "네이버 해피빈·KOTRA, 로컬 사회적기업 해외 진출 지원 나선다",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
-    "news": [
-      {
-        "title": "네이버 해피빈·KOTRA, 로컬 사회적기업 해외 진출 지원 나선다",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297103",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "젠슨 황, 이르면 오늘 입국…피지컬AI 협력 위한 나흘간의 폭풍행보 ...",
-        "url": "https://n.news.naver.com/mnews/article/016/0002651848",
-        "office": "헤럴드경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "젠슨 황 온다더니 '차익실현'…LG·네이버·두산株 일제히 급락",
-        "url": "https://n.news.naver.com/mnews/article/003/0013986272",
-        "office": "뉴시스",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[특징주] M83, 자회사 500억 공급 계약 호재에 ‘上’",
-        "url": "https://n.news.naver.com/mnews/article/366/0001169326",
-        "office": "조선비즈",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
-    "post_id": "POST_20260604_066570",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG전자",
-    "signal_probability": "43%",
-    "position_type": "과다상승",
-    "day_change": -14.27,
-    "headline": "'젠슨 황' 기대 떨어졌나…LG그룹주 일제히 급락",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 중립) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
-    "news": [
-      {
-        "title": "'젠슨 황' 기대 떨어졌나…LG그룹주 일제히 급락",
-        "url": "https://n.news.naver.com/mnews/article/015/0005294851",
-        "office": "한국경제",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "젠슨 황 ‘반짝 효과’였나…방한 앞두고 LG전자·SKT 등 10%대 하락[이...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004627573",
-        "office": "서울경제",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14%...",
-        "url": "https://n.news.naver.com/mnews/article/366/0001169317",
-        "office": "조선비즈",
-        "sentiment": "혼재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260604_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 10.17,
+    "day_change": 10.03,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
+    "published_at": "2026-06-04 10:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -198,56 +134,17 @@
     "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
   },
   {
-    "post_id": "POST_20260604_084670",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "동양고속",
-    "signal_probability": "67%",
-    "position_type": "상승추세",
-    "day_change": 14.01,
-    "headline": "천일·동양고속, 지방선거 앞두고 20%대 급등",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
-    "news": [
-      {
-        "title": "[특징주] 서울고속터미널 재개발 기대↑…관련주 재차 상한가",
-        "url": "https://n.news.naver.com/mnews/article/001/0016118763",
-        "office": "연합뉴스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "천일·동양고속, 지방선거 앞두고 20%대 급등",
-        "url": "https://n.news.naver.com/mnews/article/003/0013981880",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "천일·동양고속, 지방선거 앞두고 20%대 급등",
-        "url": "https://www.newsis.com/view/NISX20260602_0003653382",
-        "office": "newsis",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "천일·동양고속, 지방선거 앞두고 20%대 급등"
-  },
-  {
     "post_id": "POST_20260604_018880",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "한온시스템",
     "signal_probability": "69%",
     "position_type": "눌림목",
-    "day_change": -4.4,
+    "day_change": -3.26,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
+    "published_at": "2026-06-04 10:15 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -282,11 +179,11 @@
     "target_stock": "신세계",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 11.6,
+    "day_change": 10.72,
     "headline": "신세계, 장 초반 5%대 급등…\"백화점 구매력 초강세\"",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
+    "published_at": "2026-06-04 10:15 KST",
     "news": [
       {
         "title": "신세계, 장 초반 5%대 급등…&quot;백화점 구매력 초강세&quot;",
@@ -327,11 +224,11 @@
     "target_stock": "성호전자",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.95,
+    "day_change": 20.84,
     "headline": "성호전자 주가, 급등세... 무슨 회사길래?",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 10:00 KST",
+    "published_at": "2026-06-04 10:15 KST",
     "news": [
       {
         "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
@@ -374,5 +271,91 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "성호전자 주가, 급등세... 무슨 회사길래?"
+  },
+  {
+    "post_id": "POST_20260604_066570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "LG전자",
+    "signal_probability": "40%",
+    "position_type": "과다상승",
+    "day_change": -14.01,
+    "headline": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14% 급...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 중립) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 10:15 KST",
+    "news": [
+      {
+        "title": "'젠슨 황' 기대 떨어졌나…LG그룹주 일제히 급락",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294851",
+        "office": "한국경제",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "젠슨 황 ‘반짝 효과’였나…방한 앞두고 LG전자·SKT 등 10%대 하락[이...",
+        "url": "https://n.news.naver.com/mnews/article/011/0004627573",
+        "office": "서울경제",
+        "sentiment": "혼재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14% 급...",
+        "url": "https://biz.chosun.com/stock/stock_general/2026/06/04/ILTQXDTA7FE4NAVWLMLHC5E3EA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+        "office": "biz",
+        "sentiment": "악재",
+        "cause_score": 10,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "[특징주] LG전자, 15% 급락…단기간 2배 뛴 주가에 차익실현 매물 출회",
+        "url": "https://www.ajunews.com/view/20260604100851772",
+        "office": "ajunews",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14% 급..."
+  },
+  {
+    "post_id": "POST_20260604_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "44%",
+    "position_type": "과다상승",
+    "day_change": -8.02,
+    "headline": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 10:15 KST",
+    "news": [
+      {
+        "title": "네이버 해피빈·KOTRA, 로컬 사회적기업 해외 진출 지원 나선다",
+        "url": "https://n.news.naver.com/mnews/article/018/0006297103",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "젠슨 황, 이르면 오늘 입국…피지컬AI 협력 위한 나흘간의 폭풍행보 ...",
+        "url": "https://n.news.naver.com/mnews/article/016/0002651848",
+        "office": "헤럴드경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
+        "url": "https://www.asiatime.co.kr/article/20260601500273",
+        "office": "asiatime",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'"
   }
 ]
