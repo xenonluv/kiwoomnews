@@ -1,5 +1,111 @@
 [
   {
+    "post_id": "POST_20260604_018880",
+    "status": "PUBLISHED",
+    "tier": "signal",
+    "target_stock": "한온시스템",
+    "signal_probability": "77%",
+    "position_type": "눌림목",
+    "day_change": -2.5,
+    "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+    "summary": "[시그널] 일봉 눌림목 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 14:00 KST",
+    "news": [
+      {
+        "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
+        "url": "https://n.news.naver.com/mnews/article/015/0005291673",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "한온시스템 “2030년 매출 14조 7000억원, 영업이익률 9% 달성”",
+        "url": "https://n.news.naver.com/mnews/article/011/0004624552",
+        "office": "서울경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+        "office": "widedaily",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "중간",
+    "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
+  },
+  {
+    "post_id": "POST_20260604_004170",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "신세계",
+    "signal_probability": "44%",
+    "position_type": "과다상승",
+    "day_change": 16.17,
+    "headline": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 혼재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 14:00 KST",
+    "news": [
+      {
+        "title": "‘부의 효과’ 기대에 백화점株 질주…신세계 16% 급등[줍줍리포트]",
+        "url": "https://n.news.naver.com/mnews/article/011/0004627670",
+        "office": "서울경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
+        "url": "https://n.news.naver.com/mnews/article/003/0013986773",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "사과도 통하지 않았다…스타벅스 논란 2주만에 결제액 107억 감소",
+        "url": "https://n.news.naver.com/mnews/article/003/0013986774",
+        "office": "뉴시스",
+        "sentiment": "악재"
+      },
+      {
+        "title": "'불장'에 지갑도 열리나…백화점주 동반 강세",
+        "url": "https://n.news.naver.com/mnews/article/374/0000513953",
+        "office": "SBS Biz",
+        "sentiment": "악재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
+        "url": "https://www.newsis.com/view/NISX20260604_0003656199",
+        "office": "newsis",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "‘부의 효과’ 기대에 백화점株 질주…신세계 16% 급등[줍줍리포트]",
+        "url": "https://www.sedaily.com/article/20051795?ref=naver",
+        "office": "sedaily",
+        "sentiment": "호재",
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] '부의 효과' 타고 백화점주 질주…신세계 장중 최고가 경신",
+        "url": "https://www.ziksir.com/news/articleView.html?idxno=135778",
+        "office": "ziksir",
+        "sentiment": "호재",
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세"
+  },
+  {
     "post_id": "POST_20260604_077360",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -10,7 +116,7 @@
     "headline": "반도체 재료·부품株 전방위 랠리…덕산하이메탈 17% 폭등",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "중복상장 모회사 주주 … 자회사 상장안 첫 승인",
@@ -59,11 +165,11 @@
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 13.61,
+    "day_change": 13.18,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -126,11 +232,11 @@
     "target_stock": "현대백화점",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 14.53,
+    "day_change": 14.12,
     "headline": "[특징주] 현대백화점, 실적 개선 기대감에 7%대 상승…52주 신고가",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
@@ -179,6 +285,61 @@
     "cause_summary": "[특징주] 현대백화점, 실적 개선 기대감에 7%대 상승…52주 신고가"
   },
   {
+    "post_id": "POST_20260604_000810",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "삼성화재",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 12.01,
+    "headline": "삼성화재, 신고가 경신… 금리 인상 수혜주 부각",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-04 14:00 KST",
+    "news": [
+      {
+        "title": "금리인상이 호재?…13% 급등에 신고가 ‘삼성화재’[오늘, 이 종목]",
+        "url": "https://n.news.naver.com/mnews/article/024/0000105995",
+        "office": "매경이코노미",
+        "sentiment": "호재"
+      },
+      {
+        "title": "삼성화재, 신고가 경신… 금리 인상 수혜주 부각",
+        "url": "https://n.news.naver.com/mnews/article/008/0005366960",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "삼성화재, 신고가 경신… 금리 인상 수혜주 부각",
+        "url": "https://www.mt.co.kr/stock/2026/06/04/2026060409071429453",
+        "office": "mt",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 인과표현, 당일"
+      },
+      {
+        "title": "금리인상이 호재?…13% 급등에 신고가 ‘삼성화재’[오늘, 이 종목]",
+        "url": "https://www.mk.co.kr/article/12065667",
+        "office": "mk",
+        "sentiment": "호재",
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 삼성화재 실적 발표에 엇갈린 증권가…\"배당 매력 충분\" vs \"성...",
+        "url": "https://www.newstnt.com/news/articleView.html?idxno=702604",
+        "office": "newstnt",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "삼성화재, 신고가 경신… 금리 인상 수혜주 부각"
+  },
+  {
     "post_id": "POST_20260604_240810",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -189,7 +350,7 @@
     "headline": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭...",
@@ -240,11 +401,11 @@
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 27.68,
+    "day_change": 27.31,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -261,56 +422,17 @@
     ]
   },
   {
-    "post_id": "POST_20260604_018880",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "한온시스템",
-    "signal_probability": "69%",
-    "position_type": "눌림목",
-    "day_change": -2.5,
-    "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
-    "news": [
-      {
-        "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
-        "url": "https://n.news.naver.com/mnews/article/015/0005291673",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "한온시스템 “2030년 매출 14조 7000억원, 영업이익률 9% 달성”",
-        "url": "https://n.news.naver.com/mnews/article/011/0004624552",
-        "office": "서울경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-        "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-        "office": "widedaily",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-      }
-    ],
-    "cause_confidence": "중간",
-    "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
-  },
-  {
     "post_id": "POST_20260604_011790",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SKC",
     "signal_probability": "51%",
     "position_type": "상승추세",
-    "day_change": 11.55,
+    "day_change": 11.2,
     "headline": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 악재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
+    "published_at": "2026-06-04 14:00 KST",
     "news": [
       {
         "title": "신영증권 &quot;SKC, 적자폭 축소 지속…2027년 흑자전환 예상&quot;",
@@ -365,60 +487,5 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]"
-  },
-  {
-    "post_id": "POST_20260604_084370",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "유진테크",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 29.47,
-    "headline": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 13:45 KST",
-    "news": [
-      {
-        "title": "반도체 ‘투 톱’ 쉬자 장비株 질주…유진테크·원익IPS 상한가 ‘눈앞...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004627584",
-        "office": "서울경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "유진테크 주식선물, 상승 방향 가격제한폭 20%로 확대",
-        "url": "https://n.news.naver.com/mnews/article/293/0000083998",
-        "office": "블로터",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중",
-        "url": "https://www.ajunews.com/view/20260604100335761",
-        "office": "ajunews",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 유진테크, 반도체 메모리 투자 확대 수혜 기대에 상한가…LPCV...",
-        "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416176",
-        "office": "bizwork",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 유진테크, 상한가 직행…반도체 대형주 숨고르기 속 소부장 매...",
-        "url": "https://www.tokenpost.kr/news/economy/366064",
-        "office": "tokenpost",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중"
   }
 ]
