@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-04 12:22 KST",
+  "as_of": "2026-06-04 12:37 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 70300.0,
-      "target": 73815,
-      "stop": 68191,
+      "entry": 69900.0,
+      "target": 73395,
+      "stop": 67803,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.99)",
+        "강세마감(0.96)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 29.43,
+      "day_change": 29.7,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -35,14 +35,14 @@
       "ticker": "유진테크",
       "code": "084370",
       "tomorrow_up_prob": "94%",
-      "entry": 155600.0,
-      "target": 163380,
-      "stop": 150932,
+      "entry": 155000.0,
+      "target": 162750,
+      "stop": 150350,
       "confidence": "상",
       "reasons": [
-        "강세마감(1.0)",
+        "강세마감(0.98)",
         "MACD강세",
-        "RSI62.2 강세"
+        "RSI62.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.97,
@@ -76,59 +76,15 @@
       "cause_summary": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중"
     },
     {
-      "ticker": "테스",
-      "code": "095610",
-      "tomorrow_up_prob": "88%",
-      "entry": 135900.0,
-      "target": 142695,
-      "stop": 131823,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(1.0)",
-        "정배열",
-        "RSI66.1 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "반도체 장비주 급등…테스·원익IPS 상한가",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439225",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "'유진테크' '원익IPS' '테스' 주가 장중 상한가, 미국 반도체장비주 강세...",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439245",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "테스 주가, 6월 4일 장중 상한가 135,900원 29.92% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079584",
-          "office": "topstarnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "반도체 장비주 급등…테스·원익IPS 상한가"
-    },
-    {
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "83%",
-      "entry": 125900.0,
-      "target": 132195,
-      "stop": 122123,
+      "entry": 125000.0,
+      "target": 131250,
+      "stop": 121250,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.86)",
+        "강세마감(0.82)",
         "정배열",
         "MACD강세"
       ],
@@ -154,6 +110,50 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "78%",
+      "entry": 39550.0,
+      "target": 41528,
+      "stop": 38364,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI61.5 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 10.46,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "노타, 3거래일만에 14% 급등…4만원선 회복 눈앞",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439220",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
+          "url": "https://www.ajunews.com/view/20260529143910133",
+          "office": "ajunews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     },
     {
       "ticker": "덕산하이메탈",
@@ -195,17 +195,17 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "76%",
-      "entry": 4895.0,
-      "target": 5140,
-      "stop": 4748,
+      "entry": 4880.0,
+      "target": 5124,
+      "stop": 4734,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI50.6 강세",
+        "RSI50.3 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -2.3,
+      "day_change": -2,
       "cause_news": [
         {
           "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
@@ -218,6 +218,50 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
+    },
+    {
+      "ticker": "삼성물산",
+      "code": "028260",
+      "tomorrow_up_prob": "76%",
+      "entry": 547000.0,
+      "target": 574350,
+      "stop": 530590,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.78)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주...",
+          "url": "http://www.fnnews.com/news/202606040900081686",
+          "office": "fnnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "삼성생명·삼성물산, 주주환원 확대·밸류업 기대감에 동반 강세[특징주...",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060215284911488",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락"
+        },
+        {
+          "title": "삼성물산, 5거래일 연속 상승에 12% 급등…54만원선 재돌파",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439234",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주..."
     },
     {
       "ticker": "원익IPS",
@@ -264,100 +308,12 @@
       "cause_summary": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭..."
     },
     {
-      "ticker": "삼성물산",
-      "code": "028260",
-      "tomorrow_up_prob": "75%",
-      "entry": 546000.0,
-      "target": 573300,
-      "stop": 529620,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.76)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주...",
-          "url": "http://www.fnnews.com/news/202606040900081686",
-          "office": "fnnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "삼성생명·삼성물산, 주주환원 확대·밸류업 기대감에 동반 강세[특징주...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026060215284911488",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락"
-        },
-        {
-          "title": "삼성물산, 5거래일 연속 상승에 12% 급등…54만원선 재돌파",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439234",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "'지분가치 75조 급등' 삼성물산, 주주 환원 확대 기대감…\"삼성전기, 주..."
-    },
-    {
-      "ticker": "노타",
-      "code": "486990",
-      "tomorrow_up_prob": "74%",
-      "entry": 38900.0,
-      "target": 40845,
-      "stop": 37733,
-      "confidence": "상",
-      "reasons": [
-        "MACD강세",
-        "RSI60.6 강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감",
-      "day_change": 11.17,
-      "cause_news": [
-        {
-          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "노타, 3거래일만에 14% 급등…4만원선 회복 눈앞",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439220",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
-          "url": "https://www.ajunews.com/view/20260529143910133",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
-    },
-    {
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "72%",
-      "entry": 344500.0,
-      "target": 361725,
-      "stop": 334165,
+      "entry": 346000.0,
+      "target": 363300,
+      "stop": 335620,
       "confidence": "상",
       "reasons": [
         "정배열",
@@ -365,7 +321,7 @@
         "일목 구름위"
       ],
       "risk": "Stoch 과매수",
-      "day_change": -12.48,
+      "day_change": -11.72,
       "cause_news": [
         {
           "title": "LG전자 주가 장중 14%대 내려, '젠슨 황 기대감' 급등 뒤 차익실현 매물...",
@@ -380,64 +336,48 @@
       "cause_summary": "LG전자 주가 장중 14%대 내려, '젠슨 황 기대감' 급등 뒤 차익실현 매물..."
     },
     {
-      "ticker": "동양고속",
-      "code": "084670",
-      "tomorrow_up_prob": "68%",
-      "entry": 45250.0,
-      "target": 47512,
-      "stop": 43892,
+      "ticker": "한화비전",
+      "code": "489790",
+      "tomorrow_up_prob": "67%",
+      "entry": 75000.0,
+      "target": 78750,
+      "stop": 72750,
       "confidence": "중",
       "reasons": [
-        "RSI53.8 강세",
-        "Stoch골든",
+        "강세마감(0.8)",
+        "RSI51.1 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.3,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등",
-          "url": "https://www.newsis.com/view/NISX20260604_0003655981",
-          "office": "newsis",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 동양고속·천일고속, '서울고터' 재개발 기대감에 ↑",
-          "url": "https://www.cstimes.com/news/articleView.html?idxno=708415",
-          "office": "cstimes",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "천일고속·동양고속 급등…서울고속터미널 재개발 기대감",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439224",
-          "office": "econonews",
+          "title": "한화비전 주가, 급등세... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161829",
+          "office": "ggilbo",
           "sentiment": "호재",
           "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등"
+      "cause_summary": "한화비전 주가, 급등세... 왜?"
     },
     {
       "ticker": "SKC",
       "code": "011790",
       "tomorrow_up_prob": "66%",
-      "entry": 155900.0,
-      "target": 163695,
-      "stop": 151223,
+      "entry": 157400.0,
+      "target": 165270,
+      "stop": 152678,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.7)",
+        "강세마감(0.81)",
         "정배열",
-        "RSI58.4 강세"
+        "RSI58.9 강세"
       ],
       "risk": "악재",
-      "day_change": 11.98,
+      "day_change": 11.13,
       "cause_news": [
         {
           "title": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]",
@@ -471,12 +411,12 @@
       "ticker": "신세계",
       "code": "004170",
       "tomorrow_up_prob": "66%",
-      "entry": 645000.0,
-      "target": 677250,
-      "stop": 625650,
+      "entry": 648000.0,
+      "target": 680400,
+      "stop": 628560,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -512,45 +452,61 @@
       "cause_summary": "[특징주] 신세계, 불장 속 부의 효과 수혜 '상승'"
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
-      "tomorrow_up_prob": "66%",
-      "entry": 75200.0,
-      "target": 78960,
-      "stop": 72944,
+      "ticker": "동양고속",
+      "code": "084670",
+      "tomorrow_up_prob": "64%",
+      "entry": 43750.0,
+      "target": 45938,
+      "stop": 42438,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.82)",
-        "RSI51.3 강세",
+        "RSI52.1 강세",
+        "Stoch골든",
         "호재"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
+      "risk": "약한 마감",
+      "day_change": 14.78,
       "cause_news": [
         {
-          "title": "한화비전 주가, 급등세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161829",
-          "office": "ggilbo",
+          "title": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등",
+          "url": "https://www.newsis.com/view/NISX20260604_0003655981",
+          "office": "newsis",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 동양고속·천일고속, '서울고터' 재개발 기대감에 ↑",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=708415",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "천일고속·동양고속 급등…서울고속터미널 재개발 기대감",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439224",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "한화비전 주가, 급등세... 왜?"
+      "cause_summary": "천일·동양고속, 吳 공약 '고터 재개발' 기대감에 10%대 급등"
     },
     {
       "ticker": "HD현대에너지솔루션",
       "code": "322000",
       "tomorrow_up_prob": "63%",
-      "entry": 182100.0,
-      "target": 191205,
-      "stop": 176637,
+      "entry": 182000.0,
+      "target": 191100,
+      "stop": 176540,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.86)",
+        "강세마감(0.85)",
         "Stoch골든",
-        "장중 13회 지속"
+        "장중 14회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -559,16 +515,16 @@
       "ticker": "삼성화재",
       "code": "000810",
       "tomorrow_up_prob": "60%",
-      "entry": 711000.0,
-      "target": 746550,
-      "stop": 689670,
+      "entry": 713000.0,
+      "target": 748650,
+      "stop": 691610,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI84.5 과매수, Stoch 과매수",
+      "risk": "RSI84.7 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -605,17 +561,17 @@
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 70300.0,
-      "target": 73815,
-      "stop": 68191,
+      "entry": 69900.0,
+      "target": 73395,
+      "stop": 67803,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.99)",
+        "강세마감(0.96)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 29.43,
+      "day_change": 29.7,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -635,14 +591,14 @@
       "ticker": "유진테크",
       "code": "084370",
       "tomorrow_up_prob": "94%",
-      "entry": 155600.0,
-      "target": 163380,
-      "stop": 150932,
+      "entry": 155000.0,
+      "target": 162750,
+      "stop": 150350,
       "confidence": "상",
       "reasons": [
-        "강세마감(1.0)",
+        "강세마감(0.98)",
         "MACD강세",
-        "RSI62.2 강세"
+        "RSI62.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.97,
@@ -676,59 +632,15 @@
       "cause_summary": "[특징주] 유진테크, '上'…반도체 소부장 투자심리 개선에 매수세 집중"
     },
     {
-      "ticker": "테스",
-      "code": "095610",
-      "tomorrow_up_prob": "88%",
-      "entry": 135900.0,
-      "target": 142695,
-      "stop": 131823,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(1.0)",
-        "정배열",
-        "RSI66.1 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "반도체 장비주 급등…테스·원익IPS 상한가",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439225",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "'유진테크' '원익IPS' '테스' 주가 장중 상한가, 미국 반도체장비주 강세...",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439245",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "테스 주가, 6월 4일 장중 상한가 135,900원 29.92% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079584",
-          "office": "topstarnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "반도체 장비주 급등…테스·원익IPS 상한가"
-    },
-    {
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "83%",
-      "entry": 125900.0,
-      "target": 132195,
-      "stop": 122123,
+      "entry": 125000.0,
+      "target": 131250,
+      "stop": 121250,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.86)",
+        "강세마감(0.82)",
         "정배열",
         "MACD강세"
       ],
@@ -754,6 +666,50 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "78%",
+      "entry": 39550.0,
+      "target": 41528,
+      "stop": 38364,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI61.5 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 10.46,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "노타, 3거래일만에 14% 급등…4만원선 회복 눈앞",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439220",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 노타, 퀄컴 AI 디바이스 최적화 성공에 19%대 강세",
+          "url": "https://www.ajunews.com/view/20260529143910133",
+          "office": "ajunews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     },
     {
       "ticker": "덕산하이메탈",
