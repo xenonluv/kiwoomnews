@@ -1,21 +1,65 @@
 {
-  "as_of": "2026-06-04 10:22 KST",
+  "as_of": "2026-06-04 10:37 KST",
   "intraday_rank": [
+    {
+      "ticker": "테스",
+      "code": "095610",
+      "tomorrow_up_prob": "87%",
+      "entry": 135900.0,
+      "target": 142695,
+      "stop": 131823,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "RSI66.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 테스, SK하이닉스 5년내 메모리 캐파 2배 확대에 급등",
+          "url": "https://www.tokenpost.kr/news/economy/366037",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 테스, SK하이닉스 캐파 2배 확대 수혜 기대감에 상승세",
+          "url": "https://www.etoday.co.kr/news/view/2590376",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "반도체 장비주 급등…테스·원익IPS 상한가",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439225",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 테스, SK하이닉스 5년내 메모리 캐파 2배 확대에 급등"
+    },
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "83%",
-      "entry": 629000.0,
-      "target": 660450,
-      "stop": 610130,
+      "tomorrow_up_prob": "84%",
+      "entry": 646000.0,
+      "target": 678300,
+      "stop": 626620,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 10.72,
+      "day_change": 10.9,
       "cause_news": [
         {
           "title": "신세계, 장 초반 5%대 급등…\"백화점 구매력 초강세\"",
@@ -32,13 +76,13 @@
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "78%",
-      "entry": 123600.0,
-      "target": 129780,
-      "stop": 119892,
+      "tomorrow_up_prob": "79%",
+      "entry": 126100.0,
+      "target": 132405,
+      "stop": 122317,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.96)",
+        "강세마감(0.99)",
         "정배열",
         "MACD강세"
       ],
@@ -66,64 +110,20 @@
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
-      "ticker": "성호전자",
-      "code": "043260",
-      "tomorrow_up_prob": "76%",
-      "entry": 56300.0,
-      "target": 59115,
-      "stop": 54611,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.89)",
-        "MACD강세",
-        "RSI64.7 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 20.84,
-      "cause_news": [
-        {
-          "title": "성호전자 주가, 급등세... 무슨 회사길래?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161776",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
-          "url": "https://www.g-enews.com/view.php?ud=20260602104342527244093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락"
-        },
-        {
-          "title": "성호전자 주가, 6월 4일 장중 55,100원 15.05% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079512",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "성호전자 주가, 급등세... 무슨 회사길래?"
-    },
-    {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "76%",
-      "entry": 257500.0,
-      "target": 270375,
-      "stop": 249775,
+      "tomorrow_up_prob": "78%",
+      "entry": 258500.0,
+      "target": 271425,
+      "stop": 250745,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI65.0 강세"
+        "RSI65.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.02,
+      "day_change": -8.56,
       "cause_news": [
         {
           "title": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
@@ -140,7 +140,7 @@
     {
       "ticker": "원익IPS",
       "code": "240810",
-      "tomorrow_up_prob": "73%",
+      "tomorrow_up_prob": "74%",
       "entry": 127200.0,
       "target": 133560,
       "stop": 123384,
@@ -182,67 +182,59 @@
       "cause_summary": "반도체 장비株 폭발…원익IPS·테스·주성엔지니어링 주가에 뭉칫돈 몰..."
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
+      "ticker": "덕산하이메탈",
+      "code": "077360",
       "tomorrow_up_prob": "70%",
-      "entry": 75400.0,
-      "target": 79170,
-      "stop": 73138,
+      "entry": 14950.0,
+      "target": 15698,
+      "stop": 14502,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
-        "MACD강세",
-        "RSI51.6 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "한화, 올해에도 양호한 실적 지속 가능…'매수'-흥국",
-          "url": "https://n.news.naver.com/mnews/article/018/0006285577",
-          "office": "이데일리",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "한온시스템",
-      "code": "018880",
-      "tomorrow_up_prob": "69%",
-      "entry": 4840.0,
-      "target": 5082,
-      "stop": 4695,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "일목 구름위",
+        "강세마감(0.98)",
+        "Stoch골든",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -3.26,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-          "office": "widedaily",
+          "title": "[N2 특징주] 덕산하이메탈, MSB ‘슈퍼 사이클’ 진입 전망에 11%대 급등",
+          "url": "https://www.news2day.co.kr/article/20260422500021",
+          "office": "news2day",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "반도체 재료·부품株 전방위 랠리…덕산하이메탈 17% 폭등",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457445",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "\"본격적인 실적 개선 국면\"…덕산하이메탈 17%↑[특징주]",
+          "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02922486645451216",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
+      "cause_confidence": "높음",
+      "cause_summary": "[N2 특징주] 덕산하이메탈, MSB ‘슈퍼 사이클’ 진입 전망에 11%대 급등"
     },
     {
       "ticker": "한미반도체",
       "code": "042700",
-      "tomorrow_up_prob": "68%",
-      "entry": 307500.0,
-      "target": 322875,
-      "stop": 298275,
+      "tomorrow_up_prob": "69%",
+      "entry": 314000.0,
+      "target": 329700,
+      "stop": 304580,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.99)",
         "Stoch골든",
         "호재"
       ],
@@ -258,17 +250,17 @@
           "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         },
         {
+          "title": "주성엔지니어링·한미반도체 급등…반도체 장비주 강세",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439226",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "한미반도체 주가, 웃음꽃 활짝... 왜?",
           "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161778",
           "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "한미반도체 주가, 6월 4일 장중 297,000원 7.80% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079514",
-          "office": "topstarnews",
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
@@ -280,18 +272,18 @@
     {
       "ticker": "노타",
       "code": "486990",
-      "tomorrow_up_prob": "65%",
-      "entry": 38050.0,
-      "target": 39952,
-      "stop": 36908,
+      "tomorrow_up_prob": "66%",
+      "entry": 38150.0,
+      "target": 40058,
+      "stop": 37006,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI59.4 강세",
+        "RSI59.5 강세",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 10.03,
+      "day_change": 8.17,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -322,29 +314,49 @@
       "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     },
     {
+      "ticker": "한온시스템",
+      "code": "018880",
+      "tomorrow_up_prob": "66%",
+      "entry": 4835.0,
+      "target": 5077,
+      "stop": 4690,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "일목 구름위",
+        "호재"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.7,
+      "cause_news": [
+        {
+          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
+    },
+    {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "64%",
-      "entry": 334500.0,
-      "target": 351225,
-      "stop": 324465,
+      "tomorrow_up_prob": "65%",
+      "entry": 337500.0,
+      "target": 354375,
+      "stop": 327375,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.2 강세"
+        "RSI68.8 강세"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": -14.01,
+      "day_change": -15.16,
       "cause_news": [
-        {
-          "title": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14% 급...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/04/ILTQXDTA7FE4NAVWLMLHC5E3EA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
         {
           "title": "[특징주] LG전자, 15% 급락…단기간 2배 뛴 주가에 차익실현 매물 출회",
           "url": "https://www.ajunews.com/view/20260604100851772",
@@ -355,20 +367,20 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] ‘젠슨 황’ 효과에 70% 급등한 LG전자, 차익실현에 이날 14% 급..."
+      "cause_summary": "[특징주] LG전자, 15% 급락…단기간 2배 뛴 주가에 차익실현 매물 출회"
     },
     {
       "ticker": "HD현대에너지솔루션",
       "code": "322000",
-      "tomorrow_up_prob": "60%",
-      "entry": 183400.0,
-      "target": 192570,
-      "stop": 177898,
+      "tomorrow_up_prob": "61%",
+      "entry": 184600.0,
+      "target": 193830,
+      "stop": 179062,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.95)",
         "Stoch골든",
-        "장중 5회 지속"
+        "장중 6회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -376,17 +388,17 @@
     {
       "ticker": "삼성화재",
       "code": "000810",
-      "tomorrow_up_prob": "57%",
-      "entry": 722000.0,
-      "target": 758100,
-      "stop": 700340,
+      "tomorrow_up_prob": "58%",
+      "entry": 727000.0,
+      "target": 763350,
+      "stop": 705190,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI85.2 과매수, Stoch 과매수",
+      "risk": "RSI85.5 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -408,68 +420,68 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "삼성화재, 신고가 경신… 금리 인상 수혜주 부각"
-    },
-    {
-      "ticker": "SKC",
-      "code": "011790",
-      "tomorrow_up_prob": "50%",
-      "entry": 153600.0,
-      "target": 161280,
-      "stop": 148992,
-      "confidence": "하",
-      "reasons": [
-        "RSI57.6 강세",
-        "일목 구름위",
-        "장중 6회 지속"
-      ],
-      "risk": "악재",
-      "day_change": 10.49,
-      "cause_news": [
-        {
-          "title": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026060110341987884",
-          "office": "newsway",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 오래됨"
-        },
-        {
-          "title": "[특징주] SKC, 유증 흥행·실적 개선 기대에 27% ↑",
-          "url": "https://www.newspim.com/news/view/20260601000242",
-          "office": "newspim",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 오래됨"
-        },
-        {
-          "title": "SKC 주가, 6월 4일 장중 152,400원 8.70% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079537",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "SKC, 유증 흥행·실적 기대감에 강세…목표가도 '쑥'[특징주]"
     }
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "83%",
-      "entry": 629000.0,
-      "target": 660450,
-      "stop": 610130,
+      "ticker": "테스",
+      "code": "095610",
+      "tomorrow_up_prob": "87%",
+      "entry": 135900.0,
+      "target": 142695,
+      "stop": 131823,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(1.0)",
+        "정배열",
+        "RSI66.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 테스, SK하이닉스 5년내 메모리 캐파 2배 확대에 급등",
+          "url": "https://www.tokenpost.kr/news/economy/366037",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 테스, SK하이닉스 캐파 2배 확대 수혜 기대감에 상승세",
+          "url": "https://www.etoday.co.kr/news/view/2590376",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "반도체 장비주 급등…테스·원익IPS 상한가",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439225",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 테스, SK하이닉스 5년내 메모리 캐파 2배 확대에 급등"
+    },
+    {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "84%",
+      "entry": 646000.0,
+      "target": 678300,
+      "stop": 626620,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 10.72,
+      "day_change": 10.9,
       "cause_news": [
         {
           "title": "신세계, 장 초반 5%대 급등…\"백화점 구매력 초강세\"",
@@ -486,13 +498,13 @@
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "78%",
-      "entry": 123600.0,
-      "target": 129780,
-      "stop": 119892,
+      "tomorrow_up_prob": "79%",
+      "entry": 126100.0,
+      "target": 132405,
+      "stop": 122317,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.96)",
+        "강세마감(0.99)",
         "정배열",
         "MACD강세"
       ],
@@ -520,64 +532,20 @@
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
-      "ticker": "성호전자",
-      "code": "043260",
-      "tomorrow_up_prob": "76%",
-      "entry": 56300.0,
-      "target": 59115,
-      "stop": 54611,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.89)",
-        "MACD강세",
-        "RSI64.7 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 20.84,
-      "cause_news": [
-        {
-          "title": "성호전자 주가, 급등세... 무슨 회사길래?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161776",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 성호전자, 삼성전자 개발 파트너 낙점.. 16%대 '급등'",
-          "url": "https://www.g-enews.com/view.php?ud=20260602104342527244093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락"
-        },
-        {
-          "title": "성호전자 주가, 6월 4일 장중 55,100원 15.05% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16079512",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "성호전자 주가, 급등세... 무슨 회사길래?"
-    },
-    {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "76%",
-      "entry": 257500.0,
-      "target": 270375,
-      "stop": 249775,
+      "tomorrow_up_prob": "78%",
+      "entry": 258500.0,
+      "target": 271425,
+      "stop": 250745,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI65.0 강세"
+        "RSI65.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.02,
+      "day_change": -8.56,
       "cause_news": [
         {
           "title": "[특징주] LG전자-NAVER, 젠슨 황 회동 기대감 '급등'",
@@ -594,7 +562,7 @@
     {
       "ticker": "원익IPS",
       "code": "240810",
-      "tomorrow_up_prob": "73%",
+      "tomorrow_up_prob": "74%",
       "entry": 127200.0,
       "target": 133560,
       "stop": 123384,
