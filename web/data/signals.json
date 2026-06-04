@@ -6,11 +6,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "77%",
     "position_type": "눌림목",
-    "day_change": -3.7,
+    "day_change": -3.8,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[시그널] 일봉 눌림목 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "한온시스템, 장 초반 12%대 급등…한국타이어도 동반 상승",
@@ -39,65 +39,24 @@
     "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
   },
   {
-    "post_id": "POST_20260604_035420",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "NAVER",
-    "signal_probability": "44%",
-    "position_type": "과다상승",
-    "day_change": -4.72,
-    "headline": "초고수들, 삼성전자·NAVER ‘젠슨 황 깐부주’ 담았다 [주식 초고수는...",
-    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 4.0). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
-    "news": [
-      {
-        "title": "젠슨 황 수혜주 따라탔다가...&quot;하루 만에 -14%&quot; 불나방 개미 눈물",
-        "url": "https://n.news.naver.com/mnews/article/008/0005367187",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      },
-      {
-        "title": "AI 입은 네이버 플러스멤버십, 월드컵 특수로 '락인효과' 노린다",
-        "url": "https://n.news.naver.com/mnews/article/629/0000505037",
-        "office": "더팩트",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "초고수들, 삼성전자·NAVER ‘젠슨 황 깐부주’ 담았다 [주식 초고수는...",
-        "url": "https://www.sedaily.com/article/20051757?ref=naver",
-        "office": "sedaily",
-        "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 인과표현, 재료, 악재, 당일"
-      },
-      {
-        "title": "새벽 2시 '부정선거' 구글 검색 폭등…네이버·다음은 조용",
-        "url": "https://www.mt.co.kr/tech/2026/06/04/2026060409335995189",
-        "office": "mt",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "초고수들, 삼성전자·NAVER ‘젠슨 황 깐부주’ 담았다 [주식 초고수는..."
-  },
-  {
     "post_id": "POST_20260604_004170",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "신세계",
-    "signal_probability": "50%",
+    "signal_probability": "51%",
     "position_type": "과다상승",
-    "day_change": 15.11,
+    "day_change": 15.99,
     "headline": "[특징주] 신세계, 18%대 급등…백화점 업황 개선 기대감 '쑥'",
-    "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 8.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
+      {
+        "title": "스타벅스 결제금액 더 줄었다…'탱크데이' 논란 후 2주간 107억 감소",
+        "url": "https://n.news.naver.com/mnews/article/421/0008985947",
+        "office": "뉴스1",
+        "sentiment": "혼재"
+      },
       {
         "title": "&quot;성과급 받아서 명품산다&quot; 신세계, 실적 개선에 '신고가' [핫종목]",
         "url": "https://n.news.naver.com/mnews/article/421/0008985823",
@@ -114,12 +73,6 @@
         "title": "‘부의 효과’ 기대에 백화점株 질주…신세계 16% 급등[줍줍리포트]",
         "url": "https://n.news.naver.com/mnews/article/011/0004627670",
         "office": "서울경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
-        "url": "https://n.news.naver.com/mnews/article/003/0013986773",
-        "office": "뉴시스",
         "sentiment": "호재"
       }
     ],
@@ -159,11 +112,11 @@
     "target_stock": "한미반도체",
     "signal_probability": "56%",
     "position_type": "분석불가",
-    "day_change": 10.53,
+    "day_change": 11.25,
     "headline": "파두·한미반도체·피에스케이 급등, SK하이닉스·삼성전자는 약세…시...",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "[컴퓨텍스 2026] 한미반도체 첫 참가… 글로벌 AI 반도체 공급망 정조...",
@@ -230,7 +183,7 @@
     "headline": "반도체 재료·부품株 전방위 랠리…덕산하이메탈 17% 폭등",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "중복상장 모회사 주주 … 자회사 상장안 첫 승인",
@@ -279,11 +232,11 @@
     "target_stock": "노타",
     "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 11.32,
+    "day_change": 12.03,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -350,7 +303,7 @@
     "headline": "원익IPS 상한가·주성엔지니어링 주가 파죽지세…OLED 장비주에 돈 몰리...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "주성엔 25만원 돌파·원익IPS 상한가…반도체 소부장주 폭등 [칩칩폭폭...",
@@ -401,11 +354,11 @@
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 28.97,
+    "day_change": 28.04,
     "headline": "브이엠 주가, 6월 4일 장중 69,100원 27.49% 상승 상한가 70,400원 도달",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -440,11 +393,11 @@
     "target_stock": "삼성화재",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 12.95,
+    "day_change": 13.88,
     "headline": "삼성화재·삼성생명, 장중 주가 '희비'…주주환원 여력 온도차[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "금리인상이 호재?…13% 급등에 신고가 ‘삼성화재’[오늘, 이 종목]",
@@ -495,11 +448,11 @@
     "target_stock": "현대백화점",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 14.2,
-    "headline": "[특징주] 현대백화점, 실적 개선 기대감에 7%대 상승…52주 신고가",
+    "day_change": 15.02,
+    "headline": "\"지구 살리는 백화점\"...현대백화점, 유통가 ESG 주도하며 '초록빛 행보...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-04 15:15 KST",
+    "published_at": "2026-06-04 15:30 KST",
     "news": [
       {
         "title": "신세계, 장중 15% 급등 '신고가'…백화점株 동반 강세",
@@ -522,14 +475,6 @@
     ],
     "cause_news": [
       {
-        "title": "[특징주] 현대백화점, 실적 개선 기대감에 7%대 상승…52주 신고가",
-        "url": "https://www.ajunews.com/view/20260604101353789",
-        "office": "ajunews",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
         "title": "\"지구 살리는 백화점\"...현대백화점, 유통가 ESG 주도하며 '초록빛 행보...",
         "url": "https://www.techm.kr/news/articleView.html?idxno=152346",
         "office": "techm",
@@ -539,6 +484,6 @@
       }
     ],
     "cause_confidence": "높음",
-    "cause_summary": "[특징주] 현대백화점, 실적 개선 기대감에 7%대 상승…52주 신고가"
+    "cause_summary": "\"지구 살리는 백화점\"...현대백화점, 유통가 ESG 주도하며 '초록빛 행보..."
   }
 ]
