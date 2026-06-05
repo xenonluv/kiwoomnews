@@ -6,11 +6,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "70%",
     "position_type": "눌림목",
-    "day_change": -2.39,
+    "day_change": -2.8,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[시그널] 일봉 눌림목 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
+    "published_at": "2026-06-05 15:15 KST",
     "news": [
       {
         "title": "[지배구조 리포트]한온시스템, 소액주주 늘었는데 '주주권 지표' 후퇴",
@@ -51,16 +51,22 @@
     "target_stock": "LG전자",
     "signal_probability": "56%",
     "position_type": "과다상승",
-    "day_change": -6.1,
+    "day_change": -7.24,
     "headline": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 7.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
+    "published_at": "2026-06-05 15:15 KST",
     "news": [
       {
-        "title": "&quot;최대 420만원 혜택&quot;...LG전자, '국가대표가전 국민 응원 대축제'",
-        "url": "https://n.news.naver.com/mnews/article/014/0005531083",
-        "office": "파이낸셜뉴스",
+        "title": "LG전자, '국가대표가전 국민 응원 대축제' 진행…최대 420만원 혜택",
+        "url": "https://n.news.naver.com/mnews/article/015/0005295414",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "LG전자, 최대 420만원 혜택 '국가대표가전 국민 응원 대축제'",
+        "url": "https://n.news.naver.com/mnews/article/421/0008987808",
+        "office": "뉴스1",
         "sentiment": "호재"
       },
       {
@@ -73,12 +79,6 @@
         "title": "SK실트론 1차 협력사인 반도체 소재 장비업체 M&amp;A 매물로",
         "url": "https://n.news.naver.com/mnews/article/015/0005295379",
         "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "경찰, 'LG전자 흉기난동' 협력직원 구속 송치…살인미수 혐의",
-        "url": "https://n.news.naver.com/mnews/article/003/0013989106",
-        "office": "뉴시스",
         "sentiment": "호재"
       }
     ],
@@ -96,84 +96,17 @@
     "cause_summary": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다"
   },
   {
-    "post_id": "POST_20260605_271830",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "팸텍",
-    "signal_probability": "53%",
-    "position_type": "과다상승",
-    "day_change": 11.02,
-    "headline": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
-    "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
-    "news": [
-      {
-        "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297931",
-        "office": "이데일리",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "웨이퍼 로봇 기업 인수…팸텍, 3거래일 연속 급등[특징주]",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297089",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[ET특징주]팸텍, 웨이퍼 로봇 기업 인수 소식에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433710",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "팸텍, 로봇 전문기업 티아이에스 인수",
-        "url": "https://n.news.naver.com/mnews/article/015/0005293712",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
-        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439267",
-        "office": "econonews",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-        "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
-        "office": "widedaily",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "웨이퍼 로봇 기업 인수…팸텍, 3거래일 연속 급등[특징주]",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03263606645478440",
-        "office": "edaily",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수"
-  },
-  {
     "post_id": "POST_20260605_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -12.28,
+    "day_change": -11.0,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
+    "published_at": "2026-06-05 15:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -224,7 +157,7 @@
     "headline": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
+    "published_at": "2026-06-05 15:15 KST",
     "news": [
       {
         "title": "한켐, 이상조 대표이사 '화학경영자상' 수상",
@@ -281,11 +214,11 @@
     "target_stock": "라이콤",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 25.46,
+    "day_change": 19.96,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:00 KST",
+    "published_at": "2026-06-05 15:15 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
