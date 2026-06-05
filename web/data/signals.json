@@ -6,11 +6,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "78%",
     "position_type": "눌림목",
-    "day_change": -2.7,
+    "day_change": -3.11,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[시그널] 일봉 눌림목 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "[지배구조 리포트]한온시스템, 소액주주 늘었는데 '주주권 지표' 후퇴",
@@ -51,11 +51,11 @@
     "target_stock": "NHN",
     "signal_probability": "53%",
     "position_type": "과다상승",
-    "day_change": 7.04,
+    "day_change": 6.4,
     "headline": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "KB증권, NHN 목표주가 7만6000원으로 상향…GPUaaS 수익화 본격화 기대",
@@ -110,11 +110,11 @@
     "target_stock": "팸텍",
     "signal_probability": "53%",
     "position_type": "과다상승",
-    "day_change": 18.22,
+    "day_change": 11.02,
     "headline": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
@@ -171,17 +171,76 @@
     "cause_summary": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수"
   },
   {
+    "post_id": "POST_20260605_242040",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "나무기술",
+    "signal_probability": "48%",
+    "position_type": "과다상승",
+    "day_change": 13.8,
+    "headline": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-05 14:15 KST",
+    "news": [
+      {
+        "title": "나무기술, 1분기 매출 370억원…가상화·클라우드 전환 수요에 수익성...",
+        "url": "https://n.news.naver.com/mnews/article/138/0002227897",
+        "office": "디지털데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "중복상장 발목 잡았나…나무기술 子 에스케이팩, 스팩 합병 무산",
+        "url": "https://n.news.naver.com/mnews/article/018/0006264469",
+        "office": "이데일리",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "[메자닌 투자파일] 나무기술, 60억 BW로 AI 투자 실탄 확보",
+        "url": "https://n.news.naver.com/mnews/article/293/0000083097",
+        "office": "블로터",
+        "sentiment": "호재"
+      },
+      {
+        "title": "나무기술, 김화중 신임 사장 선임…공동대표 체제로 AX 승부수",
+        "url": "https://n.news.naver.com/mnews/article/092/0002417295",
+        "office": "지디넷코리아",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세",
+        "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416036",
+        "office": "bizwork",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "[속보] 나무기술, 장중 VI 발동…AI 인프라 수혜 기대에 매수세 집중",
+        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579853",
+        "office": "cbci",
+        "sentiment": "악재",
+        "cause_score": 10,
+        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세"
+  },
+  {
     "post_id": "POST_20260605_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -11.89,
+    "day_change": -13.3,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -222,6 +281,45 @@
     "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
   },
   {
+    "post_id": "POST_20260605_066570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "LG전자",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": -6.25,
+    "headline": "SK실트론 1차 협력사인 반도체 소재 장비업체 M&amp;A 매물로",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-05 14:15 KST",
+    "news": [
+      {
+        "title": "SK실트론 1차 협력사인 반도체 소재 장비업체 M&amp;A 매물로",
+        "url": "https://n.news.naver.com/mnews/article/015/0005295379",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "경찰, 'LG전자 흉기난동' 협력직원 구속 송치…살인미수 혐의",
+        "url": "https://n.news.naver.com/mnews/article/003/0013989106",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "변동장 속 투자 고수들의 선택은…역시 삼성전자·SK하이닉스·LG전자",
+        "url": "https://n.news.naver.com/mnews/article/003/0013989065",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'로봇 거인' 체급 전환 나선 LG전자…젠슨 황이 쐐기 박아줄까",
+        "url": "https://n.news.naver.com/mnews/article/648/0000047747",
+        "office": "비즈워치",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
     "post_id": "POST_20260605_457370",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -232,7 +330,7 @@
     "headline": "한켐 주가, 급등세... 삼성전기 수혜주",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "한켐, 이상조 대표이사 '화학경영자상' 수상",
@@ -287,13 +385,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "라이콤",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 16.5,
+    "signal_probability": "52%",
+    "position_type": "분석불가",
+    "day_change": 15.27,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
@@ -344,11 +442,11 @@
     "target_stock": "삼성전기",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 4.2,
+    "day_change": 2.8,
     "headline": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
+    "published_at": "2026-06-05 14:15 KST",
     "news": [
       {
         "title": "삼성전기 5% 급락 후 5% 반등…'부품 병목' 지속 180만원 회복[핫종목...",
@@ -375,89 +473,5 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향..."
-  },
-  {
-    "post_id": "POST_20260605_066570",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG전자",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": -5.34,
-    "headline": "변동장 속 투자 고수들의 선택은…역시 삼성전자·SK하이닉스·LG전자",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
-    "news": [
-      {
-        "title": "변동장 속 투자 고수들의 선택은…역시 삼성전자·SK하이닉스·LG전자",
-        "url": "https://n.news.naver.com/mnews/article/003/0013989065",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "'로봇 거인'으로 체급 전환 나선 LG전자…젠슨 황이 쐐기 박아줄까",
-        "url": "https://n.news.naver.com/mnews/article/648/0000047747",
-        "office": "비즈워치",
-        "sentiment": "호재"
-      },
-      {
-        "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004628010",
-        "office": "서울경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "LG전자, 엔비디아 'AI 서버 냉각' 인증 막바지…구광모-젠슨 황 회동 ...",
-        "url": "https://n.news.naver.com/mnews/article/003/0013988959",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
-    "post_id": "POST_20260605_035420",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "NAVER",
-    "signal_probability": "45%",
-    "position_type": "과다상승",
-    "day_change": -2.06,
-    "headline": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 14:00 KST",
-    "news": [
-      {
-        "title": "[현장]젠슨 황 CEO 만찬 앞둔 마포 삼겹살집… 네이버 관계자도 대기...",
-        "url": "https://n.news.naver.com/mnews/article/020/0003724739",
-        "office": "동아일보",
-        "sentiment": "호재"
-      },
-      {
-        "title": "'방한' 젠슨황, 홍대서 최태원·구광모·이해진과 '삼쏘 회동'",
-        "url": "https://n.news.naver.com/mnews/article/088/0001013251",
-        "office": "매일신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004628010",
-        "office": "서울경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-        "url": "https://www.sedaily.com/article/20052193?ref=naver",
-        "office": "sedaily",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
   }
 ]
