@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-05 13:37 KST",
+  "as_of": "2026-06-05 13:52 KST",
   "intraday_rank": [
     {
       "ticker": "한켐",
       "code": "457370",
-      "tomorrow_up_prob": "94%",
-      "entry": 13930.0,
-      "target": 14626,
-      "stop": 13512,
+      "tomorrow_up_prob": "95%",
+      "entry": 14670.0,
+      "target": 15404,
+      "stop": 14230,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 26.13,
+      "day_change": 26.84,
       "cause_news": [
         {
           "title": "한켐 주가, 급등세... 삼성전기 수혜주",
@@ -49,17 +49,17 @@
       "ticker": "NHN",
       "code": "181710",
       "tomorrow_up_prob": "93%",
-      "entry": 49650.0,
-      "target": 52132,
-      "stop": 48160,
+      "entry": 50100.0,
+      "target": 52605,
+      "stop": 48597,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
+      "day_change": 6.08,
       "cause_news": [
         {
           "title": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
@@ -82,20 +82,56 @@
       "cause_summary": "[게임스톡] NHN, AI 클라우드 기대감에 급등"
     },
     {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "90%",
+      "entry": 1778000.0,
+      "target": 1866900,
+      "stop": 1724660,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.71)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.03,
+      "cause_news": [
+        {
+          "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
+          "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
+          "office": "joseilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
+          "office": "ggilbo",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
+    },
+    {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 6030.0,
-      "target": 6332,
-      "stop": 5849,
+      "entry": 5820.0,
+      "target": 6111,
+      "stop": 5645,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI57.8 강세"
+        "RSI56.5 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.96,
+      "day_change": 19.76,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -126,75 +162,45 @@
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
+      "ticker": "NAVER",
+      "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 1763000.0,
-      "target": 1851150,
-      "stop": 1710110,
+      "entry": 253500.0,
+      "target": 266175,
+      "stop": 245895,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.9 강세"
+        "RSI62.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.21,
+      "day_change": -5.98,
       "cause_news": [
         {
-          "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
-          "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
-          "office": "joseilbo",
+          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
+          "url": "https://www.sedaily.com/article/20052193?ref=naver",
+          "office": "sedaily",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "78%",
-      "entry": 303000.0,
-      "target": 318150,
-      "stop": 293910,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI61.7 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -8.08,
-      "related_news": [
-        {
-          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주...",
-          "url": "https://n.news.naver.com/mnews/article/011/0004628010",
-          "office": "서울경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "LG전자, 엔비디아 'AI 서버 냉각' 인증 막바지…구광모-젠슨 황 회동 ...",
-          "url": "https://n.news.naver.com/mnews/article/003/0013988959",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        }
-      ]
+      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
     },
     {
       "ticker": "한온시스템",
       "code": "018880",
-      "tomorrow_up_prob": "72%",
-      "entry": 4650.0,
-      "target": 4882,
-      "stop": 4510,
+      "tomorrow_up_prob": "80%",
+      "entry": 4665.0,
+      "target": 4898,
+      "stop": 4525,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.7)",
         "정배열",
-        "일목 구름위",
-        "호재"
+        "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
       "day_change": -3.53,
@@ -212,31 +218,31 @@
       "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
     },
     {
-      "ticker": "현대백화점",
-      "code": "069960",
-      "tomorrow_up_prob": "72%",
-      "entry": 147900.0,
-      "target": 155295,
-      "stop": 143463,
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "78%",
+      "entry": 306500.0,
+      "target": 321825,
+      "stop": 297305,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "일목 구름위"
+        "RSI62.4 강세"
       ],
-      "risk": "Stoch 과매수",
-      "day_change": 5.15,
+      "risk": "약한 마감",
+      "day_change": -7.16,
       "related_news": [
         {
-          "title": "팔도·hy가 BTS와 기획한 ‘아리’, 메가MGC커피 매장에서 만난다",
-          "url": "https://n.news.naver.com/mnews/article/016/0002652415",
-          "office": "헤럴드경제",
+          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주...",
+          "url": "https://n.news.naver.com/mnews/article/011/0004628010",
+          "office": "서울경제",
           "sentiment": "호재"
         },
         {
-          "title": "한화證 “현대백화점, 외국인 매출 성장 본격화…목표가 19만원”",
-          "url": "https://n.news.naver.com/mnews/article/366/0001169550",
-          "office": "조선비즈",
+          "title": "LG전자, 엔비디아 'AI 서버 냉각' 인증 막바지…구광모-젠슨 황 회동 ...",
+          "url": "https://n.news.naver.com/mnews/article/003/0013988959",
+          "office": "뉴시스",
           "sentiment": "호재"
         }
       ]
@@ -244,15 +250,15 @@
     {
       "ticker": "신한지주",
       "code": "055550",
-      "tomorrow_up_prob": "68%",
-      "entry": 106000.0,
-      "target": 111300,
-      "stop": 102820,
-      "confidence": "중",
+      "tomorrow_up_prob": "72%",
+      "entry": 106700.0,
+      "target": 112035,
+      "stop": 103499,
+      "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.5 강세"
+        "RSI69.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -270,20 +276,36 @@
       "cause_summary": "ELS 과징금 부담 던 신한지주, 장 초반 6% 육박 급등…금융지주 일제 강..."
     },
     {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "66%",
+      "entry": 148100.0,
+      "target": 155505,
+      "stop": 143657,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null
+    },
+    {
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "62%",
-      "entry": 32750.0,
-      "target": 34388,
-      "stop": 31768,
+      "entry": 33050.0,
+      "target": 34702,
+      "stop": 32058,
       "confidence": "중",
       "reasons": [
         "MACD강세",
         "호재",
-        "장중 19회 지속"
+        "장중 20회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -15.35,
+      "day_change": -15.86,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -300,18 +322,18 @@
     {
       "ticker": "팸텍",
       "code": "271830",
-      "tomorrow_up_prob": "53%",
-      "entry": 2745.0,
-      "target": 2882,
-      "stop": 2663,
-      "confidence": "하",
+      "tomorrow_up_prob": "61%",
+      "entry": 2810.0,
+      "target": 2950,
+      "stop": 2726,
+      "confidence": "중",
       "reasons": [
+        "강세마감(0.75)",
         "MACD강세",
-        "거래량10.38배",
-        "호재"
+        "거래량10.53배"
       ],
-      "risk": "RSI82.6 과매수, Stoch 과매수",
-      "day_change": 14.83,
+      "risk": "RSI83.1 과매수, Stoch 과매수",
+      "day_change": 16.95,
       "cause_news": [
         {
           "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
@@ -344,15 +366,15 @@
     {
       "ticker": "제주은행",
       "code": "006220",
-      "tomorrow_up_prob": "53%",
-      "entry": 11440.0,
-      "target": 12012,
-      "stop": 11097,
+      "tomorrow_up_prob": "48%",
+      "entry": 11100.0,
+      "target": 11655,
+      "stop": 10767,
       "confidence": "하",
       "reasons": [
         "MACD강세",
-        "RSI52.3 강세",
-        "거래량12.06배"
+        "거래량12.22배",
+        "장중 20회 지속"
       ],
       "risk": "악재",
       "day_change": null,
@@ -370,18 +392,18 @@
     {
       "ticker": "한켐",
       "code": "457370",
-      "tomorrow_up_prob": "94%",
-      "entry": 13930.0,
-      "target": 14626,
-      "stop": 13512,
+      "tomorrow_up_prob": "95%",
+      "entry": 14670.0,
+      "target": 15404,
+      "stop": 14230,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 26.13,
+      "day_change": 26.84,
       "cause_news": [
         {
           "title": "한켐 주가, 급등세... 삼성전기 수혜주",
@@ -415,17 +437,17 @@
       "ticker": "NHN",
       "code": "181710",
       "tomorrow_up_prob": "93%",
-      "entry": 49650.0,
-      "target": 52132,
-      "stop": 48160,
+      "entry": 50100.0,
+      "target": 52605,
+      "stop": 48597,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
+      "day_change": 6.08,
       "cause_news": [
         {
           "title": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
@@ -448,20 +470,56 @@
       "cause_summary": "[게임스톡] NHN, AI 클라우드 기대감에 급등"
     },
     {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "90%",
+      "entry": 1778000.0,
+      "target": 1866900,
+      "stop": 1724660,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.71)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.03,
+      "cause_news": [
+        {
+          "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
+          "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
+          "office": "joseilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
+          "office": "ggilbo",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
+    },
+    {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 6030.0,
-      "target": 6332,
-      "stop": 5849,
+      "entry": 5820.0,
+      "target": 6111,
+      "stop": 5645,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI57.8 강세"
+        "RSI56.5 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.96,
+      "day_change": 19.76,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -492,62 +550,32 @@
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
+      "ticker": "NAVER",
+      "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 1763000.0,
-      "target": 1851150,
-      "stop": 1710110,
+      "entry": 253500.0,
+      "target": 266175,
+      "stop": 245895,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.9 강세"
+        "RSI62.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.21,
+      "day_change": -5.98,
       "cause_news": [
         {
-          "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
-          "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
-          "office": "joseilbo",
+          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
+          "url": "https://www.sedaily.com/article/20052193?ref=naver",
+          "office": "sedaily",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "78%",
-      "entry": 303000.0,
-      "target": 318150,
-      "stop": 293910,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI61.7 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -8.08,
-      "related_news": [
-        {
-          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주...",
-          "url": "https://n.news.naver.com/mnews/article/011/0004628010",
-          "office": "서울경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "LG전자, 엔비디아 'AI 서버 냉각' 인증 막바지…구광모-젠슨 황 회동 ...",
-          "url": "https://n.news.naver.com/mnews/article/003/0013988959",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        }
-      ]
+      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
