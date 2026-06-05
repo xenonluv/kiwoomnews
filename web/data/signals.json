@@ -1,61 +1,16 @@
 [
   {
-    "post_id": "POST_20260605_001510",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "SK증권",
-    "signal_probability": "53%",
-    "position_type": "분석불가",
-    "day_change": 9.06,
-    "headline": "SK증권 주가, 급등세... 왜?",
-    "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.5). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 10:15 KST",
-    "news": [
-      {
-        "title": "[아침밥] SK증권 &quot;에이텀, 평판형 트랜스와 데이터센터로 성장축 확대...",
-        "url": "https://n.news.naver.com/mnews/article/417/0001146225",
-        "office": "동행미디어 시대",
-        "sentiment": "호재"
-      },
-      {
-        "title": "KH바텍, 하반기 자동차·로봇 매출 더해지며 도약 발판-SK",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297848",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "'삼성전자가 주는 배당까지 받는다'…목표가 48만원→59만원",
-        "url": "https://n.news.naver.com/mnews/article/215/0001254355",
-        "office": "한국경제TV",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "SK증권 주가, 급등세... 왜?",
-        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161998",
-        "office": "ggilbo",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "SK증권 주가, 급등세... 왜?"
-  },
-  {
     "post_id": "POST_20260605_018880",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "한온시스템",
     "signal_probability": "70%",
     "position_type": "눌림목",
-    "day_change": -7.57,
+    "day_change": -6.95,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 10:15 KST",
+    "published_at": "2026-06-05 10:30 KST",
     "news": [
       {
         "title": "[지배구조 리포트]한온시스템, 소액주주 늘었는데 '주주권 지표' 후퇴",
@@ -96,11 +51,11 @@
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -12.92,
+    "day_change": -13.55,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 10:15 KST",
+    "published_at": "2026-06-05 10:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -141,28 +96,79 @@
     "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
   },
   {
+    "post_id": "POST_20260605_001510",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "SK증권",
+    "signal_probability": "53%",
+    "position_type": "분석불가",
+    "day_change": 8.91,
+    "headline": "SK증권 주가, 급등세... 왜?",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 분석불가.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-05 10:30 KST",
+    "news": [
+      {
+        "title": "[아침밥] SK증권 &quot;에이텀, 평판형 트랜스와 데이터센터로 성장축 확대...",
+        "url": "https://n.news.naver.com/mnews/article/417/0001146225",
+        "office": "동행미디어 시대",
+        "sentiment": "호재"
+      },
+      {
+        "title": "KH바텍, 하반기 자동차·로봇 매출 더해지며 도약 발판-SK",
+        "url": "https://n.news.naver.com/mnews/article/018/0006297848",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "'삼성전자가 주는 배당까지 받는다'…목표가 48만원→59만원",
+        "url": "https://n.news.naver.com/mnews/article/215/0001254355",
+        "office": "한국경제TV",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "SK증권 주가, 급등세... 왜?",
+        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161998",
+        "office": "ggilbo",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "SK증권 주가, 급등세... 왜?"
+  },
+  {
     "post_id": "POST_20260605_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "60%",
+    "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": -7.48,
-    "headline": "젠슨 황은 '방한길', 테마주는 '내리막길'…두산·LG·네이버 '우수수...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 중립) · 일봉 상승추세.",
+    "day_change": -7.66,
+    "headline": "젠슨 황 방한...SK·LG·현대차·네이버 나란히 급락 [특징주]",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 10:15 KST",
+    "published_at": "2026-06-05 10:30 KST",
     "news": [
+      {
+        "title": "젠슨 황 방한...SK·LG·현대차·네이버 나란히 급락 [특징주]",
+        "url": "https://n.news.naver.com/mnews/article/014/0005530951",
+        "office": "파이낸셜뉴스",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "오늘은 ‘홍대 삼쏘’ 간다… 젠슨 황, 최태원·구광모 회동",
+        "url": "https://n.news.naver.com/mnews/article/005/0001853240",
+        "office": "국민일보",
+        "sentiment": "호재"
+      },
       {
         "title": "젠슨 황은 '방한길', 테마주는 '내리막길'…두산·LG·네이버 '우수수...",
         "url": "https://n.news.naver.com/mnews/article/586/0000130795",
         "office": "시사저널",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "젠슨 황 만나는 날…SK·LG·현대차·네이버 줄줄이 급락[핫종목]",
-        "url": "https://n.news.naver.com/mnews/article/421/0008986912",
-        "office": "뉴스1",
         "sentiment": "혼재"
       }
     ]
