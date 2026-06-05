@@ -1,98 +1,38 @@
 {
-  "as_of": "2026-06-05 09:37 KST",
+  "as_of": "2026-06-05 09:52 KST",
   "intraday_rank": [
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "79%",
-      "entry": 1677000.0,
-      "target": 1760850,
-      "stop": 1626690,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -3.38,
-      "cause_news": [
-        {
-          "title": "AI 부품 수혜 삼성전기 200만원대 안착 실패…단기 차익실현매물에 주가...",
-          "url": "http://www.newsworker.co.kr/news/articleView.html?idxno=429635",
-          "office": "newsworker",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
-          "office": "ggilbo",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "AI 부품 수혜 삼성전기 200만원대 안착 실패…단기 차익실현매물에 주가..."
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "74%",
-      "entry": 308500.0,
-      "target": 323925,
-      "stop": 299245,
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "76%",
+      "entry": 247000.0,
+      "target": 259350,
+      "stop": 239590,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.8 강세"
+        "RSI59.6 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -4.57,
+      "day_change": -6.92,
       "related_news": [
         {
-          "title": "LG전자·네이버 파랗게 질렸는데…상한가 찍은 종목은?",
-          "url": "https://n.news.naver.com/mnews/article/374/0000514148",
-          "office": "SBS Biz",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "젠슨 황 픽한 'LG전자'…엔비디아 차세대 핵심 파트너로 우뚝",
-          "url": "https://n.news.naver.com/mnews/article/417/0001146188",
-          "office": "동행미디어 시대",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "현대백화점",
-      "code": "069960",
-      "tomorrow_up_prob": "74%",
-      "entry": 149500.0,
-      "target": 156975,
-      "stop": 145015,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.75)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "한화證 “현대백화점, 외국인 매출 성장 본격화…목표가 19만원”",
-          "url": "https://n.news.naver.com/mnews/article/366/0001169550",
-          "office": "조선비즈",
+          "title": "HBM·로봇 다 품는다…젠슨 황, 韓 총수들과 릴레이 '삼소 회동' 눈길",
+          "url": "https://n.news.naver.com/mnews/article/586/0000130789",
+          "office": "시사저널",
           "sentiment": "호재"
         },
         {
-          "title": "15% 불기둥 그린 신세계…백화점 3사 ‘훨훨’ [오늘, 이 종목]",
-          "url": "https://n.news.naver.com/mnews/article/024/0000106006",
-          "office": "매경이코노미",
+          "title": "'깐부' 이어 '삼소'…젠슨 황, 오늘 홍대서 재계 총수 회동",
+          "url": "https://n.news.naver.com/mnews/article/014/0005530929",
+          "office": "파이낸셜뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "자회사의 네이버클라우드향 공급 호재…M83 3일째 급등[특징주]",
+          "url": "https://n.news.naver.com/mnews/article/018/0006297954",
+          "office": "이데일리",
           "sentiment": "호재"
         }
       ]
@@ -101,13 +41,13 @@
       "ticker": "한올바이오파마",
       "code": "009420",
       "tomorrow_up_prob": "72%",
-      "entry": 59300.0,
-      "target": 62265,
-      "stop": 57521,
+      "entry": 58600.0,
+      "target": 61530,
+      "stop": 56842,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI57.4 강세",
+        "RSI56.7 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
@@ -128,114 +68,86 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주]한올바이오파마, 난치성 류마티스관절염 임상 기대감 지속…9%...",
-          "url": "https://www.ajunews.com/view/20260527095437097",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[27일 특징주] 한올바이오파마, 류마티스 관절염 임상 기대감에 '상한가..."
     },
     {
-      "ticker": "마음AI",
-      "code": "377480",
-      "tomorrow_up_prob": "68%",
-      "entry": 18990.0,
-      "target": 19940,
-      "stop": 18420,
+      "ticker": "신한지주",
+      "code": "055550",
+      "tomorrow_up_prob": "69%",
+      "entry": 106200.0,
+      "target": 111510,
+      "stop": 103014,
       "confidence": "중",
       "reasons": [
+        "정배열",
         "MACD강세",
-        "RSI65.8 강세",
-        "거래량5.22배"
+        "RSI68.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 5.57,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] 마음AI, UAE AI 사절단 투자처 협력 모색 방한에 상승…사업모...",
-          "url": "https://www.cstimes.com/news/articleView.html?idxno=704750",
-          "office": "cstimes",
+          "title": "ELS 과징금 부담 던 금융지주株 강세…신한지주 6%↑[이런국장 저런주식...",
+          "url": "https://www.sedaily.com/article/20052106?ref=naver",
+          "office": "sedaily",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 마음AI, UAE 국부펀드·투자청 만나 AI 모델 소개한다…오일머...",
-          "url": "http://www.newsprime.co.kr/news/article.html?no=732670",
-          "office": "newsprime",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 마음AI, UAE AI 사절단 투자처 협력 모색 방한에 상승…사업모..."
-    },
-    {
-      "ticker": "한미약품",
-      "code": "128940",
-      "tomorrow_up_prob": "66%",
-      "entry": 518000.0,
-      "target": 543900,
-      "stop": 502460,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI57.9 강세",
-        "거래량1.5배"
-      ],
-      "risk": "약한 마감",
-      "day_change": 6.82,
-      "cause_news": [
-        {
-          "title": "비만·항암 신약 개발 경쟁 본격화… mRNA 관련주 한미약품 진원생명과...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457735",
-          "office": "pinpointnews",
+          "title": "ELS 과징금 리스크 완화에 은행주 강세…신한지주 7%대 급등",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439270",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 9,
-          "cause_reason": "제목 언급, 인과표현, 당일"
-        },
-        {
-          "title": "[특징주] 한미약품, 릴리향 1.9조 기술수출…목표가 최고 68만 원",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=704901",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "비만 넘어 의약품 영토 확장…시장서 몸값 치솟는 한미약품 성장 모멘텀",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=457738",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "비만·항암 신약 개발 경쟁 본격화… mRNA 관련주 한미약품 진원생명과..."
+      "cause_summary": "ELS 과징금 부담 던 금융지주株 강세…신한지주 6%↑[이런국장 저런주식..."
+    },
+    {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "66%",
+      "entry": 146400.0,
+      "target": 153720,
+      "stop": 142008,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 6.01,
+      "related_news": [
+        {
+          "title": "한화證 “현대백화점, 외국인 매출 성장 본격화…목표가 19만원”",
+          "url": "https://n.news.naver.com/mnews/article/366/0001169550",
+          "office": "조선비즈",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "노타",
       "code": "486990",
-      "tomorrow_up_prob": "62%",
-      "entry": 34200.0,
-      "target": 35910,
-      "stop": 33174,
+      "tomorrow_up_prob": "63%",
+      "entry": 33400.0,
+      "target": 35070,
+      "stop": 32398,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI51.4 강세",
+        "RSI50.2 강세",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": -9.72,
+      "day_change": -13.04,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -244,50 +156,26 @@
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "노타, 3거래일만에 14% 급등…4만원선 회복 눈앞",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439220",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     },
     {
-      "ticker": "신한지주",
-      "code": "055550",
-      "tomorrow_up_prob": "62%",
-      "entry": 106800.0,
-      "target": 112140,
-      "stop": 103596,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI69.4 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "한온시스템",
       "code": "018880",
-      "tomorrow_up_prob": "56%",
-      "entry": 4475.0,
-      "target": 4699,
-      "stop": 4341,
+      "tomorrow_up_prob": "57%",
+      "entry": 4480.0,
+      "target": 4704,
+      "stop": 4346,
       "confidence": "중",
       "reasons": [
         "정배열",
         "호재",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -6.85,
+      "day_change": -7.16,
       "cause_news": [
         {
           "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
@@ -304,50 +192,43 @@
     {
       "ticker": "SK증권",
       "code": "001510",
-      "tomorrow_up_prob": "56%",
-      "entry": 3600.0,
-      "target": 3780,
-      "stop": 3492,
+      "tomorrow_up_prob": "57%",
+      "entry": 3545.0,
+      "target": 3722,
+      "stop": 3439,
       "confidence": "중",
       "reasons": [
-        "거래량1.73배",
-        "호재"
+        "거래량2.11배",
+        "호재",
+        "장중 3회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "related_news": [
+      "cause_news": [
         {
-          "title": "[아침밥] SK증권 &quot;에이텀, 평판형 트랜스와 데이터센터로 성장축 확대...",
-          "url": "https://n.news.naver.com/mnews/article/417/0001146225",
-          "office": "동행미디어 시대",
-          "sentiment": "호재"
-        },
-        {
-          "title": "KH바텍, 하반기 자동차·로봇 매출 더해지며 도약 발판-SK",
-          "url": "https://n.news.naver.com/mnews/article/018/0006297848",
-          "office": "이데일리",
-          "sentiment": "호재"
-        },
-        {
-          "title": "'삼성전자가 주는 배당까지 받는다'…목표가 48만원→59만원",
-          "url": "https://n.news.naver.com/mnews/article/215/0001254355",
-          "office": "한국경제TV",
-          "sentiment": "호재"
+          "title": "SK증권 주가, 급등세... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161998",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
-      ]
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "SK증권 주가, 급등세... 왜?"
     },
     {
       "ticker": "동양고속",
       "code": "084670",
-      "tomorrow_up_prob": "53%",
-      "entry": 45550.0,
-      "target": 47828,
-      "stop": 44184,
+      "tomorrow_up_prob": "54%",
+      "entry": 45800.0,
+      "target": 48090,
+      "stop": 44426,
       "confidence": "하",
       "reasons": [
-        "RSI54.4 강세",
+        "RSI54.7 강세",
         "호재",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -367,14 +248,6 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "오세훈 역전승에 ‘고터 테마주 상한가’…동양고속, 천일고속 두자릿...",
-          "url": "https://www.munhwa.com/article/11593205?ref=naver",
-          "office": "munhwa",
-          "sentiment": "호재",
-          "cause_score": 6,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 리스트감점, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -383,97 +256,37 @@
   ],
   "closing_bet": [
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "79%",
-      "entry": 1677000.0,
-      "target": 1760850,
-      "stop": 1626690,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -3.38,
-      "cause_news": [
-        {
-          "title": "AI 부품 수혜 삼성전기 200만원대 안착 실패…단기 차익실현매물에 주가...",
-          "url": "http://www.newsworker.co.kr/news/articleView.html?idxno=429635",
-          "office": "newsworker",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
-          "office": "ggilbo",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "AI 부품 수혜 삼성전기 200만원대 안착 실패…단기 차익실현매물에 주가..."
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "74%",
-      "entry": 308500.0,
-      "target": 323925,
-      "stop": 299245,
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "76%",
+      "entry": 247000.0,
+      "target": 259350,
+      "stop": 239590,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.8 강세"
+        "RSI59.6 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -4.57,
+      "day_change": -6.92,
       "related_news": [
         {
-          "title": "LG전자·네이버 파랗게 질렸는데…상한가 찍은 종목은?",
-          "url": "https://n.news.naver.com/mnews/article/374/0000514148",
-          "office": "SBS Biz",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "젠슨 황 픽한 'LG전자'…엔비디아 차세대 핵심 파트너로 우뚝",
-          "url": "https://n.news.naver.com/mnews/article/417/0001146188",
-          "office": "동행미디어 시대",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "현대백화점",
-      "code": "069960",
-      "tomorrow_up_prob": "74%",
-      "entry": 149500.0,
-      "target": 156975,
-      "stop": 145015,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.75)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "한화證 “현대백화점, 외국인 매출 성장 본격화…목표가 19만원”",
-          "url": "https://n.news.naver.com/mnews/article/366/0001169550",
-          "office": "조선비즈",
+          "title": "HBM·로봇 다 품는다…젠슨 황, 韓 총수들과 릴레이 '삼소 회동' 눈길",
+          "url": "https://n.news.naver.com/mnews/article/586/0000130789",
+          "office": "시사저널",
           "sentiment": "호재"
         },
         {
-          "title": "15% 불기둥 그린 신세계…백화점 3사 ‘훨훨’ [오늘, 이 종목]",
-          "url": "https://n.news.naver.com/mnews/article/024/0000106006",
-          "office": "매경이코노미",
+          "title": "'깐부' 이어 '삼소'…젠슨 황, 오늘 홍대서 재계 총수 회동",
+          "url": "https://n.news.naver.com/mnews/article/014/0005530929",
+          "office": "파이낸셜뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "자회사의 네이버클라우드향 공급 호재…M83 3일째 급등[특징주]",
+          "url": "https://n.news.naver.com/mnews/article/018/0006297954",
+          "office": "이데일리",
           "sentiment": "호재"
         }
       ]
@@ -482,13 +295,13 @@
       "ticker": "한올바이오파마",
       "code": "009420",
       "tomorrow_up_prob": "72%",
-      "entry": 59300.0,
-      "target": 62265,
-      "stop": 57521,
+      "entry": 58600.0,
+      "target": 61530,
+      "stop": 56842,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI57.4 강세",
+        "RSI56.7 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
@@ -509,54 +322,98 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주]한올바이오파마, 난치성 류마티스관절염 임상 기대감 지속…9%...",
-          "url": "https://www.ajunews.com/view/20260527095437097",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[27일 특징주] 한올바이오파마, 류마티스 관절염 임상 기대감에 '상한가..."
     },
     {
-      "ticker": "마음AI",
-      "code": "377480",
-      "tomorrow_up_prob": "68%",
-      "entry": 18990.0,
-      "target": 19940,
-      "stop": 18420,
+      "ticker": "신한지주",
+      "code": "055550",
+      "tomorrow_up_prob": "69%",
+      "entry": 106200.0,
+      "target": 111510,
+      "stop": 103014,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "ELS 과징금 부담 던 금융지주株 강세…신한지주 6%↑[이런국장 저런주식...",
+          "url": "https://www.sedaily.com/article/20052106?ref=naver",
+          "office": "sedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "ELS 과징금 리스크 완화에 은행주 강세…신한지주 7%대 급등",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439270",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "ELS 과징금 부담 던 금융지주株 강세…신한지주 6%↑[이런국장 저런주식..."
+    },
+    {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "66%",
+      "entry": 146400.0,
+      "target": 153720,
+      "stop": 142008,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 6.01,
+      "related_news": [
+        {
+          "title": "한화證 “현대백화점, 외국인 매출 성장 본격화…목표가 19만원”",
+          "url": "https://n.news.naver.com/mnews/article/366/0001169550",
+          "office": "조선비즈",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "63%",
+      "entry": 33400.0,
+      "target": 35070,
+      "stop": 32398,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI65.8 강세",
-        "거래량5.22배"
+        "RSI50.2 강세",
+        "호재"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 5.57,
+      "risk": "약한 마감",
+      "day_change": -13.04,
       "cause_news": [
         {
-          "title": "[특징주] 마음AI, UAE AI 사절단 투자처 협력 모색 방한에 상승…사업모...",
-          "url": "https://www.cstimes.com/news/articleView.html?idxno=704750",
-          "office": "cstimes",
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 마음AI, UAE 국부펀드·투자청 만나 AI 모델 소개한다…오일머...",
-          "url": "http://www.newsprime.co.kr/news/article.html?no=732670",
-          "office": "newsprime",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 마음AI, UAE AI 사절단 투자처 협력 모색 방한에 상승…사업모..."
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
