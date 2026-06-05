@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-05 14:22 KST",
+  "as_of": "2026-06-05 14:37 KST",
   "intraday_rank": [
     {
       "ticker": "한켐",
@@ -46,120 +46,76 @@
       "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
     },
     {
-      "ticker": "NHN",
-      "code": "181710",
-      "tomorrow_up_prob": "93%",
-      "entry": 49450.0,
-      "target": 51922,
-      "stop": 47966,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 6.4,
-      "cause_news": [
-        {
-          "title": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
-          "url": "https://www.tgdaily.co.kr/news/articleView.html?idxno=404586",
-          "office": "tgdaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "NHN, AI 클라우드·결제 성장 기대감에 22% 급등 [특징주]",
-          "url": "https://www.dailian.co.kr/news/view/1651156/?sc=Naver",
-          "office": "dailian",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[게임스톡] NHN, AI 클라우드 기대감에 급등"
-    },
-    {
-      "ticker": "나무기술",
-      "code": "242040",
+      "ticker": "NAVER",
+      "code": "035420",
       "tomorrow_up_prob": "90%",
-      "entry": 8650.0,
-      "target": 9082,
-      "stop": 8390,
+      "entry": 261000.0,
+      "target": 274050,
+      "stop": 253170,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.74)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 13.8,
+      "day_change": -3.08,
       "cause_news": [
         {
-          "title": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세",
-          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416036",
-          "office": "bizwork",
+          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
+          "url": "https://www.sedaily.com/article/20052193?ref=naver",
+          "office": "sedaily",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[속보] 나무기술, 장중 VI 발동…AI 인프라 수혜 기대에 매수세 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579853",
-          "office": "cbci",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 악재, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세"
+      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "84%",
-      "entry": 1784000.0,
-      "target": 1873200,
-      "stop": 1730480,
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "83%",
+      "entry": 313000.0,
+      "target": 328650,
+      "stop": 303610,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.8,
+      "day_change": -5.95,
       "cause_news": [
         {
-          "title": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......",
-          "url": "https://www.cstimes.com/news/articleView.html?idxno=708625",
-          "office": "cstimes",
+          "title": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3601053",
+          "office": "gukjenews",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
+      "cause_summary": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다"
     },
     {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 5810.0,
-      "target": 6100,
-      "stop": 5636,
+      "entry": 5960.0,
+      "target": 6258,
+      "stop": 5781,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.85)",
         "MACD강세",
-        "RSI56.4 강세"
+        "RSI57.4 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.27,
+      "day_change": 20.67,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -193,17 +149,17 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "80%",
-      "entry": 4705.0,
-      "target": 4940,
-      "stop": 4564,
+      "entry": 4735.0,
+      "target": 4972,
+      "stop": 4593,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.92)",
         "정배열",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -3.11,
+      "day_change": -2.39,
       "cause_news": [
         {
           "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
@@ -218,48 +174,12 @@
       "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
     },
     {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "79%",
-      "entry": 309500.0,
-      "target": 324975,
-      "stop": 300215,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI63.0 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -6.25,
-      "related_news": [
-        {
-          "title": "SK실트론 1차 협력사인 반도체 소재 장비업체 M&amp;A 매물로",
-          "url": "https://n.news.naver.com/mnews/article/015/0005295379",
-          "office": "한국경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "경찰, 'LG전자 흉기난동' 협력직원 구속 송치…살인미수 혐의",
-          "url": "https://n.news.naver.com/mnews/article/003/0013989106",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        },
-        {
-          "title": "변동장 속 투자 고수들의 선택은…역시 삼성전자·SK하이닉스·LG전자",
-          "url": "https://n.news.naver.com/mnews/article/003/0013989065",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "현대백화점",
       "code": "069960",
       "tomorrow_up_prob": "74%",
-      "entry": 147400.0,
-      "target": 154770,
-      "stop": 142978,
+      "entry": 146900.0,
+      "target": 154245,
+      "stop": 142493,
       "confidence": "상",
       "reasons": [
         "정배열",
@@ -278,17 +198,45 @@
       ]
     },
     {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "67%",
+      "entry": 34100.0,
+      "target": 35805,
+      "stop": 33077,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "RSI51.3 강세",
+        "호재"
+      ],
+      "risk": "약한 마감",
+      "day_change": -13.55,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
+    },
+    {
       "ticker": "신한지주",
       "code": "055550",
-      "tomorrow_up_prob": "72%",
-      "entry": 107100.0,
-      "target": 112455,
-      "stop": 103887,
-      "confidence": "상",
+      "tomorrow_up_prob": "67%",
+      "entry": 107400.0,
+      "target": 112770,
+      "stop": 104178,
+      "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI69.7 강세"
+        "거래량1.65배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -306,48 +254,48 @@
       "cause_summary": "ELS 과징금 부담 던 신한지주, 장 초반 6% 육박 급등…금융지주 일제 강..."
     },
     {
-      "ticker": "노타",
-      "code": "486990",
-      "tomorrow_up_prob": "71%",
-      "entry": 34400.0,
-      "target": 36120,
-      "stop": 33368,
-      "confidence": "상",
+      "ticker": "CJ",
+      "code": "001040",
+      "tomorrow_up_prob": "66%",
+      "entry": 186000.0,
+      "target": 195300,
+      "stop": 180420,
+      "confidence": "중",
       "reasons": [
+        "강세마감(0.95)",
         "MACD강세",
-        "RSI51.8 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -13.3,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+          "title": "CJ ENM, 장중 2%대 약세…티빙 개인정보 유출 여파[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060414041020703",
+          "office": "newsway",
+          "sentiment": "악재",
+          "cause_score": 6,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
+      "cause_confidence": "중간",
+      "cause_summary": "CJ ENM, 장중 2%대 약세…티빙 개인정보 유출 여파[특징주]"
     },
     {
       "ticker": "팸텍",
       "code": "271830",
       "tomorrow_up_prob": "53%",
-      "entry": 2700.0,
-      "target": 2835,
-      "stop": 2619,
+      "entry": 2740.0,
+      "target": 2877,
+      "stop": 2658,
       "confidence": "하",
       "reasons": [
         "MACD강세",
-        "거래량10.74배",
+        "거래량10.81배",
         "호재"
       ],
-      "risk": "RSI82.2 과매수, Stoch 과매수",
-      "day_change": 11.02,
+      "risk": "RSI82.5 과매수, Stoch 과매수",
+      "day_change": 15.25,
       "cause_news": [
         {
           "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
@@ -381,13 +329,13 @@
       "ticker": "제주은행",
       "code": "006220",
       "tomorrow_up_prob": "37%",
-      "entry": 10800.0,
-      "target": 11340,
-      "stop": 10476,
+      "entry": 10710.0,
+      "target": 11246,
+      "stop": 10389,
       "confidence": "하",
       "reasons": [
-        "거래량12.41배",
-        "장중 22회 지속"
+        "거래량12.44배",
+        "장중 23회 지속"
       ],
       "risk": "약한 마감, 악재",
       "day_change": null,
@@ -447,120 +395,76 @@
       "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
     },
     {
-      "ticker": "NHN",
-      "code": "181710",
-      "tomorrow_up_prob": "93%",
-      "entry": 49450.0,
-      "target": 51922,
-      "stop": 47966,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 6.4,
-      "cause_news": [
-        {
-          "title": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
-          "url": "https://www.tgdaily.co.kr/news/articleView.html?idxno=404586",
-          "office": "tgdaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "NHN, AI 클라우드·결제 성장 기대감에 22% 급등 [특징주]",
-          "url": "https://www.dailian.co.kr/news/view/1651156/?sc=Naver",
-          "office": "dailian",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[게임스톡] NHN, AI 클라우드 기대감에 급등"
-    },
-    {
-      "ticker": "나무기술",
-      "code": "242040",
+      "ticker": "NAVER",
+      "code": "035420",
       "tomorrow_up_prob": "90%",
-      "entry": 8650.0,
-      "target": 9082,
-      "stop": 8390,
+      "entry": 261000.0,
+      "target": 274050,
+      "stop": 253170,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.74)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 13.8,
+      "day_change": -3.08,
       "cause_news": [
         {
-          "title": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세",
-          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416036",
-          "office": "bizwork",
+          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
+          "url": "https://www.sedaily.com/article/20052193?ref=naver",
+          "office": "sedaily",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[속보] 나무기술, 장중 VI 발동…AI 인프라 수혜 기대에 매수세 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=579853",
-          "office": "cbci",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 악재, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 나무기술, AI·클라우드 네이티브 전환 수요 커지며 강세"
+      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "84%",
-      "entry": 1784000.0,
-      "target": 1873200,
-      "stop": 1730480,
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "83%",
+      "entry": 313000.0,
+      "target": 328650,
+      "stop": 303610,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.8,
+      "day_change": -5.95,
       "cause_news": [
         {
-          "title": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......",
-          "url": "https://www.cstimes.com/news/articleView.html?idxno=708625",
-          "office": "cstimes",
+          "title": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3601053",
+          "office": "gukjenews",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
+      "cause_summary": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다"
     },
     {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 5810.0,
-      "target": 6100,
-      "stop": 5636,
+      "entry": 5960.0,
+      "target": 6258,
+      "stop": 5781,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.85)",
         "MACD강세",
-        "RSI56.4 강세"
+        "RSI57.4 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.27,
+      "day_change": 20.67,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -589,6 +493,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+    },
+    {
+      "ticker": "한온시스템",
+      "code": "018880",
+      "tomorrow_up_prob": "80%",
+      "entry": 4735.0,
+      "target": 4972,
+      "stop": 4593,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.92)",
+        "정배열",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -2.39,
+      "cause_news": [
+        {
+          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
