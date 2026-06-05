@@ -1,63 +1,16 @@
 [
   {
-    "post_id": "POST_20260605_009150",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "삼성전기",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 3.53,
-    "headline": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
-    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
-    "news": [
-      {
-        "title": "삼성전기 5% 급락 후 5% 반등…'부품 병목' 지속 180만원 회복[핫종목...",
-        "url": "https://n.news.naver.com/mnews/article/421/0008987181",
-        "office": "뉴스1",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노...",
-        "url": "https://n.news.naver.com/mnews/article/123/0002384181",
-        "office": "조세일보",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
-        "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
-        "office": "joseilbo",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-      },
-      {
-        "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
-        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
-        "office": "ggilbo",
-        "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
-  },
-  {
     "post_id": "POST_20260605_181710",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NHN",
     "signal_probability": "53%",
     "position_type": "과다상승",
-    "day_change": 7.04,
+    "day_change": 6.82,
     "headline": "[게임스톡] NHN, AI 클라우드 기대감에 급등",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
+    "published_at": "2026-06-05 13:15 KST",
     "news": [
       {
         "title": "KB증권, NHN 목표주가 7만6000원으로 상향…GPUaaS 수익화 본격화 기대",
@@ -106,84 +59,17 @@
     "cause_summary": "[게임스톡] NHN, AI 클라우드 기대감에 급등"
   },
   {
-    "post_id": "POST_20260605_271830",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "팸텍",
-    "signal_probability": "53%",
-    "position_type": "과다상승",
-    "day_change": 13.56,
-    "headline": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
-    "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
-    "news": [
-      {
-        "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297931",
-        "office": "이데일리",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "웨이퍼 로봇 기업 인수…팸텍, 3거래일 연속 급등[특징주]",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297089",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[ET특징주]팸텍, 웨이퍼 로봇 기업 인수 소식에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433710",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "팸텍, 로봇 전문기업 티아이에스 인수",
-        "url": "https://n.news.naver.com/mnews/article/015/0005293712",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
-        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439267",
-        "office": "econonews",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-        "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
-        "office": "widedaily",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "웨이퍼 로봇 기업 인수…팸텍, 3거래일 연속 급등[특징주]",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03263606645478440",
-        "office": "edaily",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수"
-  },
-  {
     "post_id": "POST_20260605_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -14.32,
+    "day_change": -14.71,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
+    "published_at": "2026-06-05 13:15 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -230,11 +116,11 @@
     "target_stock": "한온시스템",
     "signal_probability": "70%",
     "position_type": "눌림목",
-    "day_change": -3.32,
+    "day_change": -2.9,
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
+    "published_at": "2026-06-05 13:15 KST",
     "news": [
       {
         "title": "[지배구조 리포트]한온시스템, 소액주주 늘었는데 '주주권 지표' 후퇴",
@@ -275,11 +161,11 @@
     "target_stock": "한켐",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.42,
+    "day_change": 17.54,
     "headline": "한켐 주가, 급등세... 삼성전기 수혜주",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
+    "published_at": "2026-06-05 13:15 KST",
     "news": [
       {
         "title": "한켐, 이상조 대표이사 '화학경영자상' 수상",
@@ -334,13 +220,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "라이콤",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 17.11,
+    "signal_probability": "52%",
+    "position_type": "분석불가",
+    "day_change": 15.48,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 13:00 KST",
+    "published_at": "2026-06-05 13:15 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
@@ -383,5 +269,52 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+  },
+  {
+    "post_id": "POST_20260605_009150",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "삼성전기",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 1.98,
+    "headline": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-05 13:15 KST",
+    "news": [
+      {
+        "title": "삼성전기 5% 급락 후 5% 반등…'부품 병목' 지속 180만원 회복[핫종목...",
+        "url": "https://n.news.naver.com/mnews/article/421/0008987181",
+        "office": "뉴스1",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노...",
+        "url": "https://n.news.naver.com/mnews/article/123/0002384181",
+        "office": "조세일보",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍...",
+        "url": "http://www.joseilbo.com/news/news_read.php?uid=569481&class=18&grp=",
+        "office": "joseilbo",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+      },
+      {
+        "title": "[특징주] 삼성전기, 장외서 9%대 '뚝'... 증권가 \"목표주가 210만원 상향...",
+        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1161975",
+        "office": "ggilbo",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "AI 병목, GPU서 메모리·기판으로 이동...삼전·닉스, 삼성전기·LG이노텍..."
   }
 ]
