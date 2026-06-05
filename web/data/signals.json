@@ -10,7 +10,7 @@
     "headline": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
     "summary": "[시그널] 일봉 눌림목 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
+    "published_at": "2026-06-05 15:45 KST",
     "news": [
       {
         "title": "[지배구조 리포트]한온시스템, 소액주주 늘었는데 '주주권 지표' 후퇴",
@@ -45,62 +45,17 @@
     "cause_summary": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대..."
   },
   {
-    "post_id": "POST_20260605_035420",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "NAVER",
-    "signal_probability": "53%",
-    "position_type": "과다상승",
-    "day_change": -4.67,
-    "headline": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 4.5). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
-    "news": [
-      {
-        "title": "2조원 정부 GPU 사업, 다음주 초 결론 난다…수행기관 발표 임박",
-        "url": "https://n.news.naver.com/mnews/article/092/0002425484",
-        "office": "지디넷코리아",
-        "sentiment": "호재"
-      },
-      {
-        "title": "이해진, 젠슨 황 앞에서 ‘얼굴 결제’ 할까… 네이버페이 협의 중",
-        "url": "https://n.news.naver.com/mnews/article/366/0001169697",
-        "office": "조선비즈",
-        "sentiment": "호재"
-      },
-      {
-        "title": "이번엔 ‘삼소 회동’…젠슨 황, 홍대서 최태원·구광모 만난다",
-        "url": "https://n.news.naver.com/mnews/article/024/0000106027",
-        "office": "매경이코노미",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-        "url": "https://www.sedaily.com/article/20052193?ref=naver",
-        "office": "sedaily",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
-  },
-  {
     "post_id": "POST_20260605_066570",
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "LG전자",
-    "signal_probability": "56%",
+    "signal_probability": "55%",
     "position_type": "과다상승",
-    "day_change": -7.16,
+    "day_change": -7.62,
     "headline": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
-    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 7.0). 일봉 국면을 함께 확인.",
+    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
+    "published_at": "2026-06-05 15:45 KST",
     "news": [
       {
         "title": "LG전자, 가전 구매 고객에 최대 420만 원 포인트 지급",
@@ -135,6 +90,14 @@
         "sentiment": "호재",
         "cause_score": 15,
         "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "두산로보틱스 11%·LG전자 6%↓...젠슨황 수혜株라더니 '와르르'",
+        "url": "http://www.newsian.co.kr/news/articleView.html?idxno=90570",
+        "office": "newsian",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 인과표현, 재료, 당일"
       }
     ],
     "cause_confidence": "높음",
@@ -147,11 +110,11 @@
     "target_stock": "노타",
     "signal_probability": "55%",
     "position_type": "분석불가",
-    "day_change": -11.25,
+    "day_change": -11.64,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
+    "published_at": "2026-06-05 15:45 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -202,7 +165,7 @@
     "headline": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
+    "published_at": "2026-06-05 15:45 KST",
     "news": [
       {
         "title": "한켐, 이상조 대표이사 '화학경영자상' 수상",
@@ -259,11 +222,11 @@
     "target_stock": "라이콤",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.13,
+    "day_change": 20.37,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-05 15:30 KST",
+    "published_at": "2026-06-05 15:45 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
