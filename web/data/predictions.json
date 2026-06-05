@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-05 15:37 KST",
+  "as_of": "2026-06-05 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "한켐",
@@ -46,34 +46,6 @@
       "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "82%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI63.6 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -4.67,
-      "cause_news": [
-        {
-          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-          "url": "https://www.sedaily.com/article/20052193?ref=naver",
-          "office": "sedaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
-    },
-    {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
@@ -87,7 +59,7 @@
         "RSI57.1 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.13,
+      "day_change": 20.37,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -148,7 +120,7 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "80%",
+      "tomorrow_up_prob": "79%",
       "entry": 303000.0,
       "target": 318150,
       "stop": 293910,
@@ -159,7 +131,7 @@
         "RSI61.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.16,
+      "day_change": -7.62,
       "cause_news": [
         {
           "title": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
@@ -195,7 +167,7 @@
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -11.25,
+      "day_change": -11.64,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -247,7 +219,7 @@
       "confidence": "하",
       "reasons": [
         "거래량12.57배",
-        "장중 27회 지속"
+        "장중 28회 지속"
       ],
       "risk": "약한 마감, 악재",
       "day_change": null,
@@ -307,34 +279,6 @@
       "cause_summary": "[특징주] 한켐·코칩·키스트론, 삼성전기 FC-BGA 5조 투자 전망에 ↑......"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "82%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI63.6 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -4.67,
-      "cause_news": [
-        {
-          "title": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식...",
-          "url": "https://www.sedaily.com/article/20052193?ref=naver",
-          "office": "sedaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "초고수들, ‘젠슨황 수혜株’ 담았다…NAVER·SK하이닉스 저점매수[주식..."
-    },
-    {
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
@@ -348,7 +292,7 @@
         "RSI57.1 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.13,
+      "day_change": 20.37,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -409,7 +353,7 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "80%",
+      "tomorrow_up_prob": "79%",
       "entry": 303000.0,
       "target": 318150,
       "stop": 293910,
@@ -420,7 +364,7 @@
         "RSI61.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.16,
+      "day_change": -7.62,
       "cause_news": [
         {
           "title": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다",
@@ -441,6 +385,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "젠슨 황 방한 기대감에 급등하던 두산로보틱스·LG전자 '파란불' 켜졌다"
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "71%",
+      "entry": 34550.0,
+      "target": 36278,
+      "stop": 33514,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI52.0 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -11.64,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
