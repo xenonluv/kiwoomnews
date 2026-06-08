@@ -1,21 +1,57 @@
 {
-  "as_of": "2026-06-08 14:22 KST",
+  "as_of": "2026-06-08 14:37 KST",
   "intraday_rank": [
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "89%",
-      "entry": 286000.0,
-      "target": 300300,
-      "stop": 277420,
+      "ticker": "알트",
+      "code": "459550",
+      "tomorrow_up_prob": "84%",
+      "entry": 2295.0,
+      "target": 2410,
+      "stop": 2226,
       "confidence": "상",
       "reasons": [
         "강세마감(0.86)",
+        "MACD강세",
+        "RSI55.6 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 22.47,
+      "cause_news": [
+        {
+          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "83%",
+      "entry": 284500.0,
+      "target": 298725,
+      "stop": 275965,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 11.55,
+      "day_change": 11.94,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
@@ -46,42 +82,6 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세"
     },
     {
-      "ticker": "알트",
-      "code": "459550",
-      "tomorrow_up_prob": "84%",
-      "entry": 2355.0,
-      "target": 2473,
-      "stop": 2284,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.95)",
-        "MACD강세",
-        "RSI57.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 22.74,
-      "cause_news": [
-        {
-          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "83%",
@@ -106,20 +106,20 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
+          "title": "SK네트웍스 상한가…SK·엔비디아 'AI 풀스택 협력' 주목[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060814122337812",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "SK-엔비디아, 풀스택 'AI 클라우드' 협력…SK네트웍스 20%대 급등",
           "url": "https://www.mt.co.kr/stock/2026/06/08/2026060813352614520",
           "office": "mt",
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
-          "office": "econonews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -173,17 +173,17 @@
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 7400.0,
-      "target": 7770,
-      "stop": 7178,
+      "entry": 7370.0,
+      "target": 7738,
+      "stop": 7149,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.94)",
         "MACD강세",
-        "RSI65.5 강세"
+        "RSI65.4 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 21.32,
+      "day_change": 23.52,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -216,30 +216,26 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "82%",
-      "entry": 273500.0,
-      "target": 287175,
-      "stop": 265295,
+      "tomorrow_up_prob": "81%",
+      "entry": 271000.0,
+      "target": 284550,
+      "stop": 262870,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.3 강세"
+        "RSI55.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": -9.9,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+          "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
+          "url": "https://n.news.naver.com/mnews/article/003/0013993494",
+          "office": "뉴시스",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
+      ]
     },
     {
       "ticker": "팸텍",
@@ -288,15 +284,15 @@
     {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "65%",
-      "entry": 21550.0,
-      "target": 22628,
-      "stop": 20904,
+      "tomorrow_up_prob": "66%",
+      "entry": 21450.0,
+      "target": 22522,
+      "stop": 20806,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.87)",
         "MACD강세",
-        "거래량4.44배"
+        "거래량4.81배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -305,17 +301,17 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "64%",
-      "entry": 30700.0,
-      "target": 32235,
-      "stop": 29779,
+      "entry": 30600.0,
+      "target": 32130,
+      "stop": 29682,
       "confidence": "중",
       "reasons": [
         "MACD강세",
         "호재",
-        "장중 22회 지속"
+        "장중 23회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -11.87,
+      "day_change": -11.14,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -332,20 +328,56 @@
   ],
   "closing_bet": [
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "89%",
-      "entry": 286000.0,
-      "target": 300300,
-      "stop": 277420,
+      "ticker": "알트",
+      "code": "459550",
+      "tomorrow_up_prob": "84%",
+      "entry": 2295.0,
+      "target": 2410,
+      "stop": 2226,
       "confidence": "상",
       "reasons": [
         "강세마감(0.86)",
+        "MACD강세",
+        "RSI55.6 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 22.47,
+      "cause_news": [
+        {
+          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "83%",
+      "entry": 284500.0,
+      "target": 298725,
+      "stop": 275965,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 11.55,
+      "day_change": 11.94,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
@@ -376,42 +408,6 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세"
     },
     {
-      "ticker": "알트",
-      "code": "459550",
-      "tomorrow_up_prob": "84%",
-      "entry": 2355.0,
-      "target": 2473,
-      "stop": 2284,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.95)",
-        "MACD강세",
-        "RSI57.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 22.74,
-      "cause_news": [
-        {
-          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "83%",
@@ -436,20 +432,20 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
+          "title": "SK네트웍스 상한가…SK·엔비디아 'AI 풀스택 협력' 주목[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060814122337812",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "SK-엔비디아, 풀스택 'AI 클라우드' 협력…SK네트웍스 20%대 급등",
           "url": "https://www.mt.co.kr/stock/2026/06/08/2026060813352614520",
           "office": "mt",
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
-          "office": "econonews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -503,17 +499,17 @@
       "ticker": "라이콤",
       "code": "388790",
       "tomorrow_up_prob": "82%",
-      "entry": 7400.0,
-      "target": 7770,
-      "stop": 7178,
+      "entry": 7370.0,
+      "target": 7738,
+      "stop": 7149,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.94)",
         "MACD강세",
-        "RSI65.5 강세"
+        "RSI65.4 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 21.32,
+      "day_change": 23.52,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
