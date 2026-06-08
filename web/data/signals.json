@@ -4,24 +4,36 @@
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "NAVER",
-    "signal_probability": "72%",
-    "position_type": "상승추세",
-    "day_change": -3.72,
-    "headline": "‘각 세종 4배’ 초대형 AI 팩토리 짓는다…네이버, 엔비디아와 글로...",
-    "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 4.0). 일봉 국면을 함께 확인.",
+    "signal_probability": "54%",
+    "position_type": "과다상승",
+    "day_change": 0.2,
+    "headline": "네이버-엔비디아, 기가와트급 'AI 팩토리' 동맹…&quot;최적의 파트너&quot;",
+    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 5.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:30 KST",
+    "published_at": "2026-06-08 09:45 KST",
     "news": [
       {
-        "title": "‘각 세종 4배’ 초대형 AI 팩토리 짓는다…네이버, 엔비디아와 글로...",
-        "url": "https://n.news.naver.com/mnews/article/016/0002653194",
-        "office": "헤럴드경제",
+        "title": "네이버-엔비디아, 기가와트급 'AI 팩토리' 동맹…&quot;최적의 파트너&quot;",
+        "url": "https://n.news.naver.com/mnews/article/666/0000110374",
+        "office": "경기일보",
         "sentiment": "호재"
       },
       {
-        "title": "네이버-엔비디아, 기가와트급 AI 팩토리 추진⋯젠슨 황, 네이버 1784 방...",
-        "url": "https://n.news.naver.com/mnews/article/031/0001033449",
-        "office": "아이뉴스24",
+        "title": "젠슨 황 방문에 대표 출신 차기 총리 발탁까지…네이버 주가 힘 받나",
+        "url": "https://n.news.naver.com/mnews/article/088/0001013505",
+        "office": "매일신문",
+        "sentiment": "호재"
+      },
+      {
+        "title": "네이버, 엔비디아 손잡고 글로벌 공략…초대형 AI 팩토리 구축",
+        "url": "https://n.news.naver.com/mnews/article/648/0000047788",
+        "office": "비즈워치",
+        "sentiment": "호재"
+      },
+      {
+        "title": "엔비디아 “네이버, 엔비디아 DSX 기반 AI 팩토리 구축”",
+        "url": "https://n.news.naver.com/mnews/article/016/0002653211",
+        "office": "헤럴드경제",
         "sentiment": "호재"
       }
     ]
@@ -33,11 +45,11 @@
     "target_stock": "팸텍",
     "signal_probability": "53%",
     "position_type": "과다상승",
-    "day_change": 14.87,
+    "day_change": 17.51,
     "headline": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:30 KST",
+    "published_at": "2026-06-08 09:45 KST",
     "news": [
       {
         "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
@@ -94,17 +106,72 @@
     "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
   },
   {
+    "post_id": "POST_20260608_388790",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "라이콤",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 4.06,
+    "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-08 09:45 KST",
+    "news": [
+      {
+        "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+        "url": "https://n.news.naver.com/mnews/article/018/0006297930",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "라이콤 &quot;약 39억원 규모 통신용 광증폭기 수주…작년 매출 22% 규모&quot;",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294978",
+        "office": "한국경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+        "office": "widedaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+        "office": "edaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "[특징주] 젠슨 황, AI 수혜 '통신장비' 언급…'라이콤·이노인스트루먼...",
+        "url": "https://www.newspim.com/news/view/20260604000515",
+        "office": "newspim",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+  },
+  {
     "post_id": "POST_20260608_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -11.58,
+    "day_change": -11.22,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:30 KST",
+    "published_at": "2026-06-08 09:45 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
