@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-08 11:52 KST",
+  "as_of": "2026-06-08 12:07 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "90%",
-      "entry": 287000.0,
-      "target": 301350,
-      "stop": 278390,
+      "tomorrow_up_prob": "88%",
+      "entry": 285000.0,
+      "target": 299250,
+      "stop": 276450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.88)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 12.52,
+      "day_change": 13.31,
       "cause_news": [
         {
           "title": "네이버 주가, 강세... 왜?",
@@ -46,43 +46,15 @@
       "cause_summary": "네이버 주가, 강세... 왜?"
     },
     {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "90%",
-      "entry": 285500.0,
-      "target": 299775,
-      "stop": 276935,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -5.45,
-      "cause_news": [
-        {
-          "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "87%",
-      "entry": 13100.0,
-      "target": 13755,
-      "stop": 12707,
+      "entry": 13130.0,
+      "target": 13786,
+      "stop": 12736,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.81)",
         "정배열",
         "MACD강세"
       ],
@@ -160,6 +132,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
+    },
+    {
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "82%",
+      "entry": 280500.0,
+      "target": 294525,
+      "stop": 272085,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI57.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -5.78,
+      "cause_news": [
+        {
+          "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
     },
     {
       "ticker": "팸텍",
@@ -206,48 +206,20 @@
       "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
     },
     {
-      "ticker": "노타",
-      "code": "486990",
-      "tomorrow_up_prob": "72%",
-      "entry": 30950.0,
-      "target": 32498,
-      "stop": 30022,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.76)",
-        "MACD강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -10.71,
-      "cause_news": [
-        {
-          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
-    },
-    {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "66%",
-      "entry": 6620.0,
-      "target": 6951,
-      "stop": 6421,
-      "confidence": "중",
+      "tomorrow_up_prob": "74%",
+      "entry": 6800.0,
+      "target": 7140,
+      "stop": 6596,
+      "confidence": "상",
       "reasons": [
-        "RSI61.5 강세",
-        "거래량3.97배",
-        "호재"
+        "MACD강세",
+        "RSI62.5 강세",
+        "거래량4.13배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 11.51,
+      "day_change": 11.34,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -276,24 +248,52 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+    },
+    {
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "64%",
+      "entry": 30950.0,
+      "target": 32498,
+      "stop": 30022,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "호재",
+        "장중 13회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -10.13,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     }
   ],
   "closing_bet": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "90%",
-      "entry": 287000.0,
-      "target": 301350,
-      "stop": 278390,
+      "tomorrow_up_prob": "88%",
+      "entry": 285000.0,
+      "target": 299250,
+      "stop": 276450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.88)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 12.52,
+      "day_change": 13.31,
       "cause_news": [
         {
           "title": "네이버 주가, 강세... 왜?",
@@ -324,43 +324,15 @@
       "cause_summary": "네이버 주가, 강세... 왜?"
     },
     {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "90%",
-      "entry": 285500.0,
-      "target": 299775,
-      "stop": 276935,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -5.45,
-      "cause_news": [
-        {
-          "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "87%",
-      "entry": 13100.0,
-      "target": 13755,
-      "stop": 12707,
+      "entry": 13130.0,
+      "target": 13786,
+      "stop": 12736,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.81)",
         "정배열",
         "MACD강세"
       ],
@@ -438,6 +410,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
+    },
+    {
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "82%",
+      "entry": 280500.0,
+      "target": 294525,
+      "stop": 272085,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI57.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -5.78,
+      "cause_news": [
+        {
+          "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
     },
     {
       "ticker": "팸텍",
