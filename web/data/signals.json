@@ -10,7 +10,7 @@
     "headline": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
       {
         "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
@@ -73,11 +73,11 @@
     "target_stock": "알트",
     "signal_probability": "52%",
     "position_type": "과다상승",
-    "day_change": 22.74,
+    "day_change": 22.47,
     "headline": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
     "summary": "[후보] 재료+거래대금 포착(중요도 9.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
       {
         "title": "알트, 30억원 규모 자기주식 취득 신탁계약 체결",
@@ -112,6 +112,14 @@
         "sentiment": "호재",
         "cause_score": 7,
         "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+      },
+      {
+        "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
+        "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
+        "office": "topstarnews",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "중간",
@@ -128,7 +136,7 @@
     "headline": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
       {
         "title": "아이로보틱스, 1분기 흑자전환…로봇사업 확대 본격화",
@@ -191,11 +199,11 @@
     "target_stock": "라이콤",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 21.32,
+    "day_change": 23.52,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
@@ -246,11 +254,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -11.87,
+    "day_change": -11.14,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
@@ -291,74 +299,29 @@
     "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
   },
   {
-    "post_id": "POST_20260608_066570",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG전자",
-    "signal_probability": "65%",
-    "position_type": "상승추세",
-    "day_change": -9.9,
-    "headline": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
-    "news": [
-      {
-        "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
-        "url": "https://n.news.naver.com/mnews/article/003/0013993494",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "젠슨 황 &quot;LG와 아주 멋진 파트너십…로보틱스·데이터센터 협력&quot;",
-        "url": "https://n.news.naver.com/mnews/article/277/0005773250",
-        "office": "아시아경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[속보]LG전자 &quot;엔비디아와 '차세대 로봇 분야' 전 개발 과정 협력&quot;",
-        "url": "https://n.news.naver.com/mnews/article/003/0013993245",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
-        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
-        "office": "econonews",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-      }
-    ],
-    "cause_confidence": "중간",
-    "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
-  },
-  {
     "post_id": "POST_20260608_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
     "signal_probability": "39%",
     "position_type": "과다상승",
-    "day_change": 11.55,
+    "day_change": 11.94,
     "headline": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 혼재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 14:15 KST",
+    "published_at": "2026-06-08 14:30 KST",
     "news": [
+      {
+        "title": "네이버-엔비디아, 기가와트급 초대형 AI 팩토리 구축 합의",
+        "url": "https://n.news.naver.com/mnews/article/079/0004155413",
+        "office": "노컷뉴스",
+        "sentiment": "호재"
+      },
       {
         "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
         "url": "https://n.news.naver.com/mnews/article/366/0001170207",
         "office": "조선비즈",
         "sentiment": "악재"
-      },
-      {
-        "title": "네이버 품은 엔비디아…삼성·SK 잇는 'K-AI 동맹' 핵심축 부상",
-        "url": "https://n.news.naver.com/mnews/article/008/0005368631",
-        "office": "머니투데이",
-        "sentiment": "호재"
       }
     ],
     "cause_news": [
@@ -389,5 +352,44 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세"
+  },
+  {
+    "post_id": "POST_20260608_066570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "LG전자",
+    "signal_probability": "64%",
+    "position_type": "상승추세",
+    "day_change": -9.9,
+    "headline": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-08 14:30 KST",
+    "news": [
+      {
+        "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
+        "url": "https://n.news.naver.com/mnews/article/003/0013993494",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "[속보]LG전자 &quot;엔비디아와 '차세대 로봇 분야' 전 개발 과정 협력&quot;",
+        "url": "https://n.news.naver.com/mnews/article/003/0013993245",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
+        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439366",
+        "office": "econonews",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+      }
+    ],
+    "cause_confidence": "중간",
+    "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
   }
 ]
