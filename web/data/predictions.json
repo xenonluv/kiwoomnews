@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-08 11:37 KST",
+  "as_of": "2026-06-08 11:52 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "89%",
-      "entry": 282500.0,
-      "target": 296625,
-      "stop": 274025,
+      "tomorrow_up_prob": "90%",
+      "entry": 287000.0,
+      "target": 301350,
+      "stop": 278390,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 13.7,
+      "day_change": 12.52,
       "cause_news": [
         {
           "title": "네이버 주가, 강세... 왜?",
@@ -48,18 +48,18 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "89%",
-      "entry": 279500.0,
-      "target": 293475,
-      "stop": 271115,
+      "tomorrow_up_prob": "90%",
+      "entry": 285500.0,
+      "target": 299775,
+      "stop": 276935,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -7.76,
+      "day_change": -5.45,
       "cause_news": [
         {
           "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
@@ -74,48 +74,48 @@
       "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
     },
     {
-      "ticker": "SK텔레콤",
-      "code": "017670",
-      "tomorrow_up_prob": "86%",
-      "entry": 112000.0,
-      "target": 117600,
-      "stop": 108640,
+      "ticker": "SK네트웍스",
+      "code": "001740",
+      "tomorrow_up_prob": "87%",
+      "entry": 13100.0,
+      "target": 13755,
+      "stop": 12707,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.3,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] SK텔레콤, 엔비디아와 '풀스택 AI 클라우드' 맞손…글로벌 인...",
-          "url": "https://www.tokenpost.kr/news/economy/366918",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[투데이's 특징주] SK텔레콤, 엔비디아와 AI데이터센터 협력 소식에 장 ...",
-          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402425",
-          "office": "todaykorea",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 엔비디아 협력 기대감에 SK텔레콤 강세…두산로보틱스는 장중...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/B4CTGMQF6NE2RALX644PBSPYA4/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
+          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
+          "office": "econonews",
           "sentiment": "악재",
-          "cause_score": 12,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주] SK네트웍스, SK·엔비디아 협력 기대감에 20%대 급등",
+          "url": "https://www.newspim.com/news/view/20260608000363",
+          "office": "newspim",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "SK네트웍스 주가, 강세... 26%대 급등",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162254",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK텔레콤, 엔비디아와 '풀스택 AI 클라우드' 맞손…글로벌 인..."
+      "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
     },
     {
       "ticker": "아이로보틱스",
@@ -160,50 +160,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
-    },
-    {
-      "ticker": "SK네트웍스",
-      "code": "001740",
-      "tomorrow_up_prob": "82%",
-      "entry": 13390.0,
-      "target": 14060,
-      "stop": 12988,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.87)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
-          "office": "econonews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "[특징주] SK네트웍스, SK·엔비디아 협력 기대감에 20%대 급등",
-          "url": "https://www.newspim.com/news/view/20260608000363",
-          "office": "newspim",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "SK네트웍스 주가, 강세... 26%대 급등",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162254",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
     },
     {
       "ticker": "팸텍",
@@ -250,20 +206,48 @@
       "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
     },
     {
-      "ticker": "라이콤",
-      "code": "388790",
-      "tomorrow_up_prob": "66%",
-      "entry": 6750.0,
-      "target": 7088,
-      "stop": 6548,
-      "confidence": "중",
+      "ticker": "노타",
+      "code": "486990",
+      "tomorrow_up_prob": "72%",
+      "entry": 30950.0,
+      "target": 32498,
+      "stop": 30022,
+      "confidence": "상",
       "reasons": [
-        "RSI62.3 강세",
-        "거래량3.87배",
+        "강세마감(0.76)",
+        "MACD강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 13.03,
+      "day_change": -10.71,
+      "cause_news": [
+        {
+          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
+    },
+    {
+      "ticker": "라이콤",
+      "code": "388790",
+      "tomorrow_up_prob": "66%",
+      "entry": 6620.0,
+      "target": 6951,
+      "stop": 6421,
+      "confidence": "중",
+      "reasons": [
+        "RSI61.5 강세",
+        "거래량3.97배",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 11.51,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -292,52 +276,24 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
-    },
-    {
-      "ticker": "노타",
-      "code": "486990",
-      "tomorrow_up_prob": "64%",
-      "entry": 30800.0,
-      "target": 32340,
-      "stop": 29876,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "호재",
-        "장중 11회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": -11.29,
-      "cause_news": [
-        {
-          "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645478440",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
     }
   ],
   "closing_bet": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "89%",
-      "entry": 282500.0,
-      "target": 296625,
-      "stop": 274025,
+      "tomorrow_up_prob": "90%",
+      "entry": 287000.0,
+      "target": 301350,
+      "stop": 278390,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 13.7,
+      "day_change": 12.52,
       "cause_news": [
         {
           "title": "네이버 주가, 강세... 왜?",
@@ -370,18 +326,18 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "89%",
-      "entry": 279500.0,
-      "target": 293475,
-      "stop": 271115,
+      "tomorrow_up_prob": "90%",
+      "entry": 285500.0,
+      "target": 299775,
+      "stop": 276935,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -7.76,
+      "day_change": -5.45,
       "cause_news": [
         {
           "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
@@ -396,48 +352,48 @@
       "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
     },
     {
-      "ticker": "SK텔레콤",
-      "code": "017670",
-      "tomorrow_up_prob": "86%",
-      "entry": 112000.0,
-      "target": 117600,
-      "stop": 108640,
+      "ticker": "SK네트웍스",
+      "code": "001740",
+      "tomorrow_up_prob": "87%",
+      "entry": 13100.0,
+      "target": 13755,
+      "stop": 12707,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.3,
+      "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] SK텔레콤, 엔비디아와 '풀스택 AI 클라우드' 맞손…글로벌 인...",
-          "url": "https://www.tokenpost.kr/news/economy/366918",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[투데이's 특징주] SK텔레콤, 엔비디아와 AI데이터센터 협력 소식에 장 ...",
-          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402425",
-          "office": "todaykorea",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 엔비디아 협력 기대감에 SK텔레콤 강세…두산로보틱스는 장중...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/B4CTGMQF6NE2RALX644PBSPYA4/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
+          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
+          "office": "econonews",
           "sentiment": "악재",
-          "cause_score": 12,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주] SK네트웍스, SK·엔비디아 협력 기대감에 20%대 급등",
+          "url": "https://www.newspim.com/news/view/20260608000363",
+          "office": "newspim",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "SK네트웍스 주가, 강세... 26%대 급등",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162254",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK텔레콤, 엔비디아와 '풀스택 AI 클라우드' 맞손…글로벌 인..."
+      "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
     },
     {
       "ticker": "아이로보틱스",
@@ -484,48 +440,48 @@
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
     },
     {
-      "ticker": "SK네트웍스",
-      "code": "001740",
-      "tomorrow_up_prob": "82%",
-      "entry": 13390.0,
-      "target": 14060,
-      "stop": 12988,
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "79%",
+      "entry": 2710.0,
+      "target": 2846,
+      "stop": 2629,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
-        "정배열",
-        "MACD강세"
+        "강세마감(1.0)",
+        "MACD강세",
+        "거래량3.42배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
+      "day_change": 29.98,
       "cause_news": [
         {
-          "title": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439383",
-          "office": "econonews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "[특징주] SK네트웍스, SK·엔비디아 협력 기대감에 20%대 급등",
-          "url": "https://www.newspim.com/news/view/20260608000363",
-          "office": "newspim",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "SK네트웍스 주가, 강세... 26%대 급등",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162254",
-          "office": "ggilbo",
+          "title": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'",
+          "url": "https://www.sisajournal-e.com/news/articleView.html?idxno=421546",
+          "office": "sisajournal-e",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439267",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
+      "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
