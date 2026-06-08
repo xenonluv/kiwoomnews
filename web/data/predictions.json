@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-08 15:07 KST",
+  "as_of": "2026-06-08 15:22 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "88%",
-      "entry": 283500.0,
-      "target": 297675,
-      "stop": 274995,
+      "tomorrow_up_prob": "94%",
+      "entry": 278000.0,
+      "target": 291900,
+      "stop": 269660,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 10.76,
+      "day_change": 9.2,
       "cause_news": [
         {
           "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
@@ -44,42 +44,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
-    },
-    {
-      "ticker": "알트",
-      "code": "459550",
-      "tomorrow_up_prob": "84%",
-      "entry": 2290.0,
-      "target": 2404,
-      "stop": 2221,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.85)",
-        "MACD강세",
-        "RSI55.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 21.94,
-      "cause_news": [
-        {
-          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
     },
     {
       "ticker": "SK네트웍스",
@@ -170,50 +134,6 @@
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
     },
     {
-      "ticker": "라이콤",
-      "code": "388790",
-      "tomorrow_up_prob": "82%",
-      "entry": 7330.0,
-      "target": 7696,
-      "stop": 7110,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.92)",
-        "MACD강세",
-        "RSI65.2 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 24.03,
-      "cause_news": [
-        {
-          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 젠슨 황, AI 수혜 '통신장비' 언급…'라이콤·이노인스트루먼...",
-          "url": "https://www.newspim.com/news/view/20260604000515",
-          "office": "newspim",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
-    },
-    {
       "ticker": "팸텍",
       "code": "271830",
       "tomorrow_up_prob": "79%",
@@ -224,7 +144,7 @@
       "reasons": [
         "강세마감(1.0)",
         "MACD강세",
-        "거래량3.45배"
+        "거래량3.46배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.98,
@@ -260,19 +180,25 @@
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "77%",
-      "entry": 269500.0,
-      "target": 282975,
-      "stop": 261415,
+      "tomorrow_up_prob": "78%",
+      "entry": 268000.0,
+      "target": 281400,
+      "stop": 259960,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI55.6 강세"
+        "RSI55.3 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -11.06,
+      "day_change": -11.55,
       "related_news": [
+        {
+          "title": "LG그룹株, 엔비디아 회동에도 약세…LG전자 8% 급락[이런국장 저런주...",
+          "url": "https://n.news.naver.com/mnews/article/011/0004628755",
+          "office": "서울경제",
+          "sentiment": "혼재"
+        },
         {
           "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
           "url": "https://n.news.naver.com/mnews/article/003/0013993494",
@@ -282,20 +208,160 @@
       ]
     },
     {
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "75%",
+      "entry": 11500.0,
+      "target": 12075,
+      "stop": 11155,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.82)",
+        "Stoch골든",
+        "거래량4.65배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 24.36,
+      "cause_news": [
+        {
+          "title": "[특징주] '아틀라스 공급망' 기대감에 화신정공 상한가",
+          "url": "https://www.newspim.com/news/view/20260608000306",
+          "office": "newspim",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/IUYKMKGD6FAADDGRDLIMDD6BBE/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주]화신정공, 영업이익 778% 급증에 강세",
+          "url": "https://view.asiae.co.kr/article/2026020212554054178",
+          "office": "view",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] '아틀라스 공급망' 기대감에 화신정공 상한가"
+    },
+    {
+      "ticker": "알트",
+      "code": "459550",
+      "tomorrow_up_prob": "71%",
+      "entry": 2040.0,
+      "target": 2142,
+      "stop": 1979,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "거래량12.75배",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 9.69,
+      "cause_news": [
+        {
+          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
+    },
+    {
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "69%",
+      "entry": 21150.0,
+      "target": 22208,
+      "stop": 20516,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.79)",
+        "MACD강세",
+        "거래량5.56배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "라이콤",
+      "code": "388790",
+      "tomorrow_up_prob": "66%",
+      "entry": 6750.0,
+      "target": 7088,
+      "stop": 6548,
+      "confidence": "중",
+      "reasons": [
+        "RSI62.3 강세",
+        "거래량5.51배",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 16.24,
+      "cause_news": [
+        {
+          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 젠슨 황, AI 수혜 '통신장비' 언급…'라이콤·이노인스트루먼...",
+          "url": "https://www.newspim.com/news/view/20260604000515",
+          "office": "newspim",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+    },
+    {
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "60%",
-      "entry": 30500.0,
-      "target": 32025,
-      "stop": 29585,
+      "entry": 30300.0,
+      "target": 31815,
+      "stop": 29391,
       "confidence": "중",
       "reasons": [
         "MACD강세",
         "호재",
-        "장중 25회 지속"
+        "장중 26회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -11.72,
+      "day_change": -13.02,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -308,40 +374,24 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
-    },
-    {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "60%",
-      "entry": 20700.0,
-      "target": 21735,
-      "stop": 20079,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "거래량5.26배",
-        "장중 7회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
     }
   ],
   "closing_bet": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "88%",
-      "entry": 283500.0,
-      "target": 297675,
-      "stop": 274995,
+      "tomorrow_up_prob": "94%",
+      "entry": 278000.0,
+      "target": 291900,
+      "stop": 269660,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 10.76,
+      "day_change": 9.2,
       "cause_news": [
         {
           "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
@@ -370,42 +420,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
-    },
-    {
-      "ticker": "알트",
-      "code": "459550",
-      "tomorrow_up_prob": "84%",
-      "entry": 2290.0,
-      "target": 2404,
-      "stop": 2221,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.85)",
-        "MACD강세",
-        "RSI55.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 21.94,
-      "cause_news": [
-        {
-          "title": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524382",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "알트 주가, 6월 8일 장중 2,315원 23.27% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16083255",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
     },
     {
       "ticker": "SK네트웍스",
@@ -496,48 +510,78 @@
       "cause_summary": "아이로보틱스 2연속 上 기염…휴머노이드 핵심 부품 기대감에 투자자 관..."
     },
     {
-      "ticker": "라이콤",
-      "code": "388790",
-      "tomorrow_up_prob": "82%",
-      "entry": 7330.0,
-      "target": 7696,
-      "stop": 7110,
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "79%",
+      "entry": 2710.0,
+      "target": 2846,
+      "stop": 2629,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(1.0)",
         "MACD강세",
-        "RSI65.2 강세"
+        "거래량3.46배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 24.03,
+      "day_change": 29.98,
       "cause_news": [
         {
-          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+          "title": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'",
+          "url": "https://www.sisajournal-e.com/news/articleView.html?idxno=421546",
+          "office": "sisajournal-e",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "팸텍, 4거래일 연속 상승에 11% 급등…산업용 로봇 기업 인수",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439267",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
           "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 젠슨 황, AI 수혜 '통신장비' 언급…'라이콤·이노인스트루먼...",
-          "url": "https://www.newspim.com/news/view/20260604000515",
-          "office": "newspim",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+      "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
+    },
+    {
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "78%",
+      "entry": 268000.0,
+      "target": 281400,
+      "stop": 259960,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI55.3 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -11.55,
+      "related_news": [
+        {
+          "title": "LG그룹株, 엔비디아 회동에도 약세…LG전자 8% 급락[이런국장 저런주...",
+          "url": "https://n.news.naver.com/mnews/article/011/0004628755",
+          "office": "서울경제",
+          "sentiment": "혼재"
+        },
+        {
+          "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
+          "url": "https://n.news.naver.com/mnews/article/003/0013993494",
+          "office": "뉴시스",
+          "sentiment": "호재"
+        }
+      ]
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
