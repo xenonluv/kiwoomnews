@@ -4,36 +4,24 @@
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "NAVER",
-    "signal_probability": "75%",
+    "signal_probability": "72%",
     "position_type": "상승추세",
     "day_change": -3.72,
-    "headline": "네이버-엔비디아, 기가와트급 AI 팩토리 추진⋯젠슨 황, 네이버 1784 방...",
-    "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
+    "headline": "‘각 세종 4배’ 초대형 AI 팩토리 짓는다…네이버, 엔비디아와 글로...",
+    "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 4.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:15 KST",
+    "published_at": "2026-06-08 09:30 KST",
     "news": [
       {
-        "title": "네이버-엔비디아, 기가와트급 AI 팩토리 추진⋯젠슨 황, 네이버 1784 방...",
-        "url": "https://n.news.naver.com/mnews/article/031/0001033449",
-        "office": "아이뉴스24",
-        "sentiment": "호재"
-      },
-      {
-        "title": "네이버·엔비디아 'AI 동맹' 확대, 기가와트급 AI 팩토리 만든다",
-        "url": "https://n.news.naver.com/mnews/article/417/0001146524",
-        "office": "동행미디어 시대",
-        "sentiment": "호재"
-      },
-      {
-        "title": "‘젠슨 황 효과’ BBQ 홍대점 매출 20% 뛰었다",
-        "url": "https://n.news.naver.com/mnews/article/016/0002653155",
+        "title": "‘각 세종 4배’ 초대형 AI 팩토리 짓는다…네이버, 엔비디아와 글로...",
+        "url": "https://n.news.naver.com/mnews/article/016/0002653194",
         "office": "헤럴드경제",
         "sentiment": "호재"
       },
       {
-        "title": "마지막까지 바쁜 젠슨 황…오늘 LG·현대차·네이버 이어 서울대까지...",
-        "url": "https://n.news.naver.com/mnews/article/449/0000348248",
-        "office": "채널A",
+        "title": "네이버-엔비디아, 기가와트급 AI 팩토리 추진⋯젠슨 황, 네이버 1784 방...",
+        "url": "https://n.news.naver.com/mnews/article/031/0001033449",
+        "office": "아이뉴스24",
         "sentiment": "호재"
       }
     ]
@@ -45,11 +33,11 @@
     "target_stock": "팸텍",
     "signal_probability": "53%",
     "position_type": "과다상승",
-    "day_change": 14.63,
+    "day_change": 14.87,
     "headline": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'",
     "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:15 KST",
+    "published_at": "2026-06-08 09:30 KST",
     "news": [
       {
         "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
@@ -112,11 +100,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -11.87,
+    "day_change": -11.58,
     "headline": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-08 09:15 KST",
+    "published_at": "2026-06-08 09:30 KST",
     "news": [
       {
         "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
