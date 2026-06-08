@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-08 12:37 KST",
+  "as_of": "2026-06-08 12:52 KST",
   "intraday_rank": [
     {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "87%",
-      "entry": 13060.0,
-      "target": 13713,
-      "stop": 12668,
+      "entry": 12900.0,
+      "target": 13545,
+      "stop": 12513,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.79)",
+        "강세마감(0.76)",
         "정배열",
         "MACD강세"
       ],
@@ -44,6 +44,50 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "87%",
+      "entry": 280000.0,
+      "target": 294000,
+      "stop": 271600,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.75)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "네이버 주가, 강세... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162339",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
+          "url": "https://www.etnews.com/20260608000180",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
+          "office": "edaily",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "네이버 주가, 강세... 왜?"
     },
     {
       "ticker": "아이로보틱스",
@@ -103,7 +147,7 @@
         "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.61,
+      "day_change": 22.67,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -137,17 +181,17 @@
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "82%",
-      "entry": 279500.0,
-      "target": 293475,
-      "stop": 271115,
+      "entry": 277000.0,
+      "target": 290850,
+      "stop": 268690,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI57.3 강세"
+        "RSI56.9 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -8.25,
+      "day_change": -8.58,
       "cause_news": [
         {
           "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
@@ -162,50 +206,6 @@
       "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "82%",
-      "entry": 284000.0,
-      "target": 298200,
-      "stop": 275480,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.82)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "네이버 주가, 강세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162339",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
-          "url": "https://www.etnews.com/20260608000180",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
-          "office": "edaily",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "네이버 주가, 강세... 왜?"
-    },
-    {
       "ticker": "팸텍",
       "code": "271830",
       "tomorrow_up_prob": "79%",
@@ -216,7 +216,7 @@
       "reasons": [
         "강세마감(1.0)",
         "MACD강세",
-        "거래량3.43배"
+        "거래량3.44배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.98,
@@ -253,17 +253,17 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "64%",
-      "entry": 30650.0,
-      "target": 32182,
-      "stop": 29730,
+      "entry": 30600.0,
+      "target": 32130,
+      "stop": 29682,
       "confidence": "중",
       "reasons": [
         "MACD강세",
         "호재",
-        "장중 15회 지속"
+        "장중 16회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -11,
+      "day_change": -11.14,
       "cause_news": [
         {
           "title": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]",
@@ -283,12 +283,12 @@
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "87%",
-      "entry": 13060.0,
-      "target": 13713,
-      "stop": 12668,
+      "entry": 12900.0,
+      "target": 13545,
+      "stop": 12513,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.79)",
+        "강세마감(0.76)",
         "정배열",
         "MACD강세"
       ],
@@ -322,6 +322,50 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스, 급락 하루만에 25% 급등…1만3000원선 재돌파"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "87%",
+      "entry": 280000.0,
+      "target": 294000,
+      "stop": 271600,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.75)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "네이버 주가, 강세... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162339",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
+          "url": "https://www.etnews.com/20260608000180",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
+          "office": "edaily",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "네이버 주가, 강세... 왜?"
     },
     {
       "ticker": "아이로보틱스",
@@ -381,7 +425,7 @@
         "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.61,
+      "day_change": 22.67,
       "cause_news": [
         {
           "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
@@ -415,17 +459,17 @@
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "82%",
-      "entry": 279500.0,
-      "target": 293475,
-      "stop": 271115,
+      "entry": 277000.0,
+      "target": 290850,
+      "stop": 268690,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI57.3 강세"
+        "RSI56.9 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -8.25,
+      "day_change": -8.58,
       "cause_news": [
         {
           "title": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세",
@@ -438,50 +482,6 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "젠슨 황 효과 꺾였나…LG전자 10%대 낙폭 이어 NC·네이버 약세"
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "82%",
-      "entry": 284000.0,
-      "target": 298200,
-      "stop": 275480,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.82)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "네이버 주가, 강세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162339",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
-          "url": "https://www.etnews.com/20260608000180",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
-          "office": "edaily",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "네이버 주가, 강세... 왜?"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
