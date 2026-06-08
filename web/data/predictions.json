@@ -1,6 +1,50 @@
 {
-  "as_of": "2026-06-08 14:52 KST",
+  "as_of": "2026-06-08 15:07 KST",
   "intraday_rank": [
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "88%",
+      "entry": 283500.0,
+      "target": 297675,
+      "stop": 274995,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 10.76,
+      "cause_news": [
+        {
+          "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03732646645479752",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
+          "url": "https://www.etnews.com/20260608000180",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
+    },
     {
       "ticker": "알트",
       "code": "459550",
@@ -36,50 +80,6 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "83%",
-      "entry": 282500.0,
-      "target": 296625,
-      "stop": 274025,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.79)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 10.76,
-      "cause_news": [
-        {
-          "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
-          "url": "https://www.etnews.com/20260608000180",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
-          "office": "edaily",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세"
     },
     {
       "ticker": "SK네트웍스",
@@ -258,20 +258,28 @@
       "cause_summary": "[주간e종목] 팸텍, 로봇 기업 인수 소식에 '3연上'"
     },
     {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "67%",
-      "entry": 21350.0,
-      "target": 22418,
-      "stop": 20710,
-      "confidence": "중",
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "77%",
+      "entry": 269500.0,
+      "target": 282975,
+      "stop": 261415,
+      "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "정배열",
         "MACD강세",
-        "거래량5.09배"
+        "RSI55.6 강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
+      "risk": "약한 마감",
+      "day_change": -11.06,
+      "related_news": [
+        {
+          "title": "한주에이알티 &quot;LG전자향 물류자동화 설비 안정적 운영 확인&quot;",
+          "url": "https://n.news.naver.com/mnews/article/003/0013993494",
+          "office": "뉴시스",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "노타",
@@ -284,7 +292,7 @@
       "reasons": [
         "MACD강세",
         "호재",
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "약한 마감",
       "day_change": -11.72,
@@ -300,9 +308,69 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "노타, GPU·NPU 동시 활용 AI 추론 기술 구현에 13%↑[특징주]"
+    },
+    {
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "60%",
+      "entry": 20700.0,
+      "target": 21735,
+      "stop": 20079,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "거래량5.26배",
+        "장중 7회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
     }
   ],
   "closing_bet": [
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "88%",
+      "entry": 283500.0,
+      "target": 297675,
+      "stop": 274995,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 10.76,
+      "cause_news": [
+        {
+          "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03732646645479752",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
+          "url": "https://www.etnews.com/20260608000180",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
+    },
     {
       "ticker": "알트",
       "code": "459550",
@@ -338,50 +406,6 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "알트 주가, 6월 8일 장중 2,245원 19.54% 상승"
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "83%",
-      "entry": 282500.0,
-      "target": 296625,
-      "stop": 274025,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.79)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 10.76,
-      "cause_news": [
-        {
-          "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "[ET특징주] 폭락장 이긴 엔비디아 효과… 네이버·SK텔레콤 동반 강세",
-          "url": "https://www.etnews.com/20260608000180",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "네이버, 폭락장서도 보합권…젠슨 황·이해진 회동에 AI 기대감[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02696166645479752",
-          "office": "edaily",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세"
     },
     {
       "ticker": "SK네트웍스",
