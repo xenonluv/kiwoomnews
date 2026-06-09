@@ -1,16 +1,67 @@
 [
   {
+    "post_id": "POST_20260609_004170",
+    "status": "PUBLISHED",
+    "tier": "signal",
+    "target_stock": "신세계",
+    "signal_probability": "56%",
+    "position_type": "과다상승",
+    "day_change": 11.01,
+    "headline": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증",
+    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 7.0). 일봉 국면을 함께 확인.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 09:45 KST",
+    "news": [
+      {
+        "title": "신세계V ‘향수전문관’ 통했다…집에서 시향하니 매출 68%↑",
+        "url": "https://n.news.naver.com/mnews/article/050/0000107080",
+        "office": "한경비즈니스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "외국인·명품 매출 증대로 호실적 예상되는 신세계[클릭 e종목]",
+        "url": "https://n.news.naver.com/mnews/article/277/0005773542",
+        "office": "아시아경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "정용진, 이마트·신세계프라퍼티 직접 챙긴다",
+        "url": "https://n.news.naver.com/mnews/article/022/0004133862",
+        "office": "세계일보",
+        "sentiment": "호재"
+      },
+      {
+        "title": "이마트·프라퍼티 대표맡는 정용진 회장… 등기이사 등록으로 ‘책임...",
+        "url": "https://n.news.naver.com/mnews/article/020/0003725290",
+        "office": "동아일보",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증",
+        "url": "https://www.joongangenews.com/news/articleView.html?idxno=524538",
+        "office": "joongangenews",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+      }
+    ],
+    "cause_confidence": "중간",
+    "cause_summary": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증"
+  },
+  {
     "post_id": "POST_20260609_089030",
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "테크윙",
-    "signal_probability": "54%",
+    "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 24.62,
-    "headline": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
+    "day_change": 26.44,
+    "headline": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 09:30 KST",
+    "published_at": "2026-06-09 09:45 KST",
     "news": [
       {
         "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
@@ -24,20 +75,32 @@
         "office": "이데일리",
         "sentiment": "호재"
       }
-    ]
+    ],
+    "cause_news": [
+      {
+        "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
+        "office": "pinpointnews",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
   },
   {
     "post_id": "POST_20260609_403870",
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "HPSP",
-    "signal_probability": "74%",
+    "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 15.16,
+    "day_change": 18.35,
     "headline": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라",
     "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 5.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 09:30 KST",
+    "published_at": "2026-06-09 09:45 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -80,17 +143,44 @@
     "cause_summary": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라"
   },
   {
+    "post_id": "POST_20260609_089970",
+    "status": "PUBLISHED",
+    "tier": "signal",
+    "target_stock": "브이엠",
+    "signal_probability": "55%",
+    "position_type": "과다상승",
+    "day_change": 18.57,
+    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 09:45 KST",
+    "news": [
+      {
+        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
+        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
+        "office": "한국경제",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
     "post_id": "POST_20260609_486990",
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "노타",
-    "signal_probability": "78%",
-    "position_type": "저점",
-    "day_change": 0.17,
+    "signal_probability": "60%",
+    "position_type": "분석불가",
+    "day_change": -1.17,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[시그널] 일봉 저점 · 재료 호재(중요도 5.5). 일봉 국면을 함께 확인.",
+    "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 09:30 KST",
+    "published_at": "2026-06-09 09:45 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -119,71 +209,60 @@
     ]
   },
   {
-    "post_id": "POST_20260609_089970",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "브이엠",
-    "signal_probability": "47%",
-    "position_type": "과다상승",
-    "day_change": 15.92,
-    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 09:30 KST",
-    "news": [
-      {
-        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
-        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260609_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "46%",
+    "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": -6.81,
-    "headline": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "day_change": -7.71,
+    "headline": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 09:30 KST",
+    "published_at": "2026-06-09 09:45 KST",
     "news": [
       {
-        "title": "국내 최대 문구 행사 ‘인벤타리오’, 예약·안내까지 네이버로 다 한...",
-        "url": "https://n.news.naver.com/mnews/article/009/0005691128",
+        "title": "엔비디아와 협업 본격화 네이버…DS투자증권, 목표가 45만원 제시 [매...",
+        "url": "https://n.news.naver.com/mnews/article/009/0005691138",
         "office": "매일경제",
         "sentiment": "호재"
       },
       {
-        "title": "휴대전화 번호 없어도 네이버 맛집 예약…외국인 여권 인증 도입",
-        "url": "https://n.news.naver.com/mnews/article/001/0016127442",
-        "office": "연합뉴스",
+        "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+        "url": "https://n.news.naver.com/mnews/article/008/0005369067",
+        "office": "머니투데이",
         "sentiment": "호재"
       },
       {
-        "title": "[속보] 젠슨 황 &quot;엔비디아, SK·네이버와 협력 빠르게 진행될 것&quot;",
-        "url": "https://n.news.naver.com/mnews/article/015/0005296541",
-        "office": "한국경제",
+        "title": "네이버, 국내 최대 문구 페어 '인벤타리오' 후원…온·오프라인 관람...",
+        "url": "https://n.news.naver.com/mnews/article/030/0003435717",
+        "office": "전자신문",
         "sentiment": "호재"
       },
       {
-        "title": "“네이버 주가 불기둥인데 카카오는 왜 이런가요”…노사가 가른 희비",
-        "url": "https://n.news.naver.com/mnews/article/009/0005691122",
-        "office": "매일경제",
+        "title": "네이버, 외국인 ‘여권 인증’ 도입…맛집부터 결제까지 한 번에 ‘해...",
+        "url": "https://n.news.naver.com/mnews/article/468/0001245745",
+        "office": "스포츠서울",
         "sentiment": "호재"
       }
     ],
     "cause_news": [
+      {
+        "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+        "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+        "office": "mt",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
+        "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+        "office": "biz",
+        "sentiment": "악재",
+        "cause_score": 14,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+      },
       {
         "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
         "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03732646645479752",
@@ -191,25 +270,9 @@
         "sentiment": "호재",
         "cause_score": 13,
         "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주]",
-        "url": "https://www.dailian.co.kr/news/view/1653674/?sc=Naver",
-        "office": "dailian",
-        "sentiment": "악재",
-        "cause_score": 10,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-      },
-      {
-        "title": "\"네이버, 엔비디아와 함께 AI 팩토리 사업 진출…목표가 상향\"-삼성",
-        "url": "https://www.mt.co.kr/stock/2026/06/09/2026060907560657294",
-        "office": "mt",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "높음",
-    "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
+    "cause_summary": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세"
   }
 ]
