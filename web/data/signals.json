@@ -1,17 +1,115 @@
 [
   {
+    "post_id": "POST_20260609_486990",
+    "status": "PUBLISHED",
+    "tier": "signal",
+    "target_stock": "노타",
+    "signal_probability": "60%",
+    "position_type": "분석불가",
+    "day_change": -0.67,
+    "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
+    "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 15:15 KST",
+    "news": [
+      {
+        "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
+        "url": "https://n.news.naver.com/mnews/article/421/0008992442",
+        "office": "뉴스1",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
+        "url": "https://n.news.naver.com/mnews/article/018/0006295755",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 영상관제 AI 현장 적용 확대…엔비디아와 협력",
+        "url": "https://n.news.naver.com/mnews/article/003/0013979735",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
+        "url": "https://n.news.naver.com/mnews/article/092/0002424676",
+        "office": "지디넷코리아",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
+    "post_id": "POST_20260609_098460",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "고영",
+    "signal_probability": "70%",
+    "position_type": "눌림목",
+    "day_change": 21.22,
+    "headline": "고영, 하락 벗어나 22% 급등…소캠2 검사장비 수주",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 15:15 KST",
+    "news": [
+      {
+        "title": "고영테크놀러지, SOCAMM2 검사장비 수주 … 차세대 AI 메모리 시장 진...",
+        "url": "https://n.news.naver.com/mnews/article/366/0001170482",
+        "office": "조선비즈",
+        "sentiment": "호재"
+      },
+      {
+        "title": "고영, AI 메모리 '소캠2' 검사시장 진입…국내 메모리社 첫 수주",
+        "url": "https://n.news.naver.com/mnews/article/015/0005296654",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "고영, 어닝서프라이즈에 '上'…바이젠셀·툴젠도 상승세[바이오맥짚기...",
+        "url": "https://n.news.naver.com/mnews/article/018/0006267961",
+        "office": "이데일리",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "고영, 하락 벗어나 22% 급등…소캠2 검사장비 수주",
+        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439454",
+        "office": "econonews",
+        "sentiment": "악재",
+        "cause_score": 10,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
+        "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
+        "office": "ebn",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "고영, 하락 벗어나 22% 급등…소캠2 검사장비 수주"
+  },
+  {
     "post_id": "POST_20260609_069960",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "현대백화점",
-    "signal_probability": "48%",
+    "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 15.28,
+    "day_change": 16.96,
     "headline": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
+    "published_at": "2026-06-09 15:15 KST",
     "news": [
+      {
+        "title": "농식품부, '유기농 데이' 기념행사…&quot;친환경 유기농업 2배 확대&quot;",
+        "url": "https://n.news.naver.com/mnews/article/001/0016128632",
+        "office": "연합뉴스",
+        "sentiment": "호재"
+      },
       {
         "title": "롯데쇼핑·현대百, 10%대 급등하며 나란히 '신고가'",
         "url": "https://n.news.naver.com/mnews/article/003/0013995993",
@@ -29,12 +127,6 @@
         "url": "https://n.news.naver.com/mnews/article/293/0000085953",
         "office": "블로터",
         "sentiment": "호재"
-      },
-      {
-        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
-        "url": "https://n.news.naver.com/mnews/article/421/0008991659",
-        "office": "뉴스1",
-        "sentiment": "혼재"
       }
     ],
     "cause_news": [
@@ -67,59 +159,6 @@
     "cause_summary": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세"
   },
   {
-    "post_id": "POST_20260609_098460",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "고영",
-    "signal_probability": "70%",
-    "position_type": "눌림목",
-    "day_change": 24.82,
-    "headline": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
-    "news": [
-      {
-        "title": "고영, AI 메모리 '소캠2' 검사시장 진입…국내 메모리社 첫 수주",
-        "url": "https://n.news.naver.com/mnews/article/015/0005296654",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "고영, 어닝서프라이즈에 '上'…바이젠셀·툴젠도 상승세[바이오맥짚기...",
-        "url": "https://n.news.naver.com/mnews/article/018/0006267961",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "고영테크놀러지 1분기 매출 727억원…전년 대비 42% 증가",
-        "url": "https://n.news.naver.com/mnews/article/030/0003421187",
-        "office": "전자신문",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
-        "url": "https://www.tokenpost.kr/news/economy/352848",
-        "office": "tokenpost",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-      },
-      {
-        "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
-        "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
-        "office": "ebn",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행"
-  },
-  {
     "post_id": "POST_20260609_089970",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -130,7 +169,7 @@
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
+    "published_at": "2026-06-09 15:15 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -153,11 +192,11 @@
     "target_stock": "테스",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 22.51,
+    "day_change": 23.65,
     "headline": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
+    "published_at": "2026-06-09 15:15 KST",
     "news": [
       {
         "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
@@ -192,11 +231,11 @@
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 20.68,
+    "day_change": 21.1,
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
+    "published_at": "2026-06-09 15:15 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -253,11 +292,11 @@
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 19.64,
+    "day_change": 19.91,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
+    "published_at": "2026-06-09 15:15 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -300,44 +339,5 @@
     ],
     "cause_confidence": "중간",
     "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
-  },
-  {
-    "post_id": "POST_20260609_486990",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "노타",
-    "signal_probability": "70%",
-    "position_type": "저점",
-    "day_change": 0.17,
-    "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 저점.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:00 KST",
-    "news": [
-      {
-        "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-        "url": "https://n.news.naver.com/mnews/article/421/0008992442",
-        "office": "뉴스1",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
-        "url": "https://n.news.naver.com/mnews/article/018/0006295755",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 영상관제 AI 현장 적용 확대…엔비디아와 협력",
-        "url": "https://n.news.naver.com/mnews/article/003/0013979735",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
-        "url": "https://n.news.naver.com/mnews/article/092/0002424676",
-        "office": "지디넷코리아",
-        "sentiment": "호재"
-      }
-    ]
   }
 ]
