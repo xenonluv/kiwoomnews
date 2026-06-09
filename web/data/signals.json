@@ -6,11 +6,11 @@
     "target_stock": "LG전자",
     "signal_probability": "72%",
     "position_type": "눌림목",
-    "day_change": -11.38,
+    "day_change": -11.94,
     "headline": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락",
     "summary": "[후보] 재료+거래대금 포착(중요도 8.0, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "상위 1% 투자자, 오전 삼성전자 집중 매수…변동성 속 안정 택했다 [주...",
@@ -73,11 +73,11 @@
     "target_stock": "롯데쇼핑",
     "signal_probability": "49%",
     "position_type": "과다상승",
-    "day_change": 11.81,
+    "day_change": 11.4,
     "headline": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "“롯데쇼핑, 외국인 관광객 증가·마트 매출 증대로 실적 개선될 것”",
@@ -128,84 +128,17 @@
     "cause_summary": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]"
   },
   {
-    "post_id": "POST_20260609_004170",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "신세계",
-    "signal_probability": "48%",
-    "position_type": "과다상승",
-    "day_change": 11.01,
-    "headline": "[특징주] 백화점 실적 개선 기대...신세계 8%대↑",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
-    "news": [
-      {
-        "title": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
-        "url": "https://n.news.naver.com/mnews/article/366/0001170363",
-        "office": "조선비즈",
-        "sentiment": "호재"
-      },
-      {
-        "title": "향수도 집에서 먼저 맡아본다…신세계V 신규 고객 유입 확대",
-        "url": "https://n.news.naver.com/mnews/article/008/0005369074",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      },
-      {
-        "title": "외국인·명품 매출 증대로 호실적 예상되는 신세계[클릭 e종목]",
-        "url": "https://n.news.naver.com/mnews/article/277/0005773542",
-        "office": "아시아경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "정용진, 이마트·신세계프라퍼티 직접 챙긴다",
-        "url": "https://n.news.naver.com/mnews/article/022/0004133862",
-        "office": "세계일보",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 백화점 실적 개선 기대...신세계 8%대↑",
-        "url": "http://www.newsian.co.kr/news/articleView.html?idxno=90693",
-        "office": "newsian",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
-        "url": "https://biz.chosun.com/stock/stock_general/2026/06/09/BDTMPEOMYRGAPCOFKTTQK5CLME/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-        "office": "biz",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 신세계, 증권가 목표가 줄상향에 8%대 강세",
-        "url": "https://www.ajunews.com/view/20260609102451680",
-        "office": "ajunews",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] 백화점 실적 개선 기대...신세계 8%대↑"
-  },
-  {
     "post_id": "POST_20260609_089970",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 23.55,
+    "day_change": 24.05,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -228,11 +161,11 @@
     "target_stock": "현대백화점",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 16.42,
+    "day_change": 14.8,
     "headline": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "더현대 글로벌, K브랜드 앞세워 대만시장 본격 공략",
@@ -289,11 +222,11 @@
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 22.16,
+    "day_change": 23.65,
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -350,11 +283,11 @@
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 17.6,
+    "day_change": 18.93,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -405,11 +338,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -4.67,
+    "day_change": -4.17,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 12:30 KST",
+    "published_at": "2026-06-09 12:45 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -436,5 +369,66 @@
         "sentiment": "호재"
       }
     ]
+  },
+  {
+    "post_id": "POST_20260609_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "65%",
+    "position_type": "상승추세",
+    "day_change": -9.5,
+    "headline": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 12:45 KST",
+    "news": [
+      {
+        "title": "젠슨 황, 일정 마치고 출국…협력 확대 예고",
+        "url": "https://n.news.naver.com/mnews/article/422/0000872835",
+        "office": "연합뉴스TV",
+        "sentiment": "호재"
+      },
+      {
+        "title": "엔비디아 올라탄 네이버…안방 갇힌 '글로벌 카카오'",
+        "url": "https://n.news.naver.com/mnews/article/374/0000514920",
+        "office": "SBS Biz",
+        "sentiment": "호재"
+      },
+      {
+        "title": "젠슨 황 ‘선물들’ 립서비스 넘어 숫자로 입증될까",
+        "url": "https://n.news.naver.com/mnews/article/016/0002654019",
+        "office": "헤럴드경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+        "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+        "office": "mt",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
+        "url": "https://www.etoday.co.kr/news/view/2591782",
+        "office": "etoday",
+        "sentiment": "악재",
+        "cause_score": 14,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "네이버, 엔비디아 협력 기대 식었나…하루 만에 11%대 약세[특징주]",
+        "url": "https://www.newsway.co.kr/news/view?ud=2026060910400562939",
+        "office": "newsway",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세"
   }
 ]
