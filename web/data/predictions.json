@@ -1,65 +1,21 @@
 {
-  "as_of": "2026-06-09 10:52 KST",
+  "as_of": "2026-06-09 11:07 KST",
   "intraday_rank": [
-    {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "90%",
-      "entry": 624000.0,
-      "target": 655200,
-      "stop": 605280,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.72)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 8.57,
-      "cause_news": [
-        {
-          "title": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/09/BDTMPEOMYRGAPCOFKTTQK5CLME/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 증권가 목표가 줄상향에 8%대 강세",
-          "url": "https://www.ajunews.com/view/20260609102451680",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
-          "url": "https://www.news1.kr/finance/general-stock/6191632",
-          "office": "news1",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세"
-    },
     {
       "ticker": "브이엠",
       "code": "089970",
-      "tomorrow_up_prob": "90%",
-      "entry": 72500.0,
-      "target": 76125,
-      "stop": 70325,
+      "tomorrow_up_prob": "91%",
+      "entry": 72900.0,
+      "target": 76545,
+      "stop": 70713,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.24,
+      "day_change": 20.73,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -78,19 +34,27 @@
     {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "88%",
-      "entry": 60700.0,
-      "target": 63735,
-      "stop": 58879,
+      "tomorrow_up_prob": "87%",
+      "entry": 60600.0,
+      "target": 63630,
+      "stop": 58782,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI58.8 강세"
+        "RSI58.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 22.59,
+      "day_change": 23.4,
       "cause_news": [
+        {
+          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
           "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
@@ -101,23 +65,23 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
+      "cause_summary": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은..."
     },
     {
       "ticker": "롯데쇼핑",
       "code": "023530",
-      "tomorrow_up_prob": "81%",
-      "entry": 183400.0,
-      "target": 192570,
-      "stop": 177898,
+      "tomorrow_up_prob": "82%",
+      "entry": 185000.0,
+      "target": 194250,
+      "stop": 179450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": null,
+      "day_change": 10.26,
       "cause_news": [
         {
           "title": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]",
@@ -140,20 +104,64 @@
       "cause_summary": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]"
     },
     {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "80%",
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI56.4 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -10.93,
+      "cause_news": [
+        {
+          "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
+          "url": "https://www.etoday.co.kr/news/view/2591782",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+          "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "(특징주)NAVER, 8%대 급락…AI 협력 기대 뒤 차익실현 매물 출회",
+          "url": "http://www.newstomato.com/ReadNews.aspx?no=1303395&inflow=N",
+          "office": "newstomato",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세"
+    },
+    {
       "ticker": "HPSP",
       "code": "403870",
       "tomorrow_up_prob": "75%",
-      "entry": 57000.0,
-      "target": 59850,
-      "stop": 55290,
+      "entry": 57100.0,
+      "target": 59955,
+      "stop": 55387,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
-        "RSI57.5 강세",
-        "거래량2.1배"
+        "강세마감(0.78)",
+        "RSI57.6 강세",
+        "거래량2.17배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.19,
+      "day_change": 21.74,
       "cause_news": [
         {
           "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
@@ -172,12 +180,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458599",
-          "office": "pinpointnews",
+          "title": "[특징주] HPSP, 삼성전자·SK하이닉스 급등에 동반 강세…AI 반도체 핵심...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=290836",
+          "office": "widedaily",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
@@ -187,17 +195,17 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "74%",
-      "entry": 13340.0,
-      "target": 14007,
-      "stop": 12940,
+      "entry": 13390.0,
+      "target": 14060,
+      "stop": 12988,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
-        "RSI58.2 강세",
-        "거래량3.0배"
+        "강세마감(0.88)",
+        "RSI58.4 강세",
+        "거래량3.16배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 20.44,
+      "day_change": 17.51,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -214,23 +222,103 @@
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "후성 주가, 6월 9일 장중 13,240원 17.69% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524630",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "중간",
       "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
     },
     {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "74%",
+      "entry": 164300.0,
+      "target": 172515,
+      "stop": 159371,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.96)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+          "url": "https://www.news1.kr/finance/general-stock/6190726",
+          "office": "news1",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
+          "url": "https://www.news1.kr/finance/general-stock/6191632",
+          "office": "news1",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]"
+    },
+    {
+      "ticker": "라이콤",
+      "code": "388790",
+      "tomorrow_up_prob": "70%",
+      "entry": 7970.0,
+      "target": 8368,
+      "stop": 7731,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.72)",
+        "MACD강세",
+        "RSI68.3 강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 17.04,
+      "cause_news": [
+        {
+          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+    },
+    {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "66%",
-      "entry": 24350.0,
-      "target": 25568,
-      "stop": 23620,
+      "tomorrow_up_prob": "67%",
+      "entry": 24300.0,
+      "target": 25515,
+      "stop": 23571,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.76)",
         "MACD강세",
-        "거래량4.46배"
+        "거래량4.57배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -264,80 +352,16 @@
       "cause_summary": "미래에셋자산, 미래에셋생명 지분 매입 속도…'운용 호실적·생명 성장..."
     },
     {
-      "ticker": "라이콤",
-      "code": "388790",
-      "tomorrow_up_prob": "62%",
-      "entry": 7840.0,
-      "target": 8232,
-      "stop": 7605,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI67.7 강세",
-        "거래량1.85배"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 17.93,
-      "cause_news": [
-        {
-          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "59%",
-      "entry": 231000.0,
-      "target": 242550,
-      "stop": 224070,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "일목 구름위",
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": -13.99,
-      "cause_news": [
-        {
-          "title": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락",
-          "url": "https://www.etoday.co.kr/news/view/2591802",
-          "office": "etoday",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락"
-    },
-    {
       "ticker": "광전자",
       "code": "017900",
       "tomorrow_up_prob": "55%",
-      "entry": 9490.0,
-      "target": 9964,
-      "stop": 9205,
+      "entry": 9240.0,
+      "target": 9702,
+      "stop": 8963,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
-        "장중 8회 지속"
+        "장중 9회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -359,12 +383,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 젠슨 황 방한에 다시 살아난 광통신株 투심…광전자 장중 '상...",
-          "url": "https://www.etoday.co.kr/news/view/2591768",
-          "office": "etoday",
+          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
+          "office": "cbci",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -374,16 +398,16 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "54%",
-      "entry": 29550.0,
-      "target": 31028,
-      "stop": 28664,
+      "entry": 28850.0,
+      "target": 30292,
+      "stop": 27984,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 8회 지속"
+        "장중 9회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -2.17,
+      "day_change": -3.17,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -408,64 +432,20 @@
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "90%",
-      "entry": 624000.0,
-      "target": 655200,
-      "stop": 605280,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.72)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 8.57,
-      "cause_news": [
-        {
-          "title": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/09/BDTMPEOMYRGAPCOFKTTQK5CLME/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 증권가 목표가 줄상향에 8%대 강세",
-          "url": "https://www.ajunews.com/view/20260609102451680",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
-          "url": "https://www.news1.kr/finance/general-stock/6191632",
-          "office": "news1",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세"
-    },
-    {
       "ticker": "브이엠",
       "code": "089970",
-      "tomorrow_up_prob": "90%",
-      "entry": 72500.0,
-      "target": 76125,
-      "stop": 70325,
+      "tomorrow_up_prob": "91%",
+      "entry": 72900.0,
+      "target": 76545,
+      "stop": 70713,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.24,
+      "day_change": 20.73,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -484,19 +464,27 @@
     {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "88%",
-      "entry": 60700.0,
-      "target": 63735,
-      "stop": 58879,
+      "tomorrow_up_prob": "87%",
+      "entry": 60600.0,
+      "target": 63630,
+      "stop": 58782,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI58.8 강세"
+        "RSI58.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 22.59,
+      "day_change": 23.4,
       "cause_news": [
+        {
+          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
           "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
@@ -507,23 +495,23 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
+      "cause_summary": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은..."
     },
     {
       "ticker": "롯데쇼핑",
       "code": "023530",
-      "tomorrow_up_prob": "81%",
-      "entry": 183400.0,
-      "target": 192570,
-      "stop": 177898,
+      "tomorrow_up_prob": "82%",
+      "entry": 185000.0,
+      "target": 194250,
+      "stop": 179450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": null,
+      "day_change": 10.26,
       "cause_news": [
         {
           "title": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]",
@@ -546,20 +534,64 @@
       "cause_summary": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]"
     },
     {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "80%",
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI56.4 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -10.93,
+      "cause_news": [
+        {
+          "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
+          "url": "https://www.etoday.co.kr/news/view/2591782",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+          "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "(특징주)NAVER, 8%대 급락…AI 협력 기대 뒤 차익실현 매물 출회",
+          "url": "http://www.newstomato.com/ReadNews.aspx?no=1303395&inflow=N",
+          "office": "newstomato",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세"
+    },
+    {
       "ticker": "HPSP",
       "code": "403870",
       "tomorrow_up_prob": "75%",
-      "entry": 57000.0,
-      "target": 59850,
-      "stop": 55290,
+      "entry": 57100.0,
+      "target": 59955,
+      "stop": 55387,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
-        "RSI57.5 강세",
-        "거래량2.1배"
+        "강세마감(0.78)",
+        "RSI57.6 강세",
+        "거래량2.17배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.19,
+      "day_change": 21.74,
       "cause_news": [
         {
           "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
@@ -578,12 +610,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458599",
-          "office": "pinpointnews",
+          "title": "[특징주] HPSP, 삼성전자·SK하이닉스 급등에 동반 강세…AI 반도체 핵심...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=290836",
+          "office": "widedaily",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
