@@ -10,8 +10,14 @@
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
     "summary": "[시그널] 일봉 상승추세 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
+      {
+        "title": "당장 출근 돼요?...구직자 &quot;SK하이닉스라면&quot;",
+        "url": "https://n.news.naver.com/mnews/article/092/0002425916",
+        "office": "지디넷코리아",
+        "sentiment": "호재"
+      },
       {
         "title": "네이버, 국내 최대 문구 페어 '인벤타리오' 공식 후원…서비스 지원",
         "url": "https://n.news.naver.com/mnews/article/277/0005773966",
@@ -28,12 +34,6 @@
         "title": "젠슨 황, ‘깐부’ SK ‘삼쏘’ LG·네이버, ‘평냉‘ 현대차에 치른 ...",
         "url": "https://n.news.naver.com/mnews/article/020/0003725530",
         "office": "동아일보",
-        "sentiment": "호재"
-      },
-      {
-        "title": "네이버, 국내 최대 문구페어 ‘인벤타리오’ 공식 후원",
-        "url": "https://n.news.naver.com/mnews/article/029/0003030819",
-        "office": "디지털타임스",
         "sentiment": "호재"
       }
     ],
@@ -71,13 +71,13 @@
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "노타",
-    "signal_probability": "60%",
-    "position_type": "분석불가",
-    "day_change": -1.0,
+    "signal_probability": "78%",
+    "position_type": "저점",
+    "day_change": 0.67,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
+    "summary": "[시그널] 일봉 저점 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -112,11 +112,11 @@
     "target_stock": "고영",
     "signal_probability": "70%",
     "position_type": "눌림목",
-    "day_change": 20.68,
+    "day_change": 20.32,
     "headline": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "고영테크놀러지, SOCAMM2 검사장비 수주 … 차세대 AI 메모리 시장 진...",
@@ -173,11 +173,11 @@
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 27.69,
+    "day_change": 27.03,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -204,7 +204,7 @@
     "headline": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
@@ -243,7 +243,7 @@
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -304,7 +304,7 @@
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 15:30 KST",
+    "published_at": "2026-06-09 15:45 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
