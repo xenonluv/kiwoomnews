@@ -1,83 +1,23 @@
 [
   {
-    "post_id": "POST_20260609_089970",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "브이엠",
-    "signal_probability": "47%",
-    "position_type": "과다상승",
-    "day_change": 25.87,
-    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
-    "news": [
-      {
-        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
-        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
-    "post_id": "POST_20260609_095610",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "테스",
-    "signal_probability": "47%",
-    "position_type": "과다상승",
-    "day_change": 24.49,
-    "headline": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
-    "news": [
-      {
-        "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
-        "url": "https://n.news.naver.com/mnews/article/277/0005772528",
-        "office": "아시아경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "시지메드텍, 말레이시아 '노보시스 트라우마' 독점 공급 계약 체결",
-        "url": "https://n.news.naver.com/mnews/article/008/0005367623",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458632",
-        "office": "pinpointnews",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-      }
-    ],
-    "cause_confidence": "중간",
-    "cause_summary": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역"
-  },
-  {
     "post_id": "POST_20260609_069960",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "현대백화점",
-    "signal_probability": "46%",
+    "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 16.15,
+    "day_change": 14.33,
     "headline": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
+    "published_at": "2026-06-09 14:30 KST",
     "news": [
+      {
+        "title": "롯데쇼핑·현대百, 10%대 급등하며 나란히 '신고가'",
+        "url": "https://n.news.naver.com/mnews/article/003/0013995993",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
       {
         "title": "더현대 글로벌, K브랜드 앞세워 대만시장 본격 공략",
         "url": "https://n.news.naver.com/mnews/article/469/0000935374",
@@ -107,24 +47,143 @@
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
       },
       {
-        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
-        "url": "https://www.news1.kr/finance/general-stock/6190726",
-        "office": "news1",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
         "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
         "url": "https://www.news1.kr/finance/general-stock/6191632",
         "office": "news1",
         "sentiment": "호재",
         "cause_score": 11,
         "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] '본업 모멘텀 가속화' 현대백화점 13% 급등",
+        "url": "https://www.seoulfn.com/news/articleView.html?idxno=630675",
+        "office": "seoulfn",
+        "sentiment": "호재",
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
       }
     ],
     "cause_confidence": "높음",
     "cause_summary": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세"
+  },
+  {
+    "post_id": "POST_20260609_098460",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "고영",
+    "signal_probability": "70%",
+    "position_type": "눌림목",
+    "day_change": 21.76,
+    "headline": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.5, 호재) · 일봉 눌림목.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 14:30 KST",
+    "news": [
+      {
+        "title": "고영, AI 메모리 ‘소캠2’ 검사시장 진입…국내 메모리社 첫 수주",
+        "url": "https://n.news.naver.com/mnews/article/015/0005296654",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "고영, 어닝서프라이즈에 '上'…바이젠셀·툴젠도 상승세[바이오맥짚기...",
+        "url": "https://n.news.naver.com/mnews/article/018/0006267961",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "고영테크놀러지 1분기 매출 727억원…전년 대비 42% 증가",
+        "url": "https://n.news.naver.com/mnews/article/030/0003421187",
+        "office": "전자신문",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
+        "url": "https://www.tokenpost.kr/news/economy/352848",
+        "office": "tokenpost",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
+        "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
+        "office": "ebn",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행"
+  },
+  {
+    "post_id": "POST_20260609_089970",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "브이엠",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 25.54,
+    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 14:30 KST",
+    "news": [
+      {
+        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
+        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
+        "office": "한국경제",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
+    "post_id": "POST_20260609_095610",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "테스",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 24.45,
+    "headline": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 14:30 KST",
+    "news": [
+      {
+        "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
+        "url": "https://n.news.naver.com/mnews/article/277/0005772528",
+        "office": "아시아경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "시지메드텍, 말레이시아 '노보시스 트라우마' 독점 공급 계약 체결",
+        "url": "https://n.news.naver.com/mnews/article/008/0005367623",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458632",
+        "office": "pinpointnews",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+      }
+    ],
+    "cause_confidence": "중간",
+    "cause_summary": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역"
   },
   {
     "post_id": "POST_20260609_403870",
@@ -133,11 +192,11 @@
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 22.8,
+    "day_change": 21.95,
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
+    "published_at": "2026-06-09 14:30 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -194,11 +253,11 @@
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 19.38,
+    "day_change": 17.96,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
+    "published_at": "2026-06-09 14:30 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -247,13 +306,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
-    "signal_probability": "70%",
-    "position_type": "저점",
-    "day_change": 0.33,
+    "signal_probability": "52%",
+    "position_type": "분석불가",
+    "day_change": -0.17,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 저점.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 14:15 KST",
+    "published_at": "2026-06-09 14:30 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
