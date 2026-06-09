@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-09 15:07 KST",
+  "as_of": "2026-06-09 15:22 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 76300.0,
-      "target": 80115,
-      "stop": 74011,
+      "entry": 77000.0,
+      "target": 80850,
+      "stop": 74690,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.94)",
         "정배열",
         "MACD강세"
       ],
@@ -35,17 +35,17 @@
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "90%",
-      "entry": 160500.0,
-      "target": 168525,
-      "stop": 155685,
+      "entry": 161400.0,
+      "target": 169470,
+      "stop": 156558,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.76)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 22.51,
+      "day_change": 23.65,
       "cause_news": [
         {
           "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
@@ -63,12 +63,12 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "89%",
-      "entry": 1955000.0,
-      "target": 2052750,
-      "stop": 1896350,
+      "entry": 1971000.0,
+      "target": 2069550,
+      "stop": 1911870,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
@@ -107,9 +107,9 @@
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "89%",
-      "entry": 120700.0,
-      "target": 126735,
-      "stop": 117079,
+      "entry": 120800.0,
+      "target": 126840,
+      "stop": 117176,
       "confidence": "상",
       "reasons": [
         "강세마감(0.87)",
@@ -140,61 +140,17 @@
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
-      "ticker": "테크윙",
-      "code": "089030",
-      "tomorrow_up_prob": "87%",
-      "entry": 60100.0,
-      "target": 63105,
-      "stop": 58297,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "MACD강세",
-        "RSI58.2 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "테크윙, 장중 23% 급등…반도체 검사장비 수요 확대 기대에 강세",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217823",
-          "office": "job-post",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "HPSP 이어 테크윙 21%급등…반도체 소부장주 강세",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439439",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "테크윙, 장중 23% 급등…반도체 검사장비 수요 확대 기대에 강세"
-    },
-    {
       "ticker": "SK하이닉스",
       "code": "000660",
-      "tomorrow_up_prob": "82%",
-      "entry": 2203000.0,
-      "target": 2313150,
-      "stop": 2136910,
+      "tomorrow_up_prob": "85%",
+      "entry": 2217000.0,
+      "target": 2327850,
+      "stop": 2150490,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.9)",
+        "강세마감(0.96)",
         "정배열",
-        "RSI62.0 강세"
+        "RSI62.3 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -208,20 +164,20 @@
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[ET특징주] 삼성전자·SK하이닉스, 급락 하루 만에 반등",
-          "url": "https://www.etnews.com/20260609000175",
-          "office": "etnews",
+          "title": "SK하이닉스 레버리지 ETF, 이상 급등에 투자유의 적출",
+          "url": "http://www.segyebiz.com/newsView/20260609511958?OutUrl=naver",
+          "office": "segyebiz",
           "sentiment": "악재",
           "cause_score": 10,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
         },
         {
-          "title": "SK하이닉스 주가, 강세... 배경은?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162614",
-          "office": "ggilbo",
+          "title": "‘이상 급등’ 하이닉스 레버리지 3종, 투자유의종목 적출",
+          "url": "https://www.dailian.co.kr/news/view/1654036/?sc=Naver",
+          "office": "dailian",
           "sentiment": "악재",
           "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -231,14 +187,14 @@
       "ticker": "피에스케이",
       "code": "319660",
       "tomorrow_up_prob": "78%",
-      "entry": 137800.0,
-      "target": 144690,
-      "stop": 133666,
+      "entry": 138200.0,
+      "target": 145110,
+      "stop": 134054,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.9 강세"
+        "RSI65.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -272,20 +228,64 @@
       "cause_summary": "[특징주] 피에스케이, 반도체 투자 확대 수혜 기대감에 급등"
     },
     {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "76%",
+      "entry": 166500.0,
+      "target": 174825,
+      "stop": 161505,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 16.96,
+      "cause_news": [
+        {
+          "title": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439565",
+          "office": "businesspost",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
+          "url": "https://www.news1.kr/finance/general-stock/6191632",
+          "office": "news1",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] '본업 모멘텀 가속화' 현대백화점 13% 급등",
+          "url": "https://www.seoulfn.com/news/articleView.html?idxno=630675",
+          "office": "seoulfn",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세"
+    },
+    {
       "ticker": "HPSP",
       "code": "403870",
       "tomorrow_up_prob": "75%",
-      "entry": 57100.0,
-      "target": 59955,
-      "stop": 55387,
+      "entry": 57000.0,
+      "target": 59850,
+      "stop": 55290,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
-        "RSI57.6 강세",
-        "거래량2.86배"
+        "강세마감(0.77)",
+        "RSI57.5 강세",
+        "거래량2.91배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 20.68,
+      "day_change": 21.1,
       "cause_news": [
         {
           "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
@@ -319,17 +319,17 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "74%",
-      "entry": 13430.0,
-      "target": 14102,
-      "stop": 13027,
+      "entry": 13520.0,
+      "target": 14196,
+      "stop": 13114,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.88)",
-        "RSI58.6 강세",
-        "거래량4.35배"
+        "강세마감(0.93)",
+        "RSI59.0 강세",
+        "거래량4.44배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.64,
+      "day_change": 19.91,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -360,97 +360,17 @@
       "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
     },
     {
-      "ticker": "현대백화점",
-      "code": "069960",
-      "tomorrow_up_prob": "73%",
-      "entry": 173400.0,
-      "target": 182070,
-      "stop": 168198,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI80.4 과매수, Stoch 과매수",
-      "day_change": 15.28,
-      "cause_news": [
-        {
-          "title": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439565",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
-          "url": "https://www.news1.kr/finance/general-stock/6191632",
-          "office": "news1",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] '본업 모멘텀 가속화' 현대백화점 13% 급등",
-          "url": "https://www.seoulfn.com/news/articleView.html?idxno=630675",
-          "office": "seoulfn",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세"
-    },
-    {
-      "ticker": "고영",
-      "code": "098460",
-      "tomorrow_up_prob": "73%",
-      "entry": 34000.0,
-      "target": 35700,
-      "stop": 32980,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.74)",
-        "Stoch골든",
-        "거래량2.19배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 24.82,
-      "cause_news": [
-        {
-          "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
-          "url": "https://www.tokenpost.kr/news/economy/352848",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
-          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
-          "office": "ebn",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행"
-    },
-    {
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "70%",
-      "entry": 24400.0,
-      "target": 25620,
-      "stop": 23668,
+      "entry": 24050.0,
+      "target": 25252,
+      "stop": 23328,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.71)",
         "MACD강세",
-        "거래량5.94배"
+        "거래량6.0배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -484,43 +404,71 @@
       "cause_summary": "미래에셋생명 주가, 강세... 배경은?"
     },
     {
-      "ticker": "피에스케이홀딩스",
-      "code": "031980",
+      "ticker": "SK스퀘어",
+      "code": "402340",
       "tomorrow_up_prob": "69%",
-      "entry": 125700.0,
-      "target": 131985,
-      "stop": 121929,
+      "entry": 1270000.0,
+      "target": 1333500,
+      "stop": 1231900,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.82)",
-        "RSI53.2 강세",
+        "강세마감(0.98)",
+        "정배열",
+        "RSI60.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "고영",
+      "code": "098460",
+      "tomorrow_up_prob": "66%",
+      "entry": 33550.0,
+      "target": 35228,
+      "stop": 32544,
+      "confidence": "중",
+      "reasons": [
+        "Stoch골든",
+        "거래량2.33배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
+      "day_change": 21.22,
+      "cause_news": [
         {
-          "title": "[하우머니] P에서 Q로, CapEx의 시간…수혜는 반도체 장비주로",
-          "url": "https://n.news.naver.com/mnews/article/374/0000514619",
-          "office": "SBS Biz",
-          "sentiment": "호재"
+          "title": "고영, 하락 벗어나 22% 급등…소캠2 검사장비 수주",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439454",
+          "office": "econonews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
-      ]
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "고영, 하락 벗어나 22% 급등…소캠2 검사장비 수주"
     },
     {
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "58%",
-      "entry": 29800.0,
-      "target": 31290,
-      "stop": 28906,
+      "entry": 29700.0,
+      "target": 31185,
+      "stop": 28809,
       "confidence": "중",
       "reasons": [
         "호재",
-        "장중 22회 지속"
+        "장중 23회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 0.17,
+      "day_change": -0.67,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -545,13 +493,14 @@
     {
       "ticker": "광전자",
       "code": "017900",
-      "tomorrow_up_prob": "50%",
-      "entry": 9090.0,
-      "target": 9544,
-      "stop": 8817,
-      "confidence": "하",
+      "tomorrow_up_prob": "55%",
+      "entry": 9180.0,
+      "target": 9639,
+      "stop": 8905,
+      "confidence": "중",
       "reasons": [
-        "장중 25회 지속"
+        "Stoch골든",
+        "장중 26회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -590,12 +539,12 @@
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 76300.0,
-      "target": 80115,
-      "stop": 74011,
+      "entry": 77000.0,
+      "target": 80850,
+      "stop": 74690,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.94)",
         "정배열",
         "MACD강세"
       ],
@@ -620,17 +569,17 @@
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "90%",
-      "entry": 160500.0,
-      "target": 168525,
-      "stop": 155685,
+      "entry": 161400.0,
+      "target": 169470,
+      "stop": 156558,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.76)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 22.51,
+      "day_change": 23.65,
       "cause_news": [
         {
           "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
@@ -648,12 +597,12 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "89%",
-      "entry": 1955000.0,
-      "target": 2052750,
-      "stop": 1896350,
+      "entry": 1971000.0,
+      "target": 2069550,
+      "stop": 1911870,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
@@ -692,9 +641,9 @@
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "89%",
-      "entry": 120700.0,
-      "target": 126735,
-      "stop": 117079,
+      "entry": 120800.0,
+      "target": 126840,
+      "stop": 117176,
       "confidence": "상",
       "reasons": [
         "강세마감(0.87)",
@@ -725,48 +674,48 @@
       "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
-      "ticker": "테크윙",
-      "code": "089030",
-      "tomorrow_up_prob": "87%",
-      "entry": 60100.0,
-      "target": 63105,
-      "stop": 58297,
+      "ticker": "SK하이닉스",
+      "code": "000660",
+      "tomorrow_up_prob": "85%",
+      "entry": 2217000.0,
+      "target": 2327850,
+      "stop": 2150490,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.7)",
-        "MACD강세",
-        "RSI58.2 강세"
+        "강세마감(0.96)",
+        "정배열",
+        "RSI62.3 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "테크윙, 장중 23% 급등…반도체 검사장비 수요 확대 기대에 강세",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217823",
-          "office": "job-post",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "HPSP 이어 테크윙 21%급등…반도체 소부장주 강세",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439439",
-          "office": "econonews",
+          "title": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673305",
+          "office": "digitaltoday",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "SK하이닉스 레버리지 ETF, 이상 급등에 투자유의 적출",
+          "url": "http://www.segyebiz.com/newsView/20260609511958?OutUrl=naver",
+          "office": "segyebiz",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "‘이상 급등’ 하이닉스 레버리지 3종, 투자유의종목 적출",
+          "url": "https://www.dailian.co.kr/news/view/1654036/?sc=Naver",
+          "office": "dailian",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "테크윙, 장중 23% 급등…반도체 검사장비 수요 확대 기대에 강세"
+      "cause_summary": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
