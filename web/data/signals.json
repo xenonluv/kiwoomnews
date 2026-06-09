@@ -1,120 +1,40 @@
 [
   {
-    "post_id": "POST_20260609_023530",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "롯데쇼핑",
-    "signal_probability": "49%",
-    "position_type": "과다상승",
-    "day_change": 10.26,
-    "headline": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
-    "news": [
-      {
-        "title": "“롯데쇼핑, 외국인 관광객 증가·마트 매출 증대로 실적 개선될 것”",
-        "url": "https://n.news.naver.com/mnews/article/037/0000038305",
-        "office": "주간동아",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[ET특징주]롯데쇼핑, 백화점 실적 개선 기대감에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003435741",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "롯데쇼핑, 백화점 업사이드 충분…실적 개선 여력↑-신한",
-        "url": "https://n.news.naver.com/mnews/article/018/0006301128",
-        "office": "이데일리",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03220966645480080",
-        "office": "edaily",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[ET특징주]롯데쇼핑, 백화점 실적 개선 기대감에 상승세",
-        "url": "https://www.etnews.com/20260609000098",
-        "office": "etnews",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "롯데쇼핑, 백화점 실적 개선 기대감에 6%↑[특징주]"
-  },
-  {
-    "post_id": "POST_20260609_089970",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "브이엠",
-    "signal_probability": "47%",
-    "position_type": "과다상승",
-    "day_change": 20.73,
-    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
-    "news": [
-      {
-        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
-        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260609_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "67%",
+    "signal_probability": "69%",
     "position_type": "상승추세",
-    "day_change": -10.93,
+    "day_change": -10.39,
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
+    "published_at": "2026-06-09 11:15 KST",
     "news": [
       {
-        "title": "SK하이닉스·삼성전자, 취업하고 싶은 기업 1·2위…AI가 바꾼 취업 지...",
-        "url": "https://n.news.naver.com/mnews/article/586/0000131073",
-        "office": "시사저널",
+        "title": "‘아, 옛날이여’ 카카오…꿈의 직장 순위서 밀리고, 네이버는 버텼다",
+        "url": "https://n.news.naver.com/mnews/article/022/0004134017",
+        "office": "세계일보",
         "sentiment": "호재"
       },
       {
-        "title": "젠슨 황 효과는 하루 짜리? 네이버 10%대 급락",
-        "url": "https://n.news.naver.com/mnews/article/016/0002653884",
-        "office": "헤럴드경제",
+        "title": "젠슨 황 韓에 '팀 엔비디아' 구축…HBM·로봇·새만금 AI밸리 한국만 ...",
+        "url": "https://n.news.naver.com/mnews/article/277/0005773781",
+        "office": "아시아경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;AI 부품 대장주...삼성전기 230만 간다&quot;…'엔비디아 깐부' 네이버, 목...",
+        "url": "https://n.news.naver.com/mnews/article/014/0005532411",
+        "office": "파이낸셜뉴스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "‘삼소 회동’ LG전자·네이버, 10% 넘게 급락…협력 청사진에도 약세...",
+        "url": "https://n.news.naver.com/mnews/article/011/0004629131",
+        "office": "서울경제",
         "sentiment": "혼재"
-      },
-      {
-        "title": "“韓 역사상 최대 사업”…젠슨 황의 ‘선물’, 립서비스 아닌 숫자로...",
-        "url": "https://n.news.naver.com/mnews/article/016/0002653881",
-        "office": "헤럴드경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[기고] 미디어 권력을 쥔 '정치 유튜버', 이제는 언론의 책임을 물을 ...",
-        "url": "https://n.news.naver.com/mnews/article/031/0001033772",
-        "office": "아이뉴스24",
-        "sentiment": "호재"
       }
     ],
     "cause_news": [
@@ -147,17 +67,219 @@
     "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세"
   },
   {
+    "post_id": "POST_20260609_089970",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "브이엠",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 21.56,
+    "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 11:15 KST",
+    "news": [
+      {
+        "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
+        "url": "https://n.news.naver.com/mnews/article/015/0005290112",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;브이엠, 올해 역대급 실적 전망…목표가↑&quot;-하나",
+        "url": "https://n.news.naver.com/mnews/article/015/0005275582",
+        "office": "한국경제",
+        "sentiment": "호재"
+      }
+    ]
+  },
+  {
+    "post_id": "POST_20260609_043260",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "성호전자",
+    "signal_probability": "47%",
+    "position_type": "과다상승",
+    "day_change": 17.87,
+    "headline": "[특징주] 성호전자, 광통신 장비사 도약 및 실적 폭발 기대감에 18%대 급...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 11:15 KST",
+    "news": [
+      {
+        "title": "젠슨황 방한·코닝 계약에 광통신주 급등…성호전자 19%↑",
+        "url": "https://n.news.naver.com/mnews/article/003/0013995301",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "[단독] 세아FSI 인수 우협에 성호전자 모회사... 매각가 2000억대",
+        "url": "https://n.news.naver.com/mnews/article/366/0001168856",
+        "office": "조선비즈",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 성호전자, 광통신 장비사 도약 및 실적 폭발 기대감에 18%대 급...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=295326",
+        "office": "widedaily",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 성호전자, ADS테크 인수 효과 부각에 급등…AI 데이터센터 광...",
+        "url": "https://www.tokenpost.kr/news/economy/367266",
+        "office": "tokenpost",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 성호전자, 체질 개선·호실적 전망…두자릿수↑",
+        "url": "https://www.ekn.kr/web/view.php?key=20260609027181708",
+        "office": "ekn",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 성호전자, 광통신 장비사 도약 및 실적 폭발 기대감에 18%대 급..."
+  },
+  {
+    "post_id": "POST_20260609_066570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "LG전자",
+    "signal_probability": "69%",
+    "position_type": "눌림목",
+    "day_change": -13.06,
+    "headline": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 눌림목.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 11:15 KST",
+    "news": [
+      {
+        "title": "“젠슨황 올때 팔걸…어디까지 내려가는 거예요?” LG·두산그룹주 ‘...",
+        "url": "https://n.news.naver.com/mnews/article/081/0003650794",
+        "office": "서울신문",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "‘삼소 회동’ LG전자·네이버, 10% 넘게 급락…협력 청사진에도 약세...",
+        "url": "https://n.news.naver.com/mnews/article/011/0004629131",
+        "office": "서울경제",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "“협력사가 나의 경쟁력” 함께 미래 준비",
+        "url": "https://n.news.naver.com/mnews/article/469/0000935355",
+        "office": "한국일보",
+        "sentiment": "호재"
+      },
+      {
+        "title": "헬멧은 스타일러로, 세탁은 워시타워로…대만 사로잡은 LG",
+        "url": "https://n.news.naver.com/mnews/article/008/0005369110",
+        "office": "머니투데이",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락",
+        "url": "https://www.etoday.co.kr/news/view/2591802",
+        "office": "etoday",
+        "sentiment": "악재",
+        "cause_score": 14,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "[금융트렌드] 급등했던 LG전자 주가 하락세...젠슨황 방문과의 상관관계...",
+        "url": "https://www.handmk.com/news/articleView.html?idxno=40056",
+        "office": "handmk",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락"
+  },
+  {
+    "post_id": "POST_20260609_069960",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "현대백화점",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 10.83,
+    "headline": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 11:15 KST",
+    "news": [
+      {
+        "title": "더현대 글로벌, K브랜드 앞세워 대만시장 본격 공략",
+        "url": "https://n.news.naver.com/mnews/article/469/0000935374",
+        "office": "한국일보",
+        "sentiment": "호재"
+      },
+      {
+        "title": "명동 다음은 강남…현대백화점, 인바운드 판도 변화에 웃을까",
+        "url": "https://n.news.naver.com/mnews/article/293/0000085953",
+        "office": "블로터",
+        "sentiment": "호재"
+      },
+      {
+        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+        "url": "https://n.news.naver.com/mnews/article/421/0008991659",
+        "office": "뉴스1",
+        "sentiment": "혼재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+        "url": "https://www.news1.kr/finance/general-stock/6190726",
+        "office": "news1",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
+        "url": "https://www.news1.kr/finance/general-stock/6191632",
+        "office": "news1",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] '본업 모멘텀 가속화' 현대백화점 13% 급등",
+        "url": "https://www.seoulfn.com/news/articleView.html?idxno=630675",
+        "office": "seoulfn",
+        "sentiment": "호재",
+        "cause_score": 9,
+        "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]"
+  },
+  {
     "post_id": "POST_20260609_403870",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 21.74,
+    "day_change": 21.53,
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
+    "published_at": "2026-06-09 11:15 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -214,11 +336,11 @@
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 17.51,
+    "day_change": 18.58,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
+    "published_at": "2026-06-09 11:15 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -249,49 +371,18 @@
         "sentiment": "호재",
         "cause_score": 7,
         "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "후성 주가, 6월 9일 장중 13,240원 17.69% 상승",
+        "url": "https://www.joongangenews.com/news/articleView.html?idxno=524630",
+        "office": "joongangenews",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "중간",
     "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
-  },
-  {
-    "post_id": "POST_20260609_089030",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "테크윙",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 23.4,
-    "headline": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
-    "news": [
-      {
-        "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
-        "url": "https://n.news.naver.com/mnews/article/015/0005296434",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "테크윙, 삼성전자와 97억 규모 HBM 검사장비 공급계약",
-        "url": "https://n.news.naver.com/mnews/article/018/0006285192",
-        "office": "이데일리",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
-        "office": "pinpointnews",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
   },
   {
     "post_id": "POST_20260609_388790",
@@ -300,11 +391,11 @@
     "target_stock": "라이콤",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 17.04,
+    "day_change": 18.37,
     "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
+    "published_at": "2026-06-09 11:15 KST",
     "news": [
       {
         "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
@@ -339,44 +430,5 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
-  },
-  {
-    "post_id": "POST_20260609_486990",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "노타",
-    "signal_probability": "52%",
-    "position_type": "분석불가",
-    "day_change": -3.17,
-    "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 11:00 KST",
-    "news": [
-      {
-        "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-        "url": "https://n.news.naver.com/mnews/article/421/0008992442",
-        "office": "뉴스1",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
-        "url": "https://n.news.naver.com/mnews/article/018/0006295755",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 영상관제 AI 현장 적용 확대…엔비디아와 협력",
-        "url": "https://n.news.naver.com/mnews/article/003/0013979735",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
-        "url": "https://n.news.naver.com/mnews/article/092/0002424676",
-        "office": "지디넷코리아",
-        "sentiment": "호재"
-      }
-    ]
   }
 ]
