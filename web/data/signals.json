@@ -4,13 +4,13 @@
     "status": "PUBLISHED",
     "tier": "signal",
     "target_stock": "신세계",
-    "signal_probability": "56%",
+    "signal_probability": "48%",
     "position_type": "과다상승",
-    "day_change": 8.39,
+    "day_change": 11.01,
     "headline": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
     "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.5). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
         "title": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세",
@@ -67,17 +67,84 @@
     "cause_summary": "[특징주] 신세계, 증권가 목표가 줄상향에 11%대 강세"
   },
   {
+    "post_id": "POST_20260609_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "69%",
+    "position_type": "상승추세",
+    "day_change": -12.19,
+    "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
+    "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 10:30 KST",
+    "news": [
+      {
+        "title": "엔비디아발(發) AI팩토리 동맹…네이버·SKT·SK하이닉스 성장 기대감...",
+        "url": "https://n.news.naver.com/mnews/article/123/0002384367",
+        "office": "조세일보",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;'네카오'라 엮기도 민망&quot;…박탈감 커진 카카오 주주 '부글부글'[개미...",
+        "url": "https://n.news.naver.com/mnews/article/088/0001013701",
+        "office": "매일신문",
+        "sentiment": "호재"
+      },
+      {
+        "title": "급등했던 네이버, 장 초반 8%대 급락...25만4000원까지 밀리기도",
+        "url": "https://n.news.naver.com/mnews/article/654/0000184655",
+        "office": "강원도민일보",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "네이버, 문구 페어 '인벤타리오 2026' 타이틀 스폰서 참여",
+        "url": "https://n.news.naver.com/mnews/article/421/0008993081",
+        "office": "뉴스1",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
+        "url": "https://www.etoday.co.kr/news/view/2591782",
+        "office": "etoday",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+        "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+        "office": "mt",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "(특징주)NAVER, 8%대 급락…AI 협력 기대 뒤 차익실현 매물 출회",
+        "url": "http://www.newstomato.com/ReadNews.aspx?no=1303395&inflow=N",
+        "office": "newstomato",
+        "sentiment": "악재",
+        "cause_score": 14,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세"
+  },
+  {
     "post_id": "POST_20260609_089970",
     "status": "PUBLISHED",
-    "tier": "signal",
+    "tier": "candidate",
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 15.75,
+    "day_change": 17.91,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
-    "summary": "[시그널] 일봉 과다상승 · 재료 호재(중요도 6.0). 일봉 국면을 함께 확인.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -94,71 +161,57 @@
     ]
   },
   {
-    "post_id": "POST_20260609_035420",
+    "post_id": "POST_20260609_069960",
     "status": "PUBLISHED",
     "tier": "candidate",
-    "target_stock": "NAVER",
-    "signal_probability": "71%",
-    "position_type": "상승추세",
-    "day_change": -11.65,
-    "headline": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 8.5, 호재) · 일봉 상승추세.",
+    "target_stock": "현대백화점",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 9.29,
+    "headline": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
-        "title": "[특징주] “내수 플랫폼→AI 팩토리” 평가에도…네이버 9% 급락",
-        "url": "https://n.news.naver.com/mnews/article/366/0001170366",
-        "office": "조선비즈",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "구직자가 뽑은 ‘당장 출근하고 싶은 기업’ 1위는 SK하이닉스…“연...",
-        "url": "https://n.news.naver.com/mnews/article/025/0003529043",
-        "office": "중앙일보",
+        "title": "명동 다음은 강남…현대백화점, 인바운드 판도 변화에 웃을까",
+        "url": "https://n.news.naver.com/mnews/article/293/0000085953",
+        "office": "블로터",
         "sentiment": "호재"
       },
       {
-        "title": "[특징주] '젠슨황 효과'로 전날 급등했던 네이버, 8%대 급락",
-        "url": "https://n.news.naver.com/mnews/article/001/0016127578",
-        "office": "연합뉴스",
+        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+        "url": "https://n.news.naver.com/mnews/article/421/0008991659",
+        "office": "뉴스1",
         "sentiment": "혼재"
       },
       {
-        "title": "[테크스냅] 네이버, 문구 페어 '인벤타리오' 공식 스폰서",
-        "url": "https://n.news.naver.com/mnews/article/001/0016127580",
-        "office": "연합뉴스",
+        "title": "비비안, 독일 프리미엄 '프라스' 전국 유통망 확대…글로벌 비즈니스...",
+        "url": "https://n.news.naver.com/mnews/article/277/0005772931",
+        "office": "아시아경제",
         "sentiment": "호재"
       }
     ],
     "cause_news": [
       {
-        "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
-        "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
-        "office": "mt",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "(특징주)NAVER, 8%대 급락…AI 협력 기대 뒤 차익실현 매물 출회",
-        "url": "http://www.newstomato.com/ReadNews.aspx?no=1303395&inflow=N",
-        "office": "newstomato",
-        "sentiment": "악재",
-        "cause_score": 14,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-      },
-      {
-        "title": "[특징주] 네이버, 엔비디아 협력에 증권가 밸류에이션 리레이팅",
-        "url": "https://www.newstnt.com/news/articleView.html?idxno=705624",
-        "office": "newstnt",
+        "title": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]",
+        "url": "https://www.news1.kr/finance/general-stock/6190726",
+        "office": "news1",
         "sentiment": "호재",
         "cause_score": 13,
         "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "신세계 7%·현대백화점 6%…백화점 업종 강세[핫종목]",
+        "url": "https://www.news1.kr/finance/general-stock/6191632",
+        "office": "news1",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
       }
     ],
     "cause_confidence": "높음",
-    "cause_summary": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세"
+    "cause_summary": "현대백화점 '검은 월요일'에도 실적 기대감 3% 강세[핫종목]"
   },
   {
     "post_id": "POST_20260609_403870",
@@ -167,11 +220,11 @@
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 19.19,
-    "headline": "특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
+    "day_change": 19.62,
+    "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -194,7 +247,7 @@
     ],
     "cause_news": [
       {
-        "title": "특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
+        "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
         "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416305",
         "office": "bizwork",
         "sentiment": "호재",
@@ -211,46 +264,7 @@
       }
     ],
     "cause_confidence": "높음",
-    "cause_summary": "특징주] HPSP, 온디바이스 AI 수혜 기대에 강세"
-  },
-  {
-    "post_id": "POST_20260609_089030",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "테크윙",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 23.4,
-    "headline": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
-    "news": [
-      {
-        "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
-        "url": "https://n.news.naver.com/mnews/article/015/0005296434",
-        "office": "한국경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "테크윙, 삼성전자와 97억 규모 HBM 검사장비 공급계약",
-        "url": "https://n.news.naver.com/mnews/article/018/0006285192",
-        "office": "이데일리",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
-        "office": "pinpointnews",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
+    "cause_summary": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세"
   },
   {
     "post_id": "POST_20260609_093370",
@@ -259,11 +273,11 @@
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 12.71,
+    "day_change": 14.76,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -300,17 +314,103 @@
     "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
   },
   {
+    "post_id": "POST_20260609_089030",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "테크윙",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 23.2,
+    "headline": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 10:30 KST",
+    "news": [
+      {
+        "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
+        "url": "https://n.news.naver.com/mnews/article/015/0005296434",
+        "office": "한국경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "테크윙, 삼성전자와 97억 규모 HBM 검사장비 공급계약",
+        "url": "https://n.news.naver.com/mnews/article/018/0006285192",
+        "office": "이데일리",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458612",
+        "office": "pinpointnews",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
+  },
+  {
+    "post_id": "POST_20260609_388790",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "라이콤",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 20.89,
+    "headline": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-09 10:30 KST",
+    "news": [
+      {
+        "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+        "url": "https://n.news.naver.com/mnews/article/018/0006297930",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "라이콤 &quot;약 39억원 규모 통신용 광증폭기 수주…작년 매출 22% 규모&quot;",
+        "url": "https://n.news.naver.com/mnews/article/015/0005294978",
+        "office": "한국경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+        "office": "widedaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+        "office": "edaily",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
+  },
+  {
     "post_id": "POST_20260609_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "60%",
     "position_type": "분석불가",
-    "day_change": -2.5,
+    "day_change": -1.5,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 10:15 KST",
+    "published_at": "2026-06-09 10:30 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
