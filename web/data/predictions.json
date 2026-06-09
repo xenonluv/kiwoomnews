@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-09 15:37 KST",
+  "as_of": "2026-06-09 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
@@ -15,7 +15,7 @@
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 27.69,
+      "day_change": 27.03,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -76,14 +76,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084943",
-          "office": "topstarnews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
           "title": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]",
           "url": "https://www.newsway.co.kr/news/view?ud=2026060914460675828",
           "office": "newsway",
@@ -101,7 +93,7 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편"
+      "cause_summary": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]"
     },
     {
       "ticker": "코리아써키트",
@@ -142,7 +134,7 @@
     {
       "ticker": "SK하이닉스",
       "code": "000660",
-      "tomorrow_up_prob": "86%",
+      "tomorrow_up_prob": "85%",
       "entry": 2215000.0,
       "target": 2325750,
       "stop": 2148550,
@@ -156,20 +148,20 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등",
-          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673305",
-          "office": "digitaltoday",
+          "title": "[특징주] SK하이닉스 16%대 강세…AI 훈풍에 HBM 밸류체인 동반 급등",
+          "url": "https://www.tokenpost.kr/news/economy/367384",
+          "office": "tokenpost",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[속보]삼성전자 8.97%, SK하이닉스 15.91% 급등 마감",
-          "url": "https://www.newsis.com/view/NISX20260609_0003662365",
-          "office": "newsis",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+          "title": "[ET특징주] 삼성전자·SK하이닉스, 급락 하루 만에 반등",
+          "url": "https://www.etnews.com/20260609000175",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
         },
         {
           "title": "[특징주] SK하이닉스·테크윙 등 HBM 테마주 전 종목 상승",
@@ -181,12 +173,12 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등"
+      "cause_summary": "[특징주] SK하이닉스 16%대 강세…AI 훈풍에 HBM 밸류체인 동반 급등"
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "82%",
+      "tomorrow_up_prob": "83%",
       "entry": 257000.0,
       "target": 269850,
       "stop": 249290,
@@ -208,17 +200,17 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "네이버, 엔비디아 협력 기대 식었나…하루 만에 11%대 약세[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026060910400562939",
-          "office": "newsway",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
           "title": "[특징주] 네이버, 엔비디아 협력 발표 뒤 차익실현에 '급락'",
           "url": "https://www.g-enews.com/view.php?ud=20260609095656477744093b5d4e_1",
           "office": "g-enews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주] 전날 강세 보인 네이버, 장 초반 8%대 하락",
+          "url": "http://www.issuenbiz.com/news/articleView.html?idxno=77171",
+          "office": "issuenbiz",
           "sentiment": "악재",
           "cause_score": 10,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
@@ -370,7 +362,7 @@
       "reasons": [
         "강세마감(0.93)",
         "RSI59.0 강세",
-        "거래량4.5배"
+        "거래량4.51배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 20.18,
@@ -404,6 +396,22 @@
       "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
     },
     {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "71%",
+      "entry": 1269000.0,
+      "target": 1332450,
+      "stop": 1230930,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.97)",
+        "정배열",
+        "RSI60.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "70%",
@@ -428,14 +436,6 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "미래에셋자산, 미래에셋생명 지분 매입 속도…'운용 호실적·생명 성장...",
-          "url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=78968",
-          "office": "thefairnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        },
-        {
           "title": "미래에셋생명 주가, 6월 9일 장중 24,000원 14.28% 상승",
           "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084612",
           "office": "topstarnews",
@@ -448,25 +448,9 @@
       "cause_summary": "미래에셋생명 주가, 강세... 배경은?"
     },
     {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "70%",
-      "entry": 1269000.0,
-      "target": 1332450,
-      "stop": 1230930,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.97)",
-        "정배열",
-        "RSI60.1 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "고영",
       "code": "098460",
-      "tomorrow_up_prob": "67%",
+      "tomorrow_up_prob": "68%",
       "entry": 33450.0,
       "target": 35122,
       "stop": 32446,
@@ -477,7 +461,7 @@
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 20.68,
+      "day_change": 20.32,
       "cause_news": [
         {
           "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
@@ -517,10 +501,10 @@
       "confidence": "중",
       "reasons": [
         "호재",
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -1,
+      "day_change": 0.67,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -552,7 +536,7 @@
       "confidence": "중",
       "reasons": [
         "Stoch골든",
-        "장중 27회 지속"
+        "장중 28회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -601,7 +585,7 @@
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 27.69,
+      "day_change": 27.03,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -662,14 +646,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084943",
-          "office": "topstarnews",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
           "title": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]",
           "url": "https://www.newsway.co.kr/news/view?ud=2026060914460675828",
           "office": "newsway",
@@ -687,7 +663,7 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편"
+      "cause_summary": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]"
     },
     {
       "ticker": "코리아써키트",
@@ -728,7 +704,7 @@
     {
       "ticker": "SK하이닉스",
       "code": "000660",
-      "tomorrow_up_prob": "86%",
+      "tomorrow_up_prob": "85%",
       "entry": 2215000.0,
       "target": 2325750,
       "stop": 2148550,
@@ -742,20 +718,20 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등",
-          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673305",
-          "office": "digitaltoday",
+          "title": "[특징주] SK하이닉스 16%대 강세…AI 훈풍에 HBM 밸류체인 동반 급등",
+          "url": "https://www.tokenpost.kr/news/economy/367384",
+          "office": "tokenpost",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[속보]삼성전자 8.97%, SK하이닉스 15.91% 급등 마감",
-          "url": "https://www.newsis.com/view/NISX20260609_0003662365",
-          "office": "newsis",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+          "title": "[ET특징주] 삼성전자·SK하이닉스, 급락 하루 만에 반등",
+          "url": "https://www.etnews.com/20260609000175",
+          "office": "etnews",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
         },
         {
           "title": "[특징주] SK하이닉스·테크윙 등 HBM 테마주 전 종목 상승",
@@ -767,7 +743,7 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등"
+      "cause_summary": "[특징주] SK하이닉스 16%대 강세…AI 훈풍에 HBM 밸류체인 동반 급등"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
