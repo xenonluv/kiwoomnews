@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-09 09:37 KST",
+  "as_of": "2026-06-09 09:52 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
       "code": "089970",
-      "tomorrow_up_prob": "77%",
-      "entry": 69300.0,
-      "target": 72765,
-      "stop": 67221,
+      "tomorrow_up_prob": "86%",
+      "entry": 72100.0,
+      "target": 75705,
+      "stop": 69937,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.93)",
         "정배열",
-        "MACD강세",
-        "RSI59.9 강세"
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.92,
+      "day_change": 18.57,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -32,20 +32,48 @@
       ]
     },
     {
-      "ticker": "테크윙",
-      "code": "089030",
-      "tomorrow_up_prob": "76%",
-      "entry": 61000.0,
-      "target": 64050,
-      "stop": 59170,
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "85%",
+      "entry": 625000.0,
+      "target": 656250,
+      "stop": 606250,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.9)",
-        "MACD강세",
-        "RSI59.1 강세"
+        "강세마감(0.74)",
+        "정배열",
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 24.62,
+      "day_change": 11.01,
+      "cause_news": [
+        {
+          "title": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524538",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증"
+    },
+    {
+      "ticker": "테크윙",
+      "code": "089030",
+      "tomorrow_up_prob": "84%",
+      "entry": 63400.0,
+      "target": 66570,
+      "stop": 61498,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.97)",
+        "MACD강세",
+        "RSI61.3 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 26.44,
       "cause_news": [
         {
           "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
@@ -60,21 +88,161 @@
       "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "72%",
-      "entry": 254500.0,
-      "target": 267225,
-      "stop": 246865,
+      "ticker": "디앤디파마텍",
+      "code": "347850",
+      "tomorrow_up_prob": "83%",
+      "entry": 94800.0,
+      "target": 99540,
+      "stop": 91956,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.99)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "디앤디파마텍, 빅딜 기대감에 '강세'…에임드바이오·이뮨온시아 ↓[바...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=01974566645479752",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락"
+        },
+        {
+          "title": "디앤디파마텍 11% 강세…MASH 치료제 기술이전 기대감[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026052811164405261",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 디앤디파마텍, MASH 2상 최종 데이터 공개에 급등…기술이전 ...",
+          "url": "https://www.tokenpost.kr/news/economy/363903",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "디앤디파마텍, 빅딜 기대감에 '강세'…에임드바이오·이뮨온시아 ↓[바..."
+    },
+    {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "82%",
+      "entry": 1826000.0,
+      "target": 1917300,
+      "stop": 1771220,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI58.7 강세"
+        "RSI68.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "\"삼성전기 230만원 간다\" 전망…장 초반 '불기둥'[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03027446645480080",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] '이익 추가 상향 가능' 증권가 전망에…삼성전기 9%↑",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843276",
+          "office": "newsworks",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 증권가 “230만원까지 간다” 전망에…삼성전기 12% 급등",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/09/Y7525P5QEVFWLD2RYGZ7AHE6AY/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "\"삼성전기 230만원 간다\" 전망…장 초반 '불기둥'[특징주]"
+    },
+    {
+      "ticker": "테스",
+      "code": "095610",
+      "tomorrow_up_prob": "81%",
+      "entry": 158500.0,
+      "target": 166425,
+      "stop": 153745,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.98)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
+          "url": "https://n.news.naver.com/mnews/article/277/0005772528",
+          "office": "아시아경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "시지메드텍, 말레이시아 '노보시스 트라우마' 독점 공급 계약 체결",
+          "url": "https://n.news.naver.com/mnews/article/008/0005367623",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "[특징주] 반도체 장비株, '삼전·닉스 숨고르기' 속 급등(종합)",
+          "url": "https://n.news.naver.com/mnews/article/001/0016120239",
+          "office": "연합뉴스",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "75%",
+      "entry": 257000.0,
+      "target": 269850,
+      "stop": 249290,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI59.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -6.81,
+      "day_change": -7.71,
       "cause_news": [
+        {
+          "title": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세",
+          "url": "https://www.mt.co.kr/stock/2026/06/09/2026060909401061779",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 네이버, 엔비디아 AI 협업 소식에 하락장 속 13%대 강세",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/08/TPRZ4IUBJJGNZA6Z4UAXVRO564/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
         {
           "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
           "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03732646645479752",
@@ -82,42 +250,62 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주]",
-          "url": "https://www.dailian.co.kr/news/view/1653674/?sc=Naver",
-          "office": "dailian",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "\"네이버, 엔비디아와 함께 AI 팩토리 사업 진출…목표가 상향\"-삼성",
-          "url": "https://www.mt.co.kr/stock/2026/06/09/2026060907560657294",
-          "office": "mt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
+      "cause_summary": "신사업 기대감에 급등했던 네이버, 차익실현에 7%대 약세"
+    },
+    {
+      "ticker": "후성",
+      "code": "093370",
+      "tomorrow_up_prob": "70%",
+      "entry": 13090.0,
+      "target": 13744,
+      "stop": 12697,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.74)",
+        "RSI57.0 강세",
+        "거래량1.99배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
+          "url": "https://www.tokenpost.kr/news/economy/360710",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
+          "office": "newstnt",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
     },
     {
       "ticker": "HPSP",
       "code": "403870",
-      "tomorrow_up_prob": "66%",
-      "entry": 54500.0,
-      "target": 57225,
-      "stop": 52865,
+      "tomorrow_up_prob": "67%",
+      "entry": 57200.0,
+      "target": 60060,
+      "stop": 55484,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI55.0 강세",
+        "강세마감(1.0)",
+        "RSI57.7 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.16,
+      "day_change": 18.35,
       "cause_news": [
         {
           "title": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라",
@@ -140,97 +328,35 @@
       "cause_summary": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라"
     },
     {
-      "ticker": "HD건설기계",
-      "code": "267270",
-      "tomorrow_up_prob": "61%",
-      "entry": 142500.0,
-      "target": 149625,
-      "stop": 138225,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.76)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 한화에어로·현대로템 실적 가속화…HD건설기계·두산밥캣 '매...",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=705240",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 한화에어로·현대로템 실적 가속화…HD건설기계·두산밥캣 '매..."
-    },
-    {
       "ticker": "피에스케이",
       "code": "319660",
-      "tomorrow_up_prob": "59%",
-      "entry": 131300.0,
-      "target": 137865,
-      "stop": 127361,
+      "tomorrow_up_prob": "64%",
+      "entry": 136800.0,
+      "target": 143640,
+      "stop": 132696,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.8 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": null
-    },
-    {
-      "ticker": "하이브",
-      "code": "352820",
-      "tomorrow_up_prob": "56%",
-      "entry": 213000.0,
-      "target": 223650,
-      "stop": 206610,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.91)",
-        "Stoch골든"
+        "RSI64.5 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] YG플러스, 하이브와 3년 계약 연장 소식에…15% 급등",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/05/19/KHSFS6SSTNHV5EXVA6MC6RLF7U/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 하이브, BTS·캣츠아이 글로벌 모멘텀에 강세…엔터주 동반 상...",
-          "url": "https://www.tokenpost.kr/news/economy/361058",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] YG플러스, 하이브와 3년 계약 연장 소식에…15% 급등"
+      "day_change": null
     },
     {
       "ticker": "노타",
       "code": "486990",
-      "tomorrow_up_prob": "48%",
-      "entry": 29550.0,
-      "target": 31028,
-      "stop": 28664,
+      "tomorrow_up_prob": "54%",
+      "entry": 30100.0,
+      "target": 31605,
+      "stop": 29197,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
-      "risk": "약한 마감",
-      "day_change": 0.17,
+      "risk": "특이 위험 낮음",
+      "day_change": -1.17,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -257,18 +383,18 @@
     {
       "ticker": "브이엠",
       "code": "089970",
-      "tomorrow_up_prob": "77%",
-      "entry": 69300.0,
-      "target": 72765,
-      "stop": 67221,
+      "tomorrow_up_prob": "86%",
+      "entry": 72100.0,
+      "target": 75705,
+      "stop": 69937,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.93)",
         "정배열",
-        "MACD강세",
-        "RSI59.9 강세"
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 15.92,
+      "day_change": 18.57,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -285,20 +411,48 @@
       ]
     },
     {
-      "ticker": "테크윙",
-      "code": "089030",
-      "tomorrow_up_prob": "76%",
-      "entry": 61000.0,
-      "target": 64050,
-      "stop": 59170,
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "85%",
+      "entry": 625000.0,
+      "target": 656250,
+      "stop": 606250,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.9)",
-        "MACD강세",
-        "RSI59.1 강세"
+        "강세마감(0.74)",
+        "정배열",
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 24.62,
+      "day_change": 11.01,
+      "cause_news": [
+        {
+          "title": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=524538",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "향수는 맡아보고 산다...신세계V '홈 시향' 통하자 매출 68% 급증"
+    },
+    {
+      "ticker": "테크윙",
+      "code": "089030",
+      "tomorrow_up_prob": "84%",
+      "entry": 63400.0,
+      "target": 66570,
+      "stop": 61498,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.97)",
+        "MACD강세",
+        "RSI61.3 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 26.44,
       "cause_news": [
         {
           "title": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전...",
@@ -313,111 +467,92 @@
       "cause_summary": "반도체 후공정의 숨은 지배자… 테크윙, HBM4 탑재 앞두고 실적 폭발 전..."
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "72%",
-      "entry": 254500.0,
-      "target": 267225,
-      "stop": 246865,
+      "ticker": "디앤디파마텍",
+      "code": "347850",
+      "tomorrow_up_prob": "83%",
+      "entry": 94800.0,
+      "target": 99540,
+      "stop": 91956,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.99)",
         "정배열",
-        "MACD강세",
-        "RSI58.7 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -6.81,
-      "cause_news": [
-        {
-          "title": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03732646645479752",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주]",
-          "url": "https://www.dailian.co.kr/news/view/1653674/?sc=Naver",
-          "office": "dailian",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "\"네이버, 엔비디아와 함께 AI 팩토리 사업 진출…목표가 상향\"-삼성",
-          "url": "https://www.mt.co.kr/stock/2026/06/09/2026060907560657294",
-          "office": "mt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "네이버, 엔비디아 AI 팩토리 협력에 10%대 강세…‘삼쏘 회동’ 이어 치..."
-    },
-    {
-      "ticker": "HPSP",
-      "code": "403870",
-      "tomorrow_up_prob": "66%",
-      "entry": 54500.0,
-      "target": 57225,
-      "stop": 52865,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.81)",
-        "RSI55.0 강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 15.16,
-      "cause_news": [
-        {
-          "title": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458599",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[특징주] HPSP, 삼성전자·SK하이닉스 급등에 동반 강세…AI 반도체 핵심...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=290836",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "HPSP·리노공업 주가 신바람... 온디바이스 AI 수혜주 찾아라"
-    },
-    {
-      "ticker": "HD건설기계",
-      "code": "267270",
-      "tomorrow_up_prob": "61%",
-      "entry": 142500.0,
-      "target": 149625,
-      "stop": 138225,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.76)",
-        "호재"
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] 한화에어로·현대로템 실적 가속화…HD건설기계·두산밥캣 '매...",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=705240",
-          "office": "newstnt",
+          "title": "디앤디파마텍, 빅딜 기대감에 '강세'…에임드바이오·이뮨온시아 ↓[바...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=01974566645479752",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락"
+        },
+        {
+          "title": "디앤디파마텍 11% 강세…MASH 치료제 기술이전 기대감[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026052811164405261",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 디앤디파마텍, MASH 2상 최종 데이터 공개에 급등…기술이전 ...",
+          "url": "https://www.tokenpost.kr/news/economy/363903",
+          "office": "tokenpost",
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 한화에어로·현대로템 실적 가속화…HD건설기계·두산밥캣 '매..."
+      "cause_confidence": "높음",
+      "cause_summary": "디앤디파마텍, 빅딜 기대감에 '강세'…에임드바이오·이뮨온시아 ↓[바..."
+    },
+    {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "82%",
+      "entry": 1826000.0,
+      "target": 1917300,
+      "stop": 1771220,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "\"삼성전기 230만원 간다\" 전망…장 초반 '불기둥'[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03027446645480080",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] '이익 추가 상향 가능' 증권가 전망에…삼성전기 9%↑",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843276",
+          "office": "newsworks",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 증권가 “230만원까지 간다” 전망에…삼성전기 12% 급등",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/09/Y7525P5QEVFWLD2RYGZ7AHE6AY/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "\"삼성전기 230만원 간다\" 전망…장 초반 '불기둥'[특징주]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
