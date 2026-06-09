@@ -6,11 +6,11 @@
     "target_stock": "브이엠",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 24.05,
+    "day_change": 26.87,
     "headline": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -33,11 +33,11 @@
     "target_stock": "테스",
     "signal_probability": "47%",
     "position_type": "과다상승",
-    "day_change": 21.6,
+    "day_change": 24.41,
     "headline": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "테스, SK하이닉스와 212억원 규모 반도체 장비 공급계약",
@@ -72,11 +72,11 @@
     "target_stock": "현대백화점",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 16.29,
+    "day_change": 12.72,
     "headline": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "더현대 글로벌, K브랜드 앞세워 대만시장 본격 공략",
@@ -133,11 +133,11 @@
     "target_stock": "HPSP",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 22.16,
+    "day_change": 23.01,
     "headline": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "예스티, HPSP 고압어닐링 ‘303 특허’ 무효 심판 승소",
@@ -188,78 +188,17 @@
     "cause_summary": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세"
   },
   {
-    "post_id": "POST_20260609_066570",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "LG전자",
-    "signal_probability": "68%",
-    "position_type": "눌림목",
-    "day_change": -10.07,
-    "headline": "﻿[특징주] LG전자·네이버 10% 급락…기대주 팔고 삼전·닉스 담는 AI 머...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 눌림목.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
-    "news": [
-      {
-        "title": "상위 1% 투자자, 오전 삼성전자 집중 매수…변동성 속 안정 택했다 [주...",
-        "url": "https://n.news.naver.com/mnews/article/011/0004629161",
-        "office": "서울경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "LG전자, 엔비디아 'AI 동맹'에도 12% 급락[핫종목]",
-        "url": "https://n.news.naver.com/mnews/article/421/0008993369",
-        "office": "뉴스1",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[ET특징주] 젠슨 황 출국과 함께… LG전자·네이버 주가 하락",
-        "url": "https://n.news.naver.com/mnews/article/030/0003435822",
-        "office": "전자신문",
-        "sentiment": "혼재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "﻿[특징주] LG전자·네이버 10% 급락…기대주 팔고 삼전·닉스 담는 AI 머...",
-        "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1711792",
-        "office": "ebn",
-        "sentiment": "악재",
-        "cause_score": 14,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-      },
-      {
-        "title": "[특징주] LG전자, 엔비디아와 협력 호재에도 13%대 급락",
-        "url": "https://www.etoday.co.kr/news/view/2591802",
-        "office": "etoday",
-        "sentiment": "악재",
-        "cause_score": 14,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-      },
-      {
-        "title": "[특징주] LG전자, 엔비디아 협력에도 12%대 급락…외국인 매도에 차익실...",
-        "url": "https://www.tokenpost.kr/news/economy/367331",
-        "office": "tokenpost",
-        "sentiment": "악재",
-        "cause_score": 10,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "﻿[특징주] LG전자·네이버 10% 급락…기대주 팔고 삼전·닉스 담는 AI 머..."
-  },
-  {
     "post_id": "POST_20260609_093370",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "후성",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": 19.73,
+    "day_change": 19.64,
     "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -310,11 +249,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -2.33,
+    "day_change": -1.67,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -347,13 +286,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "65%",
+    "signal_probability": "64%",
     "position_type": "상승추세",
-    "day_change": -8.24,
-    "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
+    "day_change": -8.6,
+    "headline": "네이버, 엔비디아 협력 기대 식었나…하루 만에 11%대 약세[특징주]",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-09 13:45 KST",
+    "published_at": "2026-06-09 14:00 KST",
     "news": [
       {
         "title": "네이버 주주 드디어 빛보나...엔비디아 손 잡자 목표가 40만원 [오늘, ...",
@@ -366,23 +305,9 @@
         "url": "https://n.news.naver.com/mnews/article/374/0000514946",
         "office": "SBS Biz",
         "sentiment": "호재"
-      },
-      {
-        "title": "업스테이지부터 성남FC 논란까지…커지는 한성숙 리스크에 네이버 주...",
-        "url": "https://n.news.naver.com/mnews/article/629/0000506144",
-        "office": "더팩트",
-        "sentiment": "악재"
       }
     ],
     "cause_news": [
-      {
-        "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세",
-        "url": "https://www.etoday.co.kr/news/view/2591782",
-        "office": "etoday",
-        "sentiment": "악재",
-        "cause_score": 14,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
-      },
       {
         "title": "네이버, 엔비디아 협력 기대 식었나…하루 만에 11%대 약세[특징주]",
         "url": "https://www.newsway.co.kr/news/view?ud=2026060910400562939",
@@ -398,9 +323,17 @@
         "sentiment": "악재",
         "cause_score": 10,
         "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+      },
+      {
+        "title": "[특징주] 전날 강세 보인 네이버, 장 초반 8%대 하락",
+        "url": "http://www.issuenbiz.com/news/articleView.html?idxno=77171",
+        "office": "issuenbiz",
+        "sentiment": "악재",
+        "cause_score": 10,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
       }
     ],
     "cause_confidence": "높음",
-    "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 반락…10%대 약세"
+    "cause_summary": "네이버, 엔비디아 협력 기대 식었나…하루 만에 11%대 약세[특징주]"
   }
 ]
