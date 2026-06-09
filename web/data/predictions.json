@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-09 14:52 KST",
+  "as_of": "2026-06-09 15:07 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 76100.0,
-      "target": 79905,
-      "stop": 73817,
+      "entry": 76300.0,
+      "target": 80115,
+      "stop": 74011,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.91)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 26.53,
+      "day_change": 27.69,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -35,17 +35,17 @@
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "90%",
-      "entry": 163100.0,
-      "target": 171255,
-      "stop": 158207,
+      "entry": 160500.0,
+      "target": 168525,
+      "stop": 155685,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 24.26,
+      "day_change": 22.51,
       "cause_news": [
         {
           "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
@@ -63,9 +63,9 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "89%",
-      "entry": 1954000.0,
-      "target": 2051700,
-      "stop": 1895380,
+      "entry": 1955000.0,
+      "target": 2052750,
+      "stop": 1896350,
       "confidence": "상",
       "reasons": [
         "강세마감(0.94)",
@@ -76,9 +76,17 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "삼성전기, 장중 16% 급등…AI·고성능 부품 수요 기대에 강세",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217815",
-          "office": "job-post",
+          "title": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084943",
+          "office": "topstarnews",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060914460675828",
+          "office": "newsway",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -90,29 +98,21 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성전기, \"AI 컴포넌트 대장주\".. 10%대 '강세'",
-          "url": "https://www.g-enews.com/view.php?ud=20260609092038997644093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "삼성전기, 장중 16% 급등…AI·고성능 부품 수요 기대에 강세"
+      "cause_summary": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편"
     },
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "88%",
-      "entry": 121400.0,
-      "target": 127470,
-      "stop": 117758,
+      "tomorrow_up_prob": "89%",
+      "entry": 120700.0,
+      "target": 126735,
+      "stop": 117079,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.87)",
         "정배열",
         "MACD강세"
       ],
@@ -143,14 +143,14 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "87%",
-      "entry": 60900.0,
-      "target": 63945,
-      "stop": 59073,
+      "entry": 60100.0,
+      "target": 63105,
+      "stop": 58297,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.7)",
         "MACD강세",
-        "RSI59.0 강세"
+        "RSI58.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -186,19 +186,27 @@
     {
       "ticker": "SK하이닉스",
       "code": "000660",
-      "tomorrow_up_prob": "81%",
-      "entry": 2220000.0,
-      "target": 2331000,
-      "stop": 2153400,
+      "tomorrow_up_prob": "82%",
+      "entry": 2203000.0,
+      "target": 2313150,
+      "stop": 2136910,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.9)",
         "정배열",
-        "RSI62.4 강세"
+        "RSI62.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=673305",
+          "office": "digitaltoday",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[ET특징주] 삼성전자·SK하이닉스, 급락 하루 만에 반등",
           "url": "https://www.etnews.com/20260609000175",
@@ -206,23 +214,31 @@
           "sentiment": "악재",
           "cause_score": 10,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "SK하이닉스 주가, 강세... 배경은?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162614",
+          "office": "ggilbo",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[ET특징주] 삼성전자·SK하이닉스, 급락 하루 만에 반등"
+      "cause_summary": "AI 머니 다시 돌아왔다…SK하이닉스 6% 급등·아시아 반도체주 일제 반등"
     },
     {
       "ticker": "피에스케이",
       "code": "319660",
       "tomorrow_up_prob": "78%",
-      "entry": 138800.0,
-      "target": 145740,
-      "stop": 134636,
+      "entry": 137800.0,
+      "target": 144690,
+      "stop": 133666,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI65.2 강세"
+        "RSI64.9 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -256,42 +272,6 @@
       "cause_summary": "[특징주] 피에스케이, 반도체 투자 확대 수혜 기대감에 급등"
     },
     {
-      "ticker": "고영",
-      "code": "098460",
-      "tomorrow_up_prob": "77%",
-      "entry": 35450.0,
-      "target": 37222,
-      "stop": 34386,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.94)",
-        "RSI50.6 강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 22.3,
-      "cause_news": [
-        {
-          "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
-          "url": "https://www.tokenpost.kr/news/economy/352848",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
-          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
-          "office": "ebn",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행"
-    },
-    {
       "ticker": "HPSP",
       "code": "403870",
       "tomorrow_up_prob": "75%",
@@ -302,10 +282,10 @@
       "reasons": [
         "강세마감(0.78)",
         "RSI57.6 강세",
-        "거래량2.81배"
+        "거래량2.86배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 22.38,
+      "day_change": 20.68,
       "cause_news": [
         {
           "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
@@ -339,17 +319,17 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "74%",
-      "entry": 13470.0,
-      "target": 14144,
-      "stop": 13066,
+      "entry": 13430.0,
+      "target": 14102,
+      "stop": 13027,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.9)",
-        "RSI58.7 강세",
-        "거래량4.28배"
+        "강세마감(0.88)",
+        "RSI58.6 강세",
+        "거래량4.35배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 19.91,
+      "day_change": 19.64,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -383,17 +363,17 @@
       "ticker": "현대백화점",
       "code": "069960",
       "tomorrow_up_prob": "73%",
-      "entry": 172200.0,
-      "target": 180810,
-      "stop": 167034,
+      "entry": 173400.0,
+      "target": 182070,
+      "stop": 168198,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.81)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "RSI80.2 과매수, Stoch 과매수",
-      "day_change": 15.81,
+      "risk": "RSI80.4 과매수, Stoch 과매수",
+      "day_change": 15.28,
       "cause_news": [
         {
           "title": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세",
@@ -424,16 +404,96 @@
       "cause_summary": "현대백화점 주가 장중 11%대 올라, 소비증가 기대감에 백화점주 강세"
     },
     {
+      "ticker": "고영",
+      "code": "098460",
+      "tomorrow_up_prob": "73%",
+      "entry": 34000.0,
+      "target": 35700,
+      "stop": 32980,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.74)",
+        "Stoch골든",
+        "거래량2.19배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 24.82,
+      "cause_news": [
+        {
+          "title": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행",
+          "url": "https://www.tokenpost.kr/news/economy/352848",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 고영, 1분기 사상 최대 실적에 상한가 직행"
+    },
+    {
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "70%",
+      "entry": 24400.0,
+      "target": 25620,
+      "stop": 23668,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.78)",
+        "MACD강세",
+        "거래량5.94배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "미래에셋생명 주가, 강세... 배경은?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162609",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "미래에셋자산, 미래에셋생명 지분 매입 속도…'운용 호실적·생명 성장...",
+          "url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=78968",
+          "office": "thefairnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "미래에셋생명 주가, 6월 9일 장중 24,000원 14.28% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084612",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "미래에셋생명 주가, 강세... 배경은?"
+    },
+    {
       "ticker": "피에스케이홀딩스",
       "code": "031980",
       "tomorrow_up_prob": "69%",
-      "entry": 127100.0,
-      "target": 133455,
-      "stop": 123287,
+      "entry": 125700.0,
+      "target": 131985,
+      "stop": 121929,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.89)",
-        "RSI53.8 강세",
+        "강세마감(0.82)",
+        "RSI53.2 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -451,16 +511,16 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "58%",
-      "entry": 29900.0,
-      "target": 31395,
-      "stop": 29003,
+      "entry": 29800.0,
+      "target": 31290,
+      "stop": 28906,
       "confidence": "중",
       "reasons": [
         "호재",
-        "장중 21회 지속"
+        "장중 22회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -1.33,
+      "day_change": 0.17,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -486,12 +546,12 @@
       "ticker": "광전자",
       "code": "017900",
       "tomorrow_up_prob": "50%",
-      "entry": 9100.0,
-      "target": 9555,
-      "stop": 8827,
+      "entry": 9090.0,
+      "target": 9544,
+      "stop": 8817,
       "confidence": "하",
       "reasons": [
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -530,17 +590,17 @@
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "95%",
-      "entry": 76100.0,
-      "target": 79905,
-      "stop": 73817,
+      "entry": 76300.0,
+      "target": 80115,
+      "stop": 74011,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.91)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 26.53,
+      "day_change": 27.69,
       "related_news": [
         {
           "title": "브이엠, 반도체 고객사 증설 기대감…신고가 경신",
@@ -560,17 +620,17 @@
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "90%",
-      "entry": 163100.0,
-      "target": 171255,
-      "stop": 158207,
+      "entry": 160500.0,
+      "target": 168525,
+      "stop": 155685,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 24.26,
+      "day_change": 22.51,
       "cause_news": [
         {
           "title": "독보적 증착·식각 기술력… 테스, 차세대 AI 인프라 구축의 숨은 주역",
@@ -588,9 +648,9 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "89%",
-      "entry": 1954000.0,
-      "target": 2051700,
-      "stop": 1895380,
+      "entry": 1955000.0,
+      "target": 2052750,
+      "stop": 1896350,
       "confidence": "상",
       "reasons": [
         "강세마감(0.94)",
@@ -601,9 +661,17 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "삼성전기, 장중 16% 급등…AI·고성능 부품 수요 기대에 강세",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217815",
-          "office": "job-post",
+          "title": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16084943",
+          "office": "topstarnews",
+          "sentiment": "악재",
+          "cause_score": 14,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "삼성전기, AI 부품 수요 확대 기대에 16% 상승[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026060914460675828",
+          "office": "newsway",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -615,29 +683,21 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성전기, \"AI 컴포넌트 대장주\".. 10%대 '강세'",
-          "url": "https://www.g-enews.com/view.php?ud=20260609092038997644093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "삼성전기, 장중 16% 급등…AI·고성능 부품 수요 기대에 강세"
+      "cause_summary": "삼성전기 17% 급등·네이버 9% 급락…AI 수혜주 재편"
     },
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "88%",
-      "entry": 121400.0,
-      "target": 127470,
-      "stop": 117758,
+      "tomorrow_up_prob": "89%",
+      "entry": 120700.0,
+      "target": 126735,
+      "stop": 117079,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.87)",
         "정배열",
         "MACD강세"
       ],
@@ -668,14 +728,14 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "87%",
-      "entry": 60900.0,
-      "target": 63945,
-      "stop": 59073,
+      "entry": 60100.0,
+      "target": 63105,
+      "stop": 58297,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.7)",
         "MACD강세",
-        "RSI59.0 강세"
+        "RSI58.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
