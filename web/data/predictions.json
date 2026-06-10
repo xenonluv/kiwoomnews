@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-10 12:07 KST",
+  "as_of": "2026-06-10 12:22 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
       "code": "004170",
       "tomorrow_up_prob": "91%",
-      "entry": 681000.0,
-      "target": 715050,
-      "stop": 660570,
+      "entry": 678000.0,
+      "target": 711900,
+      "stop": 657660,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.78)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 8.97,
+      "day_change": 8.81,
       "cause_news": [
         {
           "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
@@ -46,64 +46,20 @@
       "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
     },
     {
-      "ticker": "팸텍",
-      "code": "271830",
-      "tomorrow_up_prob": "90%",
-      "entry": 2475.0,
-      "target": 2599,
-      "stop": 2401,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 17.14,
-      "cause_news": [
-        {
-          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
-          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
-          "office": "kdpress",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
-          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
-    },
-    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "88%",
-      "entry": 15940.0,
-      "target": 16737,
-      "stop": 15462,
+      "entry": 16000.0,
+      "target": 16800,
+      "stop": 15520,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.74)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.82,
+      "day_change": 18.27,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -134,20 +90,64 @@
       "cause_summary": "후성 주가 급등세…수차례 VI 발동하기도"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "78%",
-      "entry": 232500.0,
-      "target": 244125,
-      "stop": 225525,
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "82%",
+      "entry": 2355.0,
+      "target": 2473,
+      "stop": 2284,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI50.9 강세"
+        "RSI62.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 14.08,
+      "cause_news": [
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
+          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
+          "office": "kdpress",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
+          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "78%",
+      "entry": 232000.0,
+      "target": 243600,
+      "stop": 225040,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI50.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -9.92,
+      "day_change": -9.73,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -222,56 +222,44 @@
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
     },
     {
-      "ticker": "현대건설",
-      "code": "000720",
-      "tomorrow_up_prob": "69%",
-      "entry": 132100.0,
-      "target": 138705,
-      "stop": 128137,
+      "ticker": "제주은행",
+      "code": "006220",
+      "tomorrow_up_prob": "67%",
+      "entry": 12260.0,
+      "target": 12873,
+      "stop": 11892,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.95)",
-        "Stoch골든",
-        "호재"
+        "강세마감(0.9)",
+        "RSI60.5 강세",
+        "거래량3.09배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "현대건설, 7%대 급등…5000억 조달해 미래 에너지 사업 확대",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439502",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
-          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
-          "office": "kdpress",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+          "title": "고객 상담 넘어 업무 혁신으로… 제주은행, AI 은행 전환 속도",
+          "url": "https://n.news.naver.com/mnews/article/661/0000077807",
+          "office": "JIBS",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "현대건설, 7%대 급등…5000억 조달해 미래 에너지 사업 확대"
+      ]
     },
     {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "62%",
-      "entry": 42250.0,
-      "target": 44362,
-      "stop": 40982,
+      "tomorrow_up_prob": "66%",
+      "entry": 43100.0,
+      "target": 45255,
+      "stop": 41807,
       "confidence": "중",
       "reasons": [
-        "거래량1.98배",
-        "호재",
-        "장중 13회 지속"
+        "RSI50.0 강세",
+        "거래량2.32배",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 23.13,
+      "day_change": 24.6,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
@@ -304,14 +292,14 @@
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
-      "tomorrow_up_prob": "57%",
-      "entry": 238000.0,
-      "target": 249900,
-      "stop": 230860,
+      "tomorrow_up_prob": "58%",
+      "entry": 239500.0,
+      "target": 251475,
+      "stop": 232315,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.74)",
-        "장중 7회 지속"
+        "강세마감(0.8)",
+        "장중 8회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -320,13 +308,13 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "54%",
-      "entry": 27450.0,
-      "target": 28822,
-      "stop": 26626,
+      "entry": 27350.0,
+      "target": 28718,
+      "stop": 26530,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 13회 지속"
+        "장중 14회 지속"
       ],
       "risk": "약한 마감",
       "day_change": -9.11,
@@ -357,17 +345,17 @@
       "ticker": "신세계",
       "code": "004170",
       "tomorrow_up_prob": "91%",
-      "entry": 681000.0,
-      "target": 715050,
-      "stop": 660570,
+      "entry": 678000.0,
+      "target": 711900,
+      "stop": 657660,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.78)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 8.97,
+      "day_change": 8.81,
       "cause_news": [
         {
           "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
@@ -398,64 +386,20 @@
       "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
     },
     {
-      "ticker": "팸텍",
-      "code": "271830",
-      "tomorrow_up_prob": "90%",
-      "entry": 2475.0,
-      "target": 2599,
-      "stop": 2401,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 17.14,
-      "cause_news": [
-        {
-          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
-          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
-          "office": "kdpress",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
-          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
-    },
-    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "88%",
-      "entry": 15940.0,
-      "target": 16737,
-      "stop": 15462,
+      "entry": 16000.0,
+      "target": 16800,
+      "stop": 15520,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.74)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.82,
+      "day_change": 18.27,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -486,20 +430,64 @@
       "cause_summary": "후성 주가 급등세…수차례 VI 발동하기도"
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "78%",
-      "entry": 232500.0,
-      "target": 244125,
-      "stop": 225525,
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "82%",
+      "entry": 2355.0,
+      "target": 2473,
+      "stop": 2284,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI50.9 강세"
+        "RSI62.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 14.08,
+      "cause_news": [
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
+          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
+          "office": "kdpress",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
+          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "78%",
+      "entry": 232000.0,
+      "target": 243600,
+      "stop": 225040,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI50.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -9.92,
+      "day_change": -9.73,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
