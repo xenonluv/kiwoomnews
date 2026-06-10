@@ -10,7 +10,7 @@
     "headline": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
+    "published_at": "2026-06-10 14:15 KST",
     "news": [
       {
         "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
@@ -55,6 +55,67 @@
     "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
   },
   {
+    "post_id": "POST_20260610_035420",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "NAVER",
+    "signal_probability": "66%",
+    "position_type": "상승추세",
+    "day_change": -12.16,
+    "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-10 14:15 KST",
+    "news": [
+      {
+        "title": "네이버 D2SF, AI 보안 스타트업 ‘에임인텔리전스’ 신규 투자",
+        "url": "https://n.news.naver.com/mnews/article/011/0004629627",
+        "office": "서울경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "업스테이지, '다음' 새 사령탑에 이건수 내정…&quot;네이버 지도 1위 만든...",
+        "url": "https://n.news.naver.com/mnews/article/003/0013998386",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "네이버 D2SF, AI 보안 스타트업 에임인텔리전스에 신규 투자",
+        "url": "https://n.news.naver.com/mnews/article/009/0005691861",
+        "office": "매일경제",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
+        "url": "https://www.tokenpost.kr/news/economy/367307",
+        "office": "tokenpost",
+        "sentiment": "호재",
+        "cause_score": 15,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+      },
+      {
+        "title": "[특징주] 네이버, 엔비디아 협력 발표 뒤 차익실현에 '급락'",
+        "url": "https://www.g-enews.com/view.php?ud=20260609095656477744093b5d4e_1",
+        "office": "g-enews",
+        "sentiment": "악재",
+        "cause_score": 8,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
+      },
+      {
+        "title": "[ET특징주] 젠슨 황 출국과 함께… LG전자·네이버 주가 하락",
+        "url": "https://www.etnews.com/20260609000187",
+        "office": "etnews",
+        "sentiment": "악재",
+        "cause_score": 6,
+        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
+  },
+  {
     "post_id": "POST_20260610_475150",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -65,7 +126,7 @@
     "headline": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
+    "published_at": "2026-06-10 14:15 KST",
     "news": [
       {
         "title": "재생에너지 육성 본격화…SK이터닉스 상한가, HD현대에너지솔루션 10%...",
@@ -98,9 +159,9 @@
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
       },
       {
-        "title": "[특징주] SK이터닉스, 신재생에너지주 오름세 속 +29.87% 上 기록",
-        "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1263919",
-        "office": "jeonmae",
+        "title": "SK이터닉스, 장중 상한가 직행…29.87% 급등",
+        "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217925",
+        "office": "job-post",
         "sentiment": "호재",
         "cause_score": 13,
         "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -116,11 +177,11 @@
     "target_stock": "SK오션플랜트",
     "signal_probability": "70%",
     "position_type": "저점",
-    "day_change": 13.82,
+    "day_change": 12.93,
     "headline": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 저점.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
+    "published_at": "2026-06-10 14:15 KST",
     "news": [
       {
         "title": "SK오션플랜트 방문한 美 국방부 실사단…마스가 협력 기대감",
@@ -163,11 +224,11 @@
     "target_stock": "후성",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.2,
+    "day_change": 17.97,
     "headline": "후성 주가 급등세…수차례 VI 발동하기도",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
+    "published_at": "2026-06-10 14:15 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -212,72 +273,17 @@
     "cause_summary": "후성 주가 급등세…수차례 VI 발동하기도"
   },
   {
-    "post_id": "POST_20260610_035420",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "NAVER",
-    "signal_probability": "66%",
-    "position_type": "상승추세",
-    "day_change": -12.06,
-    "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
-    "news": [
-      {
-        "title": "업스테이지, '다음' 새 사령탑에 이건수 내정…&quot;네이버 지도 1위 만든...",
-        "url": "https://n.news.naver.com/mnews/article/003/0013998386",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "네이버 D2SF, AI 보안 스타트업 에임인텔리전스에 신규 투자",
-        "url": "https://n.news.naver.com/mnews/article/009/0005691861",
-        "office": "매일경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-        "url": "https://www.tokenpost.kr/news/economy/367307",
-        "office": "tokenpost",
-        "sentiment": "호재",
-        "cause_score": 15,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-      },
-      {
-        "title": "[특징주] 네이버, 엔비디아 협력 발표 뒤 차익실현에 '급락'",
-        "url": "https://www.g-enews.com/view.php?ud=20260609095656477744093b5d4e_1",
-        "office": "g-enews",
-        "sentiment": "악재",
-        "cause_score": 8,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
-      },
-      {
-        "title": "[ET특징주] 젠슨 황 출국과 함께… LG전자·네이버 주가 하락",
-        "url": "https://www.etnews.com/20260609000187",
-        "office": "etnews",
-        "sentiment": "악재",
-        "cause_score": 6,
-        "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
-  },
-  {
     "post_id": "POST_20260610_486990",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -11.92,
+    "day_change": -11.75,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 14:00 KST",
+    "published_at": "2026-06-10 14:15 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
