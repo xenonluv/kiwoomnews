@@ -33,7 +33,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const strong = s.suspicion_score >= 75;
   // 페이드 바: 0% = 전일종가, 100% = 당일 고가. 현재 위치 = 100 - fade_pct.
   const curPos = Math.max(0, Math.min(100, 100 - s.fade_pct));
-  const flowBuyDays = s.flow.detail.filter((d) => d.frgn + d.orgn > 0).length;
+  const flowBuyDays = s.flow.net_days; // 서버(publish) 계산값 — 클라이언트 재계산 금지
 
   return (
     <Card

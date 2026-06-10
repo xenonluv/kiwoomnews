@@ -50,8 +50,13 @@ def record_history(out):
     if os.path.exists(path):
         try:
             hist = json.load(open(path, encoding="utf-8"))
-        except Exception:
-            pass
+        except Exception as e:
+            # 손상 파일은 백업 후 재생성 — 조용한 전손 대신 흔적을 남긴다
+            sys.stderr.write(f"[warn] history 손상 {path}: {e} — .corrupt 백업\n")
+            try:
+                os.replace(path, path + ".corrupt")
+            except OSError:
+                pass
     for s in out.get("suspects", []):
         prev = hist["suspects"].get(s["code"], {})
         hist["suspects"][s["code"]] = {

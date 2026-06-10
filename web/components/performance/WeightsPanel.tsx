@@ -27,7 +27,7 @@ export function WeightsPanel({ weights }: { weights: WeightsInfo }) {
           const cur = weights.current[c] ?? weights.default[c];
           const base = weights.default[c];
           const diff = cur - base;
-          const w = Math.min(100, (cur / (base * 1.3)) * 100);
+          const w = base > 0 ? Math.min(100, (cur / (base * 1.3)) * 100) : 0;
           return (
             <li key={c} className="flex items-center gap-2 text-[12px]">
               <span className="w-28 shrink-0 text-muted-foreground">{COMP_LABELS[c] ?? c}</span>
@@ -40,7 +40,7 @@ export function WeightsPanel({ weights }: { weights: WeightsInfo }) {
               <span className="w-20 shrink-0 text-right tabular-nums">
                 {cur}
                 <span className="text-muted-foreground"> / {base}</span>
-                {diff !== 0 && (
+                {diff !== 0 && base > 0 && (
                   <span className={diff > 0 ? "text-up" : "text-down"}>
                     {" "}
                     ({diff > 0 ? "+" : ""}

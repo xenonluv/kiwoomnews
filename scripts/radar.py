@@ -69,8 +69,10 @@ def detect_sparks(bars, vol_x=SPARK_VOL_X, pct=SPARK_PCT):
     cur = None
     prev_close = None
     for b in bars:
+        if not b["close"]:
+            continue  # 거래 없는 봉(close=0)은 -100% 거짓 등락 방지 위해 스킵
         chg = ((b["close"] / prev_close - 1) * 100) if prev_close else 0.0
-        prev_close = b["close"] or prev_close
+        prev_close = b["close"]
         x = b["vol"] / median
         need = vol_x * (1.5 if b["time"] <= "091000" else 1.0)
         if x >= need and abs(chg) >= pct:
@@ -244,7 +246,8 @@ def scan_one(name, code, p, events):
         pass
     matched_events, event_score = match_events(events, raw_titles, now["sector"])
 
-    fade_pct = (now["high"] - now["price"]) / (now["high"] - now["prev_close"]) * 100
+    denom = now["high"] - now["prev_close"]  # 게이트상 양수지만 --high-pct 0 입력 방어
+    fade_pct = (now["high"] - now["price"]) / denom * 100 if denom > 0 else 0.0
     ma10_margin = (now["price"] / ma10 - 1) * 100
     score, breakdown, score_raw, breakdown_raw = suspicion_score(
         sparks, fade_pct, ma10_margin, acc, event_score, p.spark_x, p.tuning_ratios)

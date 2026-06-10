@@ -133,7 +133,7 @@ def collect_samples():
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
                                 "return_pct": r.get("return_pct", 0.0)})
-    samples.sort(key=lambda x: x["date"])
+    samples.sort(key=lambda x: (x["date"], x["code"]))  # 동일 신호일 내 순서 안정화
     return samples
 
 

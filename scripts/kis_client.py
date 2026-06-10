@@ -251,7 +251,7 @@ def minute_bars_today(code, until="153000"):
         if not rows or got == 0:
             break
         earliest = min(bars.keys())
-        if earliest <= "090100":
+        if earliest <= "090000":  # 09:00봉까지 수집 후 종료
             break
         prev = datetime.strptime(earliest, "%H%M%S") - timedelta(minutes=1)
         if prev.strftime("%H%M%S") < "090000":

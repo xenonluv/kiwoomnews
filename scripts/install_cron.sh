@@ -48,7 +48,7 @@ echo "$NEW_CRON" | crontab -
 
 echo "✅ cron 설치 완료 (repo=$REPO, python=$PY)"
 echo "── 설치된 프로젝트 cron ──"
-crontab -l | grep -E "publish.py|analyzer/" || true
+crontab -l | grep -E "publish.py|radar_backtest.py|analyzer/" || true
 
 echo
 echo "── 점검(중요) ──"

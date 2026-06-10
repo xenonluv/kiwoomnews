@@ -29,8 +29,10 @@ export function SparkTimeline({ clusters }: { clusters: SparkCluster[] }) {
               key={`${c.time}-${i}`}
               title={`${c.time} · 거래량 ${c.vol_x}배 · ${c.pct > 0 ? "+" : ""}${c.pct}%`}
               className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${
-                c.pct >= 0 ? "bg-up" : "bg-down"
-              } shadow-[0_0_8px_1px_hsl(var(--up)/0.5)]`}
+                c.pct >= 0
+                  ? "bg-up shadow-[0_0_8px_1px_hsl(var(--up)/0.5)]"
+                  : "bg-down shadow-[0_0_8px_1px_hsl(var(--down)/0.5)]"
+              }`}
               style={{ left: `${left}%`, width: sz, height: sz }}
             />
           );
