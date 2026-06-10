@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-10 10:37 KST",
+  "as_of": "2026-06-10 10:52 KST",
   "intraday_rank": [
     {
       "ticker": "후성",
       "code": "093370",
-      "tomorrow_up_prob": "84%",
-      "entry": 16360.0,
-      "target": 17178,
-      "stop": 15869,
+      "tomorrow_up_prob": "86%",
+      "entry": 16610.0,
+      "target": 17440,
+      "stop": 16112,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 20.34,
+      "day_change": 21.3,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -48,18 +48,18 @@
     {
       "ticker": "테스",
       "code": "095610",
-      "tomorrow_up_prob": "78%",
-      "entry": 184600.0,
-      "target": 193830,
-      "stop": 179062,
+      "tomorrow_up_prob": "79%",
+      "entry": 182400.0,
+      "target": 191520,
+      "stop": 176928,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.78)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 13.14,
+      "day_change": 13.07,
       "cause_news": [
         {
           "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
@@ -85,17 +85,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "78%",
-      "entry": 236000.0,
-      "target": 247800,
-      "stop": 228920,
+      "entry": 235000.0,
+      "target": 246750,
+      "stop": 227950,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI52.0 강세"
+        "RSI51.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.17,
+      "day_change": -8.37,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -128,7 +128,7 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "70%",
+      "tomorrow_up_prob": "71%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
@@ -172,27 +172,19 @@
     {
       "ticker": "HD현대에너지솔루션",
       "code": "322000",
-      "tomorrow_up_prob": "56%",
-      "entry": 157000.0,
-      "target": 164850,
-      "stop": 152290,
+      "tomorrow_up_prob": "57%",
+      "entry": 157600.0,
+      "target": 165480,
+      "stop": 152872,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
         "호재",
-        "장중 6회 지속"
+        "장중 7회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458961",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
-        },
         {
           "title": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상...",
           "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439481",
@@ -203,19 +195,19 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ..."
+      "cause_summary": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상..."
     },
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
-      "tomorrow_up_prob": "54%",
-      "entry": 240500.0,
-      "target": 252525,
-      "stop": 233285,
-      "confidence": "하",
+      "tomorrow_up_prob": "55%",
+      "entry": 240000.0,
+      "target": 252000,
+      "stop": 232800,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.84)",
-        "장중 4회 지속"
+        "강세마감(0.82)",
+        "장중 5회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -223,17 +215,17 @@
     {
       "ticker": "노타",
       "code": "486990",
-      "tomorrow_up_prob": "52%",
+      "tomorrow_up_prob": "54%",
       "entry": 28000.0,
       "target": 29400,
       "stop": 27160,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 7회 지속"
+        "장중 8회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -6.95,
+      "day_change": -7.12,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -254,38 +246,24 @@
           "sentiment": "호재"
         }
       ]
-    },
-    {
-      "ticker": "HD현대일렉트릭",
-      "code": "267260",
-      "tomorrow_up_prob": "52%",
-      "entry": 1029000.0,
-      "target": 1080450,
-      "stop": 998130,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.98)"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
     }
   ],
   "closing_bet": [
     {
       "ticker": "후성",
       "code": "093370",
-      "tomorrow_up_prob": "84%",
-      "entry": 16360.0,
-      "target": 17178,
-      "stop": 15869,
+      "tomorrow_up_prob": "86%",
+      "entry": 16610.0,
+      "target": 17440,
+      "stop": 16112,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 20.34,
+      "day_change": 21.3,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -318,18 +296,18 @@
     {
       "ticker": "테스",
       "code": "095610",
-      "tomorrow_up_prob": "78%",
-      "entry": 184600.0,
-      "target": 193830,
-      "stop": 179062,
+      "tomorrow_up_prob": "79%",
+      "entry": 182400.0,
+      "target": 191520,
+      "stop": 176928,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.78)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 13.14,
+      "day_change": 13.07,
       "cause_news": [
         {
           "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
@@ -355,17 +333,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "78%",
-      "entry": 236000.0,
-      "target": 247800,
-      "stop": 228920,
+      "entry": 235000.0,
+      "target": 246750,
+      "stop": 227950,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI52.0 강세"
+        "RSI51.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.17,
+      "day_change": -8.37,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -398,7 +376,7 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "70%",
+      "tomorrow_up_prob": "71%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
@@ -442,27 +420,19 @@
     {
       "ticker": "HD현대에너지솔루션",
       "code": "322000",
-      "tomorrow_up_prob": "56%",
-      "entry": 157000.0,
-      "target": 164850,
-      "stop": 152290,
+      "tomorrow_up_prob": "57%",
+      "entry": 157600.0,
+      "target": 165480,
+      "stop": 152872,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
         "호재",
-        "장중 6회 지속"
+        "장중 7회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458961",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
-        },
         {
           "title": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상...",
           "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439481",
@@ -473,7 +443,7 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ..."
+      "cause_summary": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
