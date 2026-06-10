@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-10 21:01:40 KST",
+ "generated_at": "2026-06-10 22:14:42 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -58,7 +58,17 @@
    "name": "케이뱅크",
    "sector": "금융",
    "suspicion_score": 79,
+   "calibrated_prob": null,
    "score_breakdown": {
+    "base": 30,
+    "spark": 6.4,
+    "fade": 8.6,
+    "ma10": 7.9,
+    "flow": 15.0,
+    "event": 11.4
+   },
+   "score_raw": 79,
+   "score_breakdown_raw": {
     "base": 30,
     "spark": 6.4,
     "fade": 8.6,
@@ -202,7 +212,17 @@
    "name": "테스",
    "sector": "기계·장비",
    "suspicion_score": 75,
+   "calibrated_prob": null,
    "score_breakdown": {
+    "base": 30,
+    "spark": 3.1,
+    "fade": 13.0,
+    "ma10": 10.0,
+    "flow": 15.0,
+    "event": 3.8
+   },
+   "score_raw": 75,
+   "score_breakdown_raw": {
     "base": 30,
     "spark": 3.1,
     "fade": 13.0,
