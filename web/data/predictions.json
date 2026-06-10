@@ -1,65 +1,21 @@
 {
-  "as_of": "2026-06-10 10:22 KST",
+  "as_of": "2026-06-10 10:37 KST",
   "intraday_rank": [
-    {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "89%",
-      "entry": 677000.0,
-      "target": 710850,
-      "stop": 656690,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.77)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[ET특징주]신세계, 백화점 호조 기대감에 상승세",
-          "url": "https://www.etnews.com/20260610000084",
-          "office": "etnews",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계 6%대 강세…백화점 결제 증가·목표가 상향에 유통주 ...",
-          "url": "https://www.tokenpost.kr/news/economy/367537",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[ET특징주]신세계, 백화점 호조 기대감에 상승세"
-    },
     {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "84%",
-      "entry": 15920.0,
-      "target": 16716,
-      "stop": 15442,
+      "entry": 16360.0,
+      "target": 17178,
+      "stop": 15869,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.97)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.27,
+      "day_change": 20.34,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -92,19 +48,27 @@
     {
       "ticker": "테스",
       "code": "095610",
-      "tomorrow_up_prob": "83%",
-      "entry": 181000.0,
-      "target": 190050,
-      "stop": 175570,
+      "tomorrow_up_prob": "78%",
+      "entry": 184600.0,
+      "target": 193830,
+      "stop": 179062,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.85)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 13.57,
+      "risk": "Stoch 과매수",
+      "day_change": 13.14,
       "cause_news": [
+        {
+          "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112834",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
           "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458797",
@@ -114,24 +78,24 @@
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체..."
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑"
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "76%",
-      "entry": 237000.0,
-      "target": 248850,
-      "stop": 229890,
+      "tomorrow_up_prob": "78%",
+      "entry": 236000.0,
+      "target": 247800,
+      "stop": 228920,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI52.3 강세"
+        "RSI52.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.78,
+      "day_change": -8.17,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -164,11 +128,11 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "69%",
+      "tomorrow_up_prob": "70%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
-      "confidence": "중",
+      "confidence": "상",
       "reasons": [
         "강세마감(1.0)",
         "정배열",
@@ -206,92 +170,29 @@
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
     },
     {
-      "ticker": "현대건설",
-      "code": "000720",
-      "tomorrow_up_prob": "65%",
-      "entry": 131700.0,
-      "target": 138285,
-      "stop": 127749,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(1.0)",
-        "Stoch골든",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
-          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
-          "office": "kdpress",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스..."
-    },
-    {
-      "ticker": "화신",
-      "code": "010690",
-      "tomorrow_up_prob": "60%",
-      "entry": 11030.0,
-      "target": 11582,
-      "stop": 10699,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.76)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 6.33,
-      "cause_news": [
-        {
-          "title": "화신정공, 투자주의종목 지정→주가 급등에 투자경보",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085251",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "화신정공, 투자경고종목 지정예고→주가 급등세 주의 요망",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085242",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295327",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "화신정공, 투자주의종목 지정→주가 급등에 투자경보"
-    },
-    {
       "ticker": "HD현대에너지솔루션",
       "code": "322000",
-      "tomorrow_up_prob": "55%",
-      "entry": 156600.0,
-      "target": 164430,
-      "stop": 151902,
+      "tomorrow_up_prob": "56%",
+      "entry": 157000.0,
+      "target": 164850,
+      "stop": 152290,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
         "호재",
-        "장중 5회 지속"
+        "장중 6회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458961",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
+        },
         {
           "title": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상...",
           "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439481",
@@ -302,19 +203,19 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상..."
+      "cause_summary": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ..."
     },
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
-      "tomorrow_up_prob": "53%",
+      "tomorrow_up_prob": "54%",
       "entry": 240500.0,
       "target": 252525,
       "stop": 233285,
       "confidence": "하",
       "reasons": [
         "강세마감(0.84)",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -323,16 +224,16 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "52%",
-      "entry": 28150.0,
-      "target": 29558,
-      "stop": 27306,
+      "entry": 28000.0,
+      "target": 29400,
+      "stop": 27160,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 6회 지속"
+        "장중 7회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -6.13,
+      "day_change": -6.95,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -357,13 +258,13 @@
     {
       "ticker": "HD현대일렉트릭",
       "code": "267260",
-      "tomorrow_up_prob": "51%",
-      "entry": 1019000.0,
-      "target": 1069950,
-      "stop": 988430,
+      "tomorrow_up_prob": "52%",
+      "entry": 1029000.0,
+      "target": 1080450,
+      "stop": 998130,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.91)"
+        "강세마감(0.98)"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -371,64 +272,20 @@
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "89%",
-      "entry": 677000.0,
-      "target": 710850,
-      "stop": 656690,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.77)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[ET특징주]신세계, 백화점 호조 기대감에 상승세",
-          "url": "https://www.etnews.com/20260610000084",
-          "office": "etnews",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계 6%대 강세…백화점 결제 증가·목표가 상향에 유통주 ...",
-          "url": "https://www.tokenpost.kr/news/economy/367537",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[ET특징주]신세계, 백화점 호조 기대감에 상승세"
-    },
-    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "84%",
-      "entry": 15920.0,
-      "target": 16716,
-      "stop": 15442,
+      "entry": 16360.0,
+      "target": 17178,
+      "stop": 15869,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.97)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 18.27,
+      "day_change": 20.34,
       "cause_news": [
         {
           "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
@@ -461,19 +318,27 @@
     {
       "ticker": "테스",
       "code": "095610",
-      "tomorrow_up_prob": "83%",
-      "entry": 181000.0,
-      "target": 190050,
-      "stop": 175570,
+      "tomorrow_up_prob": "78%",
+      "entry": 184600.0,
+      "target": 193830,
+      "stop": 179062,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.85)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 13.57,
+      "risk": "Stoch 과매수",
+      "day_change": 13.14,
       "cause_news": [
+        {
+          "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112834",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
           "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458797",
@@ -483,24 +348,24 @@
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체..."
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑"
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "76%",
-      "entry": 237000.0,
-      "target": 248850,
-      "stop": 229890,
+      "tomorrow_up_prob": "78%",
+      "entry": 236000.0,
+      "target": 247800,
+      "stop": 228920,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI52.3 강세"
+        "RSI52.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -7.78,
+      "day_change": -8.17,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -533,11 +398,11 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "69%",
+      "tomorrow_up_prob": "70%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
-      "confidence": "중",
+      "confidence": "상",
       "reasons": [
         "강세마감(1.0)",
         "정배열",
@@ -573,6 +438,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
+    },
+    {
+      "ticker": "HD현대에너지솔루션",
+      "code": "322000",
+      "tomorrow_up_prob": "56%",
+      "entry": 157000.0,
+      "target": 164850,
+      "stop": 152290,
+      "confidence": "중",
+      "reasons": [
+        "Stoch골든",
+        "호재",
+        "장중 6회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458961",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
+        },
+        {
+          "title": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상...",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439481",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "HD현대에너지솔루션, 태양광 르네상스 정조준…차세대 전지 시장 독주 ..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
