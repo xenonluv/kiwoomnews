@@ -1,55 +1,16 @@
 [
   {
-    "post_id": "POST_20260610_486990",
-    "status": "PUBLISHED",
-    "tier": "signal",
-    "target_stock": "노타",
-    "signal_probability": "60%",
-    "position_type": "분석불가",
-    "day_change": -6.95,
-    "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-    "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 10:30 KST",
-    "news": [
-      {
-        "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
-        "url": "https://n.news.naver.com/mnews/article/421/0008992442",
-        "office": "뉴스1",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
-        "url": "https://n.news.naver.com/mnews/article/018/0006295755",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 영상관제 AI 현장 적용 확대…엔비디아와 협력",
-        "url": "https://n.news.naver.com/mnews/article/003/0013979735",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
-        "url": "https://n.news.naver.com/mnews/article/092/0002424676",
-        "office": "지디넷코리아",
-        "sentiment": "호재"
-      }
-    ]
-  },
-  {
     "post_id": "POST_20260610_095610",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "테스",
     "signal_probability": "49%",
     "position_type": "과다상승",
-    "day_change": 13.14,
-    "headline": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
+    "day_change": 13.07,
+    "headline": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
     "summary": "[후보] 재료+거래대금 포착(중요도 7.5, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 10:30 KST",
+    "published_at": "2026-06-10 10:45 KST",
     "news": [
       {
         "title": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
@@ -72,6 +33,14 @@
     ],
     "cause_news": [
       {
+        "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
+        "url": "http://www.newsdream.kr/news/articleView.html?idxno=112834",
+        "office": "newsdream",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
         "title": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
         "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458797",
         "office": "pinpointnews",
@@ -80,8 +49,8 @@
         "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
       }
     ],
-    "cause_confidence": "중간",
-    "cause_summary": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체..."
+    "cause_confidence": "높음",
+    "cause_summary": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑"
   },
   {
     "post_id": "POST_20260610_126640",
@@ -94,7 +63,7 @@
     "headline": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 10:30 KST",
+    "published_at": "2026-06-10 10:45 KST",
     "news": [
       {
         "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
@@ -139,72 +108,17 @@
     "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
   },
   {
-    "post_id": "POST_20260610_093370",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "후성",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 20.34,
-    "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 10:30 KST",
-    "news": [
-      {
-        "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
-        "url": "https://n.news.naver.com/mnews/article/009/0005675570",
-        "office": "매일경제",
-        "sentiment": "호재"
-      },
-      {
-        "title": "삼성전자·SK하이닉스 역사적 실적에 반도체 소부장 주가도 날았다",
-        "url": "https://n.news.naver.com/mnews/article/037/0000038082",
-        "office": "주간동아",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
-        "url": "https://www.tokenpost.kr/news/economy/360710",
-        "office": "tokenpost",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-      },
-      {
-        "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
-        "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
-        "office": "newstnt",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-      },
-      {
-        "title": "후성 주가, 6월 10일 장중 15,200원 12.43% 상승",
-        "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085979",
-        "office": "topstarnews",
-        "sentiment": "호재",
-        "cause_score": 5,
-        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-      }
-    ],
-    "cause_confidence": "중간",
-    "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
-  },
-  {
     "post_id": "POST_20260610_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
     "signal_probability": "66%",
     "position_type": "상승추세",
-    "day_change": -8.17,
+    "day_change": -8.37,
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 10:30 KST",
+    "published_at": "2026-06-10 10:45 KST",
     "news": [
       {
         "title": "네이버 D2SF, AI 보안 스타트업 에임인텔리전스에 신규 투자",
@@ -259,5 +173,99 @@
     ],
     "cause_confidence": "높음",
     "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
+  },
+  {
+    "post_id": "POST_20260610_093370",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "후성",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 21.3,
+    "headline": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-10 10:45 KST",
+    "news": [
+      {
+        "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
+        "url": "https://n.news.naver.com/mnews/article/009/0005675570",
+        "office": "매일경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "삼성전자·SK하이닉스 역사적 실적에 반도체 소부장 주가도 날았다",
+        "url": "https://n.news.naver.com/mnews/article/037/0000038082",
+        "office": "주간동아",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
+        "url": "https://www.tokenpost.kr/news/economy/360710",
+        "office": "tokenpost",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
+        "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
+        "office": "newstnt",
+        "sentiment": "호재",
+        "cause_score": 7,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+      },
+      {
+        "title": "후성 주가, 6월 10일 장중 15,200원 12.43% 상승",
+        "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085979",
+        "office": "topstarnews",
+        "sentiment": "호재",
+        "cause_score": 5,
+        "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+      }
+    ],
+    "cause_confidence": "중간",
+    "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
+  },
+  {
+    "post_id": "POST_20260610_486990",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "노타",
+    "signal_probability": "52%",
+    "position_type": "분석불가",
+    "day_change": -7.12,
+    "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-10 10:45 KST",
+    "news": [
+      {
+        "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
+        "url": "https://n.news.naver.com/mnews/article/421/0008992442",
+        "office": "뉴스1",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 엔비디아 아태 파트너데이 ‘한국 유일’ 패널 참여…“피지컬...",
+        "url": "https://n.news.naver.com/mnews/article/018/0006295755",
+        "office": "이데일리",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 영상관제 AI 현장 적용 확대…엔비디아와 협력",
+        "url": "https://n.news.naver.com/mnews/article/003/0013979735",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      },
+      {
+        "title": "노타, 퀄컴 엣지 디바이스서 '피지컬 AI' 속도 7배 높였다",
+        "url": "https://n.news.naver.com/mnews/article/092/0002424676",
+        "office": "지디넷코리아",
+        "sentiment": "호재"
+      }
+    ]
   }
 ]
