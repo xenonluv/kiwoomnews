@@ -13,12 +13,12 @@ REPO="$(cd "$(dirname "$0")/.." && pwd)"
 PY="$(command -v python3 || echo /usr/bin/python3)"
 
 # ── 설정(필요 시 수정) ─────────────────────────────
-WATCH="한온시스템 삼성전자 현대차 NAVER LG전자 삼성전기 노타 코칩 로보스타 로보티즈"
 TOP=30; BET=5
 # ───────────────────────────────────────────────
 
+# 레이더 publish는 인자 불필요(전수 스캔이라 watchlist 없어도 누락 없음).
 # 두 푸셔(publish·analyzer)를 7분 시차로 분리 → 동시 git push 충돌 방지
-L_PUBLISH="0,15,30,45 9-15 * * 1-5 cd $REPO && $PY scripts/publish.py --max-candidates 8 --names $WATCH >> /tmp/publish.log 2>&1"
+L_PUBLISH="0,15,30,45 9-15 * * 1-5 cd $REPO && $PY scripts/publish.py >> /tmp/publish.log 2>&1"
 L_FORECAST="7,22,37,52 9-15 * * 1-5 cd $REPO && $PY analyzer/run.py --push --top $TOP --bet $BET >> /tmp/forecast.log 2>&1"
 L_BACKTEST="10 17 * * 1-5 cd $REPO && $PY analyzer/backtest.py --push >> /tmp/backtest.log 2>&1"
 

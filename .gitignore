@@ -5,6 +5,7 @@
 apikey.md
 kis_devlp.yaml
 .kis_token.json
+setup_mac_radar.sh
 
 # KIS 공식 API 샘플 레포 (벤더 코드, 참고용)
 open_api/
