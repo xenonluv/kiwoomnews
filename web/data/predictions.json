@@ -1,65 +1,21 @@
 {
-  "as_of": "2026-06-10 12:37 KST",
+  "as_of": "2026-06-10 12:52 KST",
   "intraday_rank": [
-    {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "91%",
-      "entry": 673000.0,
-      "target": 706650,
-      "stop": 652810,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 8.17,
-      "cause_news": [
-        {
-          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
-          "office": "todaykorea",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
-    },
     {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "88%",
-      "entry": 15940.0,
-      "target": 16737,
-      "stop": 15462,
+      "entry": 16210.0,
+      "target": 17020,
+      "stop": 15724,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.74)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 17.9,
+      "day_change": 20.34,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -90,6 +46,50 @@
       "cause_summary": "후성 주가 급등세…수차례 VI 발동하기도"
     },
     {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "83%",
+      "entry": 671000.0,
+      "target": 704550,
+      "stop": 650870,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 7.69,
+      "cause_news": [
+        {
+          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
+          "office": "todaykorea",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
+          "office": "businesspost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+    },
+    {
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "74%",
@@ -100,10 +100,10 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI51.9 강세",
-        "거래량2.7배"
+        "거래량2.72배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 27.38,
+      "day_change": 29.87,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
@@ -178,20 +178,74 @@
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
     },
     {
+      "ticker": "케이뱅크",
+      "code": "279570",
+      "tomorrow_up_prob": "69%",
+      "entry": 6580.0,
+      "target": 6909,
+      "stop": 6383,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.93)",
+        "RSI67.0 강세",
+        "거래량5.39배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 12.11,
+      "related_news": [
+        {
+          "title": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
+          "url": "https://n.news.naver.com/mnews/article/009/0005690132",
+          "office": "매일경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "주가 부진한 케이뱅크…락업 해제에도 FI ‘딜레마’",
+          "url": "https://n.news.naver.com/mnews/article/011/0004628096",
+          "office": "서울경제",
+          "sentiment": "혼재"
+        }
+      ]
+    },
+    {
+      "ticker": "제주은행",
+      "code": "006220",
+      "tomorrow_up_prob": "69%",
+      "entry": 12980.0,
+      "target": 13629,
+      "stop": 12591,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.92)",
+        "RSI65.1 강세",
+        "거래량4.39배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "고객 상담 넘어 업무 혁신으로… 제주은행, AI 은행 전환 속도",
+          "url": "https://n.news.naver.com/mnews/article/661/0000077807",
+          "office": "JIBS",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "71%",
-      "entry": 230500.0,
-      "target": 242025,
-      "stop": 223585,
-      "confidence": "상",
+      "tomorrow_up_prob": "66%",
+      "entry": 229000.0,
+      "target": 240450,
+      "stop": 222130,
+      "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI50.3 강세"
+        "호재"
       ],
       "risk": "약한 마감",
-      "day_change": -10.12,
+      "day_change": -10.89,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -222,74 +276,20 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "케이뱅크",
-      "code": "279570",
-      "tomorrow_up_prob": "68%",
-      "entry": 6540.0,
-      "target": 6867,
-      "stop": 6344,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.94)",
-        "RSI66.4 강세",
-        "거래량4.2배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 10.73,
-      "related_news": [
-        {
-          "title": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
-          "url": "https://n.news.naver.com/mnews/article/009/0005690132",
-          "office": "매일경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "주가 부진한 케이뱅크…락업 해제에도 FI ‘딜레마’",
-          "url": "https://n.news.naver.com/mnews/article/011/0004628096",
-          "office": "서울경제",
-          "sentiment": "혼재"
-        }
-      ]
-    },
-    {
-      "ticker": "제주은행",
-      "code": "006220",
-      "tomorrow_up_prob": "68%",
-      "entry": 12300.0,
-      "target": 12915,
-      "stop": 11931,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.9)",
-        "RSI60.8 강세",
-        "거래량3.53배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "고객 상담 넘어 업무 혁신으로… 제주은행, AI 은행 전환 속도",
-          "url": "https://n.news.naver.com/mnews/article/661/0000077807",
-          "office": "JIBS",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "SK오션플랜트",
       "code": "100090",
-      "tomorrow_up_prob": "66%",
-      "entry": 16900.0,
-      "target": 17745,
-      "stop": 16393,
+      "tomorrow_up_prob": "62%",
+      "entry": 16480.0,
+      "target": 17304,
+      "stop": 15986,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
-        "거래량4.97배",
+        "거래량5.32배",
         "호재"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
+      "risk": "약한 마감",
+      "day_change": 13.89,
       "cause_news": [
         {
           "title": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세...",
@@ -312,33 +312,6 @@
       "cause_summary": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세..."
     },
     {
-      "ticker": "한국항공우주",
-      "code": "047810",
-      "tomorrow_up_prob": "57%",
-      "entry": 137600.0,
-      "target": 144480,
-      "stop": 133472,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.93)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "한국항공우주, 글로벌 안보 위기 속 완제기 수주 랠리… 영토 확장 가속...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458996",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "한국항공우주, 글로벌 안보 위기 속 완제기 수주 랠리… 영토 확장 가속..."
-    },
-    {
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "54%",
@@ -348,10 +321,10 @@
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 15회 지속"
+        "장중 16회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -9.27,
+      "day_change": -9.77,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -376,64 +349,20 @@
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "91%",
-      "entry": 673000.0,
-      "target": 706650,
-      "stop": 652810,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 8.17,
-      "cause_news": [
-        {
-          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
-          "office": "todaykorea",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
-    },
-    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "88%",
-      "entry": 15940.0,
-      "target": 16737,
-      "stop": 15462,
+      "entry": 16210.0,
+      "target": 17020,
+      "stop": 15724,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.74)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 17.9,
+      "day_change": 20.34,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -464,6 +393,50 @@
       "cause_summary": "후성 주가 급등세…수차례 VI 발동하기도"
     },
     {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "83%",
+      "entry": 671000.0,
+      "target": 704550,
+      "stop": 650870,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 7.69,
+      "cause_news": [
+        {
+          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
+          "office": "todaykorea",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
+          "office": "businesspost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+    },
+    {
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "74%",
@@ -474,10 +447,10 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI51.9 강세",
-        "거래량2.7배"
+        "거래량2.72배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 27.38,
+      "day_change": 29.87,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
@@ -552,48 +525,34 @@
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
     },
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "71%",
-      "entry": 230500.0,
-      "target": 242025,
-      "stop": 223585,
-      "confidence": "상",
+      "ticker": "케이뱅크",
+      "code": "279570",
+      "tomorrow_up_prob": "69%",
+      "entry": 6580.0,
+      "target": 6909,
+      "stop": 6383,
+      "confidence": "중",
       "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI50.3 강세"
+        "강세마감(0.93)",
+        "RSI67.0 강세",
+        "거래량5.39배"
       ],
-      "risk": "약한 마감",
-      "day_change": -10.12,
-      "cause_news": [
+      "risk": "특이 위험 낮음",
+      "day_change": 12.11,
+      "related_news": [
         {
-          "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-          "url": "https://www.tokenpost.kr/news/economy/367307",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+          "title": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
+          "url": "https://n.news.naver.com/mnews/article/009/0005690132",
+          "office": "매일경제",
+          "sentiment": "호재"
         },
         {
-          "title": "[특징주] 네이버, 엔비디아 협력 발표 뒤 차익실현에 '급락'",
-          "url": "https://www.g-enews.com/view.php?ud=20260609095656477744093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
-        },
-        {
-          "title": "[ET특징주] 젠슨 황 출국과 함께… LG전자·네이버 주가 하락",
-          "url": "https://www.etnews.com/20260609000187",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 6,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재"
+          "title": "주가 부진한 케이뱅크…락업 해제에도 FI ‘딜레마’",
+          "url": "https://n.news.naver.com/mnews/article/011/0004628096",
+          "office": "서울경제",
+          "sentiment": "혼재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
+      ]
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
