@@ -1,65 +1,137 @@
 {
-  "as_of": "2026-06-10 09:52 KST",
+  "as_of": "2026-06-10 10:07 KST",
   "intraday_rank": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "80%",
-      "entry": 669000.0,
-      "target": 702450,
-      "stop": 648930,
+      "ticker": "후성",
+      "code": "093370",
+      "tomorrow_up_prob": "82%",
+      "entry": 15520.0,
+      "target": 16296,
+      "stop": 15054,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.99)",
         "정배열",
-        "MACD강세",
-        "RSI68.6 강세"
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.41,
+      "day_change": 11.91,
       "cause_news": [
         {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
+          "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
+          "url": "https://www.tokenpost.kr/news/economy/360710",
+          "office": "tokenpost",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "“백화점 매출 호조”…신세계, 증권가 목표가 줄상향에 7%대↑[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03152086645480408",
-          "office": "edaily",
+          "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
+          "office": "newstnt",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "백화점·면세점 쌍끌이 호재 신세계, 소비 회복·관광객 증가 수혜 동시...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458929",
-          "office": "pinpointnews",
+          "title": "후성 주가, 6월 10일 장중 15,200원 12.43% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085979",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
+    },
+    {
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "81%",
+      "entry": 2480.0,
+      "target": 2604,
+      "stop": 2406,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.87)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 19.48,
+      "cause_news": [
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
+          "office": "widedaily",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
+          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
+          "office": "kdpress",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
+          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승"
+      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
+    },
+    {
+      "ticker": "테스",
+      "code": "095610",
+      "tomorrow_up_prob": "76%",
+      "entry": 186200.0,
+      "target": 195510,
+      "stop": 180614,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.9)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 15.55,
+      "cause_news": [
+        {
+          "title": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458797",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체..."
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "74%",
-      "entry": 235500.0,
-      "target": 247275,
-      "stop": 228435,
+      "tomorrow_up_prob": "76%",
+      "entry": 236000.0,
+      "target": 247800,
+      "stop": 228920,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.8 강세"
+        "RSI52.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.17,
+      "day_change": -7.59,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -90,53 +162,9 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "후성",
-      "code": "093370",
-      "tomorrow_up_prob": "74%",
-      "entry": 14700.0,
-      "target": 15435,
-      "stop": 14259,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI63.9 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 7.1,
-      "cause_news": [
-        {
-          "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
-          "url": "https://www.tokenpost.kr/news/economy/360710",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "배터리 화재·효율 잡는다… 후성, 첨단 정밀 화학 원소재로 승부수",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458749",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
-    },
-    {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "67%",
+      "tomorrow_up_prob": "68%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
@@ -181,14 +209,14 @@
       "ticker": "LIG디펜스앤에어로스페이스",
       "code": "079550",
       "tomorrow_up_prob": "62%",
-      "entry": 778000.0,
-      "target": 816900,
-      "stop": 754660,
+      "entry": 782000.0,
+      "target": 821100,
+      "stop": 758540,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.75)",
+        "강세마감(0.81)",
         "호재",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -206,98 +234,76 @@
       "cause_summary": "LIG디펜스앤에어로스페이스, 독보적 유도무기 기술로 글로벌 방산 시장..."
     },
     {
-      "ticker": "광전자",
-      "code": "017900",
-      "tomorrow_up_prob": "56%",
-      "entry": 10540.0,
-      "target": 11067,
-      "stop": 10224,
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "59%",
+      "entry": 11010.0,
+      "target": 11560,
+      "stop": 10680,
       "confidence": "중",
       "reasons": [
-        "강세마감(1.0)",
-        "RSI50.8 강세"
+        "강세마감(0.82)",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
+      "day_change": 7.4,
       "cause_news": [
         {
-          "title": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580755",
-          "office": "cbci",
+          "title": "화신정공, 투자주의종목 지정→주가 급등에 투자경보",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085251",
+          "office": "topstarnews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
-          "office": "cbci",
+          "title": "화신정공, 투자경고종목 지정예고→주가 급등세 주의 요망",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085242",
+          "office": "topstarnews",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 젠슨 황 방한에 광통신주 강세…광전자 22%대 급등",
-          "url": "https://www.tokenpost.kr/news/economy/367289",
-          "office": "tokenpost",
+          "title": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295327",
+          "office": "widedaily",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감..."
+      "cause_summary": "화신정공, 투자주의종목 지정→주가 급등에 투자경보"
     },
     {
-      "ticker": "HD현대에너지솔루션",
-      "code": "322000",
-      "tomorrow_up_prob": "54%",
-      "entry": 152200.0,
-      "target": 159810,
-      "stop": 147634,
+      "ticker": "LS ELECTRIC",
+      "code": "010120",
+      "tomorrow_up_prob": "52%",
+      "entry": 235000.0,
+      "target": 246750,
+      "stop": 227950,
       "confidence": "하",
       "reasons": [
-        "Stoch골든",
-        "호재",
-        "장중 4회 지속"
+        "강세마감(0.78)"
       ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상...",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439481",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] ‘흑자전환’ HD현대에너지솔루션, 1분기 호실적 힘입어 역대...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/04/30/2NGQM5CKTFFE7GQMKNAOQJXF2Y/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "재생에너지株 강세…SK이터닉스 상한가 이어 HD현대에너지솔루션 6%대 상..."
+      "risk": "특이 위험 낮음",
+      "day_change": null
     },
     {
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "50%",
-      "entry": 27900.0,
-      "target": 29295,
-      "stop": 27063,
+      "entry": 28350.0,
+      "target": 29768,
+      "stop": 27500,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 4회 지속"
+        "장중 5회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -7.28,
+      "day_change": -7.12,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -318,68 +324,182 @@
           "sentiment": "호재"
         }
       ]
+    },
+    {
+      "ticker": "광전자",
+      "code": "017900",
+      "tomorrow_up_prob": "44%",
+      "entry": 10000.0,
+      "target": 10500,
+      "stop": 9700,
+      "confidence": "하",
+      "reasons": [
+        "근거 부족"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "젠슨 황 방한 기대감에 광통신주 강세… 광전자 장중 상한가",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162747",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580755",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "젠슨 황 방한 기대감에 광통신주 강세… 광전자 장중 상한가"
     }
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "80%",
-      "entry": 669000.0,
-      "target": 702450,
-      "stop": 648930,
+      "ticker": "후성",
+      "code": "093370",
+      "tomorrow_up_prob": "82%",
+      "entry": 15520.0,
+      "target": 16296,
+      "stop": 15054,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.99)",
         "정배열",
-        "MACD강세",
-        "RSI68.6 강세"
+        "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.41,
+      "day_change": 11.91,
       "cause_news": [
         {
-          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
+          "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
+          "url": "https://www.tokenpost.kr/news/economy/360710",
+          "office": "tokenpost",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "“백화점 매출 호조”…신세계, 증권가 목표가 줄상향에 7%대↑[특징주...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03152086645480408",
-          "office": "edaily",
+          "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
+          "office": "newstnt",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "백화점·면세점 쌍끌이 호재 신세계, 소비 회복·관광객 증가 수혜 동시...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458929",
-          "office": "pinpointnews",
+          "title": "후성 주가, 6월 10일 장중 15,200원 12.43% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16085979",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
+    },
+    {
+      "ticker": "팸텍",
+      "code": "271830",
+      "tomorrow_up_prob": "81%",
+      "entry": 2480.0,
+      "target": 2604,
+      "stop": 2406,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.87)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 19.48,
+      "cause_news": [
+        {
+          "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
+          "office": "widedaily",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
+          "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
+          "office": "kdpress",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
+          "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승"
+      "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
+    },
+    {
+      "ticker": "테스",
+      "code": "095610",
+      "tomorrow_up_prob": "76%",
+      "entry": 186200.0,
+      "target": 195510,
+      "stop": 180614,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.9)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 15.55,
+      "cause_news": [
+        {
+          "title": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458797",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[이격도과열 종목] 피에스케이·테스·브이엠 주가 '불기둥'…AI 반도체..."
     },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "74%",
-      "entry": 235500.0,
-      "target": 247275,
-      "stop": 228435,
+      "tomorrow_up_prob": "76%",
+      "entry": 236000.0,
+      "target": 247800,
+      "stop": 228920,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.8 강세"
+        "RSI52.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -8.17,
+      "day_change": -7.59,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -410,53 +530,9 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "후성",
-      "code": "093370",
-      "tomorrow_up_prob": "74%",
-      "entry": 14700.0,
-      "target": 15435,
-      "stop": 14259,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI63.9 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 7.1,
-      "cause_news": [
-        {
-          "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
-          "url": "https://www.tokenpost.kr/news/economy/360710",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 후성, 1분기 실적 발표...향후 분기별 사업 전망",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=702866",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "배터리 화재·효율 잡는다… 후성, 첨단 정밀 화학 원소재로 승부수",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458749",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개..."
-    },
-    {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "67%",
+      "tomorrow_up_prob": "68%",
       "entry": 4430.0,
       "target": 4652,
       "stop": 4297,
@@ -496,34 +572,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
-    },
-    {
-      "ticker": "LIG디펜스앤에어로스페이스",
-      "code": "079550",
-      "tomorrow_up_prob": "62%",
-      "entry": 778000.0,
-      "target": 816900,
-      "stop": 754660,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.75)",
-        "호재",
-        "장중 3회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "LIG디펜스앤에어로스페이스, 독보적 유도무기 기술로 글로벌 방산 시장...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=458919",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "LIG디펜스앤에어로스페이스, 독보적 유도무기 기술로 글로벌 방산 시장..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
