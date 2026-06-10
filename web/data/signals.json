@@ -1,139 +1,5 @@
 [
   {
-    "post_id": "POST_20260610_271830",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "팸텍",
-    "signal_probability": "53%",
-    "position_type": "과다상승",
-    "day_change": 14.08,
-    "headline": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 10.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
-    "news": [
-      {
-        "title": "'上上上' 팸텍…매도 사이드카 발동에도 4거래일 연속 '급등'",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297931",
-        "office": "이데일리",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "웨이퍼 로봇 기업 인수…팸텍, 3거래일 연속 급등[특징주]",
-        "url": "https://n.news.naver.com/mnews/article/018/0006297089",
-        "office": "이데일리",
-        "sentiment": "호재"
-      },
-      {
-        "title": "[ET특징주]팸텍, 웨이퍼 로봇 기업 인수 소식에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003433710",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "팸텍, 로봇 전문기업 티아이에스 인수",
-        "url": "https://n.news.naver.com/mnews/article/015/0005293712",
-        "office": "한국경제",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속...",
-        "url": "https://www.widedaily.com/news/articleView.html?idxno=295148",
-        "office": "widedaily",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-      },
-      {
-        "title": "[주요공시] 삼성전자, 팸텍, 하나기술, 현대건설, 하이로닉, SKC, 소룩스...",
-        "url": "https://www.kdpress.co.kr/news/articleView.html?idxno=205979",
-        "office": "kdpress",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-      },
-      {
-        "title": "[특징주] 팸텍, 티아이에스 지분 인수에 4거래일 연속 '강세'",
-        "url": "https://www.g-enews.com/view.php?ud=20260605103723908044093b5d4e_1",
-        "office": "g-enews",
-        "sentiment": "호재",
-        "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[특징주] 팸텍, 웨이퍼 로봇 기업 티아이에스 인수 소식에 4거래일 연속..."
-  },
-  {
-    "post_id": "POST_20260610_004170",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "신세계",
-    "signal_probability": "48%",
-    "position_type": "과다상승",
-    "day_change": 8.81,
-    "headline": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 7.0, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
-    "news": [
-      {
-        "title": "스타벅스, 탱크데이 논란 이후 3주 만에 결제액 반등",
-        "url": "https://n.news.naver.com/mnews/article/366/0001170705",
-        "office": "조선비즈",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[ET특징주]신세계, 백화점 호조 기대감에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003436133",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;백화점 매출 더 늘어난다&quot;…신세계·롯데쇼핑 동반 상승",
-        "url": "https://n.news.naver.com/mnews/article/003/0013997476",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;외국인 매출 증가 효과로 백화점 실적 성장&quot;…백화점주 동반상승",
-        "url": "https://n.news.naver.com/mnews/article/008/0005369675",
-        "office": "머니투데이",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-        "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
-        "office": "todaykorea",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-        "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-        "office": "biz",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
-        "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
-        "office": "businesspost",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
-  },
-  {
     "post_id": "POST_20260610_126640",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -144,7 +10,7 @@
     "headline": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
+    "published_at": "2026-06-10 12:30 KST",
     "news": [
       {
         "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
@@ -189,17 +55,78 @@
     "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
   },
   {
+    "post_id": "POST_20260610_004170",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "신세계",
+    "signal_probability": "46%",
+    "position_type": "과다상승",
+    "day_change": 8.17,
+    "headline": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-10 12:30 KST",
+    "news": [
+      {
+        "title": "스타벅스, 탱크데이 논란 이후 3주 만에 결제액 반등",
+        "url": "https://n.news.naver.com/mnews/article/366/0001170705",
+        "office": "조선비즈",
+        "sentiment": "혼재"
+      },
+      {
+        "title": "[ET특징주]신세계, 백화점 호조 기대감에 상승세",
+        "url": "https://n.news.naver.com/mnews/article/030/0003436133",
+        "office": "전자신문",
+        "sentiment": "호재"
+      },
+      {
+        "title": "&quot;백화점 매출 더 늘어난다&quot;…신세계·롯데쇼핑 동반 상승",
+        "url": "https://n.news.naver.com/mnews/article/003/0013997476",
+        "office": "뉴시스",
+        "sentiment": "호재"
+      }
+    ],
+    "cause_news": [
+      {
+        "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+        "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
+        "office": "todaykorea",
+        "sentiment": "호재",
+        "cause_score": 17,
+        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
+        "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+        "office": "biz",
+        "sentiment": "호재",
+        "cause_score": 13,
+        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+      },
+      {
+        "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
+        "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
+        "office": "businesspost",
+        "sentiment": "호재",
+        "cause_score": 11,
+        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+      }
+    ],
+    "cause_confidence": "높음",
+    "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+  },
+  {
     "post_id": "POST_20260610_475150",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "SK이터닉스",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": 24.6,
+    "day_change": 27.38,
     "headline": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
+    "published_at": "2026-06-10 12:30 KST",
     "news": [
       {
         "title": "재생에너지 육성 본격화…SK이터닉스 상한가, HD현대에너지솔루션 10%...",
@@ -250,11 +177,11 @@
     "target_stock": "후성",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.27,
+    "day_change": 17.9,
     "headline": "후성 주가 급등세…수차례 VI 발동하기도",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
+    "published_at": "2026-06-10 12:30 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -305,11 +232,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -9.11,
+    "day_change": -9.27,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
+    "published_at": "2026-06-10 12:30 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -338,17 +265,44 @@
     ]
   },
   {
+    "post_id": "POST_20260610_279570",
+    "status": "PUBLISHED",
+    "tier": "candidate",
+    "target_stock": "케이뱅크",
+    "signal_probability": "51%",
+    "position_type": "분석불가",
+    "day_change": 10.73,
+    "headline": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 분석불가.",
+    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
+    "published_at": "2026-06-10 12:30 KST",
+    "news": [
+      {
+        "title": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
+        "url": "https://n.news.naver.com/mnews/article/009/0005690132",
+        "office": "매일경제",
+        "sentiment": "호재"
+      },
+      {
+        "title": "주가 부진한 케이뱅크…락업 해제에도 FI ‘딜레마’",
+        "url": "https://n.news.naver.com/mnews/article/011/0004628096",
+        "office": "서울경제",
+        "sentiment": "혼재"
+      }
+    ]
+  },
+  {
     "post_id": "POST_20260610_035420",
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "65%",
+    "signal_probability": "64%",
     "position_type": "상승추세",
-    "day_change": -9.73,
+    "day_change": -10.12,
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.5, 호재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:15 KST",
+    "published_at": "2026-06-10 12:30 KST",
     "news": [
       {
         "title": "&quot;AI보안, 산업 인프라 문제&quot;…네이버 D2SF, 에임인텔리전스에 투자",
@@ -360,12 +314,6 @@
         "title": "젠슨 황이 띄운 AI 전쟁…은행권 '생산적 금융'도 반도체로 간다",
         "url": "https://n.news.naver.com/mnews/article/629/0000506433",
         "office": "더팩트",
-        "sentiment": "호재"
-      },
-      {
-        "title": "네이버D2SF, AI 보안 스타트업에 신규 투자…“네이버 보안 조직 협력...",
-        "url": "https://n.news.naver.com/mnews/article/029/0003030996",
-        "office": "디지털타임스",
         "sentiment": "호재"
       }
     ],
