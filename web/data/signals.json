@@ -10,7 +10,7 @@
     "headline": "[특징주] SK이터닉스, KKR 거래설에 상한가…거래대금 800억 돌파",
     "summary": "[시그널] 일봉 분석불가 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
       {
         "title": "재생에너지 육성 본격화…SK이터닉스 상한가, HD현대에너지솔루션 10%...",
@@ -35,17 +35,17 @@
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
       },
       {
-        "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 '上'",
-        "url": "http://www.metroseoul.co.kr/article/20260610500275",
-        "office": "metroseoul",
+        "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 에너지 사업 재편\"에 수혜주로 부각...",
+        "url": "https://www.widedaily.com/news/articleView.html?idxno=295498",
+        "office": "widedaily",
         "sentiment": "호재",
         "cause_score": 15,
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
       },
       {
-        "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
-        "url": "https://www.ajunews.com/view/20260610113207436",
-        "office": "ajunews",
+        "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 '上'",
+        "url": "http://www.metroseoul.co.kr/article/20260610500275",
+        "office": "metroseoul",
         "sentiment": "호재",
         "cause_score": 15,
         "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
@@ -61,11 +61,11 @@
     "target_stock": "SK오션플랜트",
     "signal_probability": "70%",
     "position_type": "저점",
-    "day_change": 16.16,
+    "day_change": 15.89,
     "headline": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세...",
     "summary": "[시그널] 일봉 저점 · 재료 호재(중요도 5.0). 일봉 국면을 함께 확인.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
       {
         "title": "SK오션플랜트 방문한 美 국방부 실사단…마스가 협력 기대감",
@@ -112,7 +112,7 @@
     "headline": "화신정공, 투자주의종목 지정→주가 급등에 투자경보",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
       {
         "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
@@ -161,14 +161,20 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "NAVER",
-    "signal_probability": "66%",
+    "signal_probability": "67%",
     "position_type": "상승추세",
-    "day_change": -11.87,
+    "day_change": -11.67,
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 상승추세.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
+      {
+        "title": "젠슨황도 놀란 ‘페이스 사인’… 네이버·토스, 안면결제 경쟁",
+        "url": "https://n.news.naver.com/mnews/article/366/0001170799",
+        "office": "조선비즈",
+        "sentiment": "호재"
+      },
       {
         "title": "[비즈톡톡] 치지직부터 안면인식 결제까지… 네이버 기술 홍보대사로...",
         "url": "https://n.news.naver.com/mnews/article/366/0001170779",
@@ -224,11 +230,11 @@
     "target_stock": "후성",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 18.42,
+    "day_change": 19.67,
     "headline": "후성 주가 급등세…수차례 VI 발동하기도",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -261,12 +267,12 @@
         "cause_reason": "제목 언급, 인과표현, 재료, 당일"
       },
       {
-        "title": "[특징주] 후성, 1분기 실적 선방에도 약세…2분기 LiPF6·반도체가스 개...",
-        "url": "https://www.tokenpost.kr/news/economy/360710",
-        "office": "tokenpost",
+        "title": "후성, 대체 불가능한 2차전지 핵심 소재 기술력…글로벌 시장 독점 체제...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459084",
+        "office": "pinpointnews",
         "sentiment": "호재",
         "cause_score": 7,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
       }
     ],
     "cause_confidence": "높음",
@@ -279,11 +285,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -11.42,
+    "day_change": -10.6,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 15:15 KST",
+    "published_at": "2026-06-10 15:30 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
