@@ -129,6 +129,9 @@ def collect_samples():
                                 "code": code, "name": s.get("name"),
                                 "score": s.get("score", 0),
                                 "breakdown": s.get("breakdown", {}),
+                                # 마감 시 게시 카드 잔존 여부(= 종가 매수 가능했던 종목).
+                                # 키 없는 과거(장후 실행) 기록은 True
+                                "final": s.get("final", True),
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
@@ -222,10 +225,12 @@ def save_weights(tuned):
     return out
 
 
-def write_performance(samples, series, bins, weights):
+def write_performance(samples, series, bins, weights, dropouts=None):
     n = len(samples)
     hits = sum(1 for s in samples if s["hit"])
     rets = [s["return_pct"] for s in samples]
+    dropouts = dropouts or []
+    dn = len(dropouts)
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
         "summary": {
@@ -234,6 +239,11 @@ def write_performance(samples, series, bins, weights):
             "avg_return": round(sum(rets) / n, 2) if n else None,
             "high3_rate": round(sum(1 for s in samples if s["high3"]) / n * 100) if n else None,
             "tracking_days": len(series),
+            # 장중 탈락군(마감 카드 미잔존) 참고 성적 — 탈락 필터의 효용 검증용.
+            # 주 통계·튜닝에는 포함되지 않는다.
+            "dropout": ({"n": dn,
+                         "hit_rate": round(sum(1 for s in dropouts if s["hit"]) / dn * 100, 1)}
+                        if dn else None),
         },
         "series": series,
         "bins": bins,
@@ -288,14 +298,17 @@ def push_state():
 def main():
     evaluate()
     samples = collect_samples()
-    series = build_series(samples)
-    bins = build_bins(samples)
-    weights = save_weights(tune_weights(samples))
-    perf = write_performance(samples, series, bins, weights)
+    # 주 통계·튜닝 = 마감 카드 잔존(final) 표본만 — 정석 사용법(종가 매수)과 모집단 일치.
+    finals = [s for s in samples if s["final"]]
+    dropouts = [s for s in samples if not s["final"]]
+    series = build_series(finals)
+    bins = build_bins(finals)
+    weights = save_weights(tune_weights(finals))
+    perf = write_performance(finals, series, bins, weights, dropouts)
     s = perf["summary"]
-    print(f"[backtest] 누적 표본 {s['n']}건 · 적중률 {s['hit_rate']}% · "
+    print(f"[backtest] 최종카드 표본 {s['n']}건 · 적중률 {s['hit_rate']}% · "
           f"평균수익 {s['avg_return']}% · 고가+3% {s['high3_rate']}% · "
-          f"추적 {s['tracking_days']}일")
+          f"추적 {s['tracking_days']}일 · 장중탈락 {len(dropouts)}건(참고)")
     if "--push" in sys.argv[1:]:
         push_state()
 

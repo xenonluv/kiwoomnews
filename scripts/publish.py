@@ -74,6 +74,13 @@ def record_history(out):
             "evaluated": prev.get("evaluated", False),
             "result": prev.get("result"),
         }
+    # 최종 카드 마킹: 이번 회차 "게시 카드"(--max 컷 적용 후 = 사이트에 실제 표시된
+    # 종목)에 있으면 True, 없으면 False. 매 회차 덮어쓰므로 마지막 회차(15:45)가 확정값.
+    # 정의: final = 마감 시 사용자가 카드에서 보고 종가 매수할 수 있었던 종목.
+    # (--max 컷에 밀린 13위 이하도 False — 사용자가 볼 수 없었으므로 의도된 동작)
+    current = {s["code"] for s in out.get("suspects", [])}
+    for code, rec in hist["suspects"].items():
+        rec["final"] = code in current
     hist["as_of"] = out.get("generated_at")
     json.dump(hist, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return path

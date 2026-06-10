@@ -22,14 +22,16 @@ function Stat({
   );
 }
 
-/** 핵심 지표 4카드 — 표본 부족 시 "수집 중"을 정직하게 표시 */
+/** 핵심 지표 4카드 — 표본 부족 시 "수집 중"을 정직하게 표시.
+ *  통계는 마감 카드에 남은 종목(= 종가 매수 가능했던 종목)만 집계한다. */
 export function StatCards({ data }: { data: PerformanceData }) {
   const s = data.summary;
   const has = s.n > 0;
   return (
+    <div>
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       <Stat
-        label="누적 적중률 (익일 종가↑)"
+        label="누적 적중률 (마감 카드 · 익일 종가↑)"
         value={has && s.hit_rate !== null ? `${s.hit_rate}%` : "수집 중"}
         sub={`표본 ${s.n}건 · ${s.tracking_days}일째 추적`}
         accent={has && (s.hit_rate ?? 0) >= 50 ? "up" : "none"}
@@ -54,6 +56,15 @@ export function StatCards({ data }: { data: PerformanceData }) {
         }
         accent={data.weights.tuned ? "up" : "none"}
       />
+    </div>
+    {s.dropout && s.dropout.n > 0 && (
+      <p className="mt-2 text-[11px] text-muted-foreground">
+        참고: 장중에 잡혔다가 마감 전 탈락한 종목{" "}
+        <span className="tabular-nums">{s.dropout.n}건</span>의 적중률은{" "}
+        <span className="tabular-nums">{s.dropout.hit_rate}%</span> — 통계·튜닝에는
+        포함하지 않습니다 (마감 카드만 종가 매수가 가능하므로).
+      </p>
+    )}
     </div>
   );
 }

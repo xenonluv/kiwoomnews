@@ -37,11 +37,13 @@ export interface RecentSample {
 export interface PerformanceData {
   as_of: string;
   summary: {
-    n: number;
+    n: number; // 최종 카드(마감 잔존) 표본 — 주 통계·튜닝 기준
     hit_rate: number | null;
     avg_return: number | null;
     high3_rate: number | null;
     tracking_days: number;
+    /** 장중 탈락군 참고 성적 (주 통계·튜닝 미포함) */
+    dropout?: { n: number; hit_rate: number | null } | null;
   };
   series: PerfPoint[];
   bins: CalibBin[];

@@ -1,11 +1,12 @@
 {
- "as_of": "2026-06-10 22:11 KST",
+ "as_of": "2026-06-11 00:37 KST",
  "summary": {
   "n": 0,
   "hit_rate": null,
   "avg_return": null,
   "high3_rate": null,
-  "tracking_days": 1
+  "tracking_days": 1,
+  "dropout": null
  },
  "series": [
   {
