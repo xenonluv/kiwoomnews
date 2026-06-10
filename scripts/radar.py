@@ -323,9 +323,10 @@ def main():
             log(f"  [HIT] {s['name']} score={r['suspicion_score']} "
                 f"고가{r['high_pct']}% 현재{r['change_pct']}% 페이드{r['fade_pct']}%")
             suspects.append(r)
-    if err_count == len(candidates):
-        # 전 종목 데이터 오류 = KIS 키 부재/토큰 장애 — 거짓 '빈 레이더' 게시 방지
-        log(f"[error] 전 종목({err_count}) 조회 실패 — KIS 장애/키 미설정 의심, 중단")
+    # 데이터 오류 비율 가드 — KIS 키 부재/토큰 장애/부분 장애 시 거짓 '빈 레이더' 게시 방지
+    # (정상 장에서도 거래정지 등으로 1~2건 ERR는 가능하므로 3건 미만은 허용)
+    if err_count >= max(3, int(len(candidates) * 0.3)):
+        log(f"[error] 조회 실패 {err_count}/{len(candidates)}종목 — KIS 장애 의심, 게시 중단")
         sys.exit(3)
     suspects.sort(key=lambda x: -x["suspicion_score"])
 

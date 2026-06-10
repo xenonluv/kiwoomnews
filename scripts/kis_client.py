@@ -62,15 +62,21 @@ def get_token(force=False):
     발급 실패 시 60초 쿨다운 — 같은 프로세스의 후속 호출이 tokenP를
     재차 두드리는 폭주(1분 1회 제한 위반)를 막는다.
     """
-    if not force and os.path.exists(TOKEN_CACHE):
+    cached = None  # (token, 남은시간) — 발급 실패 시 미만료 토큰 폴백용
+    if os.path.exists(TOKEN_CACHE):
         try:
             tk = json.load(open(TOKEN_CACHE, encoding="utf-8"))
             exp = datetime.strptime(tk["expired"], "%Y-%m-%d %H:%M:%S")
-            if exp - datetime.now() > timedelta(minutes=10):
+            remain = exp - datetime.now()
+            if remain > timedelta(0):
+                cached = tk["token"]
+            if not force and remain > timedelta(minutes=10):
                 return tk["token"]
         except Exception:
             pass
     if time.time() - _token_fail_at[0] < 60:
+        if cached and not force:
+            return cached  # 쿨다운 중이라도 아직 유효한 토큰이 있으면 사용
         raise RuntimeError("KIS 토큰 발급 쿨다운 중(직전 발급 실패, 1분 1회 제한)")
     app_key, app_secret = _keys()
     body = json.dumps({"grant_type": "client_credentials",
@@ -83,10 +89,14 @@ def get_token(force=False):
             res = json.load(r)
     except Exception:
         _token_fail_at[0] = time.time()
+        if cached and not force:
+            return cached  # 일시 발급 장애 — 미만료 토큰으로 계속
         raise
     token = res.get("access_token")
     if not token:
         _token_fail_at[0] = time.time()
+        if cached and not force:
+            return cached
         raise RuntimeError(f"KIS 토큰 발급 실패: {res.get('error_code')} "
                            f"{res.get('error_description')}")
     expired = res.get("access_token_token_expired",

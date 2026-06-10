@@ -95,8 +95,9 @@ def main():
     old = open(RADAR_JSON, encoding="utf-8").read() if os.path.exists(RADAR_JSON) else ""
 
     def strip_volatile(s):
-        return "\n".join(l for l in s.splitlines()
-                         if '"generated_at"' not in l and '"market_session"' not in l)
+        # generated_at만 제외 — market_session(open/closed)은 변경으로 취급해야
+        # 마감 후 사이트가 "장중 스캔 중"으로 고착되지 않는다 (하루 최대 2회 push 추가).
+        return "\n".join(l for l in s.splitlines() if '"generated_at"' not in l)
 
     if strip_volatile(new) == strip_volatile(old):
         print(f"변경 없음(수상종목 {len(out['suspects'])}건 동일) — push skip")

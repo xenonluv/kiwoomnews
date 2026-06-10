@@ -31,7 +31,8 @@ UA = {"User-Agent": "Mozilla/5.0", "Referer": "https://m.stock.naver.com/"}
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 랭킹 정렬키 매핑 (네이버 m.stock api/stocks/{sort}/{market})
-SORT = {"상승률": "up", "거래대금": "transactionAmount", "거래량": "tradingVolume"}
+# ⚠️ 2026-06 네이버가 transactionAmount/tradingVolume 랭킹을 폐지(404) — up/down만 동작
+SORT = {"상승률": "up", "하락률": "down"}
 CAUSE_QUERIES = ("{n} 급등", "{n} 강세", "{n} 특징주", "{n} 수혜")
 # ETF/ETN 브랜드 패턴 (개별 종목만 남기기 위해 제외)
 ETF_PAT = re.compile(
@@ -74,7 +75,7 @@ def resolve_code(name):
 
 
 def top_ranking(sort_key, market, n):
-    sort = SORT.get(sort_key, "transactionAmount")
+    sort = SORT.get(sort_key, "up")
     # 필터로 일부 빠지므로 넉넉히 받아서 n개 채움
     url = f"https://m.stock.naver.com/api/stocks/{sort}/{market}?page=1&pageSize={n * 3}"
     d = _get(url)
