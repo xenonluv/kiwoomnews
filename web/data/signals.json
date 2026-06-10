@@ -10,7 +10,7 @@
     "headline": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에...",
     "summary": "[후보] 재료+거래대금 포착(중요도 6.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "[특징주] 보스턴다이나믹스 방문 소식에…화신정공 상한가",
@@ -55,67 +55,6 @@
     "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
   },
   {
-    "post_id": "POST_20260610_004170",
-    "status": "PUBLISHED",
-    "tier": "candidate",
-    "target_stock": "신세계",
-    "signal_probability": "46%",
-    "position_type": "과다상승",
-    "day_change": 7.69,
-    "headline": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-    "summary": "[후보] 재료+거래대금 포착(중요도 5.5, 호재) · 일봉 과다상승.",
-    "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
-    "news": [
-      {
-        "title": "스타벅스, 탱크데이 논란 이후 3주 만에 결제액 반등",
-        "url": "https://n.news.naver.com/mnews/article/366/0001170705",
-        "office": "조선비즈",
-        "sentiment": "혼재"
-      },
-      {
-        "title": "[ET특징주]신세계, 백화점 호조 기대감에 상승세",
-        "url": "https://n.news.naver.com/mnews/article/030/0003436133",
-        "office": "전자신문",
-        "sentiment": "호재"
-      },
-      {
-        "title": "&quot;백화점 매출 더 늘어난다&quot;…신세계·롯데쇼핑 동반 상승",
-        "url": "https://n.news.naver.com/mnews/article/003/0013997476",
-        "office": "뉴시스",
-        "sentiment": "호재"
-      }
-    ],
-    "cause_news": [
-      {
-        "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
-        "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
-        "office": "todaykorea",
-        "sentiment": "호재",
-        "cause_score": 17,
-        "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
-        "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-        "office": "biz",
-        "sentiment": "호재",
-        "cause_score": 13,
-        "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-      },
-      {
-        "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
-        "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
-        "office": "businesspost",
-        "sentiment": "호재",
-        "cause_score": 11,
-        "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-      }
-    ],
-    "cause_confidence": "높음",
-    "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
-  },
-  {
     "post_id": "POST_20260610_475150",
     "status": "PUBLISHED",
     "tier": "candidate",
@@ -126,7 +65,7 @@
     "headline": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "재생에너지 육성 본격화…SK이터닉스 상한가, HD현대에너지솔루션 10%...",
@@ -177,11 +116,11 @@
     "target_stock": "SK오션플랜트",
     "signal_probability": "70%",
     "position_type": "저점",
-    "day_change": 13.89,
+    "day_change": 18.23,
     "headline": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 저점.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "SK오션플랜트 방문한 美 국방부 실사단…마스가 협력 기대감",
@@ -224,11 +163,11 @@
     "target_stock": "후성",
     "signal_probability": "46%",
     "position_type": "과다상승",
-    "day_change": 20.34,
+    "day_change": 20.49,
     "headline": "후성 주가 급등세…수차례 VI 발동하기도",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 과다상승.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "리튬 품귀에 포스코홀딩스·후성 '불기둥'",
@@ -279,11 +218,11 @@
     "target_stock": "노타",
     "signal_probability": "52%",
     "position_type": "분석불가",
-    "day_change": -9.77,
+    "day_change": -10.1,
     "headline": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
     "summary": "[후보] 재료+거래대금 포착(중요도 5.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -316,13 +255,13 @@
     "status": "PUBLISHED",
     "tier": "candidate",
     "target_stock": "케이뱅크",
-    "signal_probability": "44%",
-    "position_type": "과다상승",
-    "day_change": 12.11,
+    "signal_probability": "51%",
+    "position_type": "분석불가",
+    "day_change": 10.21,
     "headline": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
-    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 과다상승.",
+    "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 분석불가.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
         "title": "“월급쟁이 대신 사장님 모셔요”…인뱅들 돈 버는 법 바꿨다",
@@ -345,16 +284,16 @@
     "target_stock": "NAVER",
     "signal_probability": "64%",
     "position_type": "상승추세",
-    "day_change": -10.89,
+    "day_change": -10.12,
     "headline": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
     "summary": "[후보] 재료+거래대금 포착(중요도 4.0, 호재) · 일봉 상승추세.",
     "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
-    "published_at": "2026-06-10 12:45 KST",
+    "published_at": "2026-06-10 13:00 KST",
     "news": [
       {
-        "title": "&quot;AI보안, 산업 인프라 문제&quot;…네이버 D2SF, 에임인텔리전스에 투자",
-        "url": "https://n.news.naver.com/mnews/article/374/0000515171",
-        "office": "SBS Biz",
+        "title": "든든한 'AI 방패' 키운다…네이버 D2SF가 점찍은 에임인텔리전스",
+        "url": "https://n.news.naver.com/mnews/article/586/0000131181",
+        "office": "시사저널",
         "sentiment": "호재"
       },
       {
