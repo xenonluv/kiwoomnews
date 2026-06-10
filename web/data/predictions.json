@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-10 14:22 KST",
+  "as_of": "2026-06-10 14:37 KST",
   "intraday_rank": [
     {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "80%",
-      "entry": 15470.0,
-      "target": 16244,
-      "stop": 15006,
+      "entry": 15570.0,
+      "target": 16348,
+      "stop": 15103,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI66.5 강세"
+        "RSI66.8 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 17.97,
+      "day_change": 16.42,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -48,7 +48,7 @@
     {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "74%",
+      "tomorrow_up_prob": "76%",
       "entry": 44350.0,
       "target": 46568,
       "stop": 43020,
@@ -56,11 +56,27 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI51.9 강세",
-        "거래량2.77배"
+        "거래량2.78배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.87,
       "cause_news": [
+        {
+          "title": "[특징주] SK이터닉스, KKR 거래설에 상한가…거래대금 800억 돌파",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1711983",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 '上'",
+          "url": "http://www.metroseoul.co.kr/article/20260610500275",
+          "office": "metroseoul",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
           "url": "https://www.ajunews.com/view/20260610113207436",
@@ -68,50 +84,82 @@
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] SK이터닉스, KKR 거래설에 상한가…거래대금 800억 돌파"
+    },
+    {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "75%",
+      "entry": 668000.0,
+      "target": 701400,
+      "stop": 647960,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
         {
-          "title": "[ET특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 주가 上",
-          "url": "https://www.etnews.com/20260610000192",
-          "office": "etnews",
+          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
+          "office": "todaykorea",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "SK이터닉스, 장중 상한가 직행…29.87% 급등",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217925",
-          "office": "job-post",
+          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
+          "office": "businesspost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+    },
+    {
+      "ticker": "제주은행",
+      "code": "006220",
+      "tomorrow_up_prob": "73%",
+      "entry": 13580.0,
+      "target": 14259,
+      "stop": 13173,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
+        "RSI68.2 강세",
+        "거래량8.33배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "제주은행 23% 급등 이어 케이뱅크 4% 상승",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439516",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가"
-    },
-    {
-      "ticker": "제주은행",
-      "code": "006220",
-      "tomorrow_up_prob": "73%",
-      "entry": 13890.0,
-      "target": 14584,
-      "stop": 13473,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.92)",
-        "RSI69.6 강세",
-        "거래량8.12배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "고객 상담 넘어 업무 혁신으로… 제주은행, AI 은행 전환 속도",
-          "url": "https://n.news.naver.com/mnews/article/661/0000077807",
-          "office": "JIBS",
-          "sentiment": "호재"
-        }
-      ]
+      "cause_summary": "제주은행 23% 급등 이어 케이뱅크 4% 상승"
     },
     {
       "ticker": "화신정공",
@@ -160,7 +208,7 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "66%",
+      "tomorrow_up_prob": "67%",
       "entry": 224000.0,
       "target": 235200,
       "stop": 217280,
@@ -171,7 +219,7 @@
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": -12.16,
+      "day_change": -12.06,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -204,18 +252,18 @@
     {
       "ticker": "SK오션플랜트",
       "code": "100090",
-      "tomorrow_up_prob": "62%",
-      "entry": 16150.0,
-      "target": 16958,
-      "stop": 15666,
+      "tomorrow_up_prob": "66%",
+      "entry": 16830.0,
+      "target": 17672,
+      "stop": 16325,
       "confidence": "중",
       "reasons": [
         "Stoch골든",
-        "거래량7.23배",
+        "거래량7.62배",
         "호재"
       ],
-      "risk": "약한 마감",
-      "day_change": 12.93,
+      "risk": "특이 위험 낮음",
+      "day_change": 16.37,
       "cause_news": [
         {
           "title": "SK이터닉스·SK오션플랜트, SK그룹 신재생 사업 재편 기대감에 동반 강세...",
@@ -240,15 +288,15 @@
     {
       "ticker": "HD현대마린솔루션",
       "code": "443060",
-      "tomorrow_up_prob": "58%",
-      "entry": 223500.0,
-      "target": 234675,
-      "stop": 216795,
+      "tomorrow_up_prob": "59%",
+      "entry": 226000.0,
+      "target": 237300,
+      "stop": 219220,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.88)",
         "Stoch골든",
-        "장중 3회 지속"
+        "장중 4회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -269,16 +317,16 @@
       "ticker": "노타",
       "code": "486990",
       "tomorrow_up_prob": "54%",
-      "entry": 26450.0,
-      "target": 27772,
-      "stop": 25656,
+      "entry": 26650.0,
+      "target": 27982,
+      "stop": 25850,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 22회 지속"
+        "장중 23회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -11.75,
+      "day_change": -10.76,
       "related_news": [
         {
           "title": "디든·노타·에이로봇 등 총출동…젠슨 황 &quot;韓스타트업 선물은 '이것'...",
@@ -299,6 +347,35 @@
           "sentiment": "호재"
         }
       ]
+    },
+    {
+      "ticker": "LIG디펜스앤에어로스페이스",
+      "code": "079550",
+      "tomorrow_up_prob": "54%",
+      "entry": 773000.0,
+      "target": 811650,
+      "stop": 749810,
+      "confidence": "하",
+      "reasons": [
+        "호재",
+        "장중 5회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "수산이앤에스, LIG D&amp;A 잠수함용 전자전장비 국산화 사업 참여",
+          "url": "https://n.news.naver.com/mnews/article/003/0013997807",
+          "office": "뉴시스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;美 아파치 헬기 격추됐다&quot; 소식에…주가 8% 급등한 종목",
+          "url": "https://n.news.naver.com/mnews/article/015/0005297042",
+          "office": "한국경제",
+          "sentiment": "호재"
+        }
+      ]
     }
   ],
   "closing_bet": [
@@ -306,17 +383,17 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "80%",
-      "entry": 15470.0,
-      "target": 16244,
-      "stop": 15006,
+      "entry": 15570.0,
+      "target": 16348,
+      "stop": 15103,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI66.5 강세"
+        "RSI66.8 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 17.97,
+      "day_change": 16.42,
       "cause_news": [
         {
           "title": "후성 주가 급등세…수차례 VI 발동하기도",
@@ -349,7 +426,7 @@
     {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "74%",
+      "tomorrow_up_prob": "76%",
       "entry": 44350.0,
       "target": 46568,
       "stop": 43020,
@@ -357,11 +434,27 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI51.9 강세",
-        "거래량2.77배"
+        "거래량2.78배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 29.87,
       "cause_news": [
+        {
+          "title": "[특징주] SK이터닉스, KKR 거래설에 상한가…거래대금 800억 돌파",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1711983",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 '上'",
+          "url": "http://www.metroseoul.co.kr/article/20260610500275",
+          "office": "metroseoul",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가",
           "url": "https://www.ajunews.com/view/20260610113207436",
@@ -369,50 +462,82 @@
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] SK이터닉스, KKR 거래설에 상한가…거래대금 800억 돌파"
+    },
+    {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "75%",
+      "entry": 668000.0,
+      "target": 701400,
+      "stop": 647960,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
         {
-          "title": "[ET특징주] SK이터닉스, 신재생에너지 사업 재편 기대감에 주가 上",
-          "url": "https://www.etnews.com/20260610000192",
-          "office": "etnews",
+          "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
+          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
+          "office": "todaykorea",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "SK이터닉스, 장중 상한가 직행…29.87% 급등",
-          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=217925",
-          "office": "job-post",
+          "title": "[특징주] 신세계, 中 관광객 증가·백화점 호조 기대에 6%대 상승",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/10/3G5CZH5LD5CQBD2J2G4XZLKXJQ/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "신세계 주가 장중 9%대 올라, 매출 증가 기대감 속 백화점주 강세",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=439660",
+          "office": "businesspost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+    },
+    {
+      "ticker": "제주은행",
+      "code": "006220",
+      "tomorrow_up_prob": "73%",
+      "entry": 13580.0,
+      "target": 14259,
+      "stop": 13173,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
+        "RSI68.2 강세",
+        "거래량8.33배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "제주은행 23% 급등 이어 케이뱅크 4% 상승",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439516",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK이터닉스, 신재생에너지 사업 재편 소식에 상한가"
-    },
-    {
-      "ticker": "제주은행",
-      "code": "006220",
-      "tomorrow_up_prob": "73%",
-      "entry": 13890.0,
-      "target": 14584,
-      "stop": 13473,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.92)",
-        "RSI69.6 강세",
-        "거래량8.12배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "고객 상담 넘어 업무 혁신으로… 제주은행, AI 은행 전환 속도",
-          "url": "https://n.news.naver.com/mnews/article/661/0000077807",
-          "office": "JIBS",
-          "sentiment": "호재"
-        }
-      ]
+      "cause_summary": "제주은행 23% 급등 이어 케이뱅크 4% 상승"
     },
     {
       "ticker": "화신정공",
@@ -457,50 +582,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 화신정공, 보스턴다이나믹스 '아틀라스' 공급망 편입 기대감에..."
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "66%",
-      "entry": 224000.0,
-      "target": 235200,
-      "stop": 217280,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": -12.16,
-      "cause_news": [
-        {
-          "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
-          "url": "https://www.tokenpost.kr/news/economy/367307",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "[특징주] 네이버, 엔비디아 협력 발표 뒤 차익실현에 '급락'",
-          "url": "https://www.g-enews.com/view.php?ud=20260609095656477744093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
-        },
-        {
-          "title": "[ET특징주] 젠슨 황 출국과 함께… LG전자·네이버 주가 하락",
-          "url": "https://www.etnews.com/20260609000187",
-          "office": "etnews",
-          "sentiment": "악재",
-          "cause_score": 6,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
