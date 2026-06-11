@@ -14,7 +14,7 @@ const LEVEL_STYLE: Record<VerdictLevel, { ring: string; text: string; badge: "up
   "매도 우위": { ring: "hsl(var(--down))", text: "text-down", badge: "down" },
 };
 
-const GROUPS = ["기술", "재료", "컨센서스", "수급", "이벤트"] as const;
+const GROUPS = ["기술", "재료", "컨센서스", "수급", "이벤트", "시장경보"] as const;
 
 function Gauge({ score, level }: { score: number; level: VerdictLevel }) {
   const size = 120;

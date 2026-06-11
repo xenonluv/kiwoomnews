@@ -6,6 +6,7 @@
 import type {
   EventSection,
   FlowSection,
+  MarketAlert,
   NewsSection,
   PriceSection,
   TechnicalSection,
@@ -20,10 +21,12 @@ interface VerdictInputs {
   price: PriceSection | null;
   flow: FlowSection | null;
   events: EventSection | null;
+  marketAlert: MarketAlert | null;
+  isManagement: boolean;
 }
 
 export function computeVerdict(inp: VerdictInputs): VerdictSection {
-  const { close, technical: t, news, price, flow, events } = inp;
+  const { close, technical: t, news, price, flow, events, marketAlert, isManagement } = inp;
   let p = 40;
   const breakdown: VerdictSection["breakdown"] = [];
   const cautionFlags: string[] = [];
@@ -95,6 +98,23 @@ export function computeVerdict(inp: VerdictInputs): VerdictSection {
     if (f.foreignNetDays5 >= 4) add("외인 연속 매집", 2, "수급");
   }
 
+  // ── KRX 시장경보 (주의=플래그만, 경고/위험=감점 — 이상급등·단기과열 지정) ──
+  if (marketAlert) {
+    if (marketAlert.level === "위험") {
+      add("투자위험 종목 지정", -15, "시장경보");
+      cautionFlags.push("거래소 투자위험 종목 — 매매거래 정지 가능성 등 최고 수위 경보");
+    } else if (marketAlert.level === "경고") {
+      add("투자경고 종목 지정", -8, "시장경보");
+      cautionFlags.push("거래소 투자경고 종목 — 이상급등 경보, 추격 매수 주의");
+    } else {
+      cautionFlags.push("거래소 투자주의 종목 지정");
+    }
+  }
+  if (isManagement) {
+    add("관리종목 지정", -15, "시장경보");
+    cautionFlags.push("관리종목 — 상장폐지 사유 발생 등 중대 부실, 상장폐지 위험");
+  }
+
   // ── 이벤트 민감도 (방향성 불명 — 소폭 가점 + 변동성 주의) ──
   let bigEventNear = false;
   if (events && events.totalScore > 0) {
@@ -119,9 +139,13 @@ export function computeVerdict(inp: VerdictInputs): VerdictSection {
   const overheated =
     (t.rsi?.value ?? 0) >= 80 ||
     t.stochastic?.overbought === true ||
-    (near52High && (t.volumeVs20d ?? 0) >= 3);
+    (near52High && (t.volumeVs20d ?? 0) >= 3) ||
+    marketAlert?.level === "경고" || // 거래소가 직접 과열로 지정한 종목은
+    marketAlert?.level === "위험"; //  "매수" 계열 판정을 내지 않는다
   if (score >= 62 && overheated) level = "관망·과열";
   if (level === "강한 매수신호" && bigEventNear) level = "매수 우위"; // 대형 이벤트 직전 상한
+  // 관리종목은 부실 사유 지정 — 과열과 별개로 매수 계열 판정을 금지
+  if (isManagement && (level === "강한 매수신호" || level === "매수 우위")) level = "중립";
 
   // ── 지지/저항 (현재가 기준 가까운 순) ──
   const supports: VerdictSection["supports"] = [];

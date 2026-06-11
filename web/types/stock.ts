@@ -159,7 +159,15 @@ export type VerdictLevel =
   | "관망·과열"
   | "매도 우위";
 
-export type VerdictGroup = "기술" | "재료" | "컨센서스" | "수급" | "이벤트";
+export type VerdictGroup = "기술" | "재료" | "컨센서스" | "수급" | "이벤트" | "시장경보";
+
+/** KRX 시장경보 3단계 (주의 → 경고 → 위험 순으로 심각) */
+export type MarketAlertLevel = "주의" | "경고" | "위험";
+
+export interface MarketAlert {
+  level: MarketAlertLevel;
+  label: string; // 네이버 원문 표기 (예: "투자주의")
+}
 
 export interface VerdictSection {
   level: VerdictLevel;
@@ -180,6 +188,10 @@ export interface StockReport {
   market: string | null;
   asOf: string; // "YYYY-MM-DD HH:mm KST"
   marketStatus: string | null; // OPEN | CLOSE ...
+  /** 거래소 시장경보 지정 (투자주의/경고/위험). 미지정이면 null. */
+  marketAlert: MarketAlert | null;
+  /** 관리종목 여부 (상장폐지 사유 발생 등 — 시장경보와 별개 필드) */
+  isManagement: boolean;
   tradeStop: boolean;
   newlyListed: boolean;
   isEtf: boolean;

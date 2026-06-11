@@ -106,6 +106,9 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   1:1 포팅, **파이썬 쪽 산식 변경 시 동기화 필요**), `news-score.ts`(team2_relevance 포팅),
   `theme-match.ts`(theme_map 포팅), `scoring.ts`(confluence+컨센서스·수급·이벤트 확장 판정),
   `report.ts`(오케스트레이터 — 섹션별 graceful degradation + warnings).
+  KRX 시장경보 반영: 네이버 basic의 `marketAlertType`(01 주의/02 경고/03 위험, 미지정 시 필드
+  부재)·`isManagement`(관리종목)·`tradeStopType`(HALTED=정지) — 경고/위험·관리종목은 감점
+  + 매수 계열 판정 금지, 헤더 배지로 노출 (02·HALTED·isManagement는 실종목 전수 실증됨).
 - 빈 상태("오늘은 레이더 깨끗")가 제품 사양. 면책 문구("매수 추천 아님") 유지.
 - 빌드 검증: `cd web && npm run build` (**WSL + nvm Node 20만** — Windows npm은 UNC에서 깨짐).
 

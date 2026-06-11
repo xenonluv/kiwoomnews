@@ -8,6 +8,7 @@ import type {
   FinancialSection,
   FlowDay,
   FlowSection,
+  MarketAlert,
   PriceSection,
   StockReport,
 } from "@/types/stock";
@@ -36,6 +37,23 @@ const DISCLAIMER =
 
 const val = <T>(r: PromiseSettledResult<T>): T | null =>
   r.status === "fulfilled" ? r.value : null;
+
+/**
+ * KRX 시장경보 파싱 — 네이버 basic.marketAlertType: {code:"01",text:"투자주의"}.
+ * 미지정 종목은 필드 자체가 없다. code(01/02/03)와 text 양쪽으로 방어적 판별.
+ */
+function parseMarketAlert(raw: any): MarketAlert | null {
+  const code = typeof raw?.code === "string" ? raw.code : "";
+  const text = typeof raw?.text === "string" ? raw.text : "";
+  if (!code && !text) return null;
+  const level =
+    code === "03" || text.includes("위험")
+      ? "위험"
+      : code === "02" || text.includes("경고")
+        ? "경고"
+        : "주의";
+  return { level, label: text || `투자${level}` };
+}
 
 export async function buildStockReport(code: string): Promise<StockReport> {
   const [basicR, integR, dailyR, newsR, trendR, finR] = await Promise.allSettled([
@@ -68,6 +86,20 @@ export async function buildStockReport(code: string): Promise<StockReport> {
   const tradeStop =
     typeof basic?.tradeStopType?.name === "string" && basic.tradeStopType.name !== "TRADING";
   const newlyListed = basic?.newlyListed === true;
+  const marketAlert = parseMarketAlert(basic?.marketAlertType);
+  if (marketAlert && marketAlert.level !== "주의") {
+    warnings.push(
+      `거래소 시장경보: ${marketAlert.label} 종목입니다 — 이상급등·단기과열 종목에 지정되며 ` +
+        "위탁증거금 100%·신용거래 제한 등이 적용될 수 있습니다."
+    );
+  }
+  const isManagement = basic?.isManagement === true;
+  if (isManagement) {
+    warnings.push(
+      "관리종목입니다 — 상장폐지 사유 발생·감사의견 거절 등 중대한 부실 사유로 지정되며 " +
+        "상장폐지 위험이 있습니다."
+    );
+  }
 
   // ── 주가현황 ──
   const info: Record<string, string> = {};
@@ -252,7 +284,16 @@ export async function buildStockReport(code: string): Promise<StockReport> {
   if (tradeStop) {
     warnings.push("거래정지 종목입니다 — 판정을 제공하지 않습니다.");
   } else if (technical && close !== null) {
-    verdict = computeVerdict({ close, technical, news, price, flow, events });
+    verdict = computeVerdict({
+      close,
+      technical,
+      news,
+      price,
+      flow,
+      events,
+      marketAlert,
+      isManagement,
+    });
   }
 
   return {
@@ -261,6 +302,8 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     market: basic?.stockExchangeType?.name ?? null,
     asOf: formatKST(),
     marketStatus: basic?.marketStatus ?? null,
+    marketAlert,
+    isManagement,
     tradeStop,
     newlyListed,
     isEtf,

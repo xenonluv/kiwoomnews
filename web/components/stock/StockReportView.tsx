@@ -74,6 +74,26 @@ export function StockReportView({ code }: { code: string }) {
           <span className="text-sm tabular-nums text-muted-foreground">{r.code}</span>
           {r.market && <Badge variant="secondary">{r.market}</Badge>}
           {r.isEtf && <Badge variant="neutral">ETF·ETN</Badge>}
+          {r.marketAlert && (
+            <Badge
+              variant={r.marketAlert.level === "주의" ? "warning" : "up"}
+              className={
+                r.marketAlert.level === "위험" ? "bg-up text-primary-foreground" : undefined
+              }
+              title="한국거래소 시장경보 지정 종목"
+            >
+              ⚠ {r.marketAlert.label}
+            </Badge>
+          )}
+          {r.isManagement && (
+            <Badge
+              variant="up"
+              className="bg-up text-primary-foreground"
+              title="상장폐지 사유 발생 등으로 거래소가 지정한 관리종목"
+            >
+              ⚠ 관리종목
+            </Badge>
+          )}
           {r.tradeStop && <Badge variant="warning">거래정지</Badge>}
           {r.marketStatus === "OPEN" && <Badge variant="up">장중</Badge>}
         </div>
