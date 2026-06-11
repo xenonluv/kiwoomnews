@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-11 12:00:16 KST",
+ "generated_at": "2026-06-11 12:30:20 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -12,7 +12,7 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 37,
+ "universe_count": 43,
  "events": [
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
@@ -39,5 +39,222 @@
    "estimated": false
   }
  ],
- "suspects": []
+ "suspects": [
+  {
+   "code": "084370",
+   "name": "유진테크",
+   "sector": "기계·장비",
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 0.3,
+    "fade": 12.7,
+    "ma10": 10.0,
+    "flow": 6.0,
+    "event": 2.7
+   },
+   "score_raw": 62,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 0.3,
+    "fade": 12.7,
+    "ma10": 10.0,
+    "flow": 6,
+    "event": 2.7
+   },
+   "price": 166600.0,
+   "change_pct": 7.55,
+   "high_pct": 17.88,
+   "fade_pct": 57.8,
+   "value_eok": 716,
+   "ma10": 140940.0,
+   "ma10_margin_pct": 18.21,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:28",
+      "vol_x": 8.4,
+      "pct": 1.03,
+      "minutes": 1
+     }
+    ]
+   },
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0605",
+      "frgn": -8707,
+      "orgn": 62379
+     },
+     {
+      "date": "0608",
+      "frgn": -11064,
+      "orgn": 12325
+     },
+     {
+      "date": "0609",
+      "frgn": -69071,
+      "orgn": 45240
+     },
+     {
+      "date": "0610",
+      "frgn": -36475,
+      "orgn": 70564
+     },
+     {
+      "date": "0611",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "‘상한가 하루 만에 급락’ 소부장 변동성 확대…반도체 랠리 시험대...",
+     "summary": "원익IPS·유진테크·주성엔지니어링 하루 만에 급락 전환 펨텍은 13%대 강세…소부장 내 종목별 차별화 “AI 수요 견조”에도 단기 변동성 확대 불가피 반도체 칩 이미지. [게티이미지뱅크 제공] [헤럴드경제=송하준·문이림 기자] 전날 상한가를...",
+     "office": "헤럴드경제",
+     "datetime": "202606051801",
+     "url": "https://n.news.naver.com/mnews/article/016/0002652714",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "‘불기둥’ 뿜고 숨고르기…희비 엇갈린 소부장株",
+     "summary": "원익IPS·유진테크 상승 마감 주성엔지니어링 16% 급락 대형 반도체주는 약세 보여 최근 주가가 급등했던 반도체 소재·부품·장비(소부장) 종목들이 5일 증시에서는 혼조세를 보였다. 5일 한국거래소에 따르면 원익IPS는 차익실현 매물 출회로 장...",
+     "office": "매경이코노미",
+     "datetime": "202606051653",
+     "url": "https://n.news.naver.com/mnews/article/024/0000106043",
+     "sentiment": "혼재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.7
+    }
+   ]
+  },
+  {
+   "code": "217590",
+   "name": "티엠씨",
+   "sector": "전기·전자",
+   "suspicion_score": 54,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 7.5,
+    "fade": 2.0,
+    "ma10": 10.0,
+    "flow": 4.0,
+    "event": 0.0
+   },
+   "score_raw": 54,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 7.5,
+    "fade": 2.0,
+    "ma10": 10.0,
+    "flow": 4,
+    "event": 0.0
+   },
+   "price": 22850.0,
+   "change_pct": 1.11,
+   "high_pct": 25.66,
+   "fade_pct": 95.7,
+   "value_eok": 721,
+   "ma10": 20517.0,
+   "ma10_margin_pct": 11.37,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:06",
+      "vol_x": 16.0,
+      "pct": 3.01,
+      "minutes": 1
+     },
+     {
+      "time": "09:11",
+      "vol_x": 14.7,
+      "pct": 3.07,
+      "minutes": 1
+     },
+     {
+      "time": "09:14",
+      "vol_x": 20.0,
+      "pct": 0.3,
+      "minutes": 3
+     },
+     {
+      "time": "09:18",
+      "vol_x": 11.9,
+      "pct": -2.03,
+      "minutes": 1
+     },
+     {
+      "time": "09:20",
+      "vol_x": 13.3,
+      "pct": -3.42,
+      "minutes": 1
+     },
+     {
+      "time": "09:41",
+      "vol_x": 9.2,
+      "pct": 1.88,
+      "minutes": 1
+     }
+    ]
+   },
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0605",
+      "frgn": 23737,
+      "orgn": -12344
+     },
+     {
+      "date": "0608",
+      "frgn": 34215,
+      "orgn": 6652
+     },
+     {
+      "date": "0609",
+      "frgn": -2424,
+      "orgn": -365
+     },
+     {
+      "date": "0610",
+      "frgn": -105537,
+      "orgn": -1583
+     },
+     {
+      "date": "0611",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "티엠씨, 미국 AI 데이터센터 110억 광케이블 수주…북미 공급망 편입",
+     "summary": "글로벌 특수케이블 전문기업 티엠씨가 미국 데이터센터 AI(인공지능) 인프라 전문기업과 약 110억원 규모의 데이터센터용 광통신 케이블 공급계약을 체결했다고 19일 밝혔다. 이는 티엠씨가 북미 데이터센터 시장에서 확보한 단일 광케이블 공급계약...",
+     "office": "머니투데이",
+     "datetime": "202605191135",
+     "url": "https://n.news.naver.com/mnews/article/008/0005359814",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": []
+  }
+ ]
 }
