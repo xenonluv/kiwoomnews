@@ -1,10 +1,54 @@
 {
-  "as_of": "2026-06-11 11:07 KST",
+  "as_of": "2026-06-11 11:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "라이콤",
+      "code": "388790",
+      "tomorrow_up_prob": "88%",
+      "entry": 8740.0,
+      "target": 9177,
+      "stop": 8478,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.93)",
+        "MACD강세",
+        "RSI69.4 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등"
+    },
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "82%",
+      "tomorrow_up_prob": "83%",
       "entry": 136000.0,
       "target": 142800,
       "stop": 131920,
@@ -68,41 +112,33 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "반도체 미세화의 숨은 공신… 코미코, 고부가 세정·코팅으로 시장 주도",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459336",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "삼화콘덴서",
-      "code": "001820",
-      "tomorrow_up_prob": "74%",
-      "entry": 117700.0,
-      "target": 123585,
-      "stop": 114169,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "RSI59.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "71%",
-      "entry": 5750.0,
-      "target": 6038,
-      "stop": 5578,
-      "confidence": "상",
+      "tomorrow_up_prob": "63%",
+      "entry": 5180.0,
+      "target": 5439,
+      "stop": 5025,
+      "confidence": "중",
       "reasons": [
-        "강세마감(1.0)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
-      "risk": "RSI93.4 과매수, Stoch 과매수",
+      "risk": "RSI92.3 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -136,15 +172,15 @@
     {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "69%",
-      "entry": 27200.0,
-      "target": 28560,
-      "stop": 26384,
+      "tomorrow_up_prob": "62%",
+      "entry": 24500.0,
+      "target": 25725,
+      "stop": 23765,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.91)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "거래량2.66배"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -160,101 +196,57 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은"
-    },
+    }
+  ],
+  "closing_bet": [
     {
-      "ticker": "티엠씨",
-      "code": "217590",
-      "tomorrow_up_prob": "62%",
-      "entry": 24350.0,
-      "target": 25568,
-      "stop": 23620,
-      "confidence": "중",
+      "ticker": "라이콤",
+      "code": "388790",
+      "tomorrow_up_prob": "88%",
+      "entry": 8740.0,
+      "target": 9177,
+      "stop": 8478,
+      "confidence": "상",
       "reasons": [
-        "RSI51.3 강세",
-        "거래량5.05배",
-        "호재"
+        "강세마감(0.93)",
+        "MACD강세",
+        "RSI69.4 강세"
       ],
-      "risk": "약한 마감",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
-          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416400",
-          "office": "bizwork",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 티엠씨, 美 데이터센터-광통신 관련 주문 급증…공장 풀가동 ...",
-          "url": "https://www.etoday.co.kr/news/view/2592281",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
         {
           "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
           "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
           "office": "gukjenews",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프..."
-    },
-    {
-      "ticker": "심텍",
-      "code": "222800",
-      "tomorrow_up_prob": "51%",
-      "entry": 132700.0,
-      "target": 139335,
-      "stop": 128719,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.82)",
-        "RSI62.6 강세",
-        "장중 8회 지속"
-      ],
-      "risk": "악재",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459318",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "심텍 주가, 급등세... 증권가 전망은?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163012",
-          "office": "ggilbo",
+          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
+          "office": "widedaily",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "단순 인쇄회로기판은 옛말… 심텍, 반도체 미세화 타고 몸값 올린다",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459285",
-          "office": "pinpointnews",
+          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
+          "office": "edaily",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가"
-    }
-  ],
-  "closing_bet": [
+      "cause_summary": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등"
+    },
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "82%",
+      "tomorrow_up_prob": "83%",
       "entry": 136000.0,
       "target": 142800,
       "stop": 131920,
@@ -318,41 +310,33 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "반도체 미세화의 숨은 공신… 코미코, 고부가 세정·코팅으로 시장 주도",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459336",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "삼화콘덴서",
-      "code": "001820",
-      "tomorrow_up_prob": "74%",
-      "entry": 117700.0,
-      "target": 123585,
-      "stop": 114169,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "RSI59.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "71%",
-      "entry": 5750.0,
-      "target": 6038,
-      "stop": 5578,
-      "confidence": "상",
+      "tomorrow_up_prob": "63%",
+      "entry": 5180.0,
+      "target": 5439,
+      "stop": 5025,
+      "confidence": "중",
       "reasons": [
-        "강세마감(1.0)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
-      "risk": "RSI93.4 과매수, Stoch 과매수",
+      "risk": "RSI92.3 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -386,15 +370,15 @@
     {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "69%",
-      "entry": 27200.0,
-      "target": 28560,
-      "stop": 26384,
+      "tomorrow_up_prob": "62%",
+      "entry": 24500.0,
+      "target": 25725,
+      "stop": 23765,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.91)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "거래량2.66배"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
