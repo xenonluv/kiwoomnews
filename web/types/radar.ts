@@ -57,11 +57,22 @@ export interface ScoreBreakdown {
   event: number;
 }
 
+/** 흔들기(눌림 후 재상승) 패턴 증거 — pattern === "shakeout"일 때만 */
+export interface ShakeInfo {
+  depth_pct: number; // 장중 고점 대비 최대 눌림 깊이(%)
+  recovery_pct: number; // 낙폭 대비 회복률(%) — 100 초과 = 고점 돌파 재상승
+  high_time: string; // "10:21"
+  trough_time: string;
+}
+
 /** 수상 종목 (전 조건 통과) */
 export interface Suspect {
   code: string;
   name: string;
   sector: string;
+  /** 감지 패턴 — "fade"(급등 후 식음) | "shakeout"(눌림 후 재상승). 구버전 JSON엔 없음 */
+  pattern?: "fade" | "shakeout";
+  shake?: ShakeInfo | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
   calibrated_prob?: { rate: number | null; n: number } | null;
@@ -96,6 +107,9 @@ export interface RadarData {
     universe?: string;
     /** 시장×지표(거래대금/등락률)별 상위 N (kis_rank 방식) */
     top_n?: number;
+    /** 흔들기 트랙: 눌림 깊이 하한(%) / 등락률 상한(%) */
+    shake_pct?: number;
+    shake_chg_max?: number;
   };
   universe_count: number;
   events: RadarEvent[];

@@ -2,7 +2,7 @@ import type { ScoreBreakdown } from "@/types/radar";
 
 const ITEMS: { key: keyof ScoreBreakdown; label: string; max: number }[] = [
   { key: "spark", label: "분봉 스파크", max: 15 },
-  { key: "fade", label: "고점 매집형 후퇴", max: 15 },
+  { key: "fade", label: "고점 후퇴·흔들기 패턴", max: 15 },
   { key: "flow", label: "외인·기관 수급", max: 15 },
   { key: "event", label: "이벤트 민감도", max: 15 },
   { key: "ma10", label: "10일선 여유", max: 10 },

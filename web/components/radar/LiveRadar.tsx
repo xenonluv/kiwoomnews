@@ -107,6 +107,8 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
             당일 거래대금 {data.params.min_value_eok?.toLocaleString()}억+ · 고가 +
             {data.params.high_pct}% 후 후퇴 · 등락률 {data.params.chg_range?.[0]}~
             {data.params.chg_range?.[1]}% · 10일선 위 · 분봉 스파크
+            {data.params.shake_pct != null &&
+              ` · 흔들기 재상승(−${data.params.shake_pct}%+ 눌림 후 회복, ≤+${data.params.shake_chg_max}%)`}
           </p>
         </div>
 

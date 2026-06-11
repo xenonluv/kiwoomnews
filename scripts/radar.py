@@ -7,8 +7,10 @@
   [유니버스] 시장별(코스피/코스닥) 거래대금 top20(KIS 공식 순위) + 등락률 top20(네이버 up 랭킹)
              합집합 → 등락률 밴드. 거래대금 700억 게이트는 정밀판정(scan_one)에서 적용.
              (KIS 장애 시 기존 네이버 전수 스캔으로 자동 폴백)
-  [조건3] 당일 고가 등락률 ≥ +13% 찍고 현재 고가 아래 (폭락/후퇴 중)   ← KIS 현재가
-  [조건6] 현재 등락률 -6% ~ +10%                                   ← KIS 현재가
+  [조건3] 당일 고가 등락률 ≥ +13% (공통 전제) 후 2트랙 분기          ← KIS 현재가
+    · fade: 현재 고가 아래 + 등락률 -6~+10% (급등 후 식음, 기존)
+    · shakeout: 등락률 ≤ +30% + 분봉상 고점 대비 -10%+ 눌림 후 낙폭 30%+ 회복 (눌림 후 재상승)
+  [조건6] 현재 등락률 밴드 — 트랙별 상이 (위 참조)                    ← KIS 현재가
   [조건4] 현재가 ≥ 일봉 10일선                                      ← KIS 일봉
   [조건2] 당일 분봉 스파크 (거래량 중앙값 N배 + 가격 점프)            ← KIS 분봉
   [수급]  외국인/기관 순매수 매집 신호 (가점)                         ← KIS 수급
@@ -95,6 +97,45 @@ def detect_sparks(bars, vol_x=SPARK_VOL_X, pct=SPARK_PCT):
              "minutes": c["n"]} for c in clusters]
 
 
+# ---------- 패턴 2: 흔들기(눌림) 후 재상승 ----------
+
+def detect_shakeout(bars, shake_pct=10.0, recover_ratio=0.30):
+    """당일 분봉에서 '장중 고점 → 큰 눌림 → 재상승' 패턴 감지.
+
+    러닝 하이 추적 중 드로다운(고점 대비 하락폭)이 shake_pct% 이상 발생했고,
+    마지막 가격이 그 낙폭(고점−저점)의 recover_ratio 이상을 되돌렸으면 성립.
+    예: 고점 +23% → −12% 눌림 → 낙폭 60% 회복하며 재상승 중 (원익IPS형).
+    반환: {depth_pct, recovery_pct, high_time, trough_time} 또는 None.
+    """
+    closes = [(b["time"], b["close"]) for b in bars if b["close"]]
+    if len(closes) < 30:
+        return None
+    run_high, run_high_t = closes[0][1], closes[0][0]
+    best = None  # 가장 깊은 드로다운 (고점·저점·시각)
+    trough, trough_t = run_high, run_high_t
+    for t, c in closes[1:]:
+        if c > run_high:
+            run_high, run_high_t = c, t
+            trough, trough_t = c, t  # 신고가 갱신 → 드로다운 추적 리셋
+        elif c < trough:
+            trough, trough_t = c, t
+            depth = (run_high - trough) / run_high * 100
+            if best is None or depth > best["depth"]:
+                best = {"high": run_high, "high_t": run_high_t,
+                        "trough": trough, "trough_t": trough_t, "depth": depth}
+    if not best or best["depth"] < shake_pct:
+        return None
+    last = closes[-1][1]
+    span = best["high"] - best["trough"]
+    recovery = (last - best["trough"]) / span if span > 0 else 0.0
+    if recovery < recover_ratio:
+        return None
+    return {"depth_pct": round(best["depth"], 1),
+            "recovery_pct": round(min(recovery, 1.5) * 100),
+            "high_time": f"{best['high_t'][:2]}:{best['high_t'][2:4]}",
+            "trough_time": f"{best['trough_t'][:2]}:{best['trough_t'][2:4]}"}
+
+
 # ---------- 수급: 외국인/기관 매집 신호 ----------
 
 def accumulation_signal(inv, days=5):
@@ -151,24 +192,33 @@ def calibrated_prob(score, bins):
 # ---------- 수상함 점수 (결정론, 투명 가중합) ----------
 
 def suspicion_score(spark_clusters, fade_pct, ma10_margin_pct, acc, event_score=0.0,
-                    vol_x_base=SPARK_VOL_X, ratios=None):
+                    vol_x_base=SPARK_VOL_X, ratios=None,
+                    shake=None, shake_base=10.0):
     """0~100. 각 항목 근거는 breakdown으로 공개.
 
     ratios: 백테스트 기반 자가 튜닝 가중치 비율(항목별 0.7~1.3). None이면 기본.
+    shake: shakeout 트랙이면 detect_shakeout 결과 — fade 슬롯을 눌림 깊이·회복률
+    기반 점수로 대체한다 (breakdown 키를 재사용해 백테스트·UI 호환 유지).
     """
     bd = {}
     bd["base"] = 30
     # 스파크 강도: 최대 클러스터 배수. vol_x 기준치→0점, 기준치×4→15점 선형
     max_x = max((c["vol_x"] for c in spark_clusters), default=0.0)
     bd["spark"] = round(min(15.0, max(0.0, (max_x - vol_x_base) / (vol_x_base * 3) * 15)), 1)
-    # 페이드 품질: 고가 상승분 대비 후퇴율 30~70%가 매집형 정점(15점), 0%/100%로 갈수록 감소
-    f = fade_pct
-    if f <= 0:
-        bd["fade"] = 0.0
-    elif f >= 95:
-        bd["fade"] = 2.0  # 사실상 전량 반납 — 매집보다 털기에 가까움
+    if shake:
+        # 흔들기 품질: 깊이 기준치→7.5점, +8%p 더 깊으면 15점 선형 × 회복률 가중(0.6~1.0)
+        depth_q = min(1.0, 0.5 + (shake["depth_pct"] - shake_base) / 8.0 * 0.5)
+        recov_q = 0.6 + 0.4 * min(1.0, shake["recovery_pct"] / 100.0)
+        bd["fade"] = round(15.0 * max(0.0, depth_q) * recov_q, 1)
     else:
-        bd["fade"] = round(15.0 * max(0.0, 1.0 - abs(f - 50.0) / 50.0), 1)
+        # 페이드 품질: 고가 상승분 대비 후퇴율 30~70%가 매집형 정점(15점), 0%/100%로 갈수록 감소
+        f = fade_pct
+        if f <= 0:
+            bd["fade"] = 0.0
+        elif f >= 95:
+            bd["fade"] = 2.0  # 사실상 전량 반납 — 매집보다 털기에 가까움
+        else:
+            bd["fade"] = round(15.0 * max(0.0, 1.0 - abs(f - 50.0) / 50.0), 1)
     # 10일선 여유: 0~8% 마진 → 0~10점
     bd["ma10"] = round(min(10.0, max(0.0, ma10_margin_pct / 8.0 * 10)), 1)
     # 수급: 최근 5일 중 순매수일 수(×2) + 당일 순매수(+5)
@@ -200,12 +250,16 @@ def scan_one(name, code, p, events):
     # 거래대금 게이트 (KIS 값으로 정확 재확인)
     if now["value"] < p.min_value:
         return None
-    # 조건 3: 고가 +13% 이상 찍고 현재 고가 아래
+    # 조건 3 공통 전제: 당일 고가 +13% 이상 급등 이력
     high_pct = (now["high"] / now["prev_close"] - 1) * 100
-    if high_pct < p.high_pct or now["price"] >= now["high"]:
+    if high_pct < p.high_pct:
         return None
-    # 조건 6: 현재 등락률 범위
-    if not (p.chg_min <= now["change_pct"] <= p.chg_max):
+    # 트랙 분기 — fade(급등 후 식음, 기존) vs shakeout(눌림 후 재상승, 신규)
+    is_fade = (now["price"] < now["high"]
+               and p.chg_min <= now["change_pct"] <= p.chg_max)
+    is_shake_cand = (not is_fade
+                     and p.chg_min <= now["change_pct"] <= p.shake_chg_max)
+    if not is_fade and not is_shake_cand:
         return None
 
     # 조건 4: 일봉 10일선
@@ -230,6 +284,12 @@ def scan_one(name, code, p, events):
     sparks = detect_sparks(bars, p.spark_x, p.spark_pct)
     if not sparks:
         return None
+    # shakeout 트랙은 분봉 패턴(고점 → 큰 눌림 → 재상승) 필수
+    shake = None
+    if is_shake_cand:
+        shake = detect_shakeout(bars, p.shake_pct, p.shake_recover)
+        if not shake:
+            return None
 
     # 수급 (실패해도 진행 — 가점 항목)
     try:
@@ -252,7 +312,8 @@ def scan_one(name, code, p, events):
     fade_pct = (now["high"] - now["price"]) / denom * 100 if denom > 0 else 0.0
     ma10_margin = (now["price"] / ma10 - 1) * 100
     score, breakdown, score_raw, breakdown_raw = suspicion_score(
-        sparks, fade_pct, ma10_margin, acc, event_score, p.spark_x, p.tuning_ratios)
+        sparks, fade_pct, ma10_margin, acc, event_score, p.spark_x, p.tuning_ratios,
+        shake=shake, shake_base=p.shake_pct)
     # 보정표는 raw 점수 기준으로 누적되므로 매칭도 raw로 (가중치 체제와 무관하게 일관)
     calib = calibrated_prob(score_raw, p.calib_bins)
 
@@ -260,6 +321,8 @@ def scan_one(name, code, p, events):
         "code": code,
         "name": name,
         "sector": now["sector"],
+        "pattern": "shakeout" if shake else "fade",
+        "shake": shake,  # shakeout 트랙만 {depth_pct, recovery_pct, high_time, trough_time}
         "suspicion_score": score,
         "calibrated_prob": calib,  # {rate, n} — 실측 적중률 (표본 n>=20 구간만, 없으면 None)
         "score_breakdown": breakdown,
@@ -395,6 +458,12 @@ def main():
     ap.add_argument("--spark-pct", type=float, default=SPARK_PCT, help="분봉 등락 하한(%%)")
     ap.add_argument("--top-n", type=int, default=20,
                     help="유니버스: 시장×지표(거래대금/등락률)별 상위 N종목")
+    ap.add_argument("--shake-pct", type=float, default=10.0,
+                    help="흔들기 트랙: 장중 고점 대비 눌림 깊이 하한(%%)")
+    ap.add_argument("--shake-recover", type=float, default=0.30,
+                    help="흔들기 트랙: 낙폭 대비 회복률 하한(0~1)")
+    ap.add_argument("--shake-chg-max", type=float, default=30.0,
+                    help="흔들기 트랙: 현재 등락률 상한(%%) — fade 밴드와 별도")
     ap.add_argument("--names", nargs="*", default=[], help="watchlist 강제 포함")
     ap.add_argument("--no-tuned-weights", action="store_true",
                     help="백테스트 튜닝 가중치 무시 (기본 가중치 사용)")
@@ -436,7 +505,8 @@ def main():
         "params": {"min_value_eok": round(p.min_value / 1e8), "high_pct": p.high_pct,
                    "chg_range": [p.chg_min, p.chg_max], "spark_x": p.spark_x,
                    "spark_pct": p.spark_pct,
-                   "universe": universe_method, "top_n": p.top_n},
+                   "universe": universe_method, "top_n": p.top_n,
+                   "shake_pct": p.shake_pct, "shake_chg_max": p.shake_chg_max},
         "universe_count": len(candidates),
         "events": events,
         "suspects": suspects,

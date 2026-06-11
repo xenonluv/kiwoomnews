@@ -23,7 +23,8 @@ RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
 DISCLAIMER = "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다."
 RADAR_PASSTHRU = ("--min-value", "--high-pct", "--chg-min", "--chg-max",
-                  "--spark-x", "--spark-pct", "--top-n")
+                  "--spark-x", "--spark-pct", "--top-n",
+                  "--shake-pct", "--shake-recover", "--shake-chg-max")
 
 
 def run_radar(extra_args):

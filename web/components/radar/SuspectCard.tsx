@@ -53,6 +53,11 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {s.pattern === "shakeout" && (
+              <Badge variant="warning" title="장중 고점에서 크게 눌렀다가 다시 끌어올리는 패턴">
+                눌림 후 재상승
+              </Badge>
+            )}
             {s.sector && <Badge variant="neutral">{s.sector}</Badge>}
             {s.matched_events.slice(0, 2).map((m) => (
               <Badge key={m.id} variant="outline" className="border-up/50 text-up">
@@ -104,6 +109,13 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 />
               </div>
             </div>
+            {s.shake && (
+              <p className="text-[11px] text-warning">
+                흔들기: {s.shake.high_time} 고점 → {s.shake.trough_time} 저점 −
+                <span className="tabular-nums">{s.shake.depth_pct.toFixed(1)}%</span> 눌림 후 낙폭{" "}
+                <span className="tabular-nums">{s.shake.recovery_pct}%</span> 회복
+              </p>
+            )}
             <p className="text-[11px] text-muted-foreground">
               10일선 위 <span className="text-foreground/90 tabular-nums">+{s.ma10_margin_pct.toFixed(1)}%</span>
               {" · "}외인·기관 순매수 <span className="text-foreground/90 tabular-nums">{flowBuyDays}/5일</span>
