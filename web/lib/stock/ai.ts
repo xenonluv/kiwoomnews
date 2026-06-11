@@ -218,7 +218,8 @@ export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
       }),
       signal: AbortSignal.timeout(thinking ? TIMEOUT_THINKING_MS : TIMEOUT_FAST_MS),
     });
-  } catch {
+  } catch (e) {
+    console.error(`[stock-ai] Kimi 연결 실패 (${code}): ${e instanceof Error ? e.name : "unknown"}`);
     throw new AiUnavailableError("AI 서버 연결 실패 (타임아웃/네트워크)");
   }
   if (!res.ok) {

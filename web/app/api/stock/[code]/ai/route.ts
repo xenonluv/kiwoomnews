@@ -70,9 +70,9 @@ export async function GET(
       );
     }
     if (e instanceof AiUnavailableError) {
+      // 업스트림 오류 상세는 응답에 싣지 않고 서버 로그로만 남긴다 (ai.ts의 console.error)
       return NextResponse.json(
-        // detail = 업스트림 오류 요약 (예: "AI 서버 오류 (HTTP 429)") — 민감정보 없음
-        { error: { code: "AI_UNAVAILABLE", message: "AI 분석을 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해 주세요.", detail: e.message } },
+        { error: { code: "AI_UNAVAILABLE", message: "AI 분석을 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해 주세요." } },
         { status: 503, headers: { "Cache-Control": CACHE_ERR } }
       );
     }
