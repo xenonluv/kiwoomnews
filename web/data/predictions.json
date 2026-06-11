@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-11 15:37 KST",
+  "as_of": "2026-06-11 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "코리아써키트",
@@ -95,7 +95,19 @@
         "RSI63.9 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 삼화콘덴서, \"AI 핵심부품 MLCC 초호황 전망\"에 국내 유일 종합...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294635",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 삼화콘덴서, \"AI 핵심부품 MLCC 초호황 전망\"에 국내 유일 종합..."
     },
     {
       "ticker": "이수화학",
@@ -134,9 +146,45 @@
       "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
     },
     {
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "66%",
+      "entry": 187100.0,
+      "target": 196455,
+      "stop": 181487,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI83.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\"",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605907",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "\"주식 강세에 자산효과까지\"…현대백화점 목표주가 상향 이유[클릭e종목...",
+          "url": "https://view.asiae.co.kr/article/2026061015124639896",
+          "office": "view",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\""
+    },
+    {
       "ticker": "서진시스템",
       "code": "178320",
-      "tomorrow_up_prob": "64%",
+      "tomorrow_up_prob": "65%",
       "entry": 74500.0,
       "target": 78225,
       "stop": 72265,
@@ -147,7 +195,7 @@
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 7.6,
+      "day_change": 6.89,
       "related_news": [
         {
           "title": "서진시스템-스틱인베, 영구채·블록딜 '패키지 인수' 가능성 고개",
@@ -214,42 +262,6 @@
       "cause_summary": "미래에셋생명, 상한가 직행…29% 급등에 투자자 관심 집중"
     },
     {
-      "ticker": "현대백화점",
-      "code": "069960",
-      "tomorrow_up_prob": "64%",
-      "entry": 187100.0,
-      "target": 196455,
-      "stop": 181487,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(1.0)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI83.3 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\"",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605907",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "\"주식 강세에 자산효과까지\"…현대백화점 목표주가 상향 이유[클릭e종목...",
-          "url": "https://view.asiae.co.kr/article/2026061015124639896",
-          "office": "view",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\""
-    },
-    {
       "ticker": "티엠씨",
       "code": "217590",
       "tomorrow_up_prob": "57%",
@@ -260,10 +272,10 @@
       "reasons": [
         "거래량5.88배",
         "호재",
-        "장중 23회 지속"
+        "장중 24회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -1.77,
+      "day_change": -1.55,
       "cause_news": [
         {
           "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
@@ -340,7 +352,7 @@
     {
       "ticker": "SKC",
       "code": "011790",
-      "tomorrow_up_prob": "51%",
+      "tomorrow_up_prob": "52%",
       "entry": 140000.0,
       "target": 147000,
       "stop": 135800,
@@ -477,7 +489,19 @@
         "RSI63.9 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 삼화콘덴서, \"AI 핵심부품 MLCC 초호황 전망\"에 국내 유일 종합...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294635",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 삼화콘덴서, \"AI 핵심부품 MLCC 초호황 전망\"에 국내 유일 종합..."
     },
     {
       "ticker": "이수화학",
@@ -516,40 +540,40 @@
       "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
     },
     {
-      "ticker": "서진시스템",
-      "code": "178320",
-      "tomorrow_up_prob": "64%",
-      "entry": 74500.0,
-      "target": 78225,
-      "stop": 72265,
+      "ticker": "현대백화점",
+      "code": "069960",
+      "tomorrow_up_prob": "66%",
+      "entry": 187100.0,
+      "target": 196455,
+      "stop": 181487,
       "confidence": "중",
       "reasons": [
-        "RSI56.9 강세",
-        "일목 구름위",
-        "호재"
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 7.6,
-      "related_news": [
+      "risk": "RSI83.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
         {
-          "title": "서진시스템-스틱인베, 영구채·블록딜 '패키지 인수' 가능성 고개",
-          "url": "https://n.news.naver.com/mnews/article/293/0000086122",
-          "office": "블로터",
-          "sentiment": "호재"
+          "title": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\"",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605907",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "'3000억 영구채 발행' 서진시스템, 임원 매도·베트남 세금 '악재'",
-          "url": "https://n.news.naver.com/mnews/article/293/0000086039",
-          "office": "블로터",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "1000억 세금리스크, 유증 투자자에만 알렸다는 서진시스템[Only 이데일...",
-          "url": "https://n.news.naver.com/mnews/article/018/0006301101",
-          "office": "이데일리",
-          "sentiment": "호재"
+          "title": "\"주식 강세에 자산효과까지\"…현대백화점 목표주가 상향 이유[클릭e종목...",
+          "url": "https://view.asiae.co.kr/article/2026061015124639896",
+          "office": "view",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         }
-      ]
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "현대백화점 주가 강세 \"주식 강세에 외국인 매출 증가 효과\""
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
