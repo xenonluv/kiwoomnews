@@ -1,20 +1,20 @@
 {
-  "as_of": "2026-06-11 11:37 KST",
+  "as_of": "2026-06-11 11:52 KST",
   "intraday_rank": [
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "94%",
-      "entry": 134100.0,
-      "target": 140805,
-      "stop": 130077,
+      "tomorrow_up_prob": "83%",
+      "entry": 134800.0,
+      "target": 141540,
+      "stop": 130756,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
+      "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -82,19 +82,35 @@
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "71%",
-      "entry": 26450.0,
-      "target": 27772,
-      "stop": 25656,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "75%",
+      "entry": 118200.0,
+      "target": 124110,
+      "stop": 114654,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.89)",
+        "정배열",
+        "RSI59.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "60%",
+      "entry": 29350.0,
+      "target": 30818,
+      "stop": 28470,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "RSI80.7 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -112,17 +128,17 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "71%",
-      "entry": 5660.0,
-      "target": 5943,
-      "stop": 5490,
-      "confidence": "상",
+      "tomorrow_up_prob": "56%",
+      "entry": 5310.0,
+      "target": 5576,
+      "stop": 5151,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.92)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
-      "risk": "RSI93.2 과매수, Stoch 과매수",
+      "risk": "RSI92.6 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -154,65 +170,65 @@
       "cause_summary": "[ET특징주]화신정공, 보스턴 다이내믹스 방문 소식에 상승세"
     },
     {
-      "ticker": "티엠씨",
-      "code": "217590",
-      "tomorrow_up_prob": "62%",
-      "entry": 24050.0,
-      "target": 25252,
-      "stop": 23328,
+      "ticker": "심텍",
+      "code": "222800",
+      "tomorrow_up_prob": "55%",
+      "entry": 129800.0,
+      "target": 136290,
+      "stop": 125906,
       "confidence": "중",
       "reasons": [
-        "RSI50.7 강세",
-        "거래량5.17배",
-        "호재"
+        "강세마감(0.73)",
+        "RSI61.6 강세",
+        "거래량1.64배"
       ],
-      "risk": "약한 마감",
+      "risk": "악재",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
-          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416400",
-          "office": "bizwork",
+          "title": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459318",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         },
         {
-          "title": "[특징주] 티엠씨, 美 데이터센터-광통신 관련 주문 급증…공장 풀가동 ...",
-          "url": "https://www.etoday.co.kr/news/view/2592281",
-          "office": "etoday",
+          "title": "심텍 주가, 급등세... 증권가 전망은?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163012",
+          "office": "ggilbo",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
-          "office": "gukjenews",
+          "title": "단순 인쇄회로기판은 옛말… 심텍, 반도체 미세화 타고 몸값 올린다",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459285",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프..."
+      "cause_summary": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가"
     }
   ],
   "closing_bet": [
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "94%",
-      "entry": 134100.0,
-      "target": 140805,
-      "stop": 130077,
+      "tomorrow_up_prob": "83%",
+      "entry": 134800.0,
+      "target": 141540,
+      "stop": 130756,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
+      "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -280,19 +296,35 @@
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "71%",
-      "entry": 26450.0,
-      "target": 27772,
-      "stop": 25656,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "75%",
+      "entry": 118200.0,
+      "target": 124110,
+      "stop": 114654,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.89)",
+        "정배열",
+        "RSI59.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "60%",
+      "entry": 29350.0,
+      "target": 30818,
+      "stop": 28470,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "RSI80.7 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -310,17 +342,17 @@
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "71%",
-      "entry": 5660.0,
-      "target": 5943,
-      "stop": 5490,
-      "confidence": "상",
+      "tomorrow_up_prob": "56%",
+      "entry": 5310.0,
+      "target": 5576,
+      "stop": 5151,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.92)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
-      "risk": "RSI93.2 과매수, Stoch 과매수",
+      "risk": "RSI92.6 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -350,50 +382,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[ET특징주]화신정공, 보스턴 다이내믹스 방문 소식에 상승세"
-    },
-    {
-      "ticker": "티엠씨",
-      "code": "217590",
-      "tomorrow_up_prob": "62%",
-      "entry": 24050.0,
-      "target": 25252,
-      "stop": 23328,
-      "confidence": "중",
-      "reasons": [
-        "RSI50.7 강세",
-        "거래량5.17배",
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
-          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416400",
-          "office": "bizwork",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 티엠씨, 美 데이터센터-광통신 관련 주문 급증…공장 풀가동 ...",
-          "url": "https://www.etoday.co.kr/news/view/2592281",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
