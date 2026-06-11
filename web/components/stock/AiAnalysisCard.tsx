@@ -70,7 +70,7 @@ export function AiAnalysisCard({ code }: { code: string }) {
           <div className="flex flex-col items-center gap-3 py-4 text-center">
             <p className="text-xs text-muted-foreground">
               버튼을 누르면 AI(Kimi)가 위 리포트 전체(점수 해부·기술지표·수급·뉴스·이벤트)를
-              읽고 다음 거래일 방향을 독립적으로 판단합니다. (약 20~40초)
+              읽고 다음 거래일 방향을 독립적으로 판단합니다. (약 30초~2분)
             </p>
             <Button size="sm" onClick={run}>
               <Sparkles aria-hidden /> AI로 분석하기
@@ -83,7 +83,7 @@ export function AiAnalysisCard({ code }: { code: string }) {
             <div className="h-5 w-40 animate-pulse rounded-md bg-white/10" />
             <div className="h-16 animate-pulse rounded-md bg-white/5" />
             <p className="text-center text-xs text-muted-foreground">
-              AI가 리포트를 읽고 깊게 추론하는 중입니다… (약 20~40초)
+              AI가 리포트를 읽고 깊게 추론하는 중입니다… (약 30초~2분)
             </p>
           </div>
         )}

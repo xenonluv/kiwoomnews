@@ -14,8 +14,9 @@ const CACHE_OK = "public, s-maxage=1800, stale-while-revalidate=3600";
 const CACHE_ERR = "public, s-maxage=60, stale-while-revalidate=120";
 
 export const dynamic = "force-dynamic";
-// kimi-k2.6(reasoning)은 15~40초 소요 — Vercel 함수 한도를 60초로 상향
-export const maxDuration = 60;
+// kimi-k2.6(reasoning)은 15~60초+ 소요 — Vercel 함수 한도 상향
+// (Fluid Compute에서 Hobby도 300초 허용. 미지원 환경이면 Vercel이 플랜 한도로 클램프)
+export const maxDuration = 300;
 
 const inflight = new Map<string, Promise<AiAnalysis>>();
 

@@ -11,9 +11,9 @@ export class AiConfigError extends Error {}
 export class AiUnavailableError extends Error {}
 
 const DIRECTIONS: AiDirection[] = ["상승", "하락", "관망"];
-// kimi-k2.6은 reasoning 모델이라 응답에 15~40초 소요 (실측) — 라우트의
-// maxDuration=60과 짝을 이뤄 55초까지 대기.
-const TIMEOUT_MS = 55_000;
+// kimi-k2.6은 reasoning 모델이라 응답에 15~60초+ 소요 (Vercel 실측 55초 초과 사례 있음)
+// — 라우트의 maxDuration=300(Fluid Compute)과 짝을 이뤄 120초까지 대기.
+const TIMEOUT_MS = 120_000;
 
 function env(name: string): string | null {
   const v = process.env[name];
