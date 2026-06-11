@@ -1,13 +1,41 @@
 {
-  "as_of": "2026-06-11 14:37 KST",
+  "as_of": "2026-06-11 14:52 KST",
   "intraday_rank": [
+    {
+      "ticker": "티에스이",
+      "code": "131290",
+      "tomorrow_up_prob": "93%",
+      "entry": 267500.0,
+      "target": 280875,
+      "stop": 259475,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.97)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112114",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'"
+    },
     {
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "87%",
-      "entry": 137500.0,
-      "target": 144375,
-      "stop": 133375,
+      "entry": 137400.0,
+      "target": 144270,
+      "stop": 133278,
       "confidence": "상",
       "reasons": [
         "강세마감(0.81)",
@@ -85,66 +113,22 @@
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "81%",
-      "entry": 131700.0,
-      "target": 138285,
-      "stop": 127749,
+      "entry": 134200.0,
+      "target": 140910,
+      "stop": 130174,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.84)",
         "정배열",
-        "RSI63.5 강세"
+        "RSI64.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
     },
     {
-      "ticker": "엠케이전자",
-      "code": "033160",
-      "tomorrow_up_prob": "79%",
-      "entry": 28550.0,
-      "target": 29978,
-      "stop": 27694,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.98)",
-        "RSI53.4 강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459315",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[특징주] 엠케이전자, AI서버 메모리 강세 수혜…1Q 어닝서프라이즈 증...",
-          "url": "https://www.etoday.co.kr/news/view/2578315",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 엠케이전자, AI 서버 메모리 수요 확대에 강세…증권가 목표가...",
-          "url": "https://www.tokenpost.kr/news/economy/352344",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
-    },
-    {
       "ticker": "스피어",
       "code": "347700",
-      "tomorrow_up_prob": "78%",
+      "tomorrow_up_prob": "79%",
       "entry": 38500.0,
       "target": 40425,
       "stop": 37345,
@@ -157,6 +141,14 @@
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] 스피어, 美 우주발사업체 누적 수주 3300억 돌파에 4% 급등",
           "url": "https://www.etoday.co.kr/news/view/2592555",
@@ -172,18 +164,10 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "스피어, 美 우주발사업체향 수주 3300억 돌파에 11%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03037286645480736",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 스피어, 美 우주발사업체 누적 수주 3300억 돌파에 4% 급등"
+      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
     },
     {
       "ticker": "미래에셋생명",
@@ -230,92 +214,36 @@
       "cause_summary": "미래에셋생명, 상한가 직행…29% 급등에 투자자 관심 집중"
     },
     {
-      "ticker": "화신정공",
-      "code": "126640",
-      "tomorrow_up_prob": "64%",
-      "entry": 5545.0,
-      "target": 5822,
-      "stop": 5379,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI93.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[ET특징주]화신정공, 보스턴 다이내믹스 방문 소식에 상승세",
-          "url": "https://www.etnews.com/20260611000152",
-          "office": "etnews",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 화신정공, 장중 상한가 후 상승폭 축소…로봇 부품 기대감 지...",
-          "url": "https://www.ajunews.com/view/20260611100451059",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]보스턴다이내믹스 공급 기대감…화신정공 4거래일 연속 급등",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=913290",
-          "office": "namdonews",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[ET특징주]화신정공, 보스턴 다이내믹스 방문 소식에 상승세"
-    },
-    {
-      "ticker": "HD현대마린솔루션",
-      "code": "443060",
+      "ticker": "이수페타시스",
+      "code": "007660",
       "tomorrow_up_prob": "63%",
-      "entry": 249500.0,
-      "target": 261975,
-      "stop": 242015,
+      "entry": 123700.0,
+      "target": 129885,
+      "stop": 119989,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.91)",
-        "RSI58.1 강세",
-        "장중 10회 지속"
+        "강세마감(0.95)",
+        "Stoch골든",
+        "장중 12회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] HD현대마린솔루션, 1분기 호실적·증권가 목표가 줄상향에 10%...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293050",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] HD현대마린솔루션, 1분기 호실적·증권가 목표가 줄상향에 10%..."
+      "day_change": null
     },
     {
       "ticker": "티엠씨",
       "code": "217590",
       "tomorrow_up_prob": "57%",
-      "entry": 21800.0,
-      "target": 22890,
-      "stop": 21146,
+      "entry": 21950.0,
+      "target": 23048,
+      "stop": 21292,
       "confidence": "중",
       "reasons": [
-        "거래량5.76배",
+        "거래량5.79배",
         "호재",
-        "장중 19회 지속"
+        "장중 20회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -4.42,
+      "day_change": -2.43,
       "cause_news": [
         {
           "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
@@ -348,12 +276,40 @@
   ],
   "closing_bet": [
     {
+      "ticker": "티에스이",
+      "code": "131290",
+      "tomorrow_up_prob": "93%",
+      "entry": 267500.0,
+      "target": 280875,
+      "stop": 259475,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.97)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112114",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'"
+    },
+    {
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "87%",
-      "entry": 137500.0,
-      "target": 144375,
-      "stop": 133375,
+      "entry": 137400.0,
+      "target": 144270,
+      "stop": 133278,
       "confidence": "상",
       "reasons": [
         "강세마감(0.81)",
@@ -431,66 +387,22 @@
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "81%",
-      "entry": 131700.0,
-      "target": 138285,
-      "stop": 127749,
+      "entry": 134200.0,
+      "target": 140910,
+      "stop": 130174,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.84)",
         "정배열",
-        "RSI63.5 강세"
+        "RSI64.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
     },
     {
-      "ticker": "엠케이전자",
-      "code": "033160",
-      "tomorrow_up_prob": "79%",
-      "entry": 28550.0,
-      "target": 29978,
-      "stop": 27694,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.98)",
-        "RSI53.4 강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459315",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[특징주] 엠케이전자, AI서버 메모리 강세 수혜…1Q 어닝서프라이즈 증...",
-          "url": "https://www.etoday.co.kr/news/view/2578315",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 엠케이전자, AI 서버 메모리 수요 확대에 강세…증권가 목표가...",
-          "url": "https://www.tokenpost.kr/news/economy/352344",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
-    },
-    {
       "ticker": "스피어",
       "code": "347700",
-      "tomorrow_up_prob": "78%",
+      "tomorrow_up_prob": "79%",
       "entry": 38500.0,
       "target": 40425,
       "stop": 37345,
@@ -503,6 +415,14 @@
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] 스피어, 美 우주발사업체 누적 수주 3300억 돌파에 4% 급등",
           "url": "https://www.etoday.co.kr/news/view/2592555",
@@ -518,18 +438,10 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "스피어, 美 우주발사업체향 수주 3300억 돌파에 11%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03037286645480736",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 스피어, 美 우주발사업체 누적 수주 3300억 돌파에 4% 급등"
+      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
