@@ -93,6 +93,12 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   네이버 공개(무인증) API 6종을 병렬 호출해 주가현황·기술지표·수급·재무·재료뉴스·이벤트
   민감도·종합판정을 생성. 엣지 캐시 180초. 시크릿 불필요(KIS 미사용 — Vercel 무시크릿 유지).
   `GET /api/stock/search?q=` — 자동완성 프록시(ac.stock.naver.com, CSP 때문에 경유 필수).
+- `GET /api/stock/{code}/ai` — **AI(LLM) 심층 분석** (Moonshot `kimi-k2.6`, 유일한 LLM 사용처).
+  룰베이스 리포트 전체를 직렬화해 Kimi에 전달 → 익일 방향(상승/하락/관망)+확신도+근거 JSON.
+  **버튼 클릭 시에만** 프론트(AiAnalysisCard)가 호출(비용 절약). 성공 30분/에러 60초 CDN 캐시 +
+  쿼리스트링 차단 + in-flight 디둡. reasoning 모델이라 15~50초 소요(`maxDuration=60`).
+  ⚠ kimi-k2.6은 temperature 지정 시 400(1만 허용), confidence를 0~1로 줄 때가 있어 정규화함.
+  시크릿: `MOONSHOT_API_KEY`(+BASE_URL/MODEL) — 로컬 `web/.env.local` + Vercel 환경변수.
 - 흐름: `web/data/radar.json` → `lib/radar/repository.ts`(SSOT) → `app/page.tsx`(SSG) + `app/api/radar`.
 - 프론트 폴링은 `services/radar.client.ts` 경유만 (컴포넌트 직접 fetch 금지).
 
@@ -122,5 +128,7 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 ## Security
 
 - `.env`에만 시크릿: NAVER_CLIENT_ID/SECRET + **KIS_APP_KEY/SECRET/CANO** (gitignore 처리).
-- `.kis_token.json`(토큰 캐시), `open_api/`(KIS 공식 샘플 레포, 벤더 코드), `apikey.md`, `kis_devlp.yaml` 모두 gitignore.
-- Vercel엔 시크릿 불필요 (웹은 정적 JSON만 사용, API 키는 로컬 파이프라인 전용).
+- `web/.env.local`: **MOONSHOT_API_KEY/BASE_URL/MODEL** (AI 심층 분석용, gitignore 처리).
+- `.kis_token.json`(토큰 캐시), `open_api/`(KIS 공식 샘플 레포, 벤더 코드), `apikey.md`, `kimiapi.md`, `kis_devlp.yaml` 모두 gitignore.
+- Vercel 시크릿은 **MOONSHOT_* 3종만** (서버 온리, /api/stock/[code]/ai 전용 — 대시보드에서 수동 등록).
+  나머지(KIS/네이버 키)는 로컬 파이프라인 전용으로 Vercel 불필요.

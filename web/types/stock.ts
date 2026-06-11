@@ -182,6 +182,20 @@ export interface VerdictSection {
   summary: string; // 규칙 템플릿 조합 1문장 (LLM 아님)
 }
 
+/** AI(LLM) 심층 분석 — 버튼 클릭 시 /api/stock/[code]/ai 에서 생성. */
+export type AiDirection = "상승" | "하락" | "관망";
+
+export interface AiAnalysis {
+  code: string;
+  asOf: string; // 생성 시각 KST
+  model: string; // 사용 모델 id (투명성)
+  direction: AiDirection; // 익일 방향 판단
+  confidence: number; // 0~100
+  reasons: string[]; // 핵심 근거 3~5개
+  risks: string[]; // 리스크 1~3개
+  narrative: string; // 2~4문장 한국어 서술
+}
+
 export interface StockReport {
   code: string;
   name: string;

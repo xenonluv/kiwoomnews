@@ -1,6 +1,6 @@
 "use client";
 
-import type { SearchResponse, StockReport } from "@/types/stock";
+import type { AiAnalysis, SearchResponse, StockReport } from "@/types/stock";
 
 /**
  * 종목 분석 클라이언트 서비스 — 컴포넌트는 fetch를 직접 호출하지 않고
@@ -19,6 +19,17 @@ export const stockClientService = {
       const body = await res.json().catch(() => null);
       throw new Error(
         body?.error?.message ?? `리포트 조회 실패 (HTTP ${res.status})`
+      );
+    }
+    return res.json();
+  },
+
+  async getAiAnalysis(code: string): Promise<AiAnalysis> {
+    const res = await fetch(`/api/stock/${code}/ai`, { cache: "no-store" });
+    if (!res.ok) {
+      const body = await res.json().catch(() => null);
+      throw new Error(
+        body?.error?.message ?? `AI 분석 실패 (HTTP ${res.status})`
       );
     }
     return res.json();

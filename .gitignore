@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 apikey.md
+kimiapi.md
 kis_devlp.yaml
 .kis_token.json
 setup_mac_radar.sh

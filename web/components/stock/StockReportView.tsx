@@ -15,6 +15,7 @@ import { FinancialsCard } from "./FinancialsCard";
 import { NewsCard } from "./NewsCard";
 import { EventsCard } from "./EventsCard";
 import { VerdictCard } from "./VerdictCard";
+import { AiAnalysisCard } from "./AiAnalysisCard";
 
 function Skeleton() {
   return (
@@ -115,6 +116,7 @@ export function StockReportView({ code }: { code: string }) {
       )}
 
       {r.verdict && <VerdictCard verdict={r.verdict} disclaimer={r.disclaimer} />}
+      {r.verdict && !r.tradeStop && <AiAnalysisCard code={r.code} />}
       {r.price && <PriceSummaryCard price={r.price} />}
       {r.chart && <PriceChart candles={r.chart.candles} />}
 
