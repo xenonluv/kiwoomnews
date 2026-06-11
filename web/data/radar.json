@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-11 15:30:23 KST",
- "market_session": "open",
+ "generated_at": "2026-06-11 15:45:24 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -12,7 +12,7 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 85,
+ "universe_count": 101,
  "events": [
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
@@ -44,32 +44,32 @@
    "code": "217590",
    "name": "티엠씨",
    "sector": "전기·전자",
-   "suspicion_score": 61,
+   "suspicion_score": 68,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
     "fade": 2.0,
     "ma10": 10.0,
-    "flow": 4.0,
+    "flow": 11.0,
     "event": 0.0
    },
-   "score_raw": 61,
+   "score_raw": 68,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
     "fade": 2.0,
     "ma10": 10.0,
-    "flow": 4,
+    "flow": 11,
     "event": 0.0
    },
-   "price": 22200.0,
-   "change_pct": -1.77,
+   "price": 22250.0,
+   "change_pct": -1.55,
    "high_pct": 25.66,
-   "fade_pct": 106.9,
-   "value_eok": 801,
-   "ma10": 20452.0,
-   "ma10_margin_pct": 8.55,
+   "fade_pct": 106.0,
+   "value_eok": 804,
+   "ma10": 20457.0,
+   "ma10_margin_pct": 8.76,
    "spark": {
     "clusters": [
      {
@@ -80,43 +80,43 @@
      },
      {
       "time": "09:05",
-      "vol_x": 35.7,
+      "vol_x": 35.5,
       "pct": 5.16,
       "minutes": 3
      },
      {
       "time": "09:09",
-      "vol_x": 32.7,
+      "vol_x": 32.5,
       "pct": 5.47,
       "minutes": 3
      },
      {
       "time": "09:14",
-      "vol_x": 44.4,
+      "vol_x": 44.1,
       "pct": 0.3,
       "minutes": 3
      },
      {
       "time": "09:18",
-      "vol_x": 29.6,
+      "vol_x": 29.4,
       "pct": -6.39,
       "minutes": 3
      },
      {
       "time": "09:23",
-      "vol_x": 11.6,
+      "vol_x": 11.5,
       "pct": 2.65,
       "minutes": 4
      },
      {
       "time": "09:30",
-      "vol_x": 9.1,
+      "vol_x": 9.0,
       "pct": 2.17,
       "minutes": 1
      },
      {
       "time": "09:32",
-      "vol_x": 11.4,
+      "vol_x": 11.3,
       "pct": 0.59,
       "minutes": 2
      },
@@ -128,13 +128,13 @@
      },
      {
       "time": "09:41",
-      "vol_x": 20.5,
+      "vol_x": 20.4,
       "pct": 1.88,
       "minutes": 1
      },
      {
       "time": "09:43",
-      "vol_x": 10.9,
+      "vol_x": 10.8,
       "pct": -1.65,
       "minutes": 1
      },
@@ -146,7 +146,7 @@
      },
      {
       "time": "09:59",
-      "vol_x": 10.5,
+      "vol_x": 10.4,
       "pct": 3.06,
       "minutes": 1
      },
@@ -159,9 +159,9 @@
     ]
    },
    "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 1,
     "detail": [
      {
       "date": "0605",
@@ -185,8 +185,8 @@
      },
      {
       "date": "0611",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": 29190,
+      "orgn": -3311
      }
     ]
    },
@@ -229,7 +229,7 @@
    "change_pct": 4.06,
    "high_pct": 29.8,
    "fade_pct": 86.4,
-   "value_eok": 2201,
+   "value_eok": 2203,
    "ma10": 2745.5,
    "ma10_margin_pct": 67.91,
    "spark": {
@@ -299,8 +299,8 @@
      },
      {
       "date": "0611",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -493516,
+      "orgn": -100
      }
     ]
    },
@@ -311,32 +311,32 @@
    "code": "178320",
    "name": "서진시스템",
    "sector": "전기·전자",
-   "suspicion_score": 55,
+   "suspicion_score": 56,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 1.1,
-    "fade": 12.7,
-    "ma10": 3.7,
+    "fade": 14.3,
+    "ma10": 2.9,
     "flow": 6.0,
     "event": 1.8
    },
-   "score_raw": 55,
+   "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 1.1,
-    "fade": 12.7,
-    "ma10": 3.7,
+    "fade": 14.3,
+    "ma10": 2.9,
     "flow": 6,
     "event": 1.8
    },
-   "price": 75000.0,
-   "change_pct": 7.6,
+   "price": 74500.0,
+   "change_pct": 6.89,
    "high_pct": 13.2,
-   "fade_pct": 42.4,
-   "value_eok": 1631,
-   "ma10": 72870.0,
-   "ma10_margin_pct": 2.92,
+   "fade_pct": 47.8,
+   "value_eok": 2065,
+   "ma10": 72820.0,
+   "ma10_margin_pct": 2.31,
    "spark": {
     "clusters": [
      {
@@ -374,8 +374,8 @@
      },
      {
       "date": "0611",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -1086104,
+      "orgn": 1048171
      }
     ]
    },
