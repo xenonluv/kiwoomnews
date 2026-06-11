@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertTriangle, RotateCcw } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -37,27 +37,33 @@ function Skeleton() {
 export function StockReportView({ code }: { code: string }) {
   const [report, setReport] = useState<StockReport | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
 
-  const load = useCallback(async () => {
+  // code가 바뀌면 이전 요청 응답은 무시(stale 가드) — 늦게 도착한 다른 종목
+  // 리포트가 현재 화면을 덮어쓰는 경합을 차단한다.
+  useEffect(() => {
+    let stale = false;
     setError(null);
     setReport(null);
-    try {
-      setReport(await stockClientService.getReport(code));
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "리포트 조회에 실패했습니다.");
-    }
-  }, [code]);
-
-  useEffect(() => {
-    void load();
-  }, [load]);
+    stockClientService
+      .getReport(code)
+      .then((r) => {
+        if (!stale) setReport(r);
+      })
+      .catch((e) => {
+        if (!stale) setError(e instanceof Error ? e.message : "리포트 조회에 실패했습니다.");
+      });
+    return () => {
+      stale = true;
+    };
+  }, [code, retryKey]);
 
   if (error) {
     return (
       <div className="flex min-h-48 flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-border text-sm text-muted-foreground">
         <AlertTriangle className="size-6 text-warning" aria-hidden />
         <p>{error}</p>
-        <Button variant="outline" size="sm" onClick={() => void load()}>
+        <Button variant="outline" size="sm" onClick={() => setRetryKey((k) => k + 1)}>
           <RotateCcw aria-hidden /> 다시 시도
         </Button>
       </div>
