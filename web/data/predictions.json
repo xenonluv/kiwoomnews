@@ -1,20 +1,20 @@
 {
-  "as_of": "2026-06-11 13:07 KST",
+  "as_of": "2026-06-11 13:22 KST",
   "intraday_rank": [
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "83%",
-      "entry": 136300.0,
-      "target": 143115,
-      "stop": 132211,
+      "tomorrow_up_prob": "94%",
+      "entry": 134600.0,
+      "target": 141330,
+      "stop": 130562,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
@@ -36,6 +36,22 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가"
+    },
+    {
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "81%",
+      "entry": 127400.0,
+      "target": 133770,
+      "stop": 123578,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "RSI62.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
     },
     {
       "ticker": "코미코",
@@ -82,33 +98,97 @@
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "삼화콘덴서",
-      "code": "001820",
-      "tomorrow_up_prob": "76%",
-      "entry": 122200.0,
-      "target": 128310,
-      "stop": 118534,
+      "ticker": "주성엔지니어링",
+      "code": "036930",
+      "tomorrow_up_prob": "79%",
+      "entry": 247000.0,
+      "target": 259350,
+      "stop": 239590,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.97)",
         "정배열",
-        "RSI60.6 강세"
+        "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[속보] 주성엔지니어링 VI 발동, 주가 도약…장중 강세로 전환",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581274",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "차세대 패널·HBM 공정의 필수재… 주성엔지니어링, 수주 랠리 청신호",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459352",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[속보] 주성엔지니어링 VI 발동, 주가 도약…장중 강세로 전환"
+    },
+    {
+      "ticker": "엠케이전자",
+      "code": "033160",
+      "tomorrow_up_prob": "79%",
+      "entry": 27550.0,
+      "target": 28928,
+      "stop": 26724,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.94)",
+        "RSI52.1 강세",
+        "Stoch골든"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459315",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "[특징주] 엠케이전자, AI서버 메모리 강세 수혜…1Q 어닝서프라이즈 증...",
+          "url": "https://www.etoday.co.kr/news/view/2578315",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 엠케이전자, AI 서버 메모리 수요 확대에 강세…증권가 목표가...",
+          "url": "https://www.tokenpost.kr/news/economy/352344",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
     },
     {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "72%",
-      "entry": 9070.0,
-      "target": 9524,
-      "stop": 8798,
+      "tomorrow_up_prob": "77%",
+      "entry": 8890.0,
+      "target": 9334,
+      "stop": 8623,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.99)",
+        "강세마감(0.85)",
         "MACD강세",
-        "거래량2.77배"
+        "RSI69.9 강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -186,17 +266,33 @@
       "cause_summary": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은"
     },
     {
-      "ticker": "HD현대마린솔루션",
-      "code": "443060",
-      "tomorrow_up_prob": "61%",
-      "entry": 250000.0,
-      "target": 262500,
-      "stop": 242500,
+      "ticker": "이수페타시스",
+      "code": "007660",
+      "tomorrow_up_prob": "62%",
+      "entry": 122300.0,
+      "target": 128415,
+      "stop": 118631,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.95)",
-        "RSI58.2 강세",
-        "장중 6회 지속"
+        "강세마감(0.88)",
+        "Stoch골든",
+        "장중 7회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "HD현대마린솔루션",
+      "code": "443060",
+      "tomorrow_up_prob": "62%",
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.87)",
+        "RSI57.6 강세",
+        "장중 7회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -214,36 +310,20 @@
       "cause_summary": "[특징주] HD현대마린솔루션, 1분기 호실적·증권가 목표가 줄상향에 10%..."
     },
     {
-      "ticker": "이수페타시스",
-      "code": "007660",
-      "tomorrow_up_prob": "61%",
-      "entry": 122800.0,
-      "target": 128940,
-      "stop": 119116,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.91)",
-        "Stoch골든",
-        "장중 6회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "티엠씨",
       "code": "217590",
       "tomorrow_up_prob": "57%",
-      "entry": 22550.0,
-      "target": 23678,
-      "stop": 21874,
+      "entry": 23000.0,
+      "target": 24150,
+      "stop": 22310,
       "confidence": "중",
       "reasons": [
-        "거래량5.48배",
+        "거래량5.52배",
         "호재",
-        "장중 13회 지속"
+        "장중 14회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": 1.55,
+      "day_change": 0.88,
       "cause_news": [
         {
           "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
@@ -254,17 +334,17 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 티엠씨, 美 데이터센터-광통신 관련 주문 급증…공장 풀가동 ...",
-          "url": "https://www.etoday.co.kr/news/view/2592281",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
           "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
           "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[주식마감] 신재생에너지 '빅딜' 기대감에 SK이너틱스 상한가... 티엠씨...",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162967",
+          "office": "ggilbo",
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
@@ -278,17 +358,17 @@
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "83%",
-      "entry": 136300.0,
-      "target": 143115,
-      "stop": 132211,
+      "tomorrow_up_prob": "94%",
+      "entry": 134600.0,
+      "target": 141330,
+      "stop": 130562,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
@@ -310,6 +390,22 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "심텍·코리아써키트 주가 불기둥… AI 반도체 수혜 기판주 재평가"
+    },
+    {
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "81%",
+      "entry": 127400.0,
+      "target": 133770,
+      "stop": 123578,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "RSI62.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
     },
     {
       "ticker": "코미코",
@@ -356,108 +452,84 @@
       "cause_summary": "상한가 종목 속출…화신정공·코미코·마니커 초강세, 투자심리 회복 신..."
     },
     {
-      "ticker": "삼화콘덴서",
-      "code": "001820",
-      "tomorrow_up_prob": "76%",
-      "entry": 122200.0,
-      "target": 128310,
-      "stop": 118534,
+      "ticker": "주성엔지니어링",
+      "code": "036930",
+      "tomorrow_up_prob": "79%",
+      "entry": 247000.0,
+      "target": 259350,
+      "stop": 239590,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.97)",
         "정배열",
-        "RSI60.6 강세"
+        "RSI63.7 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[속보] 주성엔지니어링 VI 발동, 주가 도약…장중 강세로 전환",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581274",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "차세대 패널·HBM 공정의 필수재… 주성엔지니어링, 수주 랠리 청신호",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459352",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[속보] 주성엔지니어링 VI 발동, 주가 도약…장중 강세로 전환"
     },
     {
-      "ticker": "라이콤",
-      "code": "388790",
-      "tomorrow_up_prob": "72%",
-      "entry": 9070.0,
-      "target": 9524,
-      "stop": 8798,
+      "ticker": "엠케이전자",
+      "code": "033160",
+      "tomorrow_up_prob": "79%",
+      "entry": 27550.0,
+      "target": 28928,
+      "stop": 26724,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.99)",
-        "MACD강세",
-        "거래량2.77배"
+        "강세마감(0.94)",
+        "RSI52.1 강세",
+        "Stoch골든"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3605638",
-          "office": "gukjenews",
+          "title": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459315",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
         },
         {
-          "title": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295152",
-          "office": "widedaily",
+          "title": "[특징주] 엠케이전자, AI서버 메모리 강세 수혜…1Q 어닝서프라이즈 증...",
+          "url": "https://www.etoday.co.kr/news/view/2578315",
+          "office": "etoday",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "라이콤, AI 데이터센터·방산 수혜 기대감에 19%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03270166645478768",
-          "office": "edaily",
+          "title": "[특징주] 엠케이전자, AI 서버 메모리 수요 확대에 강세…증권가 목표가...",
+          "url": "https://www.tokenpost.kr/news/economy/352344",
+          "office": "tokenpost",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "대한광통신·라이콤·티엠씨 등 광전자 관련주 급등"
-    },
-    {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "64%",
-      "entry": 29350.0,
-      "target": 30818,
-      "stop": 28470,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(1.0)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI80.7 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은",
-          "url": "https://cwn.kr/article/1065600054110017",
-          "office": "cwn",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "미래에셋생명 주가, 강세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163124",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[속보] 미래에셋생명 주가 상한가 직행…전일 하락 딛고 반등",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581268",
-          "office": "cbci",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은"
+      "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
