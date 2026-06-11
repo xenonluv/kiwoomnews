@@ -1,16 +1,44 @@
 {
-  "as_of": "2026-06-11 14:07 KST",
+  "as_of": "2026-06-11 14:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "티에스이",
+      "code": "131290",
+      "tomorrow_up_prob": "93%",
+      "entry": 263000.0,
+      "target": 276150,
+      "stop": 255110,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.99)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112114",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'"
+    },
     {
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "88%",
-      "entry": 137300.0,
-      "target": 144165,
-      "stop": 133181,
+      "entry": 135700.0,
+      "target": 142485,
+      "stop": 131629,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
@@ -21,12 +49,12 @@
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "87%",
-      "entry": 136500.0,
-      "target": 143325,
-      "stop": 132405,
+      "entry": 136000.0,
+      "target": 142800,
+      "stop": 131920,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
@@ -142,53 +170,17 @@
       "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
     },
     {
-      "ticker": "원익홀딩스",
-      "code": "030530",
-      "tomorrow_up_prob": "74%",
-      "entry": 30050.0,
-      "target": 31552,
-      "stop": 29148,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.94)",
-        "MACD강세",
-        "RSI54.1 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "원익홀딩스, 기대감에 장중 강세…중동 불안 속 투자자 시선 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580853",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "원익홀딩스 주가 급등…VI 두차례 발동되기도",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581275",
-          "office": "cbci",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "원익홀딩스, 기대감에 장중 강세…중동 불안 속 투자자 시선 집중"
-    },
-    {
       "ticker": "스피어",
       "code": "347700",
-      "tomorrow_up_prob": "71%",
-      "entry": 37850.0,
-      "target": 39742,
-      "stop": 36714,
+      "tomorrow_up_prob": "72%",
+      "entry": 38050.0,
+      "target": 39952,
+      "stop": 36908,
       "confidence": "상",
       "reasons": [
         "강세마감(0.94)",
         "Stoch골든",
-        "거래량1.84배"
+        "거래량2.36배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -238,9 +230,9 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은",
-          "url": "https://cwn.kr/article/1065600054110017",
-          "office": "cwn",
+          "title": "미래에셋생명, 상한가 직행…29% 급등에 투자자 관심 집중",
+          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=218057",
+          "office": "job-post",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -263,20 +255,48 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "보험주 뒤늦은 랠리…미래에셋생명·한화생명 급등 배경은"
+      "cause_summary": "미래에셋생명, 상한가 직행…29% 급등에 투자자 관심 집중"
+    },
+    {
+      "ticker": "HD현대마린솔루션",
+      "code": "443060",
+      "tomorrow_up_prob": "63%",
+      "entry": 249500.0,
+      "target": 261975,
+      "stop": 242015,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.93)",
+        "RSI58.1 강세",
+        "장중 9회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] HD현대마린솔루션, 1분기 호실적·증권가 목표가 줄상향에 10%...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293050",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] HD현대마린솔루션, 1분기 호실적·증권가 목표가 줄상향에 10%..."
     },
     {
       "ticker": "이수페타시스",
       "code": "007660",
       "tomorrow_up_prob": "63%",
-      "entry": 123400.0,
-      "target": 129570,
-      "stop": 119698,
+      "entry": 122700.0,
+      "target": 128835,
+      "stop": 119019,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.9)",
         "Stoch골든",
-        "장중 10회 지속"
+        "장중 11회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -285,17 +305,17 @@
       "ticker": "티엠씨",
       "code": "217590",
       "tomorrow_up_prob": "57%",
-      "entry": 22250.0,
-      "target": 23362,
-      "stop": 21582,
+      "entry": 21800.0,
+      "target": 22890,
+      "stop": 21146,
       "confidence": "중",
       "reasons": [
-        "거래량5.66배",
+        "거래량5.7배",
         "호재",
-        "장중 17회 지속"
+        "장중 18회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -0.88,
+      "day_change": -1.77,
       "cause_news": [
         {
           "title": "[특징주] 티엠씨, 美 데이터센터 광케이블 수요 급증에 강세…원전 인프...",
@@ -328,15 +348,43 @@
   ],
   "closing_bet": [
     {
+      "ticker": "티에스이",
+      "code": "131290",
+      "tomorrow_up_prob": "93%",
+      "entry": 263000.0,
+      "target": 276150,
+      "stop": 255110,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.99)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112114",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 1분기 호실적 기록한 티에스이, 주가도 17% '급등'"
+    },
+    {
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "88%",
-      "entry": 137300.0,
-      "target": 144165,
-      "stop": 133181,
+      "entry": 135700.0,
+      "target": 142485,
+      "stop": 131629,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
@@ -347,12 +395,12 @@
       "ticker": "코리아써키트",
       "code": "007810",
       "tomorrow_up_prob": "87%",
-      "entry": 136500.0,
-      "target": 143325,
-      "stop": 132405,
+      "entry": 136000.0,
+      "target": 142800,
+      "stop": 131920,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
@@ -466,42 +514,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "케이씨텍·엠케이전자 주가 파죽지세… HBM 수혜주 찾기 분주"
-    },
-    {
-      "ticker": "원익홀딩스",
-      "code": "030530",
-      "tomorrow_up_prob": "74%",
-      "entry": 30050.0,
-      "target": 31552,
-      "stop": 29148,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.94)",
-        "MACD강세",
-        "RSI54.1 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "원익홀딩스, 기대감에 장중 강세…중동 불안 속 투자자 시선 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580853",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "원익홀딩스 주가 급등…VI 두차례 발동되기도",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581275",
-          "office": "cbci",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "원익홀딩스, 기대감에 장중 강세…중동 불안 속 투자자 시선 집중"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
