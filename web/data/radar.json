@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-10 22:14:42 KST",
- "market_session": "closed",
+ "generated_at": "2026-06-11 09:15:12 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -12,25 +12,12 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 68,
+ "universe_count": 6,
  "events": [
-  {
-   "id": "2026-06-10_미국 CPI 발표 (5",
-   "date": "2026-06-10",
-   "dday": 0,
-   "title": "미국 CPI 발표 (5월분)",
-   "category": [
-    "금리",
-    "환율"
-   ],
-   "importance": 9,
-   "country": "US",
-   "estimated": true
-  },
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
    "date": "2026-06-11",
-   "dday": 1,
+   "dday": 0,
    "title": "한국 옵션·선물 동시만기일 (6월)",
    "category": [
     "수급"
@@ -42,7 +29,7 @@
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
    "date": "2026-06-17",
-   "dday": 7,
+   "dday": 6,
    "title": "FOMC 금리 결정 (6월)",
    "category": [
     "금리"
@@ -52,275 +39,5 @@
    "estimated": false
   }
  ],
- "suspects": [
-  {
-   "code": "279570",
-   "name": "케이뱅크",
-   "sector": "금융",
-   "suspicion_score": 79,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 6.4,
-    "fade": 8.6,
-    "ma10": 7.9,
-    "flow": 15.0,
-    "event": 11.4
-   },
-   "score_raw": 79,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 6.4,
-    "fade": 8.6,
-    "ma10": 7.9,
-    "flow": 15.0,
-    "event": 11.4
-   },
-   "price": 6030.0,
-   "change_pct": 4.33,
-   "high_pct": 15.05,
-   "fade_pct": 71.3,
-   "value_eok": 2218,
-   "ma10": 5671.0,
-   "ma10_margin_pct": 6.33,
-   "spark": {
-    "clusters": [
-     {
-      "time": "10:44",
-      "vol_x": 10.9,
-      "pct": 1.17,
-      "minutes": 1
-     },
-     {
-      "time": "12:24",
-      "vol_x": 9.6,
-      "pct": 0.02,
-      "minutes": 2
-     },
-     {
-      "time": "12:30",
-      "vol_x": 9.4,
-      "pct": 1.09,
-      "minutes": 1
-     },
-     {
-      "time": "12:37",
-      "vol_x": 15.3,
-      "pct": 2.15,
-      "minutes": 1
-     },
-     {
-      "time": "12:45",
-      "vol_x": 10.5,
-      "pct": 0.93,
-      "minutes": 1
-     },
-     {
-      "time": "12:54",
-      "vol_x": 9.4,
-      "pct": -1.23,
-      "minutes": 1
-     },
-     {
-      "time": "12:58",
-      "vol_x": 9.7,
-      "pct": -1.24,
-      "minutes": 1
-     },
-     {
-      "time": "13:41",
-      "vol_x": 8.8,
-      "pct": 1.08,
-      "minutes": 1
-     },
-     {
-      "time": "13:46",
-      "vol_x": 17.8,
-      "pct": -3.43,
-      "minutes": 1
-     },
-     {
-      "time": "13:48",
-      "vol_x": 18.3,
-      "pct": -3.25,
-      "minutes": 2
-     },
-     {
-      "time": "13:54",
-      "vol_x": 12.4,
-      "pct": -0.83,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 5,
-    "today_buy": true,
-    "streak": 5,
-    "detail": [
-     {
-      "date": "0604",
-      "frgn": -57645,
-      "orgn": 296684
-     },
-     {
-      "date": "0605",
-      "frgn": -153154,
-      "orgn": 187003
-     },
-     {
-      "date": "0608",
-      "frgn": -75926,
-      "orgn": 661195
-     },
-     {
-      "date": "0609",
-      "frgn": 369984,
-      "orgn": 546946
-     },
-     {
-      "date": "0610",
-      "frgn": 36824,
-      "orgn": 739465
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-06-10_미국 CPI 발표 (5",
-     "title": "미국 CPI 발표 (5월분)",
-     "dday": 0,
-     "categories": [
-      "금리"
-     ],
-     "score": 8.1
-    },
-    {
-     "id": "2026-06-17_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (6월)",
-     "dday": 7,
-     "categories": [
-      "금리"
-     ],
-     "score": 3.3
-    }
-   ]
-  },
-  {
-   "code": "095610",
-   "name": "테스",
-   "sector": "기계·장비",
-   "suspicion_score": 75,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 3.1,
-    "fade": 13.0,
-    "ma10": 10.0,
-    "flow": 15.0,
-    "event": 3.8
-   },
-   "score_raw": 75,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 3.1,
-    "fade": 13.0,
-    "ma10": 10.0,
-    "flow": 15.0,
-    "event": 3.8
-   },
-   "price": 173400.0,
-   "change_pct": 7.43,
-   "high_pct": 17.16,
-   "fade_pct": 56.7,
-   "value_eok": 1763,
-   "ma10": 131770.0,
-   "ma10_margin_pct": 31.59,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:21",
-      "vol_x": 11.8,
-      "pct": 3.76,
-      "minutes": 1
-     },
-     {
-      "time": "09:27",
-      "vol_x": 13.0,
-      "pct": 1.04,
-      "minutes": 1
-     },
-     {
-      "time": "09:54",
-      "vol_x": 10.3,
-      "pct": 1.69,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 5,
-    "today_buy": true,
-    "streak": 5,
-    "detail": [
-     {
-      "date": "0604",
-      "frgn": -2201,
-      "orgn": 92040
-     },
-     {
-      "date": "0605",
-      "frgn": -112397,
-      "orgn": 158996
-     },
-     {
-      "date": "0608",
-      "frgn": -41379,
-      "orgn": 67165
-     },
-     {
-      "date": "0609",
-      "frgn": -159239,
-      "orgn": 243637
-     },
-     {
-      "date": "0610",
-      "frgn": -71613,
-      "orgn": 116374
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
-     "summary": "스몰인사이트리서치는 시스템반도체 테스트 전문기업 두산테스나에 대해 삼성전자 파운드리(반도체 위탁생산) 고객 확대와 신규 프로젝트 진입, 차량용 반도체 성장, 그룹 차원의 반도체 사업 강화 등 네 가지 성장 동력을 동시에 확보했다고...",
-     "office": "머니투데이",
-     "datetime": "202606100815",
-     "url": "https://n.news.naver.com/mnews/article/008/0005369615",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-06-10_미국 CPI 발표 (5",
-     "title": "미국 CPI 발표 (5월분)",
-     "dday": 0,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.7
-    },
-    {
-     "id": "2026-06-17_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (6월)",
-     "dday": 7,
-     "categories": [
-      "금리"
-     ],
-     "score": 1.1
-    }
-   ]
-  }
- ]
+ "suspects": []
 }
