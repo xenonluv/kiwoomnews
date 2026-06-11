@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-11 11:30:14 KST",
+ "generated_at": "2026-06-11 11:45:14 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -12,7 +12,7 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 29,
+ "universe_count": 34,
  "events": [
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
