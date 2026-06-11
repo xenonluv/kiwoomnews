@@ -61,9 +61,17 @@ export async function GET(
         { status: 502, headers: { "Cache-Control": CACHE_ERR } }
       );
     }
-    if (e instanceof AiConfigError || e instanceof AiUnavailableError) {
+    if (e instanceof AiConfigError) {
+      // 환경변수 미설정 — 운영 진단용으로 코드만 구분 (메시지는 동일하게 중립적으로)
       return NextResponse.json(
-        { error: { code: "AI_UNAVAILABLE", message: "AI 분석을 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해 주세요." } },
+        { error: { code: "AI_NOT_CONFIGURED", message: "AI 분석을 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해 주세요." } },
+        { status: 503, headers: { "Cache-Control": CACHE_ERR } }
+      );
+    }
+    if (e instanceof AiUnavailableError) {
+      return NextResponse.json(
+        // detail = 업스트림 오류 요약 (예: "AI 서버 오류 (HTTP 429)") — 민감정보 없음
+        { error: { code: "AI_UNAVAILABLE", message: "AI 분석을 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해 주세요.", detail: e.message } },
         { status: 503, headers: { "Cache-Control": CACHE_ERR } }
       );
     }
