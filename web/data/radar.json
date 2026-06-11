@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-11 13:15:15 KST",
+ "generated_at": "2026-06-11 13:30:26 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -12,7 +12,7 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 51,
+ "universe_count": 62,
  "events": [
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
@@ -41,64 +41,199 @@
  ],
  "suspects": [
   {
-   "code": "217590",
-   "name": "티엠씨",
-   "sector": "전기·전자",
-   "suspicion_score": 59,
+   "code": "126640",
+   "name": "화신정공",
+   "sector": "운송장비·부품",
+   "suspicion_score": 65,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 13.1,
-    "fade": 2.0,
+    "spark": 15.0,
+    "fade": 8.4,
+    "ma10": 10.0,
+    "flow": 2.0,
+    "event": 0.0
+   },
+   "score_raw": 65,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 15.0,
+    "fade": 8.4,
+    "ma10": 10.0,
+    "flow": 2,
+    "event": 0.0
+   },
+   "price": 4800.0,
+   "change_pct": 8.35,
+   "high_pct": 29.8,
+   "fade_pct": 72.0,
+   "value_eok": 1479,
+   "ma10": 2764.5,
+   "ma10_margin_pct": 73.63,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:02",
+      "vol_x": 12.2,
+      "pct": 29.8,
+      "minutes": 1
+     },
+     {
+      "time": "09:53",
+      "vol_x": 39.4,
+      "pct": -9.91,
+      "minutes": 1
+     },
+     {
+      "time": "09:56",
+      "vol_x": 25.6,
+      "pct": 2.15,
+      "minutes": 3
+     },
+     {
+      "time": "10:01",
+      "vol_x": 9.2,
+      "pct": -2.52,
+      "minutes": 2
+     },
+     {
+      "time": "10:05",
+      "vol_x": 12.7,
+      "pct": -2.47,
+      "minutes": 1
+     },
+     {
+      "time": "10:22",
+      "vol_x": 11.3,
+      "pct": 6.51,
+      "minutes": 1
+     },
+     {
+      "time": "10:25",
+      "vol_x": 15.5,
+      "pct": 2.68,
+      "minutes": 1
+     },
+     {
+      "time": "11:10",
+      "vol_x": 17.7,
+      "pct": -3.48,
+      "minutes": 1
+     },
+     {
+      "time": "11:33",
+      "vol_x": 22.2,
+      "pct": 3.12,
+      "minutes": 2
+     }
+    ]
+   },
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0605",
+      "frgn": -112697,
+      "orgn": 0
+     },
+     {
+      "date": "0608",
+      "frgn": -7718,
+      "orgn": 2390
+     },
+     {
+      "date": "0609",
+      "frgn": -75422,
+      "orgn": 170115
+     },
+     {
+      "date": "0610",
+      "frgn": -759430,
+      "orgn": -172405
+     },
+     {
+      "date": "0611",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": []
+  },
+  {
+   "code": "217590",
+   "name": "티엠씨",
+   "sector": "전기·전자",
+   "suspicion_score": 61,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 14.6,
+    "fade": 2.6,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 59,
+   "score_raw": 61,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 13.1,
-    "fade": 2.0,
+    "spark": 14.6,
+    "fade": 2.6,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 22800.0,
-   "change_pct": 0.88,
+   "price": 23100.0,
+   "change_pct": 2.21,
    "high_pct": 25.66,
-   "fade_pct": 96.6,
-   "value_eok": 740,
-   "ma10": 20512.0,
-   "ma10_margin_pct": 11.15,
+   "fade_pct": 91.4,
+   "value_eok": 747,
+   "ma10": 20542.0,
+   "ma10_margin_pct": 12.45,
    "spark": {
     "clusters": [
      {
       "time": "09:06",
-      "vol_x": 23.2,
+      "vol_x": 25.2,
       "pct": 1.84,
       "minutes": 2
      },
      {
       "time": "09:10",
-      "vol_x": 21.3,
+      "vol_x": 23.1,
       "pct": 6.84,
       "minutes": 2
      },
      {
       "time": "09:14",
-      "vol_x": 28.9,
+      "vol_x": 31.4,
       "pct": 0.3,
       "minutes": 3
      },
      {
       "time": "09:18",
-      "vol_x": 19.3,
+      "vol_x": 20.9,
       "pct": -6.39,
       "minutes": 3
      },
      {
+      "time": "09:24",
+      "vol_x": 8.2,
+      "pct": -2.94,
+      "minutes": 1
+     },
+     {
+      "time": "09:33",
+      "vol_x": 8.0,
+      "pct": 1.54,
+      "minutes": 1
+     },
+     {
       "time": "09:41",
-      "vol_x": 13.3,
+      "vol_x": 14.5,
       "pct": 1.88,
       "minutes": 1
      }
