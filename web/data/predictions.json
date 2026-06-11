@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-06-11 10:22 KST",
+  "as_of": "2026-06-11 10:37 KST",
   "intraday_rank": [
     {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "81%",
-      "entry": 8600.0,
-      "target": 9030,
-      "stop": 8342,
+      "tomorrow_up_prob": "82%",
+      "entry": 8620.0,
+      "target": 9051,
+      "stop": 8361,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.87)",
         "MACD강세",
-        "RSI68.9 강세"
+        "RSI69.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -48,13 +48,13 @@
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "79%",
-      "entry": 138600.0,
-      "target": 145530,
-      "stop": 134442,
+      "tomorrow_up_prob": "80%",
+      "entry": 138300.0,
+      "target": 145215,
+      "stop": 134151,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.83)",
         "정배열",
         "MACD강세"
       ],
@@ -76,7 +76,7 @@
     {
       "ticker": "코미코",
       "code": "183300",
-      "tomorrow_up_prob": "78%",
+      "tomorrow_up_prob": "79%",
       "entry": 139200.0,
       "target": 146160,
       "stop": 135024,
@@ -102,60 +102,76 @@
       "cause_summary": "코미코 주가, 급등세... 배경은?"
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
-      "tomorrow_up_prob": "71%",
-      "entry": 72300.0,
-      "target": 75915,
-      "stop": 70131,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "72%",
+      "entry": 117400.0,
+      "target": 123270,
+      "stop": 113878,
       "confidence": "상",
       "reasons": [
         "강세마감(0.84)",
-        "MACD강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580854",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술..."
-    },
-    {
-      "ticker": "원익IPS",
-      "code": "240810",
-      "tomorrow_up_prob": "70%",
-      "entry": 138400.0,
-      "target": 145320,
-      "stop": 134248,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.96)",
-        "MACD강세",
-        "RSI58.3 강세"
+        "정배열",
+        "RSI58.9 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
     },
     {
+      "ticker": "화신정공",
+      "code": "126640",
+      "tomorrow_up_prob": "70%",
+      "entry": 5750.0,
+      "target": 6038,
+      "stop": 5578,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI93.4 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 화신정공, 보스턴 다이내믹스 방문 소식에 4일째 ‘상한가’",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/11/5SGNEV54AJAC5FI2CVJPBNZ4UI/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 화신정공, 로봇 부품 납품 기대감 '上' 기록··· 단기급등 속...",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1264297",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 화신정공, 보스턴다이나믹스 방문에 나흘째 '상한가'",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=709359",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 화신정공, 보스턴 다이내믹스 방문 소식에 4일째 ‘상한가’"
+    },
+    {
       "ticker": "티엠씨",
       "code": "217590",
-      "tomorrow_up_prob": "60%",
-      "entry": 24100.0,
-      "target": 25305,
-      "stop": 23377,
+      "tomorrow_up_prob": "61%",
+      "entry": 25250.0,
+      "target": 26512,
+      "stop": 24492,
       "confidence": "중",
       "reasons": [
-        "RSI50.8 강세",
-        "거래량4.54배",
+        "RSI53.0 강세",
+        "거래량4.77배",
         "호재"
       ],
       "risk": "약한 마감",
@@ -192,13 +208,13 @@
     {
       "ticker": "이수페타시스",
       "code": "007660",
-      "tomorrow_up_prob": "56%",
-      "entry": 121500.0,
-      "target": 127575,
-      "stop": 117855,
+      "tomorrow_up_prob": "57%",
+      "entry": 121200.0,
+      "target": 127260,
+      "stop": 117564,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.92)",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -207,15 +223,15 @@
     {
       "ticker": "심텍",
       "code": "222800",
-      "tomorrow_up_prob": "48%",
-      "entry": 132800.0,
-      "target": 139440,
-      "stop": 128816,
+      "tomorrow_up_prob": "49%",
+      "entry": 135200.0,
+      "target": 141960,
+      "stop": 131144,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.95)",
-        "RSI62.7 강세",
-        "장중 5회 지속"
+        "강세마감(0.9)",
+        "RSI63.5 강세",
+        "장중 6회 지속"
       ],
       "risk": "악재",
       "day_change": null,
@@ -237,15 +253,15 @@
     {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "81%",
-      "entry": 8600.0,
-      "target": 9030,
-      "stop": 8342,
+      "tomorrow_up_prob": "82%",
+      "entry": 8620.0,
+      "target": 9051,
+      "stop": 8361,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.87)",
         "MACD강세",
-        "RSI68.9 강세"
+        "RSI69.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -281,13 +297,13 @@
     {
       "ticker": "코리아써키트",
       "code": "007810",
-      "tomorrow_up_prob": "79%",
-      "entry": 138600.0,
-      "target": 145530,
-      "stop": 134442,
+      "tomorrow_up_prob": "80%",
+      "entry": 138300.0,
+      "target": 145215,
+      "stop": 134151,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.83)",
         "정배열",
         "MACD강세"
       ],
@@ -309,7 +325,7 @@
     {
       "ticker": "코미코",
       "code": "183300",
-      "tomorrow_up_prob": "78%",
+      "tomorrow_up_prob": "79%",
       "entry": 139200.0,
       "target": 146160,
       "stop": 135024,
@@ -335,48 +351,64 @@
       "cause_summary": "코미코 주가, 급등세... 배경은?"
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
-      "tomorrow_up_prob": "71%",
-      "entry": 72300.0,
-      "target": 75915,
-      "stop": 70131,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "72%",
+      "entry": 117400.0,
+      "target": 123270,
+      "stop": 113878,
       "confidence": "상",
       "reasons": [
         "강세마감(0.84)",
-        "MACD강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580854",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술..."
-    },
-    {
-      "ticker": "원익IPS",
-      "code": "240810",
-      "tomorrow_up_prob": "70%",
-      "entry": 138400.0,
-      "target": 145320,
-      "stop": 134248,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.96)",
-        "MACD강세",
-        "RSI58.3 강세"
+        "정배열",
+        "RSI58.9 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
+    },
+    {
+      "ticker": "화신정공",
+      "code": "126640",
+      "tomorrow_up_prob": "70%",
+      "entry": 5750.0,
+      "target": 6038,
+      "stop": 5578,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI93.4 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 화신정공, 보스턴 다이내믹스 방문 소식에 4일째 ‘상한가’",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/11/5SGNEV54AJAC5FI2CVJPBNZ4UI/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 화신정공, 로봇 부품 납품 기대감 '上' 기록··· 단기급등 속...",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1264297",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 화신정공, 보스턴다이나믹스 방문에 나흘째 '상한가'",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=709359",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 화신정공, 보스턴 다이내믹스 방문 소식에 4일째 ‘상한가’"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
