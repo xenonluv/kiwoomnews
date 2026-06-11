@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-11 14:45:20 KST",
+ "generated_at": "2026-06-11 15:00:24 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -12,7 +12,7 @@
   "spark_x": 8.0,
   "spark_pct": 0.8
  },
- "universe_count": 70,
+ "universe_count": 74,
  "events": [
   {
    "id": "2026-06-11_한국 옵션·선물 동시만",
@@ -44,104 +44,110 @@
    "code": "217590",
    "name": "티엠씨",
    "sector": "전기·전자",
-   "suspicion_score": 61,
+   "suspicion_score": 59,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
     "fade": 2.0,
-    "ma10": 9.9,
+    "ma10": 8.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 61,
+   "score_raw": 59,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
     "fade": 2.0,
-    "ma10": 9.9,
+    "ma10": 8.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 22050.0,
-   "change_pct": -2.43,
+   "price": 21700.0,
+   "change_pct": -3.98,
    "high_pct": 25.66,
-   "fade_pct": 109.5,
-   "value_eok": 786,
-   "ma10": 20437.0,
-   "ma10_margin_pct": 7.89,
+   "fade_pct": 115.5,
+   "value_eok": 790,
+   "ma10": 20402.0,
+   "ma10_margin_pct": 6.36,
    "spark": {
     "clusters": [
      {
-      "time": "09:06",
-      "vol_x": 32.4,
-      "pct": 1.84,
-      "minutes": 2
+      "time": "09:05",
+      "vol_x": 35.2,
+      "pct": 5.16,
+      "minutes": 3
      },
      {
       "time": "09:09",
-      "vol_x": 29.7,
+      "vol_x": 32.3,
       "pct": 5.47,
       "minutes": 3
      },
      {
       "time": "09:14",
-      "vol_x": 40.3,
+      "vol_x": 43.8,
       "pct": 0.3,
       "minutes": 3
      },
      {
       "time": "09:18",
-      "vol_x": 26.9,
+      "vol_x": 29.2,
       "pct": -6.39,
       "minutes": 3
      },
      {
       "time": "09:23",
-      "vol_x": 10.5,
+      "vol_x": 11.4,
       "pct": 2.65,
       "minutes": 4
      },
      {
       "time": "09:30",
-      "vol_x": 8.2,
+      "vol_x": 8.9,
       "pct": 2.17,
       "minutes": 1
      },
      {
       "time": "09:32",
-      "vol_x": 10.3,
+      "vol_x": 11.2,
       "pct": 0.59,
       "minutes": 2
      },
      {
       "time": "09:39",
-      "vol_x": 8.0,
+      "vol_x": 8.7,
       "pct": 1.72,
       "minutes": 1
      },
      {
       "time": "09:41",
-      "vol_x": 18.6,
+      "vol_x": 20.2,
       "pct": 1.88,
       "minutes": 1
      },
      {
       "time": "09:43",
-      "vol_x": 9.9,
+      "vol_x": 10.7,
       "pct": -1.65,
       "minutes": 1
      },
      {
       "time": "09:56",
-      "vol_x": 8.8,
+      "vol_x": 9.6,
       "pct": -2.58,
       "minutes": 1
      },
      {
       "time": "09:59",
-      "vol_x": 9.5,
+      "vol_x": 10.3,
       "pct": 3.06,
+      "minutes": 1
+     },
+     {
+      "time": "10:10",
+      "vol_x": 8.5,
+      "pct": -1.65,
       "minutes": 1
      }
     ]
