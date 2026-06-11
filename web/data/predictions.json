@@ -1,62 +1,46 @@
 {
-  "as_of": "2026-06-11 09:22 KST",
+  "as_of": "2026-06-11 09:37 KST",
   "intraday_rank": [
     {
-      "ticker": "SK이터닉스",
-      "code": "475150",
-      "tomorrow_up_prob": "65%",
-      "entry": 47100.0,
-      "target": 49455,
-      "stop": 45687,
-      "confidence": "중",
+      "ticker": "코리아써키트",
+      "code": "007810",
+      "tomorrow_up_prob": "76%",
+      "entry": 126600.0,
+      "target": 132930,
+      "stop": 122802,
+      "confidence": "상",
       "reasons": [
-        "MACD강세",
-        "RSI55.8 강세",
-        "거래량3.08배"
+        "강세마감(0.96)",
+        "정배열",
+        "MACD강세"
       ],
-      "risk": "약한 마감",
+      "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
-          "title": "신재생사업 재편 기대감에 이틀째 급등…SK이터닉스 15%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645480736",
-          "office": "edaily",
+          "title": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세",
+          "url": "https://www.etnews.com/20260529000206",
+          "office": "etnews",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] SK이터닉스, 신재생 사업 재편 기대감에 이틀째 급등",
-          "url": "https://www.etoday.co.kr/news/view/2592535",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "SK이터닉스, 신재생 사업 재편 기대감에 12%대 급등",
-          "url": "https://www.newsis.com/view/NISX20260611_0003664930",
-          "office": "newsis",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "신재생사업 재편 기대감에 이틀째 급등…SK이터닉스 15%↑[특징주]"
+      "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "65%",
-      "entry": 8030.0,
-      "target": 8432,
-      "stop": 7789,
-      "confidence": "중",
+      "tomorrow_up_prob": "74%",
+      "entry": 8180.0,
+      "target": 8589,
+      "stop": 7935,
+      "confidence": "상",
       "reasons": [
+        "강세마감(0.75)",
         "MACD강세",
-        "RSI66.6 강세",
-        "호재"
+        "RSI67.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -90,41 +74,64 @@
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
-      "tomorrow_up_prob": "61%",
-      "entry": 71000.0,
-      "target": 74550,
-      "stop": 68870,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "69%",
+      "entry": 116900.0,
+      "target": 122745,
+      "stop": 113393,
       "confidence": "중",
       "reasons": [
-        "MACD강세",
-        "Stoch골든",
+        "강세마감(0.81)",
+        "정배열",
+        "RSI58.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "60%",
+      "entry": 10960.0,
+      "target": 11508,
+      "stop": 10631,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.78)",
         "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580854",
-          "office": "cbci",
+          "title": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260611048100008?input=1195m",
+          "office": "yna",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16086730",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술..."
+      "cause_summary": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정"
     },
     {
       "ticker": "화신정공",
       "code": "126640",
-      "tomorrow_up_prob": "54%",
+      "tomorrow_up_prob": "55%",
       "entry": 5750.0,
       "target": 6038,
       "stop": 5578,
-      "confidence": "하",
+      "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
@@ -134,6 +141,14 @@
       "day_change": null,
       "cause_news": [
         {
+          "title": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260611048100008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능",
           "url": "https://www.topstarnews.net/news/articleView.html?idxno=16086730",
           "office": "topstarnews",
@@ -142,120 +157,93 @@
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능"
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정"
     },
     {
-      "ticker": "화신",
-      "code": "010690",
-      "tomorrow_up_prob": "51%",
-      "entry": 10830.0,
-      "target": 11372,
-      "stop": 10505,
+      "ticker": "광전자",
+      "code": "017900",
+      "tomorrow_up_prob": "43%",
+      "entry": 9230.0,
+      "target": 9692,
+      "stop": 8953,
       "confidence": "하",
       "reasons": [
-        "호재"
+        "근거 부족"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16086730",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능"
-    },
-    {
-      "ticker": "심텍",
-      "code": "222800",
-      "tomorrow_up_prob": "44%",
-      "entry": 120700.0,
-      "target": 126735,
-      "stop": 117079,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.9)",
-        "RSI58.1 강세"
-      ],
-      "risk": "악재",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[공시] KBI메탈·심텍·가이아코퍼레이션 '투자주의' 등...42건",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=705796",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[공시] KBI메탈·심텍·가이아코퍼레이션 '투자주의' 등...42건"
-    }
-  ],
-  "closing_bet": [
-    {
-      "ticker": "SK이터닉스",
-      "code": "475150",
-      "tomorrow_up_prob": "65%",
-      "entry": 47100.0,
-      "target": 49455,
-      "stop": 45687,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI55.8 강세",
-        "거래량3.08배"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "신재생사업 재편 기대감에 이틀째 급등…SK이터닉스 15%↑[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03070086645480736",
-          "office": "edaily",
+          "title": "젠슨 황 방한 기대감에 광통신주 강세… 광전자 장중 상한가",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1162747",
+          "office": "ggilbo",
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] SK이터닉스, 신재생 사업 재편 기대감에 이틀째 급등",
-          "url": "https://www.etoday.co.kr/news/view/2592535",
-          "office": "etoday",
+          "title": "광전자, 상한가 터치 후 급등…젠슨 황 방한 효과에 AI·반도체 기대감...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580755",
+          "office": "cbci",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
         },
         {
-          "title": "SK이터닉스, 신재생 사업 재편 기대감에 12%대 급등",
-          "url": "https://www.newsis.com/view/NISX20260611_0003664930",
-          "office": "newsis",
-          "sentiment": "악재",
-          "cause_score": 14,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 악재, 당일"
+          "title": "솔트웨어·화신정공·한탑 상한가 직행…광전자·테크윙·타이거일렉은...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580592",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "신재생사업 재편 기대감에 이틀째 급등…SK이터닉스 15%↑[특징주]"
+      "cause_summary": "젠슨 황 방한 기대감에 광통신주 강세… 광전자 장중 상한가"
+    }
+  ],
+  "closing_bet": [
+    {
+      "ticker": "코리아써키트",
+      "code": "007810",
+      "tomorrow_up_prob": "76%",
+      "entry": 126600.0,
+      "target": 132930,
+      "stop": 122802,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.96)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세",
+          "url": "https://www.etnews.com/20260529000206",
+          "office": "etnews",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[ET특징주]코리아써키트, PCB 업황 개선 수혜 기대감에 상승세"
     },
     {
       "ticker": "라이콤",
       "code": "388790",
-      "tomorrow_up_prob": "65%",
-      "entry": 8030.0,
-      "target": 8432,
-      "stop": 7789,
-      "confidence": "중",
+      "tomorrow_up_prob": "74%",
+      "entry": 8180.0,
+      "target": 8589,
+      "stop": 7935,
+      "confidence": "상",
       "reasons": [
+        "강세마감(0.75)",
         "MACD강세",
-        "RSI66.6 강세",
-        "호재"
+        "RSI67.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -289,32 +277,91 @@
       "cause_summary": "[특징주] 라이콤, AI데이터센터 수주 확대에 방산까지 \"광통신 수혜주로..."
     },
     {
-      "ticker": "한화비전",
-      "code": "489790",
-      "tomorrow_up_prob": "61%",
-      "entry": 71000.0,
-      "target": 74550,
-      "stop": 68870,
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "69%",
+      "entry": 116900.0,
+      "target": 122745,
+      "stop": 113393,
       "confidence": "중",
       "reasons": [
-        "MACD강세",
-        "Stoch골든",
+        "강세마감(0.81)",
+        "정배열",
+        "RSI58.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
+    },
+    {
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "60%",
+      "entry": 10960.0,
+      "target": 11508,
+      "stop": 10631,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.78)",
         "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=580854",
-          "office": "cbci",
+          "title": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260611048100008?input=1195m",
+          "office": "yna",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16086730",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[속보] 한화비전, VI 눈길 중동 긴장 고조 속 장중 강세…방산·감시기술..."
+      "cause_summary": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정"
+    },
+    {
+      "ticker": "화신정공",
+      "code": "126640",
+      "tomorrow_up_prob": "55%",
+      "entry": 5750.0,
+      "target": 6038,
+      "stop": 5578,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI93.4 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260611048100008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "화신정공, 투자경고종목 지정→추가 상승 시 거래정지 가능",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16086730",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 화신정공, 나흘째 상한가…단기급등에 투자경고종목 지정"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
