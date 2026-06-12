@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 13:30:17 KST",
+ "generated_at": "2026-06-12 13:45:09 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 18,
+ "universe_count": 17,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -55,67 +55,67 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 68,
+   "suspicion_score": 70,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 13.2,
-    "fade": 11.2,
+    "spark": 13.6,
+    "fade": 12.8,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 68,
+   "score_raw": 70,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 13.2,
-    "fade": 11.2,
+    "spark": 13.6,
+    "fade": 12.8,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 67000.0,
-   "change_pct": 9.66,
+   "price": 66500.0,
+   "change_pct": 8.84,
    "high_pct": 15.38,
-   "fade_pct": 37.2,
-   "value_eok": 3780,
-   "ma10": 55110.0,
-   "ma10_margin_pct": 21.58,
+   "fade_pct": 42.6,
+   "value_eok": 3832,
+   "ma10": 55060.0,
+   "ma10_margin_pct": 20.78,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 14.5,
+      "vol_x": 14.7,
       "pct": 3.74,
       "minutes": 2
      },
      {
       "time": "09:07",
-      "vol_x": 29.2,
+      "vol_x": 29.7,
       "pct": 4.42,
       "minutes": 3
      },
      {
       "time": "09:12",
-      "vol_x": 14.1,
+      "vol_x": 14.3,
       "pct": -2.6,
       "minutes": 3
      },
      {
       "time": "09:16",
-      "vol_x": 9.3,
+      "vol_x": 9.5,
       "pct": 1.02,
       "minutes": 1
      },
      {
       "time": "09:22",
-      "vol_x": 8.3,
+      "vol_x": 8.4,
       "pct": -1.62,
       "minutes": 1
      },
      {
       "time": "09:45",
-      "vol_x": 10.1,
+      "vol_x": 10.3,
       "pct": 1.06,
       "minutes": 1
      }
@@ -168,7 +168,7 @@
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 6.4,
+    "fade": 6.6,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 1.6
@@ -177,54 +177,60 @@
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 6.4,
+    "fade": 6.6,
     "ma10": 10.0,
     "flow": 4,
     "event": 1.6
    },
-   "price": 39950.0,
-   "change_pct": 3.77,
+   "price": 40000.0,
+   "change_pct": 3.9,
    "high_pct": 17.66,
-   "fade_pct": 78.7,
-   "value_eok": 1508,
-   "ma10": 33490.0,
-   "ma10_margin_pct": 19.29,
+   "fade_pct": 77.9,
+   "value_eok": 1527,
+   "ma10": 33495.0,
+   "ma10_margin_pct": 19.42,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 42.3,
+      "vol_x": 46.0,
       "pct": 12.95,
       "minutes": 7
      },
      {
       "time": "09:11",
-      "vol_x": 17.5,
+      "vol_x": 19.1,
       "pct": -7.59,
       "minutes": 4
      },
      {
       "time": "09:19",
-      "vol_x": 8.9,
+      "vol_x": 9.7,
       "pct": -4.39,
       "minutes": 2
      },
      {
       "time": "09:30",
-      "vol_x": 9.2,
+      "vol_x": 10.0,
       "pct": -1.98,
       "minutes": 1
      },
      {
       "time": "09:36",
-      "vol_x": 8.9,
+      "vol_x": 9.7,
       "pct": -1.32,
       "minutes": 1
      },
      {
       "time": "09:39",
-      "vol_x": 17.9,
+      "vol_x": 19.4,
       "pct": -1.4,
+      "minutes": 1
+     },
+     {
+      "time": "09:58",
+      "vol_x": 8.2,
+      "pct": 1.77,
       "minutes": 1
      }
     ]
@@ -284,96 +290,6 @@
    ]
   },
   {
-   "code": "080220",
-   "name": "제주반도체",
-   "sector": "전기·전자",
-   "pattern": "fade",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 63,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 12.4,
-    "fade": 9.8,
-    "ma10": 9.1,
-    "flow": 2.0,
-    "event": 0.0
-   },
-   "score_raw": 63,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 12.4,
-    "fade": 9.8,
-    "ma10": 9.1,
-    "flow": 2,
-    "event": 0.0
-   },
-   "price": 106300.0,
-   "change_pct": 9.59,
-   "high_pct": 14.23,
-   "fade_pct": 32.6,
-   "value_eok": 2722,
-   "ma10": 99080.0,
-   "ma10_margin_pct": 7.29,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:06",
-      "vol_x": 23.2,
-      "pct": 5.44,
-      "minutes": 3
-     },
-     {
-      "time": "09:10",
-      "vol_x": 27.8,
-      "pct": -1.89,
-      "minutes": 3
-     },
-     {
-      "time": "09:17",
-      "vol_x": 9.3,
-      "pct": -0.95,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0608",
-      "frgn": 284308,
-      "orgn": 157461
-     },
-     {
-      "date": "0609",
-      "frgn": -210316,
-      "orgn": 7205
-     },
-     {
-      "date": "0610",
-      "frgn": -105803,
-      "orgn": -36621
-     },
-     {
-      "date": "0611",
-      "frgn": -206955,
-      "orgn": -61228
-     },
-     {
-      "date": "0612",
-      "frgn": 0,
-      "orgn": 0
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": []
-  },
-  {
    "code": "036930",
    "name": "주성엔지니어링",
    "sector": "기계·장비",
@@ -381,48 +297,48 @@
    "shake": null,
    "deep_shake": {
     "drop_low_from_high_pct": 18.9,
-    "drop_close_from_high_pct": 11.5,
-    "ibs": 0.393,
-    "recovery_pct": 39,
+    "drop_close_from_high_pct": 12.9,
+    "ibs": 0.318,
+    "recovery_pct": 32,
     "high_time": "09:02",
     "low_time": "11:19",
     "late_reclaim": false,
-    "vwap_reclaim": true,
+    "vwap_reclaim": false,
     "retest_broken": false,
-    "close_hold_score": 65,
-    "bars15_count": 19
+    "close_hold_score": 50,
+    "bars15_count": 20
    },
-   "suspicion_score": 58,
+   "suspicion_score": 56,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 4.7,
-    "fade": 8.8,
+    "spark": 4.9,
+    "fade": 7.0,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 58,
+   "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 4.7,
-    "fade": 8.8,
+    "spark": 4.9,
+    "fade": 7.0,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 250500.0,
-   "change_pct": 2.04,
+   "price": 246500.0,
+   "change_pct": 0.41,
    "high_pct": 15.27,
-   "fade_pct": 86.7,
-   "value_eok": 11511,
-   "ma10": 211240.0,
-   "ma10_margin_pct": 18.59,
+   "fade_pct": 97.3,
+   "value_eok": 11946,
+   "ma10": 210890.0,
+   "ma10_margin_pct": 16.89,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 15.5,
+      "vol_x": 15.9,
       "pct": 3.71,
       "minutes": 1
      }
