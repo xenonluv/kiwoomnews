@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-12 09:07 KST",
+  "as_of": "2026-06-12 09:22 KST",
   "intraday_rank": [
     {
       "ticker": "아이로보틱스",
       "code": "066430",
-      "tomorrow_up_prob": "85%",
-      "entry": 3920.0,
-      "target": 4116,
-      "stop": 3802,
+      "tomorrow_up_prob": "86%",
+      "entry": 4175.0,
+      "target": 4384,
+      "stop": 4050,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.9)",
         "정배열",
         "MACD강세"
       ],
@@ -40,13 +40,13 @@
     {
       "ticker": "SK네트웍스",
       "code": "001740",
-      "tomorrow_up_prob": "83%",
-      "entry": 13180.0,
-      "target": 13839,
-      "stop": 12785,
+      "tomorrow_up_prob": "84%",
+      "entry": 13170.0,
+      "target": 13828,
+      "stop": 12775,
       "confidence": "상",
       "reasons": [
-        "강세마감(1.0)",
+        "강세마감(0.81)",
         "정배열",
         "MACD강세"
       ],
@@ -76,14 +76,14 @@
     {
       "ticker": "두산",
       "code": "000150",
-      "tomorrow_up_prob": "78%",
-      "entry": 1819000.0,
-      "target": 1909950,
-      "stop": 1764430,
+      "tomorrow_up_prob": "79%",
+      "entry": 1870000.0,
+      "target": 1963500,
+      "stop": 1813900,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
-        "RSI56.2 강세",
+        "강세마감(0.72)",
+        "RSI57.8 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -110,17 +110,97 @@
       ]
     },
     {
-      "ticker": "로보티즈",
-      "code": "108490",
-      "tomorrow_up_prob": "75%",
+      "ticker": "삼성전자",
+      "code": "005930",
+      "tomorrow_up_prob": "79%",
       "entry": 333500.0,
       "target": 350175,
       "stop": 323495,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.89)",
+        "정배열",
+        "RSI59.6 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 삼성전자, 美 반도체 랠리 훈풍에 11%대 급등",
+          "url": "https://www.tokenpost.kr/news/economy/368425",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "삼성전자·SK하이닉스, 개장과 동시에 급등…미-이란 종전 기대",
+          "url": "https://www.mt.co.kr/stock/2026/06/12/2026061209124131819",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 미국발 훈풍에 삼성전자·하이닉스 장초반 9%대 급등",
+          "url": "https://www.yna.co.kr/view/AKR20260612041900008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 삼성전자, 美 반도체 랠리 훈풍에 11%대 급등"
+    },
+    {
+      "ticker": "HPSP",
+      "code": "403870",
+      "tomorrow_up_prob": "76%",
+      "entry": 64300.0,
+      "target": 67515,
+      "stop": 62371,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.95)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
+          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416305",
+          "office": "bizwork",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] HPSP, 삼성전자·SK하이닉스 급등에 동반 강세…AI 반도체 핵심...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=290836",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세"
+    },
+    {
+      "ticker": "로보티즈",
+      "code": "108490",
+      "tomorrow_up_prob": "68%",
+      "entry": 333500.0,
+      "target": 350175,
+      "stop": 323495,
+      "confidence": "중",
+      "reasons": [
         "RSI53.6 강세",
-        "Stoch골든"
+        "Stoch골든",
+        "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -134,51 +214,75 @@
       ]
     },
     {
-      "ticker": "스피어",
-      "code": "347700",
-      "tomorrow_up_prob": "71%",
-      "entry": 44200.0,
-      "target": 46410,
-      "stop": 42874,
-      "confidence": "상",
+      "ticker": "테크윙",
+      "code": "089030",
+      "tomorrow_up_prob": "68%",
+      "entry": 68100.0,
+      "target": 71505,
+      "stop": 66057,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.73)",
         "MACD강세",
-        "RSI57.2 강세"
+        "RSI65.1 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
+          "url": "https://n.news.naver.com/mnews/article/015/0005296434",
+          "office": "한국경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "고영",
+      "code": "098460",
+      "tomorrow_up_prob": "66%",
+      "entry": 38050.0,
+      "target": 39952,
+      "stop": 36908,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.9)",
+        "RSI55.2 강세",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 美 우주발사업체 누적 수주 3300억 돌파에…스피어 27%↑",
-          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843599",
-          "office": "newsworks",
+          "title": "'기술이전 기대감' 지놈앤컴퍼니 급등...랩지노믹스·고영 동반 랠리[바...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02689606645480736",
+          "office": "edaily",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락"
+        },
+        {
+          "title": "[특징주] 고영, 1분기 깜짝 실적에 상한가…\"2분기도 호실적 기대\"",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1706542",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
+      "cause_summary": "'기술이전 기대감' 지놈앤컴퍼니 급등...랩지노믹스·고영 동반 랠리[바..."
     },
     {
       "ticker": "후성",
       "code": "093370",
-      "tomorrow_up_prob": "64%",
-      "entry": 17790.0,
-      "target": 18680,
-      "stop": 17256,
+      "tomorrow_up_prob": "65%",
+      "entry": 18950.0,
+      "target": 19898,
+      "stop": 18382,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
@@ -212,203 +316,19 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 이차전지 전해질 전문 후성 주가 이틀 연속 20%대 불기둥"
-    },
-    {
-      "ticker": "삼성물산",
-      "code": "028260",
-      "tomorrow_up_prob": "62%",
-      "entry": 452000.0,
-      "target": 474600,
-      "stop": 438440,
-      "confidence": "중",
-      "reasons": [
-        "RSI56.3 강세",
-        "일목 구름위",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "한화證 “삼성물산, 삼성전자 지분가치 연동과 실적 개선 전망… 목표...",
-          "url": "https://n.news.naver.com/mnews/article/366/0001171281",
-          "office": "조선비즈",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "브이엠",
-      "code": "089970",
-      "tomorrow_up_prob": "62%",
-      "entry": 96500.0,
-      "target": 101325,
-      "stop": 93605,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "브이엠, 올해 180% 급등했지만 여전히 저평가...목표가 46% 상향-다올",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02637126645481064",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "“브이엠, 여전히 저평가…목표가 상향”-다올",
-          "url": "https://www.itooza.com/common/iview.php?no=2026061208365780700",
-          "office": "itooza",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "브이엠, 올해 180% 급등했지만 여전히 저평가...목표가 46% 상향-다올"
-    },
-    {
-      "ticker": "원익IPS",
-      "code": "240810",
-      "tomorrow_up_prob": "55%",
-      "entry": 159000.0,
-      "target": 166950,
-      "stop": 154230,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI64.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "52%",
-      "entry": 50500.0,
-      "target": 53025,
-      "stop": 48985,
-      "confidence": "하",
-      "reasons": [
-        "RSI51.4 강세",
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[헬로스톡] 6/10 주목할 종목 : 현대건설·삼성E&A·NH투자증권·하나마...",
-          "url": "https://www.hellot.net/news/article.html?no=113122",
-          "office": "hellot",
-          "sentiment": "호재",
-          "cause_score": 6,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 리스트감점"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[헬로스톡] 6/10 주목할 종목 : 현대건설·삼성E&A·NH투자증권·하나마..."
-    },
-    {
-      "ticker": "대우건설",
-      "code": "047040",
-      "tomorrow_up_prob": "50%",
-      "entry": 23800.0,
-      "target": 24990,
-      "stop": 23086,
-      "confidence": "하",
-      "reasons": [
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "\"협력사 상생경영 강화\"... 대우건설, 공정거래 문화 정착 앞장선다",
-          "url": "http://www.thefirstmedia.net/news/articleView.html?idxno=201109",
-          "office": "thefirstmedia",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "\"협력사 상생경영 강화\"... 대우건설, 공정거래 문화 정착 앞장선다"
-    },
-    {
-      "ticker": "GS건설",
-      "code": "006360",
-      "tomorrow_up_prob": "47%",
-      "entry": 29450.0,
-      "target": 30922,
-      "stop": 28566,
-      "confidence": "하",
-      "reasons": [
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "신한證 “GS건설, 하반기 데이터센터·원전 수주 기대…목표가 하향&quot;",
-          "url": "https://n.news.naver.com/mnews/article/366/0001171272",
-          "office": "조선비즈",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "GS건설, 천안에 ‘백석시그니처자이’ 선보여…1174가구",
-          "url": "https://n.news.naver.com/mnews/article/081/0003651651",
-          "office": "서울신문",
-          "sentiment": "호재"
-        },
-        {
-          "title": "[어바웃 C]박상신 DL이앤씨 부회장, 내실 다지기 정비사업 반전 기대",
-          "url": "https://n.news.naver.com/mnews/article/293/0000086134",
-          "office": "블로터",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "현대건설",
-      "code": "000720",
-      "tomorrow_up_prob": "30%",
-      "entry": 137000.0,
-      "target": 143850,
-      "stop": 132890,
-      "confidence": "하",
-      "reasons": [
-        "근거 부족"
-      ],
-      "risk": "악재",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "서울시, 'GTX 삼성역 철근 누락' 현대건설 등에 벌점 부과 통보",
-          "url": "https://n.news.naver.com/mnews/article/586/0000131335",
-          "office": "시사저널",
-          "sentiment": "악재"
-        }
-      ]
     }
   ],
   "closing_bet": [
     {
       "ticker": "아이로보틱스",
       "code": "066430",
-      "tomorrow_up_prob": "85%",
-      "entry": 3920.0,
-      "target": 4116,
-      "stop": 3802,
+      "tomorrow_up_prob": "86%",
+      "entry": 4175.0,
+      "target": 4384,
+      "stop": 4050,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.9)",
         "정배열",
         "MACD강세"
       ],
@@ -438,13 +358,13 @@
     {
       "ticker": "SK네트웍스",
       "code": "001740",
-      "tomorrow_up_prob": "83%",
-      "entry": 13180.0,
-      "target": 13839,
-      "stop": 12785,
+      "tomorrow_up_prob": "84%",
+      "entry": 13170.0,
+      "target": 13828,
+      "stop": 12775,
       "confidence": "상",
       "reasons": [
-        "강세마감(1.0)",
+        "강세마감(0.81)",
         "정배열",
         "MACD강세"
       ],
@@ -474,14 +394,14 @@
     {
       "ticker": "두산",
       "code": "000150",
-      "tomorrow_up_prob": "78%",
-      "entry": 1819000.0,
-      "target": 1909950,
-      "stop": 1764430,
+      "tomorrow_up_prob": "79%",
+      "entry": 1870000.0,
+      "target": 1963500,
+      "stop": 1813900,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
-        "RSI56.2 강세",
+        "강세마감(0.72)",
+        "RSI57.8 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -508,64 +428,84 @@
       ]
     },
     {
-      "ticker": "로보티즈",
-      "code": "108490",
-      "tomorrow_up_prob": "75%",
+      "ticker": "삼성전자",
+      "code": "005930",
+      "tomorrow_up_prob": "79%",
       "entry": 333500.0,
       "target": 350175,
       "stop": 323495,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
-        "RSI53.6 강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "[클릭 e종목]로보티즈, 우즈벡 공장 증설로 실적 급성장 전망",
-          "url": "https://n.news.naver.com/mnews/article/277/0005774749",
-          "office": "아시아경제",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "스피어",
-      "code": "347700",
-      "tomorrow_up_prob": "71%",
-      "entry": 44200.0,
-      "target": 46410,
-      "stop": 42874,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.73)",
-        "MACD강세",
-        "RSI57.2 강세"
+        "강세마감(0.89)",
+        "정배열",
+        "RSI59.6 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
-          "office": "newsway",
+          "title": "[특징주] 삼성전자, 美 반도체 랠리 훈풍에 11%대 급등",
+          "url": "https://www.tokenpost.kr/news/economy/368425",
+          "office": "tokenpost",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 美 우주발사업체 누적 수주 3300억 돌파에…스피어 27%↑",
-          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843599",
-          "office": "newsworks",
+          "title": "삼성전자·SK하이닉스, 개장과 동시에 급등…미-이란 종전 기대",
+          "url": "https://www.mt.co.kr/stock/2026/06/12/2026061209124131819",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 미국발 훈풍에 삼성전자·하이닉스 장초반 9%대 급등",
+          "url": "https://www.yna.co.kr/view/AKR20260612041900008?input=1195m",
+          "office": "yna",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
+      "cause_summary": "[특징주] 삼성전자, 美 반도체 랠리 훈풍에 11%대 급등"
+    },
+    {
+      "ticker": "HPSP",
+      "code": "403870",
+      "tomorrow_up_prob": "76%",
+      "entry": 64300.0,
+      "target": 67515,
+      "stop": 62371,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.95)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세",
+          "url": "https://www.bizwork.co.kr/news/articleView.html?idxno=416305",
+          "office": "bizwork",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] HPSP, 삼성전자·SK하이닉스 급등에 동반 강세…AI 반도체 핵심...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=290836",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] HPSP, 온디바이스 AI 수혜 기대에 강세"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
