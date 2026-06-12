@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 10:45:07 KST",
+ "generated_at": "2026-06-12 11:00:10 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 29,
+ "universe_count": 25,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -49,121 +49,43 @@
  ],
  "suspects": [
   {
-   "code": "080220",
-   "name": "제주반도체",
-   "sector": "전기·전자",
-   "pattern": "fade",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 56,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 2.9,
-    "fade": 14.8,
-    "ma10": 6.5,
-    "flow": 2.0,
-    "event": 0.0
-   },
-   "score_raw": 56,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 2.9,
-    "fade": 14.8,
-    "ma10": 6.5,
-    "flow": 2,
-    "event": 0.0
-   },
-   "price": 104000.0,
-   "change_pct": 7.22,
-   "high_pct": 14.23,
-   "fade_pct": 49.3,
-   "value_eok": 1983,
-   "ma10": 98850.0,
-   "ma10_margin_pct": 5.21,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:10",
-      "vol_x": 12.6,
-      "pct": -0.87,
-      "minutes": 2
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0608",
-      "frgn": 284308,
-      "orgn": 157461
-     },
-     {
-      "date": "0609",
-      "frgn": -210316,
-      "orgn": 7205
-     },
-     {
-      "date": "0610",
-      "frgn": -105803,
-      "orgn": -36621
-     },
-     {
-      "date": "0611",
-      "frgn": -206955,
-      "orgn": -61228
-     },
-     {
-      "date": "0612",
-      "frgn": 0,
-      "orgn": 0
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": []
-  },
-  {
    "code": "347700",
    "name": "스피어",
    "sector": "IT 서비스",
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 55,
+   "suspicion_score": 57,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 3.5,
-    "fade": 5.7,
+    "spark": 4.6,
+    "fade": 6.8,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 1.6
    },
-   "score_raw": 55,
+   "score_raw": 57,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 3.5,
-    "fade": 5.7,
+    "spark": 4.6,
+    "fade": 6.8,
     "ma10": 10.0,
     "flow": 4,
     "event": 1.6
    },
-   "price": 39800.0,
-   "change_pct": 3.38,
+   "price": 40050.0,
+   "change_pct": 4.03,
    "high_pct": 17.66,
-   "fade_pct": 80.9,
-   "value_eok": 1244,
-   "ma10": 33475.0,
-   "ma10_margin_pct": 18.89,
+   "fade_pct": 77.2,
+   "value_eok": 1278,
+   "ma10": 33500.0,
+   "ma10_margin_pct": 19.55,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 13.6,
+      "vol_x": 15.3,
       "pct": 11.95,
       "minutes": 1
      }
