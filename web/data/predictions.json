@@ -1,16 +1,52 @@
 {
-  "as_of": "2026-06-12 12:07 KST",
+  "as_of": "2026-06-12 12:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "91%",
+      "entry": 256000.0,
+      "target": 268800,
+      "stop": 248320,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
+          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
+          "office": "뉴시스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "'젠슨 황 깐부' 네이버 14% 급등…장중 26만원 돌파[핫종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000198",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        }
+      ]
+    },
     {
       "ticker": "아이로보틱스",
       "code": "066430",
-      "tomorrow_up_prob": "95%",
-      "entry": 4240.0,
-      "target": 4452,
-      "stop": 4113,
+      "tomorrow_up_prob": "91%",
+      "entry": 4215.0,
+      "target": 4426,
+      "stop": 4089,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -41,12 +77,12 @@
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13420.0,
-      "target": 14091,
-      "stop": 13017,
+      "entry": 13540.0,
+      "target": 14217,
+      "stop": 13134,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
@@ -80,42 +116,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스 주가 또 강세...AI 기반 생태계 확장 '앞장'"
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "90%",
-      "entry": 254250.0,
-      "target": 266962,
-      "stop": 246622,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.75)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
-          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        },
-        {
-          "title": "'젠슨 황 깐부' 네이버 14% 급등…장중 26만원 돌파[핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000198",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        }
-      ]
     },
     {
       "ticker": "HPSP",
@@ -157,13 +157,13 @@
       "ticker": "로보티즈",
       "code": "108490",
       "tomorrow_up_prob": "82%",
-      "entry": 356500.0,
-      "target": 374325,
-      "stop": 345805,
+      "entry": 354000.0,
+      "target": 371700,
+      "stop": 343380,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
-        "RSI56.7 강세",
+        "강세마감(0.72)",
+        "RSI56.4 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -208,7 +208,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.55배"
+        "거래량1.56배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -245,12 +245,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "75%",
-      "entry": 19340.0,
-      "target": 20307,
-      "stop": 18760,
+      "entry": 19250.0,
+      "target": 20212,
+      "stop": 18672,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
@@ -289,13 +289,13 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "75%",
-      "entry": 4795.0,
-      "target": 5035,
-      "stop": 4651,
+      "entry": 4810.0,
+      "target": 5050,
+      "stop": 4666,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
-        "RSI51.3 강세",
+        "강세마감(0.91)",
+        "RSI51.5 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -330,20 +330,64 @@
       "cause_summary": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세"
     },
     {
+      "ticker": "한미반도체",
+      "code": "042700",
+      "tomorrow_up_prob": "72%",
+      "entry": 333000.0,
+      "target": 349650,
+      "stop": 323010,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.99)",
+        "MACD강세",
+        "RSI54.9 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026061211203095645",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 소식에 14% 급등",
+          "url": "https://www.newspim.com/news/view/20260612000376",
+          "office": "newspim",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[ET특징주] 한미반도체, 500억 규모 스페이스X 주식 취득 결정에… 주가...",
+          "url": "https://www.etnews.com/20260612000148",
+          "office": "etnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
+    },
+    {
       "ticker": "스피어",
       "code": "347700",
       "tomorrow_up_prob": "70%",
-      "entry": 40400.0,
-      "target": 42420,
-      "stop": 39188,
+      "entry": 40700.0,
+      "target": 42735,
+      "stop": 39479,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI52.9 강세",
-        "거래량1.82배"
+        "RSI53.3 강세",
+        "거래량1.85배"
       ],
       "risk": "약한 마감",
-      "day_change": 4.81,
+      "day_change": 5.97,
       "cause_news": [
         {
           "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
@@ -358,45 +402,17 @@
       "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
     },
     {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "70%",
-      "entry": 1391000.0,
-      "target": 1460550,
-      "stop": 1349270,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.93)",
-        "정배열",
-        "RSI64.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "SK스퀘어 주가, 6월 12일 장중 1,386,000원 12.87% 상승",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16089811",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "SK스퀘어 주가, 6월 12일 장중 1,386,000원 12.87% 상승"
-    },
-    {
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "68%",
-      "entry": 180200.0,
-      "target": 189210,
-      "stop": 174794,
+      "entry": 180500.0,
+      "target": 189525,
+      "stop": 175085,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "MACD강세",
-        "RSI69.2 강세"
+        "RSI69.3 강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -424,18 +440,18 @@
     {
       "ticker": "주성엔지니어링",
       "code": "036930",
-      "tomorrow_up_prob": "66%",
-      "entry": 237500.0,
-      "target": 249375,
-      "stop": 230375,
+      "tomorrow_up_prob": "67%",
+      "entry": 237000.0,
+      "target": 248850,
+      "stop": 229890,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI61.4 강세",
+        "RSI61.2 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -3.46,
+      "day_change": -3.87,
       "related_news": [
         {
           "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
@@ -448,31 +464,67 @@
     {
       "ticker": "제주반도체",
       "code": "080220",
-      "tomorrow_up_prob": "65%",
-      "entry": 105600.0,
-      "target": 110880,
-      "stop": 102432,
+      "tomorrow_up_prob": "66%",
+      "entry": 105900.0,
+      "target": 111195,
+      "stop": 102723,
       "confidence": "중",
       "reasons": [
-        "RSI61.3 강세",
+        "RSI61.5 강세",
         "Stoch골든",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 9.69
+      "day_change": 8.97
     }
   ],
   "closing_bet": [
     {
-      "ticker": "아이로보틱스",
-      "code": "066430",
-      "tomorrow_up_prob": "95%",
-      "entry": 4240.0,
-      "target": 4452,
-      "stop": 4113,
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "91%",
+      "entry": 256000.0,
+      "target": 268800,
+      "stop": 248320,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.81)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
+          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
+          "office": "뉴시스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "'젠슨 황 깐부' 네이버 14% 급등…장중 26만원 돌파[핫종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000198",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "아이로보틱스",
+      "code": "066430",
+      "tomorrow_up_prob": "91%",
+      "entry": 4215.0,
+      "target": 4426,
+      "stop": 4089,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -503,12 +555,12 @@
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13420.0,
-      "target": 14091,
-      "stop": 13017,
+      "entry": 13540.0,
+      "target": 14217,
+      "stop": 13134,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.84)",
         "정배열",
         "MACD강세"
       ],
@@ -542,42 +594,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스 주가 또 강세...AI 기반 생태계 확장 '앞장'"
-    },
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "90%",
-      "entry": 254250.0,
-      "target": 266962,
-      "stop": 246622,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.75)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
-          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        },
-        {
-          "title": "'젠슨 황 깐부' 네이버 14% 급등…장중 26만원 돌파[핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000198",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        }
-      ]
     },
     {
       "ticker": "HPSP",
@@ -619,13 +635,13 @@
       "ticker": "로보티즈",
       "code": "108490",
       "tomorrow_up_prob": "82%",
-      "entry": 356500.0,
-      "target": 374325,
-      "stop": 345805,
+      "entry": 354000.0,
+      "target": 371700,
+      "stop": 343380,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
-        "RSI56.7 강세",
+        "강세마감(0.72)",
+        "RSI56.4 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
