@@ -1,52 +1,16 @@
 {
-  "as_of": "2026-06-12 13:07 KST",
+  "as_of": "2026-06-12 13:22 KST",
   "intraday_rank": [
-    {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "91%",
-      "entry": 260000.0,
-      "target": 273000,
-      "stop": 252200,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.91)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
-          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
-          "office": "아이뉴스24",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
-          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        }
-      ]
-    },
     {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13570.0,
-      "target": 14248,
-      "stop": 13163,
+      "entry": 13500.0,
+      "target": 14175,
+      "stop": 13095,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -80,6 +44,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스 주가 또 강세...AI 기반 생태계 확장 '앞장'"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "90%",
+      "entry": 257500.0,
+      "target": 270375,
+      "stop": 249775,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "크래프톤, 네이버와 '배틀그라운드' e스포츠 생태계 확장 협력",
+          "url": "https://n.news.naver.com/mnews/article/277/0005775665",
+          "office": "아시아경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
+          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
+          "office": "아이뉴스24",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "HPSP",
@@ -120,10 +120,10 @@
     {
       "ticker": "이수화학",
       "code": "005950",
-      "tomorrow_up_prob": "83%",
-      "entry": 17410.0,
-      "target": 18280,
-      "stop": 16888,
+      "tomorrow_up_prob": "84%",
+      "entry": 17430.0,
+      "target": 18302,
+      "stop": 16907,
       "confidence": "상",
       "reasons": [
         "강세마감(0.94)",
@@ -157,14 +157,14 @@
       "ticker": "솔브레인",
       "code": "357780",
       "tomorrow_up_prob": "81%",
-      "entry": 445000.0,
-      "target": 467250,
-      "stop": 431650,
+      "entry": 459500.0,
+      "target": 482475,
+      "stop": 445715,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.98)",
         "MACD강세",
-        "RSI57.4 강세"
+        "RSI59.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -187,14 +187,14 @@
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "80%",
-      "entry": 336000.0,
-      "target": 352800,
-      "stop": 325920,
+      "entry": 334500.0,
+      "target": 351225,
+      "stop": 324465,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.84)",
         "MACD강세",
-        "RSI55.3 강세"
+        "RSI55.1 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -230,18 +230,18 @@
     {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "77%",
-      "entry": 66500.0,
-      "target": 69825,
-      "stop": 64505,
+      "tomorrow_up_prob": "78%",
+      "entry": 66850.0,
+      "target": 70192,
+      "stop": 64844,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI63.8 강세",
+        "RSI64.1 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 9.57,
+      "day_change": 9.66,
       "related_news": [
         {
           "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
@@ -262,7 +262,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.6배"
+        "거래량1.63배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -299,12 +299,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "75%",
-      "entry": 19290.0,
-      "target": 20254,
-      "stop": 18711,
+      "entry": 19680.0,
+      "target": 20664,
+      "stop": 19090,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.89)",
         "정배열",
         "MACD강세"
       ],
@@ -340,15 +340,59 @@
       "cause_summary": "후성 주가, 강세... 왜?"
     },
     {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "72%",
-      "entry": 1400000.0,
-      "target": 1470000,
-      "stop": 1358000,
+      "ticker": "한온시스템",
+      "code": "018880",
+      "tomorrow_up_prob": "75%",
+      "entry": 4805.0,
+      "target": 5045,
+      "stop": 4661,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
+        "강세마감(0.89)",
+        "RSI51.4 강세",
+        "Stoch골든"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세",
+          "url": "https://www.tokenpost.kr/news/economy/368487",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 외국인 '한온시스템·후성·케이뱅크'…기관 '삼성전자·현대...",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=706164",
+          "office": "newstnt",
+          "sentiment": "악재",
+          "cause_score": 10,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세"
+    },
+    {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "73%",
+      "entry": 1399000.0,
+      "target": 1468950,
+      "stop": 1357030,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.9)",
         "정배열",
         "RSI64.3 강세"
       ],
@@ -371,17 +415,17 @@
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "70%",
-      "entry": 246000.0,
-      "target": 258300,
-      "stop": 238620,
+      "entry": 246500.0,
+      "target": 258825,
+      "stop": 239105,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI63.5 강세",
+        "RSI63.6 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -1.32,
+      "day_change": 3.26,
       "related_news": [
         {
           "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
@@ -395,14 +439,14 @@
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "68%",
-      "entry": 182300.0,
-      "target": 191415,
-      "stop": 176831,
+      "entry": 183300.0,
+      "target": 192465,
+      "stop": 177801,
       "confidence": "중",
       "reasons": [
         "강세마감(1.0)",
         "MACD강세",
-        "RSI69.6 강세"
+        "RSI69.8 강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -431,33 +475,61 @@
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "67%",
-      "entry": 105300.0,
-      "target": 110565,
-      "stop": 102141,
+      "entry": 105500.0,
+      "target": 110775,
+      "stop": 102335,
       "confidence": "중",
       "reasons": [
-        "RSI61.2 강세",
+        "RSI61.3 강세",
         "Stoch골든",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 9.59
+      "day_change": 9.07
+    },
+    {
+      "ticker": "DB하이텍",
+      "code": "000990",
+      "tomorrow_up_prob": "66%",
+      "entry": 180100.0,
+      "target": 189105,
+      "stop": 174697,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.97)",
+        "RSI54.8 강세",
+        "Stoch골든"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[거래소 기관] SK스퀘어 DB하이텍 이수페타시스 HD현대마린솔루션 '앗~뜨...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459453",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[거래소 기관] SK스퀘어 DB하이텍 이수페타시스 HD현대마린솔루션 '앗~뜨..."
     },
     {
       "ticker": "스피어",
       "code": "347700",
       "tomorrow_up_prob": "63%",
-      "entry": 40000.0,
-      "target": 42000,
-      "stop": 38800,
+      "entry": 39750.0,
+      "target": 41738,
+      "stop": 38558,
       "confidence": "중",
       "reasons": [
-        "RSI52.4 강세",
-        "거래량1.92배",
+        "RSI52.1 강세",
+        "거래량1.95배",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 4.94,
+      "day_change": 3.77,
       "cause_news": [
         {
           "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
@@ -474,51 +546,15 @@
   ],
   "closing_bet": [
     {
-      "ticker": "NAVER",
-      "code": "035420",
-      "tomorrow_up_prob": "91%",
-      "entry": 260000.0,
-      "target": 273000,
-      "stop": 252200,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.91)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
-          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
-          "office": "아이뉴스24",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
-          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
-          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
-          "office": "뉴시스",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13570.0,
-      "target": 14248,
-      "stop": 13163,
+      "entry": 13500.0,
+      "target": 14175,
+      "stop": 13095,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -552,6 +588,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "SK네트웍스 주가 또 강세...AI 기반 생태계 확장 '앞장'"
+    },
+    {
+      "ticker": "NAVER",
+      "code": "035420",
+      "tomorrow_up_prob": "90%",
+      "entry": 257500.0,
+      "target": 270375,
+      "stop": 249775,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.83)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "크래프톤, 네이버와 '배틀그라운드' e스포츠 생태계 확장 협력",
+          "url": "https://n.news.naver.com/mnews/article/277/0005775665",
+          "office": "아시아경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
+          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
+          "office": "아이뉴스24",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
+          "url": "https://n.news.naver.com/mnews/article/421/0009000348",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "HPSP",
@@ -592,10 +664,10 @@
     {
       "ticker": "이수화학",
       "code": "005950",
-      "tomorrow_up_prob": "83%",
-      "entry": 17410.0,
-      "target": 18280,
-      "stop": 16888,
+      "tomorrow_up_prob": "84%",
+      "entry": 17430.0,
+      "target": 18302,
+      "stop": 16907,
       "confidence": "상",
       "reasons": [
         "강세마감(0.94)",
@@ -629,14 +701,14 @@
       "ticker": "솔브레인",
       "code": "357780",
       "tomorrow_up_prob": "81%",
-      "entry": 445000.0,
-      "target": 467250,
-      "stop": 431650,
+      "entry": 459500.0,
+      "target": 482475,
+      "stop": 445715,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.98)",
         "MACD강세",
-        "RSI57.4 강세"
+        "RSI59.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
