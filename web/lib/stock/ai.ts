@@ -204,34 +204,32 @@ function serializeForPrompt(r: StockReport): string {
   return L.join("\n");
 }
 
-const SYSTEM_PROMPT = `당신은 한국 주식 단기 트레이딩 분석가입니다. 주어진 종목 리포트(룰베이스 점수·기술지표·수급·재무·뉴스·이벤트·당일 분봉)를 종합해, "다음 거래일 종가가 기준일 종가보다 높게 마감할 확률"(prob_up, 0~100 정수)을 추정합니다.
+// 앵커링 주의: 이 프롬프트에 확률 구간 숫자(예: "43~47")를 적으면 모델이 그 숫자로
+// 군집한다 (2026-06-12 실측 — 3종목 전부 43% 동일). 최종 확률은 코드(evidenceProb)가
+// 근거 강도 가중합으로 산출하므로, 프롬프트는 근거 선별·강도 판정에만 집중시킨다.
+const SYSTEM_PROMPT = `당신은 한국 주식 단기 트레이딩 분석가입니다. 주어진 종목 리포트(룰베이스 점수·기술지표·수급·재무·뉴스·이벤트·당일 분봉)를 종합해, 다음 거래일 방향에 대한 상승 근거(bull)와 하락 근거(bear)를 선별하고 각 근거의 강도를 판정합니다. 최종 확률 숫자는 시스템이 당신의 근거 강도에서 산출합니다 — 당신의 핵심 임무는 근거의 선별과 정직한 강도 판정입니다.
 
 작업 순서 — 반드시 이 순서로 작성하세요:
-1. 먼저 상승 근거(bull)와 하락 근거(bear)를 각각 나열합니다. 각 항목 끝에 강도를 (강)/(중)/(약)으로 표기하세요. 뚜렷한 근거가 없는 쪽은 "뚜렷한 근거 없음" 한 줄만 넣습니다.
-2. 두 목록의 개수와 강도를 비교한 결과로 prob_up을 결정합니다. prob_up은 반드시 bull/bear 비교 결과와 일치해야 합니다.
+1. 상승 근거(bull)와 하락 근거(bear)를 각각 나열합니다. 각 항목 끝에 강도를 (강)/(중)/(약)으로 표기하세요. 뚜렷한 근거가 없는 쪽은 "뚜렷한 근거 없음" 한 줄만 넣습니다.
+2. 두 목록을 종합한 당신의 감각을 prob_up(0~100 정수, 50=중립)으로 적습니다. 이 값은 참고 기록용이며 시스템 산출에 직접 쓰이지 않습니다.
 
-prob_up 보정 기준:
-- 50 = 동전 던지기. 개별 종목의 익일 등락 기저율은 거의 반반입니다. 근거가 빈약하거나 상쇄되면 50 근처가 정직한 답입니다.
-- 48~52 신호 없음·상쇄 / 53~57 약한 상승 우위(유의미한 근거 1개 수준) / 58~67 상승 우위(서로 독립적인 근거 2개 이상) / 68~77 강한 상승 우위(독립 근거 3개 이상이 같은 방향) / 78 이상 예외적(모멘텀·수급·재료가 모두 강하게 일치할 때만, 매우 드물어야 함).
-- 하락 쪽은 대칭입니다: 43~47 약한 하락 우위 / 33~42 하락 우위 / 23~32 강한 하락 우위 / 22 이하 예외적.
-- "독립적인 근거"란 같은 사실의 재서술이 아니라 별개 범주(기술 지표 / 수급 / 뉴스·재료 / 이벤트)의 신호를 뜻합니다.
+강도 판정 기준 — 인색하게 매기세요:
+- (강): 단독으로도 익일 방향을 좌우할 수 있는 굵직한 신호. 예: 대형 호재/악재 공시, 상한가·하한가 마감, 초대형 거래량 스파이크에 외인·기관 순매수 동반, 거래소 시장경보·관리종목 지정.
+- (중): 분명한 신호지만 단독으로는 결정력이 부족한 것. 예: 이동평균 정배열, 기관 5일 순매수, 호재 뉴스 우세, MACD 골든크로스, 급등 후 저가 마감.
+- (약): 미미하거나 간접적인 신호. 예: 소폭 거래량 증가, 오래된 재료, 테마 간접 연관, 단일 보조지표의 약한 신호.
+- 확신이 없으면 한 단계 낮춰 적는 것이 정직한 판정입니다. 모든 항목이 (강)인 리포트는 거의 항상 과장입니다.
 
-금지 사항:
-- 40, 45, 50, 55, 60처럼 5의 배수를 기본값처럼 반올림해 쓰지 마세요. 근거 비교에서 도출된 구체적인 숫자(예: 47, 54, 61, 66)로 답하세요.
-- 근거 균형과 모순된 숫자 금지: bull이 명백히 우세한데 50 이하를 주거나, 양쪽이 비슷한데 60 이상을 주면 안 됩니다.
-- 과신 금지: 70 이상 또는 30 이하는 리포트 전반이 한 방향으로 일치할 때만 허용됩니다.
-- 회피 금지: 반대로 근거가 한쪽으로 명확히 우세한데 50 근처(48~52)에 머무는 것도 보정 실패입니다. 증거가 가리키는 구간까지 이동하세요.
-
-기타 규칙:
+근거 선별 규칙:
+- 같은 사실의 재서술은 별개 근거로 세지 마세요. 별개 범주(기술 지표 / 수급 / 뉴스·재료 / 이벤트 / 당일 분봉)의 독립적인 신호만 항목으로 올립니다.
 - 룰베이스 판정은 참고 자료일 뿐입니다. 맹목적으로 따르지 말고 데이터 간 모순·과열 신호·뉴스 맥락을 독립적으로 재해석하세요.
-- 시장경보·관리종목·거래정지 플래그가 있으면 risks에 반드시 포함하고 prob_up도 보수적으로 조정하세요.
+- 시장경보·관리종목·거래정지 플래그가 있으면 bear와 risks에 반드시 반영하세요.
 - narrative는 "오른다/내린다" 단정 대신 확률적 우위와 그 근거를 서술하세요. 투자 권유 표현 금지.
 - 반드시 아래 JSON 형식으로만, 키를 이 순서대로 응답하세요 (다른 텍스트 금지):
 {
   "bull": ["상승 근거 (강|중|약), 각 한 문장, 1~5개"],
   "bear": ["하락 근거 (강|중|약), 각 한 문장, 1~5개"],
-  "prob_up": 0~100 정수,
-  "reasons": ["prob_up을 그렇게 정한 핵심 근거 3~5개, 각 한 문장"],
+  "prob_up": 0~100 정수 (참고값),
+  "reasons": ["방향 판단의 핵심 근거 3~5개, 각 한 문장"],
   "risks": ["리스크 1~3개, 각 한 문장"],
   "narrative": "2~4문장의 한국어 종합 서술"
 }`;
@@ -249,12 +247,38 @@ function strArr(v: unknown, min: number, max: number): string[] | null {
 
 /** Kimi 1회 응답 (bull/bear는 추론 스캐폴딩 — API 응답에는 미포함) */
 interface KimiSample {
+  /** 코드 산출 확률 (근거 강도 가중합 — 앵커링 무관) */
   probUp: number;
+  /** LLM이 직접 적은 원시 확률 (참고 기록용 — 어느 쪽 보정이 좋은지 추후 비교) */
+  modelProb: number;
   bull: string[];
   bear: string[];
   reasons: string[];
   risks: string[];
   narrative: string;
+}
+
+// 확률 산출: LLM은 근거 강도(강/중/약 — 범주 판단)만, 숫자는 코드가 가중합으로.
+// 프롬프트에 구간 숫자를 주면 모델이 그 값으로 군집하는 앵커링을 구조적으로 차단한다.
+// 가중치는 초기 추정값 — ai 검증 표본(prob_bands) 누적 후 백테스트 튜닝 대상.
+const STRENGTH_W: Record<string, number> = { 강: 7, 중: 3.5, 약: 1.5 };
+const PROB_MIN = 12;
+const PROB_MAX = 88;
+const NO_EVIDENCE_RE = /뚜렷한\s*근거\s*없음/;
+
+function evidenceSum(items: string[]): number {
+  let sum = 0;
+  for (const it of items) {
+    if (NO_EVIDENCE_RE.test(it)) continue;
+    const m = it.match(/\((강|중|약)\)[\s.]*$/);
+    sum += STRENGTH_W[m?.[1] ?? "중"]; // 강도 표기 누락 시 보수적으로 (중)
+  }
+  return sum;
+}
+
+function evidenceProb(bull: string[], bear: string[]): number {
+  const p = 50 + evidenceSum(bull) - evidenceSum(bear);
+  return Math.round(Math.max(PROB_MIN, Math.min(PROB_MAX, p)));
 }
 
 function validate(raw: unknown): KimiSample | null {
@@ -272,7 +296,7 @@ function validate(raw: unknown): KimiSample | null {
   const narrative = typeof o.narrative === "string" ? o.narrative.trim().slice(0, 1000) : "";
   // bull/bear 생략 = 근거 비교 없이 숫자만 낸 샘플 → 탈락 (다른 샘플이 보전)
   if (!bull || !bear || !reasons || narrative === "") return null;
-  return { probUp: p, bull, bear, reasons, risks, narrative };
+  return { probUp: evidenceProb(bull, bear), modelProb: p, bull, bear, reasons, risks, narrative };
 }
 
 function deriveDirection(probUp: number): AiDirection {
@@ -388,8 +412,14 @@ export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
   }
 
   const { probUp, rep } = aggregate(samples);
+  // LLM 원시 확률 중앙값 — 코드 산출(probUp)과의 보정 비교용 참고 기록
+  const mSorted = samples.map((s) => s.modelProb).sort((a, b) => a - b);
+  const mMid = Math.floor(mSorted.length / 2);
+  const modelProbUp =
+    mSorted.length % 2 === 1 ? mSorted[mMid] : Math.round((mSorted[mMid - 1] + mSorted[mMid]) / 2);
   console.log(
-    `[stock-ai] ${code} prob_up [${samples.map((s) => s.probUp).join(", ")}] → ${probUp} (${samples.length}/${n} 유효)`
+    `[stock-ai] ${code} 코드산출 [${samples.map((s) => s.probUp).join(", ")}] → ${probUp} · ` +
+      `LLM원시 [${samples.map((s) => s.modelProb).join(", ")}] → ${modelProbUp} (${samples.length}/${n} 유효)`
   );
 
   return {
@@ -401,6 +431,7 @@ export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
     verdictLevel: report.verdict?.level ?? null,
     direction: deriveDirection(probUp),
     probUp,
+    modelProbUp,
     confidence: Math.max(probUp, 100 - probUp),
     reasons: rep.reasons,
     risks: rep.risks,

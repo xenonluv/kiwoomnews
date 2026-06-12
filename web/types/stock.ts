@@ -211,7 +211,9 @@ export interface AiAnalysis {
   verdictScore?: number | null;
   verdictLevel?: string | null;
   direction: AiDirection; // probUp에서 파생 (≥58 상승, ≤42 하락, 사이 관망)
-  probUp: number; // 다음 거래일 종가 > 기준일 종가 확률 0~100 (N샘플 중앙값)
+  probUp: number; // 다음 거래일 종가 > 기준일 종가 확률 0~100 (근거 강도 가중합 코드 산출, N샘플 중앙값)
+  /** LLM이 직접 적은 원시 확률 (참고 — 코드 산출과의 보정 비교용, 앵커링 군집 가능) */
+  modelProbUp?: number | null;
   confidence: number; // 파생 max(probUp, 100-probUp) — 하위호환용
   reasons: string[]; // 핵심 근거 3~5개
   risks: string[]; // 리스크 1~3개

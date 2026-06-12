@@ -167,6 +167,8 @@ def ai_predict():
                 raise ValueError(str(r.get("error", {}).get("code") or "probUp 없음"))
             s["ai_pred"] = {
                 "prob_up": round(float(r["probUp"])),
+                # LLM 원시 확률 — 코드 산출(prob_up)과 어느 쪽 보정이 좋은지 비교 적립
+                "model_prob": r.get("modelProbUp"),
                 "direction": r.get("direction"),
                 "model": r.get("model"),
                 "as_of": r.get("asOf"),
