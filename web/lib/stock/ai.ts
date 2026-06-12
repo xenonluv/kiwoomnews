@@ -1,17 +1,23 @@
 // AI(LLM) 심층 분석 — 룰베이스 리포트(buildStockReport) 전체를 컴팩트하게
-// 직렬화해 Moonshot Kimi API(OpenAI 호환)에 전달하고, 익일 방향(상승/하락/관망)
-// 구조화 판단을 받아온다. 키는 서버 환경변수 전용(MOONSHOT_API_KEY) — 브라우저 미노출.
-// LLM 응답은 수동 타입가드로 검증하고, 실패 시 AiUnavailableError로 우아하게 강등.
+// 직렬화해 Moonshot Kimi API(OpenAI 호환)에 전달하고, "익일 상승 확률"(prob_up)을
+// 구조화 추정받는다. 방향(상승/하락/관망)은 확률에서 코드로 파생.
+// temperature=1 고정(kimi-k2.6 제약)을 역이용해 N회 병렬 호출 → 중앙값 합의
+// (self-consistency)로 단일 샘플 노이즈를 상쇄. 키는 서버 환경변수 전용.
+// LLM 응답은 수동 타입가드로 검증하고, 전 샘플 실패 시 AiUnavailableError로 강등.
 
 import { getRadar } from "@/lib/radar/repository";
 import type { AiAnalysis, AiDirection, StockReport } from "@/types/stock";
 import { buildStockReport } from "./report";
-import { ddayKST, formatKST } from "./parse";
+import { ddayKST, formatKST, ymdKST } from "./parse";
 
 export class AiConfigError extends Error {}
 export class AiUnavailableError extends Error {}
 
-const DIRECTIONS: AiDirection[] = ["상승", "하락", "관망"];
+// 방향 파생 임계 (경계 포함). ⚠ 프롬프트에 노출 금지 — 모델이 임계 주변으로
+// 재앵커링하는 것을 막기 위해 모델은 확률만 추정하고 매핑은 코드가 한다.
+const PROB_BULL_MIN = 58; // prob_up ≥ 58 → 상승
+const PROB_BEAR_MAX = 42; // prob_up ≤ 42 → 하락
+const DEFAULT_SAMPLES = 3; // MOONSHOT_SAMPLES로 1~5 조절
 // kimi-k2.6 reasoning은 15~120초+ 소요(실측, Vercel에서 종종 타임아웃) →
 // 기본은 thinking disabled(실측 2~15초). MOONSHOT_THINKING=enabled로 켜면
 // 깊은 추론 모드 + 긴 타임아웃(라우트 maxDuration=300과 짝).
@@ -52,6 +58,43 @@ function serializeForPrompt(r: StockReport): string {
       "[최근 5일 종가] " +
         last5.map((c) => `${c.date.slice(4)}: ${c.close.toLocaleString()}`).join(" · ")
     );
+  }
+
+  // 당일 고가·되돌림 — 마지막 일봉이 KST 오늘일 때만 ("당일" 라벨 오답 방지)
+  if (r.chart && r.chart.candles.length >= 2) {
+    const cs = r.chart.candles;
+    const today = cs[cs.length - 1];
+    const prev = cs[cs.length - 2];
+    if (today.date === ymdKST() && prev.close > 0) {
+      const highPct = Math.round((today.high / prev.close - 1) * 1000) / 10;
+      const range = today.high - prev.close;
+      const fade = range > 0 ? Math.round(((today.high - today.close) / range) * 100) : null;
+      L.push(
+        `[당일 고가·되돌림] 장중 고가 등락 ${highPct > 0 ? "+" : ""}${highPct}%` +
+          (fade != null
+            ? ` · 상승분 되돌림 ${fade}% (0=고가 마감, 100=상승분 전부 반납, 100 초과=전일 종가 아래 마감)`
+            : " · 전일 종가를 상회한 적 없음")
+      );
+    }
+  }
+
+  // 당일 분봉 스파크 — null(미수집)과 "스파크 없음"을 구분해 전달
+  if (r.spark) {
+    if (r.spark.clusters.length > 0) {
+      L.push(
+        `[당일 분봉 스파크] ${r.spark.clusters.length}건 · 최대 ${r.spark.maxVolX}배 · ` +
+          r.spark.clusters
+            .slice(0, 5)
+            .map((c) => `${c.time} ${c.vol_x}배 ${c.pct > 0 ? "+" : ""}${c.pct}% ${c.minutes}분`)
+            .join(" · ")
+      );
+    } else {
+      L.push(
+        `[당일 분봉 스파크] 없음 (1분봉 ${r.spark.barCount}개 정상 수집 — 이상 거래량 미탐지)`
+      );
+    }
+  } else {
+    L.push("[당일 분봉] 데이터 없음 (휴장·주말·개장 직후)");
   }
 
   const t = r.technical;
@@ -158,19 +201,36 @@ function serializeForPrompt(r: StockReport): string {
   return L.join("\n");
 }
 
-const SYSTEM_PROMPT = `당신은 한국 주식 단기 트레이딩 분석가입니다. 주어진 종목 리포트(룰베이스 점수·기술지표·수급·재무·뉴스·이벤트)를 종합해 "다음 거래일"의 주가 방향을 판단합니다.
+const SYSTEM_PROMPT = `당신은 한국 주식 단기 트레이딩 분석가입니다. 주어진 종목 리포트(룰베이스 점수·기술지표·수급·재무·뉴스·이벤트·당일 분봉)를 종합해, "다음 거래일 종가가 기준일 종가보다 높게 마감할 확률"(prob_up, 0~100 정수)을 추정합니다.
 
-규칙:
-- 룰베이스 판정은 참고 자료일 뿐, 맹목적으로 따르지 말고 데이터 간 모순·과열 신호·뉴스 맥락을 독립적으로 재해석하세요.
-- 시장경보·관리종목·거래정지 플래그가 있으면 리스크에 반드시 반영하세요.
-- 확신이 없으면 "관망"을 선택하고 confidence를 낮추세요. 과장 금지.
-- 반드시 아래 JSON 형식으로만 응답하세요 (다른 텍스트 금지):
+작업 순서 — 반드시 이 순서로 작성하세요:
+1. 먼저 상승 근거(bull)와 하락 근거(bear)를 각각 나열합니다. 각 항목 끝에 강도를 (강)/(중)/(약)으로 표기하세요. 뚜렷한 근거가 없는 쪽은 "뚜렷한 근거 없음" 한 줄만 넣습니다.
+2. 두 목록의 개수와 강도를 비교한 결과로 prob_up을 결정합니다. prob_up은 반드시 bull/bear 비교 결과와 일치해야 합니다.
+
+prob_up 보정 기준:
+- 50 = 동전 던지기. 개별 종목의 익일 등락 기저율은 거의 반반입니다. 근거가 빈약하거나 상쇄되면 50 근처가 정직한 답입니다.
+- 48~52 신호 없음·상쇄 / 53~57 약한 상승 우위(유의미한 근거 1개 수준) / 58~67 상승 우위(서로 독립적인 근거 2개 이상) / 68~77 강한 상승 우위(독립 근거 3개 이상이 같은 방향) / 78 이상 예외적(모멘텀·수급·재료가 모두 강하게 일치할 때만, 매우 드물어야 함).
+- 하락 쪽은 대칭입니다: 43~47 약한 하락 우위 / 33~42 하락 우위 / 23~32 강한 하락 우위 / 22 이하 예외적.
+- "독립적인 근거"란 같은 사실의 재서술이 아니라 별개 범주(기술 지표 / 수급 / 뉴스·재료 / 이벤트)의 신호를 뜻합니다.
+
+금지 사항:
+- 40, 45, 50, 55, 60처럼 5의 배수를 기본값처럼 반올림해 쓰지 마세요. 근거 비교에서 도출된 구체적인 숫자(예: 47, 54, 61, 66)로 답하세요.
+- 근거 균형과 모순된 숫자 금지: bull이 명백히 우세한데 50 이하를 주거나, 양쪽이 비슷한데 60 이상을 주면 안 됩니다.
+- 과신 금지: 70 이상 또는 30 이하는 리포트 전반이 한 방향으로 일치할 때만 허용됩니다.
+- 회피 금지: 반대로 근거가 한쪽으로 명확히 우세한데 50 근처(48~52)에 머무는 것도 보정 실패입니다. 증거가 가리키는 구간까지 이동하세요.
+
+기타 규칙:
+- 룰베이스 판정은 참고 자료일 뿐입니다. 맹목적으로 따르지 말고 데이터 간 모순·과열 신호·뉴스 맥락을 독립적으로 재해석하세요.
+- 시장경보·관리종목·거래정지 플래그가 있으면 risks에 반드시 포함하고 prob_up도 보수적으로 조정하세요.
+- narrative는 "오른다/내린다" 단정 대신 확률적 우위와 그 근거를 서술하세요. 투자 권유 표현 금지.
+- 반드시 아래 JSON 형식으로만, 키를 이 순서대로 응답하세요 (다른 텍스트 금지):
 {
-  "direction": "상승" | "하락" | "관망",
-  "confidence": 0~100 정수,
-  "reasons": ["핵심 근거 3~5개, 각 한 문장"],
+  "bull": ["상승 근거 (강|중|약), 각 한 문장, 1~5개"],
+  "bear": ["하락 근거 (강|중|약), 각 한 문장, 1~5개"],
+  "prob_up": 0~100 정수,
+  "reasons": ["prob_up을 그렇게 정한 핵심 근거 3~5개, 각 한 문장"],
   "risks": ["리스크 1~3개, 각 한 문장"],
-  "narrative": "2~4문장의 한국어 종합 서술. 투자 권유 표현 금지."
+  "narrative": "2~4문장의 한국어 종합 서술"
 }`;
 
 /* ── LLM 응답 검증 (zod 미사용 — 수동 타입가드, 실패 시 즉시 에러) ── */
@@ -184,41 +244,68 @@ function strArr(v: unknown, min: number, max: number): string[] | null {
   return arr.length >= min ? arr : null;
 }
 
-function validate(raw: unknown): Pick<AiAnalysis, "direction" | "confidence" | "reasons" | "risks" | "narrative"> | null {
+/** Kimi 1회 응답 (bull/bear는 추론 스캐폴딩 — API 응답에는 미포함) */
+interface KimiSample {
+  probUp: number;
+  bull: string[];
+  bear: string[];
+  reasons: string[];
+  risks: string[];
+  narrative: string;
+}
+
+function validate(raw: unknown): KimiSample | null {
   if (typeof raw !== "object" || raw === null) return null;
   const o = raw as Record<string, unknown>;
-  const direction = DIRECTIONS.find((d) => d === o.direction);
-  if (!direction) return null;
-  let conf = typeof o.confidence === "number" ? o.confidence : NaN;
-  if (!Number.isFinite(conf)) return null;
-  // 모델이 0~1 비율로 답하는 경우 실측됨 — 0~100으로 정규화
-  if (conf > 0 && conf <= 1) conf = conf * 100;
-  conf = Math.round(conf);
+  let p = typeof o.prob_up === "number" ? o.prob_up : NaN;
+  if (!Number.isFinite(p)) return null;
+  // 모델이 0~1 비율로 답하는 경우 실측됨 — 정규화 (정수 1은 1%로 그대로 둠)
+  if (p > 0 && p < 1) p = p * 100;
+  p = Math.max(0, Math.min(100, Math.round(p)));
+  const bull = strArr(o.bull, 1, 6);
+  const bear = strArr(o.bear, 1, 6);
   const reasons = strArr(o.reasons, 1, 5);
   const risks = strArr(o.risks, 0, 3) ?? [];
   const narrative = typeof o.narrative === "string" ? o.narrative.trim().slice(0, 1000) : "";
-  if (!reasons || narrative === "") return null;
-  return {
-    direction,
-    confidence: Math.max(0, Math.min(100, conf)),
-    reasons,
-    risks,
-    narrative,
-  };
+  // bull/bear 생략 = 근거 비교 없이 숫자만 낸 샘플 → 탈락 (다른 샘플이 보전)
+  if (!bull || !bear || !reasons || narrative === "") return null;
+  return { probUp: p, bull, bear, reasons, risks, narrative };
+}
+
+function deriveDirection(probUp: number): AiDirection {
+  if (probUp >= PROB_BULL_MIN) return "상승";
+  if (probUp <= PROB_BEAR_MAX) return "하락";
+  return "관망";
+}
+
+/**
+ * N샘플 합의 — prob_up 중앙값(짝수면 가운데 둘 평균 반올림).
+ * 텍스트는 중앙값에 가장 가까운 샘플에서 채택, 동률이면 50에 가까운 쪽(보수적).
+ */
+function aggregate(samples: KimiSample[]): { probUp: number; rep: KimiSample } {
+  const sorted = samples.map((s) => s.probUp).sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  const probUp =
+    sorted.length % 2 === 1 ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2);
+  let rep = samples[0];
+  for (const s of samples.slice(1)) {
+    const d = Math.abs(s.probUp - probUp) - Math.abs(rep.probUp - probUp);
+    if (d < 0 || (d === 0 && Math.abs(s.probUp - 50) < Math.abs(rep.probUp - 50))) rep = s;
+  }
+  return { probUp, rep };
 }
 
 /* ── 메인 ── */
 
-export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
-  const apiKey = env("MOONSHOT_API_KEY");
-  if (!apiKey) throw new AiConfigError("MOONSHOT_API_KEY 미설정");
-  const baseUrl = env("MOONSHOT_BASE_URL") ?? "https://api.moonshot.ai/v1";
-  const model = env("MOONSHOT_MODEL") ?? "kimi-k2.6";
-  const thinking = env("MOONSHOT_THINKING") === "enabled";
-
-  // 룰베이스 리포트를 서버 내부에서 직접 생성 (HTTP 왕복 없음)
-  const report = await buildStockReport(code);
-
+async function callKimiOnce(args: {
+  baseUrl: string;
+  apiKey: string;
+  model: string;
+  thinking: boolean;
+  userContent: string;
+  code: string;
+}): Promise<KimiSample> {
+  const { baseUrl, apiKey, model, thinking, userContent, code } = args;
   let res: Response;
   try {
     res = await fetch(`${baseUrl}/chat/completions`, {
@@ -235,7 +322,7 @@ export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
         thinking: { type: thinking ? "enabled" : "disabled" },
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: serializeForPrompt(report) },
+          { role: "user", content: userContent },
         ],
       }),
       signal: AbortSignal.timeout(thinking ? TIMEOUT_THINKING_MS : TIMEOUT_FAST_MS),
@@ -262,11 +349,55 @@ export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
 
   const valid = validate(parsed);
   if (!valid) throw new AiUnavailableError("AI 응답 형식 검증 실패");
+  return valid;
+}
+
+export async function buildAiAnalysis(code: string): Promise<AiAnalysis> {
+  const apiKey = env("MOONSHOT_API_KEY");
+  if (!apiKey) throw new AiConfigError("MOONSHOT_API_KEY 미설정");
+  const baseUrl = env("MOONSHOT_BASE_URL") ?? "https://api.moonshot.ai/v1";
+  const model = env("MOONSHOT_MODEL") ?? "kimi-k2.6";
+  const thinking = env("MOONSHOT_THINKING") === "enabled";
+  const nRaw = Number.parseInt(env("MOONSHOT_SAMPLES") ?? "", 10);
+  const n = Math.max(1, Math.min(5, Number.isFinite(nRaw) ? nRaw : DEFAULT_SAMPLES));
+
+  // 룰베이스 리포트를 서버 내부에서 직접 생성 (HTTP 왕복 없음), 직렬화 1회 → N콜 재사용
+  const report = await buildStockReport(code);
+  const userContent = serializeForPrompt(report);
+
+  // temperature=1 고정 제약을 역이용한 self-consistency: 병렬 N콜 → 중앙값 합의.
+  // 일부 실패는 생존 샘플로 진행, 전부 실패 시에만 에러 (라우트 503 + 네거티브 캐시).
+  const settled = await Promise.allSettled(
+    Array.from({ length: n }, () =>
+      callKimiOnce({ baseUrl, apiKey, model, thinking, userContent, code })
+    )
+  );
+  const samples = settled
+    .filter((r): r is PromiseFulfilledResult<KimiSample> => r.status === "fulfilled")
+    .map((r) => r.value);
+  if (samples.length === 0) {
+    const first = settled.find((r) => r.status === "rejected") as
+      | PromiseRejectedResult
+      | undefined;
+    throw first?.reason instanceof AiUnavailableError
+      ? first.reason
+      : new AiUnavailableError(`AI 응답 ${n}건 모두 실패`);
+  }
+
+  const { probUp, rep } = aggregate(samples);
+  console.log(
+    `[stock-ai] ${code} prob_up [${samples.map((s) => s.probUp).join(", ")}] → ${probUp} (${samples.length}/${n} 유효)`
+  );
 
   return {
     code,
     asOf: formatKST(),
     model,
-    ...valid,
+    direction: deriveDirection(probUp),
+    probUp,
+    confidence: Math.max(probUp, 100 - probUp),
+    reasons: rep.reasons,
+    risks: rep.risks,
+    narrative: rep.narrative,
   };
 }

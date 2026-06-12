@@ -104,10 +104,14 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   **파이썬 쪽 산식 변경 시 동기화 필요**).
   `GET /api/stock/search?q=` — 자동완성 프록시(ac.stock.naver.com, CSP 때문에 경유 필수).
 - `GET /api/stock/{code}/ai` — **AI(LLM) 심층 분석** (Moonshot `kimi-k2.6`, 유일한 LLM 사용처).
-  룰베이스 리포트 전체를 직렬화해 Kimi에 전달 → 익일 방향(상승/하락/관망)+확신도+근거 JSON.
-  **버튼 클릭 시에만** 프론트(AiAnalysisCard)가 호출(비용 절약). 성공 30분/에러 60초 CDN 캐시 +
-  쿼리스트링 차단 + in-flight 디둡.
-  ⚠ kimi-k2.6 실측 함정: temperature 지정 시 400(1만 허용) / confidence를 0~1로 줄 때 있어 정규화 /
+  룰베이스 리포트 전체(스파크·당일 되돌림 포함)를 직렬화해 Kimi에 전달 → **익일 상승 확률
+  `prob_up`(0~100) 추정** (bull/bear 근거 선행 나열 = thinking off에서의 CoT 대체 + 구간별 보정
+  기준표 + 어림수 금지). 방향(상승/하락/관망)은 코드가 파생(≥58/≤42 — **임계값은 프롬프트에
+  노출 금지**, 재앵커링 방지). temperature=1 고정 제약을 역이용해 `MOONSHOT_SAMPLES`(기본 3,
+  1~5) 병렬 호출 → **중앙값 합의**(self-consistency), 일부 실패는 생존 샘플로 진행.
+  **버튼 클릭 시에만** 프론트(AiAnalysisCard, "상승 확률 N%" 표시)가 호출(비용 절약).
+  성공 30분/에러 60초 CDN 캐시 + 쿼리스트링 차단 + in-flight 디둡.
+  ⚠ kimi-k2.6 실측 함정: temperature 지정 시 400(1만 허용) / 확률을 0~1로 줄 때 있어 정규화 /
   **reasoning(기본값)은 15~120초+ 걸려 Vercel에서 타임아웃** → `thinking:{type:"disabled"}`로
   꺼서 5~20초(품질 거의 동일, 실증). `MOONSHOT_THINKING=enabled`로 깊은 추론 모드 전환 가능
   (이때 `maxDuration=300` Fluid Compute 필요).

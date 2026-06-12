@@ -205,8 +205,9 @@ export interface AiAnalysis {
   code: string;
   asOf: string; // 생성 시각 KST
   model: string; // 사용 모델 id (투명성)
-  direction: AiDirection; // 익일 방향 판단
-  confidence: number; // 0~100
+  direction: AiDirection; // probUp에서 파생 (≥58 상승, ≤42 하락, 사이 관망)
+  probUp: number; // 다음 거래일 종가 > 기준일 종가 확률 0~100 (N샘플 중앙값)
+  confidence: number; // 파생 max(probUp, 100-probUp) — 하위호환용
   reasons: string[]; // 핵심 근거 3~5개
   risks: string[]; // 리스크 1~3개
   narrative: string; // 2~4문장 한국어 서술

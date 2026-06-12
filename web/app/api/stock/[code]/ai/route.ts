@@ -32,8 +32,9 @@ function getAnalysisDeduped(code: string): Promise<AiAnalysis> {
 /**
  * GET /api/stock/{code}/ai
  * 외부 공개 · 읽기 전용. Kimi LLM이 룰베이스 리포트 전체를 읽고
- * 익일 방향(상승/하락/관망) + 확신도 + 근거를 구조화해 반환.
- * 시크릿: MOONSHOT_API_KEY (서버 온리).
+ * 익일 상승 확률(prob_up — N샘플 병렬 호출의 중앙값, self-consistency)을 추정.
+ * 방향(상승/하락/관망)은 확률에서 코드로 파생해 근거와 함께 구조화 반환.
+ * 시크릿: MOONSHOT_API_KEY (서버 온리). 샘플 수: MOONSHOT_SAMPLES(기본 3).
  */
 export async function GET(
   req: NextRequest,
