@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 13:00:22 KST",
+ "generated_at": "2026-06-12 13:15:10 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 23,
+ "universe_count": 21,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -49,50 +49,146 @@
  ],
  "suspects": [
   {
+   "code": "089030",
+   "name": "테크윙",
+   "sector": "기계·장비",
+   "pattern": "fade",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 68,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 12.7,
+    "fade": 11.2,
+    "ma10": 10.0,
+    "flow": 4.0,
+    "event": 0.0
+   },
+   "score_raw": 68,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 12.7,
+    "fade": 11.2,
+    "ma10": 10.0,
+    "flow": 4,
+    "event": 0.0
+   },
+   "price": 67000.0,
+   "change_pct": 9.66,
+   "high_pct": 15.38,
+   "fade_pct": 37.2,
+   "value_eok": 3727,
+   "ma10": 55110.0,
+   "ma10_margin_pct": 21.58,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:02",
+      "vol_x": 14.0,
+      "pct": 3.74,
+      "minutes": 2
+     },
+     {
+      "time": "09:07",
+      "vol_x": 28.3,
+      "pct": 4.42,
+      "minutes": 3
+     },
+     {
+      "time": "09:12",
+      "vol_x": 13.7,
+      "pct": -2.6,
+      "minutes": 3
+     },
+     {
+      "time": "09:16",
+      "vol_x": 9.1,
+      "pct": 1.02,
+      "minutes": 1
+     },
+     {
+      "time": "09:22",
+      "vol_x": 8.0,
+      "pct": -1.62,
+      "minutes": 1
+     },
+     {
+      "time": "09:45",
+      "vol_x": 9.8,
+      "pct": 1.06,
+      "minutes": 1
+     }
+    ]
+   },
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0608",
+      "frgn": -160375,
+      "orgn": 75711
+     },
+     {
+      "date": "0609",
+      "frgn": 891119,
+      "orgn": 133026
+     },
+     {
+      "date": "0610",
+      "frgn": 164842,
+      "orgn": -11798
+     },
+     {
+      "date": "0611",
+      "frgn": -179984,
+      "orgn": 146731
+     },
+     {
+      "date": "0612",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": []
+  },
+  {
    "code": "347700",
    "name": "스피어",
    "sector": "IT 서비스",
-   "pattern": "deep_shakeout",
+   "pattern": "fade",
    "shake": null,
-   "deep_shake": {
-    "drop_low_from_high_pct": 15.3,
-    "drop_close_from_high_pct": 10.8,
-    "ibs": 0.295,
-    "recovery_pct": 29,
-    "high_time": "09:07",
-    "low_time": "09:39",
-    "late_reclaim": true,
-    "vwap_reclaim": false,
-    "retest_broken": false,
-    "close_hold_score": 70,
-    "bars15_count": 17
-   },
-   "suspicion_score": 69,
+   "deep_shake": null,
+   "suspicion_score": 67,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 8.0,
+    "fade": 6.4,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 1.6
    },
-   "score_raw": 69,
+   "score_raw": 67,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 8.0,
+    "fade": 6.4,
     "ma10": 10.0,
     "flow": 4,
     "event": 1.6
    },
-   "price": 40400.0,
-   "change_pct": 4.94,
+   "price": 39950.0,
+   "change_pct": 3.77,
    "high_pct": 17.66,
-   "fade_pct": 72.1,
-   "value_eok": 1448,
-   "ma10": 33535.0,
-   "ma10_margin_pct": 20.47,
+   "fade_pct": 78.7,
+   "value_eok": 1486,
+   "ma10": 33490.0,
+   "ma10_margin_pct": 19.29,
    "spark": {
     "clusters": [
      {
@@ -185,116 +281,7 @@
      ],
      "score": 1.6
     }
-   ],
-   "ai_verdict": {
-    "status": "outside_window",
-    "window": [
-     "144500",
-     "153000"
-    ]
-   }
-  },
-  {
-   "code": "089030",
-   "name": "테크윙",
-   "sector": "기계·장비",
-   "pattern": "fade",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 67,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 11.6,
-    "fade": 11.3,
-    "ma10": 10.0,
-    "flow": 4.0,
-    "event": 0.0
-   },
-   "score_raw": 67,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 11.6,
-    "fade": 11.3,
-    "ma10": 10.0,
-    "flow": 4,
-    "event": 0.0
-   },
-   "price": 66950.0,
-   "change_pct": 9.57,
-   "high_pct": 15.38,
-   "fade_pct": 37.8,
-   "value_eok": 3670,
-   "ma10": 55110.0,
-   "ma10_margin_pct": 21.48,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:02",
-      "vol_x": 13.2,
-      "pct": 2.2,
-      "minutes": 1
-     },
-     {
-      "time": "09:07",
-      "vol_x": 26.6,
-      "pct": 4.42,
-      "minutes": 3
-     },
-     {
-      "time": "09:12",
-      "vol_x": 12.8,
-      "pct": -2.6,
-      "minutes": 3
-     },
-     {
-      "time": "09:16",
-      "vol_x": 8.5,
-      "pct": 1.02,
-      "minutes": 1
-     },
-     {
-      "time": "09:45",
-      "vol_x": 9.2,
-      "pct": 1.06,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0608",
-      "frgn": -160375,
-      "orgn": 75711
-     },
-     {
-      "date": "0609",
-      "frgn": 891119,
-      "orgn": 133026
-     },
-     {
-      "date": "0610",
-      "frgn": 164842,
-      "orgn": -11798
-     },
-     {
-      "date": "0611",
-      "frgn": -179984,
-      "orgn": 146731
-     },
-     {
-      "date": "0612",
-      "frgn": 0,
-      "orgn": 0
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": []
+   ]
   },
   {
    "code": "080220",
@@ -303,49 +290,49 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 61,
+   "suspicion_score": 62,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 9.8,
-    "ma10": 9.1,
+    "spark": 10.7,
+    "fade": 10.9,
+    "ma10": 8.5,
     "flow": 2.0,
     "event": 0.0
    },
-   "score_raw": 61,
+   "score_raw": 62,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 9.8,
-    "ma10": 9.1,
+    "spark": 10.7,
+    "fade": 10.9,
+    "ma10": 8.5,
     "flow": 2,
     "event": 0.0
    },
-   "price": 106300.0,
-   "change_pct": 9.59,
+   "price": 105800.0,
+   "change_pct": 9.07,
    "high_pct": 14.23,
-   "fade_pct": 32.6,
-   "value_eok": 2628,
-   "ma10": 99080.0,
-   "ma10_margin_pct": 7.29,
+   "fade_pct": 36.2,
+   "value_eok": 2683,
+   "ma10": 99030.0,
+   "ma10_margin_pct": 6.84,
    "spark": {
     "clusters": [
      {
       "time": "09:06",
-      "vol_x": 20.0,
+      "vol_x": 20.9,
       "pct": 5.44,
       "minutes": 3
      },
      {
       "time": "09:10",
-      "vol_x": 24.0,
+      "vol_x": 25.1,
       "pct": -1.89,
       "minutes": 3
      },
      {
       "time": "09:17",
-      "vol_x": 8.0,
+      "vol_x": 8.4,
       "pct": -0.95,
       "minutes": 1
      }
@@ -390,40 +377,52 @@
    "code": "036930",
    "name": "주성엔지니어링",
    "sector": "기계·장비",
-   "pattern": "fade",
+   "pattern": "deep_shakeout",
    "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 52,
+   "deep_shake": {
+    "drop_low_from_high_pct": 18.9,
+    "drop_close_from_high_pct": 10.4,
+    "ibs": 0.449,
+    "recovery_pct": 45,
+    "high_time": "09:02",
+    "low_time": "11:19",
+    "late_reclaim": true,
+    "vwap_reclaim": true,
+    "retest_broken": false,
+    "close_hold_score": 85,
+    "bars15_count": 18
+   },
+   "suspicion_score": 60,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 6.3,
-    "fade": 2.0,
+    "spark": 5.4,
+    "fade": 10.8,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 52,
+   "score_raw": 60,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 6.3,
-    "fade": 2.0,
+    "spark": 5.4,
+    "fade": 10.8,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 242250.0,
-   "change_pct": -1.32,
+   "price": 253500.0,
+   "change_pct": 3.26,
    "high_pct": 15.27,
-   "fade_pct": 108.7,
-   "value_eok": 9498,
-   "ma10": 210415.0,
-   "ma10_margin_pct": 15.13,
+   "fade_pct": 78.7,
+   "value_eok": 10766,
+   "ma10": 211540.0,
+   "ma10_margin_pct": 19.84,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 18.1,
+      "vol_x": 16.7,
       "pct": 3.71,
       "minutes": 1
      }
@@ -471,7 +470,14 @@
      "sentiment": "호재"
     }
    ],
-   "matched_events": []
+   "matched_events": [],
+   "ai_verdict": {
+    "status": "outside_window",
+    "window": [
+     "144500",
+     "153000"
+    ]
+   }
   }
  ]
 }
