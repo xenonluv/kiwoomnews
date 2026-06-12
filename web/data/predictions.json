@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-12 14:37 KST",
+  "as_of": "2026-06-12 14:52 KST",
   "intraday_rank": [
     {
       "ticker": "HPSP",
@@ -38,53 +38,17 @@
       "cause_summary": "AI 소부장株 들썩…HPSP·원익IPS 나란히 상한가 [이런국장 저런주식]"
     },
     {
-      "ticker": "ISC",
-      "code": "095340",
-      "tomorrow_up_prob": "84%",
-      "entry": 243500.0,
-      "target": 255675,
-      "stop": 236195,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.91)",
-        "MACD강세",
-        "RSI58.4 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "ISC, 송도로 국내 생산 및 R&amp;D 통합 이전…총 350억원 투자",
-          "url": "https://n.news.naver.com/mnews/article/030/0003435870",
-          "office": "전자신문",
-          "sentiment": "호재"
-        },
-        {
-          "title": "한미반도체·ISC 급락에도…삼성전자 목표가 줄상향 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383752",
-          "office": "조세일보",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "HPSP 24% 급등·ISC 목표가 30만원…AI 반도체주 들썩 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383625",
-          "office": "조세일보",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "81%",
-      "entry": 364000.0,
-      "target": 382200,
-      "stop": 353080,
+      "entry": 352000.0,
+      "target": 369600,
+      "stop": 341440,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.72)",
         "MACD강세",
-        "RSI59.4 강세"
+        "RSI57.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -118,36 +82,6 @@
       "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
     },
     {
-      "ticker": "솔브레인",
-      "code": "357780",
-      "tomorrow_up_prob": "81%",
-      "entry": 461500.0,
-      "target": 484575,
-      "stop": 447655,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(1.0)",
-        "MACD강세",
-        "RSI59.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "원익·주성엔 차익실현…코미코·솔브레인은 매수 추천 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383944",
-          "office": "조세일보",
-          "sentiment": "호재"
-        },
-        {
-          "title": "[주총 포커스] 솔브레인, GAA·유리기판으로 1兆 클럽 정조준",
-          "url": "https://n.news.naver.com/mnews/article/293/0000081434",
-          "office": "블로터",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "HL만도",
       "code": "204320",
       "tomorrow_up_prob": "76%",
@@ -158,7 +92,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.65배"
+        "거래량1.67배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -192,32 +126,16 @@
       "cause_summary": "HL만도, 로봇 액추에이터 기대감에 상한가 직행"
     },
     {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "76%",
-      "entry": 1392000.0,
-      "target": 1461600,
-      "stop": 1350240,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.72)",
-        "정배열",
-        "RSI64.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "이수화학",
       "code": "005950",
-      "tomorrow_up_prob": "75%",
-      "entry": 16990.0,
-      "target": 17840,
-      "stop": 16480,
+      "tomorrow_up_prob": "76%",
+      "entry": 16800.0,
+      "target": 17640,
+      "stop": 16296,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI68.7 강세",
+        "RSI68.2 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
@@ -275,17 +193,17 @@
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "70%",
-      "entry": 235000.0,
-      "target": 246750,
-      "stop": 227950,
+      "entry": 231000.0,
+      "target": 242550,
+      "stop": 224070,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI60.7 강세",
+        "RSI59.8 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -2.24,
+      "day_change": -4.07,
       "related_news": [
         {
           "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
@@ -296,17 +214,53 @@
       ]
     },
     {
+      "ticker": "삼성전자",
+      "code": "005930",
+      "tomorrow_up_prob": "70%",
+      "entry": 320000.0,
+      "target": 336000,
+      "stop": 310400,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "RSI56.9 강세",
+        "일목 구름위"
+      ],
+      "risk": "약한 마감",
+      "day_change": 8.86,
+      "related_news": [
+        {
+          "title": "삼성전자, 구글 차세대 AI칩 수주 기대감…“2나노 제조 논의”",
+          "url": "https://n.news.naver.com/mnews/article/022/0004135035",
+          "office": "세계일보",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;이재용 회장 직접 답해달라&quot;…뿔난 개미들, 삼성 사옥 앞 기자회견",
+          "url": "https://n.news.naver.com/mnews/article/015/0005298107",
+          "office": "한국경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "시스윈로보틱스, 삼성전자 평택 사업장에 FAB 유지보수 무인화 AMR 공급",
+          "url": "https://n.news.naver.com/mnews/article/015/0005298103",
+          "office": "한국경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "67%",
-      "entry": 18900.0,
-      "target": 19845,
-      "stop": 18333,
+      "entry": 18710.0,
+      "target": 19646,
+      "stop": 18149,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "거래량3.3배"
+        "거래량3.38배"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -340,28 +294,60 @@
       "cause_summary": "후성 주가, 강세... 왜?"
     },
     {
-      "ticker": "스피어",
-      "code": "347700",
-      "tomorrow_up_prob": "63%",
-      "entry": 39300.0,
-      "target": 41265,
-      "stop": 38121,
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "64%",
+      "entry": 1355000.0,
+      "target": 1422750,
+      "stop": 1314350,
       "confidence": "중",
       "reasons": [
-        "RSI51.5 강세",
-        "거래량2.08배",
-        "호재"
+        "정배열",
+        "RSI62.6 강세",
+        "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 3.77,
+      "day_change": null
+    },
+    {
+      "ticker": "제주반도체",
+      "code": "080220",
+      "tomorrow_up_prob": "63%",
+      "entry": 102500.0,
+      "target": 107625,
+      "stop": 99425,
+      "confidence": "중",
+      "reasons": [
+        "RSI59.7 강세",
+        "Stoch골든",
+        "일목 구름위"
+      ],
+      "risk": "약한 마감",
+      "day_change": 6.91
+    },
+    {
+      "ticker": "스피어",
+      "code": "347700",
+      "tomorrow_up_prob": "58%",
+      "entry": 36250.0,
+      "target": 38062,
+      "stop": 35162,
+      "confidence": "중",
+      "reasons": [
+        "거래량2.27배",
+        "호재",
+        "장중 19회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.77,
       "cause_news": [
         {
           "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
           "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
           "office": "newsway",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
         }
       ],
       "cause_confidence": "높음",
@@ -406,53 +392,17 @@
       "cause_summary": "AI 소부장株 들썩…HPSP·원익IPS 나란히 상한가 [이런국장 저런주식]"
     },
     {
-      "ticker": "ISC",
-      "code": "095340",
-      "tomorrow_up_prob": "84%",
-      "entry": 243500.0,
-      "target": 255675,
-      "stop": 236195,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.91)",
-        "MACD강세",
-        "RSI58.4 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "ISC, 송도로 국내 생산 및 R&amp;D 통합 이전…총 350억원 투자",
-          "url": "https://n.news.naver.com/mnews/article/030/0003435870",
-          "office": "전자신문",
-          "sentiment": "호재"
-        },
-        {
-          "title": "한미반도체·ISC 급락에도…삼성전자 목표가 줄상향 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383752",
-          "office": "조세일보",
-          "sentiment": "혼재"
-        },
-        {
-          "title": "HPSP 24% 급등·ISC 목표가 30만원…AI 반도체주 들썩 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383625",
-          "office": "조세일보",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "81%",
-      "entry": 364000.0,
-      "target": 382200,
-      "stop": 353080,
+      "entry": 352000.0,
+      "target": 369600,
+      "stop": 341440,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.72)",
         "MACD강세",
-        "RSI59.4 강세"
+        "RSI57.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -486,36 +436,6 @@
       "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
     },
     {
-      "ticker": "솔브레인",
-      "code": "357780",
-      "tomorrow_up_prob": "81%",
-      "entry": 461500.0,
-      "target": 484575,
-      "stop": 447655,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(1.0)",
-        "MACD강세",
-        "RSI59.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "원익·주성엔 차익실현…코미코·솔브레인은 매수 추천 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383944",
-          "office": "조세일보",
-          "sentiment": "호재"
-        },
-        {
-          "title": "[주총 포커스] 솔브레인, GAA·유리기판으로 1兆 클럽 정조준",
-          "url": "https://n.news.naver.com/mnews/article/293/0000081434",
-          "office": "블로터",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "HL만도",
       "code": "204320",
       "tomorrow_up_prob": "76%",
@@ -526,7 +446,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.65배"
+        "거래량1.67배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -558,6 +478,70 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "HL만도, 로봇 액추에이터 기대감에 상한가 직행"
+    },
+    {
+      "ticker": "이수화학",
+      "code": "005950",
+      "tomorrow_up_prob": "76%",
+      "entry": 16800.0,
+      "target": 17640,
+      "stop": 16296,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI68.2 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112924",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+        },
+        {
+          "title": "이수화학 주가, 6월 11일 15,220원 23.64% 상승 마감",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16088364",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
+    },
+    {
+      "ticker": "원익IPS",
+      "code": "240810",
+      "tomorrow_up_prob": "75%",
+      "entry": 183300.0,
+      "target": 192465,
+      "stop": 177801,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "MACD강세",
+        "RSI69.8 강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "AI 소부장株 들썩…HPSP·원익IPS 나란히 상한가 [이런국장 저런주식]",
+          "url": "https://www.sedaily.com/article/20055067?ref=naver",
+          "office": "sedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "AI 소부장株 들썩…HPSP·원익IPS 나란히 상한가 [이런국장 저런주식]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
