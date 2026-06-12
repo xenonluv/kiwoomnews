@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 12:30:11 KST",
+ "generated_at": "2026-06-12 12:45:10 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 20,
+ "universe_count": 21,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -56,60 +56,78 @@
    "shake": null,
    "deep_shake": {
     "drop_low_from_high_pct": 15.3,
-    "drop_close_from_high_pct": 10.3,
-    "ibs": 0.331,
-    "recovery_pct": 33,
+    "drop_close_from_high_pct": 10.9,
+    "ibs": 0.288,
+    "recovery_pct": 29,
     "high_time": "09:07",
     "low_time": "09:39",
     "late_reclaim": true,
-    "vwap_reclaim": true,
+    "vwap_reclaim": false,
     "retest_broken": false,
-    "close_hold_score": 85,
-    "bars15_count": 15
+    "close_hold_score": 70,
+    "bars15_count": 16
    },
-   "suspicion_score": 70,
+   "suspicion_score": 69,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.5,
+    "fade": 8.0,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 1.6
    },
-   "score_raw": 70,
+   "score_raw": 69,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.5,
+    "fade": 8.0,
     "ma10": 10.0,
     "flow": 4,
     "event": 1.6
    },
-   "price": 40650.0,
-   "change_pct": 5.58,
+   "price": 40350.0,
+   "change_pct": 4.81,
    "high_pct": 17.66,
-   "fade_pct": 68.4,
-   "value_eok": 1422,
-   "ma10": 33560.0,
-   "ma10_margin_pct": 21.13,
+   "fade_pct": 72.8,
+   "value_eok": 1436,
+   "ma10": 33530.0,
+   "ma10_margin_pct": 20.34,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 33.5,
+      "vol_x": 38.0,
       "pct": 14.98,
       "minutes": 6
      },
      {
       "time": "09:11",
-      "vol_x": 13.9,
+      "vol_x": 15.7,
       "pct": -7.59,
       "minutes": 4
      },
      {
+      "time": "09:20",
+      "vol_x": 8.0,
+      "pct": -3.55,
+      "minutes": 1
+     },
+     {
+      "time": "09:30",
+      "vol_x": 8.3,
+      "pct": -1.98,
+      "minutes": 1
+     },
+     {
+      "time": "09:36",
+      "vol_x": 8.0,
+      "pct": -1.32,
+      "minutes": 1
+     },
+     {
       "time": "09:39",
-      "vol_x": 14.2,
+      "vol_x": 16.1,
       "pct": -1.4,
       "minutes": 1
      }
@@ -183,55 +201,61 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 65,
+   "suspicion_score": 68,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 11.2,
+    "spark": 10.9,
+    "fade": 13.1,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 65,
+   "score_raw": 68,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 11.2,
+    "spark": 10.9,
+    "fade": 13.1,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 67000.0,
-   "change_pct": 9.66,
+   "price": 66400.0,
+   "change_pct": 8.67,
    "high_pct": 15.38,
-   "fade_pct": 37.2,
-   "value_eok": 3567,
-   "ma10": 55110.0,
-   "ma10_margin_pct": 21.58,
+   "fade_pct": 43.6,
+   "value_eok": 3616,
+   "ma10": 55050.0,
+   "ma10_margin_pct": 20.62,
    "spark": {
     "clusters": [
      {
+      "time": "09:02",
+      "vol_x": 12.7,
+      "pct": 2.2,
+      "minutes": 1
+     },
+     {
       "time": "09:07",
-      "vol_x": 24.0,
+      "vol_x": 25.5,
       "pct": 4.42,
       "minutes": 3
      },
      {
       "time": "09:12",
-      "vol_x": 9.3,
-      "pct": -1.73,
-      "minutes": 1
+      "vol_x": 12.3,
+      "pct": -2.6,
+      "minutes": 3
      },
      {
-      "time": "09:14",
-      "vol_x": 11.6,
-      "pct": -1.89,
+      "time": "09:16",
+      "vol_x": 8.2,
+      "pct": 1.02,
       "minutes": 1
      },
      {
       "time": "09:45",
-      "vol_x": 8.3,
+      "vol_x": 8.8,
       "pct": 1.06,
       "minutes": 1
      }
@@ -283,45 +307,45 @@
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 6.8,
-    "fade": 10.0,
-    "ma10": 9.0,
+    "spark": 7.9,
+    "fade": 9.1,
+    "ma10": 9.4,
     "flow": 2.0,
     "event": 0.0
    },
    "score_raw": 58,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 6.8,
-    "fade": 10.0,
-    "ma10": 9.0,
+    "spark": 7.9,
+    "fade": 9.1,
+    "ma10": 9.4,
     "flow": 2,
     "event": 0.0
    },
-   "price": 106200.0,
-   "change_pct": 9.48,
+   "price": 106600.0,
+   "change_pct": 9.9,
    "high_pct": 14.23,
-   "fade_pct": 33.3,
-   "value_eok": 2552,
-   "ma10": 99070.0,
-   "ma10_margin_pct": 7.2,
+   "fade_pct": 30.4,
+   "value_eok": 2594,
+   "ma10": 99110.0,
+   "ma10_margin_pct": 7.56,
    "spark": {
     "clusters": [
      {
       "time": "09:06",
-      "vol_x": 15.7,
+      "vol_x": 17.1,
       "pct": 4.29,
       "minutes": 1
      },
      {
       "time": "09:08",
-      "vol_x": 15.0,
+      "vol_x": 16.4,
       "pct": 2.46,
       "minutes": 1
      },
      {
       "time": "09:10",
-      "vol_x": 18.8,
+      "vol_x": 20.6,
       "pct": -1.89,
       "minutes": 3
      }
@@ -369,37 +393,37 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 51,
+   "suspicion_score": 52,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 4.9,
+    "spark": 5.9,
     "fade": 2.0,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 51,
+   "score_raw": 52,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 4.9,
+    "spark": 5.9,
     "fade": 2.0,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 237000.0,
-   "change_pct": -3.46,
+   "price": 236500.0,
+   "change_pct": -3.67,
    "high_pct": 15.27,
-   "fade_pct": 122.7,
-   "value_eok": 9030,
-   "ma10": 209890.0,
-   "ma10_margin_pct": 12.92,
+   "fade_pct": 124.0,
+   "value_eok": 9190,
+   "ma10": 209840.0,
+   "ma10_margin_pct": 12.7,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 15.9,
+      "vol_x": 17.4,
       "pct": 3.71,
       "minutes": 1
      }
