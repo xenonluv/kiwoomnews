@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-12 15:37 KST",
+  "as_of": "2026-06-12 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "HPSP",
@@ -32,7 +32,7 @@
     {
       "ticker": "두산",
       "code": "000150",
-      "tomorrow_up_prob": "85%",
+      "tomorrow_up_prob": "86%",
       "entry": 1896000.0,
       "target": 1990800,
       "stop": 1839120,
@@ -44,18 +44,26 @@
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "두산로보틱스 강세 전환…AI·자동화 기대감에 매수세 유입",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581558",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "title": "'5조 대어' SK실트론 인수전 표류…두산 체질개선 암초",
+          "url": "https://n.news.naver.com/mnews/article/417/0001147126",
+          "office": "동행미디어 시대",
+          "sentiment": "호재"
+        },
+        {
+          "title": "한국주강, 두산 가스터빈 수주 확대 수혜 기대…발전용 대형 주강 공...",
+          "url": "https://n.news.naver.com/mnews/article/277/0005774984",
+          "office": "아시아경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "파미셀, 숨겨진 젠슨황 수혜주?…두산 통해 엔비디아 AI소재 공급망 편...",
+          "url": "https://n.news.naver.com/mnews/article/018/0006302694",
+          "office": "이데일리",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "두산로보틱스 강세 전환…AI·자동화 기대감에 매수세 유입"
+      ]
     },
     {
       "ticker": "한미반도체",
@@ -74,14 +82,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061211203095645",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 20%대 강세",
           "url": "https://www.ajunews.com/view/20260612140519119",
           "office": "ajunews",
@@ -96,15 +96,23 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 결정...14% 급등",
+          "url": "http://www.metroseoul.co.kr/article/20260612500080",
+          "office": "metroseoul",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
+      "cause_summary": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 20%대 강세"
     },
     {
       "ticker": "비에이치아이",
       "code": "083650",
-      "tomorrow_up_prob": "77%",
+      "tomorrow_up_prob": "78%",
       "entry": 80600.0,
       "target": 84630,
       "stop": 78182,
@@ -170,14 +178,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "HL만도, 로봇 액추에이터 기대감에 상한가 직행",
-          "url": "https://www.newsis.com/view/NISX20260612_0003666727",
-          "office": "newsis",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주]HL만도, 피지컬 AI 산업 확산에 따른 수혜 부각 소식에 상한가",
           "url": "https://www.widedaily.com/news/articleView.html?idxno=295625",
           "office": "widedaily",
@@ -192,10 +192,18 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "\"한국이 휴머노이드 공급망 중심\"…HL만도 상한가",
+          "url": "https://www.greened.kr/news/articleView.html?idxno=342457",
+          "office": "greened",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "HL만도, 로봇 액추에이터 기대감에 상한가 직행"
+      "cause_summary": "[특징주]HL만도, 피지컬 AI 산업 확산에 따른 수혜 부각 소식에 상한가"
     },
     {
       "ticker": "후성",
@@ -214,20 +222,20 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "후성 주가, 강세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163283",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주] 외국인 '한온시스템·후성·케이뱅크'…기관 '삼성전자·현대...",
           "url": "https://www.newstnt.com/news/articleView.html?idxno=706164",
           "office": "newstnt",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 이차전지 전해질 전문 후성 주가 이틀 연속 20%대 불기둥",
+          "url": "https://www.g-enews.com/view.php?ud=202606101541309438c5557f8da8_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
         },
         {
           "title": "[급등주] 후성, +21.81% 강세",
@@ -239,7 +247,7 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "후성 주가, 강세... 왜?"
+      "cause_summary": "[특징주] 외국인 '한온시스템·후성·케이뱅크'…기관 '삼성전자·현대..."
     },
     {
       "ticker": "원익IPS",
@@ -256,26 +264,14 @@
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
-      "cause_news": [
-        {
-          "title": "원익IPS 주가 상한가...반도체 소부장 '급부상'",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3607024",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
+      "related_news": [
         {
           "title": "AI 소부장株 들썩…HPSP·원익IPS 나란히 상한가 [이런국장 저런주식]",
-          "url": "https://www.sedaily.com/article/20055067?ref=naver",
-          "office": "sedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "url": "https://n.news.naver.com/mnews/article/011/0004630506",
+          "office": "서울경제",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "원익IPS 주가 상한가...반도체 소부장 '급부상'"
+      ]
     },
     {
       "ticker": "주성엔지니어링",
@@ -297,6 +293,42 @@
           "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
           "url": "https://n.news.naver.com/mnews/article/011/0004630472",
           "office": "서울경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "현대건설",
+      "code": "000720",
+      "tomorrow_up_prob": "73%",
+      "entry": 157500.0,
+      "target": 165375,
+      "stop": 152775,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "MACD강세",
+        "RSI56.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[특징주] 건설 등 재건주, 미국·이란 종전 기대감에 급등(종합)",
+          "url": "https://n.news.naver.com/mnews/article/001/0016136174",
+          "office": "연합뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "1660억 동반성장펀드·900억 안전투자…현대건설, 협력사 지원",
+          "url": "https://n.news.naver.com/mnews/article/629/0000507146",
+          "office": "더팩트",
+          "sentiment": "호재"
+        },
+        {
+          "title": "[김화진 칼럼] '탈원전'에서 'SMR'로",
+          "url": "https://n.news.naver.com/mnews/article/421/0008999971",
+          "office": "뉴스1",
           "sentiment": "호재"
         }
       ]
@@ -330,34 +362,6 @@
       "cause_summary": "[거래소 기관] SK스퀘어 DB하이텍 이수페타시스 HD현대마린솔루션 '앗~뜨..."
     },
     {
-      "ticker": "현대건설",
-      "code": "000720",
-      "tomorrow_up_prob": "71%",
-      "entry": 157500.0,
-      "target": 165375,
-      "stop": 152775,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(1.0)",
-        "MACD강세",
-        "RSI56.2 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 현대건설, 중동 재건 기대에 7%대 강세…건설주 동반 상승",
-          "url": "https://www.tokenpost.kr/news/economy/368443",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 현대건설, 중동 재건 기대에 7%대 강세…건설주 동반 상승"
-    },
-    {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "63%",
@@ -371,7 +375,7 @@
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 6.19
+      "day_change": 5.67
     }
   ],
   "closing_bet": [
@@ -406,7 +410,7 @@
     {
       "ticker": "두산",
       "code": "000150",
-      "tomorrow_up_prob": "85%",
+      "tomorrow_up_prob": "86%",
       "entry": 1896000.0,
       "target": 1990800,
       "stop": 1839120,
@@ -418,18 +422,26 @@
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "두산로보틱스 강세 전환…AI·자동화 기대감에 매수세 유입",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581558",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "title": "'5조 대어' SK실트론 인수전 표류…두산 체질개선 암초",
+          "url": "https://n.news.naver.com/mnews/article/417/0001147126",
+          "office": "동행미디어 시대",
+          "sentiment": "호재"
+        },
+        {
+          "title": "한국주강, 두산 가스터빈 수주 확대 수혜 기대…발전용 대형 주강 공...",
+          "url": "https://n.news.naver.com/mnews/article/277/0005774984",
+          "office": "아시아경제",
+          "sentiment": "호재"
+        },
+        {
+          "title": "파미셀, 숨겨진 젠슨황 수혜주?…두산 통해 엔비디아 AI소재 공급망 편...",
+          "url": "https://n.news.naver.com/mnews/article/018/0006302694",
+          "office": "이데일리",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "두산로보틱스 강세 전환…AI·자동화 기대감에 매수세 유입"
+      ]
     },
     {
       "ticker": "한미반도체",
@@ -448,14 +460,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061211203095645",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 20%대 강세",
           "url": "https://www.ajunews.com/view/20260612140519119",
           "office": "ajunews",
@@ -470,15 +474,23 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 결정...14% 급등",
+          "url": "http://www.metroseoul.co.kr/article/20260612500080",
+          "office": "metroseoul",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
+      "cause_summary": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 20%대 강세"
     },
     {
       "ticker": "비에이치아이",
       "code": "083650",
-      "tomorrow_up_prob": "77%",
+      "tomorrow_up_prob": "78%",
       "entry": 80600.0,
       "target": 84630,
       "stop": 78182,
