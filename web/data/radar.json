@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 14:00:15 KST",
+ "generated_at": "2026-06-12 14:15:13 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -55,67 +55,67 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 71,
+   "suspicion_score": 70,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 14.0,
-    "fade": 12.8,
+    "spark": 14.6,
+    "fade": 10.9,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 71,
+   "score_raw": 70,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 14.0,
-    "fade": 12.8,
+    "spark": 14.6,
+    "fade": 10.9,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 66500.0,
-   "change_pct": 8.84,
+   "price": 67100.0,
+   "change_pct": 9.82,
    "high_pct": 15.38,
-   "fade_pct": 42.6,
-   "value_eok": 3918,
-   "ma10": 55060.0,
-   "ma10_margin_pct": 20.78,
+   "fade_pct": 36.2,
+   "value_eok": 4015,
+   "ma10": 55120.0,
+   "ma10_margin_pct": 21.73,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 15.1,
+      "vol_x": 15.5,
       "pct": 3.74,
       "minutes": 2
      },
      {
       "time": "09:07",
-      "vol_x": 30.4,
+      "vol_x": 31.3,
       "pct": 4.42,
       "minutes": 3
      },
      {
       "time": "09:12",
-      "vol_x": 14.7,
+      "vol_x": 15.1,
       "pct": -2.6,
       "minutes": 3
      },
      {
       "time": "09:16",
-      "vol_x": 9.7,
+      "vol_x": 10.0,
       "pct": 1.02,
       "minutes": 1
      },
      {
       "time": "09:22",
-      "vol_x": 8.6,
+      "vol_x": 8.9,
       "pct": -1.62,
       "minutes": 1
      },
      {
       "time": "09:45",
-      "vol_x": 10.5,
+      "vol_x": 10.8,
       "pct": 1.06,
       "minutes": 1
      }
@@ -186,20 +186,20 @@
    "change_pct": 2.99,
    "high_pct": 17.66,
    "fade_pct": 83.1,
-   "value_eok": 1545,
+   "value_eok": 1575,
    "ma10": 33460.0,
    "ma10_margin_pct": 18.5,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 47.6,
+      "vol_x": 47.8,
       "pct": 12.95,
       "minutes": 7
      },
      {
       "time": "09:11",
-      "vol_x": 19.7,
+      "vol_x": 19.8,
       "pct": -7.59,
       "minutes": 4
      },
@@ -217,25 +217,25 @@
      },
      {
       "time": "09:36",
-      "vol_x": 10.0,
+      "vol_x": 10.1,
       "pct": -1.32,
       "minutes": 1
      },
      {
       "time": "09:39",
-      "vol_x": 20.1,
+      "vol_x": 20.2,
       "pct": -1.4,
       "minutes": 1
      },
      {
       "time": "09:42",
-      "vol_x": 8.2,
+      "vol_x": 8.3,
       "pct": 1.28,
       "minutes": 1
      },
      {
       "time": "09:58",
-      "vol_x": 8.4,
+      "vol_x": 8.5,
       "pct": 1.77,
       "minutes": 1
      }
@@ -299,52 +299,40 @@
    "code": "036930",
    "name": "주성엔지니어링",
    "sector": "기계·장비",
-   "pattern": "deep_shakeout",
+   "pattern": "fade",
    "shake": null,
-   "deep_shake": {
-    "drop_low_from_high_pct": 18.9,
-    "drop_close_from_high_pct": 13.1,
-    "ibs": 0.308,
-    "recovery_pct": 31,
-    "high_time": "09:02",
-    "low_time": "11:19",
-    "late_reclaim": false,
-    "vwap_reclaim": false,
-    "retest_broken": false,
-    "close_hold_score": 50,
-    "bars15_count": 21
-   },
-   "suspicion_score": 56,
+   "deep_shake": null,
+   "suspicion_score": 52,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 5.2,
-    "fade": 6.8,
+    "spark": 5.8,
+    "fade": 2.0,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 56,
+   "score_raw": 52,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 5.2,
-    "fade": 6.8,
+    "spark": 5.8,
+    "fade": 2.0,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 246000.0,
-   "change_pct": 0.2,
+   "price": 241500.0,
+   "change_pct": -1.63,
    "high_pct": 15.27,
-   "fade_pct": 98.7,
-   "value_eok": 12391,
-   "ma10": 210790.0,
-   "ma10_margin_pct": 16.7,
+   "fade_pct": 110.7,
+   "value_eok": 12674,
+   "ma10": 210340.0,
+   "ma10_margin_pct": 14.81,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 16.4,
+      "vol_x": 17.2,
       "pct": 3.71,
       "minutes": 1
      }
@@ -392,14 +380,7 @@
      "sentiment": "호재"
     }
    ],
-   "matched_events": [],
-   "ai_verdict": {
-    "status": "outside_window",
-    "window": [
-     "144500",
-     "153000"
-    ]
-   }
+   "matched_events": []
   }
  ]
 }
