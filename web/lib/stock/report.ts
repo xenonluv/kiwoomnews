@@ -10,6 +10,7 @@ import type {
   FlowSection,
   MarketAlert,
   PriceSection,
+  SparkSection,
   StockReport,
 } from "@/types/stock";
 import {
@@ -17,11 +18,13 @@ import {
   fetchDaily,
   fetchFinanceAnnual,
   fetchIntegration,
+  fetchMinuteCandles,
   fetchNews,
   fetchTrend,
 } from "./naver";
 import { cleanText, formatKST, num } from "./parse";
 import { computeIndicators } from "./indicators";
+import { detectSparks } from "./sparks";
 import { makeAliases, scoreNews } from "./news-score";
 import { matchEvents } from "./theme-match";
 import { computeVerdict } from "./scoring";
@@ -56,13 +59,14 @@ function parseMarketAlert(raw: any): MarketAlert | null {
 }
 
 export async function buildStockReport(code: string): Promise<StockReport> {
-  const [basicR, integR, dailyR, newsR, trendR, finR] = await Promise.allSettled([
+  const [basicR, integR, dailyR, newsR, trendR, finR, minuteR] = await Promise.allSettled([
     fetchBasic(code),
     fetchIntegration(code),
     fetchDaily(code),
     fetchNews(code),
     fetchTrend(code),
     fetchFinanceAnnual(code),
+    fetchMinuteCandles(code),
   ]);
 
   const basic = val(basicR);
@@ -184,6 +188,21 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     warnings.push("투자자 수급 데이터를 불러오지 못했습니다.");
   }
 
+  // ── 당일 분봉 스파크 (radar 조건2 — fchart 무인증 분봉) ──
+  // fetch 실패만 경고. 당일 봉 <30(휴장·주말·개장 직후)은 조용히 null → 카드 숨김.
+  let spark: SparkSection | null = null;
+  const minuteBars = val(minuteR);
+  if (minuteBars === null) {
+    warnings.push("분봉 데이터를 불러오지 못해 스파크 분석을 생략합니다.");
+  } else if (minuteBars.length >= 30) {
+    const clusters = detectSparks(minuteBars);
+    spark = {
+      clusters,
+      barCount: minuteBars.length,
+      maxVolX: clusters.length > 0 ? Math.max(...clusters.map((c) => c.vol_x)) : null,
+    };
+  }
+
   // ── 재무 (ETF/일부 종목은 financeInfo=null) ──
   let financials: FinancialSection | null = null;
   const finInfo = fin?.financeInfo;
@@ -293,6 +312,7 @@ export async function buildStockReport(code: string): Promise<StockReport> {
       events,
       marketAlert,
       isManagement,
+      spark,
     });
   }
 
@@ -312,6 +332,7 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     chart,
     technical,
     flow,
+    spark,
     financials,
     news,
     events,

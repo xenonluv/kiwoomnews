@@ -3,7 +3,7 @@
 // 모든 호출은 no-store + 타임아웃 — 신선도 제어는 라우트의 CDN Cache-Control이 담당.
 
 import { ymdKST } from "./parse";
-import type { Candle } from "@/types/stock";
+import type { Candle, MinuteBar } from "@/types/stock";
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -63,6 +63,48 @@ export async function fetchNews(code: string, pageSize = 20): Promise<any[]> {
 export async function fetchTrend(code: string): Promise<any[]> {
   const d = await fetchJson<any>(`https://m.stock.naver.com/api/stock/${code}/trend`);
   return Array.isArray(d) ? d : [];
+}
+
+/**
+ * 당일 1분봉 — fchart(무인증, EUC-KR XML). 실측: 시/고/저는 항상 "null"이고
+ * 종가·당일 누적거래량만 유효 → 분당 거래량은 인접 봉 차분으로 복원한다.
+ * count와 무관하게 ~6세션치가 섞여 오므로 KST 오늘 날짜로 필터(휴장일 → 빈 배열).
+ * 주말은 당일 봉이 존재할 수 없어 호출 없이 빈 배열 (호출량 절약).
+ * data 속성은 순수 ASCII라 EUC-KR 응답을 UTF-8 text()로 읽어도 파싱 안전.
+ */
+export async function fetchMinuteCandles(code: string, count = 480): Promise<MinuteBar[]> {
+  const wd = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Seoul",
+    weekday: "short",
+  }).format(new Date());
+  if (wd === "Sat" || wd === "Sun") return [];
+
+  const url =
+    `https://fchart.stock.naver.com/sise.nhn?symbol=${code}` +
+    `&timeframe=minute&count=${count}&requestType=0`;
+  const raw = await (await fetchNaver(url, 8000)).text();
+  const today = ymdKST();
+  const rows: { time: string; close: number; cum: number }[] = [];
+  for (const m of raw.matchAll(/data="(\d{12})\|[^|]*\|[^|]*\|[^|]*\|([^|"]*)\|(\d*)"/g)) {
+    const [, dt, c, v] = m;
+    if (dt.slice(0, 8) !== today) continue;
+    rows.push({
+      time: dt.slice(8, 12),
+      close: c && c !== "null" ? Number(c) : 0,
+      cum: v ? Number(v) : 0,
+    });
+  }
+  rows.sort((a, b) => (a.time < b.time ? -1 : 1));
+  // 누적 → 분당 차분. 장전(08:30~) 봉 포함해 차분한 뒤 09:00 이전은 버린다
+  // (09:00 봉에 시초가 동시호가 물량이 자연 반영 — KIS 분봉과 정합).
+  const bars: MinuteBar[] = [];
+  let prevCum = 0;
+  for (const r of rows) {
+    const vol = Math.max(0, r.cum - prevCum);
+    prevCum = r.cum;
+    if (r.time >= "0900") bars.push({ time: r.time, close: r.close, vol });
+  }
+  return bars;
 }
 
 /**

@@ -11,6 +11,7 @@ import { PriceSummaryCard } from "./PriceSummaryCard";
 import { PriceChart } from "./PriceChart";
 import { TechnicalCard } from "./TechnicalCard";
 import { FlowCard } from "./FlowCard";
+import { SparkCard } from "./SparkCard";
 import { FinancialsCard } from "./FinancialsCard";
 import { NewsCard } from "./NewsCard";
 import { EventsCard } from "./EventsCard";
@@ -124,6 +125,7 @@ export function StockReportView({ code }: { code: string }) {
       <div className="grid items-start gap-4 lg:grid-cols-2">
         {r.technical && <TechnicalCard technical={r.technical} />}
         {r.flow && <FlowCard flow={r.flow} />}
+        {r.spark && <SparkCard spark={r.spark} />}
         {r.financials && <FinancialsCard financials={r.financials} researches={r.researches} />}
         {r.events && <EventsCard events={r.events} />}
       </div>

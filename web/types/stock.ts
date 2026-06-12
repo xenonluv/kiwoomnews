@@ -2,6 +2,8 @@
 // 모든 섹션은 nullable: 네이버 일부 실패·ETF·신규상장 등에서 해당 섹션만 비우고
 // 리포트 자체는 항상 렌더한다 (사유는 warnings[]에 기록).
 
+import type { SparkCluster } from "./radar";
+
 export interface SearchItem {
   code: string;
   name: string;
@@ -19,6 +21,20 @@ export interface Candle {
   low: number;
   close: number;
   volume: number;
+}
+
+/** fchart 1분봉 (당일 KST 필터·거래량 차분 후). time="HHMM". */
+export interface MinuteBar {
+  time: string;
+  close: number;
+  vol: number; // 분당 거래량 (fchart 누적값을 차분해 복원)
+}
+
+/** 당일 분봉 스파크 — radar detect_sparks와 동일 산식의 탐지 결과. */
+export interface SparkSection {
+  clusters: SparkCluster[];
+  barCount: number; // 당일 1분봉 수 (≥30 보장)
+  maxVolX: number | null; // 최대 클러스터 배수 (스파크 없으면 null)
 }
 
 export interface PriceSection {
@@ -214,6 +230,7 @@ export interface StockReport {
   chart: { candles: Candle[] } | null;
   technical: TechnicalSection | null;
   flow: FlowSection | null;
+  spark: SparkSection | null;
   financials: FinancialSection | null;
   news: NewsSection | null;
   events: EventSection | null;

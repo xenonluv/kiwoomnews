@@ -23,10 +23,12 @@ interface VerdictInputs {
   events: EventSection | null;
   marketAlert: MarketAlert | null;
   isManagement: boolean;
+  /** 당일 분봉 스파크 (옵션 — 미전달 시 점수 무영향, 표시 전용 모드) */
+  spark?: { maxVolX: number | null } | null;
 }
 
 export function computeVerdict(inp: VerdictInputs): VerdictSection {
-  const { close, technical: t, news, price, flow, events, marketAlert, isManagement } = inp;
+  const { close, technical: t, news, price, flow, events, marketAlert, isManagement, spark } = inp;
   let p = 40;
   const breakdown: VerdictSection["breakdown"] = [];
   const cautionFlags: string[] = [];
@@ -61,6 +63,13 @@ export function computeVerdict(inp: VerdictInputs): VerdictSection {
   if (t.ichimoku.available && t.ichimoku.aboveCloud && t.ichimoku.tenkanGtKijun)
     add("일목 구름 위", 7, "기술");
   if ((t.volumeVs20d ?? 0) >= 1.5) add(`거래량 ${t.volumeVs20d}배`, 4, "기술");
+  // 분봉 스파크 — radar suspicion_score의 (max_x−8)/24 스케일 1/3 (8배=0, 32배=+5 상한)
+  const sparkMaxX = spark?.maxVolX ?? null;
+  if (sparkMaxX !== null) {
+    const sparkDelta =
+      Math.round(Math.min(5, Math.max(0, ((sparkMaxX - 8) / 24) * 5)) * 10) / 10;
+    if (sparkDelta > 0) add(`분봉 스파크 ${sparkMaxX}배`, sparkDelta, "기술");
+  }
 
   // ── 재료 뉴스 (run.py:96-101 동일 가중) ──
   if (news) {
