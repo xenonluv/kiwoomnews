@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-11 15:45:24 KST",
- "market_session": "closed",
+ "generated_at": "2026-06-12 09:00:05 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -10,26 +10,34 @@
    10.0
   ],
   "spark_x": 8.0,
-  "spark_pct": 0.8
+  "spark_pct": 0.8,
+  "universe": "kis_rank",
+  "top_n": 20,
+  "universe_chg_range": [
+   -24.0,
+   10.0
+  ],
+  "shake_pct": 10.0,
+  "shake_chg_max": 30.0,
+  "deep_shake_enabled": true,
+  "deep_drop_range": [
+   13.0,
+   24.0
+  ],
+  "deep_ibs_min": 0.25,
+  "kimi_mode": "auto",
+  "kimi_max": 5,
+  "kimi_window": [
+   "144500",
+   "153000"
+  ]
  },
- "universe_count": 101,
+ "universe_count": 47,
  "events": [
-  {
-   "id": "2026-06-11_한국 옵션·선물 동시만",
-   "date": "2026-06-11",
-   "dday": 0,
-   "title": "한국 옵션·선물 동시만기일 (6월)",
-   "category": [
-    "수급"
-   ],
-   "importance": 6,
-   "country": "KR",
-   "estimated": false
-  },
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
    "date": "2026-06-17",
-   "dday": 6,
+   "dday": 5,
    "title": "FOMC 금리 결정 (6월)",
    "category": [
     "금리"
@@ -39,375 +47,5 @@
    "estimated": false
   }
  ],
- "suspects": [
-  {
-   "code": "217590",
-   "name": "티엠씨",
-   "sector": "전기·전자",
-   "suspicion_score": 68,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 15.0,
-    "fade": 2.0,
-    "ma10": 10.0,
-    "flow": 11.0,
-    "event": 0.0
-   },
-   "score_raw": 68,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 15.0,
-    "fade": 2.0,
-    "ma10": 10.0,
-    "flow": 11,
-    "event": 0.0
-   },
-   "price": 22250.0,
-   "change_pct": -1.55,
-   "high_pct": 25.66,
-   "fade_pct": 106.0,
-   "value_eok": 804,
-   "ma10": 20457.0,
-   "ma10_margin_pct": 8.76,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:02",
-      "vol_x": 12.1,
-      "pct": 2.3,
-      "minutes": 1
-     },
-     {
-      "time": "09:05",
-      "vol_x": 35.5,
-      "pct": 5.16,
-      "minutes": 3
-     },
-     {
-      "time": "09:09",
-      "vol_x": 32.5,
-      "pct": 5.47,
-      "minutes": 3
-     },
-     {
-      "time": "09:14",
-      "vol_x": 44.1,
-      "pct": 0.3,
-      "minutes": 3
-     },
-     {
-      "time": "09:18",
-      "vol_x": 29.4,
-      "pct": -6.39,
-      "minutes": 3
-     },
-     {
-      "time": "09:23",
-      "vol_x": 11.5,
-      "pct": 2.65,
-      "minutes": 4
-     },
-     {
-      "time": "09:30",
-      "vol_x": 9.0,
-      "pct": 2.17,
-      "minutes": 1
-     },
-     {
-      "time": "09:32",
-      "vol_x": 11.3,
-      "pct": 0.59,
-      "minutes": 2
-     },
-     {
-      "time": "09:39",
-      "vol_x": 8.8,
-      "pct": 1.72,
-      "minutes": 1
-     },
-     {
-      "time": "09:41",
-      "vol_x": 20.4,
-      "pct": 1.88,
-      "minutes": 1
-     },
-     {
-      "time": "09:43",
-      "vol_x": 10.8,
-      "pct": -1.65,
-      "minutes": 1
-     },
-     {
-      "time": "09:55",
-      "vol_x": 9.7,
-      "pct": -4.34,
-      "minutes": 2
-     },
-     {
-      "time": "09:59",
-      "vol_x": 10.4,
-      "pct": 3.06,
-      "minutes": 1
-     },
-     {
-      "time": "10:10",
-      "vol_x": 8.6,
-      "pct": -1.65,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 1,
-    "detail": [
-     {
-      "date": "0605",
-      "frgn": 23737,
-      "orgn": -12344
-     },
-     {
-      "date": "0608",
-      "frgn": 34215,
-      "orgn": 6652
-     },
-     {
-      "date": "0609",
-      "frgn": -2424,
-      "orgn": -365
-     },
-     {
-      "date": "0610",
-      "frgn": -105537,
-      "orgn": -1583
-     },
-     {
-      "date": "0611",
-      "frgn": 29190,
-      "orgn": -3311
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "티엠씨, 미국 AI 데이터센터 110억 광케이블 수주…북미 공급망 편입",
-     "summary": "글로벌 특수케이블 전문기업 티엠씨가 미국 데이터센터 AI(인공지능) 인프라 전문기업과 약 110억원 규모의 데이터센터용 광통신 케이블 공급계약을 체결했다고 19일 밝혔다. 이는 티엠씨가 북미 데이터센터 시장에서 확보한 단일 광케이블 공급계약...",
-     "office": "머니투데이",
-     "datetime": "202605191135",
-     "url": "https://n.news.naver.com/mnews/article/008/0005359814",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": []
-  },
-  {
-   "code": "126640",
-   "name": "화신정공",
-   "sector": "운송장비·부품",
-   "suspicion_score": 57,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 11.1,
-    "fade": 4.1,
-    "ma10": 10.0,
-    "flow": 2.0,
-    "event": 0.0
-   },
-   "score_raw": 57,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 11.1,
-    "fade": 4.1,
-    "ma10": 10.0,
-    "flow": 2,
-    "event": 0.0
-   },
-   "price": 4610.0,
-   "change_pct": 4.06,
-   "high_pct": 29.8,
-   "fade_pct": 86.4,
-   "value_eok": 2203,
-   "ma10": 2745.5,
-   "ma10_margin_pct": 67.91,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:53",
-      "vol_x": 25.8,
-      "pct": -9.91,
-      "minutes": 1
-     },
-     {
-      "time": "09:56",
-      "vol_x": 16.7,
-      "pct": 0.22,
-      "minutes": 2
-     },
-     {
-      "time": "10:05",
-      "vol_x": 8.3,
-      "pct": -2.47,
-      "minutes": 1
-     },
-     {
-      "time": "10:25",
-      "vol_x": 10.2,
-      "pct": 2.68,
-      "minutes": 1
-     },
-     {
-      "time": "11:10",
-      "vol_x": 11.6,
-      "pct": -3.48,
-      "minutes": 1
-     },
-     {
-      "time": "11:33",
-      "vol_x": 14.5,
-      "pct": 3.12,
-      "minutes": 2
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0605",
-      "frgn": -112697,
-      "orgn": 0
-     },
-     {
-      "date": "0608",
-      "frgn": -7718,
-      "orgn": 2390
-     },
-     {
-      "date": "0609",
-      "frgn": -75422,
-      "orgn": 170115
-     },
-     {
-      "date": "0610",
-      "frgn": -759430,
-      "orgn": -172405
-     },
-     {
-      "date": "0611",
-      "frgn": -493516,
-      "orgn": -100
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": []
-  },
-  {
-   "code": "178320",
-   "name": "서진시스템",
-   "sector": "전기·전자",
-   "suspicion_score": 56,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 1.1,
-    "fade": 14.3,
-    "ma10": 2.9,
-    "flow": 6.0,
-    "event": 1.8
-   },
-   "score_raw": 56,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 1.1,
-    "fade": 14.3,
-    "ma10": 2.9,
-    "flow": 6,
-    "event": 1.8
-   },
-   "price": 74500.0,
-   "change_pct": 6.89,
-   "high_pct": 13.2,
-   "fade_pct": 47.8,
-   "value_eok": 2065,
-   "ma10": 72820.0,
-   "ma10_margin_pct": 2.31,
-   "spark": {
-    "clusters": [
-     {
-      "time": "14:31",
-      "vol_x": 9.7,
-      "pct": 0.92,
-      "minutes": 1
-     }
-    ]
-   },
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0605",
-      "frgn": 286669,
-      "orgn": -101186
-     },
-     {
-      "date": "0608",
-      "frgn": 53310,
-      "orgn": -129606
-     },
-     {
-      "date": "0609",
-      "frgn": 88113,
-      "orgn": -2429
-     },
-     {
-      "date": "0610",
-      "frgn": 2002261,
-      "orgn": -144932
-     },
-     {
-      "date": "0611",
-      "frgn": -1086104,
-      "orgn": 1048171
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "서진시스템-스틱인베, 영구채·블록딜 '패키지 인수' 가능성 고개",
-     "summary": "통신장비 케이스 기업 서진시스템이 신종자본증권(영구채) 발행 및 최대주주 지분 매각을 결합한 자금 조달 방안을 추진하고 있다. 시장에서는 스틱인베스트먼트가 영구채 투자를 검토하면서 전동규 회장의 블록딜(대량매매) 물량 일부를 인수하는...",
-     "office": "블로터",
-     "datetime": "202606111055",
-     "url": "https://n.news.naver.com/mnews/article/293/0000086122",
-     "sentiment": "호재"
-    },
-    {
-     "title": "'3000억 영구채 발행' 서진시스템, 임원 매도·베트남 세금 '악재'",
-     "summary": "서진시스템이 3000억원 규모의 영구전환사채 발행을 추진 중인 가운데, 조달 구조와 투자 유치 환경이 급변한 것으로 나타났다. 주관사가 신한투자증권 단독 주선 체제로 변경된 가운데 임원진의 주식 장내 매도와 베트남 세무조사 리스크로 인해...",
-     "office": "블로터",
-     "datetime": "202606100600",
-     "url": "https://n.news.naver.com/mnews/article/293/0000086039",
-     "sentiment": "혼재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-06-11_한국 옵션·선물 동시만",
-     "title": "한국 옵션·선물 동시만기일 (6월)",
-     "dday": 0,
-     "categories": [
-      "수급"
-     ],
-     "score": 1.8
-    }
-   ]
-  }
- ]
+ "suspects": []
 }
