@@ -99,10 +99,18 @@ export async function fetchMinuteCandles(code: string, count = 480): Promise<Min
   // (09:00 봉에 시초가 동시호가 물량이 자연 반영 — KIS 분봉과 정합).
   const bars: MinuteBar[] = [];
   let prevCum = 0;
+  let preClose = 0; // 마지막 장전 체결가 (장전시간외는 전일 종가 고정 = 전일 종가)
   for (const r of rows) {
     const vol = Math.max(0, r.cum - prevCum);
     prevCum = r.cum;
     if (r.time >= "0900") bars.push({ time: r.time, close: r.close, vol });
+    else if (r.close > 0) preClose = r.close;
+  }
+  // 09:00 무체결 종목(갭 동시호가 지연 체결): fchart는 행이 없지만 KIS는 09:00 봉을
+  // 전일 종가·거래량 0으로 채워 준다 → 동일하게 가상 봉을 넣어 등락률 체인 기준가를
+  // 맞춘다 (없으면 첫 체결봉의 갭 등락이 0%로 처리돼 개장 스파크를 통째로 놓침).
+  if (preClose > 0 && bars.length > 0 && bars[0].time !== "0900") {
+    bars.unshift({ time: "0900", close: preClose, vol: 0 });
   }
   return bars;
 }
