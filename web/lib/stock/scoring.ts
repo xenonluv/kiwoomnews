@@ -24,7 +24,7 @@ interface VerdictInputs {
   marketAlert: MarketAlert | null;
   isManagement: boolean;
   /** 당일 분봉 스파크 (옵션 — 미전달 시 점수 무영향, 표시 전용 모드) */
-  spark?: { maxVolX: number | null } | null;
+  spark?: { maxVolX: number | null; megaFlow?: boolean } | null;
 }
 
 export function computeVerdict(inp: VerdictInputs): VerdictSection {
@@ -106,6 +106,11 @@ export function computeVerdict(inp: VerdictInputs): VerdictSection {
     }
     if (f.foreignNetDays5 >= 4) add("외인 연속 매집", 2, "수급");
   }
+  // 메가스파크(≥40배) × 수급매수 — 강한 회복력 가설(2026-06, HPSP 136x·스피어 44x 관찰).
+  // 단일 가점 중 최강. 과열·시장경보 오버라이드는 점수 산출 후 적용되므로 가드 우회 없음.
+  // +10은 의도적으로 radar.py MEGA_BONUS(+12)와 다름 — 5~95 confluence 체계의 최강
+  // 가점(강세마감 +8)을 약간 상회하는 수준으로 별도 보정.
+  if (spark?.megaFlow) add(`메가스파크 ${sparkMaxX}배 × 수급매수`, 10, "수급");
 
   // ── KRX 시장경보 (주의=플래그만, 경고/위험=감점 — 이상급등·단기과열 지정) ──
   if (marketAlert) {

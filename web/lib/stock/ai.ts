@@ -86,7 +86,10 @@ function serializeForPrompt(r: StockReport): string {
           r.spark.clusters
             .slice(0, 5)
             .map((c) => `${c.time} ${c.vol_x}배 ${c.pct > 0 ? "+" : ""}${c.pct}% ${c.minutes}분`)
-            .join(" · ")
+            .join(" · ") +
+          (r.spark.megaFlow
+            ? " · 메가스파크(40배+) × 외인/기관 순매수 동반 — 강한 회복력 신호"
+            : "")
       );
     } else {
       L.push(

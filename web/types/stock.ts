@@ -35,6 +35,8 @@ export interface SparkSection {
   clusters: SparkCluster[];
   barCount: number; // 당일 1분봉 수 (≥30 보장)
   maxVolX: number | null; // 최대 클러스터 배수 (스파크 없으면 null)
+  /** 메가스파크(≥40배) × 최근일 외인+기관 순매수 동반 — 강한 회복력 가설 신호 */
+  megaFlow?: boolean;
 }
 
 export interface PriceSection {

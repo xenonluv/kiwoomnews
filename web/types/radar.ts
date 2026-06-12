@@ -56,6 +56,8 @@ export interface ScoreBreakdown {
   flow: number;
   event: number;
   ai?: number;
+  /** 메가스파크(≥40x)×당일 수급매수 가점 — 표시 점수 전용 (raw에는 없음) */
+  mega?: number;
 }
 
 /** 흔들기(눌림 후 재상승) 패턴 증거 — pattern === "shakeout"일 때만 */
@@ -118,6 +120,10 @@ export interface Suspect {
   ma10: number;
   ma10_margin_pct: number; // 10일선 대비 여유 (조건 4)
   spark: { clusters: SparkCluster[] };
+  /** 최대 스파크 클러스터 배수 — 구버전 JSON엔 없음 */
+  spark_max_x?: number;
+  /** 메가스파크(≥mega_x) × 당일 외인+기관 순매수 동반 여부 */
+  mega_flow?: boolean;
   flow: FlowInfo;
   news: NewsItem[];
   matched_events: MatchedEvent[];
@@ -134,6 +140,8 @@ export interface RadarData {
     chg_range: [number, number];
     spark_x: number;
     spark_pct: number;
+    /** 메가 스파크 임계(배) — 수급매수 동반 시 가점. 구버전 JSON엔 없음. */
+    mega_x?: number;
     /** 유니버스 수집 방식 — "kis_rank"(기본) | "naver_scan"(폴백). 구버전 JSON엔 없음. */
     universe?: string;
     /** 시장×지표(거래대금/등락률)별 상위 N (kis_rank 방식) */

@@ -73,6 +73,15 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 급락 흡수
               </Badge>
             )}
+            {s.mega_flow && (
+              <Badge
+                variant="outline"
+                className="border-up/60 font-semibold text-up"
+                title="초대형 분봉 스파크에 당일 외인·기관 순매수가 동반 — 강한 회복력 가설로 최대 +12점 가점"
+              >
+                메가스파크 {s.spark_max_x}배 × 수급매수
+              </Badge>
+            )}
             {(() => {
               const b = aiBadge(s.ai_verdict);
               return (

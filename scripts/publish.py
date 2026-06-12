@@ -23,7 +23,7 @@ RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
 DISCLAIMER = "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다."
 RADAR_PASSTHRU = ("--min-value", "--high-pct", "--chg-min", "--chg-max",
-                  "--spark-x", "--spark-pct", "--top-n",
+                  "--spark-x", "--spark-pct", "--mega-x", "--top-n",
                   "--shake-pct", "--shake-recover", "--shake-chg-max",
                   "--deep-drop-min", "--deep-drop-max", "--deep-ibs-min",
                   "--deep-recovery-min", "--deep-late-window",
@@ -76,6 +76,11 @@ def record_history(out):
             "high_pct": s.get("high_pct"),
             "fade_pct": s.get("fade_pct"),
             "pattern": s.get("pattern"),
+            # 메가스파크×수급 가설 검증용 피처 (radar_backtest spark_flow 표가 사용)
+            "spark_max_x": s.get("spark_max_x"),
+            "mega_flow": s.get("mega_flow", False),
+            "flow_today_buy": bool((s.get("flow") or {}).get("today_buy")),
+            "flow_net_days": (s.get("flow") or {}).get("net_days"),
             "deep_shake": s.get("deep_shake"),
             "ai_verdict": s.get("ai_verdict"),
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],

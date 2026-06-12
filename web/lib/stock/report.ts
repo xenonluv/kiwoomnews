@@ -24,7 +24,7 @@ import {
 } from "./naver";
 import { cleanText, formatKST, num } from "./parse";
 import { computeIndicators } from "./indicators";
-import { detectSparks } from "./sparks";
+import { detectSparks, MEGA_SPARK_X } from "./sparks";
 import { makeAliases, scoreNews } from "./news-score";
 import { matchEvents } from "./theme-match";
 import { computeVerdict } from "./scoring";
@@ -196,10 +196,18 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     warnings.push("분봉 데이터를 불러오지 못해 스파크 분석을 생략합니다.");
   } else if (minuteBars.length >= 30) {
     const clusters = detectSparks(minuteBars);
+    const maxVolX = clusters.length > 0 ? Math.max(...clusters.map((c) => c.vol_x)) : null;
+    // 메가스파크 × 수급매수 — 네이버 trend 최신행은 장중엔 전일치일 수 있음(허용된 프록시)
+    const latestFlow = flow?.daily[0] ?? null;
     spark = {
       clusters,
       barCount: minuteBars.length,
-      maxVolX: clusters.length > 0 ? Math.max(...clusters.map((c) => c.vol_x)) : null,
+      maxVolX,
+      megaFlow:
+        maxVolX !== null &&
+        maxVolX >= MEGA_SPARK_X &&
+        latestFlow !== null &&
+        latestFlow.foreign + latestFlow.organ > 0,
     };
   }
 

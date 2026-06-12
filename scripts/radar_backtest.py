@@ -40,6 +40,11 @@ CALIB_MIN_N = 20        # 보정표 구간 유효 최소 표본
 SCORE_BINS = [(40, 60), (60, 75), (75, 101)]
 HIGH3_X = 1.03          # 보조지표: 익일 고가 +3%
 
+# 메가스파크×수급 가설 검증 표 (radar.py MEGA_SPARK_X와 정합)
+MEGA_X = 40.0
+SPARK_BUCKETS = [("<10x", 0.0, 10.0), ("10~40x", 10.0, MEGA_X), ("≥40x", MEGA_X, float("inf"))]
+FEATURE_MIN_N = 10      # 피처 셀 유효 최소 표본 (탐색용 — 보정표보다 낮은 임계)
+
 # AI(prob_up) 예측 기록 — 웹과 동일한 프로덕션 엔드포인트 호출 (로직 중복 없음).
 # 방향 파생 임계(58/42)와 정합하는 확률 구간으로 보정 검증.
 AI_ENDPOINT = os.environ.get(
@@ -193,6 +198,15 @@ def collect_samples():
                                 # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
                                 "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
                                 "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
+                                # 메가스파크×수급 검증용 피처. spark_max_x는 신규 기록만 존재
+                                # (구버전 history는 복원 불가 → None = unknown 처리).
+                                # flow_today_buy 폴백: flow = net_days*2 + today_buy*5 이므로
+                                # 홀수 ⇔ 당일 순매수 (캡 15도 홀수라 안전).
+                                "spark_max_x": s.get("spark_max_x"),
+                                "flow_today_buy": s.get(
+                                    "flow_today_buy",
+                                    int(round(s.get("breakdown", {}).get("flow", 0) or 0)) % 2 == 1),
+                                "mega_flow": s.get("mega_flow", False),
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
@@ -286,6 +300,33 @@ def ai_stats(samples):
     }
 
 
+def spark_flow_matrix(samples):
+    """스파크 배율 구간 × 당일 수급매수 적중률 표 — 메가스파크 가설 검증.
+
+    가설(2026-06-12 관찰): 스파크 ≥40배 + 외인/기관 매수 동반 종목은 회복력이 강함
+    (HPSP 136x→상한가, 스피어 44x→반등). 표본 충분 시 MEGA_BONUS의 raw 승격 근거가 된다.
+    spark_max_x 미기록 구표본은 unknown_n으로 분리 (셀 통계에서 제외).
+    """
+    known = [s for s in samples if s.get("spark_max_x") is not None]
+    cells = []
+    for label, lo, hi in SPARK_BUCKETS:
+        for flow_buy in (True, False):
+            grp = [s for s in known
+                   if lo <= s["spark_max_x"] < hi and s["flow_today_buy"] == flow_buy]
+            hits = sum(1 for s in grp if s["hit"])
+            rets = [s["return_pct"] for s in grp]
+            cells.append({
+                "spark_bucket": label, "flow_buy": flow_buy, "n": len(grp),
+                "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+                "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+                "high3_rate": (round(sum(1 for s in grp if s["high3"]) / len(grp) * 100, 1)
+                               if grp else None),
+                "valid": len(grp) >= FEATURE_MIN_N,
+            })
+    return {"mega_x": MEGA_X, "min_n": FEATURE_MIN_N,
+            "unknown_n": len(samples) - len(known), "cells": cells}
+
+
 def tune_weights(samples):
     """항목별 정규화 기여도의 적중군-미적중군 평균 차(lift)로 가중치 조정.
 
@@ -359,6 +400,8 @@ def write_performance(samples, series, bins, weights, dropouts=None):
         "by_ai_verdict": group_stats(samples, "ai_verdict"),
         # AI 익일 예측(prob_up) 검증 루프 — ai_predict()가 기록한 표본의 적중·보정 통계
         "ai": ai_stats(samples),
+        # 메가스파크×수급 가설 검증 표 (스파크 배율 구간 × 당일 수급매수)
+        "spark_flow": spark_flow_matrix(samples),
         "weights": {
             "current": (weights or {}).get("weights") or DEFAULT_WEIGHTS,
             "default": DEFAULT_WEIGHTS,

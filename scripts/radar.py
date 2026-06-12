@@ -47,6 +47,8 @@ HIGH_PCT = 13.0              # 당일 고가 등락률 하한 (%)
 CHG_MIN, CHG_MAX = -6.0, 10.0  # 현재 등락률 범위 (%) — 기존 fade 밴드
 SPARK_VOL_X = 8.0            # 분봉 거래량 / 당일 중앙값 배수
 SPARK_PCT = 0.8              # 분봉 등락 절대값 (%)
+MEGA_SPARK_X = 40.0          # 메가 스파크: 최대 클러스터 배수 임계 (실측: HPSP 136x, 스피어 44x)
+MEGA_BONUS = 12              # 메가 스파크 × 당일 수급매수 동반 시 표시 점수 가점 (raw 불변)
 
 
 def log(msg):
@@ -436,6 +438,16 @@ def scan_one(name, code, p, events):
     # 보정표는 raw 점수 기준으로 누적되므로 매칭도 raw로 (가중치 체제와 무관하게 일관)
     calib = calibrated_prob(score_raw, p.calib_bins)
 
+    # 메가스파크 × 당일 수급매수 가점 — Kimi 가점과 동일하게 표시 점수에만 반영.
+    # raw(score_raw/breakdown_raw)는 불변: 백테스트 통계·보정표·가중치 튜닝 비교성 유지.
+    # 가설(≥40x + 외인/기관 매수 → 강한 회복력)은 radar_backtest의 spark_flow 표로 검증.
+    spark_max_x = round(max((c["vol_x"] for c in sparks), default=0.0), 1)
+    mega_flow = spark_max_x >= p.mega_x and acc["today_buy"]
+    if mega_flow:
+        boosted = min(100, score + MEGA_BONUS)
+        breakdown["mega"] = boosted - score  # 100 캡 시 실제 적용분만 기록 (해부도 과장 방지)
+        score = boosted
+
     return {
         "code": code,
         "name": name,
@@ -456,6 +468,8 @@ def scan_one(name, code, p, events):
         "ma10": round(ma10, 1),
         "ma10_margin_pct": round(ma10_margin, 2),
         "spark": {"clusters": sparks},
+        "spark_max_x": spark_max_x,
+        "mega_flow": mega_flow,
         "flow": acc,
         "news": news_items,
         "matched_events": matched_events,
@@ -630,6 +644,8 @@ def main():
     ap.add_argument("--chg-max", type=float, default=CHG_MAX)
     ap.add_argument("--spark-x", type=float, default=SPARK_VOL_X, help="분봉 거래량 중앙값 배수")
     ap.add_argument("--spark-pct", type=float, default=SPARK_PCT, help="분봉 등락 하한(%%)")
+    ap.add_argument("--mega-x", type=float, default=MEGA_SPARK_X,
+                    help="메가 스파크 임계(중앙값 배수) — 당일 수급매수 동반 시 강한 가점")
     ap.add_argument("--top-n", type=int, default=20,
                     help="유니버스: 시장×지표(거래대금/등락률)별 상위 N종목")
     ap.add_argument("--shake-pct", type=float, default=10.0,
@@ -710,7 +726,7 @@ def main():
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
         "params": {"min_value_eok": round(p.min_value / 1e8), "high_pct": p.high_pct,
                    "chg_range": [p.chg_min, p.chg_max], "spark_x": p.spark_x,
-                   "spark_pct": p.spark_pct,
+                   "spark_pct": p.spark_pct, "mega_x": p.mega_x,
                    "universe": universe_method, "top_n": p.top_n,
                    "universe_chg_range": [universe_chg_min, p.chg_max],
                    "shake_pct": p.shake_pct, "shake_chg_max": p.shake_chg_max,

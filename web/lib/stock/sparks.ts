@@ -6,6 +6,7 @@ import type { MinuteBar } from "@/types/stock";
 
 export const SPARK_VOL_X = 8.0; // 분봉 거래량 / 당일 중앙값 배수
 export const SPARK_PCT = 0.8; // 분봉 등락 절대값 (%)
+export const MEGA_SPARK_X = 40; // 메가 스파크 임계 — radar.py MEGA_SPARK_X와 동기화
 
 /**
  * 당일 1분봉에서 거래량 스파크 클러스터 추출.

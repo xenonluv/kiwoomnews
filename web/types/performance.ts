@@ -61,6 +61,24 @@ export interface AiStats {
   brier: number | null; // 낮을수록 좋음 (0.25 = 무정보 기준선)
 }
 
+/** 메가스파크×수급 가설 검증 표 — radar_backtest.spark_flow_matrix()와 정합. */
+export interface SparkFlowCell {
+  spark_bucket: string; // "<10x" | "10~40x" | "≥40x"
+  flow_buy: boolean; // 당일 외인+기관 순매수 여부
+  n: number;
+  hit_rate: number | null;
+  avg_return: number | null;
+  high3_rate: number | null;
+  valid: boolean; // n >= min_n
+}
+
+export interface SparkFlowStats {
+  mega_x: number; // 메가 스파크 임계 (배)
+  min_n: number; // 셀 유효 최소 표본
+  unknown_n: number; // spark_max_x 미기록 구표본 수 (셀 제외)
+  cells: SparkFlowCell[];
+}
+
 export interface PerformanceData {
   as_of: string;
   summary: {
@@ -77,6 +95,8 @@ export interface PerformanceData {
   weights: WeightsInfo;
   /** AI 익일 예측(prob_up) 검증 — 구버전 performance.json에는 없을 수 있음 */
   ai?: AiStats;
+  /** 메가스파크×수급 가설 검증 표 — 구버전 performance.json에는 없을 수 있음 */
+  spark_flow?: SparkFlowStats;
   recent: RecentSample[];
   disclaimer: string;
 }

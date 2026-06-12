@@ -1,5 +1,5 @@
 {
- "as_of": "2026-06-12 17:57 KST",
+ "as_of": "2026-06-12 19:51 KST",
  "summary": {
   "n": 5,
   "hit_rate": 60.0,
@@ -85,6 +85,67 @@
   "avg_prob": null,
   "actual_rate": null,
   "brier": null
+ },
+ "spark_flow": {
+  "mega_x": 40.0,
+  "min_n": 10,
+  "unknown_n": 5,
+  "cells": [
+   {
+    "spark_bucket": "<10x",
+    "flow_buy": true,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   },
+   {
+    "spark_bucket": "<10x",
+    "flow_buy": false,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   },
+   {
+    "spark_bucket": "10~40x",
+    "flow_buy": true,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   },
+   {
+    "spark_bucket": "10~40x",
+    "flow_buy": false,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   },
+   {
+    "spark_bucket": "≥40x",
+    "flow_buy": true,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   },
+   {
+    "spark_bucket": "≥40x",
+    "flow_buy": false,
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "high3_rate": null,
+    "valid": false
+   }
+  ]
  },
  "weights": {
   "current": {

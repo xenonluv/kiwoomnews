@@ -8,6 +8,7 @@ import { StatCards } from "@/components/performance/StatCards";
 import { CalibrationTable } from "@/components/performance/CalibrationTable";
 import { WeightsPanel } from "@/components/performance/WeightsPanel";
 import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
+import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 
 export const metadata: Metadata = {
   title: "성과 검증 · 자가 개선",
@@ -57,6 +58,8 @@ export default function PerformancePage() {
           <CalibrationTable bins={data.bins} />
           <WeightsPanel weights={data.weights} />
         </div>
+
+        {data.spark_flow && <SparkFlowMatrix data={data.spark_flow} />}
 
         {data.ai && <AiPredictionPanel ai={data.ai} />}
 

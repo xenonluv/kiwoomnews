@@ -17,6 +17,11 @@ export function SparkCard({ spark }: { spark: SparkSection }) {
               {n}회 · 최대 {spark.maxVolX}배
             </span>
           )}
+          {spark.megaFlow && (
+            <span className="rounded-full border border-up/60 px-2 py-0.5 text-[11px] font-semibold text-up">
+              메가스파크 {spark.maxVolX}배 × 수급매수
+            </span>
+          )}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -32,6 +37,12 @@ export function SparkCard({ spark }: { spark: SparkSection }) {
               스파크 = 1분 거래량이 당일 중앙값의 8배 이상 + 등락 ±0.8% 이상 (개장 직후는
               12배 기준). 점이 클수록 거래량 배수가 큽니다.
             </p>
+            {spark.megaFlow && (
+              <p className="mt-1.5 text-[11px] text-up">
+                초대형 스파크(40배+)에 외인·기관 순매수가 동반된 종목 — 눌림에서도 회복력이
+                강한 패턴으로 판정 점수에 가점됩니다.
+              </p>
+            )}
           </>
         )}
       </CardContent>

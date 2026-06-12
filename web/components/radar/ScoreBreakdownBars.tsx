@@ -6,6 +6,7 @@ const ITEMS: { key: keyof ScoreBreakdown; label: string; max: number }[] = [
   { key: "flow", label: "외인·기관 수급", max: 15 },
   { key: "event", label: "이벤트 민감도", max: 15 },
   { key: "ma10", label: "10일선 여유", max: 10 },
+  { key: "mega", label: "메가스파크×수급", max: 12 },
   { key: "ai", label: "AI 검증 보정", max: 10 },
 ];
 
