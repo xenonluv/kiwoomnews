@@ -189,6 +189,10 @@ def main():
     new = json.dumps(out, ensure_ascii=False, indent=1)
 
     if not dry:
+        # 추적 파일(history·radar.json) 첫 쓰기 전에 공용 git 락 — 락 밖에서 쓴 미커밋
+        # 변경을 타 푸셔의 autostash가 스태시/충돌로 날리는 것 방지 (쓰기~push가 보호 단위).
+        # 느린 radar 스캔은 락 밖(이미 완료) — 락 보유는 쓰기+git 수 초.
+        git_lock = acquire_git_lock()  # noqa: F841 — 프로세스 종료까지 유지
         # 게시 여부와 무관하게 매 회차 검증용 이력 기록 (push는 radar_backtest가 담당)
         record_history(out)
 
@@ -213,8 +217,7 @@ def main():
         return
 
     os.makedirs(os.path.dirname(RADAR_JSON), exist_ok=True)
-    open(RADAR_JSON, "w", encoding="utf-8").write(new)
-    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
+    open(RADAR_JSON, "w", encoding="utf-8").write(new)  # git 락 보유 중 (위에서 획득)
     git("add", "web/data/radar.json")
     git("commit", "-q", "-m", f"data: 레이더 자동 게시 (수상종목 {len(out['suspects'])}건)")
     # push 전 원격 변경 먼저 통합 (다중 머신 공존)

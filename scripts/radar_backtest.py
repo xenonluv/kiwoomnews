@@ -479,7 +479,7 @@ def acquire_git_lock():
 
 
 def push_state():
-    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
+    # 공용 git 락은 main()이 첫 추적 파일 쓰기 전에 이미 보유 (이중 획득 = flock 자기 데드락)
     files = glob.glob(os.path.join(HISTORY_DIR, "*.json")) + [PERF_PATH]
     if os.path.exists(WEIGHTS_PATH):
         files.append(WEIGHTS_PATH)
@@ -506,6 +506,9 @@ def push_state():
 
 
 def main():
+    # 추적 파일(history·weights·performance) 쓰기 전 공용 git 락 — 락 밖 미커밋 변경을
+    # 타 푸셔 autostash가 스태시/충돌로 날리는 것 방지. 17:20 단독 실행이라 대기 비용 없음.
+    git_lock = acquire_git_lock()  # noqa: F841 — 프로세스 종료까지 유지
     evaluate()
     ai_predict()  # 당일 마감 카드의 AI 예측 기록 (익일 evaluate가 채점)
     samples = collect_samples()

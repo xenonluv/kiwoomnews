@@ -200,6 +200,10 @@ def main():
     top = int(args[args.index("--top") + 1]) if "--top" in args else 30
     bet = int(args[args.index("--bet") + 1]) if "--bet" in args else 5
 
+    if not dry:
+        # build()가 추적 상태 파일(state/history 등)을 쓰므로 그 전에 공용 git 락 —
+        # 락 밖 미커밋 변경을 타 푸셔 autostash가 스태시/충돌로 날리는 것 방지
+        git_lock = acquire_git_lock()  # noqa: F841 — 프로세스 종료까지 유지
     out = build(top, bet, record=not dry)
     text = json.dumps(out, ensure_ascii=False, indent=2)
 
@@ -211,9 +215,8 @@ def main():
             print(f"  🎯 {r['ticker']} {r['tomorrow_up_prob']} 진입{r['entry']} 손절{r['stop']} [{r['confidence']}] {r['reasons']}")
         return
 
-    open(PRED, "w", encoding="utf-8").write(text)
+    open(PRED, "w", encoding="utf-8").write(text)  # git 락 보유 중 (build 전 획득)
     if "--push" in args:
-        git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
         git("add", "web/data/predictions.json")
         git("commit", "-q", "-m", f"data: 내일상승 예측 갱신 (종가베팅 {len(out['closing_bet'])})")
         pl = git("pull", "--rebase", "--autostash", "origin", "main")

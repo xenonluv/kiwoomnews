@@ -104,7 +104,7 @@ def acquire_git_lock():
 
 def push_state():
     """백테스트 산출물만 커밋/푸시. 변경이 없어도 이전 미푸시 커밋 회수를 위해 push 시도."""
-    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
+    # 공용 git 락은 __main__이 evaluate() 전에 이미 보유 (이중 획득 = flock 자기 데드락)
     files = sorted(glob.glob(os.path.join(HIST, "*.json")))
     for name in ("backtest.json", "calibration.json"):
         path = os.path.join(STATE, name)
@@ -143,6 +143,8 @@ def push_state():
 
 
 if __name__ == "__main__":
+    # evaluate()가 추적 상태 파일을 쓰므로 그 전에 공용 git 락 (쓰기~push가 보호 단위)
+    git_lock = acquire_git_lock()  # noqa: F841 — 프로세스 종료까지 유지
     evaluate()
     if "--push" in sys.argv[1:]:
         push_state()
