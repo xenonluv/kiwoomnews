@@ -78,6 +78,7 @@ def record_history(out):
             "pattern": s.get("pattern"),
             # 메가스파크×수급 가설 검증용 피처 (radar_backtest spark_flow 표가 사용)
             "spark_max_x": s.get("spark_max_x"),
+            "spark_max_pct": s.get("spark_max_pct"),  # 부호 = 상승/하락 메가 분리 분석용
             "mega_flow": s.get("mega_flow", False),
             "flow_today_buy": bool((s.get("flow") or {}).get("today_buy")),
             "flow_net_days": (s.get("flow") or {}).get("net_days"),

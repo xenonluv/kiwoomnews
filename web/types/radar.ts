@@ -122,6 +122,8 @@ export interface Suspect {
   spark: { clusters: SparkCluster[] };
   /** 최대 스파크 클러스터 배수 — 구버전 JSON엔 없음 */
   spark_max_x?: number;
+  /** 최대 배수 클러스터의 누적 등락(%) — 부호로 상승/하락 메가 구분 (기록 전용) */
+  spark_max_pct?: number | null;
   /** 메가스파크(≥mega_x) × 당일 외인+기관 순매수 동반 여부 */
   mega_flow?: boolean;
   flow: FlowInfo;

@@ -442,6 +442,9 @@ def scan_one(name, code, p, events):
     # raw(score_raw/breakdown_raw)는 불변: 백테스트 통계·보정표·가중치 튜닝 비교성 유지.
     # 가설(≥40x + 외인/기관 매수 → 강한 회복력)은 radar_backtest의 spark_flow 표로 검증.
     spark_max_x = round(max((c["vol_x"] for c in sparks), default=0.0), 1)
+    # 최대 배수 클러스터의 등락 부호 — "상승 메가(쳐올림) vs 하락 메가(투매/흡수)" 분리
+    # 분석용 순수 기록 (점수 미사용). 표본 충분(메가 n>=20) 시 부호별 적중률 집계 예정.
+    spark_max_pct = (max(sparks, key=lambda c: c["vol_x"])["pct"] if sparks else None)
     mega_flow = spark_max_x >= p.mega_x and acc["today_buy"]
     if mega_flow:
         boosted = min(100, score + MEGA_BONUS)
@@ -469,6 +472,7 @@ def scan_one(name, code, p, events):
         "ma10_margin_pct": round(ma10_margin, 2),
         "spark": {"clusters": sparks},
         "spark_max_x": spark_max_x,
+        "spark_max_pct": spark_max_pct,  # 최대 배수 클러스터의 누적 등락(%) — 부호가 방향
         "mega_flow": mega_flow,
         "flow": acc,
         "news": news_items,
