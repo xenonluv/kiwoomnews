@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-12 13:22 KST",
+  "as_of": "2026-06-12 13:37 KST",
   "intraday_rank": [
     {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13500.0,
-      "target": 14175,
-      "stop": 13095,
+      "entry": 13640.0,
+      "target": 14322,
+      "stop": 13231,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.87)",
         "정배열",
         "MACD강세"
       ],
@@ -49,12 +49,12 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "90%",
-      "entry": 257500.0,
-      "target": 270375,
-      "stop": 249775,
+      "entry": 256500.0,
+      "target": 269325,
+      "stop": 248805,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -62,21 +62,15 @@
       "day_change": null,
       "related_news": [
         {
-          "title": "크래프톤, 네이버와 '배틀그라운드' e스포츠 생태계 확장 협력",
-          "url": "https://n.news.naver.com/mnews/article/277/0005775665",
-          "office": "아시아경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
-          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
-          "office": "아이뉴스24",
-          "sentiment": "호재"
-        },
-        {
           "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
           "url": "https://n.news.naver.com/mnews/article/421/0009000348",
           "office": "뉴스1",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
+          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
+          "office": "뉴시스",
           "sentiment": "호재"
         }
       ]
@@ -118,48 +112,12 @@
       "cause_summary": "삼성전자 13% 급등·HPSP 신고가…반도체주 폭풍 랠리 [칩칩폭폭]"
     },
     {
-      "ticker": "이수화학",
-      "code": "005950",
-      "tomorrow_up_prob": "84%",
-      "entry": 17430.0,
-      "target": 18302,
-      "stop": 16907,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.94)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑",
-          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112924",
-          "office": "newsdream",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "이수화학 주가, 6월 11일 15,220원 23.64% 상승 마감",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16088364",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
-    },
-    {
       "ticker": "솔브레인",
       "code": "357780",
       "tomorrow_up_prob": "81%",
-      "entry": 459500.0,
-      "target": 482475,
-      "stop": 445715,
+      "entry": 459000.0,
+      "target": 481950,
+      "stop": 445230,
       "confidence": "상",
       "reasons": [
         "강세마감(0.98)",
@@ -187,14 +145,14 @@
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "80%",
-      "entry": 334500.0,
-      "target": 351225,
-      "stop": 324465,
+      "entry": 341500.0,
+      "target": 358575,
+      "stop": 331255,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.99)",
         "MACD강세",
-        "RSI55.1 강세"
+        "RSI56.2 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -216,9 +174,9 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 결정...14% 급등",
-          "url": "http://www.metroseoul.co.kr/article/20260612500080",
-          "office": "metroseoul",
+          "title": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 강세",
+          "url": "http://www.segyebiz.com/newsView/20260612508573?OutUrl=naver",
+          "office": "segyebiz",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -228,16 +186,52 @@
       "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
     },
     {
+      "ticker": "이수화학",
+      "code": "005950",
+      "tomorrow_up_prob": "80%",
+      "entry": 17700.0,
+      "target": 18585,
+      "stop": 17169,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112924",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
+        },
+        {
+          "title": "이수화학 주가, 6월 11일 15,220원 23.64% 상승 마감",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16088364",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
+    },
+    {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "78%",
-      "entry": 66850.0,
-      "target": 70192,
-      "stop": 64844,
+      "tomorrow_up_prob": "79%",
+      "entry": 66500.0,
+      "target": 69825,
+      "stop": 64505,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI64.1 강세",
+        "RSI63.8 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
@@ -262,7 +256,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.63배"
+        "거래량1.64배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -299,12 +293,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "75%",
-      "entry": 19680.0,
-      "target": 20664,
-      "stop": 19090,
+      "entry": 19590.0,
+      "target": 20570,
+      "stop": 19002,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.87)",
         "정배열",
         "MACD강세"
       ],
@@ -326,73 +320,21 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 이차전지 전해질 전문 후성 주가 이틀 연속 20%대 불기둥",
-          "url": "https://www.g-enews.com/view.php?ud=202606101541309438c5557f8da8_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "후성 주가, 강세... 왜?"
     },
     {
-      "ticker": "한온시스템",
-      "code": "018880",
-      "tomorrow_up_prob": "75%",
-      "entry": 4805.0,
-      "target": 5045,
-      "stop": 4661,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.89)",
-        "RSI51.4 강세",
-        "Stoch골든"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세",
-          "url": "https://www.tokenpost.kr/news/economy/368487",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 외국인 '한온시스템·후성·케이뱅크'…기관 '삼성전자·현대...",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=706164",
-          "office": "newstnt",
-          "sentiment": "악재",
-          "cause_score": 10,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재, 당일"
-        },
-        {
-          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세"
-    },
-    {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "73%",
-      "entry": 1399000.0,
-      "target": 1468950,
-      "stop": 1357030,
+      "tomorrow_up_prob": "74%",
+      "entry": 1400000.0,
+      "target": 1470000,
+      "stop": 1358000,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.9)",
+        "강세마감(0.91)",
         "정배열",
         "RSI64.3 강세"
       ],
@@ -412,20 +354,48 @@
       "cause_summary": "SK스퀘어 주가, 6월 12일 장중 1,386,000원 12.87% 상승"
     },
     {
+      "ticker": "스피어",
+      "code": "347700",
+      "tomorrow_up_prob": "70%",
+      "entry": 40250.0,
+      "target": 42262,
+      "stop": 39042,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI52.7 강세",
+        "거래량1.97배"
+      ],
+      "risk": "약한 마감",
+      "day_change": 3.77,
+      "cause_news": [
+        {
+          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
+    },
+    {
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "70%",
-      "entry": 246500.0,
-      "target": 258825,
-      "stop": 239105,
+      "entry": 246000.0,
+      "target": 258300,
+      "stop": 238620,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI63.6 강세",
+        "RSI63.5 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 3.26,
+      "day_change": 2.04,
       "related_news": [
         {
           "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
@@ -452,14 +422,6 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "원익IPS 주가, 급등세... AI 반도체 수요 증가에 관심 집중",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163299",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[속보] 원익IPS VI 발동, 주가 급등흐름…지정학적 리스크 완화속 양대지...",
           "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581585",
           "office": "cbci",
@@ -469,35 +431,35 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "원익IPS 주가, 급등세... AI 반도체 수요 증가에 관심 집중"
+      "cause_summary": "[속보] 원익IPS VI 발동, 주가 급등흐름…지정학적 리스크 완화속 양대지..."
     },
     {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "67%",
-      "entry": 105500.0,
-      "target": 110775,
-      "stop": 102335,
+      "entry": 107800.0,
+      "target": 113190,
+      "stop": 104566,
       "confidence": "중",
       "reasons": [
-        "RSI61.3 강세",
+        "RSI62.4 강세",
         "Stoch골든",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 9.07
+      "day_change": 9.59
     },
     {
       "ticker": "DB하이텍",
       "code": "000990",
-      "tomorrow_up_prob": "66%",
-      "entry": 180100.0,
-      "target": 189105,
-      "stop": 174697,
+      "tomorrow_up_prob": "67%",
+      "entry": 178600.0,
+      "target": 187530,
+      "stop": 173242,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.97)",
-        "RSI54.8 강세",
+        "강세마감(0.9)",
+        "RSI54.4 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -514,34 +476,6 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "[거래소 기관] SK스퀘어 DB하이텍 이수페타시스 HD현대마린솔루션 '앗~뜨..."
-    },
-    {
-      "ticker": "스피어",
-      "code": "347700",
-      "tomorrow_up_prob": "63%",
-      "entry": 39750.0,
-      "target": 41738,
-      "stop": 38558,
-      "confidence": "중",
-      "reasons": [
-        "RSI52.1 강세",
-        "거래량1.95배",
-        "호재"
-      ],
-      "risk": "약한 마감",
-      "day_change": 3.77,
-      "cause_news": [
-        {
-          "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061114251996856",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
     }
   ],
   "closing_bet": [
@@ -549,12 +483,12 @@
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13500.0,
-      "target": 14175,
-      "stop": 13095,
+      "entry": 13640.0,
+      "target": 14322,
+      "stop": 13231,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.87)",
         "정배열",
         "MACD강세"
       ],
@@ -593,12 +527,12 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "90%",
-      "entry": 257500.0,
-      "target": 270375,
-      "stop": 249775,
+      "entry": 256500.0,
+      "target": 269325,
+      "stop": 248805,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.8)",
         "정배열",
         "MACD강세"
       ],
@@ -606,21 +540,15 @@
       "day_change": null,
       "related_news": [
         {
-          "title": "크래프톤, 네이버와 '배틀그라운드' e스포츠 생태계 확장 협력",
-          "url": "https://n.news.naver.com/mnews/article/277/0005775665",
-          "office": "아시아경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "치지직서 배그 대회 중계⋯네이버, 크래프톤과 e스포츠 IP 기반 협력",
-          "url": "https://n.news.naver.com/mnews/article/031/0001034700",
-          "office": "아이뉴스24",
-          "sentiment": "호재"
-        },
-        {
           "title": "&quot;화질 좋아졌네?&quot; 네이버 치지직, 월드컵 온라인 중계 같이보기 화질...",
           "url": "https://n.news.naver.com/mnews/article/421/0009000348",
           "office": "뉴스1",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;땡큐 오픈AI&quot;…올트먼 CEO 방한에 네이버 16%·카카오 8%↑",
+          "url": "https://n.news.naver.com/mnews/article/003/0014002925",
+          "office": "뉴시스",
           "sentiment": "호재"
         }
       ]
@@ -662,48 +590,12 @@
       "cause_summary": "삼성전자 13% 급등·HPSP 신고가…반도체주 폭풍 랠리 [칩칩폭폭]"
     },
     {
-      "ticker": "이수화학",
-      "code": "005950",
-      "tomorrow_up_prob": "84%",
-      "entry": 17430.0,
-      "target": 18302,
-      "stop": 16907,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.94)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑",
-          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112924",
-          "office": "newsdream",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락"
-        },
-        {
-          "title": "이수화학 주가, 6월 11일 15,220원 23.64% 상승 마감",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16088364",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 이수화학, 세탁세제 원료 공급 차질에 반사 수혜…주가 12%↑"
-    },
-    {
       "ticker": "솔브레인",
       "code": "357780",
       "tomorrow_up_prob": "81%",
-      "entry": 459500.0,
-      "target": 482475,
-      "stop": 445715,
+      "entry": 459000.0,
+      "target": 481950,
+      "stop": 445230,
       "confidence": "상",
       "reasons": [
         "강세마감(0.98)",
@@ -726,6 +618,50 @@
           "sentiment": "호재"
         }
       ]
+    },
+    {
+      "ticker": "한미반도체",
+      "code": "042700",
+      "tomorrow_up_prob": "80%",
+      "entry": 341500.0,
+      "target": 358575,
+      "stop": 331255,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.99)",
+        "MACD강세",
+        "RSI56.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026061211203095645",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 소식에 14% 급등",
+          "url": "https://www.newspim.com/news/view/20260612000376",
+          "office": "newspim",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 한미반도체, 스페이스X 500억원 투자 결정에 강세",
+          "url": "http://www.segyebiz.com/newsView/20260612508573?OutUrl=naver",
+          "office": "segyebiz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "한미반도체, 스페이스X 500억원 투자 소식에 13%대 급등[특징주]"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
