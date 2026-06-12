@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-12 12:22 KST",
+  "as_of": "2026-06-12 12:37 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "91%",
-      "entry": 256000.0,
-      "target": 268800,
-      "stop": 248320,
+      "entry": 261500.0,
+      "target": 274575,
+      "stop": 253655,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.95)",
         "정배열",
         "MACD강세"
       ],
@@ -38,51 +38,15 @@
       ]
     },
     {
-      "ticker": "아이로보틱스",
-      "code": "066430",
-      "tomorrow_up_prob": "91%",
-      "entry": 4215.0,
-      "target": 4426,
-      "stop": 4089,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "아이로보틱스 주가 강세...소형 하모닉 감속기 설계 수주",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3606853",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 아이로보틱스, \"질화규소 베어링 감속기 개발\" 휴머노이드 공...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295300",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "아이로보틱스 주가 강세...소형 하모닉 감속기 설계 수주"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13540.0,
-      "target": 14217,
-      "stop": 13134,
+      "entry": 13690.0,
+      "target": 14374,
+      "stop": 13279,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.91)",
         "정배열",
         "MACD강세"
       ],
@@ -154,48 +118,56 @@
       "cause_summary": "삼성전자 13% 급등·HPSP 신고가…반도체주 폭풍 랠리 [칩칩폭폭]"
     },
     {
-      "ticker": "로보티즈",
-      "code": "108490",
-      "tomorrow_up_prob": "82%",
-      "entry": 354000.0,
-      "target": 371700,
-      "stop": 343380,
+      "ticker": "ISC",
+      "code": "095340",
+      "tomorrow_up_prob": "84%",
+      "entry": 236500.0,
+      "target": 248325,
+      "stop": 229405,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
-        "RSI56.4 강세",
-        "Stoch골든"
+        "강세마감(0.97)",
+        "MACD강세",
+        "RSI56.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "로보티즈 주가, 급등세... 피지컬 AI 시대 핵심 수혜주 부각",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163297",
-          "office": "ggilbo",
+          "title": "ISC 주가, 6월 11일 190,500원 5.48% 상승 마감",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=525360",
+          "office": "joongangenews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "HL만도 상한가 이어 로봇주 동반 강세...로보티즈, 로보스타 등 급등",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439593",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "로보티즈·현대모비스 등 피지컬AI 관련주 일제히 급등",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3606725",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "로보티즈 주가, 급등세... 피지컬 AI 시대 핵심 수혜주 부각"
+      "cause_confidence": "중간",
+      "cause_summary": "ISC 주가, 6월 11일 190,500원 5.48% 상승 마감"
+    },
+    {
+      "ticker": "대덕전자",
+      "code": "353200",
+      "tomorrow_up_prob": "79%",
+      "entry": 178400.0,
+      "target": 187320,
+      "stop": 173048,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "RSI63.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "대덕전자, 메모리 신규 시설투자 호재…목표가 13%↑-DB",
+          "url": "https://n.news.naver.com/mnews/article/018/0006278764",
+          "office": "이데일리",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "HL만도",
@@ -208,7 +180,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.0 강세",
-        "거래량1.56배"
+        "거래량1.57배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -242,15 +214,39 @@
       "cause_summary": "HL만도, 로봇 액추에이터 기대감에 상한가 직행"
     },
     {
+      "ticker": "테크윙",
+      "code": "089030",
+      "tomorrow_up_prob": "75%",
+      "entry": 67000.0,
+      "target": 70350,
+      "stop": 64990,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI64.2 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 9.66,
+      "related_news": [
+        {
+          "title": "[단독] 테크윙 &quot;메모리 빅3에 HBM4 장비 납품&quot;",
+          "url": "https://n.news.naver.com/mnews/article/015/0005296434",
+          "office": "한국경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "75%",
-      "entry": 19250.0,
-      "target": 20212,
-      "stop": 18672,
+      "entry": 19110.0,
+      "target": 20066,
+      "stop": 18537,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
@@ -289,13 +285,13 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "75%",
-      "entry": 4810.0,
-      "target": 5050,
-      "stop": 4666,
+      "entry": 4800.0,
+      "target": 5040,
+      "stop": 4656,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
-        "RSI51.5 강세",
+        "강세마감(0.89)",
+        "RSI51.4 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -332,15 +328,15 @@
     {
       "ticker": "한미반도체",
       "code": "042700",
-      "tomorrow_up_prob": "72%",
-      "entry": 333000.0,
-      "target": 349650,
-      "stop": 323010,
+      "tomorrow_up_prob": "73%",
+      "entry": 336500.0,
+      "target": 353325,
+      "stop": 326405,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.99)",
+        "강세마감(0.93)",
         "MACD강세",
-        "RSI54.9 강세"
+        "RSI55.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -362,9 +358,9 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[ET특징주] 한미반도체, 500억 규모 스페이스X 주식 취득 결정에… 주가...",
-          "url": "https://www.etnews.com/20260612000148",
-          "office": "etnews",
+          "title": "[특징주] 한미반도체, 스페이스X 500억 투자 결정...14% 급등",
+          "url": "http://www.metroseoul.co.kr/article/20260612500080",
+          "office": "metroseoul",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -377,17 +373,17 @@
       "ticker": "스피어",
       "code": "347700",
       "tomorrow_up_prob": "70%",
-      "entry": 40700.0,
-      "target": 42735,
-      "stop": 39479,
+      "entry": 40500.0,
+      "target": 42525,
+      "stop": 39285,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI53.3 강세",
-        "거래량1.85배"
+        "RSI53.1 강세",
+        "거래량1.87배"
       ],
       "risk": "약한 마감",
-      "day_change": 5.97,
+      "day_change": 5.58,
       "cause_news": [
         {
           "title": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]",
@@ -402,17 +398,41 @@
       "cause_summary": "스피어, 美 우주항공 업체 공급계약 체결에 28% 급등[특징주]"
     },
     {
+      "ticker": "주성엔지니어링",
+      "code": "036930",
+      "tomorrow_up_prob": "68%",
+      "entry": 235500.0,
+      "target": 247275,
+      "stop": 228435,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "RSI60.9 강세",
+        "일목 구름위"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.46,
+      "related_news": [
+        {
+          "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
+          "url": "https://n.news.naver.com/mnews/article/011/0004630472",
+          "office": "서울경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "68%",
-      "entry": 180500.0,
-      "target": 189525,
-      "stop": 175085,
+      "entry": 179800.0,
+      "target": 188790,
+      "stop": 174406,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.98)",
+        "강세마감(0.95)",
         "MACD강세",
-        "RSI69.3 강세"
+        "RSI69.1 강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -438,44 +458,20 @@
       "cause_summary": "원익IPS 주가, 급등세... AI 반도체 수요 증가에 관심 집중"
     },
     {
-      "ticker": "주성엔지니어링",
-      "code": "036930",
-      "tomorrow_up_prob": "67%",
-      "entry": 237000.0,
-      "target": 248850,
-      "stop": 229890,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI61.2 강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감",
-      "day_change": -3.87,
-      "related_news": [
-        {
-          "title": "AI 기대에 SK네트웍스 매수…삼성전자·SK하이닉스는 차익실현 [주식 ...",
-          "url": "https://n.news.naver.com/mnews/article/011/0004630472",
-          "office": "서울경제",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "제주반도체",
       "code": "080220",
-      "tomorrow_up_prob": "66%",
-      "entry": 105900.0,
-      "target": 111195,
-      "stop": 102723,
+      "tomorrow_up_prob": "67%",
+      "entry": 106200.0,
+      "target": 111510,
+      "stop": 103014,
       "confidence": "중",
       "reasons": [
-        "RSI61.5 강세",
+        "RSI61.6 강세",
         "Stoch골든",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 8.97
+      "day_change": 9.48
     }
   ],
   "closing_bet": [
@@ -483,12 +479,12 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "91%",
-      "entry": 256000.0,
-      "target": 268800,
-      "stop": 248320,
+      "entry": 261500.0,
+      "target": 274575,
+      "stop": 253655,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.95)",
         "정배열",
         "MACD강세"
       ],
@@ -516,51 +512,15 @@
       ]
     },
     {
-      "ticker": "아이로보틱스",
-      "code": "066430",
-      "tomorrow_up_prob": "91%",
-      "entry": 4215.0,
-      "target": 4426,
-      "stop": 4089,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "아이로보틱스 주가 강세...소형 하모닉 감속기 설계 수주",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3606853",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 아이로보틱스, \"질화규소 베어링 감속기 개발\" 휴머노이드 공...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295300",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "아이로보틱스 주가 강세...소형 하모닉 감속기 설계 수주"
-    },
-    {
       "ticker": "SK네트웍스",
       "code": "001740",
       "tomorrow_up_prob": "90%",
-      "entry": 13540.0,
-      "target": 14217,
-      "stop": 13134,
+      "entry": 13690.0,
+      "target": 14374,
+      "stop": 13279,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.84)",
+        "강세마감(0.91)",
         "정배열",
         "MACD강세"
       ],
@@ -632,48 +592,56 @@
       "cause_summary": "삼성전자 13% 급등·HPSP 신고가…반도체주 폭풍 랠리 [칩칩폭폭]"
     },
     {
-      "ticker": "로보티즈",
-      "code": "108490",
-      "tomorrow_up_prob": "82%",
-      "entry": 354000.0,
-      "target": 371700,
-      "stop": 343380,
+      "ticker": "ISC",
+      "code": "095340",
+      "tomorrow_up_prob": "84%",
+      "entry": 236500.0,
+      "target": 248325,
+      "stop": 229405,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
-        "RSI56.4 강세",
-        "Stoch골든"
+        "강세마감(0.97)",
+        "MACD강세",
+        "RSI56.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "로보티즈 주가, 급등세... 피지컬 AI 시대 핵심 수혜주 부각",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163297",
-          "office": "ggilbo",
+          "title": "ISC 주가, 6월 11일 190,500원 5.48% 상승 마감",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=525360",
+          "office": "joongangenews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "HL만도 상한가 이어 로봇주 동반 강세...로보티즈, 로보스타 등 급등",
-          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439593",
-          "office": "econonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "로보티즈·현대모비스 등 피지컬AI 관련주 일제히 급등",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3606725",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "로보티즈 주가, 급등세... 피지컬 AI 시대 핵심 수혜주 부각"
+      "cause_confidence": "중간",
+      "cause_summary": "ISC 주가, 6월 11일 190,500원 5.48% 상승 마감"
+    },
+    {
+      "ticker": "대덕전자",
+      "code": "353200",
+      "tomorrow_up_prob": "79%",
+      "entry": 178400.0,
+      "target": 187320,
+      "stop": 173048,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "RSI63.5 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "대덕전자, 메모리 신규 시설투자 호재…목표가 13%↑-DB",
+          "url": "https://n.news.naver.com/mnews/article/018/0006278764",
+          "office": "이데일리",
+          "sentiment": "호재"
+        }
+      ]
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
