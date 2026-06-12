@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-12 15:30:20 KST",
- "market_session": "open",
+ "generated_at": "2026-06-12 15:45:17 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 26,
+ "universe_count": 24,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -55,30 +55,30 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 68,
+   "suspicion_score": 75,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 11.2,
     "fade": 12.7,
     "ma10": 10.0,
-    "flow": 4.0,
+    "flow": 11.0,
     "event": 0.0
    },
-   "score_raw": 68,
+   "score_raw": 75,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 11.2,
     "fade": 12.7,
     "ma10": 10.0,
-    "flow": 4,
+    "flow": 11,
     "event": 0.0
    },
    "price": 65300.0,
    "change_pct": 6.87,
    "high_pct": 16.2,
    "fade_pct": 57.6,
-   "value_eok": 5639,
+   "value_eok": 5721,
    "ma10": 54940.0,
    "ma10_margin_pct": 18.86,
    "spark": {
@@ -134,9 +134,9 @@
     ]
    },
    "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 1,
     "detail": [
      {
       "date": "0608",
@@ -160,8 +160,8 @@
      },
      {
       "date": "0612",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": 623112,
+      "orgn": -40541
      }
     ]
    },
@@ -175,32 +175,32 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 58,
+   "suspicion_score": 63,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 7.4,
-    "fade": 13.0,
-    "ma10": 5.4,
-    "flow": 2.0,
+    "fade": 12.0,
+    "ma10": 4.8,
+    "flow": 9.0,
     "event": 0.0
    },
-   "score_raw": 58,
+   "score_raw": 63,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 7.4,
-    "fade": 13.0,
-    "ma10": 5.4,
-    "flow": 2,
+    "fade": 12.0,
+    "ma10": 4.8,
+    "flow": 9,
     "event": 0.0
    },
-   "price": 103000.0,
-   "change_pct": 6.19,
+   "price": 102500.0,
+   "change_pct": 5.67,
    "high_pct": 14.23,
-   "fade_pct": 56.5,
-   "value_eok": 3898,
-   "ma10": 98750.0,
-   "ma10_margin_pct": 4.3,
+   "fade_pct": 60.1,
+   "value_eok": 3935,
+   "ma10": 98700.0,
+   "ma10_margin_pct": 3.85,
    "spark": {
     "clusters": [
      {
@@ -230,9 +230,9 @@
     ]
    },
    "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
+    "net_days": 2,
+    "today_buy": true,
+    "streak": 1,
     "detail": [
      {
       "date": "0608",
@@ -256,8 +256,8 @@
      },
      {
       "date": "0612",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -39332,
+      "orgn": 84301
      }
     ]
    },
@@ -294,7 +294,7 @@
    "change_pct": -5.91,
    "high_pct": 15.27,
    "fade_pct": 138.7,
-   "value_eok": 14782,
+   "value_eok": 14790,
    "ma10": 209290.0,
    "ma10_margin_pct": 10.37,
    "spark": {
@@ -334,8 +334,8 @@
      },
      {
       "date": "0612",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -463306,
+      "orgn": -319054
      }
     ]
    },
