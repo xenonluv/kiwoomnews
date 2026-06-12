@@ -23,6 +23,7 @@ dist/
 build/
 .next/
 out/
+*.tsbuildinfo
 
 # 로그 / 임시
 *.log
