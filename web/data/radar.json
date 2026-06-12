@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-12 13:15:10 KST",
+ "generated_at": "2026-06-12 13:30:17 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -32,7 +32,7 @@
    "153000"
   ]
  },
- "universe_count": 21,
+ "universe_count": 18,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -59,7 +59,7 @@
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 12.7,
+    "spark": 13.2,
     "fade": 11.2,
     "ma10": 10.0,
     "flow": 4.0,
@@ -68,7 +68,7 @@
    "score_raw": 68,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 12.7,
+    "spark": 13.2,
     "fade": 11.2,
     "ma10": 10.0,
     "flow": 4,
@@ -78,44 +78,44 @@
    "change_pct": 9.66,
    "high_pct": 15.38,
    "fade_pct": 37.2,
-   "value_eok": 3727,
+   "value_eok": 3780,
    "ma10": 55110.0,
    "ma10_margin_pct": 21.58,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 14.0,
+      "vol_x": 14.5,
       "pct": 3.74,
       "minutes": 2
      },
      {
       "time": "09:07",
-      "vol_x": 28.3,
+      "vol_x": 29.2,
       "pct": 4.42,
       "minutes": 3
      },
      {
       "time": "09:12",
-      "vol_x": 13.7,
+      "vol_x": 14.1,
       "pct": -2.6,
       "minutes": 3
      },
      {
       "time": "09:16",
-      "vol_x": 9.1,
+      "vol_x": 9.3,
       "pct": 1.02,
       "minutes": 1
      },
      {
       "time": "09:22",
-      "vol_x": 8.0,
+      "vol_x": 8.3,
       "pct": -1.62,
       "minutes": 1
      },
      {
       "time": "09:45",
-      "vol_x": 9.8,
+      "vol_x": 10.1,
       "pct": 1.06,
       "minutes": 1
      }
@@ -186,44 +186,44 @@
    "change_pct": 3.77,
    "high_pct": 17.66,
    "fade_pct": 78.7,
-   "value_eok": 1486,
+   "value_eok": 1508,
    "ma10": 33490.0,
    "ma10_margin_pct": 19.29,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 40.4,
-      "pct": 14.98,
-      "minutes": 6
+      "vol_x": 42.3,
+      "pct": 12.95,
+      "minutes": 7
      },
      {
       "time": "09:11",
-      "vol_x": 16.7,
+      "vol_x": 17.5,
       "pct": -7.59,
       "minutes": 4
      },
      {
       "time": "09:19",
-      "vol_x": 8.5,
+      "vol_x": 8.9,
       "pct": -4.39,
       "minutes": 2
      },
      {
       "time": "09:30",
-      "vol_x": 8.8,
+      "vol_x": 9.2,
       "pct": -1.98,
       "minutes": 1
      },
      {
       "time": "09:36",
-      "vol_x": 8.5,
+      "vol_x": 8.9,
       "pct": -1.32,
       "minutes": 1
      },
      {
       "time": "09:39",
-      "vol_x": 17.1,
+      "vol_x": 17.9,
       "pct": -1.4,
       "minutes": 1
      }
@@ -290,49 +290,49 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 62,
+   "suspicion_score": 63,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 10.7,
-    "fade": 10.9,
-    "ma10": 8.5,
+    "spark": 12.4,
+    "fade": 9.8,
+    "ma10": 9.1,
     "flow": 2.0,
     "event": 0.0
    },
-   "score_raw": 62,
+   "score_raw": 63,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 10.7,
-    "fade": 10.9,
-    "ma10": 8.5,
+    "spark": 12.4,
+    "fade": 9.8,
+    "ma10": 9.1,
     "flow": 2,
     "event": 0.0
    },
-   "price": 105800.0,
-   "change_pct": 9.07,
+   "price": 106300.0,
+   "change_pct": 9.59,
    "high_pct": 14.23,
-   "fade_pct": 36.2,
-   "value_eok": 2683,
-   "ma10": 99030.0,
-   "ma10_margin_pct": 6.84,
+   "fade_pct": 32.6,
+   "value_eok": 2722,
+   "ma10": 99080.0,
+   "ma10_margin_pct": 7.29,
    "spark": {
     "clusters": [
      {
       "time": "09:06",
-      "vol_x": 20.9,
+      "vol_x": 23.2,
       "pct": 5.44,
       "minutes": 3
      },
      {
       "time": "09:10",
-      "vol_x": 25.1,
+      "vol_x": 27.8,
       "pct": -1.89,
       "minutes": 3
      },
      {
       "time": "09:17",
-      "vol_x": 8.4,
+      "vol_x": 9.3,
       "pct": -0.95,
       "minutes": 1
      }
@@ -381,48 +381,48 @@
    "shake": null,
    "deep_shake": {
     "drop_low_from_high_pct": 18.9,
-    "drop_close_from_high_pct": 10.4,
-    "ibs": 0.449,
-    "recovery_pct": 45,
+    "drop_close_from_high_pct": 11.5,
+    "ibs": 0.393,
+    "recovery_pct": 39,
     "high_time": "09:02",
     "low_time": "11:19",
-    "late_reclaim": true,
+    "late_reclaim": false,
     "vwap_reclaim": true,
     "retest_broken": false,
-    "close_hold_score": 85,
-    "bars15_count": 18
+    "close_hold_score": 65,
+    "bars15_count": 19
    },
-   "suspicion_score": 60,
+   "suspicion_score": 58,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 5.4,
-    "fade": 10.8,
+    "spark": 4.7,
+    "fade": 8.8,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 60,
+   "score_raw": 58,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 5.4,
-    "fade": 10.8,
+    "spark": 4.7,
+    "fade": 8.8,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 253500.0,
-   "change_pct": 3.26,
+   "price": 250500.0,
+   "change_pct": 2.04,
    "high_pct": 15.27,
-   "fade_pct": 78.7,
-   "value_eok": 10766,
-   "ma10": 211540.0,
-   "ma10_margin_pct": 19.84,
+   "fade_pct": 86.7,
+   "value_eok": 11511,
+   "ma10": 211240.0,
+   "ma10_margin_pct": 18.59,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 16.7,
+      "vol_x": 15.5,
       "pct": 3.71,
       "minutes": 1
      }
