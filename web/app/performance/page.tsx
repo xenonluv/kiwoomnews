@@ -7,6 +7,7 @@ import { TrendChart } from "@/components/performance/TrendChart";
 import { StatCards } from "@/components/performance/StatCards";
 import { CalibrationTable } from "@/components/performance/CalibrationTable";
 import { WeightsPanel } from "@/components/performance/WeightsPanel";
+import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
 
 export const metadata: Metadata = {
   title: "성과 검증 · 자가 개선",
@@ -56,6 +57,8 @@ export default function PerformancePage() {
           <CalibrationTable bins={data.bins} />
           <WeightsPanel weights={data.weights} />
         </div>
+
+        {data.ai && <AiPredictionPanel ai={data.ai} />}
 
         {data.recent.length > 0 && (
           <section className="rounded-lg border border-white/10 bg-white/[0.03] p-4">

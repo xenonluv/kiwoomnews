@@ -4,11 +4,13 @@
 매일(장후 17:20 cron) 실행:
   1. data/radar_history/*.json 의 미평가 수상 종목을 익일 일봉(KIS)과 대조
        적중 = 익일 종가 > 진입가(당일 종가) / 보조: 익일 고가 ≥ +3%, 수익률
-  2. 점수대별 보정표(bins, 표본 n>=20만 유효) 산출
-  3. 누적 표본 n>=30이면 점수 항목별 성과 상관으로 가중치 자동 튜닝
+  2. 당일 마감 카드(final) 종목의 AI 익일 예측(prob_up)을 history에 기록
+       → 익일 평가와 대조해 AI 적중률·확률 보정 검증 (performance.json "ai")
+  3. 점수대별 보정표(bins, 표본 n>=20만 유효) 산출
+  4. 누적 표본 n>=30이면 점수 항목별 성과 상관으로 가중치 자동 튜닝
        (기본값 ±30% 제한, 변경 이력 기록) → data/radar_weights.json
-  4. web/data/performance.json 생성 (대시보드 /performance 데이터)
-  5. --push: history/weights/performance 변경 시 git commit+push
+  5. web/data/performance.json 생성 (대시보드 /performance 데이터)
+  6. --push: history/weights/performance 변경 시 git commit+push
 
 사용:
   python3 scripts/radar_backtest.py            # 평가+산출만
@@ -19,6 +21,7 @@ import sys
 import glob
 import json
 import subprocess
+import urllib.request
 from datetime import datetime, timezone, timedelta
 
 import kis_client as kis
@@ -36,6 +39,12 @@ TUNE_BOUND = 0.30       # 기본값 대비 ±30% 제한
 CALIB_MIN_N = 20        # 보정표 구간 유효 최소 표본
 SCORE_BINS = [(40, 60), (60, 75), (75, 101)]
 HIGH3_X = 1.03          # 보조지표: 익일 고가 +3%
+
+# AI(prob_up) 예측 기록 — 웹과 동일한 프로덕션 엔드포인트 호출 (로직 중복 없음).
+# 방향 파생 임계(58/42)와 정합하는 확률 구간으로 보정 검증.
+AI_ENDPOINT = os.environ.get(
+    "RADAR_AI_ENDPOINT", "https://stocknews-cyan.vercel.app/api/stock/{code}/ai")
+AI_PROB_BANDS = [(0, 43), (43, 58), (58, 101)]
 
 DISCLAIMER = ("백테스트는 '당일 종가 매수 → 익일 종가 매도' 가정의 참고 지표이며 "
               "수수료·슬리피지 미반영. 매수 추천이 아닙니다.")
@@ -118,6 +127,51 @@ def evaluate():
     log(f"[backtest] 신규 평가 {n_eval}건")
 
 
+def ai_predict():
+    """당일 마감 카드(final) 수상 종목의 AI 익일 예측(prob_up)을 history에 기록.
+
+    웹 AI 라우트(3샘플 중앙값 합의)를 그대로 호출해 로직 중복 없이 동일 예측을 남긴다.
+    익일 evaluate()의 result와 대조해 AI 적중률·확률 보정을 검증하는 루프의 입력.
+    종목 단위 실패는 건너뜀(백테스트 본 작업 보호). RADAR_AI_PREDICT=0으로 비활성.
+    """
+    if os.environ.get("RADAR_AI_PREDICT", "").strip() == "0":
+        return
+    today = datetime.now(KST).strftime("%Y%m%d")
+    path = os.path.join(HISTORY_DIR, f"{today}.json")
+    if not os.path.exists(path):
+        return
+    try:
+        hist = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        log(f"[warn] ai_predict history 로드 실패: {e}")
+        return
+    changed = False
+    n_ok = 0
+    for code, s in hist.get("suspects", {}).items():
+        if not s.get("final") or s.get("ai_pred"):
+            continue  # 마감 카드 잔존 종목만, 이미 기록된 건 재호출 안 함
+        try:
+            req = urllib.request.Request(
+                AI_ENDPOINT.format(code=code), headers={"User-Agent": "radar-backtest"})
+            r = json.load(urllib.request.urlopen(req, timeout=90))
+            if not isinstance(r.get("probUp"), (int, float)):
+                raise ValueError(str(r.get("error", {}).get("code") or "probUp 없음"))
+            s["ai_pred"] = {
+                "prob_up": round(float(r["probUp"])),
+                "direction": r.get("direction"),
+                "model": r.get("model"),
+                "as_of": r.get("asOf"),
+            }
+            changed = True
+            n_ok += 1
+            log(f"  [ai] {s.get('name')} prob_up={s['ai_pred']['prob_up']} {r.get('direction')}")
+        except Exception as e:
+            log(f"  [ai-skip] {s.get('name')}: {e}")
+    if changed:
+        json.dump(hist, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    log(f"[backtest] AI 예측 기록 {n_ok}건")
+
+
 def collect_samples():
     """평가 완료 표본 전체 (날짜순)."""
     samples = []
@@ -136,6 +190,9 @@ def collect_samples():
                                 # 마감 시 게시 카드 잔존 여부(= 종가 매수 가능했던 종목).
                                 # 키 없는 과거(장후 실행) 기록은 True
                                 "final": s.get("final", True),
+                                # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
+                                "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
+                                "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
@@ -196,6 +253,37 @@ def group_stats(samples, key):
                     "avg_return": round(sum(rets) / len(rets), 2),
                     "high3_rate": round(sum(1 for s in grp if s["high3"]) / len(grp) * 100, 1)})
     return out
+
+
+def ai_stats(samples):
+    """AI(prob_up) 예측 검증 — ai_pred가 기록된 평가 완료 표본만.
+
+    방향별 적중률 + 확률 구간별 실측 적중률(보정 검증) + Brier 점수(낮을수록 좋음,
+    0.25 = 항상 50%라 답한 무정보 기준선).
+    """
+    grp = [s for s in samples if s.get("ai_prob") is not None]
+    if not grp:
+        return {"n": 0, "by_direction": [], "prob_bands": [], "avg_prob": None,
+                "actual_rate": None, "brier": None}
+    hits = sum(1 for s in grp if s["hit"])
+    bands = []
+    for lo, hi in AI_PROB_BANDS:
+        b = [s for s in grp if lo <= s["ai_prob"] < hi]
+        bands.append({
+            "lo": lo, "hi": hi, "n": len(b),
+            "avg_prob": round(sum(s["ai_prob"] for s in b) / len(b), 1) if b else None,
+            "actual_rate": round(sum(1 for s in b if s["hit"]) / len(b) * 100) if b else None,
+            "valid": len(b) >= CALIB_MIN_N,
+        })
+    brier = sum((s["ai_prob"] / 100 - (1 if s["hit"] else 0)) ** 2 for s in grp) / len(grp)
+    return {
+        "n": len(grp),
+        "by_direction": group_stats(grp, "ai_dir"),
+        "prob_bands": bands,
+        "avg_prob": round(sum(s["ai_prob"] for s in grp) / len(grp), 1),
+        "actual_rate": round(hits / len(grp) * 100, 1),
+        "brier": round(brier, 3),
+    }
 
 
 def tune_weights(samples):
@@ -269,6 +357,8 @@ def write_performance(samples, series, bins, weights, dropouts=None):
         "bins": bins,
         "by_pattern": group_stats(samples, "pattern"),
         "by_ai_verdict": group_stats(samples, "ai_verdict"),
+        # AI 익일 예측(prob_up) 검증 루프 — ai_predict()가 기록한 표본의 적중·보정 통계
+        "ai": ai_stats(samples),
         "weights": {
             "current": (weights or {}).get("weights") or DEFAULT_WEIGHTS,
             "default": DEFAULT_WEIGHTS,
@@ -319,6 +409,7 @@ def push_state():
 
 def main():
     evaluate()
+    ai_predict()  # 당일 마감 카드의 AI 예측 기록 (익일 evaluate가 채점)
     samples = collect_samples()
     # 주 통계·튜닝 = 마감 카드 잔존(final) 표본만 — 정석 사용법(종가 매수)과 모집단 일치.
     finals = [s for s in samples if s["final"]]
@@ -330,7 +421,8 @@ def main():
     s = perf["summary"]
     print(f"[backtest] 최종카드 표본 {s['n']}건 · 적중률 {s['hit_rate']}% · "
           f"평균수익 {s['avg_return']}% · 고가+3% {s['high3_rate']}% · "
-          f"추적 {s['tracking_days']}일 · 장중탈락 {len(dropouts)}건(참고)")
+          f"추적 {s['tracking_days']}일 · 장중탈락 {len(dropouts)}건(참고) · "
+          f"AI평가표본 {perf['ai']['n']}건")
     if "--push" in sys.argv[1:]:
         push_state()
 

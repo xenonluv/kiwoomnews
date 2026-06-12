@@ -34,6 +34,33 @@ export interface RecentSample {
   return_pct: number;
 }
 
+/** AI(prob_up) 익일 예측 검증 — radar_backtest.ai_stats()와 정합. */
+export interface AiProbBand {
+  lo: number;
+  hi: number;
+  n: number;
+  avg_prob: number | null; // 구간 내 평균 예측 확률(%)
+  actual_rate: number | null; // 실측 적중률(%) — avg_prob와 가까울수록 보정 양호
+  valid: boolean; // n >= 20
+}
+
+export interface AiDirStat {
+  key: string; // 상승 | 관망 | 하락
+  n: number;
+  hit_rate: number;
+  avg_return: number;
+  high3_rate: number;
+}
+
+export interface AiStats {
+  n: number; // ai_pred 기록 + 익일 평가 완료 표본
+  by_direction: AiDirStat[];
+  prob_bands: AiProbBand[];
+  avg_prob: number | null;
+  actual_rate: number | null;
+  brier: number | null; // 낮을수록 좋음 (0.25 = 무정보 기준선)
+}
+
 export interface PerformanceData {
   as_of: string;
   summary: {
@@ -48,6 +75,8 @@ export interface PerformanceData {
   series: PerfPoint[];
   bins: CalibBin[];
   weights: WeightsInfo;
+  /** AI 익일 예측(prob_up) 검증 — 구버전 performance.json에는 없을 수 있음 */
+  ai?: AiStats;
   recent: RecentSample[];
   disclaimer: string;
 }

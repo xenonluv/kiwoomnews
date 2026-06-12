@@ -1,5 +1,5 @@
 {
- "as_of": "2026-06-12 17:20 KST",
+ "as_of": "2026-06-12 17:57 KST",
  "summary": {
   "n": 5,
   "hit_rate": 60.0,
@@ -78,6 +78,14 @@
    "high3_rate": 100.0
   }
  ],
+ "ai": {
+  "n": 0,
+  "by_direction": [],
+  "prob_bands": [],
+  "avg_prob": null,
+  "actual_rate": null,
+  "brier": null
+ },
  "weights": {
   "current": {
    "spark": 15.0,

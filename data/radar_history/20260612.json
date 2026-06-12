@@ -63,7 +63,13 @@
    "first_seen": "2026-06-12 10:15:07 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 43,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-12 17:56 KST"
+   }
   },
   "089030": {
    "name": "테크윙",
@@ -88,7 +94,13 @@
    "first_seen": "2026-06-12 11:15:07 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 43,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-12 17:56 KST"
+   }
   },
   "036930": {
    "name": "주성엔지니어링",
@@ -113,7 +125,13 @@
    "first_seen": "2026-06-12 11:30:12 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 43,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-12 17:57 KST"
+   }
   },
   "005930": {
    "name": "삼성전자",
