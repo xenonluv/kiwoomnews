@@ -270,8 +270,14 @@ function evidenceSum(items: string[]): number {
   let sum = 0;
   for (const it of items) {
     if (NO_EVIDENCE_RE.test(it)) continue;
-    const m = it.match(/\((강|중|약)\)[\s.]*$/);
-    sum += STRENGTH_W[m?.[1] ?? "중"]; // 강도 표기 누락 시 보수적으로 (중)
+    // 끝 고정이 아닌 마지막 등장 태그 — "(강) — 부연"처럼 뒤에 말이 붙어도 강도 보존
+    const tags = [...it.matchAll(/\((강|중|약)\)/g)];
+    const tag = tags.length > 0 ? tags[tags.length - 1][1] : null;
+    if (!tag) {
+      // 태그 누락 = 프롬프트 드리프트 신호 — 조용히 깎이지 않게 관측 로그
+      console.warn(`[stock-ai] 강도 태그 누락 → (중) 폴백: ${it.slice(0, 60)}`);
+    }
+    sum += STRENGTH_W[tag ?? "중"];
   }
   return sum;
 }

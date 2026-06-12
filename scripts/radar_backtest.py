@@ -467,7 +467,19 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=REPO, capture_output=True, text=True)
 
 
+def acquire_git_lock():
+    """전 푸셔 공용 git 직렬화 락 (publish.py와 동일 패턴) — autostash 교차 오염 방지."""
+    try:
+        import fcntl
+        fh = open("/tmp/stocknews_git.lock", "w")
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        return fh
+    except ImportError:
+        return None
+
+
 def push_state():
+    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
     files = glob.glob(os.path.join(HISTORY_DIR, "*.json")) + [PERF_PATH]
     if os.path.exists(WEIGHTS_PATH):
         files.append(WEIGHTS_PATH)

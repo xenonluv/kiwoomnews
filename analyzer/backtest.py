@@ -91,8 +91,20 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=REPO, capture_output=True, text=True)
 
 
+def acquire_git_lock():
+    """전 푸셔(publish/radar_backtest/analyzer) 공용 git 직렬화 락 — autostash 교차 오염 방지."""
+    try:
+        import fcntl
+        fh = open("/tmp/stocknews_git.lock", "w")
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        return fh
+    except ImportError:
+        return None
+
+
 def push_state():
     """백테스트 산출물만 커밋/푸시. 변경이 없어도 이전 미푸시 커밋 회수를 위해 push 시도."""
+    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
     files = sorted(glob.glob(os.path.join(HIST, "*.json")))
     for name in ("backtest.json", "calibration.json"):
         path = os.path.join(STATE, name)

@@ -32,15 +32,41 @@ RADAR_PASSTHRU = ("--min-value", "--high-pct", "--chg-min", "--chg-max",
 RADAR_BOOL_PASSTHRU = ("--no-deep-shake",)
 
 
+RADAR_TIMEOUT = 600  # 초 — KIS/Kimi 행 멈춤 시 락 쥔 채 무한 대기 → 사이트 stale 방지
+
+
 def run_radar(extra_args):
     cmd = [sys.executable, os.path.join(REPO, "scripts", "radar.py")] + extra_args
-    r = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO)
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO,
+                           timeout=RADAR_TIMEOUT)
+    except subprocess.TimeoutExpired as e:
+        if e.stderr:
+            sys.stderr.write(str(e.stderr)[-2000:])
+        sys.stderr.write(f"radar 타임아웃({RADAR_TIMEOUT}초) — 이번 회차 중단, 다음 cron이 재시도\n")
+        sys.exit(1)
     if r.stderr:
         sys.stderr.write(r.stderr[-2000:])  # 스킵/경고 증거를 cron 로그에 남김
     if r.returncode != 0 or not r.stdout.strip():
         sys.stderr.write(f"radar 실패 (exit {r.returncode})\n")
         sys.exit(1)
     return json.loads(r.stdout)
+
+
+def acquire_git_lock():
+    """모든 푸셔(publish/radar_backtest/analyzer) 공용 git 직렬화 락.
+
+    같은 작업트리에서 pull --rebase --autostash가 겹치면 다른 프로세스가 쓰는 중인
+    파일까지 스태시하는 교차 오염이 가능 — git 구간을 전 푸셔가 직렬화한다.
+    blocking 대기(구간이 짧아 순서 대기가 맞음). 반환 핸들을 git 구간 동안 유지할 것.
+    """
+    try:
+        import fcntl
+        fh = open("/tmp/stocknews_git.lock", "w")
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        return fh
+    except ImportError:
+        return None  # fcntl 없는 환경(Windows 등)은 락 생략
 
 
 def record_history(out):
@@ -188,6 +214,7 @@ def main():
 
     os.makedirs(os.path.dirname(RADAR_JSON), exist_ok=True)
     open(RADAR_JSON, "w", encoding="utf-8").write(new)
+    git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
     git("add", "web/data/radar.json")
     git("commit", "-q", "-m", f"data: 레이더 자동 게시 (수상종목 {len(out['suspects'])}건)")
     # push 전 원격 변경 먼저 통합 (다중 머신 공존)

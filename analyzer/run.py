@@ -183,6 +183,17 @@ def git(*a):
     return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
 
 
+def acquire_git_lock():
+    """전 푸셔(publish/radar_backtest/analyzer) 공용 git 직렬화 락 — autostash 교차 오염 방지."""
+    try:
+        import fcntl
+        fh = open("/tmp/stocknews_git.lock", "w")
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        return fh
+    except ImportError:
+        return None
+
+
 def main():
     args = sys.argv[1:]
     dry = "--dry-run" in args
@@ -202,12 +213,16 @@ def main():
 
     open(PRED, "w", encoding="utf-8").write(text)
     if "--push" in args:
+        git_lock = acquire_git_lock()  # noqa: F841 — git 구간 동안 핸들 유지
         git("add", "web/data/predictions.json")
         git("commit", "-q", "-m", f"data: 내일상승 예측 갱신 (종가베팅 {len(out['closing_bet'])})")
         pl = git("pull", "--rebase", "--autostash", "origin", "main")
         if pl.returncode != 0:
             git("rebase", "--abort"); sys.stderr.write("pull 실패\n"); sys.exit(1)
-        git("push", "origin", "main")
+        pr = git("push", "origin", "main")
+        if pr.returncode != 0:  # 실패 묵살 금지 — 미push 커밋이 조용히 쌓이는 것 방지
+            sys.stderr.write("push 실패:\n" + pr.stderr[-500:])
+            sys.exit(1)
     print(f"predictions.json 작성 (as_of {out['as_of']}, 종가베팅 {len(out['closing_bet'])})")
 
 
