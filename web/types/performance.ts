@@ -100,6 +100,15 @@ export interface SparkFlowStats {
   cells: SparkFlowCell[];
 }
 
+export interface ExperimentalStats {
+  reaccum: {
+    n: number;
+    hit_rate: number | null;
+    avg_return: number | null;
+    high3_rate: number | null;
+  };
+}
+
 export interface PerformanceData {
   as_of: string;
   summary: {
@@ -118,6 +127,8 @@ export interface PerformanceData {
   ai?: AiStats;
   /** 메가스파크×수급 가설 검증 표 — 구버전 performance.json에는 없을 수 있음 */
   spark_flow?: SparkFlowStats;
+  /** 기존 기준선에서 제외한 화면 노출 실험 표본 */
+  experimental?: ExperimentalStats;
   recent: RecentSample[];
   disclaimer: string;
 }

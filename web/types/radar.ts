@@ -83,6 +83,14 @@ export interface DeepShakeInfo {
   bars15_count: number;
 }
 
+/** 재매집 후보 메타 — 1천억+13% 폭발 이후 식은 구간 재매집 감시 */
+export interface ReaccumInfo {
+  peak_date: string; // YYYYMMDD
+  peak_value_eok: number;
+  peak_high_pct: number;
+  orgn_net_after_peak: number;
+}
+
 /** Kimi 후보 검증 결과 */
 export interface AiVerdict {
   status: "ok" | "disabled" | "not_configured" | "unavailable" | "outside_window";
@@ -101,10 +109,13 @@ export interface Suspect {
   code: string;
   name: string;
   sector: string;
-  /** 감지 패턴 — "fade"(급등 후 식음) | "shakeout"(눌림 후 재상승) | "deep_shakeout"(급락 흡수). */
-  pattern?: "fade" | "shakeout" | "deep_shakeout";
+  /** 감지 패턴 — "fade"(급등 후 식음) | "shakeout"(눌림 후 재상승) | "deep_shakeout"(급락 흡수) | "reaccum"(재매집). */
+  pattern?: "fade" | "shakeout" | "deep_shakeout" | "reaccum";
   shake?: ShakeInfo | null;
   deep_shake?: DeepShakeInfo | null;
+  visible_experimental?: boolean;
+  reaccum_badge?: boolean;
+  reaccum?: ReaccumInfo | null;
   ai_verdict?: AiVerdict | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
@@ -159,6 +170,13 @@ export interface RadarData {
     kimi_mode?: "auto" | "on" | "off";
     kimi_max?: number;
     kimi_window?: [string, string];
+    reaccum_enabled?: boolean;
+    reaccum_visible?: boolean;
+    reaccum_max?: number;
+    explosion_value_eok?: number;
+    explosion_high_pct?: number;
+    explosion_window?: number;
+    explosion_rank_n?: number;
   };
   universe_count: number;
   events: RadarEvent[];

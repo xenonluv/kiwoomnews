@@ -40,6 +40,8 @@ KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEIGHTS_PATH = os.path.join(REPO, "data", "radar_weights.json")
 PERF_PATH = os.path.join(REPO, "web", "data", "performance.json")
+EXPLOSION_REGISTRY_PATH = os.path.join(REPO, ".explosion_registry.json")
+REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
 
 # ---- 기본 임계값 ----
 MIN_VALUE = 70_000_000_000   # 당일 거래대금 ≥ 700억 (원)
@@ -49,6 +51,11 @@ SPARK_VOL_X = 8.0            # 분봉 거래량 / 당일 중앙값 배수
 SPARK_PCT = 0.8              # 분봉 등락 절대값 (%)
 MEGA_SPARK_X = 40.0          # 메가 스파크: 최대 클러스터 배수 임계 (실측: HPSP 136x, 스피어 44x)
 MEGA_BONUS = 12              # 메가 스파크 × 당일 수급매수 동반 시 표시 점수 가점 (raw 불변)
+EXPLOSION_VALUE = 100_000_000_000  # 재매집 폭발 거래대금 하한: 1천억(원)
+EXPLOSION_HIGH_PCT = 13.0          # 재매집 폭발 당일 고가 등락률 하한(%)
+EXPLOSION_WINDOW = 6               # 최근 6거래일 폭발만 재매집 후보
+EXPLOSION_RANK_N = 30              # 시장별 거래대금 상위 N에서 라이브 폭발 감시
+REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수(raw 통계와 분리)
 
 
 def log(msg):
@@ -262,6 +269,322 @@ def accumulation_signal(inv, days=5):
     today_buy = bool(recent) and (recent[-1]["frgn"] + recent[-1]["orgn"] > 0)
     return {"net_days": net_days, "today_buy": today_buy, "streak": streak,
             "detail": detail}
+
+
+# ---------- 재매집: 1천억 폭발 레지스트리 ----------
+
+def _today_yyyymmdd():
+    return datetime.now(KST).strftime("%Y%m%d")
+
+
+def _empty_registry():
+    return {"trading_days": [], "records": {}}
+
+
+def load_explosion_registry(path=EXPLOSION_REGISTRY_PATH):
+    """untracked 로컬 폭발 레지스트리 로드. 손상/부재 시 빈 상태로 시작."""
+    if not os.path.exists(path):
+        return _empty_registry()
+    try:
+        data = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        log(f"[warn] 폭발 레지스트리 로드 실패(빈 상태 사용): {e}")
+        return _empty_registry()
+    if not isinstance(data, dict):
+        return _empty_registry()
+    data.setdefault("trading_days", [])
+    data.setdefault("records", {})
+    if not isinstance(data["trading_days"], list) or not isinstance(data["records"], dict):
+        return _empty_registry()
+    return data
+
+
+def save_explosion_registry(reg, path=EXPLOSION_REGISTRY_PATH):
+    tmp = path + ".tmp"
+    reg["updated_at"] = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST")
+    json.dump(reg, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    os.replace(tmp, path)
+
+
+def _merge_trading_days(reg, dates):
+    days = {d for d in reg.get("trading_days", []) if isinstance(d, str)}
+    days.update(d for d in dates if isinstance(d, str) and len(d) == 8)
+    reg["trading_days"] = sorted(days)[-120:]
+
+
+def _upsert_explosion(reg, rec):
+    key = f"{rec['peak_date']}:{rec['code']}"
+    old = reg["records"].get(key)
+    if old:
+        rec["peak_value_eok"] = max(float(old.get("peak_value_eok", 0) or 0),
+                                    float(rec.get("peak_value_eok", 0) or 0))
+        rec["peak_high_pct"] = max(float(old.get("peak_high_pct", 0) or 0),
+                                   float(rec.get("peak_high_pct", 0) or 0))
+        rec["peak_change_pct"] = max(float(old.get("peak_change_pct", 0) or 0),
+                                     float(rec.get("peak_change_pct", 0) or 0))
+        rec["source"] = old.get("source") or rec.get("source")
+    reg["records"][key] = rec
+
+
+def _recent_active_explosions(reg, window):
+    dates = sorted(d for d in reg.get("trading_days", []) if isinstance(d, str))
+    if dates:
+        active_dates = set(dates[-window:])
+    else:
+        active_dates = set(sorted({r.get("peak_date") for r in reg.get("records", {}).values()
+                                   if r.get("peak_date")})[-window:])
+    latest = {}
+    for rec in reg.get("records", {}).values():
+        if rec.get("peak_date") not in active_dates:
+            continue
+        code = rec.get("code")
+        if not code:
+            continue
+        prev = latest.get(code)
+        if prev is None or rec.get("peak_date", "") > prev.get("peak_date", ""):
+            latest[code] = rec
+    return latest
+
+
+def _load_seed_items(path):
+    """data/reaccum_seed.json을 유연하게 읽는다: list 또는 {names,codes,items} 허용."""
+    if not path or not os.path.exists(path):
+        return []
+    try:
+        raw = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        log(f"[warn] reaccum seed 로드 실패: {e}")
+        return []
+    if isinstance(raw, list):
+        items = raw
+    elif isinstance(raw, dict):
+        items = []
+        items.extend(raw.get("items") or [])
+        items.extend(raw.get("names") or [])
+        for c in raw.get("codes") or []:
+            items.append({"code": c} if isinstance(c, str) else c)
+    else:
+        return []
+    out = []
+    for item in items:
+        if isinstance(item, str):
+            out.append({"name": item})
+        elif isinstance(item, dict):
+            out.append(item)
+    return out
+
+
+def _resolve_seed_items(names, seed_path):
+    items = [{"name": nm} for nm in (names or [])]
+    items.extend(_load_seed_items(seed_path))
+    resolved = []
+    seen = set()
+    for item in items:
+        name = (item.get("name") or item.get("title") or "").strip()
+        code = (item.get("code") or item.get("symbol") or "").strip()
+        if not code and name and name.isdigit() and len(name) == 6:
+            code, name = name, item.get("name") or name
+        if not code and name:
+            try:
+                code = resolve_code(name) or ""
+            except Exception as e:
+                log(f"[warn] seed 종목 코드 해석 실패 {name}: {e}")
+                code = ""
+        if not code or code in seen:
+            continue
+        seen.add(code)
+        resolved.append({"code": code, "name": name or code})
+    return resolved
+
+
+def bootstrap_seed_explosions(reg, p):
+    """지정 종목의 최근 일봉으로 과거 1천억+13% 폭발을 즉시 부트스트랩."""
+    count = 0
+    for item in _resolve_seed_items(p.names, p.reaccum_seed):
+        try:
+            daily = kis.daily_prices(item["code"], days=max(12, p.explosion_window + 6))
+        except Exception as e:
+            log(f"[warn] seed 일봉 실패 {item['name']}: {e}")
+            continue
+        if len(daily) < 2:
+            continue
+        _merge_trading_days(reg, [d["date"] for d in daily[-p.explosion_window:]])
+        recent_dates = {d["date"] for d in daily[-p.explosion_window:]}
+        for i, bar in enumerate(daily):
+            if bar["date"] not in recent_dates or i == 0:
+                continue
+            prev_close = daily[i - 1].get("close") or 0
+            if prev_close <= 0:
+                continue
+            high_pct = (bar["high"] / prev_close - 1) * 100
+            if bar["value"] < p.explosion_value or high_pct < p.explosion_high_pct:
+                continue
+            _upsert_explosion(reg, {
+                "code": item["code"],
+                "name": item["name"],
+                "peak_date": bar["date"],
+                "peak_value_eok": round(bar["value"] / 1e8),
+                "peak_high_pct": round(high_pct, 2),
+                "peak_change_pct": round((bar["close"] / prev_close - 1) * 100, 2),
+                "source": "seed",
+            })
+            count += 1
+    return count
+
+
+def update_live_explosions(reg, p):
+    """시장별 거래대금 상위권에서 당일 1천억+13% 폭발을 감시해 registry에 적재."""
+    rows = []
+    for market in ("KOSPI", "KOSDAQ"):
+        rows.extend(kis.value_rank(market, p.explosion_rank_n))
+    if rows and datetime.now(KST).weekday() < 5:
+        _merge_trading_days(reg, [_today_yyyymmdd()])
+    count = 0
+    for row in rows:
+        rank_value_won = float(row.get("value_mn") or 0) * 1e6
+        if rank_value_won < p.explosion_value:
+            continue
+        try:
+            now = kis.price_now(row["code"])
+        except Exception as e:
+            log(f"[warn] 폭발 현재가 조회 실패 {row.get('name')}: {e}")
+            continue
+        if not now.get("high") or not now.get("prev_close"):
+            continue
+        high_pct = (now["high"] / now["prev_close"] - 1) * 100
+        if high_pct < p.explosion_high_pct:
+            continue
+        value_won = max(rank_value_won, float(now.get("value") or 0))
+        _upsert_explosion(reg, {
+            "code": row["code"],
+            "name": row["name"],
+            "peak_date": _today_yyyymmdd(),
+            "peak_value_eok": round(value_won / 1e8),
+            "peak_high_pct": round(high_pct, 2),
+            "peak_change_pct": round(float(now.get("change_pct") or 0), 2),
+            "source": "live",
+        })
+        count += 1
+    return count
+
+
+def prepare_reaccum_registry(p):
+    if not p.reaccum_enabled:
+        return {}
+    reg = load_explosion_registry()
+    seed_count = bootstrap_seed_explosions(reg, p)
+    try:
+        live_count = update_live_explosions(reg, p)
+    except Exception as e:
+        live_count = 0
+        log(f"[warn] 라이브 폭발 감시 실패(기존 registry/seed만 사용): {e}")
+    if not p.dry_run:
+        save_explosion_registry(reg)
+    elif seed_count or live_count:
+        log("[radar] dry-run: 폭발 레지스트리 저장 생략")
+    active = _recent_active_explosions(reg, p.explosion_window)
+    log(f"[radar] reaccum registry active={len(active)} seed={seed_count} live={live_count}")
+    return active
+
+
+def scan_reaccum_candidate(rec, p):
+    """폭발 이후 식은 구간에서 기관 순매수+MA20 생존 재매집 후보를 만든다."""
+    code, name = rec["code"], rec.get("name") or rec["code"]
+    peak_date = rec.get("peak_date")
+    signal_date = _today_yyyymmdd()
+    if not peak_date or signal_date <= peak_date:
+        return None
+    try:
+        now = kis.price_now(code)
+    except Exception as e:
+        log(f"  [skip] {name}: reaccum 현재가 조회 실패 {e}")
+        return "ERR"
+    if not now.get("price") or not now.get("prev_close"):
+        return None
+    if not (p.chg_min <= now["change_pct"] <= p.chg_max):
+        return None
+    try:
+        daily = kis.daily_prices(code, days=25)
+    except Exception as e:
+        log(f"  [skip] {name}: reaccum 일봉 실패 {e}")
+        return "ERR"
+    closes = [d["close"] for d in daily if d.get("close")]
+    if len(closes) < 20:
+        return None
+    ma20 = sum(closes[-20:]) / 20
+    ma10 = sum(closes[-10:]) / 10
+    if now["price"] < ma20:
+        return None
+    try:
+        inv = kis.investor_daily(code)
+    except Exception as e:
+        log(f"  [skip] {name}: reaccum 수급 실패 {e}")
+        return "ERR"
+    orgn_net_after_peak = sum(float(r.get("orgn") or 0) for r in inv if r.get("date", "") > peak_date)
+    if orgn_net_after_peak <= 0:
+        return None
+
+    acc = accumulation_signal(inv)
+    high_pct = (now["high"] / now["prev_close"] - 1) * 100 if now.get("high") else 0.0
+    denom = now["high"] - now["prev_close"] if now.get("high") else 0.0
+    fade_pct = (now["high"] - now["price"]) / denom * 100 if denom > 0 else 0.0
+    ma10_margin = (now["price"] / ma10 - 1) * 100 if ma10 else 0.0
+    empty_breakdown = {"base": REACCUM_SCORE, "spark": 0, "fade": 0,
+                       "ma10": 0, "flow": 0, "event": 0}
+    raw_breakdown = {k: 0 for k in empty_breakdown}
+    return {
+        "code": code,
+        "name": name,
+        "sector": now.get("sector", ""),
+        "pattern": "reaccum",
+        "shake": None,
+        "deep_shake": None,
+        "suspicion_score": REACCUM_SCORE,
+        "calibrated_prob": None,
+        "score_breakdown": empty_breakdown,
+        "score_raw": 0,
+        "score_breakdown_raw": raw_breakdown,
+        "price": now["price"],
+        "change_pct": round(now["change_pct"], 2),
+        "high_pct": round(high_pct, 2),
+        "fade_pct": round(fade_pct, 1),
+        "value_eok": round(float(now.get("value") or 0) / 1e8),
+        "ma10": round(ma10, 1),
+        "ma10_margin_pct": round(ma10_margin, 2),
+        "spark": {"clusters": []},
+        "spark_max_x": 0.0,
+        "spark_max_pct": None,
+        "mega_flow": False,
+        "flow": acc,
+        "news": [],
+        "matched_events": [],
+        "visible_experimental": True,
+        "reaccum": {
+            "peak_date": peak_date,
+            "peak_value_eok": int(float(rec.get("peak_value_eok") or 0)),
+            "peak_high_pct": round(float(rec.get("peak_high_pct") or 0), 2),
+            "orgn_net_after_peak": int(orgn_net_after_peak),
+        },
+    }
+
+
+def attach_reaccum_candidates(suspects, active_explosions, p):
+    if not p.reaccum_enabled or not p.reaccum_visible or not active_explosions:
+        return 0, 0
+    by_code = {s["code"]: s for s in suspects}
+    added = badges = 0
+    for code, rec in active_explosions.items():
+        r = scan_reaccum_candidate(rec, p)
+        if r == "ERR" or not r:
+            continue
+        if code in by_code:
+            by_code[code]["reaccum_badge"] = True
+            by_code[code]["reaccum"] = r["reaccum"]
+            badges += 1
+        else:
+            suspects.append(r)
+            added += 1
+    return added, badges
 
 
 # ---------- 자가 개선 입력 (radar_backtest.py 산출물) ----------
@@ -510,8 +833,9 @@ def apply_kimi_verification(suspects, mode="auto", max_items=5, timeout=60,
             if s.get("pattern") == "deep_shakeout":
                 s["ai_verdict"] = {"status": status}
         return
-    targets = [s for s in suspects if s.get("pattern") == "deep_shakeout"]
-    targets += [s for s in suspects if s.get("pattern") != "deep_shakeout"]
+    eligible = [s for s in suspects if not s.get("visible_experimental")]
+    targets = [s for s in eligible if s.get("pattern") == "deep_shakeout"]
+    targets += [s for s in eligible if s.get("pattern") != "deep_shakeout"]
     seen, unique = set(), []
     for s in targets:
         if s["code"] in seen:
@@ -684,8 +1008,32 @@ def main():
     ap.add_argument("--names", nargs="*", default=[], help="watchlist 강제 포함")
     ap.add_argument("--no-tuned-weights", action="store_true",
                     help="백테스트 튜닝 가중치 무시 (기본 가중치 사용)")
+    ap.add_argument("--no-reaccum", dest="reaccum_enabled", action="store_false",
+                    help="재매집(reaccum) registry 감시와 후보 생성을 비활성화")
+    ap.set_defaults(reaccum_enabled=True)
+    ap.add_argument("--no-reaccum-visible", dest="reaccum_visible", action="store_false",
+                    help="재매집 후보를 registry에는 기록하되 suspects 화면 노출은 비활성화")
+    ap.set_defaults(reaccum_visible=True)
+    ap.add_argument("--reaccum-max", type=int, default=3,
+                    help="게시 단계에서 예약할 재매집 후보 슬롯 수(파라미터 기록용)")
+    ap.add_argument("--explosion-value", type=float, default=EXPLOSION_VALUE,
+                    help="재매집 폭발 거래대금 하한(원, 기본 1천억)")
+    ap.add_argument("--explosion-high-pct", type=float, default=EXPLOSION_HIGH_PCT,
+                    help="재매집 폭발 당일 고가 등락률 하한(%%)")
+    ap.add_argument("--explosion-window", type=int, default=EXPLOSION_WINDOW,
+                    help="재매집 폭발 유효 거래일 수")
+    ap.add_argument("--explosion-rank-n", type=int, default=EXPLOSION_RANK_N,
+                    help="시장별 거래대금 상위 N종목에서 라이브 폭발 감시")
+    ap.add_argument("--reaccum-seed", default=REACCUM_SEED_PATH,
+                    help="즉시 부트스트랩용 재매집 seed JSON 경로")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="폭발 레지스트리를 저장하지 않고 stdout만 생성")
     p = ap.parse_args()
+    p.explosion_window = max(1, int(p.explosion_window))
+    p.explosion_rank_n = max(1, int(p.explosion_rank_n))
+    p.reaccum_max = max(0, int(p.reaccum_max))
     p.tuning_ratios, p.calib_bins = load_tuning(use_weights=not p.no_tuned_weights)
+    active_explosions = prepare_reaccum_registry(p)
 
     # 조건 1: D-10 이벤트 캘린더
     events = upcoming_events(10)
@@ -721,6 +1069,9 @@ def main():
     if err_count >= max(3, int(len(candidates) * 0.3)):
         log(f"[error] 조회 실패 {err_count}/{len(candidates)}종목 — KIS 장애 의심, 게시 중단")
         sys.exit(3)
+    reaccum_added, reaccum_badges = attach_reaccum_candidates(suspects, active_explosions, p)
+    if reaccum_added or reaccum_badges:
+        log(f"[radar] reaccum 노출 {reaccum_added}건 · 기존카드 배지 {reaccum_badges}건")
     suspects.sort(key=lambda x: -x["suspicion_score"])
     apply_kimi_verification(suspects, p.kimi_mode, p.kimi_max, p.kimi_timeout,
                             p.kimi_window_start, p.kimi_window_end)
@@ -739,7 +1090,14 @@ def main():
                    "deep_ibs_min": p.deep_ibs_min,
                    "kimi_mode": p.kimi_mode,
                    "kimi_max": p.kimi_max,
-                   "kimi_window": [p.kimi_window_start, p.kimi_window_end]},
+                   "kimi_window": [p.kimi_window_start, p.kimi_window_end],
+                   "reaccum_enabled": p.reaccum_enabled,
+                   "reaccum_visible": p.reaccum_visible,
+                   "reaccum_max": p.reaccum_max,
+                   "explosion_value_eok": round(p.explosion_value / 1e8),
+                   "explosion_high_pct": p.explosion_high_pct,
+                   "explosion_window": p.explosion_window,
+                   "explosion_rank_n": p.explosion_rank_n},
         "universe_count": len(candidates),
         "events": events,
         "suspects": suspects,

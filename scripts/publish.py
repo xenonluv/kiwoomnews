@@ -28,8 +28,10 @@ RADAR_PASSTHRU = ("--min-value", "--high-pct", "--chg-min", "--chg-max",
                   "--deep-drop-min", "--deep-drop-max", "--deep-ibs-min",
                   "--deep-recovery-min", "--deep-late-window",
                   "--kimi-mode", "--kimi-max", "--kimi-timeout",
-                  "--kimi-window-start", "--kimi-window-end")
-RADAR_BOOL_PASSTHRU = ("--no-deep-shake",)
+                  "--kimi-window-start", "--kimi-window-end",
+                  "--reaccum-max", "--explosion-value", "--explosion-high-pct",
+                  "--explosion-window", "--explosion-rank-n", "--reaccum-seed")
+RADAR_BOOL_PASSTHRU = ("--no-deep-shake", "--no-reaccum", "--no-reaccum-visible")
 
 
 RADAR_TIMEOUT = 600  # 초 — KIS/Kimi 행 멈춤 시 락 쥔 채 무한 대기 → 사이트 stale 방지
@@ -110,6 +112,9 @@ def record_history(out):
             "flow_net_days": (s.get("flow") or {}).get("net_days"),
             "deep_shake": s.get("deep_shake"),
             "ai_verdict": s.get("ai_verdict"),
+            "visible_experimental": s.get("visible_experimental", False),
+            "reaccum_badge": s.get("reaccum_badge", False),
+            "reaccum": s.get("reaccum"),
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],
             "first_seen": prev.get("first_seen") or out.get("generated_at"),
             "evaluated": prev.get("evaluated", False),
@@ -158,6 +163,7 @@ def main():
     # --max 와 (구 cron 호환) --max-candidates 둘 다 허용
     max_key = "--max" if "--max" in args else ("--max-candidates" if "--max-candidates" in args else None)
     maxn = int(args[args.index(max_key) + 1]) if max_key else 12
+    reaccum_max = int(args[args.index("--reaccum-max") + 1]) if "--reaccum-max" in args else 3
 
     passthru = []
     for k in RADAR_PASSTHRU:
@@ -175,8 +181,15 @@ def main():
             names.append(nm)
         if names:
             passthru += ["--names"] + names
+    if dry:
+        passthru.append("--dry-run")
 
     radar = run_radar(passthru)
+    regular = [s for s in radar.get("suspects", []) if not s.get("visible_experimental")]
+    reaccum = [s for s in radar.get("suspects", []) if s.get("visible_experimental")]
+    slots = min(max(0, reaccum_max), maxn)
+    keep_reg = maxn - min(len(reaccum), slots)
+    suspects = regular[:keep_reg] + reaccum[:slots]
     out = {
         "generated_at": radar.get("generated_at"),
         "market_session": market_session(),
@@ -184,7 +197,7 @@ def main():
         "params": radar.get("params", {}),
         "universe_count": radar.get("universe_count", 0),
         "events": radar.get("events", []),
-        "suspects": radar.get("suspects", [])[:maxn],
+        "suspects": suspects,
     }
     new = json.dumps(out, ensure_ascii=False, indent=1)
 

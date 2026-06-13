@@ -157,7 +157,7 @@ def ai_predict():
     changed = False
     n_ok = 0
     for code, s in hist.get("suspects", {}).items():
-        if not s.get("final") or s.get("ai_pred"):
+        if not s.get("final") or s.get("visible_experimental") or s.get("ai_pred"):
             continue  # 마감 카드 잔존 종목만, 이미 기록된 건 재호출 안 함
         try:
             req = urllib.request.Request(
@@ -204,6 +204,9 @@ def collect_samples():
                                 # 마감 시 게시 카드 잔존 여부(= 종가 매수 가능했던 종목).
                                 # 키 없는 과거(장후 실행) 기록은 True
                                 "final": s.get("final", True),
+                                # 화면에는 노출하지만 기존 성과·튜닝 기준선에서는 제외할 실험 표본.
+                                "visible_experimental": s.get("visible_experimental", False),
+                                "reaccum": s.get("reaccum"),
                                 # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
                                 "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
                                 "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
@@ -397,6 +400,18 @@ def tune_weights(samples):
     return {"weights": weights, "lifts": lifts, "basis_n": len(samples)}
 
 
+def sample_stats(samples):
+    n = len(samples)
+    hits = sum(1 for s in samples if s["hit"])
+    rets = [s["return_pct"] for s in samples]
+    return {
+        "n": n,
+        "hit_rate": round(hits / n * 100, 1) if n else None,
+        "avg_return": round(sum(rets) / n, 2) if n else None,
+        "high3_rate": round(sum(1 for s in samples if s["high3"]) / n * 100, 1) if n else None,
+    }
+
+
 def save_weights(tuned):
     today = datetime.now(KST).strftime("%Y-%m-%d")
     prev = {}
@@ -417,11 +432,16 @@ def save_weights(tuned):
     return out
 
 
-def write_performance(samples, series, bins, weights, dropouts=None):
+def write_performance(samples, series, bins, weights, dropouts=None,
+                      experimental=None, experimental_dropouts=None):
     n = len(samples)
     hits = sum(1 for s in samples if s["hit"])
     rets = [s["return_pct"] for s in samples]
     dropouts = dropouts or []
+    experimental = experimental or []
+    experimental_dropouts = experimental_dropouts or []
+    reaccum_experimental = [s for s in experimental + experimental_dropouts
+                            if s.get("pattern") == "reaccum"]
     dn = len(dropouts)
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
@@ -445,6 +465,9 @@ def write_performance(samples, series, bins, weights, dropouts=None):
         "ai": ai_stats(samples),
         # 메가스파크×수급 가설 검증 표 (스파크 배율 구간 × 당일 수급매수)
         "spark_flow": spark_flow_matrix(samples),
+        "experimental": {
+            "reaccum": sample_stats(reaccum_experimental),
+        },
         "weights": {
             "current": (weights or {}).get("weights") or DEFAULT_WEIGHTS,
             "default": DEFAULT_WEIGHTS,
@@ -513,17 +536,21 @@ def main():
     ai_predict()  # 당일 마감 카드의 AI 예측 기록 (익일 evaluate가 채점)
     samples = collect_samples()
     # 주 통계·튜닝 = 마감 카드 잔존(final) 표본만 — 정석 사용법(종가 매수)과 모집단 일치.
-    finals = [s for s in samples if s["final"]]
-    dropouts = [s for s in samples if not s["final"]]
-    series = build_series(finals)
-    bins = build_bins(finals)
-    weights = save_weights(tune_weights(finals))
-    perf = write_performance(finals, series, bins, weights, dropouts)
+    core = [s for s in samples if s["final"] and not s.get("visible_experimental")]
+    experimental = [s for s in samples if s["final"] and s.get("visible_experimental")]
+    dropouts = [s for s in samples if (not s["final"]) and not s.get("visible_experimental")]
+    experimental_dropouts = [s for s in samples
+                             if (not s["final"]) and s.get("visible_experimental")]
+    series = build_series(core)
+    bins = build_bins(core)
+    weights = save_weights(tune_weights(core))
+    perf = write_performance(core, series, bins, weights, dropouts,
+                             experimental, experimental_dropouts)
     s = perf["summary"]
     print(f"[backtest] 최종카드 표본 {s['n']}건 · 적중률 {s['hit_rate']}% · "
           f"평균수익 {s['avg_return']}% · 고가+3% {s['high3_rate']}% · "
           f"추적 {s['tracking_days']}일 · 장중탈락 {len(dropouts)}건(참고) · "
-          f"AI평가표본 {perf['ai']['n']}건")
+          f"실험표본 {len(experimental)}건 · AI평가표본 {perf['ai']['n']}건")
     if "--push" in sys.argv[1:]:
         push_state()
 

@@ -34,6 +34,17 @@ function aiBadge(v: Suspect["ai_verdict"]) {
   return { label: "AI 관망", variant: "warning" as const };
 }
 
+function peakDaysAgo(yyyymmdd?: string) {
+  if (!yyyymmdd || yyyymmdd.length !== 8) return null;
+  const y = Number(yyyymmdd.slice(0, 4));
+  const m = Number(yyyymmdd.slice(4, 6));
+  const d = Number(yyyymmdd.slice(6, 8));
+  const peak = Date.UTC(y, m - 1, d);
+  const kstNow = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const today = Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate());
+  return Math.max(0, Math.floor((today - peak) / 86_400_000));
+}
+
 /**
  * 수상 종목 카드 — "큰돈이 들어와 급등 후 식은, 이벤트에 민감한 종목"의 증거를 한 장에.
  * 고가→현재 페이드 바 + 분봉 스파크 타임라인 + 수급 + 점수 해부도.
@@ -73,6 +84,16 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 급락 흡수
               </Badge>
             )}
+            {(s.pattern === "reaccum" || s.reaccum_badge) && (
+              <Badge variant="warning" title="최근 6거래일 내 1천억 이상·고가 +13% 이상 폭발 후 식은 구간의 기관 재매집 후보">
+                재매집
+              </Badge>
+            )}
+            {s.visible_experimental && (
+              <Badge variant="outline" title="기존 성과·튜닝 기준선에서 분리 집계 중">
+                검증중
+              </Badge>
+            )}
             {s.mega_flow && (
               <Badge
                 variant="outline"
@@ -82,7 +103,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 메가스파크 {s.spark_max_x}배 × 수급매수
               </Badge>
             )}
-            {(() => {
+            {!s.visible_experimental && (() => {
               const b = aiBadge(s.ai_verdict);
               return (
                 <Badge variant={b.variant} className={b.className} title={s.ai_verdict?.reason ?? undefined}>
@@ -155,6 +176,16 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 {" · "}IBS <span className="tabular-nums">{Math.round(s.deep_shake.ibs * 100)}</span>
                 {" · "}회복 <span className="tabular-nums">{s.deep_shake.recovery_pct}%</span>
                 {s.deep_shake.late_reclaim && <span> · 막판회복</span>}
+              </p>
+            )}
+            {s.reaccum && (
+              <p className="text-[11px] text-warning">
+                재매집: {peakDaysAgo(s.reaccum.peak_date) ?? "-"}일 전{" "}
+                <span className="tabular-nums">{s.reaccum.peak_value_eok.toLocaleString()}억</span>
+                {" · "}고가{" "}
+                <span className="tabular-nums">+{s.reaccum.peak_high_pct.toFixed(1)}%</span>
+                {" "}폭발 이후 기관{" "}
+                <span className="tabular-nums">{s.reaccum.orgn_net_after_peak.toLocaleString()}주</span>
               </p>
             )}
             {s.ai_verdict?.status === "ok" && s.ai_verdict.reason && (
