@@ -90,7 +90,11 @@ export interface ReaccumInfo {
   peak_high_pct: number;
   ma20?: number;
   ma20_margin_pct?: number;
-  orgn_net_after_peak: number;
+  /** 폭발 전후 투신 순매수 (조건=수량>0 느슨, 일수·금액은 정보 표시) */
+  ivtr_net?: number; // 투신 순매수 수량
+  ivtr_days?: number; // 투신 순매수일 수
+  ivtr_eok?: number; // 투신 순매수 누적 금액(억)
+  orgn_net_after_peak?: number; // 구버전 JSON 하위호환
 }
 
 /** Kimi 후보 검증 결과 */

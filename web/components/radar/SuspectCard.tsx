@@ -93,8 +93,8 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
               </Badge>
             )}
             {(s.pattern === "reaccum" || s.reaccum_badge) && (
-              <Badge variant="warning" title="최근 6거래일 내 1천억 이상·고가 +13% 이상 폭발 후 식은 구간의 기관 재매집 후보">
-                재매집
+              <Badge variant="warning" title="최근 6거래일 내 1천억·고가+13% 폭발 후 식은 구간 + 투신 매집 — 15분봉 120선 재돌파를 직접 확인하고 진입(매수 추천 아님)">
+                재매집 감시
               </Badge>
             )}
             {s.visible_experimental && (
@@ -188,12 +188,21 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             )}
             {s.reaccum && (
               <p className="text-[11px] text-warning">
-                재매집: {peakDaysAgo(s.reaccum.peak_date) ?? "-"}일 전{" "}
+                재매집 감시: {peakDaysAgo(s.reaccum.peak_date) ?? "-"}일 전{" "}
                 <span className="tabular-nums">{s.reaccum.peak_value_eok.toLocaleString()}억</span>
                 {" · "}고가{" "}
                 <span className="tabular-nums">+{s.reaccum.peak_high_pct.toFixed(1)}%</span>
-                {" "}폭발 이후 기관{" "}
-                <span className="tabular-nums">{s.reaccum.orgn_net_after_peak.toLocaleString()}주</span>
+                {" 폭발"}
+                {s.reaccum.ivtr_days != null && (
+                  <>
+                    {" · 투신 "}
+                    <span className="tabular-nums text-up">{s.reaccum.ivtr_days}일</span>
+                    {s.reaccum.ivtr_eok != null && (
+                      <span className="tabular-nums text-up"> +{s.reaccum.ivtr_eok.toLocaleString()}억</span>
+                    )}
+                    {" 매집"}
+                  </>
+                )}
               </p>
             )}
             {s.ai_verdict?.status === "ok" && s.ai_verdict.reason && (

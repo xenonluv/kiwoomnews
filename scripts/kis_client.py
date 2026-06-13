@@ -281,6 +281,30 @@ def investor_daily(code):
     return out
 
 
+def investor_trade_daily(code, end_date=""):
+    """종목별 투자자매매동향(일별) — 투신(ivtr) 포함. 최근 ~30거래일, 오름차순.
+
+    FHPTJ04160001. inquire-investor(외인/기관/개인)와 달리 투신·금액까지 세분.
+    ivtr=투신 순매수 수량, ivtr_won=투신 순매수 금액(백만원). reaccum 투신 매집 판정용.
+    """
+    res = _call("/uapi/domestic-stock/v1/quotations/investor-trade-by-stock-daily",
+                "FHPTJ04160001",
+                {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code,
+                 "FID_INPUT_DATE_1": end_date, "FID_ORG_ADJ_PRC": "", "FID_ETC_CLS_CODE": ""})
+    out = []
+    for row in res.get("output2", []):
+        d = (row.get("stck_bsop_date") or "").strip()
+        if not d:
+            continue
+        out.append({"date": d,
+                    "frgn": _f(row.get("frgn_ntby_qty")),
+                    "orgn": _f(row.get("orgn_ntby_qty")),
+                    "ivtr": _f(row.get("ivtr_ntby_qty")),
+                    "ivtr_won": _f(row.get("ivtr_ntby_tr_pbmn"))})
+    out.sort(key=lambda x: x["date"])
+    return out
+
+
 # ── 순위 API (유니버스 구성용) ──────────────────────────────────────────
 # 시장 구분은 FID_INPUT_ISCD 업종코드로: 0001=코스피 종합, 1001=코스닥 종합.
 # 응답은 최대 ~30행 — top20 용도로 충분 (전수 스캔 불가 제약은 그대로).
