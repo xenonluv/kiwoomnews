@@ -550,6 +550,9 @@ def scan_reaccum_candidate(rec, p):
     # (백테스트: '폭발 이후'만 보면 매집 놓침 / 기관계보다 투신이 깨끗 / 일수·금액 임계는
     #  역효과라 느슨하게 순매수>0만 조건. 일수·금액은 카드 정보로만 표시.)
     lo = (datetime.strptime(peak_date, "%Y%m%d") - timedelta(days=REACCUM_PRE_DAYS)).strftime("%Y%m%d")
+    # 커버리지 가드: 수급 응답이 창 시작(lo)까지 못 닿으면 투신 합이 과소계산 → unknown 처리(탈락)
+    if not inv or min(r.get("date", "") for r in inv) > lo:
+        return None
     win = [r for r in inv if lo <= r.get("date", "") <= signal_date]
     ivtr_net = sum(float(r.get("ivtr") or 0) for r in win)
     ivtr_days = sum(1 for r in win if (r.get("ivtr") or 0) > 0)
