@@ -108,6 +108,9 @@ export interface GroupStat {
   avg_return: number;
   high3_rate: number;
   valid: boolean; // n >= FEATURE_MIN_N(10) — 미달 시 수치 숨김
+  /** 그 테마에서 '테마 대장'(거래대금 1위)으로 가장 자주 뽑힌 종목 — by_theme만, 구버전엔 없음 */
+  leader_name?: string;
+  leader_count?: number;
 }
 
 export interface ExperimentalStats {

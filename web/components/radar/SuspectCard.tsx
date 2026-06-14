@@ -123,6 +123,24 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.theme && s.theme !== s.sector && (
               <Badge variant="outline" title="원인 테마(뉴스·업종 기반)">#{s.theme}</Badge>
             )}
+            {s.theme_leader && (
+              <Badge
+                variant="outline"
+                className="border-up/60 font-semibold text-up"
+                title="같은 테마 종목 중 당일 거래대금 1위(테마 대장)"
+              >
+                🏆 테마 대장
+              </Badge>
+            )}
+            {s.reaccum?.was_theme_leader && (
+              <Badge
+                variant="outline"
+                className="border-up/70 font-semibold text-up"
+                title="폭발일에 같은 테마 거래대금 1위(테마 대장)였던 종목이 식었다 재매집 — 강한 의심 신호"
+              >
+                🏆 예전 대장
+              </Badge>
+            )}
             {s.matched_events.slice(0, 2).map((m) => (
               <Badge key={m.id} variant="outline" className="border-up/50 text-up">
                 {m.dday === 0 ? "D-DAY" : `D-${m.dday}`} {m.title.slice(0, 12)}

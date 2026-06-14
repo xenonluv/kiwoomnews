@@ -200,6 +200,7 @@ def collect_samples():
                                 "pattern": s.get("pattern", "unknown"),
                                 "sector": s.get("sector") or "unknown",
                                 "theme": s.get("theme") or "unknown",  # 구표본 미영속 → unknown
+                                "theme_leader": s.get("theme_leader", False),  # 그날 테마 거래대금 1위
                                 "ai_verdict": ((s.get("ai_verdict") or {}).get("verdict")
                                                or (s.get("ai_verdict") or {}).get("status")
                                                or "none"),
@@ -291,6 +292,21 @@ def group_stats_gated(samples, key, min_n=FEATURE_MIN_N):
     rows = group_stats(samples, key)
     for r in rows:
         r["valid"] = r["n"] >= min_n
+    return rows
+
+
+def fill_theme_leaders(rows, samples):
+    """by_theme 각 행에 leader_name/leader_count 부여 = 그 테마에서 '테마 대장'(거래대금 1위)으로
+    가장 자주 뽑힌 종목(표시 전용). 동률은 이름순. 대장 표본 없으면 미부여."""
+    for r in rows:
+        cnt = {}
+        for s in samples:
+            if (s.get("theme") or "unknown") == r["key"] and s.get("theme_leader"):
+                nm = s.get("name") or "?"
+                cnt[nm] = cnt.get(nm, 0) + 1
+        if cnt:
+            top = sorted(cnt, key=lambda n: (-cnt[n], n))[0]  # 최빈 → 동률은 이름 오름차순
+            r["leader_name"], r["leader_count"] = top, cnt[top]
     return rows
 
 
@@ -473,7 +489,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "by_pattern": group_stats(samples, "pattern"),
         # 테마/섹터별 성과 — "어느 테마가 강한 반등인가" 데이터 근거. valid 게이트로 소표본 단정 방지.
         "by_sector": group_stats_gated(samples, "sector"),
-        "by_theme": group_stats_gated(samples, "theme"),
+        "by_theme": fill_theme_leaders(group_stats_gated(samples, "theme"), samples),
         "by_ai_verdict": group_stats(samples, "ai_verdict"),
         # AI 익일 예측(prob_up) 검증 루프 — ai_predict()가 기록한 표본의 적중·보정 통계
         "ai": ai_stats(samples),

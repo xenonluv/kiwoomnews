@@ -13,7 +13,7 @@ export function ThemeStrip({
   selected,
   onSelect,
 }: {
-  themes: { name: string; count: number }[];
+  themes: { name: string; count: number; leader?: string }[];
   selected: string | null;
   onSelect: (t: string | null) => void;
 }) {
@@ -41,6 +41,9 @@ export function ThemeStrip({
               )}
             >
               #{t.name} <span className="tabular-nums">{t.count}</span>
+              {t.leader && (
+                <span className="text-up" title="테마 대장(거래대금 1위)"> · 🏆{t.leader}</span>
+              )}
             </button>
           );
         })}

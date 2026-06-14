@@ -97,24 +97,33 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
     if (selectedEvent && !data.events.some((e) => e.id === selectedEvent)) {
       setSelectedEvent(null);
     }
-    if (selectedTheme && !data.suspects.some((s) => s.theme === selectedTheme)) {
+    if (
+      selectedTheme &&
+      !data.suspects.some((s) => s.theme === selectedTheme && !s.visible_experimental)
+    ) {
       setSelectedTheme(null);
     }
   }, [data, selectedEvent, selectedTheme]);
 
-  // 테마 칩 — 수상 종목의 상위 테마를 빈도순(동률은 이름순)으로
+  // 테마 칩 — 수상 종목의 상위 테마를 빈도순(동률은 이름순)으로 + 테마별 대장(거래대금 1위)
   const themeCounts = new Map<string, number>();
+  const themeLeader = new Map<string, string>();
   for (const s of data.suspects) {
-    if (s.theme) themeCounts.set(s.theme, (themeCounts.get(s.theme) ?? 0) + 1);
+    if (!s.theme || s.visible_experimental) continue; // 실험(재매집)은 대장 모집단서 제외 — 칩 count와 대장 일치
+    themeCounts.set(s.theme, (themeCounts.get(s.theme) ?? 0) + 1);
+    if (s.theme_leader) themeLeader.set(s.theme, s.name);
   }
   const themes = [...themeCounts.entries()]
-    .map(([name, count]) => ({ name, count }))
+    .map(([name, count]) => ({ name, count, leader: themeLeader.get(name) }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
+  // 테마 필터/리셋/칩 집계는 모두 비실험(재매집 제외) 동일 모집단 — 칩 count와 클릭 결과 일치.
+  const inSelectedTheme = (s: RadarData["suspects"][number]) =>
+    s.theme === selectedTheme && !s.visible_experimental;
   const suspects = data.suspects.filter(
     (s) =>
       (!selectedEvent || s.matched_events.some((m) => m.id === selectedEvent)) &&
-      (!selectedTheme || s.theme === selectedTheme)
+      (!selectedTheme || inSelectedTheme(s))
   );
 
   return (

@@ -668,6 +668,18 @@ def scan_reaccum_candidate(rec, p, events):
 def attach_reaccum_candidates(suspects, active_explosions, p, events):
     if not p.reaccum_enabled or not p.reaccum_visible or not active_explosions:
         return 0, 0
+    # 폭발일 테마 대장: 같은 (peak_date, theme) 폭발군이 2개+면 거래대금(peak_value_eok) 1위 1종목.
+    # → 재매집 후보가 '식기 전 그 테마 대장이었나' 표시(예전 대장이 다시 오름 = 의심 신호, 표시 전용).
+    # theme은 라이브 캡처(cause_done) 폭발에만 있어 seed/무테마는 대장 판정 안 됨(보수적).
+    pd_theme = {}
+    for c, rec in active_explosions.items():
+        t, pdate = rec.get("theme"), rec.get("peak_date")
+        if t and pdate:
+            pd_theme.setdefault((pdate, t), []).append((c, rec))
+    leader_codes = set()
+    for grp in pd_theme.values():
+        if len(grp) >= 2:
+            leader_codes.add(max(grp, key=lambda cr: float(cr[1].get("peak_value_eok") or 0))[0])
     by_code = {s["code"]: s for s in suspects}
     added = badges = 0
     for code, rec in active_explosions.items():
@@ -678,6 +690,7 @@ def attach_reaccum_candidates(suspects, active_explosions, p, events):
             continue
         if r == "ERR" or not r:
             continue
+        r["reaccum"]["was_theme_leader"] = code in leader_codes  # 폭발일 테마 대장(거래대금 1위)이었나
         if code in by_code:
             by_code[code]["reaccum_badge"] = True
             by_code[code]["reaccum"] = r["reaccum"]
@@ -1217,6 +1230,8 @@ def main():
     apply_kimi_verification(suspects, p.kimi_mode, p.kimi_max, p.kimi_timeout,
                             p.kimi_window_start, p.kimi_window_end)
     suspects.sort(key=lambda x: -x["suspicion_score"])
+    # 테마 대장(theme_leader)은 publish.py가 --max 컷 이후 '게시 집합' 기준으로 태깅한다
+    # (여기서 컷 이전 전체로 달면 컷에 밀려 누락되거나 1종목 테마에 잘못 붙는다 — SSOT=publish).
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),

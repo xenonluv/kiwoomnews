@@ -105,6 +105,8 @@ def record_history(out):
             "fade_pct": s.get("fade_pct"),
             "pattern": s.get("pattern"),
             "theme": s.get("theme", ""),  # 상위 테마 — by_theme 성과 집계용(표시 전용, 점수 미반영)
+            "value_eok": s.get("value_eok"),         # 당일 거래대금(억) — 테마 대장 판별·기록용
+            "theme_leader": s.get("theme_leader", False),  # 같은 테마 거래대금 1위 여부(표시 전용)
             # 메가스파크×수급 가설 검증용 피처 (radar_backtest spark_flow 표가 사용)
             "spark_max_x": s.get("spark_max_x"),
             "spark_max_pct": s.get("spark_max_pct"),  # 부호 = 상승/하락 메가 분리 분석용
@@ -191,6 +193,19 @@ def main():
     slots = min(max(0, reaccum_max), maxn)
     keep_reg = maxn - min(len(reaccum), slots)
     suspects = regular[:keep_reg] + reaccum[:slots]
+    # 테마 대장: '실제 게시되는 집합' 기준으로 태깅(거래대금 1위) — radar.py는 컷 이전 전체라
+    # 컷 후 대장 누락/외톨이(1종목 테마에 🏆)가 생김. 게시 비실험 종목만, 같은 테마 2개+일 때만.
+    # 표시 전용(점수·통계 미반영). record_history·radar.json 모두 이 값을 SSOT로 사용.
+    for s in suspects:
+        s["theme_leader"] = False
+    theme_groups = {}
+    for s in suspects:
+        t = s.get("theme")
+        if t and not s.get("visible_experimental"):
+            theme_groups.setdefault(t, []).append(s)
+    for grp in theme_groups.values():
+        if len(grp) >= 2:
+            max(grp, key=lambda x: x.get("value_eok") or 0)["theme_leader"] = True
     out = {
         "generated_at": radar.get("generated_at"),
         "market_session": market_session(),

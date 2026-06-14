@@ -95,6 +95,8 @@ export interface ReaccumInfo {
   ivtr_days?: number; // 투신 순매수일 수
   ivtr_eok?: number; // 투신 순매수 누적 금액(억)
   cause_summary?: string; // 폭발 catalyst 한 줄("왜 올랐나") — 구버전 JSON엔 없음
+  /** 폭발일에 같은 테마 거래대금 1위(테마 대장)였는지 — '예전 대장 재등장' 의심 신호. 구버전 JSON엔 없음 */
+  was_theme_leader?: boolean;
   orgn_net_after_peak?: number; // 구버전 JSON 하위호환
 }
 
@@ -149,6 +151,8 @@ export interface Suspect {
   matched_events: MatchedEvent[];
   /** 상위 테마(금리|반도체|환율|유가|전쟁|실적|수급) — 표시·그룹용, 점수 미반영. 구버전 JSON엔 없음 */
   theme?: string;
+  /** 같은 테마 내 당일 거래대금 1위(테마 대장) 여부 — 표시 전용. 구버전 JSON엔 없음 */
+  theme_leader?: boolean;
 }
 
 /** radar.json 루트 */

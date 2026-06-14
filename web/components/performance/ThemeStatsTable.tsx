@@ -40,7 +40,17 @@ export function ThemeStatsTable({
           <tbody>
             {shown.map((r) => (
               <tr key={r.key} className="border-t border-white/5">
-                <td className="py-2 font-medium">{r.key}</td>
+                <td className="py-2 font-medium">
+                  {r.key}
+                  {r.leader_name && (
+                    <span
+                      className="ml-1 text-[11px] font-normal text-up"
+                      title={`테마 대장(거래대금 1위 최빈) · ${r.leader_count}회`}
+                    >
+                      🏆{r.leader_name}
+                    </span>
+                  )}
+                </td>
                 <td className="py-2 tabular-nums">{r.n}건</td>
                 <td className="py-2">
                   {r.valid ? (
