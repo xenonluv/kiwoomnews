@@ -32,7 +32,7 @@ from net import get_bytes
 from team1_collect import resolve_code, fetch_news, is_individual_stock, UA
 from team2_relevance import score_news, make_aliases
 from event_calendar import upcoming_events
-from theme_map import match_events
+from theme_map import match_events, match_sensitivity
 import kis_client as kis
 import kimi_client
 
@@ -324,6 +324,11 @@ def _upsert_explosion(reg, rec):
         rec["peak_change_pct"] = max(float(old.get("peak_change_pct", 0) or 0),
                                      float(rec.get("peak_change_pct", 0) or 0))
         rec["source"] = old.get("source") or rec.get("source")
+        # 원인/테마 메타는 기존 비어있을 때만 신규로 채움 — 폭발 당일 신선 catalyst가
+        # 이후 회차의 stale 값으로 덮이지 않게(source와 동일 철학). cause_done이 캡처 동결 마커.
+        for k in ("sector", "theme", "cause_summary", "cause_titles", "cause_done"):
+            if old.get(k) and not rec.get(k):
+                rec[k] = old[k]
     reg["records"][key] = rec
 
 
@@ -499,7 +504,7 @@ def update_live_explosions(reg, p):
         value_won = now_value if now_value > 0 else rank_value_won
         if value_won < p.explosion_value:
             continue
-        _upsert_explosion(reg, {
+        rec_new = {
             "code": row["code"],
             "name": row["name"],
             "peak_date": trade_date,
@@ -507,7 +512,20 @@ def update_live_explosions(reg, p):
             "peak_high_pct": round(high_pct, 2),
             "peak_change_pct": round(float(now.get("change_pct") or 0), 2),
             "source": "live",
-        })
+            "sector": now.get("sector", ""),  # 0 API
+        }
+        # 신규 폭발만 catalyst 1회 캡처(폭발 당일=신선). 시도하면 cause_done=True로 동결 →
+        # 무뉴스 종목(cause_summary="")도 매 15분 재fetch 안 함. cause_titles는 재매집 시점
+        # match_events 0 API 재계산용. dry-run은 생략(저장 안 하므로 무의미한 fetch 방지).
+        key = f"{trade_date}:{row['code']}"
+        if not p.dry_run and not (reg["records"].get(key) or {}).get("cause_done"):
+            _, theme, cause_summary, raw_titles = _explain_cause(row["code"], row["name"], now.get("sector", ""))
+            rec_new["theme"] = theme  # 순수 테마 카테고리(없으면 "") — fade와 동일, sector 폴백 안 함
+            rec_new["cause_summary"] = cause_summary
+            # 원본 제목 전체(필터 전) — 재매집 match_events가 scan_one(raw_titles)과 동일 매칭하도록
+            rec_new["cause_titles"] = raw_titles
+            rec_new["cause_done"] = True
+        _upsert_explosion(reg, rec_new)
         live_dates.add(trade_date)
         count += 1
     _merge_trading_days(reg, live_dates)
@@ -533,7 +551,7 @@ def prepare_reaccum_registry(p):
     return active
 
 
-def scan_reaccum_candidate(rec, p):
+def scan_reaccum_candidate(rec, p, events):
     """폭발 이후 식은 구간에서 기관 순매수+MA20 생존 재매집 후보를 만든다."""
     code, name = rec["code"], rec.get("name") or rec["code"]
     peak_date = rec.get("peak_date")
@@ -591,6 +609,19 @@ def scan_reaccum_candidate(rec, p):
     empty_breakdown = {"base": REACCUM_SCORE, "spark": 0, "fade": 0,
                        "ma10": 0, "flow": 0, "event": 0}
     raw_breakdown = {k: 0 for k in empty_breakdown}
+    # 원인/테마("왜 올랐나"): 폭발시점 캡처본(registry) 우선 — 폭발 당일 catalyst라 신선(0 API).
+    # 없으면(seed/과거폭발) 재매집 시점 보강 fetch. 표시 전용 — 점수 미반영.
+    theme = rec.get("theme") or ""
+    cause_summary = rec.get("cause_summary") or ""
+    if rec.get("cause_done"):  # 폭발시점 캡처됨 — 0 API(캐시된 원본 제목으로 이벤트만 재계산)
+        news_items, titles = [], (rec.get("cause_titles") or [])
+    else:                      # seed/과거폭발 — 재매집 시점 보강 fetch (titles=원본, scan_one과 동일 매칭)
+        news_items, theme, cause_summary, titles = _explain_cause(code, name, now.get("sector", ""))
+    try:  # 이벤트 민감도 — 캐시/보강 경로 무관하게 항상 계산(표시 일관). 실패해도 빈값.
+        matched_events, _ = match_events(events, titles, now.get("sector", ""))
+    except Exception:
+        matched_events = []
+    # theme는 순수 카테고리(없으면 "") — fade(scan_one)와 동일, sector 폴백 안 함(그룹핑 대칭)
     return {
         "code": code,
         "name": name,
@@ -615,8 +646,9 @@ def scan_reaccum_candidate(rec, p):
         "spark_max_pct": None,
         "mega_flow": False,
         "flow": acc,
-        "news": [],
-        "matched_events": [],
+        "news": news_items,
+        "matched_events": matched_events,
+        "theme": theme,
         "visible_experimental": True,
         "reaccum": {
             "peak_date": peak_date,
@@ -628,17 +660,22 @@ def scan_reaccum_candidate(rec, p):
             "ivtr_net": int(ivtr_net),
             "ivtr_days": ivtr_days,
             "ivtr_eok": ivtr_eok,
+            "cause_summary": cause_summary,  # 폭발 catalyst 한 줄("왜 올랐나")
         },
     }
 
 
-def attach_reaccum_candidates(suspects, active_explosions, p):
+def attach_reaccum_candidates(suspects, active_explosions, p, events):
     if not p.reaccum_enabled or not p.reaccum_visible or not active_explosions:
         return 0, 0
     by_code = {s["code"]: s for s in suspects}
     added = badges = 0
     for code, rec in active_explosions.items():
-        r = scan_reaccum_candidate(rec, p)
+        try:
+            r = scan_reaccum_candidate(rec, p, events)
+        except Exception as e:  # reaccum(실험·표시)의 어떤 실패도 코어 fade 게시를 막지 않게 격리
+            log(f"  [skip] {rec.get('name', code)}: reaccum 예외 {e}")
+            continue
         if r == "ERR" or not r:
             continue
         if code in by_code:
@@ -736,6 +773,32 @@ def suspicion_score(spark_clusters, fade_pct, ma10_margin_pct, acc, event_score=
 
 # ---------- 메인 깔때기 ----------
 
+def derive_theme(titles, sector=""):
+    """뉴스 제목들+업종 → 상위 테마 1개(없으면 ""). match_sensitivity 단일 소스
+    (결정론: hit 최다, 동률은 카테고리명 내림차순). fade·reaccum·폭발 세 경로 공용 → 테마 파생 일관."""
+    hits = match_sensitivity(titles, sector)
+    if not hits:
+        return ""
+    return max(hits, key=lambda c: (hits[c], c))
+
+
+def _explain_cause(code, name, sector=""):
+    """'왜 올랐나' — 종목뉴스 fetch → 재료뉴스(score_news, 표시용) + 테마 + 원인요약 + raw_titles.
+    (news_items, theme, cause_summary, raw_titles) 반환. **어떤 예외든 빈값(graceful)** — 표시 전용
+    메타가 코어 파이프라인을 중단시키지 않게 전체 try(scan_one의 try/except:pass와 동일 철학).
+    raw_titles = fetch 원본 제목 전체(score_news 필터·6컷 전) — match_events/derive_theme가 scan_one과
+    동일하게 원본으로 매칭하도록(재매집 이벤트/테마 과소매칭 방지). 추가 API = fetch_news 1콜."""
+    try:
+        raw = [n for n in fetch_news(code, 10) if n.get("title")]
+        raw_titles = [n["title"] for n in raw]
+        news_items = score_news(raw, make_aliases(name)).get("relevant", [])[:6]
+        theme = derive_theme(raw_titles, sector)
+        cause_summary = news_items[0].get("title", "") if news_items else ""
+        return news_items, theme, cause_summary, raw_titles
+    except Exception:
+        return [], "", "", []
+
+
 def scan_one(name, code, p, events):
     """단일 종목 전체 판정. 조건 미달 None / 데이터 오류 "ERR" / 통과 suspect dict."""
     try:
@@ -815,6 +878,7 @@ def scan_one(name, code, p, events):
     except Exception:
         pass
     matched_events, event_score = match_events(events, raw_titles, now["sector"])
+    theme = derive_theme(raw_titles, now["sector"])  # 표시 전용 메타(0 API, raw_titles 재사용) — 점수 미반영
 
     denom = now["high"] - now["prev_close"]  # 게이트상 양수지만 --high-pct 0 입력 방어
     fade_pct = (now["high"] - now["price"]) / denom * 100 if denom > 0 else 0.0
@@ -864,6 +928,7 @@ def scan_one(name, code, p, events):
         "flow": acc,
         "news": news_items,
         "matched_events": matched_events,
+        "theme": theme,
     }
 
 
@@ -1142,7 +1207,7 @@ def main():
     if err_count >= max(3, int(len(candidates) * 0.3)):
         log(f"[error] 조회 실패 {err_count}/{len(candidates)}종목 — KIS 장애 의심, 게시 중단")
         sys.exit(3)
-    reaccum_added, reaccum_badges = attach_reaccum_candidates(suspects, active_explosions, p)
+    reaccum_added, reaccum_badges = attach_reaccum_candidates(suspects, active_explosions, p, events)
     if reaccum_added or reaccum_badges:
         log(f"[radar] reaccum 노출 {reaccum_added}건 · 기존카드 배지 {reaccum_badges}건")
     suspects.sort(key=lambda x: -x["suspicion_score"])

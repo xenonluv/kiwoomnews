@@ -109,6 +109,7 @@ def verify_candidate(candidate, timeout=60):
         "code": candidate.get("code"),
         "name": candidate.get("name"),
         "sector": candidate.get("sector"),
+        "theme": candidate.get("theme"),  # 상위 테마(금리/반도체/…) — AI에 동반군 맥락 제공
         "pattern": candidate.get("pattern"),
         "price": candidate.get("price"),
         "change_pct": candidate.get("change_pct"),

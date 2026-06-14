@@ -198,6 +198,8 @@ def collect_samples():
                                 "score": s.get("score", 0),
                                 "breakdown": s.get("breakdown", {}),
                                 "pattern": s.get("pattern", "unknown"),
+                                "sector": s.get("sector") or "unknown",
+                                "theme": s.get("theme") or "unknown",  # 구표본 미영속 → unknown
                                 "ai_verdict": ((s.get("ai_verdict") or {}).get("verdict")
                                                or (s.get("ai_verdict") or {}).get("status")
                                                or "none"),
@@ -281,6 +283,15 @@ def group_stats(samples, key):
                     "avg_return": round(sum(rets) / len(rets), 2),
                     "high3_rate": round(sum(1 for s in grp if s["high3"]) / len(grp) * 100, 1)})
     return out
+
+
+def group_stats_gated(samples, key, min_n=FEATURE_MIN_N):
+    """group_stats + 표본부족 게이트(valid). n<min_n 행은 웹이 수치 숨기고 '수집 중' 표기.
+    소표본으로 테마/섹터 우선순위를 단정하지 않게 하는 안전장치(현 n 적어 대부분 valid=false 정상)."""
+    rows = group_stats(samples, key)
+    for r in rows:
+        r["valid"] = r["n"] >= min_n
+    return rows
 
 
 def ai_stats(samples):
@@ -460,6 +471,9 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "series": series,
         "bins": bins,
         "by_pattern": group_stats(samples, "pattern"),
+        # 테마/섹터별 성과 — "어느 테마가 강한 반등인가" 데이터 근거. valid 게이트로 소표본 단정 방지.
+        "by_sector": group_stats_gated(samples, "sector"),
+        "by_theme": group_stats_gated(samples, "theme"),
         "by_ai_verdict": group_stats(samples, "ai_verdict"),
         # AI 익일 예측(prob_up) 검증 루프 — ai_predict()가 기록한 표본의 적중·보정 통계
         "ai": ai_stats(samples),

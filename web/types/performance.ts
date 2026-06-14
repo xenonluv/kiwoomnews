@@ -100,6 +100,16 @@ export interface SparkFlowStats {
   cells: SparkFlowCell[];
 }
 
+/** 테마/섹터별 성과 — radar_backtest.group_stats_gated()와 정합. */
+export interface GroupStat {
+  key: string; // 테마명 또는 섹터명 (미분류는 "unknown")
+  n: number;
+  hit_rate: number;
+  avg_return: number;
+  high3_rate: number;
+  valid: boolean; // n >= FEATURE_MIN_N(10) — 미달 시 수치 숨김
+}
+
 export interface ExperimentalStats {
   reaccum: {
     n: number;
@@ -127,6 +137,10 @@ export interface PerformanceData {
   ai?: AiStats;
   /** 메가스파크×수급 가설 검증 표 — 구버전 performance.json에는 없을 수 있음 */
   spark_flow?: SparkFlowStats;
+  /** 테마별 성과 — 구버전 performance.json에는 없을 수 있음 */
+  by_theme?: GroupStat[];
+  /** 섹터별 성과 — 구버전 performance.json에는 없을 수 있음 */
+  by_sector?: GroupStat[];
   /** 기존 기준선에서 제외한 화면 노출 실험 표본 */
   experimental?: ExperimentalStats;
   recent: RecentSample[];

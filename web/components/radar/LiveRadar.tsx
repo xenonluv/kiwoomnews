@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Radar } from "lucide-react";
 
 import { EventStrip } from "./EventStrip";
+import { ThemeStrip } from "./ThemeStrip";
 import { SuspectCard } from "./SuspectCard";
 import { radarClientService } from "@/services/radar.client";
 import type { RadarData } from "@/types/radar";
@@ -55,6 +56,7 @@ function LiveStatusBar({ data, justUpdated }: { data: RadarData; justUpdated: bo
 export function LiveRadar({ initial }: { initial: RadarData }) {
   const [data, setData] = useState<RadarData>(initial);
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
+  const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [justUpdated, setJustUpdated] = useState(false);
   const lastJson = useRef<string>(JSON.stringify(initial));
 
@@ -89,14 +91,37 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
     };
   }, []);
 
-  const suspects = selectedEvent
-    ? data.suspects.filter((s) => s.matched_events.some((m) => m.id === selectedEvent))
-    : data.suspects;
+  // 폴링으로 데이터가 교체된 뒤 선택한 칩의 대상이 사라지면(테마 소멸/이벤트 만료) 필터 자동 해제.
+  // — 칩이 더는 렌더되지 않아 다시 클릭해 해제할 수 없는 '빈 화면에 갇힘'을 방지.
+  useEffect(() => {
+    if (selectedEvent && !data.events.some((e) => e.id === selectedEvent)) {
+      setSelectedEvent(null);
+    }
+    if (selectedTheme && !data.suspects.some((s) => s.theme === selectedTheme)) {
+      setSelectedTheme(null);
+    }
+  }, [data, selectedEvent, selectedTheme]);
+
+  // 테마 칩 — 수상 종목의 상위 테마를 빈도순(동률은 이름순)으로
+  const themeCounts = new Map<string, number>();
+  for (const s of data.suspects) {
+    if (s.theme) themeCounts.set(s.theme, (themeCounts.get(s.theme) ?? 0) + 1);
+  }
+  const themes = [...themeCounts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  const suspects = data.suspects.filter(
+    (s) =>
+      (!selectedEvent || s.matched_events.some((m) => m.id === selectedEvent)) &&
+      (!selectedTheme || s.theme === selectedTheme)
+  );
 
   return (
     <>
       <LiveStatusBar data={data} justUpdated={justUpdated} />
       <EventStrip events={data.events} selected={selectedEvent} onSelect={setSelectedEvent} />
+      <ThemeStrip themes={themes} selected={selectedTheme} onSelect={setSelectedTheme} />
 
       <section>
         <div className="mb-4">
@@ -127,8 +152,8 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
         {suspects.length === 0 ? (
           <div className="flex min-h-48 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-border text-sm text-muted-foreground">
             <Radar className="size-8 opacity-60" aria-hidden />
-            {selectedEvent ? (
-              <p>이 이벤트에 민감한 수상 종목이 없습니다. (필터 해제: 칩 다시 클릭)</p>
+            {selectedEvent || selectedTheme ? (
+              <p>이 필터에 해당하는 수상 종목이 없습니다. (필터 해제: 칩 다시 클릭)</p>
             ) : (
               <p>오늘은 레이더에 잡힌 종목이 없습니다 — 조건을 모두 만족하는 날만 표시됩니다.</p>
             )}

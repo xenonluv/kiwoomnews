@@ -120,6 +120,9 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
               );
             })()}
             {s.sector && <Badge variant="neutral">{s.sector}</Badge>}
+            {s.theme && s.theme !== s.sector && (
+              <Badge variant="outline" title="원인 테마(뉴스·업종 기반)">#{s.theme}</Badge>
+            )}
             {s.matched_events.slice(0, 2).map((m) => (
               <Badge key={m.id} variant="outline" className="border-up/50 text-up">
                 {m.dday === 0 ? "D-DAY" : `D-${m.dday}`} {m.title.slice(0, 12)}
@@ -203,6 +206,11 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                     {" 매집"}
                   </>
                 )}
+              </p>
+            )}
+            {s.reaccum?.cause_summary && (
+              <p className="line-clamp-1 text-[11px] text-muted-foreground" title={s.reaccum.cause_summary}>
+                왜 올랐나: {s.reaccum.cause_summary}
               </p>
             )}
             {s.ai_verdict?.status === "ok" && s.ai_verdict.reason && (

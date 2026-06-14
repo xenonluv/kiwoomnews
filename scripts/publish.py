@@ -104,6 +104,7 @@ def record_history(out):
             "high_pct": s.get("high_pct"),
             "fade_pct": s.get("fade_pct"),
             "pattern": s.get("pattern"),
+            "theme": s.get("theme", ""),  # 상위 테마 — by_theme 성과 집계용(표시 전용, 점수 미반영)
             # 메가스파크×수급 가설 검증용 피처 (radar_backtest spark_flow 표가 사용)
             "spark_max_x": s.get("spark_max_x"),
             "spark_max_pct": s.get("spark_max_pct"),  # 부호 = 상승/하락 메가 분리 분석용

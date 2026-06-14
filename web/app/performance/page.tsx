@@ -9,6 +9,7 @@ import { CalibrationTable } from "@/components/performance/CalibrationTable";
 import { WeightsPanel } from "@/components/performance/WeightsPanel";
 import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
 import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
+import { ThemeStatsTable } from "@/components/performance/ThemeStatsTable";
 
 export const metadata: Metadata = {
   title: "성과 검증 · 자가 개선",
@@ -60,6 +61,22 @@ export default function PerformancePage() {
         </div>
 
         {data.spark_flow && <SparkFlowMatrix data={data.spark_flow} />}
+
+        {(data.by_theme || data.by_sector) && (
+          <div className="grid gap-6 lg:grid-cols-2">
+            {data.by_theme && (
+              <ThemeStatsTable
+                title="테마별 성과"
+                subtitle="어느 테마 폭발이 익일 반등이 강한가 — 표본 누적 시 우선순위 근거"
+                label="테마"
+                rows={data.by_theme}
+              />
+            )}
+            {data.by_sector && (
+              <ThemeStatsTable title="섹터별 성과" label="섹터" rows={data.by_sector} />
+            )}
+          </div>
+        )}
 
         {data.ai && <AiPredictionPanel ai={data.ai} />}
 
