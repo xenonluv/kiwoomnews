@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-15 15:37 KST",
+  "as_of": "2026-06-15 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
@@ -200,20 +200,20 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
           "title": "한온시스템 주가, 웃음꽃 활짝... 왜?",
           "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163556",
           "office": "ggilbo",
           "sentiment": "호재",
           "cause_score": 5,
           "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        },
+        {
+          "title": "[특징주] 한온시스템, 외국인 장중 순매수 1위 부각에 13%대 강세",
+          "url": "https://www.tokenpost.kr/news/economy/368487",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
@@ -240,16 +240,8 @@
           "url": "https://www.tokenpost.kr/news/economy/369357",
           "office": "tokenpost",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "대한항공·제주항공 등 항공株 강세...종전에 국제유가 급락",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608400",
-          "office": "gukjenews",
-          "sentiment": "악재",
-          "cause_score": 8,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
           "title": "[특징주] 외국인·기관 '대한항공' 러브콜...흥아·삼성·한전도 '픽'",
@@ -266,7 +258,7 @@
     {
       "ticker": "후성",
       "code": "093370",
-      "tomorrow_up_prob": "71%",
+      "tomorrow_up_prob": "72%",
       "entry": 22400.0,
       "target": 23520,
       "stop": 21728,
@@ -280,24 +272,24 @@
       "day_change": null,
       "cause_news": [
         {
-          "title": "후성, 투자경고종목 지정 예고→주가 급등 경계령",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16092441",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
-        },
-        {
           "title": "[속보] 후성 VI 두 차례 발동, 주가 19%대 급등…장중 2만3000원 돌파하기...",
           "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582084",
           "office": "cbci",
           "sentiment": "호재",
           "cause_score": 9,
           "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 외국인 '한온시스템·후성·케이뱅크'…기관 '삼성전자·현대...",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=706164",
+          "office": "newstnt",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "후성, 투자경고종목 지정 예고→주가 급등 경계령"
+      "cause_summary": "[속보] 후성 VI 두 차례 발동, 주가 19%대 급등…장중 2만3000원 돌파하기..."
     },
     {
       "ticker": "테크윙",
@@ -328,22 +320,6 @@
       "cause_summary": "테크윙 주가, 급등세... 어떤 기업이길래?"
     },
     {
-      "ticker": "주성엔지니어링",
-      "code": "036930",
-      "tomorrow_up_prob": "64%",
-      "entry": 225000.0,
-      "target": 236250,
-      "stop": 218250,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI58.3 강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감",
-      "day_change": -2.6
-    },
-    {
       "ticker": "LS ELECTRIC",
       "code": "010120",
       "tomorrow_up_prob": "63%",
@@ -354,7 +330,7 @@
       "reasons": [
         "강세마감(0.71)",
         "RSI54.3 강세",
-        "장중 27회 지속"
+        "장중 28회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -380,6 +356,42 @@
       "cause_summary": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ..."
     },
     {
+      "ticker": "하나마이크론",
+      "code": "067310",
+      "tomorrow_up_prob": "61%",
+      "entry": 50900.0,
+      "target": 53445,
+      "stop": 49373,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI59.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.98,
+      "cause_news": [
+        {
+          "title": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112761",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주]하나마이크론, 깜짝 실적 발표에 장중 사상 최고가 경신",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294039",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
+    },
+    {
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "60%",
@@ -389,8 +401,8 @@
       "confidence": "중",
       "reasons": [
         "RSI57.6 강세",
-        "거래량7.11배",
-        "장중 10회 지속"
+        "거래량7.12배",
+        "장중 11회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -434,7 +446,7 @@
       "reasons": [
         "RSI56.2 강세",
         "호재",
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "약한 마감",
       "day_change": -3.88,
