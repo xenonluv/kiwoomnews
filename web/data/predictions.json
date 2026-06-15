@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-15 13:37 KST",
+  "as_of": "2026-06-15 13:52 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 250000.0,
-      "target": 262500,
-      "stop": 242500,
+      "entry": 249000.0,
+      "target": 261450,
+      "stop": 241530,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.0 강세"
+        "RSI55.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 1.42,
+      "day_change": 1.01,
       "related_news": [
         {
           "title": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
@@ -29,14 +29,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 496500.0,
-      "target": 521325,
-      "stop": 481605,
+      "entry": 495500.0,
+      "target": 520275,
+      "stop": 480635,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.9)",
         "정배열",
-        "RSI61.8 강세"
+        "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -57,26 +57,18 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "77%",
-      "entry": 1189000.0,
-      "target": 1248450,
-      "stop": 1153330,
+      "entry": 1187000.0,
+      "target": 1246350,
+      "stop": 1151390,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.76)",
         "정배열",
         "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
         {
           "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
           "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
@@ -92,23 +84,31 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
+      "cause_summary": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세"
     },
     {
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "76%",
-      "entry": 1940000.0,
-      "target": 2037000,
-      "stop": 1881800,
+      "entry": 1939000.0,
+      "target": 2035950,
+      "stop": 1880830,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
+        "강세마감(0.74)",
         "정배열",
-        "RSI65.5 강세"
+        "RSI65.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -145,14 +145,14 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "74%",
-      "entry": 5630.0,
-      "target": 5912,
-      "stop": 5461,
+      "entry": 5640.0,
+      "target": 5922,
+      "stop": 5471,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
-        "RSI61.5 강세",
-        "거래량2.42배"
+        "강세마감(0.76)",
+        "RSI61.6 강세",
+        "거래량2.44배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -189,17 +189,17 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "69%",
-      "entry": 68100.0,
-      "target": 71505,
-      "stop": 66057,
+      "entry": 68200.0,
+      "target": 71610,
+      "stop": 66154,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI65.3 강세",
+        "RSI65.4 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 5.05,
+      "day_change": 4.13,
       "cause_news": [
         {
           "title": "테크윙 주가, 급등세... 어떤 기업이길래?",
@@ -217,58 +217,30 @@
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "64%",
-      "entry": 221500.0,
-      "target": 232575,
-      "stop": 214855,
+      "entry": 220500.0,
+      "target": 231525,
+      "stop": 213885,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI57.4 강세",
+        "RSI57.2 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -4.11
-    },
-    {
-      "ticker": "LS ELECTRIC",
-      "code": "010120",
-      "tomorrow_up_prob": "63%",
-      "entry": 261500.0,
-      "target": 274575,
-      "stop": 253655,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.89)",
-        "RSI55.2 강세",
-        "장중 19회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ..."
+      "day_change": -4.55
     },
     {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "62%",
-      "entry": 49650.0,
-      "target": 52132,
-      "stop": 48160,
+      "tomorrow_up_prob": "63%",
+      "entry": 51700.0,
+      "target": 54285,
+      "stop": 50149,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI58.5 강세",
-        "거래량4.78배"
+        "강세마감(0.99)",
+        "RSI60.6 강세",
+        "거래량5.33배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -302,6 +274,34 @@
       "cause_summary": "[속보] SK이터닉스 VI 발동, 주가 16%대 급등…주초장 강세 흐름에 5만원..."
     },
     {
+      "ticker": "LS ELECTRIC",
+      "code": "010120",
+      "tomorrow_up_prob": "63%",
+      "entry": 264000.0,
+      "target": 277200,
+      "stop": 256080,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.98)",
+        "RSI55.8 강세",
+        "장중 20회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ..."
+    },
+    {
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "58%",
@@ -312,10 +312,10 @@
       "reasons": [
         "RSI56.7 강세",
         "호재",
-        "장중 16회 지속"
+        "장중 17회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -2.91,
+      "day_change": -3.32,
       "cause_news": [
         {
           "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
@@ -351,17 +351,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 250000.0,
-      "target": 262500,
-      "stop": 242500,
+      "entry": 249000.0,
+      "target": 261450,
+      "stop": 241530,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.0 강세"
+        "RSI55.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 1.42,
+      "day_change": 1.01,
       "related_news": [
         {
           "title": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
@@ -375,14 +375,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 496500.0,
-      "target": 521325,
-      "stop": 481605,
+      "entry": 495500.0,
+      "target": 520275,
+      "stop": 480635,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.9)",
         "정배열",
-        "RSI61.8 강세"
+        "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -403,26 +403,18 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "77%",
-      "entry": 1189000.0,
-      "target": 1248450,
-      "stop": 1153330,
+      "entry": 1187000.0,
+      "target": 1246350,
+      "stop": 1151390,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.76)",
         "정배열",
         "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
         {
           "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
           "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
@@ -438,23 +430,31 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
+      "cause_summary": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세"
     },
     {
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "76%",
-      "entry": 1940000.0,
-      "target": 2037000,
-      "stop": 1881800,
+      "entry": 1939000.0,
+      "target": 2035950,
+      "stop": 1880830,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
+        "강세마감(0.74)",
         "정배열",
-        "RSI65.5 강세"
+        "RSI65.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -491,14 +491,14 @@
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "74%",
-      "entry": 5630.0,
-      "target": 5912,
-      "stop": 5461,
+      "entry": 5640.0,
+      "target": 5922,
+      "stop": 5471,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.75)",
-        "RSI61.5 강세",
-        "거래량2.42배"
+        "강세마감(0.76)",
+        "RSI61.6 강세",
+        "거래량2.44배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
