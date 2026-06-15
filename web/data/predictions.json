@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-15 12:52 KST",
+  "as_of": "2026-06-15 13:07 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "86%",
-      "entry": 251250.0,
-      "target": 263812,
-      "stop": 243712,
+      "tomorrow_up_prob": "82%",
+      "entry": 250000.0,
+      "target": 262500,
+      "stop": 242500,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.3 강세"
+        "RSI56.0 강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 1.62,
+      "risk": "약한 마감",
+      "day_change": 1.21,
       "related_news": [
         {
           "title": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
@@ -29,14 +29,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 496500.0,
-      "target": 521325,
-      "stop": 481605,
+      "entry": 496000.0,
+      "target": 520800,
+      "stop": 481120,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.91)",
         "정배열",
-        "RSI61.8 강세"
+        "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -56,15 +56,15 @@
     {
       "ticker": "HL만도",
       "code": "204320",
-      "tomorrow_up_prob": "79%",
-      "entry": 74900.0,
-      "target": 78645,
-      "stop": 72653,
+      "tomorrow_up_prob": "80%",
+      "entry": 73800.0,
+      "target": 77490,
+      "stop": 71586,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.82)",
         "MACD강세",
-        "RSI69.5 강세"
+        "RSI68.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -101,14 +101,14 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "78%",
-      "entry": 1202000.0,
-      "target": 1262100,
-      "stop": 1165940,
+      "entry": 1185000.0,
+      "target": 1244250,
+      "stop": 1149450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.88)",
+        "강세마감(0.74)",
         "정배열",
-        "RSI62.2 강세"
+        "RSI61.6 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -142,61 +142,17 @@
       "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "76%",
-      "entry": 1943000.0,
-      "target": 2040150,
-      "stop": 1884710,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.77)",
-        "정배열",
-        "RSI65.5 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608507",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=220914",
-          "office": "youthdaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성전기, AI 부품 기대에 12%대 강세…실리콘 커패시터·MLCC ...",
-          "url": "https://www.tokenpost.kr/news/economy/369320",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서"
-    },
-    {
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "74%",
-      "entry": 5740.0,
-      "target": 6027,
-      "stop": 5568,
+      "entry": 5710.0,
+      "target": 5996,
+      "stop": 5539,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
-        "RSI62.5 강세",
-        "거래량2.32배"
+        "강세마감(0.83)",
+        "RSI62.3 강세",
+        "거래량2.35배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -232,18 +188,18 @@
     {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "73%",
-      "entry": 69550.0,
-      "target": 73028,
-      "stop": 67464,
-      "confidence": "상",
+      "tomorrow_up_prob": "69%",
+      "entry": 69200.0,
+      "target": 72660,
+      "stop": 67124,
+      "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI66.4 강세",
+        "RSI66.2 강세",
         "일목 구름위"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 5.97,
+      "risk": "약한 마감",
+      "day_change": 6.43,
       "cause_news": [
         {
           "title": "테크윙 주가, 급등세... 어떤 기업이길래?",
@@ -258,77 +214,77 @@
       "cause_summary": "테크윙 주가, 급등세... 어떤 기업이길래?"
     },
     {
-      "ticker": "LS",
-      "code": "006260",
-      "tomorrow_up_prob": "71%",
-      "entry": 436000.0,
-      "target": 457800,
-      "stop": 422920,
-      "confidence": "상",
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "68%",
+      "entry": 1929000.0,
+      "target": 2025450,
+      "stop": 1871130,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI50.4 강세",
-        "호재"
+        "정배열",
+        "RSI65.2 강세",
+        "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] LS일렉트릭, 블룸에너지 수주·가이던스 상향 기대감에 15%↑",
-          "url": "http://www.newsdream.kr/news/articleView.html?idxno=113060",
-          "office": "newsdream",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "LS전선, 1460억 규모 HVDC 수주 성공에 주가 강세",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608379",
+          "title": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608507",
           "office": "gukjenews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "LS일렉트릭 주가, 급등세... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163682",
-          "office": "ggilbo",
+          "title": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승",
+          "url": "https://www.youthdaily.co.kr/news/article.html?no=220914",
+          "office": "youthdaily",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
+          "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
+          "office": "namdonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LS일렉트릭, 블룸에너지 수주·가이던스 상향 기대감에 15%↑"
+      "cause_summary": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서"
     },
     {
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "64%",
-      "entry": 221000.0,
-      "target": 232050,
-      "stop": 214370,
+      "entry": 221500.0,
+      "target": 232575,
+      "stop": 214855,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI57.3 강세",
+        "RSI57.4 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -4.11
+      "day_change": -3.68
     },
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
       "tomorrow_up_prob": "63%",
-      "entry": 261500.0,
-      "target": 274575,
-      "stop": 253655,
+      "entry": 262000.0,
+      "target": 275100,
+      "stop": 254140,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI55.2 강세",
-        "장중 16회 지속"
+        "강세마감(0.94)",
+        "RSI55.3 강세",
+        "장중 17회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -356,10 +312,10 @@
       "reasons": [
         "RSI56.7 강세",
         "호재",
-        "장중 13회 지속"
+        "장중 14회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -3.05,
+      "day_change": -2.91,
       "cause_news": [
         {
           "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
@@ -394,18 +350,18 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "86%",
-      "entry": 251250.0,
-      "target": 263812,
-      "stop": 243712,
+      "tomorrow_up_prob": "82%",
+      "entry": 250000.0,
+      "target": 262500,
+      "stop": 242500,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.3 강세"
+        "RSI56.0 강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 1.62,
+      "risk": "약한 마감",
+      "day_change": 1.21,
       "related_news": [
         {
           "title": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
@@ -419,14 +375,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 496500.0,
-      "target": 521325,
-      "stop": 481605,
+      "entry": 496000.0,
+      "target": 520800,
+      "stop": 481120,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.91)",
         "정배열",
-        "RSI61.8 강세"
+        "RSI61.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -446,15 +402,15 @@
     {
       "ticker": "HL만도",
       "code": "204320",
-      "tomorrow_up_prob": "79%",
-      "entry": 74900.0,
-      "target": 78645,
-      "stop": 72653,
+      "tomorrow_up_prob": "80%",
+      "entry": 73800.0,
+      "target": 77490,
+      "stop": 71586,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.82)",
         "MACD강세",
-        "RSI69.5 강세"
+        "RSI68.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -491,14 +447,14 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "78%",
-      "entry": 1202000.0,
-      "target": 1262100,
-      "stop": 1165940,
+      "entry": 1185000.0,
+      "target": 1244250,
+      "stop": 1149450,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.88)",
+        "강세마감(0.74)",
         "정배열",
-        "RSI62.2 강세"
+        "RSI61.6 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -532,48 +488,48 @@
       "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
-      "tomorrow_up_prob": "76%",
-      "entry": 1943000.0,
-      "target": 2040150,
-      "stop": 1884710,
+      "ticker": "한온시스템",
+      "code": "018880",
+      "tomorrow_up_prob": "74%",
+      "entry": 5710.0,
+      "target": 5996,
+      "stop": 5539,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.77)",
-        "정배열",
-        "RSI65.5 강세"
+        "강세마감(0.83)",
+        "RSI62.3 강세",
+        "거래량2.35배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608507",
+          "title": "한온시스템 주가 22% 급등...2분기 호실적 전망",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608366",
           "office": "gukjenews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=220914",
-          "office": "youthdaily",
+          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+          "office": "widedaily",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "[특징주] 삼성전기, AI 부품 기대에 12%대 강세…실리콘 커패시터·MLCC ...",
-          "url": "https://www.tokenpost.kr/news/economy/369320",
-          "office": "tokenpost",
+          "title": "한온시스템 주가, 웃음꽃 활짝... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163556",
+          "office": "ggilbo",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "삼성전기 주가 12% 급등...실리콘 커패시터 양산 나서"
+      "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
