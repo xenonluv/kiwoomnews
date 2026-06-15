@@ -17,6 +17,7 @@ import { NewsCard } from "./NewsCard";
 import { EventsCard } from "./EventsCard";
 import { VerdictCard } from "./VerdictCard";
 import { AiAnalysisCard } from "./AiAnalysisCard";
+import { TrackButton } from "./TrackButton";
 
 function Skeleton() {
   return (
@@ -104,6 +105,9 @@ export function StockReportView({ code }: { code: string }) {
           )}
           {r.tradeStop && <Badge variant="warning">거래정지</Badge>}
           {r.marketStatus === "OPEN" && <Badge variant="up">장중</Badge>}
+          <span className="ml-auto">
+            <TrackButton code={r.code} />
+          </span>
         </div>
         <p className="text-xs text-muted-foreground">기준 {r.asOf} · 네이버 공개 데이터</p>
       </header>

@@ -122,6 +122,36 @@ export interface ExperimentalStats {
   };
 }
 
+/** 추적 종목 검증 — scripts/track_eval.py가 생성하는 web/data/track_performance.json과 정합. */
+export interface TrackCell {
+  n: number;
+  hit_rate: number | null;
+  avg_return: number | null;
+}
+export interface TrackRecent {
+  date: string;
+  name: string;
+  verdict_score: number | null; // 종합판정(룰)
+  ai_prob: number | null; // Kimi 상승확률
+  hit: boolean; // 익일 종가 > 진입
+  return_pct: number;
+}
+export interface TrackPerformance {
+  as_of: string | null;
+  n: number;
+  rule_buy: { n: number; hit_rate: number | null }; // 종합판정 ≥기준일 때 익일 적중률
+  ai_up: { n: number; hit_rate: number | null }; // Kimi ≥기준%일 때 익일 적중률
+  rule_buy_min: number;
+  ai_up_min: number;
+  min_n: number;
+  quad_n?: number; // 4분면 분모 = 룰·AI 둘 다 값이 있는 표본 (구버전 JSON엔 없음)
+  unknown_n?: number; // 룰/AI 한쪽 누락으로 4분면에서 제외된 표본 (정직한 분모 고지)
+  divergence: { both: TrackCell; rule_only: TrackCell; ai_only: TrackCell; neither: TrackCell };
+  recent: TrackRecent[];
+  tracking: string[];
+  disclaimer: string;
+}
+
 export interface PerformanceData {
   as_of: string;
   summary: {

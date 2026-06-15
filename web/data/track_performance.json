@@ -1,0 +1,20 @@
+{
+ "as_of": null,
+ "n": 0,
+ "rule_buy": { "n": 0, "hit_rate": null },
+ "ai_up": { "n": 0, "hit_rate": null },
+ "rule_buy_min": 62,
+ "ai_up_min": 58,
+ "min_n": 10,
+ "quad_n": 0,
+ "unknown_n": 0,
+ "divergence": {
+  "both": { "n": 0, "hit_rate": null, "avg_return": null },
+  "rule_only": { "n": 0, "hit_rate": null, "avg_return": null },
+  "ai_only": { "n": 0, "hit_rate": null, "avg_return": null },
+  "neither": { "n": 0, "hit_rate": null, "avg_return": null }
+ },
+ "recent": [],
+ "tracking": [],
+ "disclaimer": "추적 종목의 종합판정(룰)·Kimi(AI) 예측을 익일 종가로 검증한 기록입니다. 투자 참고용."
+}

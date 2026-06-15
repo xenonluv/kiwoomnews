@@ -23,14 +23,17 @@ L_FORECAST="7,22,37,52 9-15 * * 1-5 cd $REPO && $PY analyzer/run.py --push --top
 L_BACKTEST="10 17 * * 1-5 cd $REPO && $PY analyzer/backtest.py --push >> /tmp/backtest.log 2>&1"
 # 레이더 자가 검증(익일 적중 채점 + 가중치 튜닝 + /performance 데이터) — backtest와 10분 시차
 L_RADAR_BT="20 17 * * 1-5 cd $REPO && $PY scripts/radar_backtest.py --push >> /tmp/radar_backtest.log 2>&1"
+# 추적 종목(검색 후 📌 추적) 일일 검증 — 종합판정(룰) vs Kimi(AI), radar_backtest와 10분 시차
+L_TRACK_EVAL="30 17 * * 1-5 cd $REPO && $PY scripts/track_eval.py --push >> /tmp/track_eval.log 2>&1"
 
 NEW_CRON="$(
-  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
+  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|scripts/track_eval.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
   echo "PATH=/usr/local/bin:/usr/bin:/bin"
   echo "$L_PUBLISH"
   echo "$L_FORECAST"
   echo "$L_BACKTEST"
   echo "$L_RADAR_BT"
+  echo "$L_TRACK_EVAL"
 )"
 
 if [ "$DRY" = "1" ]; then

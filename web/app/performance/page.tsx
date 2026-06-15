@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 
-import { getPerformance } from "@/lib/performance/repository";
+import { getPerformance, getTrackPerformance } from "@/lib/performance/repository";
 import { TrendChart } from "@/components/performance/TrendChart";
 import { StatCards } from "@/components/performance/StatCards";
 import { CalibrationTable } from "@/components/performance/CalibrationTable";
@@ -10,6 +10,7 @@ import { WeightsPanel } from "@/components/performance/WeightsPanel";
 import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
 import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 import { ThemeStatsTable } from "@/components/performance/ThemeStatsTable";
+import { TrackPerformancePanel } from "@/components/performance/TrackPerformancePanel";
 
 export const metadata: Metadata = {
   title: "성과 검증 · 자가 개선",
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 
 export default function PerformancePage() {
   const data = getPerformance();
+  const track = getTrackPerformance();
 
   return (
     <main className="container max-w-4xl py-12">
@@ -59,6 +61,8 @@ export default function PerformancePage() {
           <CalibrationTable bins={data.bins} />
           <WeightsPanel weights={data.weights} />
         </div>
+
+        <TrackPerformancePanel data={track} />
 
         {data.spark_flow && <SparkFlowMatrix data={data.spark_flow} />}
 
