@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PasswordGate } from "@/components/auth/PasswordGate";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://stocknews-cyan.vercel.app";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     "국내 주식 매매 사전정보 취합. CEO 승인(상승확률 ≥ 85% · 안전 타점)된 시그널만 게시합니다.",
   applicationName: "StockNews",
   keywords: ["주식", "매매 시그널", "국내 증시", "눌림목", "저점", "뉴스 분석"],
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false }, // 개인용 — 검색엔진 노출 차단
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -38,7 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="dark">
-      <body>{children}</body>
+      <body>
+        <PasswordGate>{children}</PasswordGate>
+      </body>
     </html>
   );
 }
