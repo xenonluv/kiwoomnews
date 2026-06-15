@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 11:31:01 KST",
+ "generated_at": "2026-06-15 11:45:46 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 32,
+ "universe_count": 31,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -63,32 +63,32 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 60,
+   "suspicion_score": 59,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 2.7,
-    "fade": 11.0,
+    "fade": 10.7,
     "ma10": 10.0,
     "flow": 6.0,
     "event": 0.0
    },
-   "score_raw": 60,
+   "score_raw": 59,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 2.7,
-    "fade": 11.0,
+    "fade": 10.7,
     "ma10": 10.0,
     "flow": 6,
     "event": 0.0
    },
-   "price": 70800.0,
-   "change_pct": 8.42,
+   "price": 70900.0,
+   "change_pct": 8.58,
    "high_pct": 13.32,
-   "fade_pct": 36.8,
-   "value_eok": 3646,
+   "fade_pct": 35.6,
+   "value_eok": 3814,
    "ma10": 57045.0,
-   "ma10_margin_pct": 24.11,
+   "ma10_margin_pct": 24.29,
    "spark": {
     "clusters": [
      {
@@ -98,14 +98,20 @@
       "minutes": 1
      },
      {
+      "time": "09:09",
+      "vol_x": 12.0,
+      "pct": 1.38,
+      "minutes": 1
+     },
+     {
       "time": "09:11",
-      "vol_x": 9.1,
+      "vol_x": 9.2,
       "pct": -1.35,
       "minutes": 1
      },
      {
       "time": "09:16",
-      "vol_x": 10.9,
+      "vol_x": 11.0,
       "pct": -1.54,
       "minutes": 1
      }
@@ -177,13 +183,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 252000.0,
-   "change_pct": 2.02,
+   "price": 253000.0,
+   "change_pct": 2.43,
    "high_pct": 4.25,
-   "fade_pct": 52.4,
-   "value_eok": 3085,
-   "ma10": 256100.0,
-   "ma10_margin_pct": -1.6,
+   "fade_pct": 42.9,
+   "value_eok": 3177,
+   "ma10": 256200.0,
+   "ma10_margin_pct": -1.25,
    "spark": {
     "clusters": []
    },
@@ -222,7 +228,16 @@
      }
     ]
    },
-   "news": [],
+   "news": [
+    {
+     "title": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
+     "summary": "네이버·카카오모빌리티, 사우디 DX·스마트시티 사업 속도 전망 호르무즈 봉쇄 우려 완화…의약품 수출·물류 안정 기대 한상용 박상현 기자 = 미국과 이란 간 무력 충돌이 종료 국면에 들어가면서 국내 정보기술(IT)은 물론 제약·바이오 업계의 중동...",
+     "office": "연합뉴스",
+     "datetime": "202606151136",
+     "url": "https://n.news.naver.com/mnews/article/001/0016139062",
+     "sentiment": "호재"
+    }
+   ],
    "matched_events": [],
    "theme": "반도체",
    "visible_experimental": true,
@@ -230,12 +245,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229720.0,
-    "ma20_margin_pct": 9.7,
+    "ma20": 229770.0,
+    "ma20_margin_pct": 10.11,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
-    "cause_summary": "",
+    "cause_summary": "[미·이란 종전] 중동 리스크 걷히자…IT·바이오 사업 탄력 기대",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -266,13 +281,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 223500.0,
-   "change_pct": -3.25,
+   "price": 225000.0,
+   "change_pct": -2.6,
    "high_pct": 5.63,
-   "fade_pct": 157.7,
-   "value_eok": 3248,
-   "ma10": 211640.0,
-   "ma10_margin_pct": 5.6,
+   "fade_pct": 146.2,
+   "value_eok": 3343,
+   "ma10": 211790.0,
+   "ma10_margin_pct": 6.24,
    "spark": {
     "clusters": []
    },
@@ -319,8 +334,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
-    "ma20": 203745.0,
-    "ma20_margin_pct": 9.7,
+    "ma20": 203820.0,
+    "ma20_margin_pct": 10.39,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -355,13 +370,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 351000.0,
-   "change_pct": -2.77,
+   "price": 349500.0,
+   "change_pct": -3.19,
    "high_pct": 2.08,
-   "fade_pct": 233.3,
-   "value_eok": 2604,
-   "ma10": 295850.0,
-   "ma10_margin_pct": 18.64,
+   "fade_pct": 253.3,
+   "value_eok": 2666,
+   "ma10": 295700.0,
+   "ma10_margin_pct": 18.19,
    "spark": {
     "clusters": []
    },
@@ -425,8 +440,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 304775.0,
-    "ma20_margin_pct": 15.17,
+    "ma20": 304700.0,
+    "ma20_margin_pct": 14.7,
     "ivtr_net": 1874444,
     "ivtr_days": 2,
     "ivtr_eok": 6607,
