@@ -227,7 +227,16 @@
    "first_seen": "2026-06-15 10:15:47 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 41,
+    "model_prob": 35,
+    "direction": "하락",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-15 17:20 KST",
+    "verdict_score": 78,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "204320": {
    "name": "HL만도",
@@ -264,7 +273,16 @@
    "first_seen": "2026-06-15 14:46:05 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 56,
+    "model_prob": 48,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-15 17:21 KST",
+    "verdict_score": 76,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "067310": {
    "name": "하나마이크론",

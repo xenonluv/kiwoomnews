@@ -1,14 +1,14 @@
 {
- "as_of": "2026-06-12 20:32 KST",
+ "as_of": "2026-06-15 17:21 KST",
  "summary": {
-  "n": 5,
-  "hit_rate": 60.0,
+  "n": 8,
+  "hit_rate": 62.5,
   "avg_return": 1.21,
   "high3_rate": 100,
-  "tracking_days": 3,
+  "tracking_days": 5,
   "dropout": {
-   "n": 1,
-   "hit_rate": 100.0
+   "n": 3,
+   "hit_rate": 66.7
   }
  },
  "series": [
@@ -30,37 +30,60 @@
   },
   {
    "date": "20260612",
+   "n": 3,
+   "hits": 2,
+   "hit_rate": 67,
+   "cum_n": 8,
+   "cum_hit_rate": 62.5
+  },
+  {
+   "date": "20260613",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
-   "cum_n": 5,
-   "cum_hit_rate": 60.0
+   "cum_n": 8,
+   "cum_hit_rate": 62.5
+  },
+  {
+   "date": "20260615",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 8,
+   "cum_hit_rate": 62.5
   }
  ],
  "bins": [
   {
    "lo": 40,
    "hi": 60,
-   "n": 2,
-   "actual_rate": 100,
+   "n": 3,
+   "actual_rate": 67,
    "valid": false
   },
   {
    "lo": 60,
    "hi": 75,
-   "n": 1,
-   "actual_rate": 0,
+   "n": 2,
+   "actual_rate": 50,
    "valid": false
   },
   {
    "lo": 75,
    "hi": 101,
-   "n": 2,
-   "actual_rate": 50,
+   "n": 3,
+   "actual_rate": 67,
    "valid": false
   }
  ],
  "by_pattern": [
+  {
+   "key": "fade",
+   "n": 3,
+   "hit_rate": 66.7,
+   "avg_return": 1.21,
+   "high3_rate": 100.0
+  },
   {
    "key": "unknown",
    "n": 5,
@@ -69,22 +92,99 @@
    "high3_rate": 100.0
   }
  ],
+ "by_sector": [
+  {
+   "key": "금융",
+   "n": 1,
+   "hit_rate": 100.0,
+   "avg_return": 3.15,
+   "high3_rate": 100.0,
+   "valid": false
+  },
+  {
+   "key": "기계·장비",
+   "n": 3,
+   "hit_rate": 33.3,
+   "avg_return": -0.08,
+   "high3_rate": 100.0,
+   "valid": false
+  },
+  {
+   "key": "운송장비·부품",
+   "n": 1,
+   "hit_rate": 100.0,
+   "avg_return": 6.18,
+   "high3_rate": 100.0,
+   "valid": false
+  },
+  {
+   "key": "전기·전자",
+   "n": 3,
+   "hit_rate": 66.7,
+   "avg_return": 0.19,
+   "high3_rate": 100.0,
+   "valid": false
+  }
+ ],
+ "by_theme": [
+  {
+   "key": "unknown",
+   "n": 8,
+   "hit_rate": 62.5,
+   "avg_return": 1.21,
+   "high3_rate": 100.0,
+   "valid": false
+  }
+ ],
  "by_ai_verdict": [
   {
    "key": "none",
-   "n": 5,
-   "hit_rate": 60.0,
+   "n": 8,
+   "hit_rate": 62.5,
    "avg_return": 1.21,
    "high3_rate": 100.0
   }
  ],
  "ai": {
-  "n": 0,
-  "by_direction": [],
-  "prob_bands": [],
-  "avg_prob": null,
-  "actual_rate": null,
-  "brier": null,
+  "n": 3,
+  "by_direction": [
+   {
+    "key": "관망",
+    "n": 3,
+    "hit_rate": 66.7,
+    "avg_return": 1.21,
+    "high3_rate": 100.0
+   }
+  ],
+  "prob_bands": [
+   {
+    "lo": 0,
+    "hi": 43,
+    "n": 0,
+    "avg_prob": null,
+    "actual_rate": null,
+    "valid": false
+   },
+   {
+    "lo": 43,
+    "hi": 58,
+    "n": 3,
+    "avg_prob": 43.0,
+    "actual_rate": 67,
+    "valid": false
+   },
+   {
+    "lo": 58,
+    "hi": 101,
+    "n": 0,
+    "avg_prob": null,
+    "actual_rate": null,
+    "valid": false
+   }
+  ],
+  "avg_prob": 43.0,
+  "actual_rate": 66.7,
+  "brier": 0.278,
   "divergence": {
    "rule_buy_min": 62,
    "ai_up_min": 58,
@@ -104,9 +204,9 @@
      "key": "룰만 강세 (룰 매수 + AI 비상승)",
      "rule_buy": true,
      "ai_up": false,
-     "n": 0,
-     "hit_rate": null,
-     "avg_return": null,
+     "n": 3,
+     "hit_rate": 66.7,
+     "avg_return": 1.21,
      "valid": false
     },
     {
@@ -133,7 +233,7 @@
  "spark_flow": {
   "mega_x": 40.0,
   "min_n": 10,
-  "unknown_n": 5,
+  "unknown_n": 8,
   "cells": [
    {
     "spark_bucket": "<10x",
@@ -191,6 +291,14 @@
    }
   ]
  },
+ "experimental": {
+  "reaccum": {
+   "n": 0,
+   "hit_rate": null,
+   "avg_return": null,
+   "high3_rate": null
+  }
+ },
  "weights": {
   "current": {
    "spark": 15.0,
@@ -212,6 +320,27 @@
   "history": []
  },
  "recent": [
+  {
+   "date": "20260612",
+   "name": "테크윙",
+   "score": 75,
+   "hit": true,
+   "return_pct": 3.98
+  },
+  {
+   "date": "20260612",
+   "name": "제주반도체",
+   "score": 63,
+   "hit": true,
+   "return_pct": 2.24
+  },
+  {
+   "date": "20260612",
+   "name": "주성엔지니어링",
+   "score": 51,
+   "hit": false,
+   "return_pct": -2.6
+  },
   {
    "date": "20260611",
    "name": "티엠씨",

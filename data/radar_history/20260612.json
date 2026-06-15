@@ -36,8 +36,15 @@
     "2026-06-17_FOMC 금리 결정 ("
    ],
    "first_seen": "2026-06-12 10:15:07 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260615",
+    "next_close": 35200.0,
+    "next_high": 37750.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -4.09
+   },
    "final": false
   },
   "080220": {
@@ -61,8 +68,15 @@
    "ai_verdict": null,
    "matched_events": [],
    "first_seen": "2026-06-12 10:15:07 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260615",
+    "next_close": 104800.0,
+    "next_high": 108000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.24
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 43,
@@ -95,8 +109,15 @@
    "ai_verdict": null,
    "matched_events": [],
    "first_seen": "2026-06-12 11:15:07 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260615",
+    "next_close": 67900.0,
+    "next_high": 74000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.98
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 43,
@@ -129,8 +150,15 @@
    "ai_verdict": null,
    "matched_events": [],
    "first_seen": "2026-06-12 11:30:12 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260615",
+    "next_close": 225000.0,
+    "next_high": 244000.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -2.6
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 43,
@@ -177,8 +205,15 @@
     "2026-06-17_FOMC 금리 결정 ("
    ],
    "first_seen": "2026-06-12 14:46:01 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260615",
+    "next_close": 337000.0,
+    "next_high": 344500.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.5
+   },
    "final": false
   }
  },
