@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 14:46:05 KST",
+ "generated_at": "2026-06-15 15:01:37 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 30,
+ "universe_count": 29,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -64,91 +64,91 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 68,
+   "suspicion_score": 67,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 11.7,
+    "spark": 10.9,
+    "fade": 10.3,
     "ma10": 10.0,
     "flow": 6.0,
     "event": 0.0
    },
-   "score_raw": 68,
+   "score_raw": 67,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 10.0,
-    "fade": 11.7,
+    "spark": 10.9,
+    "fade": 10.3,
     "ma10": 10.0,
     "flow": 6,
     "event": 0.0
    },
-   "price": 68700.0,
-   "change_pct": 5.21,
+   "price": 68300.0,
+   "change_pct": 4.59,
    "high_pct": 13.32,
-   "fade_pct": 60.9,
-   "value_eok": 4688,
-   "ma10": 56825.0,
-   "ma10_margin_pct": 20.9,
+   "fade_pct": 65.5,
+   "value_eok": 4727,
+   "ma10": 56785.0,
+   "ma10_margin_pct": 20.28,
    "spark": {
     "clusters": [
      {
       "time": "09:01",
-      "vol_x": 21.2,
+      "vol_x": 22.5,
       "pct": 4.38,
       "minutes": 3
      },
      {
       "time": "09:06",
-      "vol_x": 24.0,
+      "vol_x": 25.4,
       "pct": 0.99,
       "minutes": 1
      },
      {
       "time": "09:08",
-      "vol_x": 23.4,
+      "vol_x": 24.8,
       "pct": 2.92,
       "minutes": 2
      },
      {
       "time": "09:11",
-      "vol_x": 17.8,
+      "vol_x": 18.9,
       "pct": -1.35,
       "minutes": 1
      },
      {
       "time": "09:15",
-      "vol_x": 21.3,
+      "vol_x": 22.6,
       "pct": -2.78,
       "minutes": 2
      },
      {
       "time": "09:18",
-      "vol_x": 9.5,
+      "vol_x": 10.1,
       "pct": -1.57,
       "minutes": 1
      },
      {
       "time": "09:20",
-      "vol_x": 13.8,
+      "vol_x": 14.6,
       "pct": -2.72,
       "minutes": 1
      },
      {
       "time": "09:40",
-      "vol_x": 8.9,
+      "vol_x": 9.4,
       "pct": 0.99,
       "minutes": 1
      },
      {
       "time": "11:17",
-      "vol_x": 11.1,
+      "vol_x": 11.7,
       "pct": 2.28,
       "minutes": 2
      }
     ]
    },
-   "spark_max_x": 24.0,
+   "spark_max_x": 25.4,
    "spark_max_pct": 0.99,
    "mega_flow": false,
    "flow": {
@@ -190,13 +190,13 @@
     "status": "ok",
     "verdict": "WATCH",
     "confidence": 55,
-    "reason": "고점 대비 60.9% fade로 급락 후 저가 방어 흔적은 있으나, 외국인 3일 연속 순매수 흐름이 오늘 전환되었고 09:15 이후 매도 클러스터 지속으로 흡수 완료 여부 불명확.",
+    "reason": "초반 급등 후 65.5% fade로 깊은 회복 실패, 외국인 3일 연속 순매수 흐름이나 당일 9시 15분 이후 매도 클러스터 연속 발생, 기관은 0612 매도세로 수급 엇갈림.",
     "risk_flags": [
-     "외국인 수급 전환 가능성",
-     "fade 60%대 과다 급락",
-     "막판 회복 클러스터 부재"
+     "고점 대비 65.5% fade로 회복력 약함",
+     "오전 중반 이후 매도 클러스터 지속",
+     "기관 최근 매도 전환"
     ],
-    "manual_check": "장마감 30분 전 외국인 순매수 전환 여부 및 68,000원 지지선 회복/이탈 확인",
+    "manual_check": "오후 장 종료 30분 전 매도 물량 재발생 여부 및 종가 저항선(당일 고점 대비) 확인",
     "model": "kimi-k2.6"
    },
    "theme_leader": false
@@ -209,43 +209,49 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 58,
+   "suspicion_score": 56,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 0.2,
-    "fade": 13.4,
+    "spark": 0.3,
+    "fade": 12.2,
     "ma10": 10.0,
     "flow": 4.0,
     "event": 0.0
    },
-   "score_raw": 58,
+   "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 0.2,
-    "fade": 13.4,
+    "spark": 0.3,
+    "fade": 12.2,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 70200.0,
-   "change_pct": 8.0,
+   "price": 69700.0,
+   "change_pct": 7.23,
    "high_pct": 17.85,
-   "fade_pct": 55.2,
-   "value_eok": 5124,
-   "ma10": 57270.0,
-   "ma10_margin_pct": 22.58,
+   "fade_pct": 59.5,
+   "value_eok": 5201,
+   "ma10": 57220.0,
+   "ma10_margin_pct": 21.81,
    "spark": {
     "clusters": [
      {
       "time": "09:21",
-      "vol_x": 8.3,
+      "vol_x": 8.5,
       "pct": 1.05,
+      "minutes": 1
+     },
+     {
+      "time": "10:15",
+      "vol_x": 8.1,
+      "pct": 0.86,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 8.3,
+   "spark_max_x": 8.5,
    "spark_max_pct": 1.05,
    "mega_flow": false,
    "flow": {
@@ -304,13 +310,13 @@
     "status": "ok",
     "verdict": "WATCH",
     "confidence": 55,
-    "reason": "고점 대비 55.2% fade와 외국인 28만주 급매수 후 기관 대규모 순매도(8.7만→3.4만→7,568)가 교차하며 수급 주도권 불분명, 반도체 테마주 특성상 뉴스 촉발 흔들기 가능성 존재",
+    "reason": "외국인 연속 4일 매수 흐름과 로봇/피지컬 AI 테마 뉴스는 긍정적이나, 기관 동반 매도(-147k) 및 고점 대비 59.5% fade로 투매성 물량 출회 가능성이 남아 있고 shake 구조 미확인으로 실제 저가 방어 여부 불명확함.",
     "risk_flags": [
-     "기관 연속 대량 매도",
-     "테마주 고점 fade 과다",
-     "외국인 단기 급매수 후 소멸"
+     "기관 대규모 순매도",
+     "고점 fade 59.5% 과다",
+     "shake 미발생"
     ],
-    "manual_check": "장 마감 전 30분 분봉에서 저가 대비 회복률 및 외국인/기관 수급 방향 전환 여부",
+    "manual_check": "오늘 장중 저점 대비 종가 회복률 및 2시 이후 분봉 거래량 집중 여부 확인",
     "model": "kimi-k2.6"
    },
    "theme_leader": true
@@ -341,13 +347,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 248000.0,
-   "change_pct": 0.4,
+   "price": 248500.0,
+   "change_pct": 0.61,
    "high_pct": 4.25,
-   "fade_pct": 90.5,
-   "value_eok": 4315,
-   "ma10": 255700.0,
-   "ma10_margin_pct": -3.01,
+   "fade_pct": 85.7,
+   "value_eok": 4522,
+   "ma10": 255750.0,
+   "ma10_margin_pct": -2.83,
    "spark": {
     "clusters": []
    },
@@ -403,8 +409,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229520.0,
-    "ma20_margin_pct": 8.05,
+    "ma20": 229545.0,
+    "ma20_margin_pct": 8.26,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
@@ -439,13 +445,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 221500.0,
-   "change_pct": -4.11,
+   "price": 222000.0,
+   "change_pct": -3.9,
    "high_pct": 5.63,
-   "fade_pct": 173.1,
-   "value_eok": 4975,
+   "fade_pct": 169.2,
+   "value_eok": 5157,
    "ma10": 211440.0,
-   "ma10_margin_pct": 4.76,
+   "ma10_margin_pct": 4.99,
    "spark": {
     "clusters": []
    },
@@ -493,7 +499,7 @@
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
     "ma20": 203645.0,
-    "ma20_margin_pct": 8.77,
+    "ma20_margin_pct": 9.01,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -528,13 +534,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 346500.0,
-   "change_pct": -4.02,
+   "price": 345500.0,
+   "change_pct": -4.29,
    "high_pct": 2.08,
-   "fade_pct": 293.3,
-   "value_eok": 3767,
-   "ma10": 295400.0,
-   "ma10_margin_pct": 17.3,
+   "fade_pct": 306.7,
+   "value_eok": 3992,
+   "ma10": 295250.0,
+   "ma10_margin_pct": 17.02,
    "spark": {
     "clusters": []
    },
@@ -598,8 +604,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 304550.0,
-    "ma20_margin_pct": 13.77,
+    "ma20": 304475.0,
+    "ma20_margin_pct": 13.47,
     "ivtr_net": 1874444,
     "ivtr_days": 2,
     "ivtr_eok": 6607,
