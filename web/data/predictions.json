@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-06-15 11:22 KST",
+  "as_of": "2026-06-15 11:37 KST",
   "intraday_rank": [
     {
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 490000.0,
-      "target": 514500,
-      "stop": 475300,
+      "entry": 499000.0,
+      "target": 523950,
+      "stop": 484030,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.99)",
         "정배열",
-        "RSI61.1 강세"
+        "RSI62.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -33,110 +33,30 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "80%",
-      "entry": 250500.0,
-      "target": 263025,
-      "stop": 242985,
+      "entry": 253000.0,
+      "target": 265650,
+      "stop": 245410,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.1 강세"
+        "RSI56.8 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.72
-    },
-    {
-      "ticker": "대한항공",
-      "code": "003490",
-      "tomorrow_up_prob": "79%",
-      "entry": 29900.0,
-      "target": 31395,
-      "stop": 29003,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI66.8 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295721",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582017",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라"
-    },
-    {
-      "ticker": "한온시스템",
-      "code": "018880",
-      "tomorrow_up_prob": "74%",
-      "entry": 5740.0,
-      "target": 6027,
-      "stop": 5568,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.85)",
-        "RSI62.5 강세",
-        "거래량2.11배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "한온시스템 주가 22% 급등...2분기 호실적 전망",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608366",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "한온시스템 주가, 웃음꽃 활짝... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163556",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
+      "day_change": 2.02
     },
     {
       "ticker": "LG이노텍",
       "code": "011070",
-      "tomorrow_up_prob": "68%",
-      "entry": 1178000.0,
-      "target": 1236900,
-      "stop": 1142660,
-      "confidence": "중",
+      "tomorrow_up_prob": "77%",
+      "entry": 1199000.0,
+      "target": 1258950,
+      "stop": 1163030,
+      "confidence": "상",
       "reasons": [
+        "강세마감(0.85)",
         "정배열",
-        "RSI61.3 강세",
-        "호재"
+        "RSI62.1 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -170,20 +90,136 @@
       "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
     },
     {
+      "ticker": "한온시스템",
+      "code": "018880",
+      "tomorrow_up_prob": "74%",
+      "entry": 5740.0,
+      "target": 6027,
+      "stop": 5568,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.85)",
+        "RSI62.5 강세",
+        "거래량2.15배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "한온시스템 주가 22% 급등...2분기 호실적 전망",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608366",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "한온시스템 주가, 웃음꽃 활짝... 왜?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163556",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
+    },
+    {
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "74%",
+      "entry": 29950.0,
+      "target": 31448,
+      "stop": 29052,
+      "confidence": "상",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI66.9 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582017",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관..."
+    },
+    {
+      "ticker": "LS",
+      "code": "006260",
+      "tomorrow_up_prob": "66%",
+      "entry": 436500.0,
+      "target": 458325,
+      "stop": 423405,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
+        "RSI50.4 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] LS일렉트릭, 블룸에너지 수주·가이던스 상향 기대감에 15%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=113060",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "LS전선, 1460억 규모 HVDC 수주 성공에 주가 강세",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608379",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] LS일렉트릭, 블룸에너지 수주·가이던스 상향 기대감에 15%↑"
+    },
+    {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "64%",
-      "entry": 70800.0,
-      "target": 74340,
-      "stop": 68676,
+      "tomorrow_up_prob": "65%",
+      "entry": 71000.0,
+      "target": 74550,
+      "stop": 68870,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI67.4 강세",
+        "RSI67.5 강세",
         "일목 구름위"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 6.28,
+      "day_change": 8.42,
       "cause_news": [
         {
           "title": "6월 2주차 테크윙 주가 5거래일 32% 급등 6만5천원대 마감",
@@ -201,30 +237,30 @@
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "64%",
-      "entry": 222000.0,
-      "target": 233100,
-      "stop": 215340,
+      "entry": 223000.0,
+      "target": 234150,
+      "stop": 216310,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI57.5 강세",
+        "RSI57.8 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -4.55
+      "day_change": -3.25
     },
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
       "tomorrow_up_prob": "63%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
+      "entry": 256500.0,
+      "target": 269325,
+      "stop": 248805,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI53.8 강세",
-        "장중 10회 지속"
+        "강세마감(0.86)",
+        "RSI54.0 강세",
+        "장중 11회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -245,17 +281,17 @@
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "58%",
-      "entry": 349500.0,
-      "target": 366975,
-      "stop": 339015,
+      "entry": 350000.0,
+      "target": 367500,
+      "stop": 339500,
       "confidence": "중",
       "reasons": [
-        "RSI56.7 강세",
+        "RSI56.8 강세",
         "호재",
-        "장중 7회 지속"
+        "장중 8회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -3.32,
+      "day_change": -2.77,
       "cause_news": [
         {
           "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
@@ -288,14 +324,15 @@
     {
       "ticker": "한화솔루션",
       "code": "009830",
-      "tomorrow_up_prob": "42%",
-      "entry": 39200.0,
-      "target": 41160,
-      "stop": 38024,
+      "tomorrow_up_prob": "51%",
+      "entry": 39350.0,
+      "target": 41318,
+      "stop": 38170,
       "confidence": "하",
       "reasons": [
-        "RSI51.9 강세",
-        "장중 7회 지속"
+        "강세마감(0.71)",
+        "RSI52.2 강세",
+        "장중 8회 지속"
       ],
       "risk": "악재",
       "day_change": null,
@@ -334,14 +371,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 490000.0,
-      "target": 514500,
-      "stop": 475300,
+      "entry": 499000.0,
+      "target": 523950,
+      "stop": 484030,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.99)",
         "정배열",
-        "RSI61.1 강세"
+        "RSI62.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -362,53 +399,61 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "80%",
-      "entry": 250500.0,
-      "target": 263025,
-      "stop": 242985,
+      "entry": 253000.0,
+      "target": 265650,
+      "stop": 245410,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI56.1 강세"
+        "RSI56.8 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.72
+      "day_change": 2.02
     },
     {
-      "ticker": "대한항공",
-      "code": "003490",
-      "tomorrow_up_prob": "79%",
-      "entry": 29900.0,
-      "target": 31395,
-      "stop": 29003,
+      "ticker": "LG이노텍",
+      "code": "011070",
+      "tomorrow_up_prob": "77%",
+      "entry": 1199000.0,
+      "target": 1258950,
+      "stop": 1163030,
       "confidence": "상",
       "reasons": [
+        "강세마감(0.85)",
         "정배열",
-        "MACD강세",
-        "RSI66.8 강세"
+        "RSI62.1 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295721",
-          "office": "widedaily",
+          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582017",
-          "office": "cbci",
+          "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
+          "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
+          "office": "namdonews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[ET특징주]LG이노텍, 2분기 호실적 전망에 상승세",
+          "url": "https://www.etnews.com/20260615000172",
+          "office": "etnews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라"
+      "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
     },
     {
       "ticker": "한온시스템",
@@ -421,7 +466,7 @@
       "reasons": [
         "강세마감(0.85)",
         "RSI62.5 강세",
-        "거래량2.11배"
+        "거래량2.15배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -455,48 +500,32 @@
       "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
     },
     {
-      "ticker": "LG이노텍",
-      "code": "011070",
-      "tomorrow_up_prob": "68%",
-      "entry": 1178000.0,
-      "target": 1236900,
-      "stop": 1142660,
-      "confidence": "중",
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "74%",
+      "entry": 29950.0,
+      "target": 31448,
+      "stop": 29052,
+      "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI61.3 강세",
-        "호재"
+        "MACD강세",
+        "RSI66.9 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/15/HOLBNHXX5NBZZG6OKHAIOXQF34/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
-          "office": "namdonews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[ET특징주]LG이노텍, 2분기 호실적 전망에 상승세",
-          "url": "https://www.etnews.com/20260615000172",
-          "office": "etnews",
+          "title": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582017",
+          "office": "cbci",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG이노텍, 2분기 호실적 전망에 11% 급등"
+      "cause_summary": "대한항공·아시아나항공·제주항공 급등…항공주 전반 강세에 투자자 관..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
