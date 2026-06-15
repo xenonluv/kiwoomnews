@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 15:01:37 KST",
+ "generated_at": "2026-06-15 15:16:05 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -57,151 +57,6 @@
  ],
  "suspects": [
   {
-   "code": "089030",
-   "name": "테크윙",
-   "sector": "기계·장비",
-   "pattern": "fade",
-   "prime": true,
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 67,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 10.9,
-    "fade": 10.3,
-    "ma10": 10.0,
-    "flow": 6.0,
-    "event": 0.0
-   },
-   "score_raw": 67,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 10.9,
-    "fade": 10.3,
-    "ma10": 10.0,
-    "flow": 6,
-    "event": 0.0
-   },
-   "price": 68300.0,
-   "change_pct": 4.59,
-   "high_pct": 13.32,
-   "fade_pct": 65.5,
-   "value_eok": 4727,
-   "ma10": 56785.0,
-   "ma10_margin_pct": 20.28,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:01",
-      "vol_x": 22.5,
-      "pct": 4.38,
-      "minutes": 3
-     },
-     {
-      "time": "09:06",
-      "vol_x": 25.4,
-      "pct": 0.99,
-      "minutes": 1
-     },
-     {
-      "time": "09:08",
-      "vol_x": 24.8,
-      "pct": 2.92,
-      "minutes": 2
-     },
-     {
-      "time": "09:11",
-      "vol_x": 18.9,
-      "pct": -1.35,
-      "minutes": 1
-     },
-     {
-      "time": "09:15",
-      "vol_x": 22.6,
-      "pct": -2.78,
-      "minutes": 2
-     },
-     {
-      "time": "09:18",
-      "vol_x": 10.1,
-      "pct": -1.57,
-      "minutes": 1
-     },
-     {
-      "time": "09:20",
-      "vol_x": 14.6,
-      "pct": -2.72,
-      "minutes": 1
-     },
-     {
-      "time": "09:40",
-      "vol_x": 9.4,
-      "pct": 0.99,
-      "minutes": 1
-     },
-     {
-      "time": "11:17",
-      "vol_x": 11.7,
-      "pct": 2.28,
-      "minutes": 2
-     }
-    ]
-   },
-   "spark_max_x": 25.4,
-   "spark_max_pct": 0.99,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": 891119,
-      "orgn": 133026
-     },
-     {
-      "date": "0610",
-      "frgn": 164842,
-      "orgn": -11798
-     },
-     {
-      "date": "0611",
-      "frgn": -179984,
-      "orgn": 146731
-     },
-     {
-      "date": "0612",
-      "frgn": 623028,
-      "orgn": -40634
-     },
-     {
-      "date": "0615",
-      "frgn": 0,
-      "orgn": 0
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "ai_verdict": {
-    "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "초반 급등 후 65.5% fade로 깊은 회복 실패, 외국인 3일 연속 순매수 흐름이나 당일 9시 15분 이후 매도 클러스터 연속 발생, 기관은 0612 매도세로 수급 엇갈림.",
-    "risk_flags": [
-     "고점 대비 65.5% fade로 회복력 약함",
-     "오전 중반 이후 매도 클러스터 지속",
-     "기관 최근 매도 전환"
-    ],
-    "manual_check": "오후 장 종료 30분 전 매도 물량 재발생 여부 및 종가 저항선(당일 고점 대비) 확인",
-    "model": "kimi-k2.6"
-   },
-   "theme_leader": false
-  },
-  {
    "code": "204320",
    "name": "HL만도",
    "sector": "운송장비·부품",
@@ -209,49 +64,50 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 56,
+   "suspicion_score": 61,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 0.3,
-    "fade": 12.2,
+    "spark": 0.6,
+    "fade": 11.6,
     "ma10": 10.0,
     "flow": 4.0,
-    "event": 0.0
+    "event": 0.0,
+    "ai": 5
    },
    "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 0.3,
-    "fade": 12.2,
+    "spark": 0.6,
+    "fade": 11.6,
     "ma10": 10.0,
     "flow": 4,
     "event": 0.0
    },
-   "price": 69700.0,
-   "change_pct": 7.23,
+   "price": 69500.0,
+   "change_pct": 6.92,
    "high_pct": 17.85,
-   "fade_pct": 59.5,
-   "value_eok": 5201,
-   "ma10": 57220.0,
-   "ma10_margin_pct": 21.81,
+   "fade_pct": 61.2,
+   "value_eok": 5245,
+   "ma10": 57200.0,
+   "ma10_margin_pct": 21.5,
    "spark": {
     "clusters": [
      {
       "time": "09:21",
-      "vol_x": 8.5,
+      "vol_x": 8.9,
       "pct": 1.05,
       "minutes": 1
      },
      {
       "time": "10:15",
-      "vol_x": 8.1,
+      "vol_x": 8.5,
       "pct": 0.86,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 8.5,
+   "spark_max_x": 8.9,
    "spark_max_pct": 1.05,
    "mega_flow": false,
    "flow": {
@@ -308,18 +164,164 @@
    "theme": "반도체",
    "ai_verdict": {
     "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "외국인 연속 4일 매수 흐름과 로봇/피지컬 AI 테마 뉴스는 긍정적이나, 기관 동반 매도(-147k) 및 고점 대비 59.5% fade로 투매성 물량 출회 가능성이 남아 있고 shake 구조 미확인으로 실제 저가 방어 여부 불명확함.",
+    "verdict": "CONFIRM",
+    "confidence": 72,
+    "reason": "고점 대비 61.2% fade로 급락했으나, 외국인 2거래일 연속 순매수(28.9억→0)에 기관 소규모 매도, 로봇/피지컬 AI 테마 뉴스가 수급 붕괴가 아닌 테마 수납매 흔들기로 해석됨.",
     "risk_flags": [
-     "기관 대규모 순매도",
-     "고점 fade 59.5% 과다",
-     "shake 미발생"
+     "fade_pct 61.2% 고점 대비 깊은 조정",
+     "기관 6/11 대량 매도(-8.7억) 후 외국인 단독 수급",
+     "테마주 뉴스 후폭풍 리스크"
     ],
-    "manual_check": "오늘 장중 저점 대비 종가 회복률 및 2시 이후 분봉 거래량 집중 여부 확인",
+    "manual_check": "장중 분봉상 저가 구간 매도 물량 소화 후 반등 캔들 형성 여부 및 종가 69,500원 방어 여부",
     "model": "kimi-k2.6"
    },
    "theme_leader": true
+  },
+  {
+   "code": "089030",
+   "name": "테크윙",
+   "sector": "기계·장비",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 57,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 11.2,
+    "fade": 9.7,
+    "ma10": 10.0,
+    "flow": 6.0,
+    "event": 0.0,
+    "ai": -10
+   },
+   "score_raw": 67,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 11.2,
+    "fade": 9.7,
+    "ma10": 10.0,
+    "flow": 6,
+    "event": 0.0
+   },
+   "price": 68100.0,
+   "change_pct": 4.29,
+   "high_pct": 13.32,
+   "fade_pct": 67.8,
+   "value_eok": 4789,
+   "ma10": 56765.0,
+   "ma10_margin_pct": 19.97,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:01",
+      "vol_x": 23.0,
+      "pct": 4.38,
+      "minutes": 3
+     },
+     {
+      "time": "09:06",
+      "vol_x": 26.0,
+      "pct": 0.99,
+      "minutes": 1
+     },
+     {
+      "time": "09:08",
+      "vol_x": 25.4,
+      "pct": 2.92,
+      "minutes": 2
+     },
+     {
+      "time": "09:11",
+      "vol_x": 19.3,
+      "pct": -1.35,
+      "minutes": 1
+     },
+     {
+      "time": "09:15",
+      "vol_x": 23.2,
+      "pct": -2.78,
+      "minutes": 2
+     },
+     {
+      "time": "09:18",
+      "vol_x": 10.3,
+      "pct": -1.57,
+      "minutes": 1
+     },
+     {
+      "time": "09:20",
+      "vol_x": 15.0,
+      "pct": -2.72,
+      "minutes": 1
+     },
+     {
+      "time": "09:40",
+      "vol_x": 9.6,
+      "pct": 0.99,
+      "minutes": 1
+     },
+     {
+      "time": "11:17",
+      "vol_x": 12.0,
+      "pct": 2.28,
+      "minutes": 2
+     }
+    ]
+   },
+   "spark_max_x": 26.0,
+   "spark_max_pct": 0.99,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0609",
+      "frgn": 891119,
+      "orgn": 133026
+     },
+     {
+      "date": "0610",
+      "frgn": 164842,
+      "orgn": -11798
+     },
+     {
+      "date": "0611",
+      "frgn": -179984,
+      "orgn": 146731
+     },
+     {
+      "date": "0612",
+      "frgn": 623028,
+      "orgn": -40634
+     },
+     {
+      "date": "0615",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "ai_verdict": {
+    "status": "ok",
+    "verdict": "REJECT",
+    "confidence": 78,
+    "reason": "고점 대비 67.8% fade와 장중 13.32% 급등 후 4.29% 마감은 급락폭이 컸으나, 09:15-09:20 연속 음봉 클러스터(총 -7.07%)와 외국인 3일 순매수 후 금일 데이터 부재, 뉴스/이벤트 공백 상황에서 막판 회복 없이 저가권 유지로 투매성 종가 형태.",
+    "risk_flags": [
+     "고점 대비 과도한 fade(67.8%)",
+     "외국인 수급 금일 미확인",
+     "막판 회복 부재 저가 마감"
+    ],
+    "manual_check": "장마감 직전 30분 분봉 추세 및 외국인/기관 순매수 여부 확인",
+    "model": "kimi-k2.6"
+   },
+   "theme_leader": false
   },
   {
    "code": "035420",
@@ -347,13 +349,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 248500.0,
-   "change_pct": 0.61,
+   "price": 249000.0,
+   "change_pct": 0.81,
    "high_pct": 4.25,
-   "fade_pct": 85.7,
-   "value_eok": 4522,
-   "ma10": 255750.0,
-   "ma10_margin_pct": -2.83,
+   "fade_pct": 81.0,
+   "value_eok": 4714,
+   "ma10": 255800.0,
+   "ma10_margin_pct": -2.66,
    "spark": {
     "clusters": []
    },
@@ -409,8 +411,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229545.0,
-    "ma20_margin_pct": 8.26,
+    "ma20": 229570.0,
+    "ma20_margin_pct": 8.46,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
@@ -445,13 +447,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 222000.0,
-   "change_pct": -3.9,
+   "price": 223500.0,
+   "change_pct": -3.25,
    "high_pct": 5.63,
-   "fade_pct": 169.2,
-   "value_eok": 5157,
-   "ma10": 211440.0,
-   "ma10_margin_pct": 4.99,
+   "fade_pct": 157.7,
+   "value_eok": 5383,
+   "ma10": 211640.0,
+   "ma10_margin_pct": 5.6,
    "spark": {
     "clusters": []
    },
@@ -498,8 +500,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
-    "ma20": 203645.0,
-    "ma20_margin_pct": 9.01,
+    "ma20": 203745.0,
+    "ma20_margin_pct": 9.7,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -534,13 +536,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 345500.0,
-   "change_pct": -4.29,
+   "price": 346000.0,
+   "change_pct": -4.16,
    "high_pct": 2.08,
-   "fade_pct": 306.7,
-   "value_eok": 3992,
-   "ma10": 295250.0,
-   "ma10_margin_pct": 17.02,
+   "fade_pct": 300.0,
+   "value_eok": 4237,
+   "ma10": 295350.0,
+   "ma10_margin_pct": 17.15,
    "spark": {
     "clusters": []
    },
@@ -604,8 +606,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 304475.0,
-    "ma20_margin_pct": 13.47,
+    "ma20": 304525.0,
+    "ma20_margin_pct": 13.62,
     "ivtr_net": 1874444,
     "ivtr_days": 2,
     "ivtr_eok": 6607,
