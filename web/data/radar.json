@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 10:45:48 KST",
+ "generated_at": "2026-06-15 11:00:53 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 32,
+ "universe_count": 31,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -63,55 +63,67 @@
    "pattern": "fade",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 61,
+   "suspicion_score": 57,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 2.7,
-    "fade": 11.9,
+    "spark": 3.7,
+    "fade": 6.9,
     "ma10": 10.0,
     "flow": 6.0,
     "event": 0.0
    },
-   "score_raw": 61,
+   "score_raw": 57,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 2.7,
-    "fade": 11.9,
+    "spark": 3.7,
+    "fade": 6.9,
     "ma10": 10.0,
     "flow": 6,
     "event": 0.0
    },
-   "price": 68750.0,
-   "change_pct": 5.28,
+   "price": 67300.0,
+   "change_pct": 3.06,
    "high_pct": 13.32,
-   "fade_pct": 60.3,
-   "value_eok": 2920,
-   "ma10": 56830.0,
-   "ma10_margin_pct": 20.97,
+   "fade_pct": 77.0,
+   "value_eok": 3038,
+   "ma10": 56675.0,
+   "ma10_margin_pct": 18.75,
    "spark": {
     "clusters": [
      {
-      "time": "09:06",
+      "time": "09:02",
       "vol_x": 12.3,
+      "pct": 0.87,
+      "minutes": 1
+     },
+     {
+      "time": "09:06",
+      "vol_x": 13.9,
       "pct": 0.99,
       "minutes": 1
      },
      {
+      "time": "09:09",
+      "vol_x": 13.6,
+      "pct": 1.38,
+      "minutes": 1
+     },
+     {
       "time": "09:11",
-      "vol_x": 9.1,
+      "vol_x": 10.3,
       "pct": -1.35,
       "minutes": 1
      },
      {
       "time": "09:16",
-      "vol_x": 10.9,
+      "vol_x": 12.4,
       "pct": -1.54,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 12.3,
+   "spark_max_x": 13.9,
    "spark_max_pct": 0.99,
    "mega_flow": false,
    "flow": {
@@ -177,13 +189,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 250000.0,
-   "change_pct": 1.21,
+   "price": 251500.0,
+   "change_pct": 1.82,
    "high_pct": 4.25,
-   "fade_pct": 71.4,
-   "value_eok": 2791,
-   "ma10": 255900.0,
-   "ma10_margin_pct": -2.31,
+   "fade_pct": 57.1,
+   "value_eok": 2915,
+   "ma10": 256050.0,
+   "ma10_margin_pct": -1.78,
    "spark": {
     "clusters": []
    },
@@ -230,8 +242,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229620.0,
-    "ma20_margin_pct": 8.88,
+    "ma20": 229695.0,
+    "ma20_margin_pct": 9.49,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
@@ -266,13 +278,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 225000.0,
-   "change_pct": -2.6,
+   "price": 223500.0,
+   "change_pct": -3.25,
    "high_pct": 5.63,
-   "fade_pct": 146.2,
-   "value_eok": 2616,
-   "ma10": 211790.0,
-   "ma10_margin_pct": 6.24,
+   "fade_pct": 157.7,
+   "value_eok": 2820,
+   "ma10": 211640.0,
+   "ma10_margin_pct": 5.6,
    "spark": {
     "clusters": []
    },
@@ -319,8 +331,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
-    "ma20": 203820.0,
-    "ma20_margin_pct": 10.39,
+    "ma20": 203745.0,
+    "ma20_margin_pct": 9.7,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -355,13 +367,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 352000.0,
-   "change_pct": -2.49,
+   "price": 349000.0,
+   "change_pct": -3.32,
    "high_pct": 2.08,
-   "fade_pct": 220.0,
-   "value_eok": 2148,
-   "ma10": 295950.0,
-   "ma10_margin_pct": 18.94,
+   "fade_pct": 260.0,
+   "value_eok": 2365,
+   "ma10": 295650.0,
+   "ma10_margin_pct": 18.04,
    "spark": {
     "clusters": []
    },
@@ -425,8 +437,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 304825.0,
-    "ma20_margin_pct": 15.48,
+    "ma20": 304675.0,
+    "ma20_margin_pct": 14.55,
     "ivtr_net": 1874444,
     "ivtr_days": 2,
     "ivtr_eok": 6607,
