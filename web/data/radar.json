@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 09:30:52 KST",
+ "generated_at": "2026-06-15 09:45:53 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 34,
+ "universe_count": 33,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -82,13 +82,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 253000.0,
-   "change_pct": 2.43,
+   "price": 250500.0,
+   "change_pct": 1.42,
    "high_pct": 4.25,
-   "fade_pct": 42.9,
-   "value_eok": 1711,
-   "ma10": 256200.0,
-   "ma10_margin_pct": -1.25,
+   "fade_pct": 66.7,
+   "value_eok": 2000,
+   "ma10": 255950.0,
+   "ma10_margin_pct": -2.13,
    "spark": {
     "clusters": []
    },
@@ -144,8 +144,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229770.0,
-    "ma20_margin_pct": 10.11,
+    "ma20": 229645.0,
+    "ma20_margin_pct": 9.08,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
@@ -180,13 +180,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 235500.0,
-   "change_pct": 1.95,
+   "price": 230250.0,
+   "change_pct": -0.32,
    "high_pct": 5.63,
-   "fade_pct": 65.4,
-   "value_eok": 1343,
-   "ma10": 212890.0,
-   "ma10_margin_pct": 10.62,
+   "fade_pct": 105.8,
+   "value_eok": 1652,
+   "ma10": 212340.0,
+   "ma10_margin_pct": 8.43,
    "spark": {
     "clusters": []
    },
@@ -233,8 +233,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
-    "ma20": 204370.0,
-    "ma20_margin_pct": 15.23,
+    "ma20": 204095.0,
+    "ma20_margin_pct": 12.82,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -269,13 +269,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 579000.0,
-   "change_pct": -5.39,
+   "price": 580000.0,
+   "change_pct": -5.23,
    "high_pct": -1.14,
    "fade_pct": 0.0,
-   "value_eok": 173,
-   "ma10": 481800.0,
-   "ma10_margin_pct": 20.17,
+   "value_eok": 198,
+   "ma10": 481900.0,
+   "ma10_margin_pct": 20.36,
    "spark": {
     "clusters": []
    },
@@ -322,8 +322,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 489900.0,
-    "ma20_margin_pct": 18.19,
+    "ma20": 489950.0,
+    "ma20_margin_pct": 18.38,
     "ivtr_net": 117653,
     "ivtr_days": 2,
     "ivtr_eok": 750,
