@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15 09:15:49 KST",
+ "generated_at": "2026-06-15 09:30:52 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 36,
+ "universe_count": 34,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -82,13 +82,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 251000.0,
-   "change_pct": 1.62,
-   "high_pct": 3.64,
-   "fade_pct": 55.6,
-   "value_eok": 1193,
-   "ma10": 256000.0,
-   "ma10_margin_pct": -1.95,
+   "price": 253000.0,
+   "change_pct": 2.43,
+   "high_pct": 4.25,
+   "fade_pct": 42.9,
+   "value_eok": 1711,
+   "ma10": 256200.0,
+   "ma10_margin_pct": -1.25,
    "spark": {
     "clusters": []
    },
@@ -144,8 +144,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229670.0,
-    "ma20_margin_pct": 9.29,
+    "ma20": 229770.0,
+    "ma20_margin_pct": 10.11,
     "ivtr_net": 616499,
     "ivtr_days": 4,
     "ivtr_eok": 1685,
@@ -180,13 +180,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 238000.0,
-   "change_pct": 3.03,
+   "price": 235500.0,
+   "change_pct": 1.95,
    "high_pct": 5.63,
-   "fade_pct": 46.2,
-   "value_eok": 889,
-   "ma10": 213090.0,
-   "ma10_margin_pct": 11.69,
+   "fade_pct": 65.4,
+   "value_eok": 1343,
+   "ma10": 212890.0,
+   "ma10_margin_pct": 10.62,
    "spark": {
     "clusters": []
    },
@@ -233,8 +233,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 14987,
     "peak_high_pct": 15.27,
-    "ma20": 204470.0,
-    "ma20_margin_pct": 16.4,
+    "ma20": 204370.0,
+    "ma20_margin_pct": 15.23,
     "ivtr_net": 232829,
     "ivtr_days": 3,
     "ivtr_eok": 540,
@@ -244,8 +244,8 @@
    "theme_leader": false
   },
   {
-   "code": "042700",
-   "name": "한미반도체",
+   "code": "039030",
+   "name": "이오테크닉스",
    "sector": "기계·장비",
    "pattern": "reaccum",
    "shake": null,
@@ -269,13 +269,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 360500.0,
-   "change_pct": -0.14,
-   "high_pct": 2.08,
-   "fade_pct": 106.7,
-   "value_eok": 816,
-   "ma10": 296800.0,
-   "ma10_margin_pct": 21.46,
+   "price": 579000.0,
+   "change_pct": -5.39,
+   "high_pct": -1.14,
+   "fade_pct": 0.0,
+   "value_eok": 173,
+   "ma10": 481800.0,
+   "ma10_margin_pct": 20.17,
    "spark": {
     "clusters": []
    },
@@ -283,68 +283,51 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "flow": {
-    "net_days": 2,
+    "net_days": 3,
     "today_buy": true,
     "streak": 2,
     "detail": [
      {
       "date": "0608",
-      "frgn": -103448,
-      "orgn": -51176
+      "frgn": -1368,
+      "orgn": -16158
      },
      {
       "date": "0609",
-      "frgn": 17665,
-      "orgn": -17955
+      "frgn": 2421,
+      "orgn": 4207
      },
      {
       "date": "0610",
-      "frgn": -45585,
-      "orgn": 247
+      "frgn": 36465,
+      "orgn": -38077
      },
      {
       "date": "0611",
-      "frgn": 154005,
-      "orgn": -50002
+      "frgn": 38753,
+      "orgn": -38248
      },
      {
       "date": "0612",
-      "frgn": -4033,
-      "orgn": 1567960
+      "frgn": -92846,
+      "orgn": 146192
      }
     ]
    },
-   "news": [
-    {
-     "title": "한미반도체, 스페이스X 주식 취득 완료…500억 규모",
-     "summary": "한미반도체는 스페이스X 주식 취득을 완료했다고 15일 공시했다. 총 500억 규모다. 소유 주식수는 21만5600주다. 앞서 한미반도체는 이번 투자에 대해 스페이스X의 폭발적인 성장과 일론 머스크가 추진하는 초대형 반도체 제조 시설인 테라팹...",
-     "office": "뉴시스",
-     "datetime": "202606150907",
-     "url": "https://n.news.naver.com/mnews/article/003/0014005932",
-     "sentiment": "호재"
-    },
-    {
-     "title": "[기업이슈] 한미반도체, 스페이스X 전략적 투자한다…주가 급등",
-     "summary": "■ 머니쇼 '기업이슈' - 도지은 어제장에서 이슈가 있었던 업종 살펴보는 기업이슈 시간입니다. ◇ 트럼프 &quot;이란과 최종 조율 단계&quot;…건설주 강세 재건 관련 종목의 주가가 이란 전쟁 종전 기대감에 크게 올랐습니다. 앞서 미국 CBS 뉴",
-     "office": "SBS Biz",
-     "datetime": "202606150834",
-     "url": "https://n.news.naver.com/mnews/article/374/0000515985",
-     "sentiment": "호재"
-    }
-   ],
+   "news": [],
    "matched_events": [],
-   "theme": "반도체",
+   "theme": "전쟁",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
-    "peak_value_eok": 20588,
-    "peak_high_pct": 28.01,
-    "ma20": 305250.0,
-    "ma20_margin_pct": 18.1,
-    "ivtr_net": 1874444,
+    "peak_value_eok": 4605,
+    "peak_high_pct": 23.61,
+    "ma20": 489900.0,
+    "ma20_margin_pct": 18.19,
+    "ivtr_net": 117653,
     "ivtr_days": 2,
-    "ivtr_eok": 6607,
-    "cause_summary": "한미반도체, 스페이스X 주식 취득 완료…500억 규모",
+    "ivtr_eok": 750,
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
