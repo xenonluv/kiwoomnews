@@ -1,44 +1,44 @@
 {
   "date": "20260615",
-  "as_of": "2026-06-15 14:22 KST",
+  "as_of": "2026-06-15 14:37 KST",
   "bets": [
+    {
+      "code": "035420",
+      "ticker": "NAVER",
+      "entry": 248500.0,
+      "target": 260925,
+      "raw": 82,
+      "prob": "82%"
+    },
     {
       "code": "028260",
       "ticker": "삼성물산",
-      "entry": 504000.0,
-      "target": 529200,
+      "entry": 498500.0,
+      "target": 523425,
       "raw": 81,
       "prob": "81%"
     },
     {
       "code": "011070",
       "ticker": "LG이노텍",
-      "entry": 1198000.0,
-      "target": 1257900,
+      "entry": 1202000.0,
+      "target": 1262100,
       "raw": 77,
       "prob": "77%"
     },
     {
-      "code": "035420",
-      "ticker": "NAVER",
-      "entry": 249000.0,
-      "target": 261450,
-      "raw": 76,
-      "prob": "76%"
-    },
-    {
       "code": "009150",
       "ticker": "삼성전기",
-      "entry": 1960000.0,
-      "target": 2058000,
+      "entry": 1957000.0,
+      "target": 2054850,
       "raw": 76,
       "prob": "76%"
     },
     {
       "code": "018880",
       "ticker": "한온시스템",
-      "entry": 5700.0,
-      "target": 5985,
+      "entry": 5610.0,
+      "target": 5890,
       "raw": 74,
       "prob": "74%"
     }
