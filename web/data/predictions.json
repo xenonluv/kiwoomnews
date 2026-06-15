@@ -1,57 +1,21 @@
 {
-  "as_of": "2026-06-15 09:37 KST",
+  "as_of": "2026-06-15 09:52 KST",
   "intraday_rank": [
-    {
-      "ticker": "삼성물산",
-      "code": "028260",
-      "tomorrow_up_prob": "84%",
-      "entry": 482500.0,
-      "target": 506625,
-      "stop": 468025,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "정배열",
-        "RSI60.2 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
-          "url": "https://www.news1.kr/finance/general-stock/6197194",
-          "office": "news1",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "건설주, 미·이란 종전 협상 기대감에 강세…삼성물산 6%↑[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061210492766373",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
-    },
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "81%",
-      "entry": 253750.0,
-      "target": 266438,
-      "stop": 246138,
+      "tomorrow_up_prob": "82%",
+      "entry": 252250.0,
+      "target": 264862,
+      "stop": 244682,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI57.0 강세"
+        "RSI56.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.43,
+      "day_change": 1.42,
       "cause_news": [
         {
           "title": "NAVER(네이버) 주가 주말 앞두고 강세 마감…장중 26만원 돌파, 주말 중...",
@@ -68,13 +32,13 @@
     {
       "ticker": "삼화콘덴서",
       "code": "001820",
-      "tomorrow_up_prob": "78%",
-      "entry": 149100.0,
-      "target": 156555,
-      "stop": 144627,
+      "tomorrow_up_prob": "79%",
+      "entry": 149000.0,
+      "target": 156450,
+      "stop": 144530,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.82)",
         "정배열",
         "MACD강세"
       ],
@@ -82,17 +46,73 @@
       "day_change": null
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
+      "ticker": "삼성물산",
+      "code": "028260",
       "tomorrow_up_prob": "77%",
-      "entry": 1938000.0,
-      "target": 2034900,
-      "stop": 1879860,
+      "entry": 490000.0,
+      "target": 514500,
+      "stop": 475300,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.95)",
         "정배열",
-        "RSI65.4 강세"
+        "RSI61.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑",
+          "url": "https://www.mt.co.kr/stock/2026/06/15/2026061509233171313",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑"
+    },
+    {
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "74%",
+      "entry": 30150.0,
+      "target": 31658,
+      "stop": 29246,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.94)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라",
+          "url": "https://www.newsis.com/view/NISX20260615_0003669015",
+          "office": "newsis",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라"
+    },
+    {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "72%",
+      "entry": 1949000.0,
+      "target": 2046450,
+      "stop": 1890530,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "RSI65.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -106,108 +126,36 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "\"전쟁 끝난다\"…삼성전기 등 기판주도 동반 상승",
-          "url": "https://www.mt.co.kr/stock/2026/06/15/2026061509174066517",
-          "office": "mt",
+          "title": "[특징주] 삼성전기·LG이노텍, AI 기판 기대에 10%대 강세",
+          "url": "https://www.newspim.com/news/view/20260615000236",
+          "office": "newspim",
           "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "기판주 강세…삼성전기 14%·LG이노텍 10% 상승",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439652",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 삼성전기, AI용 실리콘 커패시터 양산 소식에 '급등'"
     },
     {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "73%",
-      "entry": 255000.0,
-      "target": 267750,
-      "stop": 247350,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.76)",
-        "RSI53.6 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 아이로보틱스, \"LG전자 국내 첫 로봇 훈련소 구축\" 피지컬AI 확...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295681",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 아이로보틱스, \"LG전자 국내 첫 로봇 훈련소 구축\" 피지컬AI 확..."
-    },
-    {
-      "ticker": "현대오토에버",
-      "code": "307950",
-      "tomorrow_up_prob": "69%",
-      "entry": 764000.0,
-      "target": 802200,
-      "stop": 741080,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.94)",
-        "RSI57.0 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 플래티어, 현대오토에버와 24억 추가 수주…인증중고차 협력 ...",
-          "url": "https://www.tokenpost.kr/news/economy/367343",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 플래티어, 현대오토에버와 24억 규모 추가 공급계약 체결",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=705657",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 플래티어, 현대오토에버와 24억 추가 수주…인증중고차 협력 ..."
-    },
-    {
-      "ticker": "대한항공",
-      "code": "003490",
-      "tomorrow_up_prob": "69%",
-      "entry": 29650.0,
-      "target": 31132,
-      "stop": 28760,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.82)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
       "ticker": "한온시스템",
       "code": "018880",
-      "tomorrow_up_prob": "65%",
-      "entry": 5670.0,
-      "target": 5954,
-      "stop": 5500,
+      "tomorrow_up_prob": "66%",
+      "entry": 5820.0,
+      "target": 6111,
+      "stop": 5645,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.88)",
-        "RSI61.9 강세",
+        "강세마감(0.98)",
+        "RSI63.2 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -236,47 +184,47 @@
     {
       "ticker": "주성엔지니어링",
       "code": "036930",
-      "tomorrow_up_prob": "59%",
-      "entry": 236000.0,
-      "target": 247800,
-      "stop": 228920,
+      "tomorrow_up_prob": "60%",
+      "entry": 233000.0,
+      "target": 244650,
+      "stop": 226010,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI60.6 강세",
+        "RSI60.1 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 1.95
+      "day_change": -0.32
     },
     {
       "ticker": "이오테크닉스",
       "code": "039030",
-      "tomorrow_up_prob": "58%",
-      "entry": 577000.0,
-      "target": 605850,
-      "stop": 559690,
+      "tomorrow_up_prob": "59%",
+      "entry": 575000.0,
+      "target": 603750,
+      "stop": 557750,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI59.3 강세"
+        "RSI59.1 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -5.39
+      "day_change": -5.23
     },
     {
       "ticker": "LS ELECTRIC",
       "code": "010120",
-      "tomorrow_up_prob": "58%",
-      "entry": 253000.0,
-      "target": 265650,
-      "stop": 245410,
+      "tomorrow_up_prob": "59%",
+      "entry": 257000.0,
+      "target": 269850,
+      "stop": 249290,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI53.2 강세",
-        "장중 3회 지속"
+        "강세마감(0.97)",
+        "RSI54.2 강세",
+        "장중 4회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -284,15 +232,15 @@
     {
       "ticker": "한화솔루션",
       "code": "009830",
-      "tomorrow_up_prob": "52%",
-      "entry": 40000.0,
-      "target": 42000,
-      "stop": 38800,
+      "tomorrow_up_prob": "53%",
+      "entry": 39900.0,
+      "target": 41895,
+      "stop": 38703,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.85)",
         "MACD강세",
-        "RSI53.5 강세"
+        "RSI53.3 강세"
       ],
       "risk": "악재",
       "day_change": null,
@@ -320,56 +268,20 @@
   ],
   "closing_bet": [
     {
-      "ticker": "삼성물산",
-      "code": "028260",
-      "tomorrow_up_prob": "84%",
-      "entry": 482500.0,
-      "target": 506625,
-      "stop": 468025,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "정배열",
-        "RSI60.2 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
-          "url": "https://www.news1.kr/finance/general-stock/6197194",
-          "office": "news1",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "건설주, 미·이란 종전 협상 기대감에 강세…삼성물산 6%↑[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061210492766373",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
-    },
-    {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "81%",
-      "entry": 253750.0,
-      "target": 266438,
-      "stop": 246138,
+      "tomorrow_up_prob": "82%",
+      "entry": 252250.0,
+      "target": 264862,
+      "stop": 244682,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI57.0 강세"
+        "RSI56.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 2.43,
+      "day_change": 1.42,
       "cause_news": [
         {
           "title": "NAVER(네이버) 주가 주말 앞두고 강세 마감…장중 26만원 돌파, 주말 중...",
@@ -386,13 +298,13 @@
     {
       "ticker": "삼화콘덴서",
       "code": "001820",
-      "tomorrow_up_prob": "78%",
-      "entry": 149100.0,
-      "target": 156555,
-      "stop": 144627,
+      "tomorrow_up_prob": "79%",
+      "entry": 149000.0,
+      "target": 156450,
+      "stop": 144530,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.82)",
         "정배열",
         "MACD강세"
       ],
@@ -400,17 +312,73 @@
       "day_change": null
     },
     {
-      "ticker": "삼성전기",
-      "code": "009150",
+      "ticker": "삼성물산",
+      "code": "028260",
       "tomorrow_up_prob": "77%",
-      "entry": 1938000.0,
-      "target": 2034900,
-      "stop": 1879860,
+      "entry": 490000.0,
+      "target": 514500,
+      "stop": 475300,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.8)",
+        "강세마감(0.95)",
         "정배열",
-        "RSI65.4 강세"
+        "RSI61.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑",
+          "url": "https://www.mt.co.kr/stock/2026/06/15/2026061509233171313",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑"
+    },
+    {
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "74%",
+      "entry": 30150.0,
+      "target": 31658,
+      "stop": 29246,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.94)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라",
+          "url": "https://www.newsis.com/view/NISX20260615_0003669015",
+          "office": "newsis",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "종전 기대감에 항공주 날았다…대한항공, 아시아나 12%씩 올라"
+    },
+    {
+      "ticker": "삼성전기",
+      "code": "009150",
+      "tomorrow_up_prob": "72%",
+      "entry": 1949000.0,
+      "target": 2046450,
+      "stop": 1890530,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "RSI65.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -424,44 +392,24 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "\"전쟁 끝난다\"…삼성전기 등 기판주도 동반 상승",
-          "url": "https://www.mt.co.kr/stock/2026/06/15/2026061509174066517",
-          "office": "mt",
+          "title": "[특징주] 삼성전기·LG이노텍, AI 기판 기대에 10%대 강세",
+          "url": "https://www.newspim.com/news/view/20260615000236",
+          "office": "newspim",
           "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "기판주 강세…삼성전기 14%·LG이노텍 10% 상승",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439652",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 삼성전기, AI용 실리콘 커패시터 양산 소식에 '급등'"
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "73%",
-      "entry": 255000.0,
-      "target": 267750,
-      "stop": 247350,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.76)",
-        "RSI53.6 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 아이로보틱스, \"LG전자 국내 첫 로봇 훈련소 구축\" 피지컬AI 확...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295681",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 아이로보틱스, \"LG전자 국내 첫 로봇 훈련소 구축\" 피지컬AI 확..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
