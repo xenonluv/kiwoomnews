@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-15 14:52 KST",
+  "as_of": "2026-06-15 15:07 KST",
   "intraday_rank": [
     {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 247000.0,
-      "target": 259350,
-      "stop": 239590,
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI55.2 강세"
+        "RSI55.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 0.4,
+      "day_change": 0.61,
       "related_news": [
         {
           "title": "샘 올트먼, 방한 연기…AI 협력 기대감에도 네이버는?",
@@ -29,14 +29,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 497500.0,
-      "target": 522375,
-      "stop": 482575,
+      "entry": 497000.0,
+      "target": 521850,
+      "stop": 482090,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.75)",
         "정배열",
-        "RSI61.9 강세"
+        "RSI61.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -56,13 +56,13 @@
     {
       "ticker": "LG이노텍",
       "code": "011070",
-      "tomorrow_up_prob": "77%",
-      "entry": 1205000.0,
-      "target": 1265250,
-      "stop": 1168850,
+      "tomorrow_up_prob": "78%",
+      "entry": 1207000.0,
+      "target": 1267350,
+      "stop": 1170790,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.86)",
         "정배열",
         "RSI62.4 강세"
       ],
@@ -101,14 +101,14 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "76%",
-      "entry": 1964000.0,
-      "target": 2062200,
-      "stop": 1905080,
+      "entry": 1982000.0,
+      "target": 2081100,
+      "stop": 1922540,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(1.0)",
         "정배열",
-        "RSI66.0 강세"
+        "RSI66.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -117,14 +117,6 @@
           "title": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승",
           "url": "https://www.youthdaily.co.kr/news/article.html?no=220914",
           "office": "youthdaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
-          "office": "namdonews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -142,17 +134,61 @@
       "cause_summary": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승"
     },
     {
+      "ticker": "HL만도",
+      "code": "204320",
+      "tomorrow_up_prob": "74%",
+      "entry": 69300.0,
+      "target": 72765,
+      "stop": 67221,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI65.2 강세",
+        "거래량7.15배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 7.23,
+      "cause_news": [
+        {
+          "title": "HL만도 주가, 웃음꽃... 목표주가는?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163559",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "상한가 찍은 HL만도, 액추에이터 연구조직 신설…로봇주 함께 날았다",
+          "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4419925",
+          "office": "news",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[속보] HL만도 VI 수차례 발동, 주가 급등세…주초장 7만원대 중반 돌파",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582053",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "HL만도 주가, 웃음꽃... 목표주가는?"
+    },
+    {
       "ticker": "한온시스템",
       "code": "018880",
       "tomorrow_up_prob": "74%",
-      "entry": 5590.0,
-      "target": 5870,
-      "stop": 5422,
+      "entry": 5650.0,
+      "target": 5932,
+      "stop": 5480,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
-        "RSI61.1 강세",
-        "거래량2.61배"
+        "강세마감(0.77)",
+        "RSI61.7 강세",
+        "거래량2.64배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -186,50 +222,6 @@
       "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
     },
     {
-      "ticker": "HL만도",
-      "code": "204320",
-      "tomorrow_up_prob": "73%",
-      "entry": 69800.0,
-      "target": 73290,
-      "stop": 67706,
-      "confidence": "상",
-      "reasons": [
-        "MACD강세",
-        "RSI65.7 강세",
-        "거래량7.08배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 8,
-      "cause_news": [
-        {
-          "title": "HL만도 주가, 웃음꽃... 목표주가는?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163559",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "상한가 찍은 HL만도, 액추에이터 연구조직 신설…로봇주 함께 날았다",
-          "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4419925",
-          "office": "news",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]HL만도, 피지컬 AI 산업 확산에 따른 수혜 부각 소식에 상한가",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295625",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "HL만도 주가, 웃음꽃... 목표주가는?"
-    },
-    {
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "69%",
@@ -243,7 +235,7 @@
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 5.21,
+      "day_change": 4.59,
       "cause_news": [
         {
           "title": "테크윙 주가, 급등세... 어떤 기업이길래?",
@@ -258,53 +250,17 @@
       "cause_summary": "테크윙 주가, 급등세... 어떤 기업이길래?"
     },
     {
-      "ticker": "후성",
-      "code": "093370",
-      "tomorrow_up_prob": "68%",
-      "entry": 21800.0,
-      "target": 22890,
-      "stop": 21146,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.98)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "후성, 투자경고종목 지정 예고→주가 급등 경계령",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16092441",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
-        },
-        {
-          "title": "“AI 특수에 가스까지 품귀”…후성 주가 일주일새 63% 쑥 [이주의 Bull기...",
-          "url": "https://www.mk.co.kr/article/12073325",
-          "office": "mk",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 인과표현, 재료, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "후성, 투자경고종목 지정 예고→주가 급등 경계령"
-    },
-    {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "67%",
-      "entry": 49700.0,
-      "target": 52185,
-      "stop": 48209,
+      "tomorrow_up_prob": "68%",
+      "entry": 49300.0,
+      "target": 51765,
+      "stop": 47821,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.74)",
-        "RSI58.6 강세",
-        "거래량6.81배"
+        "강세마감(0.7)",
+        "RSI58.1 강세",
+        "거래량6.98배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -341,69 +297,69 @@
       "ticker": "주성엔지니어링",
       "code": "036930",
       "tomorrow_up_prob": "64%",
-      "entry": 221500.0,
-      "target": 232575,
-      "stop": 214855,
+      "entry": 222500.0,
+      "target": 233625,
+      "stop": 215825,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI57.4 강세",
+        "RSI57.6 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -4.11
+      "day_change": -3.9
     },
     {
-      "ticker": "LS ELECTRIC",
-      "code": "010120",
-      "tomorrow_up_prob": "63%",
-      "entry": 259000.0,
-      "target": 271950,
-      "stop": 251230,
+      "ticker": "후성",
+      "code": "093370",
+      "tomorrow_up_prob": "61%",
+      "entry": 22050.0,
+      "target": 23152,
+      "stop": 21388,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
-        "RSI54.6 강세",
-        "장중 24회 지속"
+        "정배열",
+        "MACD강세",
+        "거래량2.68배"
       ],
-      "risk": "특이 위험 낮음",
+      "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
-          "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
-          "office": "pinpointnews",
+          "title": "후성, 투자경고종목 지정 예고→주가 급등 경계령",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16092441",
+          "office": "topstarnews",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락"
         },
         {
-          "title": "변압기 없어서 못 판다… LS ELECTRIC·효성중공업 신고가 행진",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460191",
-          "office": "pinpointnews",
+          "title": "[속보] 후성 VI 두 차례 발동, 주가 19%대 급등…장중 2만3000원 돌파하기...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582084",
+          "office": "cbci",
           "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ..."
+      "cause_summary": "후성, 투자경고종목 지정 예고→주가 급등 경계령"
     },
     {
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "58%",
-      "entry": 346000.0,
-      "target": 363300,
-      "stop": 335620,
+      "entry": 346500.0,
+      "target": 363825,
+      "stop": 336105,
       "confidence": "중",
       "reasons": [
-        "RSI56.0 강세",
+        "RSI56.1 강세",
         "호재",
-        "장중 21회 지속"
+        "장중 22회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -4.02,
+      "day_change": -4.29,
       "cause_news": [
         {
           "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
@@ -432,6 +388,41 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등"
+    },
+    {
+      "ticker": "LS ELECTRIC",
+      "code": "010120",
+      "tomorrow_up_prob": "55%",
+      "entry": 257000.0,
+      "target": 269850,
+      "stop": 249290,
+      "confidence": "중",
+      "reasons": [
+        "RSI54.2 강세",
+        "장중 25회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "변압기 없어서 못 판다… LS ELECTRIC·효성중공업 신고가 행진",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460191",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ..."
     }
   ],
   "closing_bet": [
@@ -439,17 +430,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "82%",
-      "entry": 247000.0,
-      "target": 259350,
-      "stop": 239590,
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI55.2 강세"
+        "RSI55.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 0.4,
+      "day_change": 0.61,
       "related_news": [
         {
           "title": "샘 올트먼, 방한 연기…AI 협력 기대감에도 네이버는?",
@@ -463,14 +454,14 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "81%",
-      "entry": 497500.0,
-      "target": 522375,
-      "stop": 482575,
+      "entry": 497000.0,
+      "target": 521850,
+      "stop": 482090,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.75)",
         "정배열",
-        "RSI61.9 강세"
+        "RSI61.8 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -490,13 +481,13 @@
     {
       "ticker": "LG이노텍",
       "code": "011070",
-      "tomorrow_up_prob": "77%",
-      "entry": 1205000.0,
-      "target": 1265250,
-      "stop": 1168850,
+      "tomorrow_up_prob": "78%",
+      "entry": 1207000.0,
+      "target": 1267350,
+      "stop": 1170790,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.86)",
         "정배열",
         "RSI62.4 강세"
       ],
@@ -535,14 +526,14 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "76%",
-      "entry": 1964000.0,
-      "target": 2062200,
-      "stop": 1905080,
+      "entry": 1982000.0,
+      "target": 2081100,
+      "stop": 1922540,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(1.0)",
         "정배열",
-        "RSI66.0 강세"
+        "RSI66.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -551,14 +542,6 @@
           "title": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승",
           "url": "https://www.youthdaily.co.kr/news/article.html?no=220914",
           "office": "youthdaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주]AI 각광에 기판 기대주 삼성전기·LG이노텍도 강세",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=913538",
-          "office": "namdonews",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
@@ -576,48 +559,48 @@
       "cause_summary": "[특징주] AI 서버 핵심 부품 사업 확대 기대에…삼성전기, 12%대 상승"
     },
     {
-      "ticker": "한온시스템",
-      "code": "018880",
+      "ticker": "HL만도",
+      "code": "204320",
       "tomorrow_up_prob": "74%",
-      "entry": 5590.0,
-      "target": 5870,
-      "stop": 5422,
+      "entry": 69300.0,
+      "target": 72765,
+      "stop": 67221,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
-        "RSI61.1 강세",
-        "거래량2.61배"
+        "MACD강세",
+        "RSI65.2 강세",
+        "거래량7.15배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
+      "day_change": 7.23,
       "cause_news": [
         {
-          "title": "한온시스템 주가 22% 급등...2분기 호실적 전망",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3608366",
-          "office": "gukjenews",
+          "title": "HL만도 주가, 웃음꽃... 목표주가는?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163559",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "상한가 찍은 HL만도, 액추에이터 연구조직 신설…로봇주 함께 날았다",
+          "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4419925",
+          "office": "news",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주]한온시스템, 전기차 열관리 시스템 사업 성장과 실적 개선 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=293710",
-          "office": "widedaily",
+          "title": "[속보] HL만도 VI 수차례 발동, 주가 급등세…주초장 7만원대 중반 돌파",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582053",
+          "office": "cbci",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "한온시스템 주가, 웃음꽃 활짝... 왜?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163556",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "한온시스템 주가 22% 급등...2분기 호실적 전망"
+      "cause_summary": "HL만도 주가, 웃음꽃... 목표주가는?"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
