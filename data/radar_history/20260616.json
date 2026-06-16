@@ -4,7 +4,7 @@
   "035420": {
    "name": "NAVER",
    "sector": "IT 서비스",
-   "entry": 244500.0,
+   "entry": 245500.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -14,13 +14,13 @@
     "flow": 0,
     "event": 0
    },
-   "change_pct": -1.41,
+   "change_pct": -1.01,
    "high_pct": 7.06,
-   "fade_pct": 120.0,
+   "fade_pct": 114.3,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 3491,
+   "value_eok": 3614,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -35,8 +35,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231570.0,
-    "ma20_margin_pct": 5.58,
+    "ma20": 231620.0,
+    "ma20_margin_pct": 5.99,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
@@ -52,7 +52,7 @@
   "039030": {
    "name": "이오테크닉스",
    "sector": "기계·장비",
-   "entry": 507000.0,
+   "entry": 501000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -62,13 +62,13 @@
     "flow": 0,
     "event": 0
    },
-   "change_pct": -4.52,
+   "change_pct": -5.65,
    "high_pct": 1.69,
-   "fade_pct": 366.7,
+   "fade_pct": 433.3,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 240,
+   "value_eok": 269,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -83,8 +83,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 490750.0,
-    "ma20_margin_pct": 3.31,
+    "ma20": 490450.0,
+    "ma20_margin_pct": 2.15,
     "ivtr_net": 81261,
     "ivtr_days": 2,
     "ivtr_eok": 551,
@@ -100,7 +100,7 @@
   "042700": {
    "name": "한미반도체",
    "sector": "기계·장비",
-   "entry": 335500.0,
+   "entry": 333750.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -110,13 +110,13 @@
     "flow": 0,
     "event": 0
    },
-   "change_pct": -3.31,
+   "change_pct": -3.82,
    "high_pct": 4.61,
-   "fade_pct": 171.9,
+   "fade_pct": 182.8,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 1549,
+   "value_eok": 1643,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -131,8 +131,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302900.0,
-    "ma20_margin_pct": 10.76,
+    "ma20": 302825.0,
+    "ma20_margin_pct": 10.21,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
@@ -146,5 +146,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-16 10:31:19 KST"
+ "as_of": "2026-06-16 10:46:02 KST"
 }
