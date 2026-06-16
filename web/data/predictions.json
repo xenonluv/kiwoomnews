@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-16 11:37 KST",
+  "as_of": "2026-06-16 11:52 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "76%",
-      "entry": 772000.0,
-      "target": 810600,
-      "stop": 748840,
+      "tomorrow_up_prob": "77%",
+      "entry": 768000.0,
+      "target": 806400,
+      "stop": 744960,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
@@ -48,18 +48,18 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "71%",
-      "entry": 245500.0,
-      "target": 257775,
-      "stop": 238135,
+      "tomorrow_up_prob": "72%",
+      "entry": 246000.0,
+      "target": 258300,
+      "stop": 238620,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI54.6 강세",
+        "RSI54.7 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -0.6,
+      "day_change": -0.81,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -74,55 +74,19 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "70%",
-      "entry": 56600.0,
-      "target": 59430,
-      "stop": 54902,
-      "confidence": "상",
-      "reasons": [
-        "MACD강세",
-        "RSI60.6 강세",
-        "거래량2.42배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\"",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163823",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\""
-    },
-    {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "69%",
-      "entry": 33650.0,
-      "target": 35332,
-      "stop": 32640,
-      "confidence": "중",
+      "tomorrow_up_prob": "70%",
+      "entry": 33350.0,
+      "target": 35018,
+      "stop": 32350,
+      "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "RSI82.0 과매수, Stoch 과매수",
+      "risk": "RSI81.8 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -138,16 +102,44 @@
       "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
     },
     {
+      "ticker": "삼성E&A",
+      "code": "028050",
+      "tomorrow_up_prob": "70%",
+      "entry": 56400.0,
+      "target": 59220,
+      "stop": 54708,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI60.4 강세",
+        "거래량2.47배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승"
+    },
+    {
       "ticker": "DL이앤씨",
       "code": "375500",
-      "tomorrow_up_prob": "68%",
-      "entry": 89200.0,
-      "target": 93660,
-      "stop": 86524,
+      "tomorrow_up_prob": "69%",
+      "entry": 88600.0,
+      "target": 93030,
+      "stop": 85942,
       "confidence": "중",
       "reasons": [
-        "RSI63.2 강세",
-        "거래량3.17배",
+        "RSI62.7 강세",
+        "거래량3.21배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -184,23 +176,23 @@
     {
       "ticker": "LIG디펜스앤에어로스페이스",
       "code": "079550",
-      "tomorrow_up_prob": "66%",
-      "entry": 1004000.0,
-      "target": 1054200,
-      "stop": 973880,
+      "tomorrow_up_prob": "67%",
+      "entry": 1000000.0,
+      "target": 1050000,
+      "stop": 970000,
       "confidence": "중",
       "reasons": [
-        "RSI66.3 강세",
-        "거래량2.82배",
+        "RSI66.1 강세",
+        "거래량2.85배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "related_news": [
         {
-          "title": "LIG D&amp;A, 獨 최대 방산사와 현지 합작사 설립…유럽 시장 본격 공략",
-          "url": "https://n.news.naver.com/mnews/article/011/0004631528",
-          "office": "서울경제",
+          "title": "[특징주] LIG디펜스, 독일 기업과 유럽 시장 공략 소식에 급등",
+          "url": "https://n.news.naver.com/mnews/article/001/0016141142",
+          "office": "연합뉴스",
           "sentiment": "호재"
         },
         {
@@ -214,15 +206,15 @@
     {
       "ticker": "SK이터닉스",
       "code": "475150",
-      "tomorrow_up_prob": "66%",
-      "entry": 53900.0,
-      "target": 56595,
-      "stop": 52283,
+      "tomorrow_up_prob": "67%",
+      "entry": 56200.0,
+      "target": 59010,
+      "stop": 54514,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI62.9 강세",
-        "거래량4.05배"
+        "강세마감(0.93)",
+        "RSI64.9 강세",
+        "거래량4.78배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -256,33 +248,17 @@
       "cause_summary": "SK이터닉스 주가, 연일 급등세... 무슨 회사길래?"
     },
     {
-      "ticker": "이오테크닉스",
-      "code": "039030",
-      "tomorrow_up_prob": "64%",
-      "entry": 499500.0,
-      "target": 524475,
-      "stop": 484515,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI51.4 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -5.65
-    },
-    {
       "ticker": "포스코인터내셔널",
       "code": "047050",
-      "tomorrow_up_prob": "63%",
-      "entry": 64700.0,
-      "target": 67935,
-      "stop": 62759,
+      "tomorrow_up_prob": "64%",
+      "entry": 65000.0,
+      "target": 68250,
+      "stop": 63050,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.89)",
+        "강세마감(0.94)",
         "호재",
-        "장중 4회 지속"
+        "장중 5회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -311,17 +287,17 @@
       "ticker": "한화시스템",
       "code": "272210",
       "tomorrow_up_prob": "61%",
-      "entry": 106500.0,
-      "target": 111825,
-      "stop": 103305,
+      "entry": 106300.0,
+      "target": 111615,
+      "stop": 103111,
       "confidence": "중",
       "reasons": [
-        "RSI52.7 강세",
-        "거래량1.92배",
+        "RSI52.6 강세",
+        "거래량1.93배",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 6.93,
+      "day_change": 7.14,
       "cause_news": [
         {
           "title": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승",
@@ -336,61 +312,53 @@
       "cause_summary": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승"
     },
     {
-      "ticker": "한미반도체",
-      "code": "042700",
-      "tomorrow_up_prob": "57%",
-      "entry": 333000.0,
-      "target": 349650,
-      "stop": 323010,
+      "ticker": "하나마이크론",
+      "code": "067310",
+      "tomorrow_up_prob": "58%",
+      "entry": 50100.0,
+      "target": 52605,
+      "stop": 48597,
       "confidence": "중",
       "reasons": [
-        "RSI53.5 강세",
-        "호재",
-        "장중 11회 지속"
+        "정배열",
+        "MACD강세",
+        "RSI58.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -4.03,
+      "day_change": -2.16,
       "cause_news": [
         {
-          "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
-          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=354700",
-          "office": "biztribune",
+          "title": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112761",
+          "office": "newsdream",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         },
         {
-          "title": "[12일 특징주] 스페이스X 주식 취득에…한미반도체 24% '껑충'",
-          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843742",
-          "office": "newsworks",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "한미반도체, ‘스페이스X’ 올라타자마자 130억 평가익",
-          "url": "https://www.kukinews.com/article/view/kuk202606160025",
-          "office": "kukinews",
+          "title": "[특징주]하나마이크론, 깜짝 실적 발표에 장중 사상 최고가 경신",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294039",
+          "office": "widedaily",
           "sentiment": "호재",
           "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등"
+      "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
     },
     {
       "ticker": "퍼스텍",
       "code": "010820",
-      "tomorrow_up_prob": "56%",
-      "entry": 9180.0,
-      "target": 9639,
-      "stop": 8905,
+      "tomorrow_up_prob": "58%",
+      "entry": 9130.0,
+      "target": 9586,
+      "stop": 8856,
       "confidence": "중",
       "reasons": [
-        "거래량5.08배",
+        "거래량5.18배",
         "호재",
-        "장중 11회 지속"
+        "장중 12회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -408,6 +376,29 @@
       "cause_summary": "방산·건설·항공주 강세…퍼스텍·상지건설 上 이탈에 투자자 관심 집..."
     },
     {
+      "ticker": "한화에어로스페이스",
+      "code": "012450",
+      "tomorrow_up_prob": "57%",
+      "entry": 1168000.0,
+      "target": 1226400,
+      "stop": 1132960,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "장중 7회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "'종전되면 주가하락' 옛말…방산주 일제히 급등",
+          "url": "https://n.news.naver.com/mnews/article/374/0000516280",
+          "office": "SBS Biz",
+          "sentiment": "혼재"
+        }
+      ]
+    },
+    {
       "ticker": "광전자",
       "code": "017900",
       "tomorrow_up_prob": "55%",
@@ -417,7 +408,7 @@
       "confidence": "중",
       "reasons": [
         "RSI50.7 강세",
-        "장중 11회 지속"
+        "장중 12회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -451,17 +442,60 @@
       "cause_summary": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리..."
     },
     {
+      "ticker": "한미반도체",
+      "code": "042700",
+      "tomorrow_up_prob": "51%",
+      "entry": 332000.0,
+      "target": 348600,
+      "stop": 322040,
+      "confidence": "하",
+      "reasons": [
+        "RSI53.3 강세",
+        "장중 12회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": -4.03,
+      "cause_news": [
+        {
+          "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
+          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=354700",
+          "office": "biztribune",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[12일 특징주] 스페이스X 주식 취득에…한미반도체 24% '껑충'",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843742",
+          "office": "newsworks",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "한미반도체, ‘스페이스X’ 올라타자마자 130억 평가익",
+          "url": "https://www.kukinews.com/article/view/kuk202606160025",
+          "office": "kukinews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등"
+    },
+    {
       "ticker": "대우건설",
       "code": "047040",
       "tomorrow_up_prob": "38%",
-      "entry": 27900.0,
-      "target": 29295,
-      "stop": 27063,
+      "entry": 27100.0,
+      "target": 28455,
+      "stop": 26287,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI57.6 강세"
+        "RSI55.9 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -499,13 +533,13 @@
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "76%",
-      "entry": 772000.0,
-      "target": 810600,
-      "stop": 748840,
+      "tomorrow_up_prob": "77%",
+      "entry": 768000.0,
+      "target": 806400,
+      "stop": 744960,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.94)",
+        "강세마감(0.88)",
         "정배열",
         "MACD강세"
       ],
@@ -543,18 +577,18 @@
     {
       "ticker": "NAVER",
       "code": "035420",
-      "tomorrow_up_prob": "71%",
-      "entry": 245500.0,
-      "target": 257775,
-      "stop": 238135,
+      "tomorrow_up_prob": "72%",
+      "entry": 246000.0,
+      "target": 258300,
+      "stop": 238620,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI54.6 강세",
+        "RSI54.7 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -0.6,
+      "day_change": -0.81,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -569,55 +603,19 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "70%",
-      "entry": 56600.0,
-      "target": 59430,
-      "stop": 54902,
-      "confidence": "상",
-      "reasons": [
-        "MACD강세",
-        "RSI60.6 강세",
-        "거래량2.42배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\"",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163823",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\""
-    },
-    {
       "ticker": "미래에셋생명",
       "code": "085620",
-      "tomorrow_up_prob": "69%",
-      "entry": 33650.0,
-      "target": 35332,
-      "stop": 32640,
-      "confidence": "중",
+      "tomorrow_up_prob": "70%",
+      "entry": 33350.0,
+      "target": 35018,
+      "stop": 32350,
+      "confidence": "상",
       "reasons": [
-        "강세마감(0.81)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "RSI82.0 과매수, Stoch 과매수",
+      "risk": "RSI81.8 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -633,16 +631,44 @@
       "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
     },
     {
+      "ticker": "삼성E&A",
+      "code": "028050",
+      "tomorrow_up_prob": "70%",
+      "entry": 56400.0,
+      "target": 59220,
+      "stop": 54708,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI60.4 강세",
+        "거래량2.47배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승"
+    },
+    {
       "ticker": "DL이앤씨",
       "code": "375500",
-      "tomorrow_up_prob": "68%",
-      "entry": 89200.0,
-      "target": 93660,
-      "stop": 86524,
+      "tomorrow_up_prob": "69%",
+      "entry": 88600.0,
+      "target": 93030,
+      "stop": 85942,
       "confidence": "중",
       "reasons": [
-        "RSI63.2 강세",
-        "거래량3.17배",
+        "RSI62.7 강세",
+        "거래량3.21배",
         "호재"
       ],
       "risk": "특이 위험 낮음",

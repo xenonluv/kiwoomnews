@@ -1,46 +1,46 @@
 {
   "date": "20260616",
-  "as_of": "2026-06-16 11:37 KST",
+  "as_of": "2026-06-16 11:52 KST",
   "bets": [
     {
       "code": "004170",
       "ticker": "신세계",
-      "entry": 772000.0,
-      "target": 810600,
-      "raw": 76,
-      "prob": "76%"
+      "entry": 768000.0,
+      "target": 806400,
+      "raw": 77,
+      "prob": "77%"
     },
     {
       "code": "035420",
       "ticker": "NAVER",
-      "entry": 245500.0,
-      "target": 257775,
-      "raw": 71,
-      "prob": "71%"
-    },
-    {
-      "code": "028050",
-      "ticker": "삼성E&A",
-      "entry": 56600.0,
-      "target": 59430,
-      "raw": 70,
-      "prob": "70%"
+      "entry": 246000.0,
+      "target": 258300,
+      "raw": 72,
+      "prob": "72%"
     },
     {
       "code": "085620",
       "ticker": "미래에셋생명",
-      "entry": 33650.0,
-      "target": 35332,
-      "raw": 69,
-      "prob": "69%"
+      "entry": 33350.0,
+      "target": 35018,
+      "raw": 70,
+      "prob": "70%"
+    },
+    {
+      "code": "028050",
+      "ticker": "삼성E&A",
+      "entry": 56400.0,
+      "target": 59220,
+      "raw": 70,
+      "prob": "70%"
     },
     {
       "code": "375500",
       "ticker": "DL이앤씨",
-      "entry": 89200.0,
-      "target": 93660,
-      "raw": 68,
-      "prob": "68%"
+      "entry": 88600.0,
+      "target": 93030,
+      "raw": 69,
+      "prob": "69%"
     }
   ]
 }
