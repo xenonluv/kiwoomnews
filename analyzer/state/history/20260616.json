@@ -1,46 +1,46 @@
 {
   "date": "20260616",
-  "as_of": "2026-06-16 10:07 KST",
+  "as_of": "2026-06-16 10:22 KST",
   "bets": [
     {
-      "code": "047040",
-      "ticker": "대우건설",
-      "entry": 27500.0,
-      "target": 28875,
+      "code": "010820",
+      "ticker": "퍼스텍",
+      "entry": 9830.0,
+      "target": 10322,
       "raw": 78,
       "prob": "78%"
     },
     {
-      "code": "375500",
-      "ticker": "DL이앤씨",
-      "entry": 90100.0,
-      "target": 94605,
-      "raw": 71,
-      "prob": "71%"
+      "code": "004170",
+      "ticker": "신세계",
+      "entry": 752000.0,
+      "target": 789600,
+      "raw": 72,
+      "prob": "72%"
     },
     {
       "code": "035420",
       "ticker": "NAVER",
-      "entry": 244500.0,
-      "target": 256725,
-      "raw": 68,
-      "prob": "68%"
+      "entry": 244000.0,
+      "target": 256200,
+      "raw": 69,
+      "prob": "69%"
     },
     {
       "code": "079550",
       "ticker": "LIG디펜스앤에어로스페이스",
-      "entry": 1010000.0,
-      "target": 1060500,
-      "raw": 65,
-      "prob": "65%"
+      "entry": 1024000.0,
+      "target": 1075200,
+      "raw": 66,
+      "prob": "66%"
     },
     {
-      "code": "010060",
-      "ticker": "OCI홀딩스",
-      "entry": 309000.0,
-      "target": 324450,
-      "raw": 62,
-      "prob": "62%"
+      "code": "375500",
+      "ticker": "DL이앤씨",
+      "entry": 87800.0,
+      "target": 92190,
+      "raw": 65,
+      "prob": "65%"
     }
   ]
 }
