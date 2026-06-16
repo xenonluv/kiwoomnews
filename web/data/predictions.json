@@ -1,22 +1,110 @@
 {
-  "as_of": "2026-06-16 11:07 KST",
+  "as_of": "2026-06-16 11:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "삼성E&A",
+      "code": "028050",
+      "tomorrow_up_prob": "77%",
+      "entry": 56800.0,
+      "target": 59640,
+      "stop": 55096,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.72)",
+        "MACD강세",
+        "RSI60.9 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\"",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163823",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\""
+    },
+    {
+      "ticker": "DL이앤씨",
+      "code": "375500",
+      "tomorrow_up_prob": "76%",
+      "entry": 90100.0,
+      "target": 94605,
+      "stop": 87397,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.71)",
+        "RSI63.9 강세",
+        "거래량3.07배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A...",
+          "url": "http://www.fnnews.com/news/202606160954134577",
+          "office": "fnnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "[특징주] DL이앤씨, 美 \"이란 재건사업 3000억달러 추진\" 건설주 특수 기...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295830",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E...",
+          "url": "https://n.news.naver.com/mnews/article/014/0005535450",
+          "office": "파이낸셜뉴스",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A..."
+    },
     {
       "ticker": "신세계",
       "code": "004170",
-      "tomorrow_up_prob": "74%",
-      "entry": 760000.0,
-      "target": 798000,
-      "stop": 737200,
+      "tomorrow_up_prob": "75%",
+      "entry": 766000.0,
+      "target": 804300,
+      "stop": 743020,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "신세계, VI 발동 9%대 급등…외국인·기관 쌍끌이 매수 부각",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582309",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
         {
           "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
           "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
@@ -35,23 +123,23 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+      "cause_summary": "신세계, VI 발동 9%대 급등…외국인·기관 쌍끌이 매수 부각"
     },
     {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 249000.0,
-      "target": 261450,
-      "stop": 241530,
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI55.8 강세",
+        "RSI55.5 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 0.4,
+      "day_change": -0.4,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -66,143 +154,19 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "HL만도",
-      "code": "204320",
-      "tomorrow_up_prob": "70%",
-      "entry": 76300.0,
-      "target": 80115,
-      "stop": 74011,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.83)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "HL만도 주가, 웃음꽃... 목표주가는?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163559",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료"
-        },
-        {
-          "title": "[속보] HL만도 VI 수차례 발동, 주가 급등세…주초장 7만원대 중반 돌파",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582053",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "HL만도 주가, 웃음꽃... 목표주가는?"
-    },
-    {
-      "ticker": "DL이앤씨",
-      "code": "375500",
+      "ticker": "LIG디펜스앤에어로스페이스",
+      "code": "079550",
       "tomorrow_up_prob": "68%",
-      "entry": 87500.0,
-      "target": 91875,
-      "stop": 84875,
+      "entry": 1007000.0,
+      "target": 1057350,
+      "stop": 976790,
       "confidence": "중",
       "reasons": [
-        "RSI61.7 강세",
-        "거래량2.96배",
+        "RSI66.5 강세",
+        "거래량2.77배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] DL이앤씨, 이란 재건 기대에 5500억 수주까지…15%대 급등",
-          "url": "https://www.tokenpost.kr/news/economy/369708",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A...",
-          "url": "http://www.fnnews.com/news/202606160954134577",
-          "office": "fnnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        },
-        {
-          "title": "[속보] 건설주 강세 랠리…대우건설·DL이앤씨 급등에 투자심리 개선",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582287",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] DL이앤씨, 이란 재건 기대에 5500억 수주까지…15%대 급등"
-    },
-    {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "67%",
-      "entry": 33650.0,
-      "target": 35332,
-      "stop": 32640,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI82.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582294",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
-    },
-    {
-      "ticker": "이오테크닉스",
-      "code": "039030",
-      "tomorrow_up_prob": "64%",
-      "entry": 501000.0,
-      "target": 526050,
-      "stop": 485970,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI51.5 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -5.08
-    },
-    {
-      "ticker": "LIG디펜스앤에어로스페이스",
-      "code": "079550",
-      "tomorrow_up_prob": "64%",
-      "entry": 999000.0,
-      "target": 1048950,
-      "stop": 969030,
-      "confidence": "중",
-      "reasons": [
-        "RSI66.0 강세",
-        "거래량2.73배",
-        "호재"
-      ],
-      "risk": "약한 마감",
       "day_change": null,
       "related_news": [
         {
@@ -226,17 +190,45 @@
       ]
     },
     {
-      "ticker": "SK이터닉스",
-      "code": "475150",
-      "tomorrow_up_prob": "64%",
-      "entry": 53500.0,
-      "target": 56175,
-      "stop": 51895,
+      "ticker": "미래에셋생명",
+      "code": "085620",
+      "tomorrow_up_prob": "68%",
+      "entry": 33500.0,
+      "target": 35175,
+      "stop": 32495,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
-        "RSI62.5 강세",
-        "거래량3.66배"
+        "강세마감(0.79)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI81.9 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582294",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
+    },
+    {
+      "ticker": "SK이터닉스",
+      "code": "475150",
+      "tomorrow_up_prob": "65%",
+      "entry": 54000.0,
+      "target": 56700,
+      "stop": 52380,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.82)",
+        "RSI63.0 강세",
+        "거래량3.9배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -270,47 +262,71 @@
       "cause_summary": "SK이터닉스 주가, 연일 급등세... 무슨 회사길래?"
     },
     {
-      "ticker": "한화시스템",
-      "code": "272210",
-      "tomorrow_up_prob": "60%",
-      "entry": 106100.0,
-      "target": 111405,
-      "stop": 102917,
+      "ticker": "한화에어로스페이스",
+      "code": "012450",
+      "tomorrow_up_prob": "63%",
+      "entry": 1169000.0,
+      "target": 1227450,
+      "stop": 1133930,
       "confidence": "중",
       "reasons": [
-        "RSI52.4 강세",
-        "거래량1.87배",
+        "MACD강세",
+        "호재",
+        "장중 6회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 한화에어로스페이스, 미·이란 종전 기대에 강세…중동 수주 ...",
+          "url": "https://www.tokenpost.kr/news/economy/369731",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 한화에어로스페이스, 미·이란 종전 기대에 강세…중동 수주 ..."
+    },
+    {
+      "ticker": "한화시스템",
+      "code": "272210",
+      "tomorrow_up_prob": "61%",
+      "entry": 106800.0,
+      "target": 112140,
+      "stop": 103596,
+      "confidence": "중",
+      "reasons": [
+        "RSI53.0 강세",
+        "거래량1.9배",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 6.33,
-      "cause_news": [
+      "day_change": 7.24,
+      "related_news": [
         {
-          "title": "방산·ICT 넘어 도심항공까지…한화시스템, 차세대 모빌리티 주도",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460464",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+          "title": "&quot;종전 합의했는데 왜 이래?&quot;…K방산주 무섭게 치솟는 이유 [종목+]",
+          "url": "https://n.news.naver.com/mnews/article/015/0005299179",
+          "office": "한국경제",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "방산·ICT 넘어 도심항공까지…한화시스템, 차세대 모빌리티 주도"
+      ]
     },
     {
       "ticker": "퍼스텍",
       "code": "010820",
-      "tomorrow_up_prob": "56%",
-      "entry": 9140.0,
-      "target": 9597,
-      "stop": 8866,
+      "tomorrow_up_prob": "60%",
+      "entry": 9200.0,
+      "target": 9660,
+      "stop": 8924,
       "confidence": "중",
       "reasons": [
-        "거래량4.79배",
+        "거래량4.94배",
         "호재",
-        "장중 9회 지속"
+        "장중 10회 지속"
       ],
-      "risk": "약한 마감",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
@@ -326,16 +342,96 @@
       "cause_summary": "방산·건설·항공주 강세…퍼스텍·상지건설 上 이탈에 투자자 관심 집..."
     },
     {
+      "ticker": "한미반도체",
+      "code": "042700",
+      "tomorrow_up_prob": "57%",
+      "entry": 333000.0,
+      "target": 349650,
+      "stop": 323010,
+      "confidence": "중",
+      "reasons": [
+        "RSI53.5 강세",
+        "호재",
+        "장중 10회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.75,
+      "cause_news": [
+        {
+          "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
+          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=354700",
+          "office": "biztribune",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[12일 특징주] 스페이스X 주식 취득에…한미반도체 24% '껑충'",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843742",
+          "office": "newsworks",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "한미반도체, ‘스페이스X‘ 올라타자마자 130억 평가익",
+          "url": "https://www.kukinews.com/article/view/kuk202606160025",
+          "office": "kukinews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등"
+    },
+    {
+      "ticker": "하나마이크론",
+      "code": "067310",
+      "tomorrow_up_prob": "57%",
+      "entry": 49900.0,
+      "target": 52395,
+      "stop": 48403,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI58.1 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -2.06,
+      "cause_news": [
+        {
+          "title": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112761",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주]하나마이크론, 깜짝 실적 발표에 장중 사상 최고가 경신",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294039",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
+    },
+    {
       "ticker": "광전자",
       "code": "017900",
       "tomorrow_up_prob": "55%",
-      "entry": 10120.0,
-      "target": 10626,
-      "stop": 9816,
+      "entry": 10300.0,
+      "target": 10815,
+      "stop": 9991,
       "confidence": "중",
       "reasons": [
-        "RSI50.6 강세",
-        "장중 9회 지속"
+        "RSI51.3 강세",
+        "장중 10회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -369,72 +465,21 @@
       "cause_summary": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리..."
     },
     {
-      "ticker": "한미반도체",
-      "code": "042700",
-      "tomorrow_up_prob": "51%",
-      "entry": 334000.0,
-      "target": 350700,
-      "stop": 323980,
-      "confidence": "하",
-      "reasons": [
-        "RSI53.7 강세",
-        "장중 9회 지속"
-      ],
-      "risk": "약한 마감",
-      "day_change": -3.53,
-      "cause_news": [
-        {
-          "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
-          "url": "http://www.biztribune.co.kr/news/articleView.html?idxno=354700",
-          "office": "biztribune",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "한미반도체, ‘스페이스X‘ 올라타자마자 130억 평가익",
-          "url": "https://www.kukinews.com/article/view/kuk202606160025",
-          "office": "kukinews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등"
-    },
-    {
       "ticker": "대우건설",
       "code": "047040",
       "tomorrow_up_prob": "38%",
-      "entry": 27300.0,
-      "target": 28665,
-      "stop": 26481,
+      "entry": 28100.0,
+      "target": 29505,
+      "stop": 27257,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.9)",
         "MACD강세",
-        "RSI56.3 강세"
+        "RSI58.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
-        {
-          "title": "[특징주] 대우건설, 미·이란 휴전 소식에 20%대 급등",
-          "url": "https://www.ajunews.com/view/20260616101805954",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "대우건설 주가 장중 24%대 뛰어, 중동 재건 수혜 기대감에 건설주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=440045",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
         {
           "title": "[특징주] 대우건설, 체코 원전 수주 부각에 20%대 급등",
           "url": "https://www.namdonews.com/news/articleView.html?idxno=913712",
@@ -442,29 +487,133 @@
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 이란 재건 기대에 건설주 강세...대우건설 20% 급등",
+          "url": "https://www.newspim.com/news/view/20260616000442",
+          "office": "newspim",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "글로벌인프라본부 출범… 대우건설, 에너지·토탈 디벨로퍼로 도약",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460488",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 대우건설, 미·이란 휴전 소식에 20%대 급등"
+      "cause_summary": "[특징주] 대우건설, 체코 원전 수주 부각에 20%대 급등"
     }
   ],
   "closing_bet": [
     {
-      "ticker": "신세계",
-      "code": "004170",
-      "tomorrow_up_prob": "74%",
-      "entry": 760000.0,
-      "target": 798000,
-      "stop": 737200,
+      "ticker": "삼성E&A",
+      "code": "028050",
+      "tomorrow_up_prob": "77%",
+      "entry": 56800.0,
+      "target": 59640,
+      "stop": 55096,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.72)",
+        "MACD강세",
+        "RSI60.9 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\"",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163823",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "삼성E&A 주가, 6월 16일 장중 55,400원 6.33% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526206",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "삼성E&A 주가, 급등세... 증권가 \"중동 재건 수혜 기대\""
+    },
+    {
+      "ticker": "DL이앤씨",
+      "code": "375500",
+      "tomorrow_up_prob": "76%",
+      "entry": 90100.0,
+      "target": 94605,
+      "stop": 87397,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.71)",
+        "RSI63.9 강세",
+        "거래량3.07배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A...",
+          "url": "http://www.fnnews.com/news/202606160954134577",
+          "office": "fnnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        },
+        {
+          "title": "[특징주] DL이앤씨, 美 \"이란 재건사업 3000억달러 추진\" 건설주 특수 기...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295830",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E...",
+          "url": "https://n.news.naver.com/mnews/article/014/0005535450",
+          "office": "파이낸셜뉴스",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A..."
+    },
+    {
+      "ticker": "신세계",
+      "code": "004170",
+      "tomorrow_up_prob": "75%",
+      "entry": 766000.0,
+      "target": 804300,
+      "stop": 743020,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "신세계, VI 발동 9%대 급등…외국인·기관 쌍끌이 매수 부각",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582309",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
         {
           "title": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반...",
           "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=402525",
@@ -483,23 +632,23 @@
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[투데이's 특징주] 신세계, 외국인 관광객 증가 수혜 기대감에 장 초반..."
+      "cause_summary": "신세계, VI 발동 9%대 급등…외국인·기관 쌍끌이 매수 부각"
     },
     {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 249000.0,
-      "target": 261450,
-      "stop": 241530,
+      "entry": 248000.0,
+      "target": 260400,
+      "stop": 240560,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI55.8 강세",
+        "RSI55.5 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 0.4,
+      "day_change": -0.4,
       "cause_news": [
         {
           "title": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1...",
@@ -514,112 +663,40 @@
       "cause_summary": "[특징주] 네이버, 엔비디아 협력 기대 하루 만에 꺾였다…차익실현에 1..."
     },
     {
-      "ticker": "HL만도",
-      "code": "204320",
-      "tomorrow_up_prob": "70%",
-      "entry": 76300.0,
-      "target": 80115,
-      "stop": 74011,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.83)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "HL만도 주가, 웃음꽃... 목표주가는?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163559",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료"
-        },
-        {
-          "title": "[속보] HL만도 VI 수차례 발동, 주가 급등세…주초장 7만원대 중반 돌파",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582053",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "HL만도 주가, 웃음꽃... 목표주가는?"
-    },
-    {
-      "ticker": "DL이앤씨",
-      "code": "375500",
+      "ticker": "LIG디펜스앤에어로스페이스",
+      "code": "079550",
       "tomorrow_up_prob": "68%",
-      "entry": 87500.0,
-      "target": 91875,
-      "stop": 84875,
+      "entry": 1007000.0,
+      "target": 1057350,
+      "stop": 976790,
       "confidence": "중",
       "reasons": [
-        "RSI61.7 강세",
-        "거래량2.96배",
+        "RSI66.5 강세",
+        "거래량2.77배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "[특징주] DL이앤씨, 이란 재건 기대에 5500억 수주까지…15%대 급등",
-          "url": "https://www.tokenpost.kr/news/economy/369708",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "title": "LIG D&amp;A, 獨 최대 방산사와 현지 합작사 설립…유럽 시장 본격 공략",
+          "url": "https://n.news.naver.com/mnews/article/011/0004631528",
+          "office": "서울경제",
+          "sentiment": "호재"
         },
         {
-          "title": "\"지금 주가의 두배 뛴다\" DL이앤씨, 미·이란 종전 최대 수혜… 삼성E&A...",
-          "url": "http://www.fnnews.com/news/202606160954134577",
-          "office": "fnnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+          "title": "&quot;종전은 오히려 기회&quot;…LIG디펜스앤에어로 상한가 터치[핫종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009005659",
+          "office": "뉴스1",
+          "sentiment": "호재"
         },
         {
-          "title": "[속보] 건설주 강세 랠리…대우건설·DL이앤씨 급등에 투자심리 개선",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582287",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "title": "방산주, 종전에도 급등세…&quot;K-방산 중동 수출 기회&quot;[특징주]",
+          "url": "https://n.news.naver.com/mnews/article/018/0006307273",
+          "office": "이데일리",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] DL이앤씨, 이란 재건 기대에 5500억 수주까지…15%대 급등"
-    },
-    {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "67%",
-      "entry": 33650.0,
-      "target": 35332,
-      "stop": 32640,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI82.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582294",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
+      ]
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
