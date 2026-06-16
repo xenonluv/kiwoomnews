@@ -234,6 +234,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 )}
               </p>
             )}
+            {s.reignition && (
+              <p className="text-[11px] text-up">
+                오늘 재반등: {s.reignition.time} 10분봉 몸통{" "}
+                <span className="tabular-nums">{s.reignition.body_pct}%</span>
+                {" · "}거래대금{" "}
+                <span className="tabular-nums">{s.reignition.value_10m_eok.toLocaleString()}억</span>
+              </p>
+            )}
             {s.reaccum?.cause_summary && (
               <p className="line-clamp-1 text-[11px] text-muted-foreground" title={s.reaccum.cause_summary}>
                 왜 올랐나: {s.reaccum.cause_summary}
@@ -257,20 +265,22 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
           </div>
         </div>
 
-        {/* 분봉 스파크 타임라인 */}
-        <div className="rounded-md border border-white/10 bg-white/[0.04] p-3">
-          <p className="mb-1.5 flex items-center gap-1 text-xs font-medium text-muted-foreground">
-            <Zap className="size-3 text-warning" aria-hidden />
-            당일 분봉 스파크{" "}
-            <span className="tabular-nums">{s.spark.clusters.length}회</span>
-            {s.spark.clusters[0] && (
-              <span className="tabular-nums">
-                · 최대 {Math.max(...s.spark.clusters.map((c) => c.vol_x))}배
-              </span>
-            )}
-          </p>
-          <SparkTimeline clusters={s.spark.clusters} />
-        </div>
+        {/* 분봉 스파크 타임라인 (구 fade 카드 전용 — reaccum은 클러스터 없음) */}
+        {s.spark.clusters.length > 0 && (
+          <div className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+            <p className="mb-1.5 flex items-center gap-1 text-xs font-medium text-muted-foreground">
+              <Zap className="size-3 text-warning" aria-hidden />
+              당일 분봉 스파크{" "}
+              <span className="tabular-nums">{s.spark.clusters.length}회</span>
+              {s.spark.clusters[0] && (
+                <span className="tabular-nums">
+                  · 최대 {Math.max(...s.spark.clusters.map((c) => c.vol_x))}배
+                </span>
+              )}
+            </p>
+            <SparkTimeline clusters={s.spark.clusters} />
+          </div>
+        )}
 
         {/* 점수 해부도 */}
         <ScoreBreakdownBars breakdown={s.score_breakdown} />

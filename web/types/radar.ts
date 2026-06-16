@@ -100,6 +100,13 @@ export interface ReaccumInfo {
   orgn_net_after_peak?: number; // 구버전 JSON 하위호환
 }
 
+/** 재반등(오늘) 신호 — 과거 폭등 종목이 오늘 거래대금 동반 재상승 초입인지 */
+export interface ReignitionInfo {
+  body_pct: number; // 10분봉 몸통%(|종가−시가|/시가) 최댓값
+  time: string; // 해당 10분봉 시각 "HH:MM"
+  value_10m_eok: number; // 그 10분봉 1개의 거래대금(억)
+}
+
 /** Kimi 후보 검증 결과 */
 export interface AiVerdict {
   status: "ok" | "disabled" | "not_configured" | "unavailable" | "outside_window";
@@ -127,6 +134,8 @@ export interface Suspect {
   visible_experimental?: boolean;
   reaccum_badge?: boolean;
   reaccum?: ReaccumInfo | null;
+  /** 재반등(오늘) 신호 — pattern==="reaccum" 카드에 존재. 구버전 JSON엔 없음 */
+  reignition?: ReignitionInfo | null;
   ai_verdict?: AiVerdict | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
@@ -163,20 +172,22 @@ export interface RadarData {
   market_session: "open" | "closed";
   disclaimer: string;
   params: {
-    min_value_eok: number;
-    high_pct: number;
-    chg_range: [number, number];
-    spark_x: number;
-    spark_pct: number;
-    /** 메가 스파크 임계(배) — 수급매수 동반 시 가점. 구버전 JSON엔 없음. */
+    /** 재반등(오늘) 트리거: 당일 고가 등락률 허용 범위 [하한, 상한] */
+    reaccum_high_range?: [number, number];
+    /** 재반등: 10분봉 몸통% 하한 */
+    reignition_body_pct?: number;
+    /** 재반등: 해당 10분봉 1개의 거래대금 하한(억) */
+    reignition_value_10m_eok?: number;
+    // --- 아래는 구버전(fade) radar.json 하위호환용 (현 파이프라인은 미출력) ---
+    min_value_eok?: number;
+    high_pct?: number;
+    chg_range?: [number, number];
+    spark_x?: number;
+    spark_pct?: number;
     mega_x?: number;
-    /** 유니버스 수집 방식 — "kis_rank"(기본) | "naver_scan"(폴백). 구버전 JSON엔 없음. */
     universe?: string;
-    /** 시장×지표(거래대금/등락률)별 상위 N (kis_rank 방식) */
     top_n?: number;
-    /** deep 수집용 확장 포함 유니버스 등락률 범위 */
     universe_chg_range?: [number, number];
-    /** 흔들기 트랙: 눌림 깊이 하한(%) / 등락률 상한(%) */
     shake_pct?: number;
     shake_chg_max?: number;
     deep_shake_enabled?: boolean;

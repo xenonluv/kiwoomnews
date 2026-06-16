@@ -141,20 +141,18 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
             </span>
           </h2>
           <p className="text-xs text-muted-foreground">
-            {data.params.universe === "kis_rank"
-              ? `시장별 거래대금·등락률 TOP${data.params.top_n ?? 20} 유니버스 · `
-              : ""}
-            당일 거래대금 {data.params.min_value_eok?.toLocaleString()}억+ · 고가 +
-            {data.params.high_pct}% 후 후퇴 · 등락률 {data.params.chg_range?.[0]}~
-            {data.params.chg_range?.[1]}% · 10일선 위 · 분봉 스파크
-            {data.params.shake_pct != null &&
-              ` · 흔들기 재상승(−${data.params.shake_pct}%+ 눌림 후 회복, ≤+${data.params.shake_chg_max}%)`}
-            {data.params.deep_shake_enabled &&
-              ` · 급락흡수(고점대비 −${data.params.deep_drop_range?.[0]}~−${data.params.deep_drop_range?.[1]}%, IBS ${data.params.deep_ibs_min}+)${
-                data.params.kimi_mode !== "off"
-                  ? ` · Kimi ${fmtHHMM(data.params.kimi_window?.[0])}~${fmtHHMM(data.params.kimi_window?.[1])}`
-                  : ""
-              }`}
+            과거 폭등({data.params.explosion_value_eok?.toLocaleString() ?? "1,000"}억+ · 고가 +
+            {data.params.explosion_high_pct ?? 13}%, 최근 {data.params.explosion_window ?? 6}거래일) → 식음(MA20 위 · 투신 매집) → 오늘 재반등
+            {data.params.reaccum_high_range &&
+              ` (고가 ${data.params.reaccum_high_range[0]}~${data.params.reaccum_high_range[1]}%`}
+            {data.params.reignition_body_pct != null &&
+              ` · 10분봉 몸통 ${data.params.reignition_body_pct}%+`}
+            {data.params.reignition_value_10m_eok != null &&
+              ` · 10분봉 거래대금 ${data.params.reignition_value_10m_eok}억+`}
+            {data.params.reaccum_high_range && ")"}
+            {data.params.kimi_mode != null &&
+              data.params.kimi_mode !== "off" &&
+              ` · Kimi ${fmtHHMM(data.params.kimi_window?.[0])}~${fmtHHMM(data.params.kimi_window?.[1])}`}
           </p>
         </div>
 
