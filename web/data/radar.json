@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 09:45:58 KST",
+ "generated_at": "2026-06-16 10:01:13 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 37,
+ "universe_count": 43,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -82,13 +82,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 247000.0,
-   "change_pct": -0.4,
+   "price": 245000.0,
+   "change_pct": -1.21,
    "high_pct": 7.06,
-   "fade_pct": 105.7,
-   "value_eok": 2735,
-   "ma10": 253250.0,
-   "ma10_margin_pct": -2.47,
+   "fade_pct": 117.1,
+   "value_eok": 3080,
+   "ma10": 253050.0,
+   "ma10_margin_pct": -3.18,
    "spark": {
     "clusters": []
    },
@@ -129,6 +129,14 @@
    },
    "news": [
     {
+     "title": "인투씨엔에스, 네이버와 손잡고 동물병원 검색 고도화",
+     "summary": "동물병원 디지털 전환 전문기업인 인투씨엔에스가 네이버(NAVER(035420))와 협력해 동물병원의 온라인 검색 경쟁력 강화에 나선다. 인투씨엔에스는 네이버와의 협업을 통해 ‘네이버 플레이스 플러스(place+) 베타’ 서비스를 정식 오픈했다고 16일",
+     "office": "이데일리",
+     "datetime": "202606160954",
+     "url": "https://n.news.naver.com/mnews/article/018/0006307291",
+     "sentiment": "호재"
+    },
+    {
      "title": "스톤브릿지벤처스, 스포츠AI 플코에 40억 투자[마켓인]",
      "summary": "스톤브릿지벤처스와 네이버 D2SF가 스포츠 인텔리전스 플랫폼 기업 플코에 40억 원 규모의 Pre-Series B 투자를 단행했다고 16일 밝혔다. 두 투자사 모두 기존 투자자로 이번 라운드에 참여했으며, 이번 조달로 플코의 누적 투자유치액은 약 11",
      "office": "이데일리",
@@ -145,19 +153,29 @@
      "sentiment": "호재"
     }
    ],
-   "matched_events": [],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.7
+    }
+   ],
    "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231695.0,
-    "ma20_margin_pct": 6.61,
+    "ma20": 231595.0,
+    "ma20_margin_pct": 5.79,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
-    "cause_summary": "스톤브릿지벤처스, 스포츠AI 플코에 40억 투자[마켓인]",
+    "cause_summary": "인투씨엔에스, 네이버와 손잡고 동물병원 검색 고도화",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -188,13 +206,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 512000.0,
-   "change_pct": -3.58,
+   "price": 505000.0,
+   "change_pct": -4.9,
    "high_pct": 1.69,
-   "fade_pct": 311.1,
-   "value_eok": 127,
-   "ma10": 483200.0,
-   "ma10_margin_pct": 5.96,
+   "fade_pct": 388.9,
+   "value_eok": 171,
+   "ma10": 482500.0,
+   "ma10_margin_pct": 4.66,
    "spark": {
     "clusters": []
    },
@@ -235,14 +253,14 @@
    },
    "news": [],
    "matched_events": [],
-   "theme": "전쟁",
+   "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 491000.0,
-    "ma20_margin_pct": 4.28,
+    "ma20": 490650.0,
+    "ma20_margin_pct": 2.92,
     "ivtr_net": 81261,
     "ivtr_days": 2,
     "ivtr_eok": 551,
@@ -277,13 +295,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 335500.0,
-   "change_pct": -3.31,
+   "price": 336000.0,
+   "change_pct": -3.17,
    "high_pct": 4.61,
-   "fade_pct": 171.9,
-   "value_eok": 1062,
-   "ma10": 299700.0,
-   "ma10_margin_pct": 11.95,
+   "fade_pct": 168.8,
+   "value_eok": 1284,
+   "ma10": 299750.0,
+   "ma10_margin_pct": 12.09,
    "spark": {
     "clusters": []
    },
@@ -330,8 +348,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302900.0,
-    "ma20_margin_pct": 10.76,
+    "ma20": 302925.0,
+    "ma20_margin_pct": 10.92,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
