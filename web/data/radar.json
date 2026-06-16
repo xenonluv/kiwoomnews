@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 11:01:15 KST",
+ "generated_at": "2026-06-16 11:16:03 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -57,6 +57,127 @@
  ],
  "suspects": [
   {
+   "code": "439960",
+   "name": "코스모로보틱스",
+   "sector": "의료·정밀기기",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 64,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 7.3,
+    "fade": 11.8,
+    "ma10": 10.0,
+    "flow": 2.0,
+    "event": 2.7
+   },
+   "score_raw": 64,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 7.3,
+    "fade": 11.8,
+    "ma10": 10.0,
+    "flow": 2,
+    "event": 2.7
+   },
+   "price": 27200.0,
+   "change_pct": 8.37,
+   "high_pct": 21.31,
+   "fade_pct": 60.7,
+   "value_eok": 2245,
+   "ma10": 25067.0,
+   "ma10_margin_pct": 8.51,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:03",
+      "vol_x": 18.1,
+      "pct": 3.97,
+      "minutes": 1
+     },
+     {
+      "time": "09:06",
+      "vol_x": 19.7,
+      "pct": 3.62,
+      "minutes": 2
+     },
+     {
+      "time": "09:11",
+      "vol_x": 8.3,
+      "pct": -0.96,
+      "minutes": 1
+     },
+     {
+      "time": "10:09",
+      "vol_x": 12.4,
+      "pct": 2.54,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 19.7,
+   "spark_max_pct": 3.62,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -133577,
+      "orgn": -7209
+     },
+     {
+      "date": "0611",
+      "frgn": 110687,
+      "orgn": -280711
+     },
+     {
+      "date": "0612",
+      "frgn": -60055,
+      "orgn": -13328
+     },
+     {
+      "date": "0615",
+      "frgn": 154414,
+      "orgn": -15899
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "KC코트렐·GC지놈, 최대주주 지분 보호예수 해제",
+     "summary": "KC코트렐의 최대주주 지분 83%가 시장에 출회한다. 지씨지놈, 코스모로보틱스의 의무보유 확약 물량도 보호예수에서 해제된다. 8일 한국예탁결제원에 따르면 KC코트렐의 주식 9115만7556주(발행주식총수 83%)가 오는 12일 보호예수에서...",
+     "office": "아이뉴스24",
+     "datetime": "202606081001",
+     "url": "https://n.news.naver.com/mnews/article/031/0001033474",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.7
+    }
+   ],
+   "theme": "금리",
+   "theme_leader": false
+  },
+  {
    "code": "272210",
    "name": "한화시스템",
    "sector": "전기·전자",
@@ -64,43 +185,43 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 59,
+   "suspicion_score": 61,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 1.8,
-    "fade": 11.1,
+    "spark": 2.6,
+    "fade": 12.7,
     "ma10": 10.0,
     "flow": 6.0,
     "event": 0.0
    },
-   "score_raw": 59,
+   "score_raw": 61,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 1.8,
-    "fade": 11.1,
+    "spark": 2.6,
+    "fade": 12.7,
     "ma10": 10.0,
     "flow": 6,
     "event": 0.0
    },
-   "price": 105800.0,
-   "change_pct": 6.33,
+   "price": 106700.0,
+   "change_pct": 7.24,
    "high_pct": 17.09,
-   "fade_pct": 62.9,
-   "value_eok": 1837,
-   "ma10": 94270.0,
-   "ma10_margin_pct": 12.23,
+   "fade_pct": 57.6,
+   "value_eok": 1873,
+   "ma10": 94360.0,
+   "ma10_margin_pct": 13.08,
    "spark": {
     "clusters": [
      {
       "time": "09:25",
-      "vol_x": 10.8,
+      "vol_x": 12.1,
       "pct": 0.12,
       "minutes": 2
      }
     ]
    },
-   "spark_max_x": 10.8,
+   "spark_max_x": 12.1,
    "spark_max_pct": 0.12,
    "mega_flow": false,
    "flow": {
@@ -175,13 +296,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 249000.0,
-   "change_pct": 0.4,
+   "price": 247000.0,
+   "change_pct": -0.4,
    "high_pct": 7.06,
-   "fade_pct": 94.3,
-   "value_eok": 3910,
-   "ma10": 253500.0,
-   "ma10_margin_pct": -1.78,
+   "fade_pct": 105.7,
+   "value_eok": 4052,
+   "ma10": 253250.0,
+   "ma10_margin_pct": -2.47,
    "spark": {
     "clusters": []
    },
@@ -245,101 +366,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231820.0,
-    "ma20_margin_pct": 7.41,
+    "ma20": 231695.0,
+    "ma20_margin_pct": 6.61,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
     "cause_summary": "인투씨엔에스, 네이버와 손잡고 동물병원 검색 고도화",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "039030",
-   "name": "이오테크닉스",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "price": 504000.0,
-   "change_pct": -5.08,
-   "high_pct": 1.69,
-   "fade_pct": 400.0,
-   "value_eok": 290,
-   "ma10": 482400.0,
-   "ma10_margin_pct": 4.48,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": 2421,
-      "orgn": 4207
-     },
-     {
-      "date": "0610",
-      "frgn": 36465,
-      "orgn": -38077
-     },
-     {
-      "date": "0611",
-      "frgn": 38753,
-      "orgn": -38248
-     },
-     {
-      "date": "0612",
-      "frgn": -92846,
-      "orgn": 146192
-     },
-     {
-      "date": "0615",
-      "frgn": 7466,
-      "orgn": -43122
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 4605,
-    "peak_high_pct": 23.61,
-    "ma20": 490600.0,
-    "ma20_margin_pct": 2.73,
-    "ivtr_net": 81261,
-    "ivtr_days": 2,
-    "ivtr_eok": 551,
-    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -370,13 +402,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 334750.0,
-   "change_pct": -3.53,
+   "price": 334000.0,
+   "change_pct": -3.75,
    "high_pct": 4.61,
-   "fade_pct": 176.6,
-   "value_eok": 1791,
-   "ma10": 299625.0,
-   "ma10_margin_pct": 11.72,
+   "fade_pct": 181.2,
+   "value_eok": 1863,
+   "ma10": 299550.0,
+   "ma10_margin_pct": 11.5,
    "spark": {
     "clusters": []
    },
@@ -423,11 +455,100 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302862.5,
-    "ma20_margin_pct": 10.53,
+    "ma20": 302825.0,
+    "ma20_margin_pct": 10.29,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "067310",
+   "name": "하나마이크론",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "price": 49850.0,
+   "change_pct": -2.06,
+   "high_pct": 4.91,
+   "fade_pct": 142.0,
+   "value_eok": 858,
+   "ma10": 44960.0,
+   "ma10_margin_pct": 10.88,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0609",
+      "frgn": -216572,
+      "orgn": 442726
+     },
+     {
+      "date": "0610",
+      "frgn": -449097,
+      "orgn": 384143
+     },
+     {
+      "date": "0611",
+      "frgn": -410499,
+      "orgn": 476544
+     },
+     {
+      "date": "0612",
+      "frgn": -75575,
+      "orgn": 101782
+     },
+     {
+      "date": "0615",
+      "frgn": -181668,
+      "orgn": 77538
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260611",
+    "peak_value_eok": 2044,
+    "peak_high_pct": 17.59,
+    "ma20": 46102.5,
+    "ma20_margin_pct": 8.13,
+    "ivtr_net": 767669,
+    "ivtr_days": 6,
+    "ivtr_eok": 344,
     "cause_summary": "",
     "was_theme_leader": false
    },
