@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 15:31:07 KST",
+ "generated_at": "2026-06-16 15:46:01 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 40,
+ "universe_count": 39,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -172,8 +172,8 @@
      },
      {
       "date": "0616",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -1125103,
+      "orgn": 18963
      }
     ]
    },
@@ -207,6 +207,105 @@
     }
    ],
    "theme": "전쟁",
+   "theme_leader": false
+  },
+  {
+   "code": "009830",
+   "name": "한화솔루션",
+   "sector": "화학",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 63,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 4.3,
+    "fade": 9.6,
+    "ma10": 10.0,
+    "flow": 9.0,
+    "event": 0.0
+   },
+   "score_raw": 63,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 4.3,
+    "fade": 9.6,
+    "ma10": 10.0,
+    "flow": 9,
+    "event": 0.0
+   },
+   "price": 42200.0,
+   "change_pct": 9.04,
+   "high_pct": 13.31,
+   "fade_pct": 32.0,
+   "value_eok": 1440,
+   "ma10": 36382.1,
+   "ma10_margin_pct": 15.99,
+   "spark": {
+    "clusters": [
+     {
+      "time": "12:17",
+      "vol_x": 12.9,
+      "pct": 0.95,
+      "minutes": 1
+     },
+     {
+      "time": "12:23",
+      "vol_x": 14.8,
+      "pct": -1.27,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 14.8,
+   "spark_max_pct": -1.27,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 2,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -705630,
+      "orgn": -226375
+     },
+     {
+      "date": "0611",
+      "frgn": -81785,
+      "orgn": -14251
+     },
+     {
+      "date": "0612",
+      "frgn": -339255,
+      "orgn": 151827
+     },
+     {
+      "date": "0615",
+      "frgn": 408900,
+      "orgn": 145141
+     },
+     {
+      "date": "0616",
+      "frgn": 162563,
+      "orgn": 178540
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "한화솔루션 주주대표 “고려아연 지분은 회삿돈…유상증자 대신 매각...",
+     "summary": "이 기사는 2026년 6월 12일 19:34 자본시장 나침반  '시그널(Signal)' 에 표출됐습니다. 시가 2조 원 상당의 고려아연 지분을 보유하고 있는 한화그룹이 유상증자 대신 지분 정리에 나서야 한다는 지적이 제기됐다. 한화솔루션은 최근 세 차",
+     "office": "서울경제",
+     "datetime": "202606150500",
+     "url": "https://n.news.naver.com/mnews/article/011/0004631020",
+     "sentiment": "악재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
    "theme_leader": false
   },
   {
@@ -337,8 +436,8 @@
      },
      {
       "date": "0616",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -268024,
+      "orgn": -81966
      }
     ]
    },
@@ -354,7 +453,7 @@
    ],
    "matched_events": [],
    "theme": "반도체",
-   "theme_leader": false
+   "theme_leader": true
   },
   {
    "code": "004310",
@@ -387,7 +486,7 @@
    "change_pct": 2.15,
    "high_pct": 25.0,
    "fade_pct": 91.4,
-   "value_eok": 2818,
+   "value_eok": 2819,
    "ma10": 6168.0,
    "ma10_margin_pct": 23.22,
    "spark": {
@@ -448,8 +547,8 @@
      },
      {
       "date": "0616",
-      "frgn": 0,
-      "orgn": 0
+      "frgn": -1371574,
+      "orgn": -1717
      }
     ]
    },
@@ -467,6 +566,104 @@
    ],
    "theme": "전쟁",
    "theme_leader": true
+  },
+  {
+   "code": "005930",
+   "name": "삼성전자",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "price": 343000.0,
+   "change_pct": 1.78,
+   "high_pct": 2.52,
+   "fade_pct": 29.4,
+   "value_eok": 56776,
+   "ma10": 326250.0,
+   "ma10_margin_pct": 5.13,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 2,
+    "today_buy": true,
+    "streak": 1,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -3840270,
+      "orgn": -2851841
+     },
+     {
+      "date": "0611",
+      "frgn": 549645,
+      "orgn": -5437840
+     },
+     {
+      "date": "0612",
+      "frgn": 2880306,
+      "orgn": 3295009
+     },
+     {
+      "date": "0615",
+      "frgn": -1828940,
+      "orgn": 531697
+     },
+     {
+      "date": "0616",
+      "frgn": -27451,
+      "orgn": 839299
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "삼성전자, 내년 갤럭시S27에 BOE OLED 적용 여부 불투명",
+     "summary": "삼성전자가 내년 초 출시할 갤럭시S27 시리즈용 유기발광다이오드(OLED)를 BOE에서 이원화 공급받을지 여부가 여전히 불투명한 것으로 16일 파악됐다. 삼성전자는 S27 시리즈 중 일반형 모델 OLED를 삼성디스플레이와 BOE에서 함께 공급받는...",
+     "office": "지디넷코리아",
+     "datetime": "202606161530",
+     "url": "https://n.news.naver.com/mnews/article/092/0002426850",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 102432,
+    "peak_high_pct": 13.38,
+    "ma20": 312925.0,
+    "ma20_margin_pct": 9.61,
+    "ivtr_net": 3321,
+    "ivtr_days": 4,
+    "ivtr_eok": 1062,
+    "cause_summary": "삼성전자, 내년 갤럭시S27에 BOE OLED 적용 여부 불투명",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
   },
   {
    "code": "035420",
@@ -513,11 +710,6 @@
     "streak": 0,
     "detail": [
      {
-      "date": "0609",
-      "frgn": -260772,
-      "orgn": -113937
-     },
-     {
       "date": "0610",
       "frgn": -41839,
       "orgn": -272647
@@ -536,6 +728,11 @@
       "date": "0615",
       "frgn": -69257,
       "orgn": -19191
+     },
+     {
+      "date": "0616",
+      "frgn": 22310,
+      "orgn": -158472
      }
     ]
    },
@@ -576,9 +773,9 @@
     "peak_high_pct": 17.41,
     "ma20": 231445.0,
     "ma20_margin_pct": 4.56,
-    "ivtr_net": 605116,
+    "ivtr_net": 561411,
     "ivtr_days": 4,
-    "ivtr_eok": 1657,
+    "ivtr_eok": 1551,
     "cause_summary": "저작권위 블로그, 네이버 메이트 IT·테크 분야 선정",
     "was_theme_leader": false
    },
@@ -629,11 +826,6 @@
     "streak": 0,
     "detail": [
      {
-      "date": "0609",
-      "frgn": 17665,
-      "orgn": -17955
-     },
-     {
       "date": "0610",
       "frgn": -45585,
       "orgn": 247
@@ -652,6 +844,11 @@
       "date": "0615",
       "frgn": 16165,
       "orgn": -155871
+     },
+     {
+      "date": "0616",
+      "frgn": -114422,
+      "orgn": -161177
      }
     ]
    },
@@ -665,98 +862,9 @@
     "peak_high_pct": 28.01,
     "ma20": 302550.0,
     "ma20_margin_pct": 8.58,
-    "ivtr_net": 1728583,
+    "ivtr_net": 1616368,
     "ivtr_days": 2,
-    "ivtr_eok": 6098,
-    "cause_summary": "",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "067310",
-   "name": "하나마이크론",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "price": 50100.0,
-   "change_pct": -1.57,
-   "high_pct": 4.91,
-   "fade_pct": 132.0,
-   "value_eok": 1337,
-   "ma10": 44985.0,
-   "ma10_margin_pct": 11.37,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": -216572,
-      "orgn": 442726
-     },
-     {
-      "date": "0610",
-      "frgn": -449097,
-      "orgn": 384143
-     },
-     {
-      "date": "0611",
-      "frgn": -410499,
-      "orgn": 476544
-     },
-     {
-      "date": "0612",
-      "frgn": -75575,
-      "orgn": 101782
-     },
-     {
-      "date": "0615",
-      "frgn": -181668,
-      "orgn": 77538
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260611",
-    "peak_value_eok": 2044,
-    "peak_high_pct": 17.59,
-    "ma20": 46115.0,
-    "ma20_margin_pct": 8.64,
-    "ivtr_net": 767669,
-    "ivtr_days": 6,
-    "ivtr_eok": 344,
+    "ivtr_eok": 5726,
     "cause_summary": "",
     "was_theme_leader": false
    },
