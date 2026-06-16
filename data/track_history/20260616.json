@@ -1,0 +1,45 @@
+{
+ "date": "20260616",
+ "tracks": {
+  "009150": {
+   "name": "삼성전기",
+   "entry": 2048000,
+   "verdict_score": 82,
+   "verdict_level": "매수 우위",
+   "ai_prob": 50,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "089030": {
+   "name": "테크윙",
+   "entry": 59900,
+   "verdict_score": 72,
+   "verdict_level": "매수 우위",
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "204320": {
+   "name": "HL만도",
+   "entry": 76900,
+   "verdict_score": 81,
+   "verdict_level": "관망·과열",
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "279570": {
+   "name": "케이뱅크",
+   "entry": 6880,
+   "verdict_score": 75,
+   "verdict_level": "관망·과열",
+   "ai_prob": 51,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  }
+ }
+}
