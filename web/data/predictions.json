@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-16 13:07 KST",
+  "as_of": "2026-06-16 13:22 KST",
   "intraday_rank": [
     {
       "ticker": "신세계",
       "code": "004170",
       "tomorrow_up_prob": "78%",
-      "entry": 771000.0,
-      "target": 809550,
-      "stop": 747870,
+      "entry": 773000.0,
+      "target": 811650,
+      "stop": 749810,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.95)",
         "정배열",
         "MACD강세"
       ],
@@ -49,14 +49,14 @@
       "ticker": "포스코인터내셔널",
       "code": "047050",
       "tomorrow_up_prob": "76%",
-      "entry": 65300.0,
-      "target": 68565,
-      "stop": 63341,
+      "entry": 65900.0,
+      "target": 69195,
+      "stop": 63923,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI50.1 강세",
-        "거래량1.94배"
+        "강세마감(1.0)",
+        "RSI51.2 강세",
+        "거래량2.02배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -82,16 +82,60 @@
       ]
     },
     {
+      "ticker": "현대약품",
+      "code": "004310",
+      "tomorrow_up_prob": "72%",
+      "entry": 8520.0,
+      "target": 8946,
+      "stop": 8264,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.7)",
+        "RSI65.8 강세",
+        "거래량15.61배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295775",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[속보] 현대약품 VI 수차례 발동, 주가 껑충…장중 17%대 급등",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582335",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "현대약품 주가, 힘찬 괴성... 호재는?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163939",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한..."
+    },
+    {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 243000.0,
-      "target": 255150,
-      "stop": 235710,
+      "entry": 243750.0,
+      "target": 255938,
+      "stop": 236438,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI53.7 강세",
+        "RSI53.9 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
@@ -112,61 +156,17 @@
       ]
     },
     {
-      "ticker": "현대약품",
-      "code": "004310",
-      "tomorrow_up_prob": "71%",
-      "entry": 9020.0,
-      "target": 9471,
-      "stop": 8749,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.89)",
-        "RSI68.9 강세",
-        "거래량15.32배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295775",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "현대약품·TS트릴리온, '탈모 건보 적용' 추진에 상한가 직행[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061511280777609",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[속보] 현대약품 VI 수차례 발동, 주가 껑충…장중 17%대 급등",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582335",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한..."
-    },
-    {
       "ticker": "한화에어로스페이스",
       "code": "012450",
       "tomorrow_up_prob": "71%",
-      "entry": 1188000.0,
-      "target": 1247400,
-      "stop": 1152360,
+      "entry": 1196000.0,
+      "target": 1255800,
+      "stop": 1160120,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.82)",
         "MACD강세",
-        "RSI51.6 강세"
+        "RSI52.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -183,13 +183,13 @@
       "ticker": "DL이앤씨",
       "code": "375500",
       "tomorrow_up_prob": "69%",
-      "entry": 89200.0,
-      "target": 93660,
-      "stop": 86524,
+      "entry": 88900.0,
+      "target": 93345,
+      "stop": 86233,
       "confidence": "중",
       "reasons": [
-        "RSI63.2 강세",
-        "거래량3.39배",
+        "RSI62.9 강세",
+        "거래량3.42배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -227,14 +227,14 @@
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "68%",
-      "entry": 55850.0,
-      "target": 58642,
-      "stop": 54174,
+      "entry": 56000.0,
+      "target": 58800,
+      "stop": 54320,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.89)",
-        "RSI64.6 강세",
-        "거래량5.58배"
+        "강세마감(0.9)",
+        "RSI64.7 강세",
+        "거래량5.83배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -252,8 +252,8 @@
           "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582057",
           "office": "cbci",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
         },
         {
           "title": "\"북미 전력시장 뚫었다\"…SK이터닉스, 대규모 ESS 가동에 주가 '활짝'",
@@ -268,46 +268,16 @@
       "cause_summary": "SK이터닉스 주가, 연일 급등세... 무슨 회사길래?"
     },
     {
-      "ticker": "LIG디펜스앤에어로스페이스",
-      "code": "079550",
-      "tomorrow_up_prob": "67%",
-      "entry": 1000000.0,
-      "target": 1050000,
-      "stop": 970000,
-      "confidence": "중",
-      "reasons": [
-        "RSI66.1 강세",
-        "거래량3.12배",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "[특징주] LIG디펜스, 독일 기업과 유럽 시장 공략 소식에 급등",
-          "url": "https://n.news.naver.com/mnews/article/001/0016141142",
-          "office": "연합뉴스",
-          "sentiment": "호재"
-        },
-        {
-          "title": "&quot;종전은 오히려 기회&quot;…LIG디펜스앤에어로 상한가 터치[핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009005659",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "OCI홀딩스",
       "code": "010060",
-      "tomorrow_up_prob": "67%",
-      "entry": 307500.0,
-      "target": 322875,
-      "stop": 298275,
+      "tomorrow_up_prob": "68%",
+      "entry": 309000.0,
+      "target": 324450,
+      "stop": 299730,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.81)",
-        "RSI51.0 강세",
+        "강세마감(0.85)",
+        "RSI51.3 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -334,35 +304,137 @@
       "cause_summary": "OCI홀딩스 주가, 6월 16일 장중 303,000원 7.07% 상승"
     },
     {
-      "ticker": "이오테크닉스",
-      "code": "039030",
-      "tomorrow_up_prob": "64%",
-      "entry": 498000.0,
-      "target": 522900,
-      "stop": 483060,
+      "ticker": "LIG디펜스앤에어로스페이스",
+      "code": "079550",
+      "tomorrow_up_prob": "67%",
+      "entry": 1002000.0,
+      "target": 1052100,
+      "stop": 971940,
+      "confidence": "중",
+      "reasons": [
+        "RSI66.2 강세",
+        "거래량3.17배",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[특징주] LIG디펜스, 독일 기업과 유럽 시장 공략 소식에 급등",
+          "url": "https://n.news.naver.com/mnews/article/001/0016141142",
+          "office": "연합뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "&quot;종전은 오히려 기회&quot;…LIG디펜스앤에어로 상한가 터치[핫종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009005659",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "씨에스윈드",
+      "code": "112610",
+      "tomorrow_up_prob": "66%",
+      "entry": 54000.0,
+      "target": 56700,
+      "stop": 52380,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
+        "RSI57.9 강세",
+        "거래량3.84배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 씨에스윈드, 트럼프 美 풍력개발 금지 행정명령 폐지에 급등…...",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=709920",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 씨에스윈드, 트럼프 美 풍력개발 금지 행정명령 폐지에 급등…..."
+    },
+    {
+      "ticker": "SK오션플랜트",
+      "code": "100090",
+      "tomorrow_up_prob": "66%",
+      "entry": 19460.0,
+      "target": 20433,
+      "stop": 18876,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.77)",
+        "RSI55.5 강세",
+        "거래량2.29배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "美해군 MRO 뛰어드는 K조선…중소사까지 가세",
+          "url": "https://n.news.naver.com/mnews/article/009/0005692603",
+          "office": "매일경제",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "하나마이크론",
+      "code": "067310",
+      "tomorrow_up_prob": "62%",
+      "entry": 49550.0,
+      "target": 52028,
+      "stop": 48064,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.2 강세"
+        "RSI57.5 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -5.65
+      "day_change": -2.06,
+      "cause_news": [
+        {
+          "title": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑",
+          "url": "http://www.newsdream.kr/news/articleView.html?idxno=112761",
+          "office": "newsdream",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주]하나마이크론, 깜짝 실적 발표에 장중 사상 최고가 경신",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=294039",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
     },
     {
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "62%",
-      "entry": 32600.0,
-      "target": 34230,
-      "stop": 31622,
+      "entry": 32250.0,
+      "target": 33862,
+      "stop": 31282,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI81.1 과매수, Stoch 과매수",
+      "risk": "RSI80.8 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -381,17 +453,17 @@
       "ticker": "퍼스텍",
       "code": "010820",
       "tomorrow_up_prob": "58%",
-      "entry": 8990.0,
-      "target": 9440,
-      "stop": 8720,
+      "entry": 8830.0,
+      "target": 9272,
+      "stop": 8565,
       "confidence": "중",
       "reasons": [
-        "거래량5.91배",
+        "거래량6.03배",
         "호재",
-        "장중 17회 지속"
+        "장중 18회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": null,
+      "day_change": 9.94,
       "cause_news": [
         {
           "title": "방산·건설·항공주 강세…퍼스텍·상지건설 上 이탈에 투자자 관심 집...",
@@ -406,80 +478,9 @@
       "cause_summary": "방산·건설·항공주 강세…퍼스텍·상지건설 上 이탈에 투자자 관심 집..."
     },
     {
-      "ticker": "한화시스템",
-      "code": "272210",
-      "tomorrow_up_prob": "55%",
-      "entry": 105800.0,
-      "target": 111090,
-      "stop": 102626,
-      "confidence": "중",
-      "reasons": [
-        "RSI52.1 강세",
-        "거래량2.02배",
-        "장중 15회 지속"
-      ],
-      "risk": "약한 마감",
-      "day_change": 6.33,
-      "cause_news": [
-        {
-          "title": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3609522",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 인과표현, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승"
-    },
-    {
-      "ticker": "광전자",
-      "code": "017900",
-      "tomorrow_up_prob": "55%",
-      "entry": 10310.0,
-      "target": 10826,
-      "stop": 10001,
-      "confidence": "중",
-      "reasons": [
-        "RSI51.4 강세",
-        "장중 17회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582269",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "광통신·광반도체 관련주 강세…빛과전자 서울반도체 광전자 주목 AI 인...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581995",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
-        },
-        {
-          "title": "마이크로 LED 국산화 주도…광전자, 독보적 기술력으로 시장 정조준",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460473",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리..."
-    },
-    {
       "ticker": "한화솔루션",
       "code": "009830",
-      "tomorrow_up_prob": "55%",
+      "tomorrow_up_prob": "56%",
       "entry": 42500.0,
       "target": 44625,
       "stop": 41225,
@@ -521,19 +522,126 @@
       "cause_summary": "[특징주] 금호석유·한화솔루션·S-Oil 등 \"2026년 하반기 업사이클 진입..."
     },
     {
+      "ticker": "한화시스템",
+      "code": "272210",
+      "tomorrow_up_prob": "55%",
+      "entry": 106600.0,
+      "target": 111930,
+      "stop": 103402,
+      "confidence": "중",
+      "reasons": [
+        "RSI52.8 강세",
+        "거래량2.05배",
+        "장중 16회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": 7.24,
+      "cause_news": [
+        {
+          "title": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3609522",
+          "office": "gukjenews",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 인과표현, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "'미국-이란 종전 협상' 한화시스템 주가 6% 상승"
+    },
+    {
+      "ticker": "광전자",
+      "code": "017900",
+      "tomorrow_up_prob": "55%",
+      "entry": 10270.0,
+      "target": 10784,
+      "stop": 9962,
+      "confidence": "중",
+      "reasons": [
+        "RSI51.2 강세",
+        "장중 18회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582269",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "광통신·광반도체 관련주 강세…빛과전자 서울반도체 광전자 주목 AI 인...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581995",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
+        },
+        {
+          "title": "마이크로 LED 국산화 주도…광전자, 독보적 기술력으로 시장 정조준",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460473",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[속보] 광전자 VI 잇따라 발동, 주가 20%대 급등흐름…장초반 투자심리..."
+    },
+    {
+      "ticker": "빛과전자",
+      "code": "069540",
+      "tomorrow_up_prob": "53%",
+      "entry": 3620.0,
+      "target": 3801,
+      "stop": 3511,
+      "confidence": "하",
+      "reasons": [
+        "Stoch골든",
+        "호재",
+        "장중 3회 지속"
+      ],
+      "risk": "약한 마감",
+      "day_change": 6.44,
+      "cause_news": [
+        {
+          "title": "광통신·광반도체 관련주 강세…빛과전자 서울반도체 광전자 주목 AI 인...",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581995",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락"
+        },
+        {
+          "title": "AI 데이터센터 전력난 해결사… 빛과전자, 고효율 광모듈 수요 폭증",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460472",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "광통신·광반도체 관련주 강세…빛과전자 서울반도체 광전자 주목 AI 인..."
+    },
+    {
       "ticker": "한미반도체",
       "code": "042700",
       "tomorrow_up_prob": "51%",
-      "entry": 333000.0,
-      "target": 349650,
-      "stop": 323010,
+      "entry": 332500.0,
+      "target": 349125,
+      "stop": 322525,
       "confidence": "하",
       "reasons": [
-        "RSI53.5 강세",
-        "장중 17회 지속"
+        "RSI53.4 강세",
+        "장중 18회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -3.89,
+      "day_change": -4.32,
       "cause_news": [
         {
           "title": "[특징주] 한미반도체, 스페이스X에 500억원 투자… 주가 급등",
@@ -542,14 +650,6 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[12일 특징주] 스페이스X 주식 취득에…한미반도체 24% '껑충'",
-          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=843742",
-          "office": "newsworks",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         },
         {
           "title": "한미반도체, ‘스페이스X’ 올라타자마자 130억 평가익",
@@ -613,12 +713,12 @@
       "ticker": "신세계",
       "code": "004170",
       "tomorrow_up_prob": "78%",
-      "entry": 771000.0,
-      "target": 809550,
-      "stop": 747870,
+      "entry": 773000.0,
+      "target": 811650,
+      "stop": 749810,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
+        "강세마감(0.95)",
         "정배열",
         "MACD강세"
       ],
@@ -657,14 +757,14 @@
       "ticker": "포스코인터내셔널",
       "code": "047050",
       "tomorrow_up_prob": "76%",
-      "entry": 65300.0,
-      "target": 68565,
-      "stop": 63341,
+      "entry": 65900.0,
+      "target": 69195,
+      "stop": 63923,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI50.1 강세",
-        "거래량1.94배"
+        "강세마감(1.0)",
+        "RSI51.2 강세",
+        "거래량2.02배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -690,16 +790,60 @@
       ]
     },
     {
+      "ticker": "현대약품",
+      "code": "004310",
+      "tomorrow_up_prob": "72%",
+      "entry": 8520.0,
+      "target": 8946,
+      "stop": 8264,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.7)",
+        "RSI65.8 강세",
+        "거래량15.61배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295775",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[속보] 현대약품 VI 수차례 발동, 주가 껑충…장중 17%대 급등",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582335",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "현대약품 주가, 힘찬 괴성... 호재는?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163939",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한..."
+    },
+    {
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 243000.0,
-      "target": 255150,
-      "stop": 235710,
+      "entry": 243750.0,
+      "target": 255938,
+      "stop": 236438,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI53.7 강세",
+        "RSI53.9 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
@@ -720,61 +864,17 @@
       ]
     },
     {
-      "ticker": "현대약품",
-      "code": "004310",
-      "tomorrow_up_prob": "71%",
-      "entry": 9020.0,
-      "target": 9471,
-      "stop": 8749,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.89)",
-        "RSI68.9 강세",
-        "거래량15.32배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295775",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "현대약품·TS트릴리온, '탈모 건보 적용' 추진에 상한가 직행[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061511280777609",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[속보] 현대약품 VI 수차례 발동, 주가 껑충…장중 17%대 급등",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582335",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한..."
-    },
-    {
       "ticker": "한화에어로스페이스",
       "code": "012450",
       "tomorrow_up_prob": "71%",
-      "entry": 1188000.0,
-      "target": 1247400,
-      "stop": 1152360,
+      "entry": 1196000.0,
+      "target": 1255800,
+      "stop": 1160120,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.82)",
         "MACD강세",
-        "RSI51.6 강세"
+        "RSI52.4 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,

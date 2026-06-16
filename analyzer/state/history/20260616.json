@@ -1,44 +1,44 @@
 {
   "date": "20260616",
-  "as_of": "2026-06-16 13:07 KST",
+  "as_of": "2026-06-16 13:22 KST",
   "bets": [
     {
       "code": "004170",
       "ticker": "신세계",
-      "entry": 771000.0,
-      "target": 809550,
+      "entry": 773000.0,
+      "target": 811650,
       "raw": 78,
       "prob": "78%"
     },
     {
       "code": "047050",
       "ticker": "포스코인터내셔널",
-      "entry": 65300.0,
-      "target": 68565,
+      "entry": 65900.0,
+      "target": 69195,
       "raw": 76,
       "prob": "76%"
     },
     {
-      "code": "035420",
-      "ticker": "NAVER",
-      "entry": 243000.0,
-      "target": 255150,
-      "raw": 71,
-      "prob": "71%"
-    },
-    {
       "code": "004310",
       "ticker": "현대약품",
-      "entry": 9020.0,
-      "target": 9471,
+      "entry": 8520.0,
+      "target": 8946,
+      "raw": 72,
+      "prob": "72%"
+    },
+    {
+      "code": "035420",
+      "ticker": "NAVER",
+      "entry": 243750.0,
+      "target": 255938,
       "raw": 71,
       "prob": "71%"
     },
     {
       "code": "012450",
       "ticker": "한화에어로스페이스",
-      "entry": 1188000.0,
-      "target": 1247400,
+      "entry": 1196000.0,
+      "target": 1255800,
       "raw": 71,
       "prob": "71%"
     }
