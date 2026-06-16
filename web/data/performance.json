@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-15 17:21 KST",
+ "as_of": "2026-06-16 17:22 KST",
  "summary": {
-  "n": 8,
-  "hit_rate": 62.5,
-  "avg_return": 1.21,
-  "high3_rate": 100,
-  "tracking_days": 5,
+  "n": 10,
+  "hit_rate": 60.0,
+  "avg_return": 0.68,
+  "high3_rate": 90,
+  "tracking_days": 6,
   "dropout": {
    "n": 3,
    "hit_rate": 66.7
@@ -46,11 +46,19 @@
   },
   {
    "date": "20260615",
+   "n": 2,
+   "hits": 1,
+   "hit_rate": 50,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260616",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
-   "cum_n": 8,
-   "cum_hit_rate": 62.5
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
   }
  ],
  "bins": [
@@ -64,7 +72,7 @@
   {
    "lo": 60,
    "hi": 75,
-   "n": 2,
+   "n": 4,
    "actual_rate": 50,
    "valid": false
   },
@@ -79,10 +87,10 @@
  "by_pattern": [
   {
    "key": "fade",
-   "n": 3,
-   "hit_rate": 66.7,
-   "avg_return": 1.21,
-   "high3_rate": 100.0
+   "n": 5,
+   "hit_rate": 60.0,
+   "avg_return": 0.15,
+   "high3_rate": 80.0
   },
   {
    "key": "unknown",
@@ -103,17 +111,17 @@
   },
   {
    "key": "기계·장비",
-   "n": 3,
-   "hit_rate": 33.3,
-   "avg_return": -0.08,
-   "high3_rate": 100.0,
+   "n": 4,
+   "hit_rate": 25.0,
+   "avg_return": -3.0,
+   "high3_rate": 75.0,
    "valid": false
   },
   {
    "key": "운송장비·부품",
-   "n": 1,
+   "n": 2,
    "hit_rate": 100.0,
-   "avg_return": 6.18,
+   "avg_return": 7.55,
    "high3_rate": 100.0,
    "valid": false
   },
@@ -134,43 +142,60 @@
    "avg_return": 1.21,
    "high3_rate": 100.0,
    "valid": false
+  },
+  {
+   "key": "반도체",
+   "n": 2,
+   "hit_rate": 50.0,
+   "avg_return": -1.43,
+   "high3_rate": 50.0,
+   "valid": false,
+   "leader_name": "HL만도",
+   "leader_count": 1
   }
  ],
  "by_ai_verdict": [
   {
    "key": "none",
-   "n": 8,
-   "hit_rate": 62.5,
-   "avg_return": 1.21,
-   "high3_rate": 100.0
+   "n": 10,
+   "hit_rate": 60.0,
+   "avg_return": 0.68,
+   "high3_rate": 90.0
   }
  ],
  "ai": {
-  "n": 3,
+  "n": 5,
   "by_direction": [
    {
     "key": "관망",
-    "n": 3,
-    "hit_rate": 66.7,
-    "avg_return": 1.21,
+    "n": 4,
+    "hit_rate": 75.0,
+    "avg_return": 3.13,
     "high3_rate": 100.0
+   },
+   {
+    "key": "하락",
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -11.78,
+    "high3_rate": 0.0
    }
   ],
   "prob_bands": [
    {
     "lo": 0,
     "hi": 43,
-    "n": 0,
-    "avg_prob": null,
-    "actual_rate": null,
+    "n": 1,
+    "avg_prob": 41.0,
+    "actual_rate": 0,
     "valid": false
    },
    {
     "lo": 43,
     "hi": 58,
-    "n": 3,
-    "avg_prob": 43.0,
-    "actual_rate": 67,
+    "n": 4,
+    "avg_prob": 46.2,
+    "actual_rate": 75,
     "valid": false
    },
    {
@@ -182,9 +207,9 @@
     "valid": false
    }
   ],
-  "avg_prob": 43.0,
-  "actual_rate": 66.7,
-  "brier": 0.278,
+  "avg_prob": 45.2,
+  "actual_rate": 60.0,
+  "brier": 0.239,
   "divergence": {
    "rule_buy_min": 62,
    "ai_up_min": 58,
@@ -204,9 +229,9 @@
      "key": "룰만 강세 (룰 매수 + AI 비상승)",
      "rule_buy": true,
      "ai_up": false,
-     "n": 3,
-     "hit_rate": 66.7,
-     "avg_return": 1.21,
+     "n": 5,
+     "hit_rate": 60.0,
+     "avg_return": 0.15,
      "valid": false
     },
     {
@@ -238,10 +263,10 @@
    {
     "spark_bucket": "<10x",
     "flow_buy": true,
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "high3_rate": null,
+    "n": 1,
+    "hit_rate": 100.0,
+    "avg_return": 8.92,
+    "high3_rate": 100.0,
     "valid": false
    },
    {
@@ -265,10 +290,10 @@
    {
     "spark_bucket": "10~40x",
     "flow_buy": false,
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "high3_rate": null,
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -11.78,
+    "high3_rate": 0.0,
     "valid": false
    },
    {
@@ -293,10 +318,10 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 0,
-   "hit_rate": null,
-   "avg_return": null,
-   "high3_rate": null
+   "n": 5,
+   "hit_rate": 20.0,
+   "avg_return": -3.09,
+   "high3_rate": 80.0
   }
  },
  "weights": {
@@ -320,6 +345,20 @@
   "history": []
  },
  "recent": [
+  {
+   "date": "20260615",
+   "name": "HL만도",
+   "score": 66,
+   "hit": true,
+   "return_pct": 8.92
+  },
+  {
+   "date": "20260615",
+   "name": "테크윙",
+   "score": 66,
+   "hit": false,
+   "return_pct": -11.78
+  },
   {
    "date": "20260612",
    "name": "테크윙",

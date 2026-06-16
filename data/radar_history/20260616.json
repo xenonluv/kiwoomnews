@@ -223,7 +223,16 @@
    "first_seen": "2026-06-16 11:16:03 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 32,
+    "model_prob": 35,
+    "direction": "하락",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-16 17:20 KST",
+    "verdict_score": null,
+    "verdict_level": null
+   }
   },
   "067310": {
    "name": "하나마이크론",
@@ -310,7 +319,16 @@
    "first_seen": "2026-06-16 12:16:05 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 36,
+    "model_prob": 25,
+    "direction": "하락",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-16 17:21 KST",
+    "verdict_score": 53,
+    "verdict_level": "중립"
+   }
   },
   "069540": {
    "name": "빛과전자",
@@ -386,7 +404,16 @@
    "first_seen": "2026-06-16 13:45:55 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 38,
+    "model_prob": 35,
+    "direction": "하락",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-16 17:21 KST",
+    "verdict_score": 52,
+    "verdict_level": "중립"
+   }
   },
   "009830": {
    "name": "한화솔루션",
@@ -423,7 +450,16 @@
    "first_seen": "2026-06-16 14:46:21 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 34,
+    "model_prob": 35,
+    "direction": "하락",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-16 17:22 KST",
+    "verdict_score": 60,
+    "verdict_level": "중립"
+   }
   },
   "067290": {
    "name": "JW신약",
