@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-16 15:16:20 KST",
- "market_session": "open",
+ "generated_at": "2026-06-16 15:31:07 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 38,
+ "universe_count": 40,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -69,7 +69,7 @@
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.6,
+    "fade": 9.8,
     "ma10": 10.0,
     "flow": 2.0,
     "event": 8.2
@@ -78,18 +78,18 @@
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.6,
+    "fade": 9.8,
     "ma10": 10.0,
     "flow": 2,
     "event": 8.2
    },
-   "price": 8820.0,
-   "change_pct": 9.57,
+   "price": 8840.0,
+   "change_pct": 9.81,
    "high_pct": 29.94,
-   "fade_pct": 68.0,
-   "value_eok": 1127,
-   "ma10": 8017.0,
-   "ma10_margin_pct": 10.02,
+   "fade_pct": 67.2,
+   "value_eok": 1137,
+   "ma10": 8019.0,
+   "ma10_margin_pct": 10.24,
    "spark": {
     "clusters": [
      {
@@ -112,13 +112,13 @@
      },
      {
       "time": "09:13",
-      "vol_x": 58.7,
+      "vol_x": 58.6,
       "pct": 3.46,
       "minutes": 1
      },
      {
       "time": "10:07",
-      "vol_x": 114.2,
+      "vol_x": 114.1,
       "pct": -2.29,
       "minutes": 1
      },
@@ -142,7 +142,7 @@
      }
     ]
    },
-   "spark_max_x": 114.2,
+   "spark_max_x": 114.1,
    "spark_max_pct": -2.29,
    "mega_flow": false,
    "flow": {
@@ -207,19 +207,6 @@
     }
    ],
    "theme": "전쟁",
-   "ai_verdict": {
-    "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "고점 대비 68% 급락 후 9.57% 반등했으나, 외국인 4거래일 중 3일 매도 우위, 기관도 4일 중 3일 매도, 10:07 이후 거래량 급감 및 음봉 클러스터로 상승 동력 약화, FOMC D-1 리스크 존재.",
-    "risk_flags": [
-     "외국인·기관 동시 매도 우위",
-     "FOMC D-1 변동성",
-     "10:07 이후 거래량 붕괴"
-    ],
-    "manual_check": "오후 장 종료 30분 전 외국인/기관 순매수 여부 및 8,500원 지지선 유지 확인",
-    "model": "kimi-k2.6"
-   },
    "theme_leader": false
   },
   {
@@ -230,91 +217,97 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 52,
+   "suspicion_score": 53,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 2.2,
-    "ma10": 3.0,
+    "fade": 2.5,
+    "ma10": 3.3,
     "flow": 2.0,
     "event": 0.0
    },
-   "score_raw": 52,
+   "score_raw": 53,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 2.2,
-    "ma10": 3.0,
+    "fade": 2.5,
+    "ma10": 3.3,
     "flow": 2,
     "event": 0.0
    },
-   "price": 25500.0,
-   "change_pct": 1.59,
+   "price": 25550.0,
+   "change_pct": 1.79,
    "high_pct": 21.31,
-   "fade_pct": 92.5,
-   "value_eok": 2911,
-   "ma10": 24897.0,
-   "ma10_margin_pct": 2.42,
+   "fade_pct": 91.6,
+   "value_eok": 2926,
+   "ma10": 24902.0,
+   "ma10_margin_pct": 2.6,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 41.7,
+      "vol_x": 42.2,
       "pct": 5.44,
       "minutes": 2
      },
      {
       "time": "09:06",
-      "vol_x": 45.5,
+      "vol_x": 46.1,
       "pct": 3.62,
       "minutes": 2
      },
      {
       "time": "09:10",
-      "vol_x": 20.9,
+      "vol_x": 21.1,
       "pct": -3.75,
       "minutes": 2
      },
      {
       "time": "09:14",
-      "vol_x": 12.9,
+      "vol_x": 13.1,
       "pct": 3.37,
       "minutes": 1
      },
      {
       "time": "09:16",
-      "vol_x": 11.8,
+      "vol_x": 11.9,
       "pct": 1.22,
       "minutes": 1
      },
      {
+      "time": "09:21",
+      "vol_x": 8.0,
+      "pct": -1.07,
+      "minutes": 1
+     },
+     {
       "time": "10:08",
-      "vol_x": 28.6,
+      "vol_x": 29.0,
       "pct": 4.52,
       "minutes": 2
      },
      {
       "time": "10:11",
-      "vol_x": 15.1,
+      "vol_x": 15.3,
       "pct": -4.84,
       "minutes": 2
      },
      {
       "time": "10:14",
-      "vol_x": 9.0,
+      "vol_x": 9.1,
       "pct": -1.22,
       "minutes": 1
      },
      {
       "time": "14:22",
-      "vol_x": 8.8,
+      "vol_x": 8.9,
       "pct": 2.1,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 45.5,
+   "spark_max_x": 46.1,
    "spark_max_pct": 3.62,
    "mega_flow": false,
    "flow": {
@@ -361,19 +354,6 @@
    ],
    "matched_events": [],
    "theme": "반도체",
-   "ai_verdict": {
-    "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "고점 대비 92.5% 급락(fade) 속에서도 종가가 10일선 위 2.42% 유지하고 21.31% 고점 대비 회복했으나, 기관 6일 연속 매도(최근 -280711/-13328/-15899)와 외국인 불안정 수급, 그리고 최대주주 지분 보호예수 해제라는 구조적 악재가 맞물려 저가 방어가 실제 흡수인지 확인이 필요함.",
-    "risk_flags": [
-     "기관 연속 대량 매도",
-     "보호예수 해제 뉴스",
-     "외국인 수급 불안정"
-    ],
-    "manual_check": "보호예수 해제 지분의 실제 매도 물량이 시장에 출회되고 있는지 호가창/대량체결 확인",
-    "model": "kimi-k2.6"
-   },
    "theme_leader": false
   },
   {
@@ -389,7 +369,7 @@
    "score_breakdown": {
     "base": 30,
     "spark": 1.6,
-    "fade": 2.3,
+    "fade": 2.6,
     "ma10": 10.0,
     "flow": 2.0,
     "event": 2.7
@@ -398,18 +378,18 @@
    "score_breakdown_raw": {
     "base": 30,
     "spark": 1.6,
-    "fade": 2.3,
+    "fade": 2.6,
     "ma10": 10.0,
     "flow": 2,
     "event": 2.7
    },
-   "price": 7580.0,
-   "change_pct": 1.88,
+   "price": 7600.0,
+   "change_pct": 2.15,
    "high_pct": 25.0,
-   "fade_pct": 92.5,
-   "value_eok": 2791,
-   "ma10": 6166.0,
-   "ma10_margin_pct": 22.93,
+   "fade_pct": 91.4,
+   "value_eok": 2818,
+   "ma10": 6168.0,
+   "ma10_margin_pct": 23.22,
    "spark": {
     "clusters": [
      {
@@ -486,19 +466,6 @@
     }
    ],
    "theme": "전쟁",
-   "ai_verdict": {
-    "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "고점 대비 92.5% 폭락 후 소폭 반등(1.88%)이나, 외국인 6/15 대량 순매도(-12.2만주)와 기관 동반 이탈, 뉴스 부재 상태에서 저점 방어 흔적(shake 없음)과 수급 회복이 미흡함.",
-    "risk_flags": [
-     "외국인 대량 순매도 후 미회복",
-     "뉴스 공백으로 악재/호재 불명",
-     "고점 대비 90% 이상 폭락 후 저가 방어 미확인"
-    ],
-    "manual_check": "6/16 장중 분봉상 저가대(7,500원대)에서 매도 물량 소화 후 반등하는지, 아니면 종가 약세로 마감하는지 확인",
-    "model": "kimi-k2.6"
-   },
    "theme_leader": true
   },
   {
@@ -527,13 +494,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 241500.0,
-   "change_pct": -2.62,
+   "price": 242000.0,
+   "change_pct": -2.42,
    "high_pct": 7.06,
-   "fade_pct": 137.1,
-   "value_eok": 5963,
-   "ma10": 252700.0,
-   "ma10_margin_pct": -4.43,
+   "fade_pct": 134.3,
+   "value_eok": 6175,
+   "ma10": 252750.0,
+   "ma10_margin_pct": -4.25,
    "spark": {
     "clusters": []
    },
@@ -601,14 +568,14 @@
      "score": 2.7
     }
    ],
-   "theme": "금리",
+   "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231420.0,
-    "ma20_margin_pct": 4.36,
+    "ma20": 231445.0,
+    "ma20_margin_pct": 4.56,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
@@ -643,13 +610,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 328000.0,
-   "change_pct": -5.48,
+   "price": 328500.0,
+   "change_pct": -5.33,
    "high_pct": 4.61,
-   "fade_pct": 218.8,
-   "value_eok": 3488,
-   "ma10": 298950.0,
-   "ma10_margin_pct": 9.72,
+   "fade_pct": 215.6,
+   "value_eok": 3642,
+   "ma10": 299000.0,
+   "ma10_margin_pct": 9.87,
    "spark": {
     "clusters": []
    },
@@ -696,8 +663,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302525.0,
-    "ma20_margin_pct": 8.42,
+    "ma20": 302550.0,
+    "ma20_margin_pct": 8.58,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
@@ -736,7 +703,7 @@
    "change_pct": -1.57,
    "high_pct": 4.91,
    "fade_pct": 132.0,
-   "value_eok": 1316,
+   "value_eok": 1337,
    "ma10": 44985.0,
    "ma10_margin_pct": 11.37,
    "spark": {
