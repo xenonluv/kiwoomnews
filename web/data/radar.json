@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-15 15:45:49 KST",
- "market_session": "closed",
+ "generated_at": "2026-06-16 09:01:12 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "min_value_eok": 700,
@@ -40,12 +40,12 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 29,
+ "universe_count": 39,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
    "date": "2026-06-17",
-   "dday": 2,
+   "dday": 1,
    "title": "FOMC 금리 결정 (6월)",
    "category": [
     "금리"
@@ -56,245 +56,6 @@
   }
  ],
  "suspects": [
-  {
-   "code": "204320",
-   "name": "HL만도",
-   "sector": "운송장비·부품",
-   "pattern": "fade",
-   "prime": true,
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 66,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 0.6,
-    "fade": 14.5,
-    "ma10": 10.0,
-    "flow": 11.0,
-    "event": 0.0
-   },
-   "score_raw": 66,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 0.6,
-    "fade": 14.5,
-    "ma10": 10.0,
-    "flow": 11,
-    "event": 0.0
-   },
-   "price": 70600.0,
-   "change_pct": 8.62,
-   "high_pct": 17.85,
-   "fade_pct": 51.7,
-   "value_eok": 5331,
-   "ma10": 57310.0,
-   "ma10_margin_pct": 23.19,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:21",
-      "vol_x": 8.9,
-      "pct": 1.05,
-      "minutes": 1
-     },
-     {
-      "time": "10:15",
-      "vol_x": 8.5,
-      "pct": 0.86,
-      "minutes": 1
-     }
-    ]
-   },
-   "spark_max_x": 8.9,
-   "spark_max_pct": 1.05,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 2,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": 47455,
-      "orgn": -19001
-     },
-     {
-      "date": "0610",
-      "frgn": 4151,
-      "orgn": -33945
-     },
-     {
-      "date": "0611",
-      "frgn": 82498,
-      "orgn": -86968
-     },
-     {
-      "date": "0612",
-      "frgn": 289058,
-      "orgn": -7568
-     },
-     {
-      "date": "0615",
-      "frgn": 556479,
-      "orgn": 189698
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "&quot;HL만도, 로봇 관절 핵심 공급사&quot;",
-     "summary": "글로벌 투자은행(IB) 골드만삭스가 로봇 공급망 분야에서 한국이 일본 등을 제치고 핵심 국가로 떠오를 것으로 전망했다. 그러면서 HL만도를 휴머노이드 시대의 핵심 액추에이터 공급 업체로 평가했다. 12일 HL만도는 유가증권시장에서 전일보다 30.0..",
-     "office": "한국경제",
-     "datetime": "202606121736",
-     "url": "https://n.news.naver.com/mnews/article/015/0005298186",
-     "sentiment": "호재"
-    },
-    {
-     "title": "HL만도, 피지컬 AI 수혜 기대감 상한가…로봇주 강세[핫종목]",
-     "summary": "자동차 부품 기업인 HL만도(204320)가 12일 장중 상한가를 기록했다. 현대차(005380)를 비롯한 피지컬 인공지능(AI) 수혜주도 동반 강세다. 이날 오전 9시 44분 HL만도는 전일 대비 1만 5000원(30.00%) 오른 6만 5000원에",
-     "office": "뉴스1",
-     "datetime": "202606120959",
-     "url": "https://n.news.naver.com/mnews/article/421/0008999964",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "반도체",
-   "theme_leader": true
-  },
-  {
-   "code": "089030",
-   "name": "테크윙",
-   "sector": "기계·장비",
-   "pattern": "fade",
-   "prime": true,
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 66,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 11.2,
-    "fade": 9.0,
-    "ma10": 10.0,
-    "flow": 6.0,
-    "event": 0.0
-   },
-   "score_raw": 66,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 11.2,
-    "fade": 9.0,
-    "ma10": 10.0,
-    "flow": 6,
-    "event": 0.0
-   },
-   "price": 67900.0,
-   "change_pct": 3.98,
-   "high_pct": 13.32,
-   "fade_pct": 70.1,
-   "value_eok": 4861,
-   "ma10": 56745.0,
-   "ma10_margin_pct": 19.66,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:01",
-      "vol_x": 23.0,
-      "pct": 4.38,
-      "minutes": 3
-     },
-     {
-      "time": "09:06",
-      "vol_x": 25.9,
-      "pct": 0.99,
-      "minutes": 1
-     },
-     {
-      "time": "09:08",
-      "vol_x": 25.3,
-      "pct": 2.92,
-      "minutes": 2
-     },
-     {
-      "time": "09:11",
-      "vol_x": 19.3,
-      "pct": -1.35,
-      "minutes": 1
-     },
-     {
-      "time": "09:15",
-      "vol_x": 23.1,
-      "pct": -2.78,
-      "minutes": 2
-     },
-     {
-      "time": "09:18",
-      "vol_x": 10.3,
-      "pct": -1.57,
-      "minutes": 1
-     },
-     {
-      "time": "09:20",
-      "vol_x": 14.9,
-      "pct": -2.72,
-      "minutes": 1
-     },
-     {
-      "time": "09:40",
-      "vol_x": 9.6,
-      "pct": 0.99,
-      "minutes": 1
-     },
-     {
-      "time": "11:17",
-      "vol_x": 12.0,
-      "pct": 2.28,
-      "minutes": 2
-     }
-    ]
-   },
-   "spark_max_x": 25.9,
-   "spark_max_pct": 0.99,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": 891119,
-      "orgn": 133026
-     },
-     {
-      "date": "0610",
-      "frgn": 164842,
-      "orgn": -11798
-     },
-     {
-      "date": "0611",
-      "frgn": -179984,
-      "orgn": 146731
-     },
-     {
-      "date": "0612",
-      "frgn": 623028,
-      "orgn": -40634
-     },
-     {
-      "date": "0615",
-      "frgn": -275624,
-      "orgn": 22200
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "theme_leader": false
-  },
   {
    "code": "035420",
    "name": "NAVER",
@@ -321,13 +82,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 248000.0,
-   "change_pct": 0.4,
-   "high_pct": 4.25,
-   "fade_pct": 90.5,
-   "value_eok": 5016,
-   "ma10": 255700.0,
-   "ma10_margin_pct": -3.01,
+   "price": 260500.0,
+   "change_pct": 5.04,
+   "high_pct": 5.24,
+   "fade_pct": 3.8,
+   "value_eok": 412,
+   "ma10": 254550.0,
+   "ma10_margin_pct": 2.34,
    "spark": {
     "clusters": []
    },
@@ -368,27 +129,126 @@
    },
    "news": [
     {
-     "title": "네이버 쇼핑앱, 4월 역전 이어 5월 격차 확대…11번가 추월 굳혔다",
-     "summary": "네이버의 인공지능(AI) 쇼핑앱 네이버플러스 스토어(네플스)가 지난달 월간 활성 이용자(MAU) 875만명을 기록하며 성장세를 이어갔다. 출시 초기만 해도 11번가에 뒤처졌지만 지난 4월 처음으로 MAU를 앞지른 데 이어 지난달에는 격차를 50만명..",
-     "office": "디지털데일리",
-     "datetime": "202606151520",
-     "url": "https://n.news.naver.com/mnews/article/138/0002230935",
+     "title": "데이터센터 수요 폭증의 명암 [더 머니이스트-김효선의 부동산이지!]",
+     "summary": "최근 젠슨 황 엔비디아 최고경영자(CEO)가 한국을 방문했습니다. 그는 네이버 제2 사옥인 '1784'를 방문한 뒤, 네이버 데이터센터 '각 세종'을 거점으로 인공지능(AI) 팩토리를 구축하겠다는 협력 계획을 발표했습니다. AI 팩토리는 전력과 데이터",
+     "office": "한국경제",
+     "datetime": "202606160631",
+     "url": "https://n.news.naver.com/mnews/article/015/0005299112",
      "sentiment": "호재"
     }
    ],
-   "matched_events": [],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 5.5
+    }
+   ],
    "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 229520.0,
-    "ma20_margin_pct": 8.05,
+    "ma20": 232345.0,
+    "ma20_margin_pct": 12.12,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
-    "cause_summary": "네이버 쇼핑앱, 4월 역전 이어 5월 격차 확대…11번가 추월 굳혔다",
+    "cause_summary": "데이터센터 수요 폭증의 명암 [더 머니이스트-김효선의 부동산이지!]",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "039030",
+   "name": "이오테크닉스",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "price": 535000.0,
+   "change_pct": 0.75,
+   "high_pct": 1.69,
+   "fade_pct": 55.6,
+   "value_eok": 8,
+   "ma10": 485500.0,
+   "ma10_margin_pct": 10.2,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0609",
+      "frgn": 2421,
+      "orgn": 4207
+     },
+     {
+      "date": "0610",
+      "frgn": 36465,
+      "orgn": -38077
+     },
+     {
+      "date": "0611",
+      "frgn": 38753,
+      "orgn": -38248
+     },
+     {
+      "date": "0612",
+      "frgn": -92846,
+      "orgn": 146192
+     },
+     {
+      "date": "0615",
+      "frgn": 7466,
+      "orgn": -43122
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "전쟁",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 4605,
+    "peak_high_pct": 23.61,
+    "ma20": 492150.0,
+    "ma20_margin_pct": 8.71,
+    "ivtr_net": 81261,
+    "ivtr_days": 2,
+    "ivtr_eok": 551,
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -419,13 +279,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 347000.0,
-   "change_pct": -3.88,
-   "high_pct": 2.08,
-   "fade_pct": 286.7,
-   "value_eok": 4422,
-   "ma10": 295450.0,
-   "ma10_margin_pct": 17.45,
+   "price": 360500.0,
+   "change_pct": 3.89,
+   "high_pct": 4.61,
+   "fade_pct": 15.6,
+   "value_eok": 139,
+   "ma10": 302200.0,
+   "ma10_margin_pct": 19.29,
    "spark": {
     "clusters": []
    },
@@ -472,14 +332,6 @@
      "datetime": "202606151044",
      "url": "https://n.news.naver.com/mnews/article/014/0005534845",
      "sentiment": "호재"
-    },
-    {
-     "title": "[기업이슈] 한미반도체, 스페이스X 전략적 투자한다…주가 급등",
-     "summary": "■ 머니쇼 '기업이슈' - 도지은 어제장에서 이슈가 있었던 업종 살펴보는 기업이슈 시간입니다. ◇ 트럼프 &quot;이란과 최종 조율 단계&quot;…건설주 강세 재건 관련 종목의 주가가 이란 전쟁 종전 기대감에 크게 올랐습니다. 앞서 미국 CBS 뉴",
-     "office": "SBS Biz",
-     "datetime": "202606150834",
-     "url": "https://n.news.naver.com/mnews/article/374/0000515985",
-     "sentiment": "호재"
     }
    ],
    "matched_events": [],
@@ -489,101 +341,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 304575.0,
-    "ma20_margin_pct": 13.93,
+    "ma20": 304150.0,
+    "ma20_margin_pct": 18.53,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
     "cause_summary": "한미반도체, '스페이스X' 주식 500억원 취득…&quot;AI·우주항공 성장성 투...",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "067310",
-   "name": "하나마이크론",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "price": 50900.0,
-   "change_pct": 3.98,
-   "high_pct": 7.05,
-   "fade_pct": 43.5,
-   "value_eok": 1033,
-   "ma10": 43995.0,
-   "ma10_margin_pct": 15.69,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": -216572,
-      "orgn": 442726
-     },
-     {
-      "date": "0610",
-      "frgn": -449097,
-      "orgn": 384143
-     },
-     {
-      "date": "0611",
-      "frgn": -410499,
-      "orgn": 476544
-     },
-     {
-      "date": "0612",
-      "frgn": -75575,
-      "orgn": 101782
-     },
-     {
-      "date": "0615",
-      "frgn": -181688,
-      "orgn": 77538
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260611",
-    "peak_value_eok": 2044,
-    "peak_high_pct": 17.59,
-    "ma20": 46255.0,
-    "ma20_margin_pct": 10.04,
-    "ivtr_net": 767669,
-    "ivtr_days": 6,
-    "ivtr_eok": 344,
-    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
