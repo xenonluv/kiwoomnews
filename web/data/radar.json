@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 14:01:18 KST",
+ "generated_at": "2026-06-16 14:15:57 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 35,
+ "universe_count": 36,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -69,7 +69,7 @@
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.5,
+    "fade": 9.6,
     "ma10": 10.0,
     "flow": 2.0,
     "event": 5.5
@@ -78,77 +78,71 @@
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.5,
+    "fade": 9.6,
     "ma10": 10.0,
     "flow": 2,
     "event": 5.5
    },
-   "price": 8810.0,
-   "change_pct": 9.44,
+   "price": 8820.0,
+   "change_pct": 9.57,
    "high_pct": 29.94,
-   "fade_pct": 68.5,
-   "value_eok": 1059,
-   "ma10": 8016.0,
-   "ma10_margin_pct": 9.91,
+   "fade_pct": 68.0,
+   "value_eok": 1066,
+   "ma10": 8017.0,
+   "ma10_margin_pct": 10.02,
    "spark": {
     "clusters": [
      {
       "time": "09:01",
-      "vol_x": 16.1,
+      "vol_x": 17.5,
       "pct": 7.64,
       "minutes": 1
      },
      {
       "time": "09:05",
-      "vol_x": 21.3,
+      "vol_x": 23.2,
       "pct": 3.78,
       "minutes": 1
      },
      {
       "time": "09:07",
-      "vol_x": 17.3,
-      "pct": 2.09,
-      "minutes": 1
-     },
-     {
-      "time": "09:10",
-      "vol_x": 26.9,
-      "pct": 4.33,
-      "minutes": 1
+      "vol_x": 29.4,
+      "pct": 5.63,
+      "minutes": 4
      },
      {
       "time": "09:13",
-      "vol_x": 48.1,
+      "vol_x": 52.5,
       "pct": 3.46,
       "minutes": 1
      },
      {
       "time": "10:07",
-      "vol_x": 93.6,
+      "vol_x": 102.1,
       "pct": -2.29,
       "minutes": 1
      },
      {
       "time": "10:10",
-      "vol_x": 8.6,
+      "vol_x": 9.4,
       "pct": -1.19,
       "minutes": 1
      },
      {
       "time": "10:16",
-      "vol_x": 8.1,
+      "vol_x": 8.8,
       "pct": -0.8,
       "minutes": 1
      },
      {
       "time": "11:51",
-      "vol_x": 10.7,
+      "vol_x": 11.6,
       "pct": -0.99,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 93.6,
+   "spark_max_x": 102.1,
    "spark_max_pct": -2.29,
    "mega_flow": false,
    "flow": {
@@ -216,6 +210,129 @@
    "theme_leader": false
   },
   {
+   "code": "069540",
+   "name": "빛과전자",
+   "sector": "전기·전자",
+   "pattern": "fade",
+   "prime": false,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 55,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 10.8,
+    "fade": 12.9,
+    "ma10": 0.9,
+    "flow": 0.0,
+    "event": 0.0
+   },
+   "score_raw": 55,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 10.8,
+    "fade": 12.9,
+    "ma10": 0.9,
+    "flow": 0,
+    "event": 0.0
+   },
+   "price": 3645.0,
+   "change_pct": 6.73,
+   "high_pct": 15.67,
+   "fade_pct": 57.0,
+   "value_eok": 741,
+   "ma10": 3620.0,
+   "ma10_margin_pct": 0.69,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:11",
+      "vol_x": 12.2,
+      "pct": 2.23,
+      "minutes": 2
+     },
+     {
+      "time": "09:16",
+      "vol_x": 8.7,
+      "pct": 1.8,
+      "minutes": 1
+     },
+     {
+      "time": "09:18",
+      "vol_x": 15.2,
+      "pct": 5.79,
+      "minutes": 3
+     },
+     {
+      "time": "09:22",
+      "vol_x": 25.3,
+      "pct": -0.36,
+      "minutes": 2
+     },
+     {
+      "time": "09:26",
+      "vol_x": 10.2,
+      "pct": -3.69,
+      "minutes": 2
+     },
+     {
+      "time": "11:54",
+      "vol_x": 13.1,
+      "pct": 2.25,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 25.3,
+   "spark_max_pct": -0.36,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 0,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -220499,
+      "orgn": -16543
+     },
+     {
+      "date": "0611",
+      "frgn": -281588,
+      "orgn": 0
+     },
+     {
+      "date": "0612",
+      "frgn": -160889,
+      "orgn": 0
+     },
+     {
+      "date": "0615",
+      "frgn": -179378,
+      "orgn": 0
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "빛과전자, 100% 자회사 세영기술 흡수합병 결정",
+     "summary": "빛과전자(069540)가 경영 효율성 제고를 위해 100% 자회사인 세영기술을 흡수합병한다. 빛과전자는 세영기술을 흡수합병하기로 결정했다고 20일 공시했다. 존속회사는 빛과전자이며, 소멸회사는 세영기술이다. 합병 형태는 소규모합병이다. 회사 측은...",
+     "office": "이데일리",
+     "datetime": "202605201613",
+     "url": "https://n.news.naver.com/mnews/article/018/0006286156",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "theme_leader": false
+  },
+  {
    "code": "439960",
    "name": "코스모로보틱스",
    "sector": "의료·정밀기기",
@@ -246,62 +363,62 @@
    "change_pct": 1.39,
    "high_pct": 21.31,
    "fade_pct": 93.5,
-   "value_eok": 2673,
+   "value_eok": 2696,
    "ma10": 24892.0,
    "ma10_margin_pct": 2.24,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 38.8,
+      "vol_x": 40.5,
       "pct": 5.44,
       "minutes": 2
      },
      {
       "time": "09:06",
-      "vol_x": 42.3,
+      "vol_x": 44.2,
       "pct": 3.62,
       "minutes": 2
      },
      {
       "time": "09:10",
-      "vol_x": 19.4,
+      "vol_x": 20.2,
       "pct": -3.75,
       "minutes": 2
      },
      {
       "time": "09:14",
-      "vol_x": 12.0,
+      "vol_x": 12.5,
       "pct": 3.37,
       "minutes": 1
      },
      {
       "time": "09:16",
-      "vol_x": 11.0,
+      "vol_x": 11.5,
       "pct": 1.22,
       "minutes": 1
      },
      {
       "time": "10:08",
-      "vol_x": 26.6,
+      "vol_x": 27.8,
       "pct": 4.52,
       "minutes": 2
      },
      {
       "time": "10:11",
-      "vol_x": 14.1,
+      "vol_x": 14.7,
       "pct": -4.84,
       "minutes": 2
      },
      {
       "time": "10:14",
-      "vol_x": 8.3,
+      "vol_x": 8.7,
       "pct": -1.22,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 42.3,
+   "spark_max_x": 44.2,
    "spark_max_pct": 3.62,
    "mega_flow": false,
    "flow": {
@@ -361,129 +478,6 @@
    "theme_leader": false
   },
   {
-   "code": "069540",
-   "name": "빛과전자",
-   "sector": "전기·전자",
-   "pattern": "fade",
-   "prime": false,
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 52,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 30,
-    "spark": 10.2,
-    "fade": 11.8,
-    "ma10": 0.2,
-    "flow": 0.0,
-    "event": 0.0
-   },
-   "score_raw": 52,
-   "score_breakdown_raw": {
-    "base": 30,
-    "spark": 10.2,
-    "fade": 11.8,
-    "ma10": 0.2,
-    "flow": 0,
-    "event": 0.0
-   },
-   "price": 3625.0,
-   "change_pct": 6.15,
-   "high_pct": 15.67,
-   "fade_pct": 60.7,
-   "value_eok": 726,
-   "ma10": 3618.0,
-   "ma10_margin_pct": 0.19,
-   "spark": {
-    "clusters": [
-     {
-      "time": "09:11",
-      "vol_x": 11.7,
-      "pct": 2.23,
-      "minutes": 2
-     },
-     {
-      "time": "09:16",
-      "vol_x": 8.3,
-      "pct": 1.8,
-      "minutes": 1
-     },
-     {
-      "time": "09:18",
-      "vol_x": 14.6,
-      "pct": 5.79,
-      "minutes": 3
-     },
-     {
-      "time": "09:22",
-      "vol_x": 24.3,
-      "pct": -0.36,
-      "minutes": 2
-     },
-     {
-      "time": "09:26",
-      "vol_x": 9.7,
-      "pct": -3.69,
-      "minutes": 2
-     },
-     {
-      "time": "11:54",
-      "vol_x": 12.6,
-      "pct": 2.25,
-      "minutes": 1
-     }
-    ]
-   },
-   "spark_max_x": 24.3,
-   "spark_max_pct": -0.36,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 0,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0610",
-      "frgn": -220499,
-      "orgn": -16543
-     },
-     {
-      "date": "0611",
-      "frgn": -281588,
-      "orgn": 0
-     },
-     {
-      "date": "0612",
-      "frgn": -160889,
-      "orgn": 0
-     },
-     {
-      "date": "0615",
-      "frgn": -179378,
-      "orgn": 0
-     },
-     {
-      "date": "0616",
-      "frgn": 0,
-      "orgn": 0
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "빛과전자, 100% 자회사 세영기술 흡수합병 결정",
-     "summary": "빛과전자(069540)가 경영 효율성 제고를 위해 100% 자회사인 세영기술을 흡수합병한다. 빛과전자는 세영기술을 흡수합병하기로 결정했다고 20일 공시했다. 존속회사는 빛과전자이며, 소멸회사는 세영기술이다. 합병 형태는 소규모합병이다. 회사 측은...",
-     "office": "이데일리",
-     "datetime": "202605201613",
-     "url": "https://n.news.naver.com/mnews/article/018/0006286156",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "반도체",
-   "theme_leader": false
-  },
-  {
    "code": "035420",
    "name": "NAVER",
    "sector": "IT 서비스",
@@ -509,13 +503,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 241500.0,
-   "change_pct": -2.62,
+   "price": 242000.0,
+   "change_pct": -2.42,
    "high_pct": 7.06,
-   "fade_pct": 137.1,
-   "value_eok": 5349,
-   "ma10": 252700.0,
-   "ma10_margin_pct": -4.43,
+   "fade_pct": 134.3,
+   "value_eok": 5423,
+   "ma10": 252725.0,
+   "ma10_margin_pct": -4.24,
    "spark": {
     "clusters": []
    },
@@ -554,37 +548,30 @@
      }
     ]
    },
-   "news": [
+   "news": [],
+   "matched_events": [
     {
-     "title": "초고수들, 종전 훈풍에 방산주 차익실현…이틀 연속 삼성전자 베팅[주...",
-     "summary": "미래에셋증권에서 거래하는 고수익 투자자들이 16일 가장 많이 순매수한 종목은 삼성전자(005930), 삼성전기(009150), NAVER(035420), LG전자 순으로 집계됐다. 이날 미래에셋증권에 따르면 미래에셋증권 주식 거래 고객 중 최근 1개월",
-     "office": "서울경제",
-     "datetime": "202606161139",
-     "url": "https://n.news.naver.com/mnews/article/011/0004631596",
-     "sentiment": "호재"
-    },
-    {
-     "title": "&quot;월드컵 맛이 안 난다&quot;…골 장면 움짤 막히자 커뮤니티 불만",
-     "summary": "네이버(NAVER) 치지직이 2026 북중미 월드컵 한국 대표팀 첫 경기에서 최고 동시 접속자 482만명을 기록하며 흥행에 성공했지만, 온라인 커뮤니티에서는 경기 장면 공유 방식을 둘러싼 불만이 커진다. 골 장면과 주요 장면이 예전처럼 게시글 안에서.",
-     "office": "머니투데이",
-     "datetime": "202606161123",
-     "url": "https://n.news.naver.com/mnews/article/008/0005372534",
-     "sentiment": "호재"
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.7
     }
    ],
-   "matched_events": [],
    "theme": "전쟁",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231420.0,
-    "ma20_margin_pct": 4.36,
+    "ma20": 231432.5,
+    "ma20_margin_pct": 4.57,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
-    "cause_summary": "초고수들, 종전 훈풍에 방산주 차익실현…이틀 연속 삼성전자 베팅[주...",
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -619,7 +606,7 @@
    "change_pct": -4.9,
    "high_pct": 4.61,
    "fade_pct": 206.2,
-   "value_eok": 2720,
+   "value_eok": 2804,
    "ma10": 299150.0,
    "ma10_margin_pct": 10.31,
    "spark": {
@@ -704,13 +691,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 49600.0,
-   "change_pct": -2.55,
+   "price": 49750.0,
+   "change_pct": -2.26,
    "high_pct": 4.91,
-   "fade_pct": 152.0,
-   "value_eok": 1144,
-   "ma10": 44935.0,
-   "ma10_margin_pct": 10.38,
+   "fade_pct": 146.0,
+   "value_eok": 1164,
+   "ma10": 44950.0,
+   "ma10_margin_pct": 10.68,
    "spark": {
     "clusters": []
    },
@@ -757,8 +744,8 @@
     "peak_date": "20260611",
     "peak_value_eok": 2044,
     "peak_high_pct": 17.59,
-    "ma20": 46090.0,
-    "ma20_margin_pct": 7.62,
+    "ma20": 46097.5,
+    "ma20_margin_pct": 7.92,
     "ivtr_net": 767669,
     "ivtr_days": 6,
     "ivtr_eok": 344,
