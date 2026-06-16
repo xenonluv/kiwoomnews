@@ -10,6 +10,7 @@ kis_devlp.yaml
 .kis_token.json
 .explosion_registry.json
 .explosion_registry.json.tmp
+.telegram_notified.json
 setup_mac_radar.sh
 
 # KIS 공식 API 샘플 레포 (벤더 코드, 참고용)

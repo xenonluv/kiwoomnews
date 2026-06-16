@@ -120,35 +120,27 @@ def aggregate_minute_bars(bars, span_min):
     return [buckets[k] for k in sorted(order)]
 
 
-def detect_reignition(bars, body_pct_min=REIGNITION_BODY_PCT,
-                      value_min=REIGNITION_VALUE_10M):
-    """오늘 재반등 초입 신호 감지 (전부 10분봉 기준).
+def reignition_bars(bars, body_pct_min=REIGNITION_BODY_PCT,
+                    value_min=REIGNITION_VALUE_10M):
+    """오늘 재반등 자격 10분봉 '전체'를 시각순으로.
 
-    성립 조건: 당일 '상승' 10분봉(종가>시가) 중 몸통%((종가−시가)/시가×100) ≥ body_pct_min
-    이고 그 10분봉 1개의 거래대금(Σ종가×거래량) ≥ value_min(원) 인 봉이 있으면 성립.
-    → "큰 상승 몸통 + 그 10분봉 실거래대금 동반" = 돈이 다시 들어오는 재상승.
-    하락 10분봉은 '재반등(재상승)'이 아니므로 제외 — 폭락 중 종목 오탐 방지.
-    가장 몸통이 큰 봉 1개를 {body_pct, time, value_eok, close, open}로, 없으면 None.
-    (판정은 10분봉 1개만 있으면 가능 — 1분봉이 1개의 10분봉도 못 채우면 None.)
-    """
-    bars10 = aggregate_minute_bars(bars, 10)
-    if not bars10:
-        return None
-    best = None
-    for b10 in bars10:
+    자격: 당일 '상승' 10분봉(종가>시가) 중 몸통%((종가−시가)/시가×100) ≥ body_pct_min 이고
+    그 10분봉 1개의 거래대금(Σ종가×거래량) ≥ value_min(원) 인 봉. → "큰 상승 몸통 + 실거래대금
+    동반" = 돈이 다시 들어오는 재상승. 하락·도지 봉은 제외(폭락 중 오탐 방지).
+    각 봉 {body_pct, time("HH:MM"=버킷 시작), value_eok, close, open}. 게이트·표시(대표봉)와
+    텔레그램 봉단위 알림이 공용으로 쓴다(1분봉이 1개의 10분봉도 못 채우면 빈 리스트)."""
+    out = []
+    for b10 in aggregate_minute_bars(bars, 10):
         if b10["open"] <= 0 or b10["close"] <= b10["open"]:
             continue  # 상승 몸통만 (하락·도지 제외)
         body = (b10["close"] - b10["open"]) / b10["open"] * 100
-        if body < body_pct_min:
+        if body < body_pct_min or b10["value"] < value_min:
             continue
-        if b10["value"] < value_min:
-            continue
-        if best is None or body > best["body_pct"]:
-            best = {"body_pct": round(body, 2),
+        out.append({"body_pct": round(body, 2),
                     "time": f"{b10['time'][:2]}:{b10['time'][2:4]}",
                     "value_eok": round(b10["value"] / 1e8),
-                    "close": b10["close"], "open": b10["open"]}
-    return best
+                    "close": b10["close"], "open": b10["open"]})
+    return out
 
 
 # ---------- 재매집: 1천억 폭발 레지스트리 ----------
@@ -502,9 +494,10 @@ def scan_reaccum_candidate(rec, p, events):
     except Exception as e:
         log(f"  [skip] {name}: reaccum 분봉 실패 {e}")
         return "ERR"
-    reignition = detect_reignition(bars, p.reignition_body_pct, p.reignition_value_10m)
-    if not reignition:
+    rbars = reignition_bars(bars, p.reignition_body_pct, p.reignition_value_10m)
+    if not rbars:
         return None
+    reignition = max(rbars, key=lambda b: b["body_pct"])  # 대표(최대 몸통) 봉 — 게이트·표시용
 
     acc = accumulation_signal(inv)
     denom = now["high"] - now["prev_close"] if now.get("high") else 0.0
@@ -556,6 +549,9 @@ def scan_reaccum_candidate(rec, p, events):
             "time": reignition["time"],
             "value_10m_eok": reignition["value_eok"],
         },
+        # 당일 자격 10분봉 전체 — 텔레그램 봉단위 알림용(표시는 reignition 대표봉만 사용)
+        "reignition_bars": [{"time": b["time"], "body_pct": b["body_pct"], "value_eok": b["value_eok"]}
+                            for b in rbars],
         "flow": acc,
         "news": news_items,
         "matched_events": matched_events,

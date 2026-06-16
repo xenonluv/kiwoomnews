@@ -17,6 +17,9 @@ import json
 import subprocess
 from datetime import datetime, timezone, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import telegram_notify  # noqa: E402 — scripts/ 형제 모듈(재반등 봉 텔레그램 알림)
+
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
@@ -208,6 +211,15 @@ def main():
     for grp in theme_groups.values():
         if len(grp) >= 2:
             max(grp, key=lambda x: x.get("value_eok") or 0)["theme_leader"] = True
+    # 텔레그램: 게시 후보의 새(완성된) 재반등 10분봉마다 알림. 봉 시각 디둡(도배 방지).
+    # git 락 밖에서 먼저 호출 + 실패해도 publish 본작업 안 깨짐. push 여부와 무관히 매 회차 점검.
+    if not dry:
+        try:
+            n = telegram_notify.notify_reignitions(suspects)
+            if n:
+                print(f"[telegram] 재반등 봉 알림 {n}건 전송")
+        except Exception as e:
+            print(f"[warn] 텔레그램 알림 실패(무시): {e}", file=sys.stderr)
     out = {
         "generated_at": radar.get("generated_at"),
         "market_session": market_session(),
