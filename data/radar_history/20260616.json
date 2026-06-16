@@ -4,7 +4,7 @@
   "035420": {
    "name": "NAVER",
    "sector": "IT 서비스",
-   "entry": 246500.0,
+   "entry": 244000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -14,13 +14,13 @@
     "flow": 0,
     "event": 0
    },
-   "change_pct": -0.6,
+   "change_pct": -1.61,
    "high_pct": 7.06,
-   "fade_pct": 108.6,
+   "fade_pct": 122.9,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 4558,
+   "value_eok": 4675,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -35,8 +35,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231670.0,
-    "ma20_margin_pct": 6.4,
+    "ma20": 231545.0,
+    "ma20_margin_pct": 5.38,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
@@ -52,7 +52,7 @@
   "039030": {
    "name": "이오테크닉스",
    "sector": "기계·장비",
-   "entry": 500000.0,
+   "entry": 501000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -62,13 +62,13 @@
     "flow": 0,
     "event": 0
    },
-   "change_pct": -5.84,
+   "change_pct": -5.65,
    "high_pct": 1.69,
-   "fade_pct": 444.4,
+   "fade_pct": 433.3,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 393,
+   "value_eok": 425,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -83,19 +83,21 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 490400.0,
-    "ma20_margin_pct": 1.96,
+    "ma20": 490450.0,
+    "ma20_margin_pct": 2.15,
     "ivtr_net": 81261,
     "ivtr_days": 2,
     "ivtr_eok": 551,
     "cause_summary": "",
     "was_theme_leader": false
    },
-   "matched_events": [],
+   "matched_events": [
+    "2026-06-17_FOMC 금리 결정 ("
+   ],
    "first_seen": "2026-06-16 09:01:12 KST",
    "evaluated": false,
    "result": null,
-   "final": false
+   "final": true
   },
   "042700": {
    "name": "한미반도체",
@@ -116,7 +118,7 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 2389,
+   "value_eok": 2459,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -136,7 +138,7 @@
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
-    "cause_summary": "한미반도체 &quot;곽동신 회장 자사주 취득, 회사 성장 확신&quot;",
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "matched_events": [],
@@ -148,25 +150,25 @@
   "272210": {
    "name": "한화시스템",
    "sector": "전기·전자",
-   "entry": 105300.0,
-   "score": 74,
+   "entry": 105800.0,
+   "score": 75,
    "breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 10.2,
+    "fade": 11.1,
     "ma10": 10.0,
     "flow": 6,
     "event": 2.7
    },
-   "change_pct": 5.83,
+   "change_pct": 6.33,
    "high_pct": 17.09,
-   "fade_pct": 65.9,
+   "fade_pct": 62.9,
    "pattern": "fade",
    "prime": true,
    "theme": "전쟁",
-   "value_eok": 1985,
-   "theme_leader": true,
-   "spark_max_x": 34.3,
+   "value_eok": 2005,
+   "theme_leader": false,
+   "spark_max_x": 35.7,
    "spark_max_pct": 0.12,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -187,25 +189,25 @@
   "439960": {
    "name": "코스모로보틱스",
    "sector": "의료·정밀기기",
-   "entry": 25600.0,
-   "score": 56,
+   "entry": 25400.0,
+   "score": 54,
    "breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 2.8,
-    "ma10": 3.5,
+    "fade": 1.7,
+    "ma10": 2.6,
     "flow": 2,
     "event": 2.7
    },
-   "change_pct": 1.99,
+   "change_pct": 1.2,
    "high_pct": 21.31,
-   "fade_pct": 90.7,
+   "fade_pct": 94.4,
    "pattern": "fade",
    "prime": true,
    "theme": "금리",
-   "value_eok": 2496,
+   "value_eok": 2541,
    "theme_leader": false,
-   "spark_max_x": 35.3,
+   "spark_max_x": 35.9,
    "spark_max_pct": 3.62,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -269,7 +271,7 @@
    "first_seen": "2026-06-16 11:16:03 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "010820": {
    "name": "퍼스텍",
@@ -308,8 +310,8 @@
    "first_seen": "2026-06-16 12:16:05 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   }
  },
- "as_of": "2026-06-16 12:45:55 KST"
+ "as_of": "2026-06-16 13:01:19 KST"
 }
