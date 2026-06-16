@@ -17,8 +17,10 @@ TOP=30; BET=5
 # ───────────────────────────────────────────────
 
 # 레이더 publish는 인자 불필요(전수 스캔이라 watchlist 없어도 누락 없음).
-# 두 푸셔(publish·analyzer)를 7분 시차로 분리 → 동시 git push 충돌 방지
-L_PUBLISH="0,15,30,45 9-15 * * 1-5 cd $REPO && $PY scripts/publish.py >> /tmp/publish.log 2>&1"
+# 10분 간격 + 1분 오프셋(:01,:11,…) — 재반등 신호가 10분봉 기준이라 갱신 주기를 맞추고,
+# 봉 마감 1분 후 실행해 갓 닫힌 봉을 잡는다(랙 ~1분). analyzer(:07,:22,…)와 근접할 수 있으나
+# 두 푸셔 모두 공용 git 락(/tmp/stocknews_git.lock)으로 push를 직렬화 → 충돌 없음(시차는 최적화).
+L_PUBLISH="1,11,21,31,41,51 9-15 * * 1-5 cd $REPO && $PY scripts/publish.py >> /tmp/publish.log 2>&1"
 L_FORECAST="7,22,37,52 9-15 * * 1-5 cd $REPO && $PY analyzer/run.py --push --top $TOP --bet $BET >> /tmp/forecast.log 2>&1"
 L_BACKTEST="10 17 * * 1-5 cd $REPO && $PY analyzer/backtest.py --push >> /tmp/backtest.log 2>&1"
 # 레이더 자가 검증(익일 적중 채점 + 가중치 튜닝 + /performance 데이터) — backtest와 10분 시차
