@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 09:32:11 KST",
+ "generated_at": "2026-06-16 09:45:58 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 43,
+ "universe_count": 37,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -82,13 +82,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 251500.0,
-   "change_pct": 1.41,
+   "price": 247000.0,
+   "change_pct": -0.4,
    "high_pct": 7.06,
-   "fade_pct": 80.0,
-   "value_eok": 2271,
-   "ma10": 253700.0,
-   "ma10_margin_pct": -0.87,
+   "fade_pct": 105.7,
+   "value_eok": 2735,
+   "ma10": 253250.0,
+   "ma10_margin_pct": -2.47,
    "spark": {
     "clusters": []
    },
@@ -129,6 +129,14 @@
    },
    "news": [
     {
+     "title": "스톤브릿지벤처스, 스포츠AI 플코에 40억 투자[마켓인]",
+     "summary": "스톤브릿지벤처스와 네이버 D2SF가 스포츠 인텔리전스 플랫폼 기업 플코에 40억 원 규모의 Pre-Series B 투자를 단행했다고 16일 밝혔다. 두 투자사 모두 기존 투자자로 이번 라운드에 참여했으며, 이번 조달로 플코의 누적 투자유치액은 약 11",
+     "office": "이데일리",
+     "datetime": "202606160942",
+     "url": "https://n.news.naver.com/mnews/article/018/0006307277",
+     "sentiment": "호재"
+    },
+    {
      "title": "&quot;본품 또 사지 말고 리필 어때요?&quot;...로레알, 리필 캠페인 진행",
      "summary": "로레알코리아가 세계 리필의 날을 맞아 쿠팡, 카카오, 네이버, 올리브영 등 국내 주요 유통 플랫폼과 손잡고 리필 제품 확산에 나선다. 리필 제품 할인과 쿠폰 증정 행사를 통해 지속가능한 소비 문화를 확대하고, 뷰티 업계 전반에 리필 소비를 새로운...",
      "office": "지디넷코리아",
@@ -137,29 +145,19 @@
      "sentiment": "호재"
     }
    ],
-   "matched_events": [
-    {
-     "id": "2026-06-17_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (6월)",
-     "dday": 1,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.7
-    }
-   ],
+   "matched_events": [],
    "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231920.0,
-    "ma20_margin_pct": 8.44,
+    "ma20": 231695.0,
+    "ma20_margin_pct": 6.61,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
-    "cause_summary": "&quot;본품 또 사지 말고 리필 어때요?&quot;...로레알, 리필 캠페인 진행",
+    "cause_summary": "스톤브릿지벤처스, 스포츠AI 플코에 40억 투자[마켓인]",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -190,13 +188,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 533000.0,
-   "change_pct": 0.38,
+   "price": 512000.0,
+   "change_pct": -3.58,
    "high_pct": 1.69,
-   "fade_pct": 77.8,
-   "value_eok": 93,
-   "ma10": 485300.0,
-   "ma10_margin_pct": 9.83,
+   "fade_pct": 311.1,
+   "value_eok": 127,
+   "ma10": 483200.0,
+   "ma10_margin_pct": 5.96,
    "spark": {
     "clusters": []
    },
@@ -243,8 +241,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 492050.0,
-    "ma20_margin_pct": 8.32,
+    "ma20": 491000.0,
+    "ma20_margin_pct": 4.28,
     "ivtr_net": 81261,
     "ivtr_days": 2,
     "ivtr_eok": 551,
@@ -279,13 +277,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 346000.0,
-   "change_pct": -0.29,
+   "price": 335500.0,
+   "change_pct": -3.31,
    "high_pct": 4.61,
-   "fade_pct": 106.2,
-   "value_eok": 855,
-   "ma10": 300750.0,
-   "ma10_margin_pct": 15.05,
+   "fade_pct": 171.9,
+   "value_eok": 1062,
+   "ma10": 299700.0,
+   "ma10_margin_pct": 11.95,
    "spark": {
     "clusters": []
    },
@@ -332,8 +330,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 303425.0,
-    "ma20_margin_pct": 14.03,
+    "ma20": 302900.0,
+    "ma20_margin_pct": 10.76,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
