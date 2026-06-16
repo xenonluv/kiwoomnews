@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 13:01:19 KST",
+ "generated_at": "2026-06-16 13:15:55 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 44,
+ "universe_count": 39,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -64,109 +64,121 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 75,
+   "suspicion_score": 76,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 11.1,
+    "fade": 12.7,
     "ma10": 10.0,
     "flow": 6.0,
     "event": 2.7
    },
-   "score_raw": 75,
+   "score_raw": 76,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 11.1,
+    "fade": 12.7,
     "ma10": 10.0,
     "flow": 6,
     "event": 2.7
    },
-   "price": 105800.0,
-   "change_pct": 6.33,
+   "price": 106700.0,
+   "change_pct": 7.24,
    "high_pct": 17.09,
-   "fade_pct": 62.9,
-   "value_eok": 2005,
-   "ma10": 94270.0,
-   "ma10_margin_pct": 12.23,
+   "fade_pct": 57.6,
+   "value_eok": 2025,
+   "ma10": 94360.0,
+   "ma10_margin_pct": 13.08,
    "spark": {
     "clusters": [
      {
       "time": "09:05",
-      "vol_x": 20.1,
+      "vol_x": 22.5,
       "pct": 3.34,
       "minutes": 2
      },
      {
+      "time": "09:10",
+      "vol_x": 13.2,
+      "pct": 2.05,
+      "minutes": 1
+     },
+     {
       "time": "09:12",
-      "vol_x": 15.7,
+      "vol_x": 17.6,
       "pct": 2.62,
       "minutes": 2
      },
      {
       "time": "09:16",
-      "vol_x": 20.7,
+      "vol_x": 23.2,
       "pct": 0.97,
       "minutes": 1
      },
      {
       "time": "09:18",
-      "vol_x": 20.2,
+      "vol_x": 22.7,
       "pct": -1.58,
       "minutes": 1
      },
      {
       "time": "09:25",
-      "vol_x": 35.7,
+      "vol_x": 40.0,
       "pct": 0.12,
       "minutes": 2
      },
      {
       "time": "09:30",
-      "vol_x": 21.7,
+      "vol_x": 24.4,
       "pct": -0.87,
       "minutes": 1
      },
      {
       "time": "09:33",
-      "vol_x": 17.2,
+      "vol_x": 19.2,
       "pct": -1.05,
       "minutes": 1
      },
      {
       "time": "09:35",
-      "vol_x": 9.9,
+      "vol_x": 11.1,
       "pct": -1.59,
       "minutes": 1
      },
      {
       "time": "09:37",
-      "vol_x": 10.2,
+      "vol_x": 11.5,
       "pct": -0.9,
       "minutes": 1
      },
      {
       "time": "09:41",
-      "vol_x": 15.9,
+      "vol_x": 17.8,
       "pct": -2.93,
       "minutes": 1
      },
      {
       "time": "09:44",
-      "vol_x": 14.6,
+      "vol_x": 16.3,
       "pct": 3.12,
       "minutes": 1
      },
      {
+      "time": "09:48",
+      "vol_x": 8.0,
+      "pct": -0.9,
+      "minutes": 1
+     },
+     {
       "time": "09:59",
-      "vol_x": 12.2,
+      "vol_x": 13.6,
       "pct": -0.93,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 35.7,
+   "spark_max_x": 40.0,
    "spark_max_pct": 0.12,
    "mega_flow": false,
    "flow": {
@@ -214,6 +226,153 @@
     }
    ],
    "theme": "전쟁",
+   "theme_leader": true
+  },
+  {
+   "code": "010820",
+   "name": "퍼스텍",
+   "sector": "금속",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 72,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 15.0,
+    "fade": 10.0,
+    "ma10": 10.0,
+    "flow": 2.0,
+    "event": 5.5
+   },
+   "score_raw": 72,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 15.0,
+    "fade": 10.0,
+    "ma10": 10.0,
+    "flow": 2,
+    "event": 5.5
+   },
+   "price": 8850.0,
+   "change_pct": 9.94,
+   "high_pct": 29.94,
+   "fade_pct": 66.8,
+   "value_eok": 1018,
+   "ma10": 8020.0,
+   "ma10_margin_pct": 10.35,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:01",
+      "vol_x": 13.0,
+      "pct": 7.64,
+      "minutes": 1
+     },
+     {
+      "time": "09:05",
+      "vol_x": 17.2,
+      "pct": 3.78,
+      "minutes": 1
+     },
+     {
+      "time": "09:07",
+      "vol_x": 14.0,
+      "pct": 2.09,
+      "minutes": 1
+     },
+     {
+      "time": "09:10",
+      "vol_x": 21.8,
+      "pct": 4.33,
+      "minutes": 1
+     },
+     {
+      "time": "09:13",
+      "vol_x": 38.9,
+      "pct": 3.46,
+      "minutes": 1
+     },
+     {
+      "time": "10:07",
+      "vol_x": 75.7,
+      "pct": -2.29,
+      "minutes": 1
+     },
+     {
+      "time": "11:51",
+      "vol_x": 8.6,
+      "pct": -0.99,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 75.7,
+   "spark_max_pct": -2.29,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -175829,
+      "orgn": 15213
+     },
+     {
+      "date": "0611",
+      "frgn": -240472,
+      "orgn": -2065
+     },
+     {
+      "date": "0612",
+      "frgn": 144937,
+      "orgn": -47076
+     },
+     {
+      "date": "0615",
+      "frgn": -113643,
+      "orgn": -36974
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "[ET특징주] 미·이란에 재건 수주 기대감… 건설株 강세",
+     "summary": "미국과 이란 종전에 따른 재건 수주 기대감으로 건설주가 일제히 강세다. 16일 오전 11시 28분 기준 대우건설(047040) 주가는 전 거래일 대비 22.05% 상승한 2만 7950원에 거래되고 있다. 같은 시각 DL이앤씨(+13.54%), 퍼스텍(",
+     "office": "전자신문",
+     "datetime": "202606161137",
+     "url": "https://n.news.naver.com/mnews/article/030/0003438046",
+     "sentiment": "호재"
+    },
+    {
+     "title": "종전 MOU에 재건주 '들썩'…퍼스텍 '上'·대우건설 24%↑",
+     "summary": "미국과 이란의 종전 양해각서(MOU) 서명 소식에 건설·재건주에 대한 시장의 기대감이 높아지고 있다. 한국거래소에 따르면 16일 오전 9시46분 현재 퍼스텍은 전 거래일보다 29.95% 상승한 1만460원으로 치솟으며 상한가를 기록 중이다. 대우건설은",
+     "office": "뉴시스",
+     "datetime": "202606160955",
+     "url": "https://n.news.naver.com/mnews/article/003/0014008443",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 5.5
+    }
+   ],
+   "theme": "전쟁",
    "theme_leader": false
   },
   {
@@ -224,79 +383,79 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 54,
+   "suspicion_score": 56,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 1.7,
-    "ma10": 2.6,
+    "fade": 2.5,
+    "ma10": 3.3,
     "flow": 2.0,
     "event": 2.7
    },
-   "score_raw": 54,
+   "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 1.7,
-    "ma10": 2.6,
+    "fade": 2.5,
+    "ma10": 3.3,
     "flow": 2,
     "event": 2.7
    },
-   "price": 25400.0,
-   "change_pct": 1.2,
+   "price": 25550.0,
+   "change_pct": 1.79,
    "high_pct": 21.31,
-   "fade_pct": 94.4,
-   "value_eok": 2541,
-   "ma10": 24887.0,
-   "ma10_margin_pct": 2.06,
+   "fade_pct": 91.6,
+   "value_eok": 2575,
+   "ma10": 24902.0,
+   "ma10_margin_pct": 2.6,
    "spark": {
     "clusters": [
      {
       "time": "09:02",
-      "vol_x": 32.9,
+      "vol_x": 34.6,
       "pct": 5.44,
       "minutes": 2
      },
      {
       "time": "09:06",
-      "vol_x": 35.9,
+      "vol_x": 37.8,
       "pct": 3.62,
       "minutes": 2
      },
      {
       "time": "09:10",
-      "vol_x": 16.4,
+      "vol_x": 17.3,
       "pct": -3.75,
       "minutes": 2
      },
      {
       "time": "09:14",
-      "vol_x": 10.2,
+      "vol_x": 10.7,
       "pct": 3.37,
       "minutes": 1
      },
      {
       "time": "09:16",
-      "vol_x": 9.3,
+      "vol_x": 9.8,
       "pct": 1.22,
       "minutes": 1
      },
      {
       "time": "10:08",
-      "vol_x": 22.5,
+      "vol_x": 23.7,
       "pct": 4.52,
       "minutes": 2
      },
      {
       "time": "10:11",
-      "vol_x": 11.9,
+      "vol_x": 12.6,
       "pct": -4.84,
       "minutes": 2
      }
     ]
    },
-   "spark_max_x": 35.9,
+   "spark_max_x": 37.8,
    "spark_max_pct": 3.62,
    "mega_flow": false,
    "flow": {
@@ -356,6 +515,117 @@
    "theme_leader": false
   },
   {
+   "code": "069540",
+   "name": "빛과전자",
+   "sector": "전기·전자",
+   "pattern": "fade",
+   "prime": false,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 50,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 7.1,
+    "fade": 12.3,
+    "ma10": 0.6,
+    "flow": 0.0,
+    "event": 0.0
+   },
+   "score_raw": 50,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 7.1,
+    "fade": 12.3,
+    "ma10": 0.6,
+    "flow": 0,
+    "event": 0.0
+   },
+   "price": 3635.0,
+   "change_pct": 6.44,
+   "high_pct": 15.67,
+   "fade_pct": 58.9,
+   "value_eok": 701,
+   "ma10": 3619.0,
+   "ma10_margin_pct": 0.44,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:11",
+      "vol_x": 9.3,
+      "pct": 1.26,
+      "minutes": 1
+     },
+     {
+      "time": "09:18",
+      "vol_x": 11.6,
+      "pct": 5.79,
+      "minutes": 3
+     },
+     {
+      "time": "09:22",
+      "vol_x": 19.3,
+      "pct": -0.36,
+      "minutes": 2
+     },
+     {
+      "time": "11:54",
+      "vol_x": 10.0,
+      "pct": 2.25,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 19.3,
+   "spark_max_pct": -0.36,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 0,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -220499,
+      "orgn": -16543
+     },
+     {
+      "date": "0611",
+      "frgn": -281588,
+      "orgn": 0
+     },
+     {
+      "date": "0612",
+      "frgn": -160889,
+      "orgn": 0
+     },
+     {
+      "date": "0615",
+      "frgn": -179378,
+      "orgn": 0
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "빛과전자, 100% 자회사 세영기술 흡수합병 결정",
+     "summary": "빛과전자(069540)가 경영 효율성 제고를 위해 100% 자회사인 세영기술을 흡수합병한다. 빛과전자는 세영기술을 흡수합병하기로 결정했다고 20일 공시했다. 존속회사는 빛과전자이며, 소멸회사는 세영기술이다. 합병 형태는 소규모합병이다. 회사 측은...",
+     "office": "이데일리",
+     "datetime": "202605201613",
+     "url": "https://n.news.naver.com/mnews/article/018/0006286156",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "theme_leader": false
+  },
+  {
    "code": "035420",
    "name": "NAVER",
    "sector": "IT 서비스",
@@ -385,7 +655,7 @@
    "change_pct": -1.61,
    "high_pct": 7.06,
    "fade_pct": 122.9,
-   "value_eok": 4675,
+   "value_eok": 4826,
    "ma10": 252950.0,
    "ma10_margin_pct": -3.54,
    "spark": {
@@ -462,105 +732,6 @@
    "theme_leader": false
   },
   {
-   "code": "039030",
-   "name": "이오테크닉스",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "spark": 0,
-    "fade": 0,
-    "ma10": 0,
-    "flow": 0,
-    "event": 0
-   },
-   "price": 501000.0,
-   "change_pct": -5.65,
-   "high_pct": 1.69,
-   "fade_pct": 433.3,
-   "value_eok": 425,
-   "ma10": 482100.0,
-   "ma10_margin_pct": 3.92,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "flow": {
-    "net_days": 3,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0609",
-      "frgn": 2421,
-      "orgn": 4207
-     },
-     {
-      "date": "0610",
-      "frgn": 36465,
-      "orgn": -38077
-     },
-     {
-      "date": "0611",
-      "frgn": 38753,
-      "orgn": -38248
-     },
-     {
-      "date": "0612",
-      "frgn": -92846,
-      "orgn": 146192
-     },
-     {
-      "date": "0615",
-      "frgn": 7466,
-      "orgn": -43122
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-06-17_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (6월)",
-     "dday": 1,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.7
-    }
-   ],
-   "theme": "전쟁",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 4605,
-    "peak_high_pct": 23.61,
-    "ma20": 490450.0,
-    "ma20_margin_pct": 2.15,
-    "ivtr_net": 81261,
-    "ivtr_days": 2,
-    "ivtr_eok": 551,
-    "cause_summary": "",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
    "code": "042700",
    "name": "한미반도체",
    "sector": "기계·장비",
@@ -586,13 +757,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 333500.0,
-   "change_pct": -3.89,
+   "price": 332000.0,
+   "change_pct": -4.32,
    "high_pct": 4.61,
-   "fade_pct": 184.4,
-   "value_eok": 2459,
-   "ma10": 299500.0,
-   "ma10_margin_pct": 11.35,
+   "fade_pct": 193.8,
+   "value_eok": 2514,
+   "ma10": 299350.0,
+   "ma10_margin_pct": 10.91,
    "spark": {
     "clusters": []
    },
@@ -639,11 +810,100 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302800.0,
-    "ma20_margin_pct": 10.14,
+    "ma20": 302725.0,
+    "ma20_margin_pct": 9.67,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "067310",
+   "name": "하나마이크론",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "spark": 0,
+    "fade": 0,
+    "ma10": 0,
+    "flow": 0,
+    "event": 0
+   },
+   "price": 49850.0,
+   "change_pct": -2.06,
+   "high_pct": 4.91,
+   "fade_pct": 142.0,
+   "value_eok": 1041,
+   "ma10": 44960.0,
+   "ma10_margin_pct": 10.88,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0609",
+      "frgn": -216572,
+      "orgn": 442726
+     },
+     {
+      "date": "0610",
+      "frgn": -449097,
+      "orgn": 384143
+     },
+     {
+      "date": "0611",
+      "frgn": -410499,
+      "orgn": 476544
+     },
+     {
+      "date": "0612",
+      "frgn": -75575,
+      "orgn": 101782
+     },
+     {
+      "date": "0615",
+      "frgn": -181668,
+      "orgn": 77538
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260611",
+    "peak_value_eok": 2044,
+    "peak_high_pct": 17.59,
+    "ma20": 46102.5,
+    "ma20_margin_pct": 8.13,
+    "ivtr_net": 767669,
+    "ivtr_days": 6,
+    "ivtr_eok": 344,
     "cause_summary": "",
     "was_theme_leader": false
    },
