@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-16 14:46:21 KST",
+ "generated_at": "2026-06-16 15:02:53 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -40,7 +40,7 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 38,
+ "universe_count": 40,
  "events": [
   {
    "id": "2026-06-17_FOMC 금리 결정 (",
@@ -64,85 +64,85 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 75,
+   "suspicion_score": 74,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.6,
+    "fade": 8.6,
     "ma10": 10.0,
     "flow": 2.0,
     "event": 8.2
    },
-   "score_raw": 75,
+   "score_raw": 74,
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 9.6,
+    "fade": 8.6,
     "ma10": 10.0,
     "flow": 2,
     "event": 8.2
    },
-   "price": 8820.0,
-   "change_pct": 9.57,
+   "price": 8740.0,
+   "change_pct": 8.57,
    "high_pct": 29.94,
-   "fade_pct": 68.0,
-   "value_eok": 1089,
-   "ma10": 8017.0,
-   "ma10_margin_pct": 10.02,
+   "fade_pct": 71.4,
+   "value_eok": 1103,
+   "ma10": 8009.0,
+   "ma10_margin_pct": 9.13,
    "spark": {
     "clusters": [
      {
       "time": "09:01",
-      "vol_x": 19.0,
+      "vol_x": 19.6,
       "pct": 7.64,
       "minutes": 1
      },
      {
       "time": "09:05",
-      "vol_x": 25.2,
+      "vol_x": 25.9,
       "pct": 3.78,
       "minutes": 1
      },
      {
       "time": "09:07",
-      "vol_x": 31.9,
+      "vol_x": 32.8,
       "pct": 5.63,
       "minutes": 4
      },
      {
       "time": "09:13",
-      "vol_x": 57.0,
+      "vol_x": 58.7,
       "pct": 3.46,
       "minutes": 1
      },
      {
       "time": "10:07",
-      "vol_x": 110.9,
+      "vol_x": 114.2,
       "pct": -2.29,
       "minutes": 1
      },
      {
       "time": "10:10",
-      "vol_x": 10.2,
+      "vol_x": 10.5,
       "pct": -0.29,
       "minutes": 2
      },
      {
       "time": "10:16",
-      "vol_x": 9.6,
+      "vol_x": 9.8,
       "pct": -0.8,
       "minutes": 1
      },
      {
       "time": "11:51",
-      "vol_x": 12.6,
+      "vol_x": 13.0,
       "pct": -0.99,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 110.9,
+   "spark_max_x": 114.2,
    "spark_max_pct": -2.29,
    "mega_flow": false,
    "flow": {
@@ -208,19 +208,305 @@
    ],
    "theme": "전쟁",
    "ai_verdict": {
+    "status": "unavailable",
+    "error": "invalid Kimi response"
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "067290",
+   "name": "JW신약",
+   "sector": "제약",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 55,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 6.1,
+    "fade": 4.8,
+    "ma10": 10.0,
+    "flow": 4.0,
+    "event": 0.0
+   },
+   "score_raw": 55,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 6.1,
+    "fade": 4.8,
+    "ma10": 10.0,
+    "flow": 4,
+    "event": 0.0
+   },
+   "price": 1853.0,
+   "change_pct": 4.39,
+   "high_pct": 27.32,
+   "fade_pct": 83.9,
+   "value_eok": 769,
+   "ma10": 1428.2,
+   "ma10_margin_pct": 29.74,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:02",
+      "vol_x": 17.8,
+      "pct": 16.34,
+      "minutes": 1
+     },
+     {
+      "time": "10:29",
+      "vol_x": 10.3,
+      "pct": 3.35,
+      "minutes": 2
+     },
+     {
+      "time": "10:40",
+      "vol_x": 8.9,
+      "pct": 3.58,
+      "minutes": 1
+     },
+     {
+      "time": "11:51",
+      "vol_x": 14.9,
+      "pct": 1.82,
+      "minutes": 1
+     },
+     {
+      "time": "14:06",
+      "vol_x": 9.3,
+      "pct": 1.91,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 17.8,
+   "spark_max_pct": 16.34,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -116,
+      "orgn": -630
+     },
+     {
+      "date": "0611",
+      "frgn": 33742,
+      "orgn": -76
+     },
+     {
+      "date": "0612",
+      "frgn": 25329,
+      "orgn": 6036
+     },
+     {
+      "date": "0615",
+      "frgn": -29093,
+      "orgn": 0
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "정은경發 탈모 건보 기대감에…JW신약·TS트릴리온 ‘상한가’ [Why 바...",
+     "summary": "정은경 보건복지부 장관이 탈모 치료 건강보험 적용 가능성을 언급하면서 관련 종목들이 일제히 급등했다. 탈모 치료제와 탈모 관리 제품을 보유한 기업들을 중심으로 투자자들의 매수세가 몰리며 일부 종목은 상한가를 기록했다. 15일...",
+     "office": "서울경제",
+     "datetime": "202606151114",
+     "url": "https://n.news.naver.com/mnews/article/011/0004631189",
+     "sentiment": "호재"
+    },
+    {
+     "title": "탈모치료 건보 급여 확대 추진 소식에 탈모치료제株 상한가 행진",
+     "summary": "정부가 올 하반기 대국민 의견수렴을 통해 탈모치료 건강보험 급여 확대를 추진하겠다고 밝히자 국내 증시에서 탈모치료제 관련주가 상한가 행진 중이다. 15일 오전 9시21분 현재 TS트릴리온, JW신약, 현대약품은 삼서 상한가를 기록하고 있다....",
+     "office": "머니투데이",
+     "datetime": "202606150933",
+     "url": "https://n.news.naver.com/mnews/article/008/0005371773",
+     "sentiment": "호재"
+    },
+    {
+     "title": "고령 전립선비대증 환자 치료 전략 조명…JW중외제약 심포지엄 개최",
+     "summary": "전립선비대증 치료 과정에서 야간뇨와 심혈관 안전성을 고려한 처방 전략이 주요 화두로 제시됐다. JW중외제약과 JW신약은 지난달 30일부터 이틀간 서울 광진구 그랜드 워커힐 서울에서 전립선비대증 치료제 ‘트루패스(성분명 실로도신)‘의 임상적...",
+     "office": "조선비즈",
+     "datetime": "202606101540",
+     "url": "https://n.news.naver.com/mnews/article/366/0001170812",
+     "sentiment": "호재"
+    },
+    {
+     "title": "JW중외제약, 전립선비대증 치료제 '트루패스' 심포지엄 개최",
+     "summary": "JW중외제약과 JW신약이 전립선비대증 치료제 '트루패스'의 임상적 유용성과 안전성을 공유하는 심포지엄을 열었습니다. JW중외제약과 JW신약은 지난달 30일부터 이틀간 서울 광진구 그랜드 워커힐 서울에서 'J STAR 심포지엄'을 개최했다고 오늘(10일",
+     "office": "SBS Biz",
+     "datetime": "202606101105",
+     "url": "https://n.news.naver.com/mnews/article/374/0000515168",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "유가",
+   "ai_verdict": {
     "status": "ok",
     "verdict": "WATCH",
     "confidence": 55,
-    "reason": "고점 대비 68% 급락 후 저가 방어 흔적은 있으나, 외국인 4일 중 3일 순매도·기관 동반 이탈, 10:07 분봉 110배 거래량의 -2.29% 대량 음봉이 흡수 후 추가 하락 신호로 해석될 수 있어 수급 맥락이 불안정함.",
+    "reason": "외국인이 2거래일 연속 대량 순매수 후 전일 급매도 전환, 고점 대비 83.9% fade와 29.74% ma10 괴리는 흡수 여력을 보이나 기관 동반 매도 및 외국인 급반전 패턴이 미확인 물량 출회 가능성을 남김.",
     "risk_flags": [
-     "외국인·기관 동반 순매도 흐름",
-     "고거래량 음봉 이후 추가 하락",
-     "FOMC D-1 변동성 리스크"
+     "외국인 급매도 전환(2일 매수 후 전일 -29,093백만)",
+     "기관 3일 연속 매도/관망 흐름",
+     "fade 83.9%로 고점 대비 과다 조정 시 추가 하방 압력"
     ],
-    "manual_check": "오전 10:07 110배 거래량 음봉 이후 분봉 저점이 재차 하향 이탈하는지, 장중 저가 대비 회복률 50% 이상 유지 여부 확인",
+    "manual_check": "장중 외국인/기관 매매동향 실시간 확인 및 1,800원 전후 저가 방어 거래대금 집중 여부",
     "model": "kimi-k2.6"
    },
    "theme_leader": false
+  },
+  {
+   "code": "439960",
+   "name": "코스모로보틱스",
+   "sector": "의료·정밀기기",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 54,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 15.0,
+    "fade": 3.1,
+    "ma10": 3.7,
+    "flow": 2.0,
+    "event": 0.0
+   },
+   "score_raw": 54,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 15.0,
+    "fade": 3.1,
+    "ma10": 3.7,
+    "flow": 2,
+    "event": 0.0
+   },
+   "price": 25650.0,
+   "change_pct": 2.19,
+   "high_pct": 21.31,
+   "fade_pct": 89.7,
+   "value_eok": 2887,
+   "ma10": 24912.0,
+   "ma10_margin_pct": 2.96,
+   "spark": {
+    "clusters": [
+     {
+      "time": "09:02",
+      "vol_x": 41.1,
+      "pct": 5.44,
+      "minutes": 2
+     },
+     {
+      "time": "09:06",
+      "vol_x": 44.9,
+      "pct": 3.62,
+      "minutes": 2
+     },
+     {
+      "time": "09:10",
+      "vol_x": 20.6,
+      "pct": -3.75,
+      "minutes": 2
+     },
+     {
+      "time": "09:14",
+      "vol_x": 12.7,
+      "pct": 3.37,
+      "minutes": 1
+     },
+     {
+      "time": "09:16",
+      "vol_x": 11.6,
+      "pct": 1.22,
+      "minutes": 1
+     },
+     {
+      "time": "10:08",
+      "vol_x": 28.2,
+      "pct": 4.52,
+      "minutes": 2
+     },
+     {
+      "time": "10:11",
+      "vol_x": 14.9,
+      "pct": -4.84,
+      "minutes": 2
+     },
+     {
+      "time": "10:14",
+      "vol_x": 8.8,
+      "pct": -1.22,
+      "minutes": 1
+     },
+     {
+      "time": "14:22",
+      "vol_x": 8.7,
+      "pct": 2.1,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 44.9,
+   "spark_max_pct": 3.62,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -133577,
+      "orgn": -7209
+     },
+     {
+      "date": "0611",
+      "frgn": 110687,
+      "orgn": -280711
+     },
+     {
+      "date": "0612",
+      "frgn": -60055,
+      "orgn": -13328
+     },
+     {
+      "date": "0615",
+      "frgn": 154414,
+      "orgn": -15899
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "KC코트렐·GC지놈, 최대주주 지분 보호예수 해제",
+     "summary": "KC코트렐의 최대주주 지분 83%가 시장에 출회한다. 지씨지놈, 코스모로보틱스의 의무보유 확약 물량도 보호예수에서 해제된다. 8일 한국예탁결제원에 따르면 KC코트렐의 주식 9115만7556주(발행주식총수 83%)가 오는 12일 보호예수에서...",
+     "office": "아이뉴스24",
+     "datetime": "202606081001",
+     "url": "https://n.news.naver.com/mnews/article/031/0001033474",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "theme_leader": true
   },
   {
    "code": "009830",
@@ -230,55 +516,50 @@
    "prime": true,
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 55,
+   "suspicion_score": 46,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 30,
-    "spark": 4.6,
-    "fade": 8.4,
+    "spark": 4.3,
+    "fade": 10.2,
     "ma10": 10.0,
     "flow": 2.0,
-    "event": 0.0
+    "event": 0.0,
+    "ai": -10
    },
-   "score_raw": 55,
+   "score_raw": 56,
    "score_breakdown_raw": {
     "base": 30,
-    "spark": 4.6,
-    "fade": 8.4,
+    "spark": 4.3,
+    "fade": 10.2,
     "ma10": 10.0,
     "flow": 2,
     "event": 0.0
    },
-   "price": 42400.0,
-   "change_pct": 9.56,
+   "price": 42100.0,
+   "change_pct": 8.79,
    "high_pct": 13.31,
-   "fade_pct": 28.2,
-   "value_eok": 1334,
-   "ma10": 36402.1,
-   "ma10_margin_pct": 16.48,
+   "fade_pct": 34.0,
+   "value_eok": 1381,
+   "ma10": 36372.1,
+   "ma10_margin_pct": 15.75,
    "spark": {
     "clusters": [
      {
-      "time": "09:17",
-      "vol_x": 8.2,
-      "pct": 0.98,
-      "minutes": 1
-     },
-     {
       "time": "12:17",
-      "vol_x": 13.3,
+      "vol_x": 12.9,
       "pct": 0.95,
       "minutes": 1
      },
      {
       "time": "12:23",
-      "vol_x": 15.3,
+      "vol_x": 14.8,
       "pct": -1.27,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 15.3,
+   "spark_max_x": 14.8,
    "spark_max_pct": -1.27,
    "mega_flow": false,
    "flow": {
@@ -327,25 +608,25 @@
    "theme": "반도체",
    "ai_verdict": {
     "status": "ok",
-    "verdict": "WATCH",
-    "confidence": 55,
-    "reason": "장중 고점 대비 28.2% fade는 심하지만, 외국인 6/15 급매수 전환과 기관 동반 매수 흐름이 저가 방어 가능성을 시사하나, 뉴스의 주주대표 분쟁 리스크와 9:17/12:17/12:23 분봉 스파크 패턴이 고점 대비 급락 시 물량 흡수보다 분산 매도 성격에 가까워 맥락 해석이 엇갈림.",
+    "verdict": "REJECT",
+    "confidence": 78,
+    "reason": "외국인 4일 연속 순매도 후 소규모 매수 전환에 그쳤고, 기관도 4일 중 3일 매도로 수급 방어 동력이 약하며, spark 클러스터가 12시대 단 2회에 불과하고 음봉(-1.27%) 포함되어 상승 동력 소진 후 흔들기가 아닌 분산 매도로 보임.",
     "risk_flags": [
-     "주주대표 분쟁 뉴스 리스크",
-     "fade 28.2% 심화",
-     "스파크 패턴 고점 근처 집중"
+     "외국인·기관 동반 매도 우세",
+     "spark 음봉 포함·상승 동력 부재",
+     "고려아연 지분 뉴스 불확실성"
     ],
-    "manual_check": "장마감 전 외국인/기관 순매수 지속 여부 및 종가 42,000원 선 회복 여부",
+    "manual_check": "장중 실시간 호가창 매도잔량 누적 추이 및 2시 이후 외국인 매수세 지속 여부",
     "model": "kimi-k2.6"
    },
    "theme_leader": false
   },
   {
-   "code": "439960",
-   "name": "코스모로보틱스",
-   "sector": "의료·정밀기기",
+   "code": "028300",
+   "name": "HLB",
+   "sector": "제약",
    "pattern": "fade",
-   "prime": true,
+   "prime": false,
    "shake": null,
    "deep_shake": null,
    "suspicion_score": 46,
@@ -353,9 +634,9 @@
    "score_breakdown": {
     "base": 30,
     "spark": 15.0,
-    "fade": 4.2,
-    "ma10": 4.6,
-    "flow": 2.0,
+    "fade": 10.5,
+    "ma10": 0.7,
+    "flow": 0.0,
     "event": 0.0,
     "ai": -10
    },
@@ -363,103 +644,97 @@
    "score_breakdown_raw": {
     "base": 30,
     "spark": 15.0,
-    "fade": 4.2,
-    "ma10": 4.6,
-    "flow": 2,
+    "fade": 10.5,
+    "ma10": 0.7,
+    "flow": 0,
     "event": 0.0
    },
-   "price": 25850.0,
-   "change_pct": 2.99,
-   "high_pct": 21.31,
-   "fade_pct": 86.0,
-   "value_eok": 2865,
-   "ma10": 24937.0,
-   "ma10_margin_pct": 3.66,
+   "price": 49150.0,
+   "change_pct": 8.02,
+   "high_pct": 22.86,
+   "fade_pct": 64.9,
+   "value_eok": 1191,
+   "ma10": 48885.0,
+   "ma10_margin_pct": 0.54,
    "spark": {
     "clusters": [
      {
-      "time": "09:02",
-      "vol_x": 40.2,
-      "pct": 5.44,
-      "minutes": 2
-     },
-     {
-      "time": "09:06",
-      "vol_x": 43.8,
-      "pct": 3.62,
-      "minutes": 2
-     },
-     {
-      "time": "09:10",
-      "vol_x": 20.1,
-      "pct": -3.75,
-      "minutes": 2
-     },
-     {
-      "time": "09:14",
-      "vol_x": 12.4,
-      "pct": 3.37,
+      "time": "09:01",
+      "vol_x": 14.3,
+      "pct": -2.93,
       "minutes": 1
      },
      {
-      "time": "09:16",
-      "vol_x": 11.4,
-      "pct": 1.22,
+      "time": "09:07",
+      "vol_x": 12.0,
+      "pct": 1.3,
       "minutes": 1
      },
      {
-      "time": "10:08",
-      "vol_x": 27.5,
-      "pct": 4.52,
-      "minutes": 2
-     },
-     {
-      "time": "10:11",
-      "vol_x": 14.6,
-      "pct": -4.84,
-      "minutes": 2
-     },
-     {
-      "time": "10:14",
-      "vol_x": 8.6,
-      "pct": -1.22,
+      "time": "09:13",
+      "vol_x": 9.0,
+      "pct": -0.94,
       "minutes": 1
      },
      {
-      "time": "14:22",
-      "vol_x": 8.5,
-      "pct": 2.1,
+      "time": "14:32",
+      "vol_x": 36.2,
+      "pct": 12.26,
+      "minutes": 3
+     },
+     {
+      "time": "14:38",
+      "vol_x": 64.9,
+      "pct": 12.98,
+      "minutes": 4
+     },
+     {
+      "time": "14:44",
+      "vol_x": 61.6,
+      "pct": -9.75,
+      "minutes": 6
+     },
+     {
+      "time": "14:51",
+      "vol_x": 32.9,
+      "pct": 0.63,
+      "minutes": 4
+     },
+     {
+      "time": "14:57",
+      "vol_x": 31.0,
+      "pct": -2.07,
       "minutes": 1
      }
     ]
    },
-   "spark_max_x": 43.8,
-   "spark_max_pct": 3.62,
+   "spark_max_x": 64.9,
+   "spark_max_pct": 12.98,
    "mega_flow": false,
    "flow": {
-    "net_days": 1,
+    "net_days": 0,
     "today_buy": false,
     "streak": 0,
     "detail": [
      {
       "date": "0610",
-      "frgn": -133577,
-      "orgn": -7209
+      "frgn": -71834,
+      "orgn": -78448
      },
      {
       "date": "0611",
-      "frgn": 110687,
-      "orgn": -280711
+      "frgn": -19656,
+      "orgn": -272715
      },
      {
       "date": "0612",
-      "frgn": -60055,
-      "orgn": -13328
+      "frgn": 24123,
+      "orgn": -170851
      },
      {
       "date": "0615",
-      "frgn": 154414,
-      "orgn": -15899
+      "frgn": -33324,
+      "orgn": -9686
      },
      {
       "date": "0616",
@@ -470,27 +745,155 @@
    },
    "news": [
     {
-     "title": "KC코트렐·GC지놈, 최대주주 지분 보호예수 해제",
-     "summary": "KC코트렐의 최대주주 지분 83%가 시장에 출회한다. 지씨지놈, 코스모로보틱스의 의무보유 확약 물량도 보호예수에서 해제된다. 8일 한국예탁결제원에 따르면 KC코트렐의 주식 9115만7556주(발행주식총수 83%)가 오는 12일 보호예수에서...",
-     "office": "아이뉴스24",
-     "datetime": "202606081001",
-     "url": "https://n.news.naver.com/mnews/article/031/0001033474",
+     "title": "7월 말 FDA 허가 앞둔 HLB…블랙록 지분 확대 vs 4400억 공매도 승자는...",
+     "summary": "HLB의 미국 식품의약국(FDA) 간암 신약 허가 결정일이 예정된 7월 말에 다가오면서 주가 향방을 둘러싼 기관투자자와 공매도 세력 간의 수급 공방이 심화하고 있다. 글로벌 대형 자산운용사가 지분 확대 공시를 낸 반면, 공매도 잔고 역시 국내...",
+     "office": "머니투데이",
+     "datetime": "202606161010",
+     "url": "https://n.news.naver.com/mnews/article/008/0005372447",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "HLB 자회사 이뮤노믹, 일본삼나무 알레르기 백신 日 1상 승인",
+     "summary": "HLB(028300)는 미국 자회사 이뮤노믹 치료법이 일본삼나무 꽃가루 알레르기 치료 백신 후보물질 'ITI-9001'의 일본 임상 1상 승인으로 알레르기 치료 백신 임상 개발을 본격화했다고 15일 밝혔다. 이번 임상은 일본삼나무 꽃가루 알레르기가 있",
+     "office": "뉴스1",
+     "datetime": "202606150933",
+     "url": "https://n.news.naver.com/mnews/article/421/0009003441",
      "sentiment": "호재"
     }
    ],
    "matched_events": [],
-   "theme": "반도체",
+   "theme": "전쟁",
    "ai_verdict": {
     "status": "ok",
     "verdict": "REJECT",
     "confidence": 78,
-    "reason": "고점 대비 86% fade에도 불구하고 기관 연속 대량 순매도(-280K→-13K)와 외국인 불안정 흐름, 뉴스는 최대주주 지분 보호예수 해제라는 잠재적 물량 부담 소식임.",
+    "reason": "고점 대비 64.9% 급락(fade) 후 장중 14:38~14:44에 36~64배 폭발적 거래량으로 급등락 반복, 외국인 5일 연속 순매도(총 -10만주)에 기관도 대량 매도(-55만주)로 수급 붕괴, 막판 14:57 재하락(-2.07%)으로 저가 방어 실패.",
     "risk_flags": [
-     "기관 연속 대량 순매도",
-     "보호예수 해제 뉴스",
-     "고점 대비 86% 급락 후 저가 미방어"
+     "고점 대비 65% 급락 후 폭발적 거래량의 급등락 반복",
+     "외국인·기관 동시 대량 순매도 수급 붕괴",
+     "막판 재하락으로 종가 저가권 붕괴"
     ],
-    "manual_check": "장마감 전 기관/외국인 매도세 지속 여부 및 25,000원 선 회복 실패 확인",
+    "manual_check": "14:32~14:44 급등락 구간의 호가창 매도잔량 축적 여부 및 장종료 후 공매도 잔고 변동 확인",
+    "model": "kimi-k2.6"
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "004310",
+   "name": "현대약품",
+   "sector": "제약",
+   "pattern": "fade",
+   "prime": true,
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 44,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 30,
+    "spark": 1.4,
+    "fade": 7.4,
+    "ma10": 10.0,
+    "flow": 2.0,
+    "event": 2.7,
+    "ai": -10
+   },
+   "score_raw": 54,
+   "score_breakdown_raw": {
+    "base": 30,
+    "spark": 1.4,
+    "fade": 7.4,
+    "ma10": 10.0,
+    "flow": 2,
+    "event": 2.7
+   },
+   "price": 7900.0,
+   "change_pct": 6.18,
+   "high_pct": 25.0,
+   "fade_pct": 75.3,
+   "value_eok": 2732,
+   "ma10": 6198.0,
+   "ma10_margin_pct": 27.46,
+   "spark": {
+    "clusters": [
+     {
+      "time": "12:03",
+      "vol_x": 10.2,
+      "pct": 4.18,
+      "minutes": 1
+     },
+     {
+      "time": "12:13",
+      "vol_x": 8.8,
+      "pct": 1.14,
+      "minutes": 1
+     },
+     {
+      "time": "12:44",
+      "vol_x": 8.2,
+      "pct": 1.69,
+      "minutes": 1
+     }
+    ]
+   },
+   "spark_max_x": 10.2,
+   "spark_max_pct": 4.18,
+   "mega_flow": false,
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -41190,
+      "orgn": -188
+     },
+     {
+      "date": "0611",
+      "frgn": -127,
+      "orgn": 22204
+     },
+     {
+      "date": "0612",
+      "frgn": -6446,
+      "orgn": -124
+     },
+     {
+      "date": "0615",
+      "frgn": -122488,
+      "orgn": -42322
+     },
+     {
+      "date": "0616",
+      "frgn": 0,
+      "orgn": 0
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-06-17_FOMC 금리 결정 (",
+     "title": "FOMC 금리 결정 (6월)",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.7
+    }
+   ],
+   "theme": "전쟁",
+   "ai_verdict": {
+    "status": "ok",
+    "verdict": "REJECT",
+    "confidence": 78,
+    "reason": "고점 대비 75.3% 급락(fade)에도 불구하고 외국인이 6월 15일에만 12.2만주 대량 매도했고, 기관도 4.2만주 동반 매도하여 수급 붕괴가 명확하며, 금리 결정 D-1 이벤트 리스크 앞에서 저가 방어나 회복 흔적이 전혀 없음.",
+    "risk_flags": [
+     "외국인·기관 동반 대량 매도",
+     "고점 대비 75% 급락 후 무회복",
+     "FOMC D-1 고위험 이벤트"
+    ],
+    "manual_check": "장 마감 전 30분 분봉에서 저가 추가 이탈 또는 반등 거래대금 집중 여부",
     "model": "kimi-k2.6"
    },
    "theme_leader": true
@@ -521,13 +924,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 240500.0,
-   "change_pct": -3.02,
+   "price": 241000.0,
+   "change_pct": -2.82,
    "high_pct": 7.06,
-   "fade_pct": 142.9,
-   "value_eok": 5763,
-   "ma10": 252600.0,
-   "ma10_margin_pct": -4.79,
+   "fade_pct": 140.0,
+   "value_eok": 5873,
+   "ma10": 252650.0,
+   "ma10_margin_pct": -4.61,
    "spark": {
     "clusters": []
    },
@@ -566,7 +969,16 @@
      }
     ]
    },
-   "news": [],
+   "news": [
+    {
+     "title": "네이버클라우드, 글로벌 해킹대회 상위 1%…보안 경쟁력 입증",
+     "summary": "네이버클라우드의 보안 투자가 글로벌 무대에서 성과로 나타나고 있다. 글로벌 해킹 대회에서 상위 1%대 성과를 거두며 기술력을 입증했다는 분석이다. 공공·금융·국방 등 고보안 산업을 겨냥한 클라우드·소버린 인공지능(AI) 사업에도 보안...",
+     "office": "전자신문",
+     "datetime": "202606161457",
+     "url": "https://n.news.naver.com/mnews/article/030/0003438147",
+     "sentiment": "호재"
+    }
+   ],
    "matched_events": [
     {
      "id": "2026-06-17_FOMC 금리 결정 (",
@@ -584,12 +996,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 13016,
     "peak_high_pct": 17.41,
-    "ma20": 231370.0,
-    "ma20_margin_pct": 3.95,
+    "ma20": 231395.0,
+    "ma20_margin_pct": 4.15,
     "ivtr_net": 605116,
     "ivtr_days": 4,
     "ivtr_eok": 1657,
-    "cause_summary": "",
+    "cause_summary": "네이버클라우드, 글로벌 해킹대회 상위 1%…보안 경쟁력 입증",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -620,13 +1032,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 329500.0,
-   "change_pct": -5.04,
+   "price": 329000.0,
+   "change_pct": -5.19,
    "high_pct": 4.61,
-   "fade_pct": 209.4,
-   "value_eok": 3108,
-   "ma10": 299100.0,
-   "ma10_margin_pct": 10.16,
+   "fade_pct": 212.5,
+   "value_eok": 3256,
+   "ma10": 299050.0,
+   "ma10_margin_pct": 10.02,
    "spark": {
     "clusters": []
    },
@@ -673,8 +1085,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20588,
     "peak_high_pct": 28.01,
-    "ma20": 302600.0,
-    "ma20_margin_pct": 8.89,
+    "ma20": 302575.0,
+    "ma20_margin_pct": 8.73,
     "ivtr_net": 1728583,
     "ivtr_days": 2,
     "ivtr_eok": 6098,
@@ -709,13 +1121,13 @@
     "flow": 0,
     "event": 0
    },
-   "price": 49850.0,
-   "change_pct": -2.06,
+   "price": 49750.0,
+   "change_pct": -2.26,
    "high_pct": 4.91,
-   "fade_pct": 142.0,
-   "value_eok": 1230,
-   "ma10": 44960.0,
-   "ma10_margin_pct": 10.88,
+   "fade_pct": 146.0,
+   "value_eok": 1279,
+   "ma10": 44950.0,
+   "ma10_margin_pct": 10.68,
    "spark": {
     "clusters": []
    },
@@ -762,8 +1174,8 @@
     "peak_date": "20260611",
     "peak_value_eok": 2044,
     "peak_high_pct": 17.59,
-    "ma20": 46102.5,
-    "ma20_margin_pct": 8.13,
+    "ma20": 46097.5,
+    "ma20_margin_pct": 7.92,
     "ivtr_net": 767669,
     "ivtr_days": 6,
     "ivtr_eok": 344,
