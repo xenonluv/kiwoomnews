@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-06-16 15:22 KST",
+  "as_of": "2026-06-16 15:37 KST",
   "intraday_rank": [
     {
       "ticker": "포스코인터내셔널",
       "code": "047050",
       "tomorrow_up_prob": "76%",
-      "entry": 65900.0,
-      "target": 69195,
-      "stop": 63923,
+      "entry": 65300.0,
+      "target": 68565,
+      "stop": 63341,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI51.2 강세",
-        "거래량2.89배"
+        "강세마감(0.84)",
+        "RSI50.1 강세",
+        "거래량2.93배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -48,7 +48,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.6 강세",
-        "거래량5.17배"
+        "거래량5.2배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -85,14 +85,14 @@
       "ticker": "SK오션플랜트",
       "code": "100090",
       "tomorrow_up_prob": "73%",
-      "entry": 21300.0,
-      "target": 22365,
-      "stop": 20661,
+      "entry": 21450.0,
+      "target": 22522,
+      "stop": 20806,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
-        "RSI61.0 강세",
-        "거래량5.77배"
+        "강세마감(0.94)",
+        "RSI61.3 강세",
+        "거래량5.87배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -113,17 +113,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 241500.0,
-      "target": 253575,
-      "stop": 234255,
+      "entry": 242000.0,
+      "target": 254100,
+      "stop": 234740,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI53.2 강세",
+        "RSI53.3 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -2.62,
+      "day_change": -2.42,
       "related_news": [
         {
           "title": "저작권위 블로그, 네이버 메이트 IT·테크 분야 선정",
@@ -140,34 +140,6 @@
       ]
     },
     {
-      "ticker": "한화에어로스페이스",
-      "code": "012450",
-      "tomorrow_up_prob": "70%",
-      "entry": 1186000.0,
-      "target": 1245300,
-      "stop": 1150420,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.7)",
-        "MACD강세",
-        "RSI51.4 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526266",
-          "office": "joongangenews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승"
-    },
-    {
       "ticker": "DL이앤씨",
       "code": "375500",
       "tomorrow_up_prob": "69%",
@@ -177,7 +149,7 @@
       "confidence": "중",
       "reasons": [
         "RSI63.3 강세",
-        "거래량3.75배",
+        "거래량3.78배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -250,7 +222,7 @@
       "reasons": [
         "강세마감(0.75)",
         "RSI52.9 강세",
-        "거래량1.87배"
+        "거래량1.88배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -287,13 +259,13 @@
       "ticker": "LIG디펜스앤에어로스페이스",
       "code": "079550",
       "tomorrow_up_prob": "66%",
-      "entry": 1008000.0,
-      "target": 1058400,
-      "stop": 977760,
+      "entry": 1002000.0,
+      "target": 1052100,
+      "stop": 971940,
       "confidence": "중",
       "reasons": [
-        "RSI66.5 강세",
-        "거래량3.6배",
+        "RSI66.2 강세",
+        "거래량3.65배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -321,7 +293,7 @@
       "confidence": "중",
       "reasons": [
         "RSI64.6 강세",
-        "거래량8.59배",
+        "거래량8.61배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -354,6 +326,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ..."
+    },
+    {
+      "ticker": "한화에어로스페이스",
+      "code": "012450",
+      "tomorrow_up_prob": "66%",
+      "entry": 1183000.0,
+      "target": 1242150,
+      "stop": 1147510,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "RSI51.1 강세",
+        "거래량1.5배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승",
+          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526266",
+          "office": "joongangenews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승"
     },
     {
       "ticker": "화신정공",
@@ -403,14 +403,14 @@
       "ticker": "하나마이크론",
       "code": "067310",
       "tomorrow_up_prob": "64%",
-      "entry": 50200.0,
-      "target": 52710,
-      "stop": 48694,
+      "entry": 50100.0,
+      "target": 52605,
+      "stop": 48597,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI58.6 강세"
+        "RSI58.5 강세"
       ],
       "risk": "약한 마감",
       "day_change": -1.57,
@@ -439,17 +439,17 @@
       "ticker": "현대약품",
       "code": "004310",
       "tomorrow_up_prob": "62%",
-      "entry": 7610.0,
-      "target": 7990,
-      "stop": 7382,
+      "entry": 7600.0,
+      "target": 7980,
+      "stop": 7372,
       "confidence": "중",
       "reasons": [
-        "RSI58.4 강세",
-        "거래량16.7배",
+        "RSI58.3 강세",
+        "거래량16.71배",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 1.88,
+      "day_change": 2.15,
       "cause_news": [
         {
           "title": "[특징주] 현대약품, 정부 '탈모 치료 건강보험 적용' 추진 소식에 상한...",
@@ -508,20 +508,64 @@
       "cause_summary": "생명보험주 동반 강세…미래에셋생명 14% 급등에 업종 주목"
     },
     {
+      "ticker": "한화솔루션",
+      "code": "009830",
+      "tomorrow_up_prob": "62%",
+      "entry": 42200.0,
+      "target": 44310,
+      "stop": 40934,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.73)",
+        "MACD강세",
+        "RSI58.0 강세"
+      ],
+      "risk": "악재",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "한화솔루션, 10% 넘게 급등…태양광·신재생에너지 기대감 부각",
+          "url": "https://www.job-post.co.kr/news/articleView.html?idxno=218393",
+          "office": "job-post",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "한화솔루션 주가, 급등세... 대규모 유상증자 일정은?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163945",
+          "office": "ggilbo",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "[특징주] 금호석유·한화솔루션·S-Oil 등 \"2026년 하반기 업사이클 진입...",
+          "url": "https://www.newstnt.com/news/articleView.html?idxno=706340",
+          "office": "newstnt",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 악재"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "한화솔루션, 10% 넘게 급등…태양광·신재생에너지 기대감 부각"
+    },
+    {
       "ticker": "퍼스텍",
       "code": "010820",
       "tomorrow_up_prob": "58%",
-      "entry": 8800.0,
-      "target": 9240,
-      "stop": 8536,
+      "entry": 8840.0,
+      "target": 9282,
+      "stop": 8575,
       "confidence": "중",
       "reasons": [
-        "거래량6.48배",
+        "거래량6.5배",
         "호재",
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": 9.57,
+      "day_change": 9.81,
       "cause_news": [
         {
           "title": "방산·건설·항공주 강세…퍼스텍·상지건설 上 이탈에 투자자 관심 집...",
@@ -545,10 +589,10 @@
       "confidence": "하",
       "reasons": [
         "RSI52.7 강세",
-        "장중 26회 지속"
+        "장중 27회 지속"
       ],
       "risk": "약한 마감",
-      "day_change": -5.48,
+      "day_change": -5.33,
       "cause_news": [
         {
           "title": "한미반도체, ‘스페이스X’ 올라타자마자 130억 평가익",
@@ -612,14 +656,14 @@
       "ticker": "포스코인터내셔널",
       "code": "047050",
       "tomorrow_up_prob": "76%",
-      "entry": 65900.0,
-      "target": 69195,
-      "stop": 63923,
+      "entry": 65300.0,
+      "target": 68565,
+      "stop": 63341,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.92)",
-        "RSI51.2 강세",
-        "거래량2.89배"
+        "강세마감(0.84)",
+        "RSI50.1 강세",
+        "거래량2.93배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -655,7 +699,7 @@
       "reasons": [
         "강세마감(1.0)",
         "RSI61.6 강세",
-        "거래량5.17배"
+        "거래량5.2배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -692,14 +736,14 @@
       "ticker": "SK오션플랜트",
       "code": "100090",
       "tomorrow_up_prob": "73%",
-      "entry": 21300.0,
-      "target": 22365,
-      "stop": 20661,
+      "entry": 21450.0,
+      "target": 22522,
+      "stop": 20806,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.91)",
-        "RSI61.0 강세",
-        "거래량5.77배"
+        "강세마감(0.94)",
+        "RSI61.3 강세",
+        "거래량5.87배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -720,17 +764,17 @@
       "ticker": "NAVER",
       "code": "035420",
       "tomorrow_up_prob": "71%",
-      "entry": 241500.0,
-      "target": 253575,
-      "stop": 234255,
+      "entry": 242000.0,
+      "target": 254100,
+      "stop": 234740,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI53.2 강세",
+        "RSI53.3 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": -2.62,
+      "day_change": -2.42,
       "related_news": [
         {
           "title": "저작권위 블로그, 네이버 메이트 IT·테크 분야 선정",
@@ -747,32 +791,40 @@
       ]
     },
     {
-      "ticker": "한화에어로스페이스",
-      "code": "012450",
-      "tomorrow_up_prob": "70%",
-      "entry": 1186000.0,
-      "target": 1245300,
-      "stop": 1150420,
-      "confidence": "상",
+      "ticker": "DL이앤씨",
+      "code": "375500",
+      "tomorrow_up_prob": "69%",
+      "entry": 89400.0,
+      "target": 93870,
+      "stop": 86718,
+      "confidence": "중",
       "reasons": [
-        "강세마감(0.7)",
-        "MACD강세",
-        "RSI51.4 강세"
+        "RSI63.3 강세",
+        "거래량3.78배",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승",
-          "url": "https://www.joongangenews.com/news/articleView.html?idxno=526266",
-          "office": "joongangenews",
+          "title": "건설주 급등…대우건설 17%↑ 이어 DL이앤씨 13% 상승",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439739",
+          "office": "econonews",
           "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] DL이앤씨, 美 \"이란 재건사업 3000억달러 추진\" 건설주 특수 기...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295830",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "한화에어로스페이스 주가, 6월 16일 장중 1,192,000원 9.96% 상승"
+      "cause_confidence": "높음",
+      "cause_summary": "건설주 급등…대우건설 17%↑ 이어 DL이앤씨 13% 상승"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
