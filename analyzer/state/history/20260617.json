@@ -1,44 +1,44 @@
 {
   "date": "20260617",
-  "as_of": "2026-06-17 11:22 KST",
+  "as_of": "2026-06-17 11:37 KST",
   "bets": [
     {
       "code": "007810",
       "ticker": "코리아써키트",
-      "entry": 140800.0,
-      "target": 147840,
-      "raw": 91,
-      "prob": "91%"
+      "entry": 141200.0,
+      "target": 148260,
+      "raw": 92,
+      "prob": "92%"
     },
     {
       "code": "402340",
       "ticker": "SK스퀘어",
-      "entry": 1587000.0,
-      "target": 1666350,
+      "entry": 1599000.0,
+      "target": 1678950,
       "raw": 78,
       "prob": "78%"
     },
     {
       "code": "095610",
       "ticker": "테스",
-      "entry": 169800.0,
-      "target": 178290,
+      "entry": 169300.0,
+      "target": 177765,
       "raw": 78,
       "prob": "78%"
     },
     {
       "code": "319660",
       "ticker": "피에스케이",
-      "entry": 161000.0,
-      "target": 169050,
+      "entry": 162000.0,
+      "target": 170100,
       "raw": 77,
       "prob": "77%"
     },
     {
-      "code": "034730",
-      "ticker": "SK",
-      "entry": 694000.0,
-      "target": 728700,
+      "code": "475150",
+      "ticker": "SK이터닉스",
+      "entry": 55100.0,
+      "target": 57855,
       "raw": 76,
       "prob": "76%"
     }
