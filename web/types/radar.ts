@@ -112,6 +112,16 @@ export interface ReignitionInfo {
   value_10m_eok: number; // 그 10분봉 1개의 거래대금(억)
 }
 
+/** 3일내 +7% 상승확률 라벨 — 6개월 백테스트 보정(과거 실측·보장 아님) */
+export interface ForecastInfo {
+  horizon: string; // "3일 내 +7%"
+  prob_pct: number; // 과거 실측 확률(강 모멘텀 상위군이면 상향)
+  base_pct: number; // 재매집 후보 전체 기저확률
+  strong: boolean; // 강 모멘텀 상위군(holdout 검증 구간)
+  next_day_7_pct: number; // 내일(1일) +7% 터치 — 낮음, 정직 표기
+  note: string;
+}
+
 /** Kimi 후보 검증 결과 */
 export interface AiVerdict {
   status: "ok" | "disabled" | "not_configured" | "unavailable" | "outside_window";
@@ -141,6 +151,8 @@ export interface Suspect {
   reaccum?: ReaccumInfo | null;
   /** 재반등(오늘) 신호 — pattern==="reaccum" 카드에 존재. 구버전 JSON엔 없음 */
   reignition?: ReignitionInfo | null;
+  /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */
+  forecast?: ForecastInfo | null;
   ai_verdict?: AiVerdict | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */

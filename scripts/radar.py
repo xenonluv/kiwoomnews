@@ -435,6 +435,32 @@ def prepare_reaccum_registry(p):
     return active, live_scan_ok
 
 
+# ── 익일~3일 상승확률 예측(동결 모델) — 전종목 6개월 백테스트로 보정, holdout 검증치 ──
+# 정직: "보장"이 아니라 과거 실측 확률. 강 모멘텀 상위군(z≥경계)만 holdout서 유의(53% TEST),
+# 중·하는 분리 안 돼 base로 둠. 표시 전용(score_raw 미반영). 라이브로 calibration 지속 보정 예정.
+FORECAST_MEAN = {"mom3": 2.1624, "mom5": 5.2731, "ma20_gap": 11.9678, "vol_surge": 1.0054}
+FORECAST_STD = {"mom3": 11.5152, "mom5": 17.6902, "ma20_gap": 17.5081, "vol_surge": 1.4395}
+FORECAST_STRONG_Z = 0.3617   # 상위 tercile 경계(train)
+FORECAST_BASE_3D7 = 46       # 재매집 후보 전체 3일내+7% 터치(과거 실측, 시장 19% 대비)
+FORECAST_STRONG_3D7 = 52     # 강 모멘텀 상위군(holdout TEST ~53, 보수적 52)
+FORECAST_NEXT7 = 25          # 내일(1일) +7% 터치 — 정직 공개(낮음)
+
+
+def forecast_prob(mom3, mom5, ma20_gap, vol_surge):
+    """동결 모델로 '3일 내 +7% 터치' 과거 실측 확률 라벨 산출(표시 전용·보장 아님)."""
+    feats = {"mom3": mom3, "mom5": mom5, "ma20_gap": ma20_gap, "vol_surge": vol_surge}
+    z = sum((feats[k] - FORECAST_MEAN[k]) / FORECAST_STD[k] for k in FORECAST_MEAN)
+    strong = z >= FORECAST_STRONG_Z
+    return {
+        "horizon": "3일 내 +7%",
+        "prob_pct": FORECAST_STRONG_3D7 if strong else FORECAST_BASE_3D7,
+        "base_pct": FORECAST_BASE_3D7,
+        "strong": strong,            # 강 모멘텀 상위군(holdout 검증)
+        "next_day_7_pct": FORECAST_NEXT7,  # 내일 1일 기준은 낮음 — 정직 표기
+        "note": "과거 실측 확률·보장 아님",
+    }
+
+
 def scan_reaccum_candidate(rec, p, events):
     """폭발 이후 식은 구간에서 기관 순매수+MA20 생존 재매집 후보를 만든다."""
     code, name = rec["code"], rec.get("name") or rec["code"]
@@ -520,6 +546,14 @@ def scan_reaccum_candidate(rec, p, events):
     score = min(95, REACCUM_SCORE + breakdown["re_value"] + breakdown["re_body"]
                 + breakdown["re_count"] + breakdown["flow"] + breakdown["explosion"])
     raw_breakdown = {k: 0 for k in breakdown}
+    # 익일~3일 상승확률 라벨(표시 전용·보장 아님) — 동결 모델. daily/now에서 0 API로 피처 산출.
+    vals_d = [d.get("value") or 0 for d in daily]
+    nz = [x for x in vals_d[-21:-1] if x > 0]   # 0/결측 거래일 제외 — 희박 거래 시 vsurge 폭증→오라벨 방지
+    av20v = sum(nz) / len(nz) if len(nz) >= 10 else 0.0   # 유효 거래일 10일+ 일 때만
+    vsurge = (now.get("value") or 0) / av20v if av20v > 0 else 1.0
+    mom3 = (closes[-1] / closes[-4] - 1) * 100 if len(closes) >= 4 and closes[-4] else 0.0
+    mom5 = (closes[-1] / closes[-6] - 1) * 100 if len(closes) >= 6 and closes[-6] else 0.0
+    forecast = forecast_prob(mom3, mom5, ma20_margin, vsurge)
     # 원인/테마("왜 올랐나"): 폭발시점 캡처본(registry) 우선 — 폭발 당일 catalyst라 신선(0 API).
     # 없으면(seed/과거폭발) 재매집 시점 보강 fetch. 표시 전용 — 점수 미반영.
     theme = rec.get("theme") or ""
@@ -545,6 +579,7 @@ def scan_reaccum_candidate(rec, p, events):
         "score_breakdown": breakdown,
         "score_raw": 0,
         "score_breakdown_raw": raw_breakdown,
+        "forecast": forecast,   # 3일내 +7% 과거 실측 확률 라벨(표시 전용·보장 아님)
         "price": now["price"],
         "change_pct": round(now["change_pct"], 2),
         "high_pct": round(high_pct, 2),

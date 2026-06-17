@@ -121,6 +121,7 @@ def record_history(out):
             "reaccum_badge": s.get("reaccum_badge", False),
             "reaccum": s.get("reaccum"),
             "reignition": s.get("reignition"),  # 재반등(오늘) 신호: 10분봉 몸통%·거래대금·시각
+            "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
 
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],
             "first_seen": prev.get("first_seen") or out.get("generated_at"),

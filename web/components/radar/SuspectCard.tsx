@@ -247,6 +247,18 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 왜 올랐나: {s.reaccum.cause_summary}
               </p>
             )}
+            {s.forecast && (
+              <p className="text-[11px] text-muted-foreground">
+                📊 유사셋업 {s.forecast.horizon} 과거{" "}
+                <span className={`font-semibold tabular-nums ${s.forecast.strong ? "text-up" : "text-foreground"}`}>
+                  ~{s.forecast.prob_pct}%
+                </span>
+                {s.forecast.strong && " (강 모멘텀)"}
+                {" · 내일1일 +7%는 ~"}
+                <span className="tabular-nums">{s.forecast.next_day_7_pct}%</span>
+                {" · 코호트 통계·보장 아님"}
+              </p>
+            )}
             {s.ai_verdict?.status === "ok" && s.ai_verdict.reason && (
               <p className="flex items-start gap-1 text-[11px] text-muted-foreground">
                 <BrainCircuit className="mt-0.5 size-3 shrink-0" aria-hidden />
