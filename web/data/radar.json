@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-17 11:32:02 KST",
+ "generated_at": "2026-06-17 11:41:58 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -65,13 +65,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1266000.0,
-   "change_pct": 2.43,
+   "price": 1261000.0,
+   "change_pct": 2.02,
    "high_pct": 5.58,
-   "fade_pct": 56.5,
-   "value_eok": 2623,
-   "ma10": 1147400.0,
-   "ma10_margin_pct": 10.34,
+   "fade_pct": 63.8,
+   "value_eok": 2674,
+   "ma10": 1146900.0,
+   "ma10_margin_pct": 9.95,
    "spark": {
     "clusters": []
    },
@@ -135,151 +135,12 @@
     "peak_date": "20260615",
     "peak_value_eok": 6385,
     "peak_high_pct": 18.34,
-    "ma20": 1110750.0,
-    "ma20_margin_pct": 13.98,
+    "ma20": 1110500.0,
+    "ma20_margin_pct": 13.55,
     "ivtr_net": 46200,
     "ivtr_days": 4,
     "ivtr_eok": 535,
     "cause_summary": "애플 AI 전략에 아이폰 더 팔린다…대표 부품주 LG이노텍 주목",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "043260",
-   "name": "성호전자",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 91,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 5,
-    "re_count": 3,
-    "flow": 8,
-    "explosion": 1
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "price": 42350.0,
-   "change_pct": 4.31,
-   "high_pct": 12.32,
-   "fade_pct": 65.0,
-   "value_eok": 1485,
-   "ma10": 44775.0,
-   "ma10_margin_pct": -5.42,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 5.6,
-    "time": "10:30",
-    "value_10m_eok": 78
-   },
-   "reignition_bars": [
-    {
-     "time": "10:30",
-     "body_pct": 5.6,
-     "value_eok": 78
-    },
-    {
-     "time": "10:40",
-     "body_pct": 2.0,
-     "value_eok": 657
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0610",
-      "frgn": -157443,
-      "orgn": -451962
-     },
-     {
-      "date": "0611",
-      "frgn": -886810,
-      "orgn": 1280775
-     },
-     {
-      "date": "0612",
-      "frgn": 30757,
-      "orgn": 428772
-     },
-     {
-      "date": "0615",
-      "frgn": -750413,
-      "orgn": -237717
-     },
-     {
-      "date": "0616",
-      "frgn": -91198,
-      "orgn": -200991
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "성호전자 &quot;ADS테크, 엔비디아·마벨서 100억원 수주…젠슨 황이 찍은 ...",
-     "summary": "성호전자의 자회사 ADS테크가 엔비디아와 마벨로부터 총 100억원 상당의 '공동광학패키징'(CPO) 장비를 수주했다. 17일 성호전자에 따르면 ADS테크는 엔비디아로부터 95억원 규모의 CPO 장비를 전날 신규 수주했다. 전체 수주량의 70%가량은 신",
-     "office": "머니투데이",
-     "datetime": "202606171039",
-     "url": "https://n.news.naver.com/mnews/article/008/0005373087",
-     "sentiment": "호재"
-    },
-    {
-     "title": "성호전자 '반도체 장비社' 인티맥스 인수",
-     "summary": "▶마켓인사이트 6월 12일 오전 9시 37분 성호전자가 반도체 핸들러·검사장비 제조사인 인티맥스 지분 90%를 640억원에 인수했다고 12일 발표했다. 지난해 12월 광통신 부품 조립 장비 업체 ADS테크를 인수한 데 이은 두 번째 반도체 장비 인수합",
-     "office": "한국경제",
-     "datetime": "202606121806",
-     "url": "https://n.news.naver.com/mnews/article/015/0005298231",
-     "sentiment": "호재"
-    },
-    {
-     "title": "[딜 인사이드] 성호전자, 메자닌 활용한 2000억 잭팟…오버행은 부담",
-     "summary": "성호전자가 고도화된 자본시장 금융기법을 활용해 인수합병(M&amp;A)에 잇따라 나서고 있다. 회사는 주가급등으로 가치가 크게 오른 메자닌(CB·BW)을 현금 대신 인수대금으로 사용하며 단기간에 자산 규모를 조 단위로 키웠다. 반면 본업 부진으로...",
-     "office": "블로터",
-     "datetime": "202606121509",
-     "url": "https://n.news.naver.com/mnews/article/293/0000086194",
-     "sentiment": "혼재"
-    },
-    {
-     "title": "젠슨 황이 찍은 ‘빛의 길’ 잡는다…성호전자, LG이노텍과 ‘광 커넥...",
-     "summary": "광 커넥션·CPO 양산장비 협력 검토 로보틱스·우주항공 등 미래사업 적용성 평가 [헤럴드경제=홍석희 기자] 성호전자가 LG이노텍과 광통신·로보틱스·우주항공 등 미래사업 분야 협력에 나선다. 인공지능(AI) 데이터 처리 병목을 줄일 기술로...",
-     "office": "헤럴드경제",
-     "datetime": "202606100811",
-     "url": "https://n.news.naver.com/mnews/article/016/0002654346",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260611",
-    "peak_value_eok": 2670,
-    "peak_high_pct": 14.16,
-    "ma20": 42162.5,
-    "ma20_margin_pct": 0.44,
-    "ivtr_net": 1328706,
-    "ivtr_days": 2,
-    "ivtr_eok": 613,
-    "cause_summary": "성호전자 &quot;ADS테크, 엔비디아·마벨서 100억원 수주…젠슨 황이 찍은 ...",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -314,7 +175,7 @@
    "change_pct": -3.32,
    "high_pct": 5.88,
    "fade_pct": 156.4,
-   "value_eok": 4393,
+   "value_eok": 4446,
    "ma10": 59545.0,
    "ma10_margin_pct": 7.65,
    "spark": {
@@ -411,13 +272,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1600000.0,
-   "change_pct": 6.6,
+   "price": 1595000.0,
+   "change_pct": 6.26,
    "high_pct": 7.4,
-   "fade_pct": 10.8,
-   "value_eok": 7103,
-   "ma10": 1328900.0,
-   "ma10_margin_pct": 20.4,
+   "fade_pct": 15.3,
+   "value_eok": 7440,
+   "ma10": 1328400.0,
+   "ma10_margin_pct": 20.07,
    "spark": {
     "clusters": []
    },
@@ -495,8 +356,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1261550.0,
-    "ma20_margin_pct": 26.83,
+    "ma20": 1261300.0,
+    "ma20_margin_pct": 26.46,
     "ivtr_net": 1192969,
     "ivtr_days": 4,
     "ivtr_eok": 15537,
@@ -535,7 +396,7 @@
    "change_pct": -1.79,
    "high_pct": 0.54,
    "fade_pct": 433.3,
-   "value_eok": 1947,
+   "value_eok": 1987,
    "ma10": 42600.0,
    "ma10_margin_pct": 28.64,
    "spark": {
@@ -642,13 +503,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 51400.0,
-   "change_pct": 2.59,
+   "price": 51100.0,
+   "change_pct": 2.0,
    "high_pct": 7.98,
-   "fade_pct": 67.5,
-   "value_eok": 837,
-   "ma10": 45985.0,
-   "ma10_margin_pct": 11.78,
+   "fade_pct": 75.0,
+   "value_eok": 849,
+   "ma10": 45955.0,
+   "ma10_margin_pct": 11.2,
    "spark": {
     "clusters": []
    },
@@ -712,8 +573,8 @@
     "peak_date": "20260611",
     "peak_value_eok": 2044,
     "peak_high_pct": 17.59,
-    "ma20": 46237.5,
-    "ma20_margin_pct": 11.17,
+    "ma20": 46222.5,
+    "ma20_margin_pct": 10.55,
     "ivtr_net": 524964,
     "ivtr_days": 6,
     "ivtr_eok": 223,
@@ -752,7 +613,7 @@
    "change_pct": 0.0,
    "high_pct": 6.05,
    "fade_pct": 100.0,
-   "value_eok": 403,
+   "value_eok": 417,
    "ma10": 144570.0,
    "ma10_margin_pct": 12.13,
    "spark": {
@@ -858,13 +719,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 169600.0,
-   "change_pct": 0.24,
+   "price": 169400.0,
+   "change_pct": 0.12,
    "high_pct": 5.14,
-   "fade_pct": 95.4,
-   "value_eok": 262,
-   "ma10": 161000.0,
-   "ma10_margin_pct": 5.34,
+   "fade_pct": 97.7,
+   "value_eok": 269,
+   "ma10": 160980.0,
+   "ma10_margin_pct": 5.23,
    "spark": {
     "clusters": []
    },
@@ -942,8 +803,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2232,
     "peak_high_pct": 18.7,
-    "ma20": 139550.0,
-    "ma20_margin_pct": 21.53,
+    "ma20": 139540.0,
+    "ma20_margin_pct": 21.4,
     "ivtr_net": 284383,
     "ivtr_days": 4,
     "ivtr_eok": 486,
@@ -978,13 +839,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 173400.0,
-   "change_pct": 2.06,
+   "price": 173000.0,
+   "change_pct": 1.82,
    "high_pct": 7.47,
-   "fade_pct": 72.4,
-   "value_eok": 1386,
-   "ma10": 158510.0,
-   "ma10_margin_pct": 9.39,
+   "fade_pct": 75.6,
+   "value_eok": 1409,
+   "ma10": 158470.0,
+   "ma10_margin_pct": 9.17,
    "spark": {
     "clusters": []
    },
@@ -1043,8 +904,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 2017,
     "peak_high_pct": 14.07,
-    "ma20": 158690.0,
-    "ma20_margin_pct": 9.27,
+    "ma20": 158670.0,
+    "ma20_margin_pct": 9.03,
     "ivtr_net": 828292,
     "ivtr_days": 4,
     "ivtr_eok": 1419,
@@ -1079,13 +940,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 694000.0,
-   "change_pct": 3.12,
+   "price": 692000.0,
+   "change_pct": 2.82,
    "high_pct": 6.39,
-   "fade_pct": 51.2,
-   "value_eok": 650,
-   "ma10": 621900.0,
-   "ma10_margin_pct": 11.59,
+   "fade_pct": 55.8,
+   "value_eok": 662,
+   "ma10": 621700.0,
+   "ma10_margin_pct": 11.31,
    "spark": {
     "clusters": []
    },
@@ -1154,8 +1015,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 624150.0,
-    "ma20_margin_pct": 11.19,
+    "ma20": 624050.0,
+    "ma20_margin_pct": 10.89,
     "ivtr_net": 6888,
     "ivtr_days": 3,
     "ivtr_eok": 45,
@@ -1190,13 +1051,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 395500.0,
-   "change_pct": 4.49,
+   "price": 393500.0,
+   "change_pct": 3.96,
    "high_pct": 8.19,
-   "fade_pct": 45.2,
-   "value_eok": 178,
-   "ma10": 375000.0,
-   "ma10_margin_pct": 5.47,
+   "fade_pct": 51.6,
+   "value_eok": 185,
+   "ma10": 374800.0,
+   "ma10_margin_pct": 4.99,
    "spark": {
     "clusters": []
    },
@@ -1282,8 +1143,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2053,
     "peak_high_pct": 30.0,
-    "ma20": 390000.0,
-    "ma20_margin_pct": 1.41,
+    "ma20": 389900.0,
+    "ma20_margin_pct": 0.92,
     "ivtr_net": 24320,
     "ivtr_days": 1,
     "ivtr_eok": 287,
@@ -1318,13 +1179,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 498000.0,
-   "change_pct": 0.61,
+   "price": 497500.0,
+   "change_pct": 0.51,
    "high_pct": 6.67,
-   "fade_pct": 90.9,
-   "value_eok": 312,
-   "ma10": 488100.0,
-   "ma10_margin_pct": 2.03,
+   "fade_pct": 92.4,
+   "value_eok": 323,
+   "ma10": 488050.0,
+   "ma10_margin_pct": 1.94,
    "spark": {
     "clusters": []
    },
@@ -1388,11 +1249,117 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 490800.0,
-    "ma20_margin_pct": 1.47,
+    "ma20": 490775.0,
+    "ma20_margin_pct": 1.37,
     "ivtr_net": 37631,
     "ivtr_days": 2,
     "ivtr_eok": 334,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "001820",
+   "name": "삼화콘덴서",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 70,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 3,
+    "re_body": 2,
+    "re_count": 3,
+    "flow": 0,
+    "explosion": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "price": 148400.0,
+   "change_pct": 0.34,
+   "high_pct": 4.53,
+   "fade_pct": 92.5,
+   "value_eok": 700,
+   "ma10": 125790.0,
+   "ma10_margin_pct": 17.97,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.26,
+    "time": "09:30",
+    "value_10m_eok": 108
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 3.15,
+     "value_eok": 61
+    },
+    {
+     "time": "09:30",
+     "body_pct": 3.26,
+     "value_eok": 108
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 1,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -5209,
+      "orgn": 16389
+     },
+     {
+      "date": "0611",
+      "frgn": 78863,
+      "orgn": 133448
+     },
+     {
+      "date": "0612",
+      "frgn": 3158,
+      "orgn": -67706
+     },
+     {
+      "date": "0615",
+      "frgn": -2173,
+      "orgn": -17918
+     },
+     {
+      "date": "0616",
+      "frgn": -13725,
+      "orgn": 24658
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "전쟁",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 1683,
+    "peak_high_pct": 18.95,
+    "ma20": 118320.0,
+    "ma20_margin_pct": 25.42,
+    "ivtr_net": 23986,
+    "ivtr_days": 2,
+    "ivtr_eok": 30,
     "cause_summary": "",
     "was_theme_leader": false
    },
