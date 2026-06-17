@@ -1,34 +1,6 @@
 {
-  "as_of": "2026-06-17 15:37 KST",
+  "as_of": "2026-06-17 15:52 KST",
   "intraday_rank": [
-    {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "79%",
-      "entry": 1596000.0,
-      "target": 1675800,
-      "stop": 1548120,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 6.33,
-      "cause_news": [
-        {
-          "title": "[특징주] SK스퀘어, 신고가 경신…SK하이닉스 주주환원 확대 기대감",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=221121",
-          "office": "youthdaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, 신고가 경신…SK하이닉스 주주환원 확대 기대감"
-    },
     {
       "ticker": "테스",
       "code": "095610",
@@ -114,6 +86,42 @@
       "cause_summary": "[특징주] 대덕전자, 목표가 25만원 상향에 강세…판가 인상·증설 기대"
     },
     {
+      "ticker": "포스코스틸리온",
+      "code": "058430",
+      "tomorrow_up_prob": "75%",
+      "entry": 6580.0,
+      "target": 6909,
+      "stop": 6383,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI59.4 강세",
+        "거래량12.72배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[특징주] 철강주, 종전 합의 따른 재건 기대감에 급등(종합)",
+          "url": "https://n.news.naver.com/mnews/article/001/0016144045",
+          "office": "연합뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "포스코스틸리온, 제품가 인상으로 실적 개선 예상…목표가↑-현대차",
+          "url": "https://n.news.naver.com/mnews/article/018/0006303946",
+          "office": "이데일리",
+          "sentiment": "호재"
+        },
+        {
+          "title": "포스코스틸리온, 포스코 등 주요주주 지분 56.91%로 변동",
+          "url": "https://n.news.naver.com/mnews/article/293/0000084029",
+          "office": "블로터",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "한화엔진",
       "code": "082740",
       "tomorrow_up_prob": "75%",
@@ -138,14 +146,6 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "한화엔진 주가 장중 14%대 올라, 미국 투자 확대 가시화에 조선주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=440158",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13...",
           "url": "https://www.newsway.co.kr/news/view?ud=2026061711153592225",
           "office": "newsway",
@@ -156,36 +156,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 한화엔진, 내년 실적 증가 기대감에 12% 급등"
-    },
-    {
-      "ticker": "포스코스틸리온",
-      "code": "058430",
-      "tomorrow_up_prob": "74%",
-      "entry": 6580.0,
-      "target": 6909,
-      "stop": 6383,
-      "confidence": "상",
-      "reasons": [
-        "MACD강세",
-        "RSI59.4 강세",
-        "거래량12.71배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "포스코스틸리온, 제품가 인상으로 실적 개선 예상…목표가↑-현대차",
-          "url": "https://n.news.naver.com/mnews/article/018/0006303946",
-          "office": "이데일리",
-          "sentiment": "호재"
-        },
-        {
-          "title": "포스코스틸리온, 포스코 등 주요주주 지분 56.91%로 변동",
-          "url": "https://n.news.naver.com/mnews/article/293/0000084029",
-          "office": "블로터",
-          "sentiment": "호재"
-        }
-      ]
     },
     {
       "ticker": "LG이노텍",
@@ -262,6 +232,42 @@
       ]
     },
     {
+      "ticker": "테크윙",
+      "code": "089030",
+      "tomorrow_up_prob": "68%",
+      "entry": 62100.0,
+      "target": 65205,
+      "stop": 60237,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI56.2 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.67,
+      "cause_news": [
+        {
+          "title": "테크윙 주가, 급등세... 어떤 기업이길래?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1163657",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
+        },
+        {
+          "title": "테크윙 주가, 6월 17일 장중 61,600원 2.84% 상승",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16098009",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "테크윙 주가, 급등세... 어떤 기업이길래?"
+    },
+    {
       "ticker": "이오테크닉스",
       "code": "039030",
       "tomorrow_up_prob": "68%",
@@ -287,7 +293,7 @@
       "confidence": "중",
       "reasons": [
         "RSI63.1 강세",
-        "거래량8.37배",
+        "거래량8.38배",
         "호재"
       ],
       "risk": "약한 마감",
@@ -324,7 +330,7 @@
       "reasons": [
         "RSI54.6 강세",
         "거래량6.32배",
-        "장중 21회 지속"
+        "장중 22회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -367,7 +373,7 @@
       "confidence": "중",
       "reasons": [
         "호재",
-        "장중 11회 지속"
+        "장중 12회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": 5.17,
@@ -421,6 +427,50 @@
       "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
     },
     {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "39%",
+      "entry": 1596000.0,
+      "target": 1675800,
+      "stop": 1548120,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.81)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 6.33,
+      "cause_news": [
+        {
+          "title": "SK스퀘어, 하이닉스 주주환원 기대에 6%대 급등…52주 신고가 경신",
+          "url": "https://www.slist.kr/news/articleView.html?idxno=745857",
+          "office": "slist",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK스퀘어, 신고가 경신…SK하이닉스 주주환원 확대 기대감",
+          "url": "https://www.youthdaily.co.kr/news/article.html?no=221121",
+          "office": "youthdaily",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK스퀘어, 6%대 급등…52주 신고가 경신(종합)",
+          "url": "https://www.yna.co.kr/view/AKR20260617047651008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 6,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 리스트감점, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "SK스퀘어, 하이닉스 주주환원 기대에 6%대 급등…52주 신고가 경신"
+    },
+    {
       "ticker": "SK",
       "code": "034730",
       "tomorrow_up_prob": "39%",
@@ -437,32 +487,32 @@
       "day_change": 5.2,
       "cause_news": [
         {
-          "title": "조혜련 87만원·신기루 146만원에 매수…SK하이닉스 결국 250만원 돌파 ‘...",
-          "url": "https://www.mk.co.kr/article/12076395",
-          "office": "mk",
+          "title": "[특징주] SK하이닉스 또 신고가…주주환원 기대에 252만원 돌파",
+          "url": "https://www.ajunews.com/view/20260617153526413",
+          "office": "ajunews",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] SK하이닉스, 250만원 돌파하며 또 신고가…AI 메모리 슈퍼사이...",
-          "url": "https://www.tokenpost.kr/news/economy/370242",
-          "office": "tokenpost",
+          "title": "SK스퀘어, 하이닉스 주주환원 기대에 6%대 급등…52주 신고가 경신",
+          "url": "https://www.slist.kr/news/articleView.html?idxno=745857",
+          "office": "slist",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 마침내 '250만 닉스'… SK하이닉스 오후장에 급등",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=913924",
-          "office": "namdonews",
+          "title": "SK하이닉스 사상 첫 '250만닉스'…장중 최고가 경신",
+          "url": "https://www.kado.net/news/articleView.html?idxno=2056255",
+          "office": "kado",
           "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "조혜련 87만원·신기루 146만원에 매수…SK하이닉스 결국 250만원 돌파 ‘..."
+      "cause_summary": "[특징주] SK하이닉스 또 신고가…주주환원 기대에 252만원 돌파"
     },
     {
       "ticker": "삼화콘덴서",
@@ -509,6 +559,14 @@
       "day_change": null,
       "cause_news": [
         {
+          "title": "[EBN 데이터센터] 17일 상승 종목 30選…한솔테크닉스 상한가",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712916",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "[특징주]한솔테크닉스, 윌테크놀러지 인수에 연일 강세",
           "url": "https://view.asiae.co.kr/article/2026041410441464394",
           "office": "view",
@@ -523,18 +581,10 @@
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "페라이트株 다시 달린다…한솔테크닉스·알엔투테크놀로지 무슨 호재 있...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459331",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 인과표현, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주]한솔테크닉스, 윌테크놀러지 인수에 연일 강세"
+      "cause_summary": "[EBN 데이터센터] 17일 상승 종목 30選…한솔테크닉스 상한가"
     },
     {
       "ticker": "가온전선",
@@ -569,9 +619,9 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "[속보] 가온전선 주가 상한가 도달…VI 수차례 발동 속 강세",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582580",
-          "office": "cbci",
+          "title": "대원전선·가온전선 등 전선株 강세...연이은 수주 성공",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3610665",
+          "office": "gukjenews",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
@@ -626,34 +676,6 @@
     }
   ],
   "closing_bet": [
-    {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "79%",
-      "entry": 1596000.0,
-      "target": 1675800,
-      "stop": 1548120,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.81)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 6.33,
-      "cause_news": [
-        {
-          "title": "[특징주] SK스퀘어, 신고가 경신…SK하이닉스 주주환원 확대 기대감",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=221121",
-          "office": "youthdaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, 신고가 경신…SK하이닉스 주주환원 확대 기대감"
-    },
     {
       "ticker": "테스",
       "code": "095610",
@@ -739,6 +761,42 @@
       "cause_summary": "[특징주] 대덕전자, 목표가 25만원 상향에 강세…판가 인상·증설 기대"
     },
     {
+      "ticker": "포스코스틸리온",
+      "code": "058430",
+      "tomorrow_up_prob": "75%",
+      "entry": 6580.0,
+      "target": 6909,
+      "stop": 6383,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI59.4 강세",
+        "거래량12.72배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[특징주] 철강주, 종전 합의 따른 재건 기대감에 급등(종합)",
+          "url": "https://n.news.naver.com/mnews/article/001/0016144045",
+          "office": "연합뉴스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "포스코스틸리온, 제품가 인상으로 실적 개선 예상…목표가↑-현대차",
+          "url": "https://n.news.naver.com/mnews/article/018/0006303946",
+          "office": "이데일리",
+          "sentiment": "호재"
+        },
+        {
+          "title": "포스코스틸리온, 포스코 등 주요주주 지분 56.91%로 변동",
+          "url": "https://n.news.naver.com/mnews/article/293/0000084029",
+          "office": "블로터",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "한화엔진",
       "code": "082740",
       "tomorrow_up_prob": "75%",
@@ -761,14 +819,6 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "한화엔진 주가 장중 14%대 올라, 미국 투자 확대 가시화에 조선주 강세",
-          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=440158",
-          "office": "businesspost",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
           "title": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13...",
