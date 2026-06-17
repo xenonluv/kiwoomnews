@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-17 09:41:52 KST",
+ "generated_at": "2026-06-17 09:51:47 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -65,13 +65,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1264000.0,
-   "change_pct": 2.27,
+   "price": 1244000.0,
+   "change_pct": 0.65,
    "high_pct": 5.58,
-   "fade_pct": 59.4,
-   "value_eok": 1576,
-   "ma10": 1147200.0,
-   "ma10_margin_pct": 10.18,
+   "fade_pct": 88.4,
+   "value_eok": 1760,
+   "ma10": 1145200.0,
+   "ma10_margin_pct": 8.63,
    "spark": {
     "clusters": []
    },
@@ -135,113 +135,12 @@
     "peak_date": "20260615",
     "peak_value_eok": 6385,
     "peak_high_pct": 18.34,
-    "ma20": 1110650.0,
-    "ma20_margin_pct": 13.81,
+    "ma20": 1109650.0,
+    "ma20_margin_pct": 12.11,
     "ivtr_net": 46200,
     "ivtr_days": 4,
     "ivtr_eok": 535,
     "cause_summary": "애플 AI 전략에 아이폰 더 팔린다…대표 부품주 LG이노텍 주목",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "403870",
-   "name": "HPSP",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 91,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 3,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 6
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "price": 64300.0,
-   "change_pct": -3.02,
-   "high_pct": 5.88,
-   "fade_pct": 151.3,
-   "value_eok": 2929,
-   "ma10": 59565.0,
-   "ma10_margin_pct": 7.95,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.76,
-    "time": "09:00",
-    "value_10m_eok": 1338
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 3.76,
-     "value_eok": 1338
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0610",
-      "frgn": -26643,
-      "orgn": -188196
-     },
-     {
-      "date": "0611",
-      "frgn": -974859,
-      "orgn": 668351
-     },
-     {
-      "date": "0612",
-      "frgn": 555701,
-      "orgn": 750076
-     },
-     {
-      "date": "0615",
-      "frgn": -1866211,
-      "orgn": 4654936
-     },
-     {
-      "date": "0616",
-      "frgn": -1738532,
-      "orgn": -807812
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 27304,
-    "peak_high_pct": 28.67,
-    "ma20": 55337.5,
-    "ma20_margin_pct": 16.2,
-    "ivtr_net": 5609683,
-    "ivtr_days": 3,
-    "ivtr_eok": 4271,
-    "cause_summary": "외국투자자 한달여만에 컴백 … 반도체 투톱 2조 '폭풍 쇼핑'",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -272,13 +171,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1573000.0,
-   "change_pct": 4.8,
+   "price": 1572000.0,
+   "change_pct": 4.73,
    "high_pct": 7.4,
-   "fade_pct": 35.1,
-   "value_eok": 3534,
-   "ma10": 1326200.0,
-   "ma10_margin_pct": 18.61,
+   "fade_pct": 36.0,
+   "value_eok": 4007,
+   "ma10": 1325900.0,
+   "ma10_margin_pct": 18.56,
    "spark": {
     "clusters": []
    },
@@ -329,7 +228,16 @@
      }
     ]
    },
-   "news": [],
+   "news": [
+    {
+     "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에…사상 최고가",
+     "summary": "17일 장 초반 SK스퀘어가 1년 중 최고가를 경신했다. SK하이닉스의 배당 매력이 높아진 영향으로 풀이된다. 이날 오전 9시 40분 기준 SK스퀘어는 유가증권시장에서 전 거래일 대비 7만5000원(5%) 오른 157만6000원에 거래되고 있다. 장.",
+     "office": "조선비즈",
+     "datetime": "202606170945",
+     "url": "https://n.news.naver.com/mnews/article/366/0001172332",
+     "sentiment": "호재"
+    }
+   ],
    "matched_events": [
     {
      "id": "2026-06-17_FOMC 금리 결정 (",
@@ -341,18 +249,18 @@
      "score": 3.0
     }
    ],
-   "theme": "반도체",
+   "theme": "금리",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1260200.0,
-    "ma20_margin_pct": 24.82,
+    "ma20": 1260050.0,
+    "ma20_margin_pct": 24.76,
     "ivtr_net": 1192969,
     "ivtr_days": 4,
     "ivtr_eok": 15537,
-    "cause_summary": "",
+    "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에…사상 최고가",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -383,13 +291,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 52700.0,
-   "change_pct": 5.19,
+   "price": 52200.0,
+   "change_pct": 4.19,
    "high_pct": 7.98,
-   "fade_pct": 35.0,
-   "value_eok": 568,
-   "ma10": 46105.0,
-   "ma10_margin_pct": 14.3,
+   "fade_pct": 47.5,
+   "value_eok": 615,
+   "ma10": 46065.0,
+   "ma10_margin_pct": 13.32,
    "spark": {
     "clusters": []
    },
@@ -453,8 +361,8 @@
     "peak_date": "20260611",
     "peak_value_eok": 2044,
     "peak_high_pct": 17.59,
-    "ma20": 46297.5,
-    "ma20_margin_pct": 13.83,
+    "ma20": 46277.5,
+    "ma20_margin_pct": 12.8,
     "ivtr_net": 524964,
     "ivtr_days": 6,
     "ivtr_eok": 223,
@@ -489,13 +397,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 165400.0,
-   "change_pct": 2.04,
+   "price": 163900.0,
+   "change_pct": 1.11,
    "high_pct": 6.05,
-   "fade_pct": 66.3,
-   "value_eok": 240,
-   "ma10": 144900.0,
-   "ma10_margin_pct": 14.15,
+   "fade_pct": 81.6,
+   "value_eok": 253,
+   "ma10": 144750.0,
+   "ma10_margin_pct": 13.23,
    "spark": {
     "clusters": []
    },
@@ -563,8 +471,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2652,
     "peak_high_pct": 24.5,
-    "ma20": 124745.0,
-    "ma20_margin_pct": 32.59,
+    "ma20": 124670.0,
+    "ma20_margin_pct": 31.47,
     "ivtr_net": 432967,
     "ivtr_days": 4,
     "ivtr_eok": 729,
@@ -599,13 +507,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 174000.0,
-   "change_pct": 2.84,
+   "price": 172800.0,
+   "change_pct": 2.13,
    "high_pct": 5.14,
-   "fade_pct": 44.8,
-   "value_eok": 156,
-   "ma10": 161440.0,
-   "ma10_margin_pct": 7.78,
+   "fade_pct": 58.6,
+   "value_eok": 165,
+   "ma10": 161320.0,
+   "ma10_margin_pct": 7.12,
    "spark": {
     "clusters": []
    },
@@ -683,8 +591,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2232,
     "peak_high_pct": 18.7,
-    "ma20": 139770.0,
-    "ma20_margin_pct": 24.49,
+    "ma20": 139710.0,
+    "ma20_margin_pct": 23.68,
     "ivtr_net": 284383,
     "ivtr_days": 4,
     "ivtr_eok": 486,
@@ -719,13 +627,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 182000.0,
-   "change_pct": 7.12,
-   "high_pct": 7.12,
-   "fade_pct": 0.0,
-   "value_eok": 817,
-   "ma10": 159370.0,
-   "ma10_margin_pct": 14.2,
+   "price": 177500.0,
+   "change_pct": 4.47,
+   "high_pct": 7.47,
+   "fade_pct": 40.2,
+   "value_eok": 995,
+   "ma10": 158920.0,
+   "ma10_margin_pct": 11.69,
    "spark": {
     "clusters": []
    },
@@ -784,8 +692,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 2017,
     "peak_high_pct": 14.07,
-    "ma20": 159120.0,
-    "ma20_margin_pct": 14.38,
+    "ma20": 158895.0,
+    "ma20_margin_pct": 11.71,
     "ivtr_net": 828292,
     "ivtr_days": 4,
     "ivtr_eok": 1419,
@@ -824,7 +732,7 @@
    "change_pct": 1.49,
    "high_pct": 6.39,
    "fade_pct": 76.7,
-   "value_eok": 433,
+   "value_eok": 449,
    "ma10": 620800.0,
    "ma10_margin_pct": 10.02,
    "spark": {
@@ -931,13 +839,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 398000.0,
-   "change_pct": 5.15,
+   "price": 395500.0,
+   "change_pct": 4.49,
    "high_pct": 8.19,
-   "fade_pct": 37.1,
-   "value_eok": 114,
-   "ma10": 375250.0,
-   "ma10_margin_pct": 6.06,
+   "fade_pct": 45.2,
+   "value_eok": 123,
+   "ma10": 375000.0,
+   "ma10_margin_pct": 5.47,
    "spark": {
     "clusters": []
    },
@@ -1023,8 +931,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2053,
     "peak_high_pct": 30.0,
-    "ma20": 390125.0,
-    "ma20_margin_pct": 2.02,
+    "ma20": 390000.0,
+    "ma20_margin_pct": 1.41,
     "ivtr_net": 24320,
     "ivtr_days": 1,
     "ivtr_eok": 287,
@@ -1059,13 +967,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 521000.0,
-   "change_pct": 5.25,
+   "price": 515000.0,
+   "change_pct": 4.04,
    "high_pct": 6.67,
-   "fade_pct": 21.2,
-   "value_eok": 151,
-   "ma10": 490400.0,
-   "ma10_margin_pct": 6.24,
+   "fade_pct": 39.4,
+   "value_eok": 166,
+   "ma10": 489800.0,
+   "ma10_margin_pct": 5.14,
    "spark": {
     "clusters": []
    },
@@ -1129,8 +1037,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 4605,
     "peak_high_pct": 23.61,
-    "ma20": 491950.0,
-    "ma20_margin_pct": 5.91,
+    "ma20": 491650.0,
+    "ma20_margin_pct": 4.75,
     "ivtr_net": 37631,
     "ivtr_days": 2,
     "ivtr_eok": 334,
@@ -1165,13 +1073,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 91100.0,
-   "change_pct": -1.51,
+   "price": 89600.0,
+   "change_pct": -3.14,
    "high_pct": 2.16,
-   "fade_pct": 170.0,
-   "value_eok": 89,
-   "ma10": 81480.0,
-   "ma10_margin_pct": 11.81,
+   "fade_pct": 245.0,
+   "value_eok": 112,
+   "ma10": 81330.0,
+   "ma10_margin_pct": 10.17,
    "spark": {
     "clusters": []
    },
@@ -1249,8 +1157,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 1568,
     "peak_high_pct": 22.21,
-    "ma20": 70195.0,
-    "ma20_margin_pct": 29.78,
+    "ma20": 70120.0,
+    "ma20_margin_pct": 27.78,
     "ivtr_net": 1418353,
     "ivtr_days": 4,
     "ivtr_eok": 1226,
@@ -1285,13 +1193,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 150700.0,
-   "change_pct": 1.89,
+   "price": 151900.0,
+   "change_pct": 2.7,
    "high_pct": 3.25,
-   "fade_pct": 41.7,
-   "value_eok": 308,
-   "ma10": 126030.0,
-   "ma10_margin_pct": 19.57,
+   "fade_pct": 16.7,
+   "value_eok": 370,
+   "ma10": 126140.0,
+   "ma10_margin_pct": 20.42,
    "spark": {
     "clusters": []
    },
@@ -1355,12 +1263,113 @@
     "peak_date": "20260615",
     "peak_value_eok": 1683,
     "peak_high_pct": 18.95,
-    "ma20": 118440.0,
-    "ma20_margin_pct": 27.24,
+    "ma20": 118495.0,
+    "ma20_margin_pct": 28.19,
     "ivtr_net": 23986,
     "ivtr_days": 2,
     "ivtr_eok": 30,
     "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "093370",
+   "name": "후성",
+   "sector": "화학",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 69,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 3,
+    "re_body": 2,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 2
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "price": 18650.0,
+   "change_pct": -2.86,
+   "high_pct": -1.2,
+   "fade_pct": 0.0,
+   "value_eok": 662,
+   "ma10": 15913.0,
+   "ma10_margin_pct": 17.2,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.61,
+    "time": "09:30",
+    "value_10m_eok": 98
+   },
+   "reignition_bars": [
+    {
+     "time": "09:30",
+     "body_pct": 3.61,
+     "value_eok": 98
+    }
+   ],
+   "flow": {
+    "net_days": 4,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": 2178199,
+      "orgn": 372976
+     },
+     {
+      "date": "0611",
+      "frgn": 204063,
+      "orgn": 498603
+     },
+     {
+      "date": "0612",
+      "frgn": 2114671,
+      "orgn": 81
+     },
+     {
+      "date": "0615",
+      "frgn": 804772,
+      "orgn": 1264808
+     },
+     {
+      "date": "0616",
+      "frgn": -675718,
+      "orgn": -122479
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "유가",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 3673,
+    "peak_high_pct": 23.88,
+    "ma20": 13867.0,
+    "ma20_margin_pct": 34.49,
+    "ivtr_net": 39348,
+    "ivtr_days": 2,
+    "ivtr_eok": 12,
+    "cause_summary": "“AI 특수에 가스까지 품귀”…후성 주가 일주일새 63% 쑥 [이주의 Bul...",
     "was_theme_leader": false
    },
    "theme_leader": false
