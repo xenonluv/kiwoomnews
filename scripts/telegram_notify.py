@@ -57,7 +57,8 @@ def send(text):
 
 def _load_state(path):
     try:
-        return json.load(open(path, encoding="utf-8")) or {}
+        d = json.load(open(path, encoding="utf-8"))
+        return d if isinstance(d, dict) else {}  # 손상(비-dict) 파일도 안전하게 빈 상태로
     except Exception:
         return {}
 
