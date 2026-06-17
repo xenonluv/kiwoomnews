@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-17 09:21:46 KST",
+ "generated_at": "2026-06-17 09:31:48 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -65,13 +65,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1275000.0,
-   "change_pct": 3.16,
+   "price": 1271000.0,
+   "change_pct": 2.83,
    "high_pct": 5.58,
-   "fade_pct": 43.5,
-   "value_eok": 1076,
-   "ma10": 1148400.0,
-   "ma10_margin_pct": 11.02,
+   "fade_pct": 49.3,
+   "value_eok": 1390,
+   "ma10": 1147800.0,
+   "ma10_margin_pct": 10.73,
    "spark": {
     "clusters": []
    },
@@ -135,8 +135,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 6385,
     "peak_high_pct": 18.34,
-    "ma20": 1111250.0,
-    "ma20_margin_pct": 14.74,
+    "ma20": 1110950.0,
+    "ma20_margin_pct": 14.41,
     "ivtr_net": 46200,
     "ivtr_days": 4,
     "ivtr_eok": 535,
@@ -175,7 +175,7 @@
    "change_pct": -0.75,
    "high_pct": 5.88,
    "fade_pct": 112.8,
-   "value_eok": 2314,
+   "value_eok": 2754,
    "ma10": 59715.0,
    "ma10_margin_pct": 10.19,
    "spark": {
@@ -272,13 +272,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 1566000.0,
-   "change_pct": 4.33,
+   "price": 1570000.0,
+   "change_pct": 4.6,
    "high_pct": 7.4,
-   "fade_pct": 41.4,
-   "value_eok": 2663,
-   "ma10": 1325700.0,
-   "ma10_margin_pct": 18.13,
+   "fade_pct": 37.8,
+   "value_eok": 3104,
+   "ma10": 1325900.0,
+   "ma10_margin_pct": 18.41,
    "spark": {
     "clusters": []
    },
@@ -331,11 +331,11 @@
    },
    "news": [
     {
-     "title": "SK證 “SK스퀘어, 목표가 185만원…하이닉스 주주환원 확대 기대감”",
-     "summary": "SK증권은 SK스퀘어에 대해 SK하이닉스 보유 지분 가치 상승과 주주 환원 확대 기대감이 유효하다고 17일 평가했다. 그러면서 투자의견 ‘매수’를 유지하고 목표 주가를 기존 145만원에서 185만원으로 올려 잡았다. 전 거래일 SK스퀘어 종가는...",
-     "office": "조선비즈",
-     "datetime": "202606170901",
-     "url": "https://n.news.naver.com/mnews/article/366/0001172315",
+     "title": "하이닉스보다 더 뛰는 SK스퀘어…證 “주주환원 수혜 기대” [줍줍 리...",
+     "summary": "SK하이닉스(000660)의 최대주주인 SK스퀘어(402340)가 장중 5% 넘게 급등하고 있다. 주주환원 확대 기대감이 커지면서 배당 수혜와 기관 매수세 유입 가능성이 부각된 영향으로 풀이된다. 17일 한국거래소에 따르면 현재 SK하이닉스는 전 거래",
+     "office": "서울경제",
+     "datetime": "202606170924",
+     "url": "https://n.news.naver.com/mnews/article/011/0004631954",
      "sentiment": "호재"
     }
    ],
@@ -350,18 +350,124 @@
      "score": 3.0
     }
    ],
-   "theme": "금리",
+   "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1259950.0,
-    "ma20_margin_pct": 24.29,
+    "ma20": 1260050.0,
+    "ma20_margin_pct": 24.6,
     "ivtr_net": 1192969,
     "ivtr_days": 4,
     "ivtr_eok": 15537,
-    "cause_summary": "SK證 “SK스퀘어, 목표가 185만원…하이닉스 주주환원 확대 기대감”",
+    "cause_summary": "하이닉스보다 더 뛰는 SK스퀘어…證 “주주환원 수혜 기대” [줍줍 리...",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "067310",
+   "name": "하나마이크론",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 82,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 6,
+    "re_body": 6,
+    "re_count": 3,
+    "flow": 4,
+    "explosion": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "price": 53900.0,
+   "change_pct": 7.58,
+   "high_pct": 7.78,
+   "fade_pct": 2.6,
+   "value_eok": 477,
+   "ma10": 46235.0,
+   "ma10_margin_pct": 16.58,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 6.44,
+    "time": "09:00",
+    "value_10m_eok": 135
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 6.44,
+     "value_eok": 135
+    },
+    {
+     "time": "09:20",
+     "body_pct": 3.08,
+     "value_eok": 161
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 1,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": -449097,
+      "orgn": 384143
+     },
+     {
+      "date": "0611",
+      "frgn": -410499,
+      "orgn": 476544
+     },
+     {
+      "date": "0612",
+      "frgn": -75575,
+      "orgn": 101782
+     },
+     {
+      "date": "0615",
+      "frgn": -181668,
+      "orgn": 77538
+     },
+     {
+      "date": "0616",
+      "frgn": 333390,
+      "orgn": -247194
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260611",
+    "peak_value_eok": 2044,
+    "peak_high_pct": 17.59,
+    "ma20": 46362.5,
+    "ma20_margin_pct": 16.26,
+    "ivtr_net": 524964,
+    "ivtr_days": 6,
+    "ivtr_eok": 223,
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -392,13 +498,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 164000.0,
-   "change_pct": 1.17,
+   "price": 165400.0,
+   "change_pct": 2.04,
    "high_pct": 6.05,
-   "fade_pct": 80.6,
-   "value_eok": 176,
-   "ma10": 144760.0,
-   "ma10_margin_pct": 13.29,
+   "fade_pct": 66.3,
+   "value_eok": 215,
+   "ma10": 144900.0,
+   "ma10_margin_pct": 14.15,
    "spark": {
     "clusters": []
    },
@@ -466,113 +572,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 2652,
     "peak_high_pct": 24.5,
-    "ma20": 124675.0,
-    "ma20_margin_pct": 31.54,
+    "ma20": 124745.0,
+    "ma20_margin_pct": 32.59,
     "ivtr_net": 432967,
     "ivtr_days": 4,
     "ivtr_eok": 729,
     "cause_summary": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "067310",
-   "name": "하나마이크론",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 78,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 5,
-    "re_body": 6,
-    "re_count": 0,
-    "flow": 4,
-    "explosion": 1
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "price": 52000.0,
-   "change_pct": 3.79,
-   "high_pct": 6.59,
-   "fade_pct": 42.4,
-   "value_eok": 290,
-   "ma10": 46045.0,
-   "ma10_margin_pct": 12.93,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 6.44,
-    "time": "09:00",
-    "value_10m_eok": 135
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 6.44,
-     "value_eok": 135
-    }
-   ],
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 1,
-    "detail": [
-     {
-      "date": "0610",
-      "frgn": -449097,
-      "orgn": 384143
-     },
-     {
-      "date": "0611",
-      "frgn": -410499,
-      "orgn": 476544
-     },
-     {
-      "date": "0612",
-      "frgn": -75575,
-      "orgn": 101782
-     },
-     {
-      "date": "0615",
-      "frgn": -181668,
-      "orgn": 77538
-     },
-     {
-      "date": "0616",
-      "frgn": 333390,
-      "orgn": -247194
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260611",
-    "peak_value_eok": 2044,
-    "peak_high_pct": 17.59,
-    "ma20": 46267.5,
-    "ma20_margin_pct": 12.39,
-    "ivtr_net": 524964,
-    "ivtr_days": 6,
-    "ivtr_eok": 223,
-    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -603,13 +608,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 173600.0,
-   "change_pct": 2.6,
+   "price": 174500.0,
+   "change_pct": 3.13,
    "high_pct": 5.14,
-   "fade_pct": 49.4,
-   "value_eok": 104,
-   "ma10": 161400.0,
-   "ma10_margin_pct": 7.56,
+   "fade_pct": 39.1,
+   "value_eok": 134,
+   "ma10": 161490.0,
+   "ma10_margin_pct": 8.06,
    "spark": {
     "clusters": []
    },
@@ -687,8 +692,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2232,
     "peak_high_pct": 18.7,
-    "ma20": 139750.0,
-    "ma20_margin_pct": 24.22,
+    "ma20": 139795.0,
+    "ma20_margin_pct": 24.83,
     "ivtr_net": 284383,
     "ivtr_days": 4,
     "ivtr_eok": 486,
@@ -723,13 +728,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 176800.0,
-   "change_pct": 4.06,
-   "high_pct": 4.89,
-   "fade_pct": 16.9,
-   "value_eok": 337,
-   "ma10": 158850.0,
-   "ma10_margin_pct": 11.3,
+   "price": 181100.0,
+   "change_pct": 6.59,
+   "high_pct": 6.65,
+   "fade_pct": 0.9,
+   "value_eok": 624,
+   "ma10": 159270.0,
+   "ma10_margin_pct": 13.71,
    "spark": {
     "clusters": []
    },
@@ -788,8 +793,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 2017,
     "peak_high_pct": 14.07,
-    "ma20": 158860.0,
-    "ma20_margin_pct": 11.29,
+    "ma20": 159070.0,
+    "ma20_margin_pct": 13.85,
     "ivtr_net": 828292,
     "ivtr_days": 4,
     "ivtr_eok": 1419,
@@ -824,13 +829,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 696000.0,
-   "change_pct": 3.42,
+   "price": 687000.0,
+   "change_pct": 2.08,
    "high_pct": 6.39,
-   "fade_pct": 46.5,
-   "value_eok": 362,
-   "ma10": 622100.0,
-   "ma10_margin_pct": 11.88,
+   "fade_pct": 67.4,
+   "value_eok": 407,
+   "ma10": 621200.0,
+   "ma10_margin_pct": 10.59,
    "spark": {
     "clusters": []
    },
@@ -899,8 +904,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 624250.0,
-    "ma20_margin_pct": 11.49,
+    "ma20": 623800.0,
+    "ma20_margin_pct": 10.13,
     "ivtr_net": 6888,
     "ivtr_days": 3,
     "ivtr_eok": 45,
@@ -935,13 +940,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 401500.0,
-   "change_pct": 6.08,
-   "high_pct": 7.66,
-   "fade_pct": 20.7,
-   "value_eok": 82,
-   "ma10": 375600.0,
-   "ma10_margin_pct": 6.9,
+   "price": 408000.0,
+   "change_pct": 7.79,
+   "high_pct": 8.19,
+   "fade_pct": 4.8,
+   "value_eok": 104,
+   "ma10": 376250.0,
+   "ma10_margin_pct": 8.44,
    "spark": {
     "clusters": []
    },
@@ -1027,12 +1032,118 @@
     "peak_date": "20260612",
     "peak_value_eok": 2053,
     "peak_high_pct": 30.0,
-    "ma20": 390300.0,
-    "ma20_margin_pct": 2.87,
+    "ma20": 390625.0,
+    "ma20_margin_pct": 4.45,
     "ivtr_net": 24320,
     "ivtr_days": 1,
     "ivtr_eok": 287,
     "cause_summary": "원익·주성엔 차익실현…코미코·솔브레인은 매수 추천 [칩칩폭폭]",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "039030",
+   "name": "이오테크닉스",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 74,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 0,
+    "re_body": 2,
+    "re_count": 3,
+    "flow": 5,
+    "explosion": 2
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "price": 527000.0,
+   "change_pct": 6.46,
+   "high_pct": 6.67,
+   "fade_pct": 3.0,
+   "value_eok": 129,
+   "ma10": 491000.0,
+   "ma10_margin_pct": 7.33,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.03,
+    "time": "09:00",
+    "value_10m_eok": 33
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 3.03,
+     "value_eok": 33
+    },
+    {
+     "time": "09:20",
+     "body_pct": 2.75,
+     "value_eok": 37
+    }
+   ],
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0610",
+      "frgn": 36465,
+      "orgn": -38077
+     },
+     {
+      "date": "0611",
+      "frgn": 38753,
+      "orgn": -38248
+     },
+     {
+      "date": "0612",
+      "frgn": -92846,
+      "orgn": 146192
+     },
+     {
+      "date": "0615",
+      "frgn": 7466,
+      "orgn": -43122
+     },
+     {
+      "date": "0616",
+      "frgn": 21977,
+      "orgn": -40402
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "전쟁",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 4605,
+    "peak_high_pct": 23.61,
+    "ma20": 492250.0,
+    "ma20_margin_pct": 7.06,
+    "ivtr_net": 37631,
+    "ivtr_days": 2,
+    "ivtr_eok": 334,
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -1063,13 +1174,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 90400.0,
-   "change_pct": -2.27,
+   "price": 91900.0,
+   "change_pct": -0.65,
    "high_pct": 2.16,
-   "fade_pct": 205.0,
-   "value_eok": 62,
-   "ma10": 81410.0,
-   "ma10_margin_pct": 11.04,
+   "fade_pct": 130.0,
+   "value_eok": 76,
+   "ma10": 81560.0,
+   "ma10_margin_pct": 12.68,
    "spark": {
     "clusters": []
    },
@@ -1147,123 +1258,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 1568,
     "peak_high_pct": 22.21,
-    "ma20": 70160.0,
-    "ma20_margin_pct": 28.85,
+    "ma20": 70235.0,
+    "ma20_margin_pct": 30.85,
     "ivtr_net": 1418353,
     "ivtr_days": 4,
     "ivtr_eok": 1226,
     "cause_summary": "다올證 “브이엠, 반도체 장비주 중 저평가…목표가 14만원”",
-    "was_theme_leader": false
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "039030",
-   "name": "이오테크닉스",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 71,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 0,
-    "re_body": 2,
-    "re_count": 0,
-    "flow": 5,
-    "explosion": 2
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "price": 507000.0,
-   "change_pct": 2.42,
-   "high_pct": 4.44,
-   "fade_pct": 45.5,
-   "value_eok": 82,
-   "ma10": 489000.0,
-   "ma10_margin_pct": 3.68,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.03,
-    "time": "09:00",
-    "value_10m_eok": 33
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 3.03,
-     "value_eok": 33
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0610",
-      "frgn": 36465,
-      "orgn": -38077
-     },
-     {
-      "date": "0611",
-      "frgn": 38753,
-      "orgn": -38248
-     },
-     {
-      "date": "0612",
-      "frgn": -92846,
-      "orgn": 146192
-     },
-     {
-      "date": "0615",
-      "frgn": 7466,
-      "orgn": -43122
-     },
-     {
-      "date": "0616",
-      "frgn": 21977,
-      "orgn": -40402
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-06-17_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (6월)",
-     "dday": 0,
-     "categories": [
-      "금리"
-     ],
-     "score": 3.0
-    }
-   ],
-   "theme": "전쟁",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 4605,
-    "peak_high_pct": 23.61,
-    "ma20": 491250.0,
-    "ma20_margin_pct": 3.21,
-    "ivtr_net": 37631,
-    "ivtr_days": 2,
-    "ivtr_eok": 334,
-    "cause_summary": "",
     "was_theme_leader": false
    },
    "theme_leader": false
@@ -1294,13 +1294,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "price": 145500.0,
-   "change_pct": -1.62,
+   "price": 149000.0,
+   "change_pct": 0.74,
    "high_pct": 1.76,
-   "fade_pct": 192.3,
-   "value_eok": 158,
-   "ma10": 125500.0,
-   "ma10_margin_pct": 15.94,
+   "fade_pct": 57.7,
+   "value_eok": 194,
+   "ma10": 125850.0,
+   "ma10_margin_pct": 18.39,
    "spark": {
     "clusters": []
    },
@@ -1359,8 +1359,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1683,
     "peak_high_pct": 18.95,
-    "ma20": 118175.0,
-    "ma20_margin_pct": 23.12,
+    "ma20": 118350.0,
+    "ma20_margin_pct": 25.9,
     "ivtr_net": 23986,
     "ivtr_days": 2,
     "ivtr_eok": 30,
