@@ -1,0 +1,105 @@
+{
+ "date": "20260617",
+ "tracks": {
+  "009150": {
+   "name": "삼성전기",
+   "entry": 2032000,
+   "verdict_score": 60,
+   "verdict_level": "중립",
+   "ai_prob": 45,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "011070": {
+   "name": "LG이노텍",
+   "entry": 1248000,
+   "verdict_score": 57,
+   "verdict_level": "중립",
+   "ai_prob": 41,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "028050": {
+   "name": "삼성E&A",
+   "entry": 52500,
+   "verdict_score": 85,
+   "verdict_level": "매수 우위",
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "034730": {
+   "name": "SK",
+   "entry": 708000,
+   "verdict_score": 95,
+   "verdict_level": "매수 우위",
+   "ai_prob": 54,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "043260": {
+   "name": "성호전자",
+   "entry": 42700,
+   "verdict_score": 68,
+   "verdict_level": "매수 우위",
+   "ai_prob": 49,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "080220": {
+   "name": "제주반도체",
+   "entry": 111500,
+   "verdict_score": 87,
+   "verdict_level": "매수 우위",
+   "ai_prob": 54,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "089030": {
+   "name": "테크윙",
+   "entry": 62100,
+   "verdict_score": 85,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 45,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "204320": {
+   "name": "HL만도",
+   "entry": 73900,
+   "verdict_score": 88,
+   "verdict_level": "관망·과열",
+   "ai_prob": 50,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "279570": {
+   "name": "케이뱅크",
+   "entry": 7200,
+   "verdict_score": 89,
+   "verdict_level": "관망·과열",
+   "ai_prob": 54,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "356680": {
+   "name": "엑스게이트",
+   "entry": 18480,
+   "verdict_score": 70,
+   "verdict_level": "매수 우위",
+   "ai_prob": 43,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  }
+ }
+}

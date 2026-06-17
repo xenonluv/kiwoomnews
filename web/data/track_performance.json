@@ -1,9 +1,9 @@
 {
- "as_of": "2026-06-16 17:33 KST",
- "n": 0,
+ "as_of": "2026-06-17 17:38 KST",
+ "n": 4,
  "rule_buy": {
-  "n": 0,
-  "hit_rate": null
+  "n": 2,
+  "hit_rate": 50.0
  },
  "ai_up": {
   "n": 0,
@@ -12,7 +12,7 @@
  "rule_buy_min": 62,
  "ai_up_min": 58,
  "min_n": 10,
- "quad_n": 0,
+ "quad_n": 4,
  "unknown_n": 0,
  "divergence": {
   "both": {
@@ -21,9 +21,9 @@
    "avg_return": null
   },
   "rule_only": {
-   "n": 0,
-   "hit_rate": null,
-   "avg_return": null
+   "n": 2,
+   "hit_rate": 50.0,
+   "avg_return": 1.44
   },
   "ai_only": {
    "n": 0,
@@ -31,17 +31,56 @@
    "avg_return": null
   },
   "neither": {
-   "n": 0,
-   "hit_rate": null,
-   "avg_return": null
+   "n": 2,
+   "hit_rate": 50.0,
+   "avg_return": 0.38
   }
  },
- "recent": [],
+ "recent": [
+  {
+   "date": "20260616",
+   "name": "케이뱅크",
+   "verdict_score": 75,
+   "ai_prob": 51,
+   "hit": true,
+   "return_pct": 4.65
+  },
+  {
+   "date": "20260616",
+   "name": "HL만도",
+   "verdict_score": 81,
+   "ai_prob": 47,
+   "hit": false,
+   "return_pct": -3.9
+  },
+  {
+   "date": "20260616",
+   "name": "테크윙",
+   "verdict_score": 72,
+   "ai_prob": 34,
+   "hit": true,
+   "return_pct": 3.67
+  },
+  {
+   "date": "20260616",
+   "name": "삼성전기",
+   "verdict_score": 82,
+   "ai_prob": 50,
+   "hit": false,
+   "return_pct": -0.78
+  }
+ ],
  "tracking": [
   "009150",
+  "011070",
+  "028050",
+  "034730",
+  "043260",
+  "080220",
   "089030",
   "204320",
-  "279570"
+  "279570",
+  "356680"
  ],
  "disclaimer": "추적 종목의 종합판정(룰)·Kimi(AI) 예측을 익일 종가로 검증한 기록입니다. 투자 참고용."
 }

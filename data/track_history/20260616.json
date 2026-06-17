@@ -8,8 +8,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 50,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260617",
+    "next_close": 2032000.0,
+    "entry_close": 2048000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -0.78
+   }
   },
   "089030": {
    "name": "테크윙",
@@ -18,8 +25,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 34,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260617",
+    "next_close": 62100.0,
+    "entry_close": 59900.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.67
+   }
   },
   "204320": {
    "name": "HL만도",
@@ -28,8 +42,15 @@
    "verdict_level": "관망·과열",
    "ai_prob": 47,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260617",
+    "next_close": 73900.0,
+    "entry_close": 76900.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -3.9
+   }
   },
   "279570": {
    "name": "케이뱅크",
@@ -38,8 +59,15 @@
    "verdict_level": "관망·과열",
    "ai_prob": 51,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260617",
+    "next_close": 7200.0,
+    "entry_close": 6880.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.65
+   }
   }
  }
 }
