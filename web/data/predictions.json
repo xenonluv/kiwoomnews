@@ -1,30 +1,22 @@
 {
-  "as_of": "2026-06-17 13:22 KST",
+  "as_of": "2026-06-17 13:37 KST",
   "intraday_rank": [
     {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "78%",
-      "entry": 1593000.0,
-      "target": 1672650,
-      "stop": 1545210,
+      "entry": 1590000.0,
+      "target": 1669500,
+      "stop": 1542300,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.74)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 6.73,
+      "day_change": 6.2,
       "cause_news": [
-        {
-          "title": "[특징주] '시총 200조' 넘은 SK스퀘어, 장중 161만원 돌파 신고가",
-          "url": "http://www.metroseoul.co.kr/article/20260617500168",
-          "office": "metroseoul",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
         {
           "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가",
           "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712852",
@@ -32,26 +24,34 @@
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 수혜 기대감 '상승'",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1266002",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] '시총 200조' 넘은 SK스퀘어, 장중 161만원 돌파 신고가"
+      "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가"
     },
     {
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "78%",
-      "entry": 167300.0,
-      "target": 175665,
-      "stop": 162281,
+      "entry": 166600.0,
+      "target": 174930,
+      "stop": 161602,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI65.8 강세"
+        "RSI65.4 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -1.12,
+      "day_change": -1.6,
       "related_news": [
         {
           "title": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
@@ -65,17 +65,17 @@
       "ticker": "피에스케이",
       "code": "319660",
       "tomorrow_up_prob": "77%",
-      "entry": 159300.0,
-      "target": 167265,
-      "stop": 154521,
+      "entry": 158800.0,
+      "target": 166740,
+      "stop": 154036,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI67.0 강세"
+        "RSI66.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -1.85,
+      "day_change": -1.91,
       "related_news": [
         {
           "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
@@ -86,64 +86,20 @@
       ]
     },
     {
-      "ticker": "SK",
-      "code": "034730",
-      "tomorrow_up_prob": "77%",
-      "entry": 693000.0,
-      "target": 727650,
-      "stop": 672210,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "RSI67.3 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 1.93,
-      "cause_news": [
-        {
-          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가",
-          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712852",
-          "office": "ebn",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 수혜 기대감 '상승'",
-          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1266002",
-          "office": "jeonmae",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 100조 규모 주주환원 기대감…SK하이닉스, 장중 240만원 돌파",
-          "url": "https://www.sidae.com/article/2026061711153562151",
-          "office": "sidae",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가"
-    },
-    {
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "75%",
-      "entry": 148400.0,
-      "target": 155820,
-      "stop": 143948,
+      "entry": 147100.0,
+      "target": 154455,
+      "stop": 142687,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI67.2 강세"
+        "RSI66.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 0.27,
+      "day_change": -0.2,
       "cause_news": [
         {
           "title": "두산에너빌리티·삼화콘덴서·일진파워 강세…핵융합에너지 원전주 투자...",
@@ -161,17 +117,17 @@
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "73%",
-      "entry": 54400.0,
-      "target": 57120,
-      "stop": 52768,
+      "entry": 53900.0,
+      "target": 56595,
+      "stop": 52283,
       "confidence": "상",
       "reasons": [
         "MACD강세",
-        "RSI62.4 강세",
-        "거래량2.18배"
+        "RSI61.6 강세",
+        "거래량2.24배"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 0,
+      "day_change": -2.87,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ...",
@@ -197,17 +153,17 @@
       "ticker": "대덕전자",
       "code": "353200",
       "tomorrow_up_prob": "71%",
-      "entry": 172000.0,
-      "target": 180600,
-      "stop": 166840,
+      "entry": 171200.0,
+      "target": 179760,
+      "stop": 166064,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI61.9 강세",
+        "RSI61.6 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감",
-      "day_change": 1.35,
+      "day_change": 0.77,
       "cause_news": [
         {
           "title": "[특징주] 대덕전자, 목표가 25만원 상향에 강세…판가 인상·증설 기대",
@@ -233,17 +189,17 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "70%",
-      "entry": 1259000.0,
-      "target": 1321950,
-      "stop": 1221230,
+      "entry": 1251000.0,
+      "target": 1313550,
+      "stop": 1213470,
       "confidence": "상",
       "reasons": [
         "정배열",
-        "RSI64.5 강세",
+        "RSI64.2 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.46,
+      "day_change": 1.38,
       "cause_news": [
         {
           "title": "[ET특징주]LG이노텍, AI 반도체 기판 성장 기대감에 상승세",
@@ -277,13 +233,13 @@
       "ticker": "현대약품",
       "code": "004310",
       "tomorrow_up_prob": "69%",
-      "entry": 9180.0,
-      "target": 9639,
-      "stop": 8905,
+      "entry": 9150.0,
+      "target": 9608,
+      "stop": 8876,
       "confidence": "중",
       "reasons": [
-        "강세마감(1.0)",
-        "거래량6.45배",
+        "강세마감(0.84)",
+        "거래량7.09배",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -312,7 +268,7 @@
     {
       "ticker": "한미약품",
       "code": "128940",
-      "tomorrow_up_prob": "65%",
+      "tomorrow_up_prob": "66%",
       "entry": 456500.0,
       "target": 479325,
       "stop": 442805,
@@ -349,30 +305,30 @@
       "ticker": "이오테크닉스",
       "code": "039030",
       "tomorrow_up_prob": "64%",
-      "entry": 499500.0,
-      "target": 524475,
-      "stop": 484515,
+      "entry": 495500.0,
+      "target": 520275,
+      "stop": 480635,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.4 강세"
+        "RSI51.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 1.21
+      "day_change": 0.4
     },
     {
       "ticker": "대원전선",
       "code": "006340",
       "tomorrow_up_prob": "60%",
-      "entry": 12480.0,
-      "target": 13104,
-      "stop": 12106,
+      "entry": 12550.0,
+      "target": 13178,
+      "stop": 12174,
       "confidence": "중",
       "reasons": [
-        "RSI55.4 강세",
-        "거래량5.62배",
-        "장중 12회 지속"
+        "RSI55.7 강세",
+        "거래량5.79배",
+        "장중 13회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -409,17 +365,17 @@
       "ticker": "하나마이크론",
       "code": "067310",
       "tomorrow_up_prob": "58%",
-      "entry": 50100.0,
-      "target": 52605,
-      "stop": 48597,
+      "entry": 49950.0,
+      "target": 52448,
+      "stop": 48452,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI58.5 강세"
+        "RSI58.2 강세"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 0.4,
+      "day_change": -0.5,
       "cause_news": [
         {
           "title": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑",
@@ -434,45 +390,16 @@
       "cause_summary": "[특징주] 하나마이크론, 2분기 실적 개선 기대감에 16%↑"
     },
     {
-      "ticker": "솔브레인",
-      "code": "357780",
-      "tomorrow_up_prob": "53%",
-      "entry": 390000.0,
-      "target": 409500,
-      "stop": 378300,
-      "confidence": "하",
-      "reasons": [
-        "호재",
-        "장중 17회 지속"
-      ],
-      "risk": "약한 마감",
-      "day_change": 3.3,
-      "related_news": [
-        {
-          "title": "원익·주성엔 차익실현…코미코·솔브레인은 매수 추천 [칩칩폭폭]",
-          "url": "https://n.news.naver.com/mnews/article/123/0002383944",
-          "office": "조세일보",
-          "sentiment": "호재"
-        },
-        {
-          "title": "[주총 포커스] 솔브레인, GAA·유리기판으로 1兆 클럽 정조준",
-          "url": "https://n.news.naver.com/mnews/article/293/0000081434",
-          "office": "블로터",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
       "ticker": "달바글로벌",
       "code": "483650",
-      "tomorrow_up_prob": "48%",
-      "entry": 208000.0,
-      "target": 218400,
-      "stop": 201760,
+      "tomorrow_up_prob": "49%",
+      "entry": 207500.0,
+      "target": 217875,
+      "stop": 201275,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.89)",
-        "RSI51.8 강세",
+        "강세마감(0.86)",
+        "RSI51.6 강세",
         "Stoch골든"
       ],
       "risk": "악재",
@@ -485,6 +412,50 @@
           "sentiment": "악재"
         }
       ]
+    },
+    {
+      "ticker": "SK",
+      "code": "034730",
+      "tomorrow_up_prob": "39%",
+      "entry": 701000.0,
+      "target": 736050,
+      "stop": 679970,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.7)",
+        "정배열",
+        "RSI68.1 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 3.86,
+      "cause_news": [
+        {
+          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712852",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 수혜 기대감 '상승'",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1266002",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[ET특징주]SK스퀘어, SK하이닉스 주주환원 확대 기대감에 상승세",
+          "url": "https://www.etnews.com/20260617000190",
+          "office": "etnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가"
     },
     {
       "ticker": "가온전선",
@@ -534,14 +505,14 @@
       "ticker": "한화엔진",
       "code": "082740",
       "tomorrow_up_prob": "39%",
-      "entry": 67000.0,
-      "target": 70350,
-      "stop": 64990,
+      "entry": 66550.0,
+      "target": 69878,
+      "stop": 64554,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.71)",
         "MACD강세",
-        "RSI55.4 강세"
+        "RSI55.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -580,26 +551,18 @@
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "78%",
-      "entry": 1593000.0,
-      "target": 1672650,
-      "stop": 1545210,
+      "entry": 1590000.0,
+      "target": 1669500,
+      "stop": 1542300,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.78)",
+        "강세마감(0.74)",
         "정배열",
         "MACD강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 6.73,
+      "day_change": 6.2,
       "cause_news": [
-        {
-          "title": "[특징주] '시총 200조' 넘은 SK스퀘어, 장중 161만원 돌파 신고가",
-          "url": "http://www.metroseoul.co.kr/article/20260617500168",
-          "office": "metroseoul",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
         {
           "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가",
           "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712852",
@@ -607,26 +570,34 @@
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 수혜 기대감 '상승'",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1266002",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] '시총 200조' 넘은 SK스퀘어, 장중 161만원 돌파 신고가"
+      "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가"
     },
     {
       "ticker": "테스",
       "code": "095610",
       "tomorrow_up_prob": "78%",
-      "entry": 167300.0,
-      "target": 175665,
-      "stop": 162281,
+      "entry": 166600.0,
+      "target": 174930,
+      "stop": 161602,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI65.8 강세"
+        "RSI65.4 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -1.12,
+      "day_change": -1.6,
       "related_news": [
         {
           "title": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
@@ -640,17 +611,17 @@
       "ticker": "피에스케이",
       "code": "319660",
       "tomorrow_up_prob": "77%",
-      "entry": 159300.0,
-      "target": 167265,
-      "stop": 154521,
+      "entry": 158800.0,
+      "target": 166740,
+      "stop": 154036,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI67.0 강세"
+        "RSI66.7 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -1.85,
+      "day_change": -1.91,
       "related_news": [
         {
           "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
@@ -661,64 +632,20 @@
       ]
     },
     {
-      "ticker": "SK",
-      "code": "034730",
-      "tomorrow_up_prob": "77%",
-      "entry": 693000.0,
-      "target": 727650,
-      "stop": 672210,
-      "confidence": "상",
-      "reasons": [
-        "정배열",
-        "RSI67.3 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 1.93,
-      "cause_news": [
-        {
-          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가",
-          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712852",
-          "office": "ebn",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] SK스퀘어, SK하이닉스 주주환원 수혜 기대감 '상승'",
-          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1266002",
-          "office": "jeonmae",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 100조 규모 주주환원 기대감…SK하이닉스, 장중 240만원 돌파",
-          "url": "https://www.sidae.com/article/2026061711153562151",
-          "office": "sidae",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, SK하이닉스 주주환원 기대감에 강세…장중 신고가"
-    },
-    {
       "ticker": "삼화콘덴서",
       "code": "001820",
       "tomorrow_up_prob": "75%",
-      "entry": 148400.0,
-      "target": 155820,
-      "stop": 143948,
+      "entry": 147100.0,
+      "target": 154455,
+      "stop": 142687,
       "confidence": "상",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI67.2 강세"
+        "RSI66.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 0.27,
+      "day_change": -0.2,
       "cause_news": [
         {
           "title": "두산에너빌리티·삼화콘덴서·일진파워 강세…핵융합에너지 원전주 투자...",
@@ -731,6 +658,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "두산에너빌리티·삼화콘덴서·일진파워 강세…핵융합에너지 원전주 투자..."
+    },
+    {
+      "ticker": "SK이터닉스",
+      "code": "475150",
+      "tomorrow_up_prob": "73%",
+      "entry": 53900.0,
+      "target": 56595,
+      "stop": 52283,
+      "confidence": "상",
+      "reasons": [
+        "MACD강세",
+        "RSI61.6 강세",
+        "거래량2.24배"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": -2.87,
+      "cause_news": [
+        {
+          "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295868",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "SK이터닉스, 투자경고종목 지정예고→투자주의 신호",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16096949",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
