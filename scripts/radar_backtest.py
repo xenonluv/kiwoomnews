@@ -491,6 +491,105 @@ def save_weights(tuned):
     return out
 
 
+# ── 분할 전략 실측 트래커 — 레이더 신호를 20/30/50 분할 + 7%익절/-5%손절로 매매 가정,
+#    forward 일봉으로 실현 net 수익 누적(표시 전용·라이브 보정). 손절=종가기준(저가 데이터 없음).
+STRAT = {"tranches": [0.2, 0.3, 0.5], "tp": 7.0, "sl": 5.0, "fee": 0.3, "hold": 10, "addwin": 4}
+
+
+def _strategy_outcome(closes, highs, i):
+    """20/30/50 분할(하락일 추가)+7%익절/-5%손절(종가)+수수료 차감 → (outcome, ret_net)|None(forward 부족)."""
+    if i < 0 or i + STRAT["hold"] >= len(closes):
+        return None
+    w = STRAT["tranches"]
+    bought = [(closes[i], w[0])]
+
+    def avg():
+        return sum(p * x for p, x in bought) / sum(x for _, x in bought)
+
+    out = None
+    ret = 0.0
+    for t in range(i + 1, i + STRAT["hold"] + 1):
+        a = avg()
+        if a <= 0:
+            return None
+        if highs[t] >= a * (1 + STRAT["tp"] / 100):
+            out, ret = "win", STRAT["tp"]; break
+        if closes[t] <= a * (1 - STRAT["sl"] / 100):
+            out, ret = "stop", (closes[t] / a - 1) * 100; break
+        if (t - i) <= STRAT["addwin"] and len(bought) < len(w) and closes[t] < closes[t - 1]:
+            bought.append((closes[t], w[len(bought)]))
+    if out is None:
+        out, ret = "time", (closes[i + STRAT["hold"]] / avg() - 1) * 100
+    return out, round(ret - STRAT["fee"], 2)
+
+
+def strategy_eval():
+    """미시뮬 reaccum 신호를 forward 일봉으로 분할전략 시뮬 → history에 s['strategy'] 기록.
+    10거래일 보유라 신호 후 ~16일(달력) 지난 것만 처리(그 전엔 보류). 40일 초과·신호일봉 부재는 None 만료."""
+    today = datetime.now(KST).strftime("%Y%m%d")
+    n_done = 0
+    for path, hist in load_history():
+        if hist.get("date", "") >= today:
+            continue
+        try:
+            age = (datetime.now(KST).date()
+                   - datetime.strptime(hist["date"], "%Y%m%d").date()).days
+        except Exception:
+            continue
+        if age < 16:
+            continue  # forward 10거래일 미확보 — 다음 실행에서 재시도
+        changed = False
+        for code, s in hist.get("suspects", {}).items():
+            if s.get("pattern") != "reaccum" or "strategy" in s:
+                continue
+            try:
+                bars = kis.daily_prices(code, days=40)
+            except Exception:
+                continue
+            idx = next((k for k, b in enumerate(bars) if b.get("date") == hist["date"]), None)
+            if idx is None:
+                if age > 40:
+                    s["strategy"] = None; changed = True  # 더는 못 받음 → 만료
+                continue
+            closes = [b.get("close") for b in bars]
+            highs = [b.get("high") for b in bars]
+            win = closes[idx:idx + STRAT["hold"] + 1] + highs[idx:idx + STRAT["hold"] + 1]
+            if any(x is None for x in win):   # close·high 어느 쪽이라도 결측이면 채점 보류/만료
+                if age > 40:
+                    s["strategy"] = None; changed = True
+                continue
+            oc = _strategy_outcome(closes, highs, idx)
+            if oc is None:
+                if age > 40:
+                    s["strategy"] = None; changed = True
+                continue
+            s["strategy"] = {"outcome": oc[0], "ret_net": oc[1]}
+            changed = True; n_done += 1
+        if changed:
+            json.dump(hist, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    log(f"[backtest] 분할전략 시뮬 신규 {n_done}건")
+
+
+def strategy_sim_stats():
+    """history에 누적된 분할전략 실현 결과 집계(표시 전용)."""
+    rows = [s["strategy"] for _, hist in load_history()
+            for s in hist.get("suspects", {}).values()
+            if isinstance(s.get("strategy"), dict) and "ret_net" in s["strategy"]]
+    n = len(rows)
+    base = {"n": n, "min_n": 30, "tp": STRAT["tp"], "sl": STRAT["sl"],
+            "fee": STRAT["fee"], "tranches": STRAT["tranches"]}
+    if not n:
+        return {**base, "win_rate": None, "stop_rate": None, "avg_net": None,
+                "profit_rate": None, "worst": None}
+    rets = sorted(r["ret_net"] for r in rows)
+    return {**base,
+            "win_rate": round(sum(1 for r in rows if r["outcome"] == "win") / n * 100, 1),
+            "stop_rate": round(sum(1 for r in rows if r["outcome"] == "stop") / n * 100, 1),
+            "avg_net": round(sum(rets) / n, 3),
+            "profit_rate": round(sum(1 for x in rets if x > 0) / n * 100, 1),
+            "worst": rets[0]}
+
+
 def write_performance(samples, series, bins, weights, dropouts=None,
                       experimental=None, experimental_dropouts=None):
     n = len(samples)
@@ -529,6 +628,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "spark_flow": spark_flow_matrix(samples),
         # 등락률 구간별 익일 상승확률 — '몇 % 구간 종가매수가 익일 더 오르나'(재매집 실험 풀)
         "change_bands": change_band_stats(reaccum_experimental),
+        # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
+        "strategy_sim": strategy_sim_stats(),
         "experimental": {
             "reaccum": sample_stats(reaccum_experimental),
         },
@@ -598,6 +699,7 @@ def main():
     git_lock = acquire_git_lock()  # noqa: F841 — 프로세스 종료까지 유지
     evaluate()
     ai_predict()  # 당일 마감 카드의 AI 예측 기록 (익일 evaluate가 채점)
+    strategy_eval()  # 분할 전략 실측 시뮬(forward 10일 충족분) — history에 누적
     samples = collect_samples()
     # 주 통계·튜닝 = 마감 카드 잔존(final) 표본만 — 정석 사용법(종가 매수)과 모집단 일치.
     core = [s for s in samples if s["final"] and not s.get("visible_experimental")]

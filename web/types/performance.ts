@@ -115,6 +115,21 @@ export interface ChangeBandStats {
   cells: ChangeBandCell[];
 }
 
+/** 분할 전략 실측 — 20/30/50 분할+익절/손절 실현 net 누적(radar_backtest.strategy_sim_stats()와 정합) */
+export interface StrategySim {
+  n: number;
+  min_n: number;
+  tp: number; // 익절 %
+  sl: number; // 손절 %
+  fee: number; // 차감 수수료 %p
+  tranches: number[]; // [0.2,0.3,0.5]
+  win_rate: number | null; // 익절 도달률(%)
+  stop_rate: number | null; // 손절률(%)
+  avg_net: number | null; // 거래당 net 평균수익(%)
+  profit_rate: number | null; // 수익 거래 비율(%)
+  worst: number | null; // 최악 거래(%)
+}
+
 /** 테마/섹터별 성과 — radar_backtest.group_stats_gated()와 정합. */
 export interface GroupStat {
   key: string; // 테마명 또는 섹터명 (미분류는 "unknown")
@@ -187,6 +202,8 @@ export interface PerformanceData {
   spark_flow?: SparkFlowStats;
   /** 등락률 구간별 익일 상승확률 — 구버전 performance.json에는 없을 수 있음 */
   change_bands?: ChangeBandStats;
+  /** 분할 전략 실측(20/30/50+익절/손절) — 구버전 performance.json에는 없을 수 있음 */
+  strategy_sim?: StrategySim;
   /** 테마별 성과 — 구버전 performance.json에는 없을 수 있음 */
   by_theme?: GroupStat[];
   /** 섹터별 성과 — 구버전 performance.json에는 없을 수 있음 */
