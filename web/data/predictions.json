@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-18 15:37 KST",
+  "as_of": "2026-06-18 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
@@ -60,42 +60,6 @@
       "cause_summary": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑"
     },
     {
-      "ticker": "LG이노텍",
-      "code": "011070",
-      "tomorrow_up_prob": "69%",
-      "entry": 1283000.0,
-      "target": 1347150,
-      "stop": 1244510,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI65.5 강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 2.8,
-      "cause_news": [
-        {
-          "title": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582981",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[투자전략] 세아제강 상단돌파, LG이노텍 상향…LG디스플레이는 하단 이...",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16100131",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세"
-    },
-    {
       "ticker": "효성화학",
       "code": "298000",
       "tomorrow_up_prob": "69%",
@@ -106,7 +70,7 @@
       "reasons": [
         "RSI51.9 강세",
         "Stoch골든",
-        "거래량9.71배"
+        "거래량9.72배"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -138,6 +102,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[주식마감] 무상증자 기대감에 가온전선 상한가... 효성화학·JW신약 등..."
+    },
+    {
+      "ticker": "LG이노텍",
+      "code": "011070",
+      "tomorrow_up_prob": "68%",
+      "entry": 1283000.0,
+      "target": 1347150,
+      "stop": 1244510,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "RSI65.5 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 2.8,
+      "cause_news": [
+        {
+          "title": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582981",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[투자전략] 세아제강 상단돌파, LG이노텍 상향…LG디스플레이는 하단 이...",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16100131",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세"
     },
     {
       "ticker": "가온전선",
@@ -198,14 +198,18 @@
       ],
       "risk": "특이 위험 낮음",
       "day_change": 5.91,
-      "related_news": [
+      "cause_news": [
         {
-          "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0008993247",
-          "office": "뉴스1",
-          "sentiment": "호재"
+          "title": "[특징주] 25% 폭등 피에스케이...눈밝은 증권사들 이미 '장비 수요↑'조...",
+          "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=262016",
+          "office": "financialpost",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
         }
-      ]
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 25% 폭등 피에스케이...눈밝은 증권사들 이미 '장비 수요↑'조..."
     },
     {
       "ticker": "디앤디파마텍",
@@ -504,14 +508,6 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 삼성전기, AI 서버發 MLCC 수요 급증에 9%대 강세…관련주 동반...",
-          "url": "https://www.tokenpost.kr/news/economy/370644",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "삼성전기, 외국인 5일째 사들이더니 227만 '신고가'[특징주]",
           "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=04496886645483032",
           "office": "edaily",
@@ -584,42 +580,6 @@
       "cause_summary": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑"
     },
     {
-      "ticker": "LG이노텍",
-      "code": "011070",
-      "tomorrow_up_prob": "69%",
-      "entry": 1283000.0,
-      "target": 1347150,
-      "stop": 1244510,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI65.5 강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 2.8,
-      "cause_news": [
-        {
-          "title": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582981",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[투자전략] 세아제강 상단돌파, LG이노텍 상향…LG디스플레이는 하단 이...",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16100131",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세"
-    },
-    {
       "ticker": "효성화학",
       "code": "298000",
       "tomorrow_up_prob": "69%",
@@ -630,7 +590,7 @@
       "reasons": [
         "RSI51.9 강세",
         "Stoch골든",
-        "거래량9.71배"
+        "거래량9.72배"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -662,6 +622,42 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[주식마감] 무상증자 기대감에 가온전선 상한가... 효성화학·JW신약 등..."
+    },
+    {
+      "ticker": "LG이노텍",
+      "code": "011070",
+      "tomorrow_up_prob": "68%",
+      "entry": 1283000.0,
+      "target": 1347150,
+      "stop": 1244510,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "RSI65.5 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 2.8,
+      "cause_news": [
+        {
+          "title": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582981",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[투자전략] 세아제강 상단돌파, LG이노텍 상향…LG디스플레이는 하단 이...",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16100131",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "LG이노텍, 장중 2%대 상승…패키지기판 기대감에 강세"
     },
     {
       "ticker": "가온전선",
