@@ -1,46 +1,46 @@
 {
   "date": "20260618",
-  "as_of": "2026-06-18 14:52 KST",
+  "as_of": "2026-06-18 15:07 KST",
   "bets": [
     {
       "code": "093370",
       "ticker": "후성",
-      "entry": 19300.0,
-      "target": 20265,
-      "raw": 91,
-      "prob": "91%"
+      "entry": 19000.0,
+      "target": 19950,
+      "raw": 95,
+      "prob": "95%"
     },
     {
       "code": "089970",
       "ticker": "브이엠",
-      "entry": 93900.0,
-      "target": 98595,
+      "entry": 94100.0,
+      "target": 98805,
       "raw": 90,
       "prob": "90%"
     },
     {
       "code": "095610",
       "ticker": "테스",
-      "entry": 175500.0,
-      "target": 184275,
+      "entry": 176000.0,
+      "target": 184800,
       "raw": 90,
       "prob": "90%"
     },
     {
       "code": "011070",
       "ticker": "LG이노텍",
-      "entry": 1282000.0,
-      "target": 1346100,
+      "entry": 1280500.0,
+      "target": 1344525,
       "raw": 69,
       "prob": "69%"
     },
     {
-      "code": "298000",
-      "ticker": "효성화학",
-      "entry": 74900.0,
-      "target": 78645,
-      "raw": 69,
-      "prob": "69%"
+      "code": "000500",
+      "ticker": "가온전선",
+      "entry": 378500.0,
+      "target": 397425,
+      "raw": 64,
+      "prob": "64%"
     }
   ]
 }
