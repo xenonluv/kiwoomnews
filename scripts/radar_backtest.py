@@ -432,6 +432,42 @@ def change_band_stats(samples):
     return {"min_n": FEATURE_MIN_N, "unknown_n": len(samples) - len(known), "cells": cells}
 
 
+def leader_reaccum_stats(reaccum_experimental):
+    """'예전 대장' 재매집 엣지 검증 — was_theme_leader 코호트 A/B.
+
+    가설: 폭발일에 업종 거래대금 1위(예전 대장)였던 종목이 재매집 시 익일 더 잘 오른다.
+    leader(was_theme_leader=true) vs nonleader(false) vs all(전체 reaccum baseline)의
+    익일 적중률·평균수익·고가3% 비교 + lift(=leader.hit_rate − nonleader.hit_rate).
+    reaccum 실험 풀만 입력(코어 통계·가중치 튜닝과 격리). reaccum 블록 없거나 플래그가
+    None인 표본은 unknown_n. min_n 게이트로 소표본 단정 방지.
+
+    데이터 주의: sector 기반 대장 로직이 최근 개선돼 그 전 표본은 was_theme_leader가
+    거짓일 수 있다 → 신뢰 표본은 배포 이후 forward로만 누적(valid 게이트가 자연 처리)."""
+    def _flag(s):
+        return (s.get("reaccum") or {}).get("was_theme_leader")
+    leader = [s for s in reaccum_experimental if _flag(s) is True]
+    nonleader = [s for s in reaccum_experimental if _flag(s) is False]
+    unknown_n = sum(1 for s in reaccum_experimental if _flag(s) not in (True, False))
+
+    def _cohort(subset):
+        st = sample_stats(subset)
+        st["valid"] = st["n"] >= FEATURE_MIN_N
+        return st
+
+    lc, nlc = _cohort(leader), _cohort(nonleader)
+    lift = (round(lc["hit_rate"] - nlc["hit_rate"], 1)
+            if lc["valid"] and nlc["valid"]
+            and lc["hit_rate"] is not None and nlc["hit_rate"] is not None else None)
+    return {
+        "min_n": FEATURE_MIN_N,
+        "unknown_n": unknown_n,
+        "leader": lc,
+        "nonleader": nlc,
+        "all": _cohort(reaccum_experimental),
+        "lift": lift,
+    }
+
+
 def tune_weights(samples):
     """항목별 정규화 기여도의 적중군-미적중군 평균 차(lift)로 가중치 조정.
 
@@ -632,6 +668,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "strategy_sim": strategy_sim_stats(),
         "experimental": {
             "reaccum": sample_stats(reaccum_experimental),
+            # '예전 대장' 재매집 엣지 검증(대장 vs 비대장 익일 적중률 A/B·lift) — 코어 격리
+            "leader_reaccum": leader_reaccum_stats(reaccum_experimental),
         },
         "weights": {
             "current": (weights or {}).get("weights") or DEFAULT_WEIGHTS,

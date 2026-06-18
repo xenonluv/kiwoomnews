@@ -143,6 +143,24 @@ export interface GroupStat {
   leader_count?: number;
 }
 
+/** '예전 대장' 재매집 엣지 코호트 — radar_backtest.leader_reaccum_stats()와 정합. */
+export interface LeaderCohort {
+  n: number;
+  hit_rate: number | null;
+  avg_return: number | null;
+  high3_rate: number | null;
+  valid: boolean; // n >= min_n
+}
+
+export interface LeaderReaccumStats {
+  min_n: number;
+  unknown_n: number; // reaccum 블록 없거나 was_theme_leader 미기록 표본 수
+  leader: LeaderCohort; // was_theme_leader=true (예전 대장)
+  nonleader: LeaderCohort; // was_theme_leader=false (비대장)
+  all: LeaderCohort; // 전체 reaccum baseline
+  lift: number | null; // leader.hit_rate − nonleader.hit_rate (둘 다 valid일 때만)
+}
+
 export interface ExperimentalStats {
   reaccum: {
     n: number;
@@ -150,6 +168,7 @@ export interface ExperimentalStats {
     avg_return: number | null;
     high3_rate: number | null;
   };
+  leader_reaccum?: LeaderReaccumStats; // 구버전 JSON엔 없음
 }
 
 /** 추적 종목 검증 — scripts/track_eval.py가 생성하는 web/data/track_performance.json과 정합. */

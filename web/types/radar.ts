@@ -157,6 +157,8 @@ export interface Suspect {
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
   calibrated_prob?: { rate: number | null; n: number } | null;
+  /** '예전 대장' 재매집 코호트 실측 익일 상승률 (was_theme_leader=true & 표본 충분할 때만, 표시 전용) */
+  leader_cohort_prob?: { rate: number | null; n: number } | null;
   score_breakdown: ScoreBreakdown; // 자가 튜닝 가중치 적용 후 (화면 표시값)
   score_raw?: number; // 가중치 적용 전 — 백테스트 통계 기준
   score_breakdown_raw?: ScoreBreakdown;

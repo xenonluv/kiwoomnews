@@ -259,6 +259,17 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 {" · 코호트 통계·보장 아님"}
               </p>
             )}
+            {s.leader_cohort_prob?.rate != null && (
+              <p className="text-[11px] text-muted-foreground">
+                🏆 예전 대장 재매집 코호트 실측 익일 상승{" "}
+                <span
+                  className={`font-semibold tabular-nums ${s.leader_cohort_prob.rate >= 50 ? "text-up" : "text-down"}`}
+                >
+                  {s.leader_cohort_prob.rate}%
+                </span>{" "}
+                (표본 {s.leader_cohort_prob.n}건) · 코호트 통계·보장 아님
+              </p>
+            )}
             {s.ai_verdict?.status === "ok" && s.ai_verdict.reason && (
               <p className="flex items-start gap-1 text-[11px] text-muted-foreground">
                 <BrainCircuit className="mt-0.5 size-3 shrink-0" aria-hidden />

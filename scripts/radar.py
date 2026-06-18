@@ -41,6 +41,7 @@ KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXPLOSION_REGISTRY_PATH = os.path.join(REPO, ".explosion_registry.json")
 REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
+PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
 
 # ---- 기본 임계값 ----
 EXPLOSION_VALUE = 100_000_000_000  # 재매집 폭발 거래대금 하한: 1천억(원)
@@ -698,6 +699,19 @@ def _theme_leader_codes(active_explosions):
     return leader_codes
 
 
+def _leader_cohort_prob(path=PERFORMANCE_PATH):
+    """performance.json에서 '예전 대장' 코호트 실측 익일 상승률 {rate,n} — 표본 충분(valid)할
+    때만, 아니면 None. 표시 전용(수상카드 한 줄). 파일 부재·파싱 실패는 None(격리)."""
+    try:
+        perf = json.load(open(path, encoding="utf-8"))
+        lr = ((perf.get("experimental") or {}).get("leader_reaccum") or {}).get("leader") or {}
+        if lr.get("valid") and lr.get("hit_rate") is not None:
+            return {"rate": lr["hit_rate"], "n": lr["n"]}
+    except Exception:
+        pass
+    return None
+
+
 def attach_reaccum_candidates(suspects, active_explosions, p, events):
     if not p.reaccum_enabled or not p.reaccum_visible or not active_explosions:
         return 0, 0, 0
@@ -706,6 +720,7 @@ def attach_reaccum_candidates(suspects, active_explosions, p, events):
     except Exception as e:
         log(f"  [warn] 예전 대장 판정 실패(뱃지 생략): {e}")
         leader_codes = set()
+    cohort_prob = _leader_cohort_prob()  # 대장 코호트 실측률(표본 충분할 때만, 표시 전용)
     by_code = {s["code"]: s for s in suspects}
     added = badges = err_count = 0
     for code, rec in active_explosions.items():
@@ -719,10 +734,14 @@ def attach_reaccum_candidates(suspects, active_explosions, p, events):
             continue
         if not r:
             continue
-        r["reaccum"]["was_theme_leader"] = code in leader_codes  # 폭발일 업종 거래대금 1위(예전 대장)였나
+        is_leader = code in leader_codes
+        r["reaccum"]["was_theme_leader"] = is_leader  # 폭발일 업종 거래대금 1위(예전 대장)였나
+        # 예전 대장이면 코호트 실측률 한 줄 표시(표본 충분할 때만, 표시 전용·점수 무관)
+        r["leader_cohort_prob"] = cohort_prob if is_leader else None
         if code in by_code:
             by_code[code]["reaccum_badge"] = True
             by_code[code]["reaccum"] = r["reaccum"]
+            by_code[code]["leader_cohort_prob"] = r["leader_cohort_prob"]
             badges += 1
         else:
             suspects.append(r)
