@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-18 15:32:10 KST",
+ "generated_at": "2026-06-18 15:42:09 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -33,14 +33,14 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 93,
+   "suspicion_score": 92,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
     "re_value": 12,
     "re_body": 2,
     "re_count": 6,
-    "flow": 7,
+    "flow": 6,
     "explosion": 4
    },
    "score_raw": 0,
@@ -101,15 +101,10 @@
     }
    ],
    "flow": {
-    "net_days": 2,
+    "net_days": 1,
     "today_buy": false,
     "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": 8071,
-      "orgn": 7943
-     },
      {
       "date": "0612",
       "frgn": 17667,
@@ -129,6 +124,11 @@
       "date": "0617",
       "frgn": -36451,
       "orgn": -149
+     },
+     {
+      "date": "0618",
+      "frgn": -44677,
+      "orgn": 11655
      }
     ]
    },
@@ -142,9 +142,9 @@
     "peak_high_pct": 18.34,
     "ma20": 1134350.0,
     "ma20_margin_pct": 13.1,
-    "ivtr_net": 39345,
+    "ivtr_net": 34384,
     "ivtr_days": 4,
-    "ivtr_eok": 449,
+    "ivtr_eok": 387,
     "cause_summary": "애플 AI 전략에 아이폰 더 팔린다…대표 부품주 LG이노텍 주목",
     "was_theme_leader": false
    },
@@ -158,14 +158,14 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 86,
+   "suspicion_score": 88,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
     "re_value": 12,
     "re_body": 1,
     "re_count": 3,
-    "flow": 2,
+    "flow": 4,
     "explosion": 6
    },
    "score_raw": 0,
@@ -189,7 +189,7 @@
    "change_pct": 5.56,
    "high_pct": 10.49,
    "fade_pct": 47.0,
-   "value_eok": 8984,
+   "value_eok": 8988,
    "ma10": 101760.0,
    "ma10_margin_pct": 15.66,
    "spark": {
@@ -217,14 +217,9 @@
    ],
    "flow": {
     "net_days": 2,
-    "today_buy": true,
-    "streak": 1,
+    "today_buy": false,
+    "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": -206955,
-      "orgn": -61228
-     },
      {
       "date": "0612",
       "frgn": -39286,
@@ -244,6 +239,11 @@
       "date": "0617",
       "frgn": 52548,
       "orgn": 136071
+     },
+     {
+      "date": "0618",
+      "frgn": -148666,
+      "orgn": 94422
      }
     ]
    },
@@ -257,9 +257,9 @@
     "peak_high_pct": 14.53,
     "ma20": 104360.0,
     "ma20_margin_pct": 12.78,
-    "ivtr_net": 99793,
-    "ivtr_days": 3,
-    "ivtr_eok": 108,
+    "ivtr_net": 196092,
+    "ivtr_days": 4,
+    "ivtr_eok": 221,
     "cause_summary": "",
     "was_theme_leader": false
    },
@@ -273,14 +273,14 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 86,
+   "suspicion_score": 88,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
     "re_value": 12,
     "re_body": 4,
     "re_count": 0,
-    "flow": 6,
+    "flow": 8,
     "explosion": 2
    },
    "score_raw": 0,
@@ -304,7 +304,7 @@
    "change_pct": 0.93,
    "high_pct": 5.63,
    "fade_pct": 83.5,
-   "value_eok": 2567,
+   "value_eok": 2568,
    "ma10": 145320.0,
    "ma10_margin_pct": 12.3,
    "spark": {
@@ -326,15 +326,10 @@
     }
    ],
    "flow": {
-    "net_days": 3,
+    "net_days": 2,
     "today_buy": false,
     "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": 110000,
-      "orgn": 132328
-     },
      {
       "date": "0612",
       "frgn": -467464,
@@ -354,6 +349,11 @@
       "date": "0617",
       "frgn": -114557,
       "orgn": -94594
+     },
+     {
+      "date": "0618",
+      "frgn": 50270,
+      "orgn": -75644
      }
     ]
    },
@@ -367,9 +367,9 @@
     "peak_high_pct": 15.25,
     "ma20": 129425.0,
     "ma20_margin_pct": 26.1,
-    "ivtr_net": 213118,
-    "ivtr_days": 2,
-    "ivtr_eok": 400,
+    "ivtr_net": 258025,
+    "ivtr_days": 3,
+    "ivtr_eok": 474,
     "cause_summary": "",
     "was_theme_leader": false
    },
@@ -414,7 +414,7 @@
    "change_pct": 5.91,
    "high_pct": 10.34,
    "fade_pct": 42.9,
-   "value_eok": 1206,
+   "value_eok": 1207,
    "ma10": 150360.0,
    "ma10_margin_pct": 14.39,
    "spark": {
@@ -442,14 +442,9 @@
    ],
    "flow": {
     "net_days": 2,
-    "today_buy": true,
-    "streak": 2,
+    "today_buy": false,
+    "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": -45428,
-      "orgn": 3781
-     },
      {
       "date": "0612",
       "frgn": -227696,
@@ -469,6 +464,11 @@
       "date": "0617",
       "frgn": 2025,
       "orgn": 9262
+     },
+     {
+      "date": "0618",
+      "frgn": -56936,
+      "orgn": 16724
      }
     ]
    },
@@ -491,9 +491,9 @@
     "peak_high_pct": 24.5,
     "ma20": 128015.0,
     "ma20_margin_pct": 34.36,
-    "ivtr_net": 466286,
-    "ivtr_days": 5,
-    "ivtr_eok": 783,
+    "ivtr_net": 517065,
+    "ivtr_days": 6,
+    "ivtr_eok": 870,
     "cause_summary": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
     "was_theme_leader": false
    },
@@ -562,13 +562,8 @@
    "flow": {
     "net_days": 3,
     "today_buy": true,
-    "streak": 2,
+    "streak": 3,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": -1022486,
-      "orgn": 1135310
-     },
      {
       "date": "0612",
       "frgn": -178273,
@@ -588,6 +583,11 @@
       "date": "0617",
       "frgn": 165186,
       "orgn": -124921
+     },
+     {
+      "date": "0618",
+      "frgn": -71121,
+      "orgn": 121548
      }
     ]
    },
@@ -610,9 +610,9 @@
     "peak_high_pct": 22.21,
     "ma20": 72090.0,
     "ma20_margin_pct": 29.7,
-    "ivtr_net": 1353399,
-    "ivtr_days": 4,
-    "ivtr_eok": 1170,
+    "ivtr_net": 1397658,
+    "ivtr_days": 5,
+    "ivtr_eok": 1210,
     "cause_summary": "다올證 “브이엠, 반도체 장비주 중 저평가…목표가 14만원”",
     "was_theme_leader": false
    },
@@ -680,14 +680,9 @@
    ],
    "flow": {
     "net_days": 3,
-    "today_buy": true,
-    "streak": 2,
+    "today_buy": false,
+    "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": 40147,
-      "orgn": -54381
-     },
      {
       "date": "0612",
       "frgn": -12414,
@@ -707,6 +702,11 @@
       "date": "0617",
       "frgn": 80916,
       "orgn": -71938
+     },
+     {
+      "date": "0618",
+      "frgn": 18746,
+      "orgn": -25965
      }
     ]
    },
@@ -729,10 +729,120 @@
     "peak_high_pct": 18.7,
     "ma20": 142725.0,
     "ma20_margin_pct": 23.38,
-    "ivtr_net": 249285,
-    "ivtr_days": 4,
-    "ivtr_eok": 428,
+    "ivtr_net": 250752,
+    "ivtr_days": 5,
+    "ivtr_eok": 431,
     "cause_summary": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "347850",
+   "name": "디앤디파마텍",
+   "sector": "일반서비스",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 72,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 1,
+    "re_body": 1,
+    "re_count": 0,
+    "flow": 5,
+    "explosion": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 108300.0,
+   "change_pct": 0.19,
+   "high_pct": 3.42,
+   "fade_pct": 94.6,
+   "value_eok": 1938,
+   "ma10": 91980.0,
+   "ma10_margin_pct": 17.74,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.75,
+    "time": "13:40",
+    "value_10m_eok": 51
+   },
+   "reignition_bars": [
+    {
+     "time": "13:40",
+     "body_pct": 2.75,
+     "value_eok": 51
+    }
+   ],
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0612",
+      "frgn": 36162,
+      "orgn": -292238
+     },
+     {
+      "date": "0615",
+      "frgn": -95719,
+      "orgn": -208549
+     },
+     {
+      "date": "0616",
+      "frgn": -210297,
+      "orgn": 436575
+     },
+     {
+      "date": "0617",
+      "frgn": 164480,
+      "orgn": 604031
+     },
+     {
+      "date": "0618",
+      "frgn": -184417,
+      "orgn": 150698
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "환율",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260617",
+    "peak_value_eok": 5770,
+    "peak_high_pct": 27.29,
+    "ma20": 87355.0,
+    "ma20_margin_pct": 23.98,
+    "ivtr_net": 306461,
+    "ivtr_days": 3,
+    "ivtr_eok": 312,
+    "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
@@ -798,15 +908,10 @@
     }
    ],
    "flow": {
-    "net_days": 4,
-    "today_buy": true,
-    "streak": 3,
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
     "detail": [
-     {
-      "date": "0611",
-      "frgn": -219518,
-      "orgn": 431235
-     },
      {
       "date": "0612",
       "frgn": -157467,
@@ -826,6 +931,11 @@
       "date": "0617",
       "frgn": -14541,
       "orgn": 39279
+     },
+     {
+      "date": "0618",
+      "frgn": 6902,
+      "orgn": -20155
      }
     ]
    },
@@ -848,120 +958,10 @@
     "peak_high_pct": 26.12,
     "ma20": 118855.0,
     "ma20_margin_pct": 7.27,
-    "ivtr_net": 259357,
-    "ivtr_days": 4,
-    "ivtr_eok": 312,
+    "ivtr_net": 279483,
+    "ivtr_days": 5,
+    "ivtr_eok": 338,
     "cause_summary": "&quot;심텍, 엔비디아 소캠2 양산에 최대 수혜…목표주가 52%↑&quot;-대신",
-    "was_theme_leader": false
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "347850",
-   "name": "디앤디파마텍",
-   "sector": "일반서비스",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 71,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 1,
-    "re_body": 1,
-    "re_count": 0,
-    "flow": 4,
-    "explosion": 3
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 108300.0,
-   "change_pct": 0.19,
-   "high_pct": 3.42,
-   "fade_pct": 94.6,
-   "value_eok": 1938,
-   "ma10": 91980.0,
-   "ma10_margin_pct": 17.74,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.75,
-    "time": "13:40",
-    "value_10m_eok": 51
-   },
-   "reignition_bars": [
-    {
-     "time": "13:40",
-     "body_pct": 2.75,
-     "value_eok": 51
-    }
-   ],
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 2,
-    "detail": [
-     {
-      "date": "0611",
-      "frgn": 162629,
-      "orgn": -20583
-     },
-     {
-      "date": "0612",
-      "frgn": 36162,
-      "orgn": -292238
-     },
-     {
-      "date": "0615",
-      "frgn": -95719,
-      "orgn": -208549
-     },
-     {
-      "date": "0616",
-      "frgn": -210297,
-      "orgn": 436575
-     },
-     {
-      "date": "0617",
-      "frgn": 164480,
-      "orgn": 604031
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "환율",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260617",
-    "peak_value_eok": 5770,
-    "peak_high_pct": 27.29,
-    "ma20": 87355.0,
-    "ma20_margin_pct": 23.98,
-    "ivtr_net": 227227,
-    "ivtr_days": 2,
-    "ivtr_eok": 227,
-    "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
@@ -1005,7 +1005,7 @@
    "change_pct": -2.58,
    "high_pct": 1.29,
    "fade_pct": 300.0,
-   "value_eok": 909,
+   "value_eok": 910,
    "ma10": 59815.0,
    "ma10_margin_pct": 1.15,
    "spark": {
@@ -1032,11 +1032,6 @@
     "streak": 0,
     "detail": [
      {
-      "date": "0611",
-      "frgn": -179984,
-      "orgn": 146731
-     },
-     {
       "date": "0612",
       "frgn": 623028,
       "orgn": -40634
@@ -1055,6 +1050,11 @@
       "date": "0617",
       "frgn": -152023,
       "orgn": 43105
+     },
+     {
+      "date": "0618",
+      "frgn": 8426,
+      "orgn": -52732
      }
     ]
    },
@@ -1068,9 +1068,9 @@
     "peak_high_pct": 13.32,
     "ma20": 55865.0,
     "ma20_margin_pct": 8.3,
-    "ivtr_net": 1194,
-    "ivtr_days": 3,
-    "ivtr_eok": 5,
+    "ivtr_net": 23566,
+    "ivtr_days": 4,
+    "ivtr_eok": 19,
     "cause_summary": "",
     "was_theme_leader": false
    },
