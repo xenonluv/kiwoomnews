@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-18 09:11:51 KST",
+ "generated_at": "2026-06-18 09:21:58 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -27,19 +27,128 @@
  "events": [],
  "suspects": [
   {
+   "code": "011070",
+   "name": "LG이노텍",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 87,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 12,
+    "re_body": 2,
+    "re_count": 0,
+    "flow": 7,
+    "explosion": 4
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 1255000.0,
+   "change_pct": 0.56,
+   "high_pct": 0.64,
+   "fade_pct": 12.5,
+   "value_eok": 842,
+   "ma10": 1153800.0,
+   "ma10_margin_pct": 8.77,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.25,
+    "time": "09:10",
+    "value_10m_eok": 341
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 3.25,
+     "value_eok": 341
+    }
+   ],
+   "flow": {
+    "net_days": 2,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": 8071,
+      "orgn": 7943
+     },
+     {
+      "date": "0612",
+      "frgn": 17667,
+      "orgn": -25379
+     },
+     {
+      "date": "0615",
+      "frgn": 13405,
+      "orgn": 38140
+     },
+     {
+      "date": "0616",
+      "frgn": -76406,
+      "orgn": -8151
+     },
+     {
+      "date": "0617",
+      "frgn": -36451,
+      "orgn": -149
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 6385,
+    "peak_high_pct": 18.34,
+    "ma20": 1132950.0,
+    "ma20_margin_pct": 10.77,
+    "ivtr_net": 39345,
+    "ivtr_days": 4,
+    "ivtr_eok": 449,
+    "cause_summary": "애플 AI 전략에 아이폰 더 팔린다…대표 부품주 LG이노텍 주목",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
    "code": "475150",
    "name": "SK이터닉스",
    "sector": "건설",
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 90,
+   "suspicion_score": 87,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
     "re_value": 11,
     "re_body": 5,
-    "re_count": 3,
+    "re_count": 0,
     "flow": 3,
     "explosion": 6
    },
@@ -60,13 +169,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 56800.0,
-   "change_pct": 8.4,
+   "price": 55550.0,
+   "change_pct": 6.01,
    "high_pct": 8.78,
-   "fade_pct": 4.3,
-   "value_eok": 424,
-   "ma10": 44330.0,
-   "ma10_margin_pct": 28.13,
+   "fade_pct": 31.5,
+   "value_eok": 840,
+   "ma10": 44215.0,
+   "ma10_margin_pct": 25.64,
    "spark": {
     "clusters": []
    },
@@ -83,11 +192,6 @@
      "time": "09:00",
      "body_pct": 5.44,
      "value_eok": 277
-    },
-    {
-     "time": "09:10",
-     "body_pct": 2.71,
-     "value_eok": 149
     }
    ],
    "flow": {
@@ -130,8 +234,8 @@
     "peak_date": "20260616",
     "peak_value_eok": 12512,
     "peak_high_pct": 26.71,
-    "ma20": 42500.0,
-    "ma20_margin_pct": 33.65,
+    "ma20": 42442.5,
+    "ma20_margin_pct": 30.88,
     "ivtr_net": 401476,
     "ivtr_days": 3,
     "ivtr_eok": 217,
@@ -174,13 +278,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 169300.0,
-   "change_pct": 4.7,
+   "price": 165500.0,
+   "change_pct": 2.35,
    "high_pct": 4.95,
-   "fade_pct": 5.0,
-   "value_eok": 385,
-   "ma10": 145930.0,
-   "ma10_margin_pct": 16.01,
+   "fade_pct": 52.5,
+   "value_eok": 656,
+   "ma10": 145550.0,
+   "ma10_margin_pct": 13.71,
    "spark": {
     "clusters": []
    },
@@ -239,8 +343,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 4161,
     "peak_high_pct": 15.25,
-    "ma20": 129730.0,
-    "ma20_margin_pct": 30.5,
+    "ma20": 129540.0,
+    "ma20_margin_pct": 27.76,
     "ivtr_net": 213118,
     "ivtr_days": 2,
     "ivtr_eok": 400,
@@ -283,13 +387,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 111900.0,
-   "change_pct": 0.36,
+   "price": 107200.0,
+   "change_pct": -3.86,
    "high_pct": 4.84,
-   "fade_pct": 92.6,
-   "value_eok": 801,
-   "ma10": 101180.0,
-   "ma10_margin_pct": 10.59,
+   "fade_pct": 179.6,
+   "value_eok": 1221,
+   "ma10": 100710.0,
+   "ma10_margin_pct": 6.44,
    "spark": {
     "clusters": []
    },
@@ -348,127 +452,13 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 104070.0,
-    "ma20_margin_pct": 7.52,
+    "ma20": 103835.0,
+    "ma20_margin_pct": 3.24,
     "ivtr_net": 99793,
     "ivtr_days": 3,
     "ivtr_eok": 108,
     "cause_summary": "",
     "was_theme_leader": true
-   },
-   "theme_leader": false
-  },
-  {
-   "code": "001820",
-   "name": "삼화콘덴서",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 75,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 4,
-    "re_body": 5,
-    "re_count": 3,
-    "flow": 1,
-    "explosion": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 164000.0,
-   "change_pct": 8.32,
-   "high_pct": 8.59,
-   "fade_pct": 3.1,
-   "value_eok": 189,
-   "ma10": 131450.0,
-   "ma10_margin_pct": 24.76,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 5.02,
-    "time": "09:00",
-    "value_10m_eok": 121
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 5.02,
-     "value_eok": 121
-    },
-    {
-     "time": "09:10",
-     "body_pct": 4.46,
-     "value_eok": 71
-    }
-   ],
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 2,
-    "detail": [
-     {
-      "date": "0611",
-      "frgn": 78863,
-      "orgn": 133448
-     },
-     {
-      "date": "0612",
-      "frgn": 3158,
-      "orgn": -67706
-     },
-     {
-      "date": "0615",
-      "frgn": -2173,
-      "orgn": -17918
-     },
-     {
-      "date": "0616",
-      "frgn": -13725,
-      "orgn": 24658
-     },
-     {
-      "date": "0617",
-      "frgn": 65417,
-      "orgn": 15154
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "전쟁",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 1683,
-    "peak_high_pct": 18.95,
-    "ma20": 123475.0,
-    "ma20_margin_pct": 32.82,
-    "ivtr_net": 44177,
-    "ivtr_days": 3,
-    "ivtr_eok": 61,
-    "cause_summary": "",
-    "was_theme_leader": false
    },
    "theme_leader": false
   },
@@ -479,13 +469,13 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 69,
+   "suspicion_score": 78,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
-    "re_value": 0,
-    "re_body": 1,
-    "re_count": 0,
+    "re_value": 7,
+    "re_body": 0,
+    "re_count": 3,
     "flow": 3,
     "explosion": 3
    },
@@ -506,13 +496,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 74900.0,
-   "change_pct": 1.35,
-   "high_pct": 2.98,
-   "fade_pct": 54.5,
-   "value_eok": 269,
-   "ma10": 61890.0,
-   "ma10_margin_pct": 21.02,
+   "price": 76300.0,
+   "change_pct": 3.25,
+   "high_pct": 3.79,
+   "fade_pct": 14.3,
+   "value_eok": 484,
+   "ma10": 62020.0,
+   "ma10_margin_pct": 23.02,
    "spark": {
     "clusters": []
    },
@@ -520,15 +510,20 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "reignition": {
-    "body_pct": 2.74,
-    "time": "09:10",
-    "value_10m_eok": 35
+    "body_pct": 2.28,
+    "time": "09:20",
+    "value_10m_eok": 63
    },
    "reignition_bars": [
     {
      "time": "09:10",
-     "body_pct": 2.74,
-     "value_eok": 35
+     "body_pct": 2.19,
+     "value_eok": 186
+    },
+    {
+     "time": "09:20",
+     "body_pct": 2.28,
+     "value_eok": 63
     }
    ],
    "flow": {
@@ -571,12 +566,374 @@
     "peak_date": "20260615",
     "peak_value_eok": 5331,
     "peak_high_pct": 17.85,
-    "ma20": 61210.0,
-    "ma20_margin_pct": 22.37,
+    "ma20": 61275.0,
+    "ma20_margin_pct": 24.52,
     "ivtr_net": 282153,
     "ivtr_days": 3,
     "ivtr_eok": 216,
     "cause_summary": "&quot;HL만도, 로봇 관절 핵심 공급사&quot;",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "089970",
+   "name": "브이엠",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 73,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 0,
+    "re_body": 3,
+    "re_count": 0,
+    "flow": 8,
+    "explosion": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 91700.0,
+   "change_pct": 4.68,
+   "high_pct": 5.82,
+   "fade_pct": 19.6,
+   "value_eok": 72,
+   "ma10": 83350.0,
+   "ma10_margin_pct": 10.02,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.19,
+    "time": "09:10",
+    "value_10m_eok": 35
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 4.19,
+     "value_eok": 35
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": -1022486,
+      "orgn": 1135310
+     },
+     {
+      "date": "0612",
+      "frgn": -178273,
+      "orgn": 161790
+     },
+     {
+      "date": "0615",
+      "frgn": -25132,
+      "orgn": -18163
+     },
+     {
+      "date": "0616",
+      "frgn": 279665,
+      "orgn": -174980
+     },
+     {
+      "date": "0617",
+      "frgn": 165186,
+      "orgn": -124921
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "다올證 “브이엠, 반도체 장비주 중 저평가…목표가 14만원”",
+     "summary": "다올투자증권이 12일 브이엠에 대해 반도체 소재·부품·장비(소부장) 업종 내에서도 상대적으로 저평가돼 있다며 목표 주가를 기존 9만6000원에서 14만원으로 상향 조정했다. 전 거래일 브이엠 종가는 8만5100원이다. 고영민 다올투자증권 연구원은...",
+     "office": "조선비즈",
+     "datetime": "202606120827",
+     "url": "https://n.news.naver.com/mnews/article/366/0001171268",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 1568,
+    "peak_high_pct": 22.21,
+    "ma20": 72000.0,
+    "ma20_margin_pct": 27.36,
+    "ivtr_net": 1353399,
+    "ivtr_days": 4,
+    "ivtr_eok": 1170,
+    "cause_summary": "다올證 “브이엠, 반도체 장비주 중 저평가…목표가 14만원”",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "095610",
+   "name": "테스",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 72,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 1,
+    "re_body": 1,
+    "re_count": 0,
+    "flow": 7,
+    "explosion": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 176100.0,
+   "change_pct": 3.96,
+   "high_pct": 4.49,
+   "fade_pct": 11.8,
+   "value_eok": 89,
+   "ma10": 165010.0,
+   "ma10_margin_pct": 6.72,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.65,
+    "time": "09:10",
+    "value_10m_eok": 42
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.65,
+     "value_eok": 42
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": 40147,
+      "orgn": -54381
+     },
+     {
+      "date": "0612",
+      "frgn": -12414,
+      "orgn": 151140
+     },
+     {
+      "date": "0615",
+      "frgn": 40589,
+      "orgn": -57331
+     },
+     {
+      "date": "0616",
+      "frgn": 200366,
+      "orgn": -116623
+     },
+     {
+      "date": "0617",
+      "frgn": 80916,
+      "orgn": -71938
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
+     "summary": "스몰인사이트리서치는 시스템반도체 테스트 전문기업 두산테스나에 대해 삼성전자 파운드리(반도체 위탁생산) 고객 확대와 신규 프로젝트 진입, 차량용 반도체 성장, 그룹 차원의 반도체 사업 강화 등 네 가지 성장 동력을 동시에 확보했다고...",
+     "office": "머니투데이",
+     "datetime": "202606100815",
+     "url": "https://n.news.naver.com/mnews/article/008/0005369615",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 2232,
+    "peak_high_pct": 18.7,
+    "ma20": 142730.0,
+    "ma20_margin_pct": 23.38,
+    "ivtr_net": 249285,
+    "ivtr_days": 4,
+    "ivtr_eok": 428,
+    "cause_summary": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
+    "was_theme_leader": false
+   },
+   "theme_leader": false
+  },
+  {
+   "code": "222800",
+   "name": "심텍",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 71,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 1,
+    "re_body": 2,
+    "re_count": 0,
+    "flow": 5,
+    "explosion": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 131600.0,
+   "change_pct": 1.31,
+   "high_pct": 2.0,
+   "fade_pct": 34.6,
+   "value_eok": 103,
+   "ma10": 121320.0,
+   "ma10_margin_pct": 8.47,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.3,
+    "time": "09:10",
+    "value_10m_eok": 42
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 3.3,
+     "value_eok": 42
+    }
+   ],
+   "flow": {
+    "net_days": 4,
+    "today_buy": true,
+    "streak": 3,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": -219518,
+      "orgn": 431235
+     },
+     {
+      "date": "0612",
+      "frgn": -157467,
+      "orgn": 49070
+     },
+     {
+      "date": "0615",
+      "frgn": -90235,
+      "orgn": 156955
+     },
+     {
+      "date": "0616",
+      "frgn": 41441,
+      "orgn": -26627
+     },
+     {
+      "date": "0617",
+      "frgn": -14541,
+      "orgn": 39279
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "&quot;심텍, 엔비디아 소캠2 양산에 최대 수혜…목표주가 52%↑&quot;-대신",
+     "summary": "대신증권이 반도체 PCB(패키지 기판) 기업 심텍의 목표주가를 높여 잡았다. 심텍이 엔비디아의 소캠2 양산에 따른 최대 수혜자로 시장 전망치보다 높은 실적을 낼 것으로 예상했다. 박강호 대신증권 연구원은 16일 리포트에서 &quot;올해 2분기 심텍.",
+     "office": "머니투데이",
+     "datetime": "202606160846",
+     "url": "https://n.news.naver.com/mnews/article/008/0005372356",
+     "sentiment": "호재"
+    },
+    {
+     "title": "변동성 극심한데...여의도서 추천하는 단기 투자 유망주",
+     "summary": "심텍·HD현대중공업·BNK금융지주·오리온 실적 개선 기대감·중장기 성장 동력 주목 코스피가 롤러코스터 장세를 이어가며 투자자 고민이 깊어지고 있다. 시장 안전장치인 사이드카와 서킷브레이커가 연일 발동하는 등 극심한 변동성을 보인다....",
+     "office": "매경이코노미",
+     "datetime": "202606131701",
+     "url": "https://n.news.naver.com/mnews/article/024/0000106211",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260611",
+    "peak_value_eok": 3107,
+    "peak_high_pct": 26.12,
+    "ma20": 119060.0,
+    "ma20_margin_pct": 10.53,
+    "ivtr_net": 259357,
+    "ivtr_days": 4,
+    "ivtr_eok": 312,
+    "cause_summary": "&quot;심텍, 엔비디아 소캠2 양산에 최대 수혜…목표주가 52%↑&quot;-대신",
     "was_theme_leader": false
    },
    "theme_leader": false
