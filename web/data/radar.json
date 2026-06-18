@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-18 13:42:15 KST",
+ "generated_at": "2026-06-18 13:52:14 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -60,13 +60,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 1255000.0,
-   "change_pct": 0.56,
+   "price": 1259000.0,
+   "change_pct": 0.88,
    "high_pct": 3.69,
-   "fade_pct": 84.8,
-   "value_eok": 6016,
-   "ma10": 1153800.0,
-   "ma10_margin_pct": 8.77,
+   "fade_pct": 76.1,
+   "value_eok": 6133,
+   "ma10": 1154200.0,
+   "ma10_margin_pct": 9.08,
    "spark": {
     "clusters": []
    },
@@ -135,8 +135,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 6385,
     "peak_high_pct": 18.34,
-    "ma20": 1132950.0,
-    "ma20_margin_pct": 10.77,
+    "ma20": 1133150.0,
+    "ma20_margin_pct": 11.11,
     "ivtr_net": 39345,
     "ivtr_days": 4,
     "ivtr_eok": 449,
@@ -180,13 +180,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 60900.0,
-   "change_pct": -3.03,
+   "price": 61400.0,
+   "change_pct": -2.23,
    "high_pct": 2.87,
-   "fade_pct": 205.6,
-   "value_eok": 2935,
-   "ma10": 60745.0,
-   "ma10_margin_pct": 0.26,
+   "fade_pct": 177.8,
+   "value_eok": 2988,
+   "ma10": 60805.0,
+   "ma10_margin_pct": 0.98,
    "spark": {
     "clusters": []
    },
@@ -245,8 +245,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 27304,
     "peak_high_pct": 28.67,
-    "ma20": 55852.5,
-    "ma20_margin_pct": 9.04,
+    "ma20": 55882.5,
+    "ma20_margin_pct": 9.87,
     "ivtr_net": 5548793,
     "ivtr_days": 3,
     "ivtr_eok": 4233,
@@ -290,13 +290,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 52600.0,
-   "change_pct": 0.38,
+   "price": 52400.0,
+   "change_pct": 0.0,
    "high_pct": 8.78,
-   "fade_pct": 95.7,
-   "value_eok": 2208,
-   "ma10": 43930.0,
-   "ma10_margin_pct": 19.74,
+   "fade_pct": 100.0,
+   "value_eok": 2226,
+   "ma10": 43900.0,
+   "ma10_margin_pct": 19.36,
    "spark": {
     "clusters": []
    },
@@ -355,8 +355,8 @@
     "peak_date": "20260616",
     "peak_value_eok": 12512,
     "peak_high_pct": 26.71,
-    "ma20": 42300.0,
-    "ma20_margin_pct": 24.35,
+    "ma20": 42285.0,
+    "ma20_margin_pct": 23.92,
     "ivtr_net": 401476,
     "ivtr_days": 3,
     "ivtr_eok": 217,
@@ -400,13 +400,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 119500.0,
-   "change_pct": 7.17,
+   "price": 119200.0,
+   "change_pct": 6.91,
    "high_pct": 10.49,
-   "fade_pct": 31.6,
-   "value_eok": 7425,
-   "ma10": 101940.0,
-   "ma10_margin_pct": 17.23,
+   "fade_pct": 34.2,
+   "value_eok": 7602,
+   "ma10": 101900.0,
+   "ma10_margin_pct": 16.98,
    "spark": {
     "clusters": []
    },
@@ -470,8 +470,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 104450.0,
-    "ma20_margin_pct": 14.41,
+    "ma20": 104430.0,
+    "ma20_margin_pct": 14.14,
     "ivtr_net": 99793,
     "ivtr_days": 3,
     "ivtr_eok": 108,
@@ -515,13 +515,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 162300.0,
-   "change_pct": 0.37,
+   "price": 163300.0,
+   "change_pct": 0.99,
    "high_pct": 5.63,
-   "fade_pct": 93.4,
-   "value_eok": 1840,
-   "ma10": 145230.0,
-   "ma10_margin_pct": 11.75,
+   "fade_pct": 82.4,
+   "value_eok": 1888,
+   "ma10": 145330.0,
+   "ma10_margin_pct": 12.36,
    "spark": {
     "clusters": []
    },
@@ -580,8 +580,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 4161,
     "peak_high_pct": 15.25,
-    "ma20": 129380.0,
-    "ma20_margin_pct": 25.44,
+    "ma20": 129430.0,
+    "ma20_margin_pct": 26.17,
     "ivtr_net": 213118,
     "ivtr_days": 2,
     "ivtr_eok": 400,
@@ -625,13 +625,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 93100.0,
-   "change_pct": 6.28,
-   "high_pct": 7.19,
-   "fade_pct": 12.7,
-   "value_eok": 414,
-   "ma10": 83490.0,
-   "ma10_margin_pct": 11.51,
+   "price": 93200.0,
+   "change_pct": 6.39,
+   "high_pct": 7.76,
+   "fade_pct": 17.6,
+   "value_eok": 432,
+   "ma10": 83500.0,
+   "ma10_margin_pct": 11.62,
    "spark": {
     "clusters": []
    },
@@ -699,8 +699,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 1568,
     "peak_high_pct": 22.21,
-    "ma20": 72070.0,
-    "ma20_margin_pct": 29.18,
+    "ma20": 72075.0,
+    "ma20_margin_pct": 29.31,
     "ivtr_net": 1353399,
     "ivtr_days": 4,
     "ivtr_eok": 1170,
@@ -744,13 +744,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 172600.0,
-   "change_pct": 1.89,
+   "price": 172900.0,
+   "change_pct": 2.07,
    "high_pct": 4.49,
-   "fade_pct": 57.9,
-   "value_eok": 379,
-   "ma10": 164650.0,
-   "ma10_margin_pct": 4.83,
+   "fade_pct": 53.9,
+   "value_eok": 397,
+   "ma10": 164680.0,
+   "ma10_margin_pct": 4.99,
    "spark": {
     "clusters": []
    },
@@ -818,8 +818,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2232,
     "peak_high_pct": 18.7,
-    "ma20": 142550.0,
-    "ma20_margin_pct": 21.08,
+    "ma20": 142565.0,
+    "ma20_margin_pct": 21.28,
     "ivtr_net": 249285,
     "ivtr_days": 4,
     "ivtr_eok": 428,
@@ -863,13 +863,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 166700.0,
-   "change_pct": 2.65,
+   "price": 168300.0,
+   "change_pct": 3.63,
    "high_pct": 7.14,
-   "fade_pct": 62.9,
-   "value_eok": 636,
-   "ma10": 149830.0,
-   "ma10_margin_pct": 11.26,
+   "fade_pct": 49.1,
+   "value_eok": 655,
+   "ma10": 149990.0,
+   "ma10_margin_pct": 12.21,
    "spark": {
     "clusters": []
    },
@@ -937,8 +937,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 2652,
     "peak_high_pct": 24.5,
-    "ma20": 127750.0,
-    "ma20_margin_pct": 30.49,
+    "ma20": 127830.0,
+    "ma20_margin_pct": 31.66,
     "ivtr_net": 466286,
     "ivtr_days": 5,
     "ivtr_eok": 783,
@@ -982,13 +982,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 128100.0,
-   "change_pct": -1.39,
+   "price": 128500.0,
+   "change_pct": -1.08,
    "high_pct": 4.31,
-   "fade_pct": 132.1,
-   "value_eok": 549,
-   "ma10": 120970.0,
-   "ma10_margin_pct": 5.89,
+   "fade_pct": 125.0,
+   "value_eok": 559,
+   "ma10": 121010.0,
+   "ma10_margin_pct": 6.19,
    "spark": {
     "clusters": []
    },
@@ -1056,12 +1056,122 @@
     "peak_date": "20260611",
     "peak_value_eok": 3107,
     "peak_high_pct": 26.12,
-    "ma20": 118885.0,
-    "ma20_margin_pct": 7.75,
+    "ma20": 118905.0,
+    "ma20_margin_pct": 8.07,
     "ivtr_net": 259357,
     "ivtr_days": 4,
     "ivtr_eok": 312,
     "cause_summary": "&quot;심텍, 엔비디아 소캠2 양산에 최대 수혜…목표주가 52%↑&quot;-대신",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "347850",
+   "name": "디앤디파마텍",
+   "sector": "일반서비스",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 71,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 1,
+    "re_body": 1,
+    "re_count": 0,
+    "flow": 4,
+    "explosion": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 108000.0,
+   "change_pct": -0.09,
+   "high_pct": 3.15,
+   "fade_pct": 102.9,
+   "value_eok": 1471,
+   "ma10": 91960.0,
+   "ma10_margin_pct": 17.44,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.75,
+    "time": "13:40",
+    "value_10m_eok": 51
+   },
+   "reignition_bars": [
+    {
+     "time": "13:40",
+     "body_pct": 2.75,
+     "value_eok": 51
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": 162629,
+      "orgn": -20583
+     },
+     {
+      "date": "0612",
+      "frgn": 36162,
+      "orgn": -292238
+     },
+     {
+      "date": "0615",
+      "frgn": -95719,
+      "orgn": -208549
+     },
+     {
+      "date": "0616",
+      "frgn": -210297,
+      "orgn": 436575
+     },
+     {
+      "date": "0617",
+      "frgn": 164480,
+      "orgn": 604031
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "환율",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260617",
+    "peak_value_eok": 5770,
+    "peak_high_pct": 27.29,
+    "ma20": 87345.0,
+    "ma20_margin_pct": 23.65,
+    "ivtr_net": 227227,
+    "ivtr_days": 2,
+    "ivtr_eok": 227,
+    "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
