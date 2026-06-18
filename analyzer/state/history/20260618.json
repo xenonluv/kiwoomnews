@@ -1,44 +1,36 @@
 {
   "date": "20260618",
-  "as_of": "2026-06-18 12:52 KST",
+  "as_of": "2026-06-18 13:07 KST",
   "bets": [
     {
       "code": "089970",
       "ticker": "브이엠",
-      "entry": 91900.0,
-      "target": 96495,
+      "entry": 91600.0,
+      "target": 96180,
       "raw": 90,
       "prob": "90%"
     },
     {
       "code": "475150",
       "ticker": "SK이터닉스",
-      "entry": 52900.0,
-      "target": 55545,
+      "entry": 52700.0,
+      "target": 55335,
       "raw": 65,
       "prob": "65%"
     },
     {
-      "code": "204320",
-      "ticker": "HL만도",
-      "entry": 71000.0,
-      "target": 74550,
-      "raw": 64,
-      "prob": "64%"
-    },
-    {
       "code": "000500",
       "ticker": "가온전선",
-      "entry": 375500.0,
-      "target": 394275,
+      "entry": 379500.0,
+      "target": 398475,
       "raw": 62,
       "prob": "62%"
     },
     {
       "code": "004310",
       "ticker": "현대약품",
-      "entry": 9180.0,
-      "target": 9639,
+      "entry": 9100.0,
+      "target": 9555,
       "raw": 61,
       "prob": "61%"
     }
