@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-18 13:52:14 KST",
+ "generated_at": "2026-06-18 14:02:22 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -60,13 +60,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 1259000.0,
-   "change_pct": 0.88,
+   "price": 1266000.0,
+   "change_pct": 1.44,
    "high_pct": 3.69,
-   "fade_pct": 76.1,
-   "value_eok": 6133,
-   "ma10": 1154200.0,
-   "ma10_margin_pct": 9.08,
+   "fade_pct": 60.9,
+   "value_eok": 6335,
+   "ma10": 1154900.0,
+   "ma10_margin_pct": 9.62,
    "spark": {
     "clusters": []
    },
@@ -135,8 +135,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 6385,
     "peak_high_pct": 18.34,
-    "ma20": 1133150.0,
-    "ma20_margin_pct": 11.11,
+    "ma20": 1133500.0,
+    "ma20_margin_pct": 11.69,
     "ivtr_net": 39345,
     "ivtr_days": 4,
     "ivtr_eok": 449,
@@ -180,13 +180,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 61400.0,
-   "change_pct": -2.23,
+   "price": 61700.0,
+   "change_pct": -1.75,
    "high_pct": 2.87,
-   "fade_pct": 177.8,
-   "value_eok": 2988,
-   "ma10": 60805.0,
-   "ma10_margin_pct": 0.98,
+   "fade_pct": 161.1,
+   "value_eok": 3047,
+   "ma10": 60835.0,
+   "ma10_margin_pct": 1.42,
    "spark": {
     "clusters": []
    },
@@ -245,8 +245,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 27304,
     "peak_high_pct": 28.67,
-    "ma20": 55882.5,
-    "ma20_margin_pct": 9.87,
+    "ma20": 55897.5,
+    "ma20_margin_pct": 10.38,
     "ivtr_net": 5548793,
     "ivtr_days": 3,
     "ivtr_eok": 4233,
@@ -290,13 +290,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 52400.0,
-   "change_pct": 0.0,
+   "price": 52300.0,
+   "change_pct": -0.19,
    "high_pct": 8.78,
-   "fade_pct": 100.0,
-   "value_eok": 2226,
-   "ma10": 43900.0,
-   "ma10_margin_pct": 19.36,
+   "fade_pct": 102.2,
+   "value_eok": 2237,
+   "ma10": 43890.0,
+   "ma10_margin_pct": 19.16,
    "spark": {
     "clusters": []
    },
@@ -355,8 +355,8 @@
     "peak_date": "20260616",
     "peak_value_eok": 12512,
     "peak_high_pct": 26.71,
-    "ma20": 42285.0,
-    "ma20_margin_pct": 23.92,
+    "ma20": 42280.0,
+    "ma20_margin_pct": 23.7,
     "ivtr_net": 401476,
     "ivtr_days": 3,
     "ivtr_eok": 217,
@@ -400,13 +400,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 119200.0,
-   "change_pct": 6.91,
+   "price": 117400.0,
+   "change_pct": 5.29,
    "high_pct": 10.49,
-   "fade_pct": 34.2,
-   "value_eok": 7602,
-   "ma10": 101900.0,
-   "ma10_margin_pct": 16.98,
+   "fade_pct": 49.6,
+   "value_eok": 7773,
+   "ma10": 101730.0,
+   "ma10_margin_pct": 15.4,
    "spark": {
     "clusters": []
    },
@@ -470,8 +470,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 104430.0,
-    "ma20_margin_pct": 14.14,
+    "ma20": 104345.0,
+    "ma20_margin_pct": 12.51,
     "ivtr_net": 99793,
     "ivtr_days": 3,
     "ivtr_eok": 108,
@@ -515,13 +515,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 163300.0,
-   "change_pct": 0.99,
+   "price": 166000.0,
+   "change_pct": 2.66,
    "high_pct": 5.63,
-   "fade_pct": 82.4,
-   "value_eok": 1888,
-   "ma10": 145330.0,
-   "ma10_margin_pct": 12.36,
+   "fade_pct": 52.7,
+   "value_eok": 2003,
+   "ma10": 145600.0,
+   "ma10_margin_pct": 14.01,
    "spark": {
     "clusters": []
    },
@@ -580,12 +580,136 @@
     "peak_date": "20260617",
     "peak_value_eok": 4161,
     "peak_high_pct": 15.25,
-    "ma20": 129430.0,
-    "ma20_margin_pct": 26.17,
+    "ma20": 129565.0,
+    "ma20_margin_pct": 28.12,
     "ivtr_net": 213118,
     "ivtr_days": 2,
     "ivtr_eok": 400,
     "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "319660",
+   "name": "피에스케이",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 75,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 0,
+    "re_body": 1,
+    "re_count": 3,
+    "flow": 8,
+    "explosion": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 173300.0,
+   "change_pct": 6.71,
+   "high_pct": 7.14,
+   "fade_pct": 6.0,
+   "value_eok": 707,
+   "ma10": 150490.0,
+   "ma10_margin_pct": 15.16,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.94,
+    "time": "10:10",
+    "value_10m_eok": 38
+   },
+   "reignition_bars": [
+    {
+     "time": "10:10",
+     "body_pct": 2.94,
+     "value_eok": 38
+    },
+    {
+     "time": "13:50",
+     "body_pct": 2.81,
+     "value_eok": 37
+    }
+   ],
+   "flow": {
+    "net_days": 2,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": -45428,
+      "orgn": 3781
+     },
+     {
+      "date": "0612",
+      "frgn": -227696,
+      "orgn": 175237
+     },
+     {
+      "date": "0615",
+      "frgn": -8062,
+      "orgn": -90397
+     },
+     {
+      "date": "0616",
+      "frgn": 51130,
+      "orgn": 5712
+     },
+     {
+      "date": "0617",
+      "frgn": 2025,
+      "orgn": 9262
+     }
+    ]
+   },
+   "news": [
+    {
+     "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
+     "summary": "삼성전자(005930)와 SK하이닉스(000660)가 9일 반등하면서 반도체 소부장 종목들도 동반 강세다. 이날 오전 10시 52분 반도체 전공정 장비 기업 피에스케이(319660)는 전일 대비 2만 2700원(20.41%) 오른 13만 3900원에 ",
+     "office": "뉴스1",
+     "datetime": "202606091103",
+     "url": "https://n.news.naver.com/mnews/article/421/0008993247",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260612",
+    "peak_value_eok": 2652,
+    "peak_high_pct": 24.5,
+    "ma20": 128080.0,
+    "ma20_margin_pct": 35.31,
+    "ivtr_net": 466286,
+    "ivtr_days": 5,
+    "ivtr_eok": 783,
+    "cause_summary": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
@@ -625,13 +749,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 93200.0,
-   "change_pct": 6.39,
+   "price": 93900.0,
+   "change_pct": 7.19,
    "high_pct": 7.76,
-   "fade_pct": 17.6,
-   "value_eok": 432,
-   "ma10": 83500.0,
-   "ma10_margin_pct": 11.62,
+   "fade_pct": 7.4,
+   "value_eok": 445,
+   "ma10": 83570.0,
+   "ma10_margin_pct": 12.36,
    "spark": {
     "clusters": []
    },
@@ -699,8 +823,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 1568,
     "peak_high_pct": 22.21,
-    "ma20": 72075.0,
-    "ma20_margin_pct": 29.31,
+    "ma20": 72110.0,
+    "ma20_margin_pct": 30.22,
     "ivtr_net": 1353399,
     "ivtr_days": 4,
     "ivtr_eok": 1170,
@@ -744,13 +868,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 172900.0,
-   "change_pct": 2.07,
+   "price": 176600.0,
+   "change_pct": 4.25,
    "high_pct": 4.49,
-   "fade_pct": 53.9,
-   "value_eok": 397,
-   "ma10": 164680.0,
-   "ma10_margin_pct": 4.99,
+   "fade_pct": 5.3,
+   "value_eok": 425,
+   "ma10": 165050.0,
+   "ma10_margin_pct": 7.0,
    "spark": {
     "clusters": []
    },
@@ -818,131 +942,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 2232,
     "peak_high_pct": 18.7,
-    "ma20": 142565.0,
-    "ma20_margin_pct": 21.28,
+    "ma20": 142750.0,
+    "ma20_margin_pct": 23.71,
     "ivtr_net": 249285,
     "ivtr_days": 4,
     "ivtr_eok": 428,
     "cause_summary": "두산테스나, 삼성 파운드리 낙수효과 돌입…4분기 램프업으로 실적 본...",
-    "was_theme_leader": false
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "319660",
-   "name": "피에스케이",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 72,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 0,
-    "re_body": 1,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 1
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 168300.0,
-   "change_pct": 3.63,
-   "high_pct": 7.14,
-   "fade_pct": 49.1,
-   "value_eok": 655,
-   "ma10": 149990.0,
-   "ma10_margin_pct": 12.21,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.94,
-    "time": "10:10",
-    "value_10m_eok": 38
-   },
-   "reignition_bars": [
-    {
-     "time": "10:10",
-     "body_pct": 2.94,
-     "value_eok": 38
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": true,
-    "streak": 2,
-    "detail": [
-     {
-      "date": "0611",
-      "frgn": -45428,
-      "orgn": 3781
-     },
-     {
-      "date": "0612",
-      "frgn": -227696,
-      "orgn": 175237
-     },
-     {
-      "date": "0615",
-      "frgn": -8062,
-      "orgn": -90397
-     },
-     {
-      "date": "0616",
-      "frgn": 51130,
-      "orgn": 5712
-     },
-     {
-      "date": "0617",
-      "frgn": 2025,
-      "orgn": 9262
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
-     "summary": "삼성전자(005930)와 SK하이닉스(000660)가 9일 반등하면서 반도체 소부장 종목들도 동반 강세다. 이날 오전 10시 52분 반도체 전공정 장비 기업 피에스케이(319660)는 전일 대비 2만 2700원(20.41%) 오른 13만 3900원에 ",
-     "office": "뉴스1",
-     "datetime": "202606091103",
-     "url": "https://n.news.naver.com/mnews/article/421/0008993247",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 2652,
-    "peak_high_pct": 24.5,
-    "ma20": 127830.0,
-    "ma20_margin_pct": 31.66,
-    "ivtr_net": 466286,
-    "ivtr_days": 5,
-    "ivtr_eok": 783,
-    "cause_summary": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
@@ -982,13 +987,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 128500.0,
-   "change_pct": -1.08,
+   "price": 127900.0,
+   "change_pct": -1.54,
    "high_pct": 4.31,
-   "fade_pct": 125.0,
-   "value_eok": 559,
-   "ma10": 121010.0,
-   "ma10_margin_pct": 6.19,
+   "fade_pct": 135.7,
+   "value_eok": 577,
+   "ma10": 120950.0,
+   "ma10_margin_pct": 5.75,
    "spark": {
     "clusters": []
    },
@@ -1056,8 +1061,8 @@
     "peak_date": "20260611",
     "peak_value_eok": 3107,
     "peak_high_pct": 26.12,
-    "ma20": 118905.0,
-    "ma20_margin_pct": 8.07,
+    "ma20": 118875.0,
+    "ma20_margin_pct": 7.59,
     "ivtr_net": 259357,
     "ivtr_days": 4,
     "ivtr_eok": 312,
@@ -1101,13 +1106,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 108000.0,
-   "change_pct": -0.09,
+   "price": 109000.0,
+   "change_pct": 0.83,
    "high_pct": 3.15,
-   "fade_pct": 102.9,
-   "value_eok": 1471,
-   "ma10": 91960.0,
-   "ma10_margin_pct": 17.44,
+   "fade_pct": 73.5,
+   "value_eok": 1508,
+   "ma10": 92050.0,
+   "ma10_margin_pct": 18.41,
    "spark": {
     "clusters": []
    },
@@ -1166,12 +1171,122 @@
     "peak_date": "20260617",
     "peak_value_eok": 5770,
     "peak_high_pct": 27.29,
-    "ma20": 87345.0,
-    "ma20_margin_pct": 23.65,
+    "ma20": 87390.0,
+    "ma20_margin_pct": 24.73,
     "ivtr_net": 227227,
     "ivtr_days": 2,
     "ivtr_eok": 227,
     "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "089030",
+   "name": "테크윙",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 65,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 60700.0,
+   "change_pct": -2.25,
+   "high_pct": 1.29,
+   "fade_pct": 275.0,
+   "value_eok": 701,
+   "ma10": 59835.0,
+   "ma10_margin_pct": 1.45,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.02,
+    "time": "13:50",
+    "value_10m_eok": 31
+   },
+   "reignition_bars": [
+    {
+     "time": "13:50",
+     "body_pct": 2.02,
+     "value_eok": 31
+    }
+   ],
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0611",
+      "frgn": -179984,
+      "orgn": 146731
+     },
+     {
+      "date": "0612",
+      "frgn": 623028,
+      "orgn": -40634
+     },
+     {
+      "date": "0615",
+      "frgn": -275851,
+      "orgn": 22200
+     },
+     {
+      "date": "0616",
+      "frgn": 35938,
+      "orgn": -98614
+     },
+     {
+      "date": "0617",
+      "frgn": -152023,
+      "orgn": 43105
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 4882,
+    "peak_high_pct": 13.32,
+    "ma20": 55875.0,
+    "ma20_margin_pct": 8.64,
+    "ivtr_net": 1194,
+    "ivtr_days": 3,
+    "ivtr_eok": 5,
+    "cause_summary": "",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
