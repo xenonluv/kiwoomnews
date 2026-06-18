@@ -1,46 +1,46 @@
 {
   "date": "20260618",
-  "as_of": "2026-06-18 09:52 KST",
+  "as_of": "2026-06-18 10:07 KST",
   "bets": [
+    {
+      "code": "006220",
+      "ticker": "제주은행",
+      "entry": 12690.0,
+      "target": 13324,
+      "raw": 69,
+      "prob": "69%"
+    },
     {
       "code": "240810",
       "ticker": "원익IPS",
-      "entry": 163200.0,
-      "target": 171360,
-      "raw": 66,
-      "prob": "66%"
+      "entry": 161300.0,
+      "target": 169365,
+      "raw": 67,
+      "prob": "67%"
     },
     {
-      "code": "402340",
-      "ticker": "SK스퀘어",
-      "entry": 1659000.0,
-      "target": 1741950,
+      "code": "004310",
+      "ticker": "현대약품",
+      "entry": 9370.0,
+      "target": 9838,
       "raw": 65,
       "prob": "65%"
     },
     {
-      "code": "204320",
-      "ticker": "HL만도",
-      "entry": 74000.0,
-      "target": 77700,
+      "code": "011070",
+      "ticker": "LG이노텍",
+      "entry": 1259000.0,
+      "target": 1321950,
       "raw": 64,
       "prob": "64%"
     },
     {
       "code": "085620",
       "ticker": "미래에셋생명",
-      "entry": 36200.0,
-      "target": 38010,
-      "raw": 63,
-      "prob": "63%"
-    },
-    {
-      "code": "475150",
-      "ticker": "SK이터닉스",
-      "entry": 52800.0,
-      "target": 55440,
-      "raw": 60,
-      "prob": "60%"
+      "entry": 36000.0,
+      "target": 37800,
+      "raw": 64,
+      "prob": "64%"
     }
   ]
 }
