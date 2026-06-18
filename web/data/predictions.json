@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-06-18 11:37 KST",
+  "as_of": "2026-06-18 11:52 KST",
   "intraday_rank": [
     {
       "ticker": "브이엠",
       "code": "089970",
       "tomorrow_up_prob": "90%",
-      "entry": 92500.0,
-      "target": 97125,
-      "stop": 89725,
+      "entry": 92300.0,
+      "target": 96915,
+      "stop": 89531,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.85)",
+        "강세마감(0.82)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 5.02,
+      "day_change": 5.48,
       "cause_news": [
         {
           "title": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'",
@@ -30,64 +30,36 @@
       "cause_summary": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'"
     },
     {
-      "ticker": "현대약품",
-      "code": "004310",
-      "tomorrow_up_prob": "69%",
-      "entry": 9140.0,
-      "target": 9597,
-      "stop": 8866,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.79)",
-        "거래량3.31배",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "탈모약 건보 추진에 TS트릴리온·현대약품 등 연일 강세",
-          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3610539",
-          "office": "gukjenews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "탈모약 건보 추진에 TS트릴리온·현대약품 등 연일 강세"
-    },
-    {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "68%",
-      "entry": 113150.0,
-      "target": 118808,
-      "stop": 109756,
+      "entry": 113500.0,
+      "target": 119175,
+      "stop": 110095,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI64.4 강세",
+        "RSI64.6 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.17
+      "day_change": 1.26
     },
     {
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "65%",
-      "entry": 53200.0,
-      "target": 55860,
-      "stop": 51604,
+      "entry": 53600.0,
+      "target": 56280,
+      "stop": 51992,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI60.3 강세",
+        "RSI60.6 강세",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 0.38,
+      "day_change": 1.15,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ...",
@@ -112,7 +84,7 @@
       "reasons": [
         "강세마감(0.78)",
         "RSI58.2 강세",
-        "장중 9회 지속"
+        "장중 10회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
@@ -121,13 +93,13 @@
       "ticker": "가온전선",
       "code": "000500",
       "tomorrow_up_prob": "62%",
-      "entry": 393500.0,
-      "target": 413175,
-      "stop": 381695,
+      "entry": 391500.0,
+      "target": 411075,
+      "stop": 379755,
       "confidence": "중",
       "reasons": [
-        "RSI58.2 강세",
-        "거래량2.04배",
+        "RSI58.0 강세",
+        "거래량2.1배",
         "호재"
       ],
       "risk": "약한 마감",
@@ -164,18 +136,18 @@
     {
       "ticker": "광전자",
       "code": "017900",
-      "tomorrow_up_prob": "58%",
-      "entry": 10610.0,
-      "target": 11140,
-      "stop": 10292,
+      "tomorrow_up_prob": "59%",
+      "entry": 10310.0,
+      "target": 10826,
+      "stop": 10001,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI52.4 강세",
-        "장중 4회 지속"
+        "RSI51.1 강세",
+        "장중 5회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 4.3,
+      "day_change": 3.12,
       "cause_news": [
         {
           "title": "[속보] 광전자 VI 발동, 주가 껑충…장중 9570원 저점 찍고 강세 전환",
@@ -234,16 +206,44 @@
       "cause_summary": "[N2 특징주] 삼화전기, AI發 핵심 수혜주 평가...주가 상한가"
     },
     {
+      "ticker": "삼화콘덴서",
+      "code": "001820",
+      "tomorrow_up_prob": "39%",
+      "entry": 193200.0,
+      "target": 202860,
+      "stop": 187404,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.93)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주]삼화콘덴서, 주가 고공행진 중",
+          "url": "https://www.namdonews.com/news/articleView.html?idxno=914005",
+          "office": "namdonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주]삼화콘덴서, 주가 고공행진 중"
+    },
+    {
       "ticker": "효성화학",
       "code": "298000",
       "tomorrow_up_prob": "39%",
-      "entry": 83600.0,
-      "target": 87780,
-      "stop": 81092,
+      "entry": 84500.0,
+      "target": 88725,
+      "stop": 81965,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.79)",
-        "RSI59.4 강세",
+        "강세마감(0.84)",
+        "RSI60.1 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -281,12 +281,12 @@
       "ticker": "삼성전기",
       "code": "009150",
       "tomorrow_up_prob": "39%",
-      "entry": 2232000.0,
-      "target": 2343600,
-      "stop": 2165040,
+      "entry": 2255000.0,
+      "target": 2367750,
+      "stop": 2187350,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.96)",
+        "강세마감(0.92)",
         "정배열",
         "MACD강세"
       ],
@@ -325,17 +325,17 @@
       "ticker": "LG이노텍",
       "code": "011070",
       "tomorrow_up_prob": "38%",
-      "entry": 1272000.0,
-      "target": 1335600,
-      "stop": 1233840,
+      "entry": 1273000.0,
+      "target": 1336650,
+      "stop": 1234810,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.78)",
         "정배열",
-        "RSI65.0 강세"
+        "RSI65.1 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.6,
+      "day_change": 2.4,
       "cause_news": [
         {
           "title": "날개 단 반도체 기판… LG이노텍 “2031년 영업익 1조”",
@@ -353,17 +353,17 @@
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "38%",
-      "entry": 162200.0,
-      "target": 170310,
-      "stop": 157334,
+      "entry": 162300.0,
+      "target": 170415,
+      "stop": 157431,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI60.2 강세"
+        "RSI60.3 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 0.31
+      "day_change": 0.37
     },
     {
       "ticker": "테스",
@@ -379,7 +379,7 @@
         "RSI67.3 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 0.65,
+      "day_change": 0.47,
       "cause_news": [
         {
           "title": "[특징주] 테스, 'HBM4 수율 핵심' BSD 수주 기대감에 12%↑",
@@ -397,17 +397,17 @@
       "ticker": "피에스케이",
       "code": "319660",
       "tomorrow_up_prob": "38%",
-      "entry": 168800.0,
-      "target": 177240,
-      "stop": 163736,
+      "entry": 169500.0,
+      "target": 177975,
+      "stop": 164415,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "일목 구름위"
+        "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 3.88,
+      "day_change": 4.06,
       "related_news": [
         {
           "title": "'삼전닉스 반등' 소부장도 강세…피에스케이 20%↑[핫종목]",
@@ -421,17 +421,17 @@
       "ticker": "심텍",
       "code": "222800",
       "tomorrow_up_prob": "38%",
-      "entry": 129500.0,
-      "target": 135975,
-      "stop": 125615,
+      "entry": 129200.0,
+      "target": 135660,
+      "stop": 125324,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI59.1 강세"
+        "RSI58.9 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -0.69,
+      "day_change": -0.38,
       "related_news": [
         {
           "title": "&quot;심텍, 엔비디아 소캠2 양산에 최대 수혜…목표주가 52%↑&quot;-대신",
@@ -448,119 +448,17 @@
       ]
     },
     {
-      "ticker": "삼화콘덴서",
-      "code": "001820",
-      "tomorrow_up_prob": "38%",
-      "entry": 194100.0,
-      "target": 203805,
-      "stop": 188277,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.95)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주]삼화콘덴서, 주가 고공행진 중",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=914005",
-          "office": "namdonews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주]삼화콘덴서, 주가 고공행진 중"
-    },
-    {
-      "ticker": "미래에셋생명",
-      "code": "085620",
-      "tomorrow_up_prob": "38%",
-      "entry": 32100.0,
-      "target": 33705,
-      "stop": 31137,
-      "confidence": "하",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "미래에셋생명 주가, 급등세... 이유는?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164316",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[STOCK톺] 2대 주주 장내매수에 강세…미래에셋생명 18%↑",
-          "url": "http://www.newsian.co.kr/news/articleView.html?idxno=91114",
-          "office": "newsian",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 미래에셋생명 14%ㆍ증권우 9%대↑⋯ 자사주 취득ㆍ대주주 지분...",
-          "url": "https://www.etoday.co.kr/news/view/2594838",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "미래에셋생명 주가, 급등세... 이유는?"
-    }
-  ],
-  "closing_bet": [
-    {
-      "ticker": "브이엠",
-      "code": "089970",
-      "tomorrow_up_prob": "90%",
-      "entry": 92500.0,
-      "target": 97125,
-      "stop": 89725,
-      "confidence": "상",
-      "reasons": [
-        "강세마감(0.85)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 5.02,
-      "cause_news": [
-        {
-          "title": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'",
-          "url": "https://www.g-enews.com/view.php?ud=20260612093652673244093b5d4e_1",
-          "office": "g-enews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'"
-    },
-    {
       "ticker": "현대약품",
       "code": "004310",
-      "tomorrow_up_prob": "69%",
-      "entry": 9140.0,
-      "target": 9597,
-      "stop": 8866,
-      "confidence": "중",
+      "tomorrow_up_prob": "38%",
+      "entry": 9460.0,
+      "target": 9933,
+      "stop": 9176,
+      "confidence": "하",
       "reasons": [
-        "강세마감(0.79)",
-        "거래량3.31배",
-        "호재"
+        "강세마감(0.92)",
+        "MACD강세",
+        "거래량3.7배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -576,38 +474,68 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "탈모약 건보 추진에 TS트릴리온·현대약품 등 연일 강세"
+    }
+  ],
+  "closing_bet": [
+    {
+      "ticker": "브이엠",
+      "code": "089970",
+      "tomorrow_up_prob": "90%",
+      "entry": 92300.0,
+      "target": 96915,
+      "stop": 89531,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.82)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 5.48,
+      "cause_news": [
+        {
+          "title": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'",
+          "url": "https://www.g-enews.com/view.php?ud=20260612093652673244093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 브이엠, 증권가 \"주가 급등에도 저평가\" 분석.. '강세'"
     },
     {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "68%",
-      "entry": 113150.0,
-      "target": 118808,
-      "stop": 109756,
+      "entry": 113500.0,
+      "target": 119175,
+      "stop": 110095,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI64.4 강세",
+        "RSI64.6 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.17
+      "day_change": 1.26
     },
     {
       "ticker": "SK이터닉스",
       "code": "475150",
       "tomorrow_up_prob": "65%",
-      "entry": 53200.0,
-      "target": 55860,
-      "stop": 51604,
+      "entry": 53600.0,
+      "target": 56280,
+      "stop": 51992,
       "confidence": "중",
       "reasons": [
         "MACD강세",
-        "RSI60.3 강세",
+        "RSI60.6 강세",
         "호재"
       ],
       "risk": "약한 마감",
-      "day_change": 0.38,
+      "day_change": 1.15,
       "cause_news": [
         {
           "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ...",
@@ -632,10 +560,54 @@
       "reasons": [
         "강세마감(0.78)",
         "RSI58.2 강세",
-        "장중 9회 지속"
+        "장중 10회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
+    },
+    {
+      "ticker": "가온전선",
+      "code": "000500",
+      "tomorrow_up_prob": "62%",
+      "entry": 391500.0,
+      "target": 411075,
+      "stop": 379755,
+      "confidence": "중",
+      "reasons": [
+        "RSI58.0 강세",
+        "거래량2.1배",
+        "호재"
+      ],
+      "risk": "약한 마감",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 가온전선, 美 태양광·AI 전력망 수혜 부각에 급등",
+          "url": "https://www.tokenpost.kr/news/economy/370590",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 가온전선, 미국 AI 데이터센터 수주 확대에 15%대 강세",
+          "url": "https://www.ajunews.com/view/20260618093551782",
+          "office": "ajunews",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 가온전선, 美 송전용 케이블 대규모 공급 소식에 '급등'",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=710215",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 가온전선, 美 태양광·AI 전력망 수혜 부각에 급등"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
