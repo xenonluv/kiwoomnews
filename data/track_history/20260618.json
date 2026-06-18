@@ -1,0 +1,115 @@
+{
+ "date": "20260618",
+ "tracks": {
+  "009150": {
+   "name": "삼성전기",
+   "entry": 2200000,
+   "verdict_score": 73,
+   "verdict_level": "관망·과열",
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "011070": {
+   "name": "LG이노텍",
+   "entry": 1283000,
+   "verdict_score": 61,
+   "verdict_level": "중립",
+   "ai_prob": 48,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "028050": {
+   "name": "삼성E&A",
+   "entry": 49700,
+   "verdict_score": 70,
+   "verdict_level": "매수 우위",
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "034730": {
+   "name": "SK",
+   "entry": 687000,
+   "verdict_score": 91,
+   "verdict_level": "관망·과열",
+   "ai_prob": 49,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "043260": {
+   "name": "성호전자",
+   "entry": 40000,
+   "verdict_score": 61,
+   "verdict_level": "중립",
+   "ai_prob": 39,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "080220": {
+   "name": "제주반도체",
+   "entry": 117700,
+   "verdict_score": 75,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 52,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "089030": {
+   "name": "테크윙",
+   "entry": 60500,
+   "verdict_score": 81,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 49,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "204320": {
+   "name": "HL만도",
+   "entry": 68800,
+   "verdict_score": 76,
+   "verdict_level": "관망·과열",
+   "ai_prob": 43,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "240810": {
+   "name": "원익IPS",
+   "entry": 163200,
+   "verdict_score": 66,
+   "verdict_level": "매수 우위",
+   "ai_prob": 39,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "279570": {
+   "name": "케이뱅크",
+   "entry": 6880,
+   "verdict_score": 65,
+   "verdict_level": "관망·과열",
+   "ai_prob": 43,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "356680": {
+   "name": "엑스게이트",
+   "entry": 17520,
+   "verdict_score": 55,
+   "verdict_level": "중립",
+   "ai_prob": 41,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  }
+ }
+}

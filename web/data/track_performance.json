@@ -1,9 +1,9 @@
 {
- "as_of": "2026-06-17 17:38 KST",
- "n": 4,
+ "as_of": "2026-06-18 17:36 KST",
+ "n": 14,
  "rule_buy": {
-  "n": 2,
-  "hit_rate": 50.0
+  "n": 8,
+  "hit_rate": 25.0
  },
  "ai_up": {
   "n": 0,
@@ -12,7 +12,7 @@
  "rule_buy_min": 62,
  "ai_up_min": 58,
  "min_n": 10,
- "quad_n": 4,
+ "quad_n": 14,
  "unknown_n": 0,
  "divergence": {
   "both": {
@@ -21,9 +21,9 @@
    "avg_return": null
   },
   "rule_only": {
-   "n": 2,
-   "hit_rate": 50.0,
-   "avg_return": 1.44
+   "n": 8,
+   "hit_rate": 25.0,
+   "avg_return": -1.74
   },
   "ai_only": {
    "n": 0,
@@ -31,12 +31,92 @@
    "avg_return": null
   },
   "neither": {
-   "n": 2,
+   "n": 6,
    "hit_rate": 50.0,
-   "avg_return": 0.38
+   "avg_return": 0.08
   }
  },
  "recent": [
+  {
+   "date": "20260617",
+   "name": "엑스게이트",
+   "verdict_score": 70,
+   "ai_prob": 43,
+   "hit": false,
+   "return_pct": -5.19
+  },
+  {
+   "date": "20260617",
+   "name": "케이뱅크",
+   "verdict_score": 89,
+   "ai_prob": 54,
+   "hit": false,
+   "return_pct": -4.44
+  },
+  {
+   "date": "20260617",
+   "name": "HL만도",
+   "verdict_score": 88,
+   "ai_prob": 50,
+   "hit": false,
+   "return_pct": -6.9
+  },
+  {
+   "date": "20260617",
+   "name": "테크윙",
+   "verdict_score": 85,
+   "ai_prob": 45,
+   "hit": false,
+   "return_pct": -2.58
+  },
+  {
+   "date": "20260617",
+   "name": "제주반도체",
+   "verdict_score": 87,
+   "ai_prob": 54,
+   "hit": true,
+   "return_pct": 5.56
+  },
+  {
+   "date": "20260617",
+   "name": "성호전자",
+   "verdict_score": 68,
+   "ai_prob": 49,
+   "hit": false,
+   "return_pct": -6.32
+  },
+  {
+   "date": "20260617",
+   "name": "SK",
+   "verdict_score": 95,
+   "ai_prob": 54,
+   "hit": false,
+   "return_pct": -2.97
+  },
+  {
+   "date": "20260617",
+   "name": "삼성E&A",
+   "verdict_score": 85,
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -5.33
+  },
+  {
+   "date": "20260617",
+   "name": "LG이노텍",
+   "verdict_score": 57,
+   "ai_prob": 41,
+   "hit": true,
+   "return_pct": 2.8
+  },
+  {
+   "date": "20260617",
+   "name": "삼성전기",
+   "verdict_score": 60,
+   "ai_prob": 45,
+   "hit": true,
+   "return_pct": 8.27
+  },
   {
    "date": "20260616",
    "name": "케이뱅크",
@@ -79,6 +159,7 @@
   "080220",
   "089030",
   "204320",
+  "240810",
   "279570",
   "356680"
  ],

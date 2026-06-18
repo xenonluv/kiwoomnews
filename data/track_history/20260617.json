@@ -8,8 +8,15 @@
    "verdict_level": "중립",
    "ai_prob": 45,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 2200000.0,
+    "entry_close": 2032000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 8.27
+   }
   },
   "011070": {
    "name": "LG이노텍",
@@ -18,8 +25,15 @@
    "verdict_level": "중립",
    "ai_prob": 41,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 1283000.0,
+    "entry_close": 1248000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.8
+   }
   },
   "028050": {
    "name": "삼성E&A",
@@ -28,8 +42,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 38,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 49700.0,
+    "entry_close": 52500.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -5.33
+   }
   },
   "034730": {
    "name": "SK",
@@ -38,8 +59,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 54,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 687000.0,
+    "entry_close": 708000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -2.97
+   }
   },
   "043260": {
    "name": "성호전자",
@@ -48,8 +76,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 49,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 40000.0,
+    "entry_close": 42700.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -6.32
+   }
   },
   "080220": {
    "name": "제주반도체",
@@ -58,8 +93,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 54,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 117700.0,
+    "entry_close": 111500.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 5.56
+   }
   },
   "089030": {
    "name": "테크윙",
@@ -68,8 +110,15 @@
    "verdict_level": "강한 매수신호",
    "ai_prob": 45,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 60500.0,
+    "entry_close": 62100.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -2.58
+   }
   },
   "204320": {
    "name": "HL만도",
@@ -78,8 +127,15 @@
    "verdict_level": "관망·과열",
    "ai_prob": 50,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 68800.0,
+    "entry_close": 73900.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -6.9
+   }
   },
   "279570": {
    "name": "케이뱅크",
@@ -88,8 +144,15 @@
    "verdict_level": "관망·과열",
    "ai_prob": 54,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 6880.0,
+    "entry_close": 7200.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -4.44
+   }
   },
   "356680": {
    "name": "엑스게이트",
@@ -98,8 +161,15 @@
    "verdict_level": "매수 우위",
    "ai_prob": 43,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260618",
+    "next_close": 17520.0,
+    "entry_close": 18480.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -5.19
+   }
   }
  }
 }
