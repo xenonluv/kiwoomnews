@@ -1,44 +1,44 @@
 {
   "date": "20260618",
-  "as_of": "2026-06-18 14:07 KST",
+  "as_of": "2026-06-18 14:22 KST",
   "bets": [
     {
       "code": "089970",
       "ticker": "브이엠",
-      "entry": 93600.0,
-      "target": 98280,
+      "entry": 93700.0,
+      "target": 98385,
       "raw": 90,
       "prob": "90%"
     },
     {
       "code": "095610",
       "ticker": "테스",
-      "entry": 176700.0,
-      "target": 185535,
+      "entry": 175600.0,
+      "target": 184380,
       "raw": 90,
       "prob": "90%"
     },
     {
       "code": "089030",
       "ticker": "테크윙",
-      "entry": 60200.0,
-      "target": 63210,
-      "raw": 68,
-      "prob": "68%"
+      "entry": 60600.0,
+      "target": 63630,
+      "raw": 69,
+      "prob": "69%"
     },
     {
       "code": "403870",
       "ticker": "HPSP",
-      "entry": 61200.0,
-      "target": 64260,
-      "raw": 66,
-      "prob": "66%"
+      "entry": 60300.0,
+      "target": 63315,
+      "raw": 67,
+      "prob": "67%"
     },
     {
       "code": "475150",
       "ticker": "SK이터닉스",
-      "entry": 52100.0,
-      "target": 54705,
+      "entry": 51600.0,
+      "target": 54180,
       "raw": 65,
       "prob": "65%"
     }
