@@ -1,46 +1,46 @@
 {
   "date": "20260618",
-  "as_of": "2026-06-18 10:22 KST",
+  "as_of": "2026-06-18 10:37 KST",
   "bets": [
     {
       "code": "240810",
       "ticker": "원익IPS",
       "entry": 163600.0,
       "target": 171780,
-      "raw": 68,
-      "prob": "68%"
-    },
-    {
-      "code": "004310",
-      "ticker": "현대약품",
-      "entry": 8950.0,
-      "target": 9398,
-      "raw": 63,
-      "prob": "63%"
-    },
-    {
-      "code": "475150",
-      "ticker": "SK이터닉스",
-      "entry": 52900.0,
-      "target": 55545,
-      "raw": 62,
-      "prob": "62%"
+      "raw": 69,
+      "prob": "69%"
     },
     {
       "code": "204320",
       "ticker": "HL만도",
-      "entry": 73700.0,
-      "target": 77385,
-      "raw": 62,
-      "prob": "62%"
+      "entry": 74000.0,
+      "target": 77700,
+      "raw": 68,
+      "prob": "68%"
+    },
+    {
+      "code": "011070",
+      "ticker": "LG이노텍",
+      "entry": 1261000.0,
+      "target": 1324050,
+      "raw": 66,
+      "prob": "66%"
     },
     {
       "code": "000500",
       "ticker": "가온전선",
-      "entry": 396000.0,
-      "target": 415800,
-      "raw": 62,
-      "prob": "62%"
+      "entry": 402500.0,
+      "target": 422625,
+      "raw": 66,
+      "prob": "66%"
+    },
+    {
+      "code": "004310",
+      "ticker": "현대약품",
+      "entry": 8910.0,
+      "target": 9356,
+      "raw": 64,
+      "prob": "64%"
     }
   ]
 }
