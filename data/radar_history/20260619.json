@@ -60,7 +60,7 @@
    "first_seen": "2026-06-19 09:01:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "475150": {
    "name": "SK이터닉스",
@@ -121,8 +121,191 @@
    "first_seen": "2026-06-19 09:01:51 KST",
    "evaluated": false,
    "result": null,
+   "final": false
+  },
+  "080220": {
+   "name": "제주반도체",
+   "sector": "전기·전자",
+   "entry": 123200.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "change_pct": 4.67,
+   "high_pct": 9.43,
+   "fade_pct": 50.5,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 1683,
+   "theme_leader": false,
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "flow_net_days": 2,
+   "deep_shake": null,
+   "ai_verdict": null,
+   "visible_experimental": true,
+   "reaccum_badge": false,
+   "reaccum": {
+    "peak_date": "20260617",
+    "peak_value_eok": 9972,
+    "peak_high_pct": 14.53,
+    "ma20": 105775.0,
+    "ma20_margin_pct": 16.47,
+    "ivtr_net": 196092,
+    "ivtr_days": 4,
+    "ivtr_eok": 221,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "reignition": {
+    "body_pct": 2.16,
+    "time": "09:10",
+    "value_10m_eok": 170
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-19 09:12:14 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "028050": {
+   "name": "삼성E&A",
+   "sector": "일반서비스",
+   "entry": 50800.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "change_pct": 2.21,
+   "high_pct": 2.82,
+   "fade_pct": 21.4,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "금리",
+   "value_eok": 178,
+   "theme_leader": false,
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "flow_net_days": 1,
+   "deep_shake": null,
+   "ai_verdict": null,
+   "visible_experimental": true,
+   "reaccum_badge": false,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 1647,
+    "peak_high_pct": 14.71,
+    "ma20": 50245.0,
+    "ma20_margin_pct": 1.1,
+    "ivtr_net": 1080002,
+    "ivtr_days": 4,
+    "ivtr_eok": 522,
+    "cause_summary": "&quot;미·이란 전쟁 끝나면 재건사업 기회 온다&quot;…삼성E&amp;A 등 건설주 급등",
+    "was_theme_leader": false
+   },
+   "reignition": {
+    "body_pct": 2.2,
+    "time": "09:00",
+    "value_10m_eok": 157
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-19 09:12:14 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "003490": {
+   "name": "대한항공",
+   "sector": "운송·창고",
+   "entry": 29350.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "change_pct": 1.73,
+   "high_pct": 2.08,
+   "fade_pct": 16.7,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "금리",
+   "value_eok": 83,
+   "theme_leader": false,
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "flow_today_buy": true,
+   "flow_net_days": 5,
+   "deep_shake": null,
+   "ai_verdict": null,
+   "visible_experimental": true,
+   "reaccum_badge": false,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 3583,
+    "peak_high_pct": 17.29,
+    "ma20": 26710.0,
+    "ma20_margin_pct": 9.88,
+    "ivtr_net": 1028317,
+    "ivtr_days": 5,
+    "ivtr_eok": 301,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "reignition": {
+    "body_pct": 2.27,
+    "time": "09:00",
+    "value_10m_eok": 66
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-19 09:12:14 KST",
+   "evaluated": false,
+   "result": null,
    "final": true
   }
  },
- "as_of": "2026-06-19 09:01:51 KST"
+ "as_of": "2026-06-19 09:12:14 KST"
 }
