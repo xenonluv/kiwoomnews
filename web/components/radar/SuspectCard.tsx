@@ -105,6 +105,15 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 재매집 감시
               </Badge>
             )}
+            {s.reaccum?.source === "telegram" && (
+              <Badge
+                variant="outline"
+                className="border-warning/60 text-warning"
+                title="텔레그램 채널 언급에서 보조 시드로 포착(랭킹 미진입) — 재료 발생을 한발 일찍 본 것일 뿐, 검증된 신호 아님"
+              >
+                📰 채널포착
+              </Badge>
+            )}
             {s.visible_experimental && (
               <Badge variant="outline" title="기존 성과·튜닝 기준선에서 분리 집계 중">
                 검증중

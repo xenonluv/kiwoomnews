@@ -198,7 +198,11 @@ def _upsert_explosion(reg, rec):
                                    float(rec.get("peak_high_pct", 0) or 0))
         rec["peak_change_pct"] = max(float(old.get("peak_change_pct", 0) or 0),
                                      float(rec.get("peak_change_pct", 0) or 0))
-        rec["source"] = old.get("source") or rec.get("source")
+        # source는 권위 순(live>seed>telegram)으로 승격 — 텔레그램 시드가 bootstrap에서 먼저
+        # 기록돼도, 같은 폭발이 이후 live 랭킹/seed로 확인되면 그쪽이 이김(가짜 '채널포착' 배지 방지).
+        _SRC_RANK = {"live": 3, "seed": 2, "telegram": 1}
+        rec["source"] = max(old.get("source") or "live", rec.get("source") or "live",
+                            key=lambda s: _SRC_RANK.get(s, 0))
         # 원인/테마 메타는 기존 비어있을 때만 신규로 채움 — 폭발 당일 신선 catalyst가
         # 이후 회차의 stale 값으로 덮이지 않게(source와 동일 철학). cause_done이 캡처 동결 마커.
         for k in ("sector", "theme", "cause_summary", "cause_titles", "cause_done"):
@@ -286,14 +290,41 @@ def _resolve_seed_items(names, seed_path):
         if not code or code in seen:
             continue
         seen.add(code)
-        resolved.append({"code": code, "name": name or code})
+        resolved.append({"code": code, "name": name or code, "source": item.get("source", "seed")})
     return resolved
 
 
+def _telegram_seed_items(p):
+    """텔레그램 채널 언급 종목을 재매집 보조 시드로 해석. 실패해도 본작업 계속(fail-safe).
+
+    채널은 '재료가 막 언급된' 후보만 제공 — 폭발·식음·투신·재반등 게이트는 그대로 적용된다."""
+    if not getattr(p, "telegram_seed", False):
+        return []
+    try:
+        import telegram_news
+        mentions = telegram_news.fetch_mentions(
+            p.telegram_channel, max_age_min=p.telegram_max_age, limit=p.telegram_max)
+    except Exception as e:
+        log(f"[warn] 텔레그램 시드 수집 실패(건너뜀): {e}")
+        return []
+    out = [{"code": m["code"], "name": m.get("name") or m["code"], "source": "telegram"}
+           for m in mentions if m.get("code")]
+    if out:
+        log(f"[radar] 텔레그램 채널({p.telegram_channel}) 언급 {len(out)}건 시드 추가: "
+            + ", ".join(m["name"] for m in out[:8]))
+    return out
+
+
 def bootstrap_seed_explosions(reg, p):
-    """지정 종목의 최근 일봉으로 과거 1천억+13% 폭발을 즉시 부트스트랩."""
+    """지정 종목 + 텔레그램 채널 언급 종목의 최근 일봉으로 과거 1천억+13% 폭발을 즉시 부트스트랩."""
     count = 0
-    for item in _resolve_seed_items(p.names, p.reaccum_seed):
+    resolved = _resolve_seed_items(p.names, p.reaccum_seed)
+    seen = {r["code"] for r in resolved}
+    for it in _telegram_seed_items(p):       # 채널 언급 종목 합치기(코드 중복 제외)
+        if it["code"] not in seen:
+            seen.add(it["code"])
+            resolved.append(it)
+    for item in resolved:
         try:
             daily = kis.daily_prices(item["code"], days=max(12, p.explosion_window + 6))
         except Exception as e:
@@ -320,7 +351,7 @@ def bootstrap_seed_explosions(reg, p):
                 "peak_value_eok": round(bar["value"] / 1e8),
                 "peak_high_pct": round(high_pct, 2),
                 "peak_change_pct": round((bar["close"] / prev_close - 1) * 100, 2),
-                "source": "seed",
+                "source": item.get("source", "seed"),
             })
         if not qualifying:
             continue
@@ -736,6 +767,7 @@ def attach_reaccum_candidates(suspects, active_explosions, p, events):
             continue
         is_leader = code in leader_codes
         r["reaccum"]["was_theme_leader"] = is_leader  # 폭발일 업종 거래대금 1위(예전 대장)였나
+        r["reaccum"]["source"] = rec.get("source", "live")  # live|seed|telegram(채널 언급發)
         # 예전 대장이면 코호트 실측률 한 줄 표시(표본 충분할 때만, 표시 전용·점수 무관)
         r["leader_cohort_prob"] = cohort_prob if is_leader else None
         if code in by_code:
@@ -908,6 +940,15 @@ def main():
                     help="시장별 거래대금 상위 N종목에서 라이브 폭발 감시")
     ap.add_argument("--reaccum-seed", default=REACCUM_SEED_PATH,
                     help="즉시 부트스트랩용 재매집 seed JSON 경로")
+    ap.add_argument("--no-telegram-seed", dest="telegram_seed", action="store_false",
+                    help="텔레그램 채널 언급 종목을 재매집 보조 시드로 쓰지 않음")
+    ap.set_defaults(telegram_seed=True)
+    ap.add_argument("--telegram-channel", default="FastStockNews",
+                    help="보조 시드용 공개 텔레그램 채널 username(@제외)")
+    ap.add_argument("--telegram-max-age", type=float, default=360.0,
+                    help="이 분(min) 이내 채널 글만 시드로 사용(기본 360=6h)")
+    ap.add_argument("--telegram-max", type=int, default=25,
+                    help="채널 시드 최대 종목 수")
     ap.add_argument("--dry-run", action="store_true",
                     help="폭발 레지스트리를 저장하지 않고 stdout만 생성")
     p = ap.parse_args()
@@ -954,7 +995,9 @@ def main():
                    "explosion_value_eok": round(p.explosion_value / 1e8),
                    "explosion_high_pct": p.explosion_high_pct,
                    "explosion_window": p.explosion_window,
-                   "explosion_rank_n": p.explosion_rank_n},
+                   "explosion_rank_n": p.explosion_rank_n,
+                   "telegram_seed": p.telegram_seed,
+                   "telegram_channel": p.telegram_channel if p.telegram_seed else None},
         "universe_count": len(active_explosions),
         "events": events,
         "suspects": suspects,

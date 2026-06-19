@@ -102,6 +102,8 @@ export interface ReaccumInfo {
   cause_summary?: string; // 폭발 catalyst 한 줄("왜 올랐나") — 구버전 JSON엔 없음
   /** 폭발일에 같은 업종 거래대금 1위(업종 대장)였는지 — '예전 대장 재등장' 의심 신호. 구버전 JSON엔 없음 */
   was_theme_leader?: boolean;
+  /** 유니버스 진입 경로 — "live"(랭킹) | "seed"(시드파일) | "telegram"(채널 언급發). 구버전 JSON엔 없음 */
+  source?: "live" | "seed" | "telegram";
   orgn_net_after_peak?: number; // 구버전 JSON 하위호환
 }
 
