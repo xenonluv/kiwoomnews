@@ -9,6 +9,7 @@ const UA =
 export interface RumorItem {
   text: string; // 글 제목/내용 원문 (사후 대조의 기준)
   date: string | null; // 작성 시각(있으면)
+  url: string | null; // 원문 링크(있으면) — 사용자가 직접 열어 검증
 }
 
 async function fetchText(url: string, timeoutMs = 6000): Promise<string> {
@@ -37,7 +38,8 @@ function stripTags(s: string): string {
 
 /**
  * 네이버 종목토론방 글 제목 — 개미 루머·찌라시의 주 무대.
- * 글 행은 <a ... read.naver ... title="제목"> 형태. 제목 속성만 발췌(본문 미수집).
+ * 글 행은 <a href="/item/board_read.naver?..." ... title="제목"> 형태.
+ * 제목 + href(원문 링크)를 발췌(본문 미수집).
  * ⚠ 스팸·욕설·허위 다수 — AI엔 "미확인 루머"로만 전달.
  */
 export async function fetchBoardTitles(code: string, limit = 15): Promise<RumorItem[]> {
@@ -50,7 +52,10 @@ export async function fetchBoardTitles(code: string, limit = 15): Promise<RumorI
     const text = stripTags(t[1]);
     if (text.length < 2 || seen.has(text)) continue;
     seen.add(text);
-    out.push({ text, date: null });
+    const h = /href="([^"]+)"/.exec(m[1]);
+    const href = h ? decodeEntities(h[1]) : null;
+    const url = href ? (href.startsWith("http") ? href : `https://finance.naver.com${href}`) : null;
+    out.push({ text, date: null, url });
     if (out.length >= limit) break;
   }
   return out;
@@ -73,6 +78,11 @@ export async function fetchTelegramMentions(
     pos: m.index ?? 0,
     ts: m[1],
   }));
+  // 메시지 래퍼의 data-post="채널/ID" → 영구링크. 텍스트 div 앞에서 열린다(가장 가까운 선행).
+  const posts = [...html.matchAll(/data-post="([^"]+)"/g)].map((m) => ({
+    pos: m.index ?? 0,
+    slug: m[1],
+  }));
   const out: RumorItem[] = [];
   for (const m of texts) {
     const text = stripTags(m[1]);
@@ -80,7 +90,13 @@ export async function fetchTelegramMentions(
     // 메시지 위치 이후 가장 가까운 time 태그
     const pos = m.index ?? 0;
     const t = times.find((x) => x.pos >= pos);
-    out.push({ text: text.slice(0, 400), date: t?.ts ?? null });
+    // 이 텍스트 div 직전(가장 가까운 선행)의 data-post = 그 메시지 링크
+    let slug: string | null = null;
+    for (const p of posts) {
+      if (p.pos <= pos) slug = p.slug;
+      else break;
+    }
+    out.push({ text: text.slice(0, 400), date: t?.ts ?? null, url: slug ? `https://t.me/${slug}` : null });
     if (out.length >= limit) break;
   }
   return out;

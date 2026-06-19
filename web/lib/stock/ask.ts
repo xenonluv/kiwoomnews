@@ -13,20 +13,20 @@ import { formatKST } from "./parse";
 const MAX_EVIDENCE = 10;
 const MIN_QUOTE_LEN = 5; // 정규화 후 최소 길이 — 너무 짧은 인용은 검증 불가로 간주
 
-const SYSTEM_PROMPT = `당신은 한국 주식 분석가입니다. 아래에 주어진 [데이터](그 종목의 시세·시총·재무·수급·기술지표)와 [수집한 글](뉴스·토론방·텔레그램에서 그 종목을 검색해 가져온 실제 글)만을 근거로 사용자의 질문에 한국어로 답하세요.
+const SYSTEM_PROMPT = `당신은 한국 주식 분석가입니다. 아래에 주어진 [데이터](그 종목의 시세·시총·재무·수급·기술지표)와 [수집한 글](뉴스·토론방·텔레그램에서 그 종목을 검색해 가져온 실제 글)을 근거로 사용자의 질문에 한국어로 답하세요. 주어진 자료를 **종합해 추론·해석·결론을 제시해도 됩니다** — 단, 그 추론의 바탕이 된 근거는 반드시 evidence에 출처와 함께 남기세요(사용자가 링크로 직접 확인합니다).
 
 반드시 지킬 규칙:
-- 주어진 자료에 없는 사실을 절대 지어내지 마세요. 자료로 답할 수 없으면 answerable=false로 하고 answer에 "수집된 자료로는 확인할 수 없습니다"라고 적으세요.
-- 모든 근거(evidence) 항목에 출처를 src로 표기하세요: "데이터" 또는 글 번호(N#=뉴스, B#=토론방, T#=텔레그램) 중 하나.
-- 글(N#/B#/T#)을 근거로 쓸 때는 quote에 그 글에서 **글자 그대로 복사한 짧은 발췌**(최소 6자)를 넣으세요. 발췌를 지어내면 시스템이 원문 대조로 탐지해 그 주장을 삭제합니다.
+- 자료에 근거가 전혀 없는 사실(없는 사건·수치·발표 등)을 새로 지어내지 마세요. 추론은 주어진 자료에서 출발해야 합니다. 자료가 질문과 전혀 무관하면 answerable=false로 하고 answer에 "수집된 자료로는 확인할 수 없습니다"라고 적으세요.
+- 추론·결론에는 그 바탕이 된 근거를 evidence에 남기고, 각 항목에 출처를 src로 표기하세요: "데이터" 또는 글 번호(N#=뉴스, B#=토론방, T#=텔레그램) 중 하나.
+- 글(N#/B#/T#)을 근거로 쓸 때는 quote에 그 글에서 **글자 그대로 복사한 짧은 발췌**(최소 6자)를 넣으세요. 발췌를 지어내면 시스템이 원문 대조로 탐지해 그 근거를 삭제합니다.
 - 토론방·텔레그램(B#/T#)은 진위가 검증되지 않은 루머입니다. "사실이다"라고 단정하지 말고 "이런 말이 돈다(미확인)"처럼 전달하세요. 진위 판단은 [데이터]로 확인 가능할 때만 하세요.
-- 숫자는 반드시 [데이터]에 적힌 값만 쓰세요. 비율·배수를 직접 계산하지 마세요(계산 오류 위험) — 원래 수치를 제시하고 "A가 B보다 크다/작다, 대략 몇 배 수준" 정도의 정성적 비교만 하세요.
+- 숫자는 [데이터]에 적힌 값을 그대로 쓰세요. 비율·배수를 직접 계산하지는 마세요(계산 오류 위험) — 원래 수치를 제시하고 "A가 B보다 크다/작다, 대략 몇 배 수준" 정도의 정성적 비교·추론을 하세요.
 - 재무 수치는 확정 실적과 추정치(E)를 구분해 말하세요. 추정치는 "추정(E)"임을 밝히세요.
 - 매수·매도 권유 표현은 금지합니다.
 - 반드시 아래 JSON 형식으로만 응답하세요(다른 텍스트 금지):
 {
   "answerable": true 또는 false,
-  "answer": "2~4문장 한국어 종합 — 아래 evidence 범위 안에서만",
+  "answer": "2~4문장 한국어 종합·추론 — 아래 evidence를 바탕으로 한 해석·결론 포함 가능",
   "evidence": [
     { "text": "한 줄 근거", "src": "데이터|N1|B2|T3", "quote": "글 원문 발췌(데이터 근거면 생략 가능)" }
   ],
@@ -70,27 +70,34 @@ function serializeData(r: StockReport): string {
   return lines.join("\n");
 }
 
-/** 수집 글에 ID 부여 + 프롬프트용 블록 + 검증용 맵. */
+interface SourceEntry {
+  kind: AskItem["label"];
+  text: string;
+  date: string | null;
+  url: string | null;
+}
+
+/** 수집 글에 ID 부여 + 프롬프트용 블록 + 검증용 맵(원문 링크 포함). */
 function buildSources(
-  news: string[],
+  news: { title: string; url: string | null }[],
   board: RumorItem[],
   telegram: RumorItem[]
-): { block: string; map: Map<string, { kind: AskItem["label"]; text: string; date: string | null }> } {
-  const map = new Map<string, { kind: AskItem["label"]; text: string; date: string | null }>();
+): { block: string; map: Map<string, SourceEntry> } {
+  const map = new Map<string, SourceEntry>();
   const L: string[] = [];
-  news.slice(0, 10).forEach((t, i) => {
+  news.slice(0, 10).forEach((n, i) => {
     const id = `N${i + 1}`;
-    map.set(id, { kind: "뉴스", text: t, date: null });
-    L.push(`${id} [뉴스] ${t}`);
+    map.set(id, { kind: "뉴스", text: n.title, date: null, url: n.url });
+    L.push(`${id} [뉴스] ${n.title}`);
   });
   board.forEach((r, i) => {
     const id = `B${i + 1}`;
-    map.set(id, { kind: "토론방", text: r.text, date: r.date });
+    map.set(id, { kind: "토론방", text: r.text, date: r.date, url: r.url });
     L.push(`${id} [토론방·미확인] ${r.text}`);
   });
   telegram.forEach((r, i) => {
     const id = `T${i + 1}`;
-    map.set(id, { kind: "텔레그램", text: r.text, date: r.date });
+    map.set(id, { kind: "텔레그램", text: r.text, date: r.date, url: r.url });
     L.push(`${id} [텔레그램·미확인] ${r.text}`);
   });
   return { block: L.length > 0 ? L.join("\n") : "(검색된 글 없음)", map };
@@ -123,14 +130,14 @@ export async function answerQuestion(code: string, question: string): Promise<St
   const cfg = getKimiConfig(); // 키 없으면 AiConfigError (리포트 fetch 전에 빠르게 실패)
   const report = await buildStockReport(code); // NotFound/Unreachable는 라우트가 처리
 
-  const newsTitles = (report.news?.items ?? [])
+  const newsItems = (report.news?.items ?? [])
     .slice()
     .sort((a, b) => Number(b.relevant) - Number(a.relevant))
-    .map((n) => n.title)
-    .filter((t): t is string => !!t)
+    .filter((n) => !!n.title)
+    .map((n) => ({ title: n.title, url: n.url }))
     .slice(0, 10);
   const { board, telegram } = await gatherRumors(report.name, code);
-  const { block: sourceBlock, map: sourceMap } = buildSources(newsTitles, board, telegram);
+  const { block: sourceBlock, map: sourceMap } = buildSources(newsItems, board, telegram);
 
   const dataText = serializeData(report);
   const dataDigits = dataText.replace(/[^\d]/g, ""); // 데이터 근거 수치 대조용
@@ -184,7 +191,7 @@ export async function answerQuestion(code: string, question: string): Promise<St
       dropped++; // 발췌가 원문에 없음 = 환각 의심 → 삭제
       continue;
     }
-    const item: AskItem = { text: e.text, label: src.kind, quote: src.text, date: src.date };
+    const item: AskItem = { text: e.text, label: src.kind, quote: src.text, date: src.date, url: src.url };
     if (src.kind === "토론방" || src.kind === "텔레그램") rumors.push(item);
     else facts.push(item);
   }
@@ -207,6 +214,6 @@ export async function answerQuestion(code: string, question: string): Promise<St
     rumors,
     droppedCount: dropped,
     caveat,
-    sourceCounts: { news: newsTitles.length, board: board.length, telegram: telegram.length },
+    sourceCounts: { news: newsItems.length, board: board.length, telegram: telegram.length },
   };
 }

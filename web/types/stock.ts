@@ -226,6 +226,7 @@ export interface AskItem {
   label: "데이터" | "뉴스" | "토론방" | "텔레그램"; // 출처 종류
   quote?: string; // 찌라시·뉴스의 경우 원문 발췌(코드가 실제 존재 검증)
   date?: string | null; // 출처 일자(있으면)
+  url?: string | null; // 원문 링크(뉴스·토론방·텔레그램 — 사용자가 직접 검증 가능). 데이터 근거는 없음.
 }
 
 /**
@@ -239,7 +240,7 @@ export interface StockAnswer {
   asOf: string; // 생성 시각 KST
   model: string;
   answerable: boolean; // 수집 근거로 답할 수 있었는지 (false면 "확인 불가")
-  answer: string; // 종합 서술 (아래 검증된 근거에 한정)
+  answer: string; // 종합 서술·추론 (아래 검증된 근거+링크로 추적 가능)
   calcUnverified: boolean; // 서술 속 계산·비율 수치가 자동검증 안 됨 (모델 계산오류 가능 — 경고)
   facts: AskItem[]; // 데이터·뉴스 근거 (검증됨)
   rumors: AskItem[]; // 찌라시(토론방·텔레그램) — 검증된 발췌, 미확인 라벨

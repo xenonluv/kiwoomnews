@@ -150,14 +150,17 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   **reasoning(기본값)은 15~120초+ → Vercel 타임아웃** → `thinking:{type:"disabled"}`로 5~20초.
   `MOONSHOT_THINKING=enabled`로 깊은 추론(이때 `maxDuration=300` Fluid Compute 필요).
   시크릿: `MOONSHOT_API_KEY`(+BASE_URL/MODEL) — `web/.env.local` + Vercel.
-- `POST /api/stock/{code}/ask` — **AI 자유질문(찌라시 RAG)**. 사용자 질문을 그 종목의 실제
-  데이터 + 수집 글(뉴스·토론방·텔레그램) **"원문만"** 근거로 Kimi가 답함(`/ai`와 별개 엔드포인트).
+- `POST /api/stock/{code}/ask` — **AI 자유질문(찌라시 RAG + 근거 종합추론)**. 사용자 질문을 그 종목의
+  실제 데이터 + 수집 글(뉴스·토론방·텔레그램)을 근거로 Kimi가 답함(`/ai`와 별개 엔드포인트).
   body `{question}`(2~300자) → `{answerable, answer, facts[], rumors[], calcUnverified, droppedCount,
   caveat, sourceCounts}`. 질문마다 답이 달라 **CDN 캐시 불가**(`force-dynamic`·`no-store`·POST),
-  `maxDuration=300`. **환각 차단 2단**: ① 프롬프트(자료 밖 사실 생성 금지·인용 시 원문 발췌 필수)
-  ② 사후 대조 — 모델이 댄 `quote`가 수집 원문에 substring 존재할 때만 채택, 데이터 근거 4자리+
-  숫자는 실제 데이터에 있어야 채택, 미통과분 자동 삭제(`droppedCount`). 찌라시(토론방·텔레그램)=
-  **미확인 루머** / 데이터·뉴스=사실 분리 표시. answer 속 계산수치·% 백스톱(`calcUnverified`).
+  `maxDuration=300`. **answer는 수집 자료를 종합한 추론·결론 허용**(자료 밖 새 사실 날조는 금지) —
+  대신 **근거의 추적성으로 신뢰 담보**: ① 프롬프트(추론은 자료에서 출발·근거를 evidence에 남길 것·
+  인용 시 원문 발췌 필수) ② 사후 대조 — 모델이 댄 `quote`가 수집 원문에 substring 존재할 때만 채택,
+  데이터 근거 4자리+ 숫자는 실제 데이터에 있어야 채택, 미통과분 자동 삭제(`droppedCount`).
+  **facts[]/rumors[]의 각 항목은 `url`(원문 링크)을 실어 사용자가 직접 검증**(뉴스=`n.news.naver.com`,
+  토론방=`board_read.naver`, 텔레그램=`t.me/{채널}/{id}`; 데이터 근거는 url 없음). 찌라시(토론방·
+  텔레그램)=**미확인 루머** / 데이터·뉴스=사실 분리 표시. answer 속 계산수치·% 백스톱(`calcUnverified`).
   엔진: `lib/stock/ask.ts`(오케스트레이터) + `lib/stock/rumors.ts`(토론방·텔레그램 수집, best-effort)
   + `ai.ts`의 `callKimiJson`/`serializeForPrompt` 공유. UI = `components/stock/AskQuestionCard.tsx`
   (`StockReportView`에서 `!tradeStop`일 때 마운트), 호출은 `services/stock.client.ts`의 `askQuestion`.

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, MessageCircleQuestion, Send } from "lucide-react";
+import { AlertTriangle, ExternalLink, MessageCircleQuestion, Send } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,22 @@ const LABEL_STYLE: Record<AskItem["label"], string> = {
   토론방: "warning",
   텔레그램: "warning",
 };
+
+/** 근거 항목의 원문 링크(있을 때만) — 사용자가 직접 열어 검증. */
+function SourceLink({ url }: { url?: string | null }) {
+  if (!url) return null;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ml-1 inline-flex items-center gap-0.5 align-middle text-[10px] text-primary hover:underline"
+    >
+      원문
+      <ExternalLink className="size-2.5" aria-hidden />
+    </a>
+  );
+}
 
 /**
  * AI 자유질문 — 사용자가 질문을 치면 Kimi가 그 종목의 데이터·뉴스·찌라시 원문만 근거로 답한다.
@@ -121,6 +137,9 @@ export function AskQuestionCard({ code }: { code: string }) {
         {status === "done" && result && (
           <div className="space-y-3 border-t border-white/10 pt-3">
             <p className="text-sm font-medium leading-relaxed">{result.answer}</p>
+            <p className="text-[10px] text-muted-foreground">
+              ※ AI가 아래 근거를 <strong>종합·추론</strong>한 답변입니다. 각 근거의 &lsquo;원문&rsquo; 링크로 직접 확인하세요.
+            </p>
 
             {result.calcUnverified && (
               <p className="flex items-start gap-1.5 rounded-md border border-warning/30 bg-warning/10 px-3 py-1.5 text-[11px] text-warning">
@@ -139,6 +158,7 @@ export function AskQuestionCard({ code }: { code: string }) {
                         {f.label}
                       </Badge>
                       {f.text}
+                      <SourceLink url={f.url} />
                       {f.quote && f.label !== "데이터" && (
                         <span className="mt-0.5 block text-[11px] text-muted-foreground">
                           └ &ldquo;{f.quote}&rdquo;
@@ -162,6 +182,7 @@ export function AskQuestionCard({ code }: { code: string }) {
                         {r.label}
                       </Badge>
                       {r.text}
+                      <SourceLink url={r.url} />
                       {r.quote && (
                         <span className="mt-0.5 block text-[11px] text-muted-foreground">
                           └ &ldquo;{r.quote}&rdquo;{r.date ? ` · ${r.date.slice(0, 10)}` : ""}
