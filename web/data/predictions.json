@@ -1,13 +1,13 @@
 {
-  "as_of": "2026-06-19 13:07 KST",
+  "as_of": "2026-06-19 13:22 KST",
   "intraday_rank": [
     {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "66%",
-      "entry": 1732000.0,
-      "target": 1818600,
-      "stop": 1680040,
+      "tomorrow_up_prob": "68%",
+      "entry": 1777000.0,
+      "target": 1865850,
+      "stop": 1723690,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -15,7 +15,7 @@
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 2.47,
+      "day_change": 4.35,
       "cause_news": [
         {
           "title": "SK스퀘어, 7%대 강세…또 사상 최고가 경신",
@@ -38,64 +38,36 @@
       "cause_summary": "SK스퀘어, 7%대 강세…또 사상 최고가 경신"
     },
     {
-      "ticker": "화신",
-      "code": "010690",
-      "tomorrow_up_prob": "63%",
-      "entry": 13490.0,
-      "target": 14164,
-      "stop": 13085,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI57.7 강세",
-        "거래량5.25배"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신",
-          "url": "https://www.yna.co.kr/view/AKR20260617047200008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
-    },
-    {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "62%",
-      "entry": 114600.0,
-      "target": 120330,
-      "stop": 111162,
+      "entry": 116600.0,
+      "target": 122430,
+      "stop": 113102,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI63.8 강세",
+        "RSI65.5 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": -1.36
+      "day_change": 0.25
     },
     {
       "ticker": "디앤디파마텍",
       "code": "347850",
-      "tomorrow_up_prob": "38%",
-      "entry": 107900.0,
-      "target": 113295,
-      "stop": 104663,
+      "tomorrow_up_prob": "39%",
+      "entry": 108300.0,
+      "target": 113715,
+      "stop": 105051,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.5 강세"
+        "RSI62.8 강세"
       ],
-      "risk": "약한 마감",
-      "day_change": 0.37,
+      "risk": "특이 위험 낮음",
+      "day_change": 1.02,
       "cause_news": [
         {
           "title": "[특징주] 디앤디파마텍, MASH 치료제 기대감에 18% 급등…기술수출 모멘...",
@@ -118,20 +90,64 @@
       "cause_summary": "[특징주] 디앤디파마텍, MASH 치료제 기대감에 18% 급등…기술수출 모멘..."
     },
     {
-      "ticker": "SK",
-      "code": "034730",
-      "tomorrow_up_prob": "38%",
-      "entry": 710000.0,
-      "target": 745500,
-      "stop": 688700,
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "39%",
+      "entry": 27600.0,
+      "target": 28980,
+      "stop": 26772,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI66.9 강세"
+        "RSI54.7 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.99,
+      "cause_news": [
+        {
+          "title": "[애널픽] 대한항공, 고공유가에도 실적 방어력 돋보여...아시아나 시너...",
+          "url": "https://theviewers.co.kr/View.aspx?No=4118138",
+          "office": "theviewers",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "[아침밥] iM증권 \"대한항공 지정학적 리스크 완화에 실적 개선될 것\"",
+          "url": "https://www.sidae.com/article/2026061908003876620",
+          "office": "sidae",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "대한항공, 미래 항공기술 승부수… AI 화물 수요 증가로 실적 기대감",
+          "url": "http://www.whitepaper.co.kr/news/articleView.html?idxno=263642",
+          "office": "whitepaper",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[애널픽] 대한항공, 고공유가에도 실적 방어력 돋보여...아시아나 시너..."
+    },
+    {
+      "ticker": "SK",
+      "code": "034730",
+      "tomorrow_up_prob": "38%",
+      "entry": 714000.0,
+      "target": 749700,
+      "stop": 692580,
+      "confidence": "하",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI67.3 강세"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 3.2,
+      "day_change": 3.93,
       "cause_news": [
         {
           "title": "삼성전자·SK하이닉스, 동반 신고가…하이닉스 시총 2000조 돌파[특징주...",
@@ -142,29 +158,65 @@
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[이슈] SK하이닉스, 시총 2000조 시대 열었다…AI가 흔든 삼성전자 독주...",
-          "url": "https://www.seoultimes.news/news/article.html?no=2000096813",
-          "office": "seoultimes",
+          "title": "[특징주] SK하이닉스, 시총 2천조 돌파…삼성전자와 격차 100조원대",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1713182",
+          "office": "ebn",
           "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 시총 '2049조'…SK하이닉스 주가 288만원 육박, 7% 급등",
+          "url": "https://www.sidae.com/article/2026061910551849575",
+          "office": "sidae",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "삼성전자·SK하이닉스, 동반 신고가…하이닉스 시총 2000조 돌파[특징주..."
     },
     {
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "38%",
+      "entry": 13910.0,
+      "target": 14606,
+      "stop": 13493,
+      "confidence": "하",
+      "reasons": [
+        "MACD강세",
+        "RSI59.1 강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신",
+          "url": "https://www.yna.co.kr/view/AKR20260617047200008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
+    },
+    {
       "ticker": "삼화전자",
       "code": "011230",
       "tomorrow_up_prob": "38%",
-      "entry": 4015.0,
-      "target": 4216,
-      "stop": 3895,
+      "entry": 4080.0,
+      "target": 4284,
+      "stop": 3958,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.5 강세"
+        "RSI69.0 강세"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -201,9 +253,9 @@
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "38%",
-      "entry": 34400.0,
-      "target": 36120,
-      "stop": 33368,
+      "entry": 34450.0,
+      "target": 36172,
+      "stop": 33416,
       "confidence": "하",
       "reasons": [
         "정배열",
@@ -245,13 +297,13 @@
       "ticker": "JW신약",
       "code": "067290",
       "tomorrow_up_prob": "38%",
-      "entry": 2365.0,
-      "target": 2483,
-      "stop": 2294,
+      "entry": 2490.0,
+      "target": 2614,
+      "stop": 2415,
       "confidence": "하",
       "reasons": [
+        "강세마감(0.74)",
         "MACD강세",
-        "RSI69.5 강세",
         "일목 구름위"
       ],
       "risk": "Stoch 과매수",
@@ -290,10 +342,10 @@
     {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "66%",
-      "entry": 1732000.0,
-      "target": 1818600,
-      "stop": 1680040,
+      "tomorrow_up_prob": "68%",
+      "entry": 1777000.0,
+      "target": 1865850,
+      "stop": 1723690,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -301,7 +353,7 @@
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 2.47,
+      "day_change": 4.35,
       "cause_news": [
         {
           "title": "SK스퀘어, 7%대 강세…또 사상 최고가 경신",
@@ -324,48 +376,20 @@
       "cause_summary": "SK스퀘어, 7%대 강세…또 사상 최고가 경신"
     },
     {
-      "ticker": "화신",
-      "code": "010690",
-      "tomorrow_up_prob": "63%",
-      "entry": 13490.0,
-      "target": 14164,
-      "stop": 13085,
-      "confidence": "중",
-      "reasons": [
-        "MACD강세",
-        "RSI57.7 강세",
-        "거래량5.25배"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신",
-          "url": "https://www.yna.co.kr/view/AKR20260617047200008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
-    },
-    {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "62%",
-      "entry": 114600.0,
-      "target": 120330,
-      "stop": 111162,
+      "entry": 116600.0,
+      "target": 122430,
+      "stop": 113102,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI63.8 강세",
+        "RSI65.5 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": -1.36
+      "day_change": 0.25
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
