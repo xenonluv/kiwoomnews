@@ -126,7 +126,7 @@
   "080220": {
    "name": "제주반도체",
    "sector": "전기·전자",
-   "entry": 118000.0,
+   "entry": 116100.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -136,13 +136,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 0.25,
+   "change_pct": -1.36,
    "high_pct": 9.69,
-   "fade_pct": 97.4,
+   "fade_pct": 114.0,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 7774,
+   "value_eok": 7972,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -157,13 +157,14 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 105520.0,
-    "ma20_margin_pct": 11.83,
+    "ma20": 105425.0,
+    "ma20_margin_pct": 10.13,
     "ivtr_net": 196092,
     "ivtr_days": 4,
     "ivtr_eok": 221,
     "cause_summary": "",
-    "was_theme_leader": false
+    "was_theme_leader": false,
+    "source": "seed"
    },
    "reignition": {
     "body_pct": 4.56,
@@ -309,7 +310,7 @@
   "347850": {
    "name": "디앤디파마텍",
    "sector": "일반서비스",
-   "entry": 109400.0,
+   "entry": 108700.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -319,13 +320,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 1.02,
+   "change_pct": 0.37,
    "high_pct": 6.93,
-   "fade_pct": 85.3,
+   "fade_pct": 94.7,
    "pattern": "reaccum",
    "prime": false,
    "theme": "환율",
-   "value_eok": 2017,
+   "value_eok": 2057,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -340,13 +341,14 @@
     "peak_date": "20260617",
     "peak_value_eok": 5770,
     "peak_high_pct": 27.29,
-    "ma20": 89885.0,
-    "ma20_margin_pct": 21.71,
+    "ma20": 89850.0,
+    "ma20_margin_pct": 20.98,
     "ivtr_net": 306461,
     "ivtr_days": 3,
     "ivtr_eok": 312,
     "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
-    "was_theme_leader": false
+    "was_theme_leader": false,
+    "source": "seed"
    },
    "reignition": {
     "body_pct": 5.38,
@@ -548,7 +550,7 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "122640": {
    "name": "예스티",
@@ -736,7 +738,7 @@
   "034730": {
    "name": "SK",
    "sector": "금융",
-   "entry": 714000.0,
+   "entry": 709000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -746,13 +748,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 3.93,
+   "change_pct": 3.2,
    "high_pct": 10.19,
-   "fade_pct": 61.4,
+   "fade_pct": 68.6,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 1936,
+   "value_eok": 2004,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -767,13 +769,14 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 642650.0,
-    "ma20_margin_pct": 11.1,
+    "ma20": 642400.0,
+    "ma20_margin_pct": 10.37,
     "ivtr_net": 5859,
     "ivtr_days": 3,
     "ivtr_eok": 38,
     "cause_summary": "최태원·노소영 재산분할 2차 조정기일…2년 만에 법정대면",
-    "was_theme_leader": false
+    "was_theme_leader": false,
+    "source": "live"
    },
    "reignition": {
     "body_pct": 2.21,
@@ -797,7 +800,7 @@
   "402340": {
    "name": "SK스퀘어",
    "sector": "금융",
-   "entry": 1766000.0,
+   "entry": 1742000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -807,13 +810,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 3.88,
+   "change_pct": 2.47,
    "high_pct": 11.24,
-   "fade_pct": 65.4,
+   "fade_pct": 78.0,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 15085,
+   "value_eok": 15759,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -828,13 +831,14 @@
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1332200.0,
-    "ma20_margin_pct": 32.56,
+    "ma20": 1330950.0,
+    "ma20_margin_pct": 30.88,
     "ivtr_net": 1395999,
     "ivtr_days": 6,
     "ivtr_eok": 18802,
     "cause_summary": "SK스퀘어, 7%대 강세…또 사상 최고가 경신",
-    "was_theme_leader": false
+    "was_theme_leader": false,
+    "source": "seed"
    },
    "reignition": {
     "body_pct": 2.24,
@@ -978,5 +982,5 @@
    "final": false
   }
  },
- "as_of": "2026-06-19 12:51:48 KST"
+ "as_of": "2026-06-19 13:02:07 KST"
 }
