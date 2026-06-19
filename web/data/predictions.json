@@ -1,13 +1,57 @@
 {
-  "as_of": "2026-06-19 14:07 KST",
+  "as_of": "2026-06-19 14:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "JW신약",
+      "code": "067290",
+      "tomorrow_up_prob": "68%",
+      "entry": 2440.0,
+      "target": 2562,
+      "stop": 2367,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "일목 구름위",
+        "거래량5.65배"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "JW신약 주가, 급등세... 투자심리 자극한 재료는?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164575",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "JW신약·샤페론·위더스제약 강세…탈모치료 관련주 투자심리 주목",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583274",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "탈모주가 이끈 바이오 강세…JW신약 '上', LG 손잡은 디앤디파마텍도 부...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02847046645483360",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "JW신약 주가, 급등세... 투자심리 자극한 재료는?"
+    },
     {
       "ticker": "삼성생명",
       "code": "032830",
       "tomorrow_up_prob": "66%",
-      "entry": 492000.0,
-      "target": 516600,
-      "stop": 477240,
+      "entry": 490500.0,
+      "target": 515025,
+      "stop": 475785,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -29,41 +73,41 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "64%",
-      "entry": 58400.0,
-      "target": 61320,
-      "stop": 56648,
+      "entry": 58000.0,
+      "target": 60900,
+      "stop": 56260,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.5 강세"
+        "RSI51.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -3.47
+      "day_change": -3.8
     },
     {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "62%",
-      "entry": 115000.0,
-      "target": 120750,
-      "stop": 111550,
+      "entry": 113700.0,
+      "target": 119385,
+      "stop": 110289,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI64.1 강세",
+        "RSI63.0 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": -1.27
+      "day_change": -3.4
     },
     {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "61%",
-      "entry": 1753000.0,
-      "target": 1840650,
-      "stop": 1700410,
+      "entry": 1748000.0,
+      "target": 1835400,
+      "stop": 1695560,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -71,79 +115,47 @@
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 2.76,
-      "cause_news": [
+      "day_change": 2.59,
+      "related_news": [
         {
-          "title": "[특징주] SK스퀘어, \"SK하이닉스 신고가 랠리·ADR 기대감\"에 지주사 가...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=296043",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "title": "원스토어 경영권 쥔 넥써쓰…자기보다 큰 적자 플랫폼에 600억원 ‘승...",
+          "url": "https://n.news.naver.com/mnews/article/366/0001172946",
+          "office": "조선비즈",
+          "sentiment": "혼재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, \"SK하이닉스 신고가 랠리·ADR 기대감\"에 지주사 가..."
+      ]
     },
     {
       "ticker": "NC",
       "code": "036570",
       "tomorrow_up_prob": "60%",
-      "entry": 272000.0,
-      "target": 285600,
-      "stop": 263840,
+      "entry": 270500.0,
+      "target": 284025,
+      "stop": 262385,
       "confidence": "중",
       "reasons": [
-        "RSI51.6 강세",
+        "RSI51.0 강세",
         "Stoch골든",
-        "장중 15회 지속"
+        "장중 16회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null
     },
     {
-      "ticker": "위더스제약",
-      "code": "330350",
-      "tomorrow_up_prob": "39%",
-      "entry": 9390.0,
-      "target": 9860,
-      "stop": 9108,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.83)",
-        "MACD강세",
-        "RSI65.9 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "JW신약·샤페론·위더스제약 강세…탈모치료 관련주 투자심리 주목",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583274",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "JW신약·샤페론·위더스제약 강세…탈모치료 관련주 투자심리 주목"
-    },
-    {
       "ticker": "디앤디파마텍",
       "code": "347850",
       "tomorrow_up_prob": "38%",
-      "entry": 107800.0,
-      "target": 113190,
-      "stop": 104566,
+      "entry": 110100.0,
+      "target": 115605,
+      "stop": 106797,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.4 강세"
+        "RSI63.5 강세"
       ],
-      "risk": "약한 마감",
-      "day_change": -0.55,
+      "risk": "Stoch 과매수",
+      "day_change": -0.46,
       "cause_news": [
         {
           "title": "[특징주] 디앤디파마텍, MASH 치료제 기대감에 18% 급등…기술수출 모멘...",
@@ -169,41 +181,41 @@
       "ticker": "SK",
       "code": "034730",
       "tomorrow_up_prob": "38%",
-      "entry": 710000.0,
-      "target": 745500,
-      "stop": 688700,
+      "entry": 707000.0,
+      "target": 742350,
+      "stop": 685790,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI66.9 강세"
+        "RSI66.6 강세"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 3.35,
+      "day_change": 2.62,
       "cause_news": [
         {
-          "title": "삼성전자·SK하이닉스, 동반 신고가…하이닉스 시총 2000조 돌파[특징주...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061911252786220",
-          "office": "newsway",
+          "title": "AI 투자 확대에 메모리 역대급 성장···삼성·SK하이닉스 실적 기대감...",
+          "url": "https://www.smartbizn.com/news/articleView.html?idxno=146599",
+          "office": "smartbizn",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "삼성전자·SK하이닉스, 동반 신고가…하이닉스 시총 2000조 돌파[특징주..."
+      "cause_confidence": "중간",
+      "cause_summary": "AI 투자 확대에 메모리 역대급 성장···삼성·SK하이닉스 실적 기대감..."
     },
     {
       "ticker": "화신",
       "code": "010690",
       "tomorrow_up_prob": "38%",
-      "entry": 13910.0,
-      "target": 14606,
-      "stop": 13493,
+      "entry": 13770.0,
+      "target": 14458,
+      "stop": 13357,
       "confidence": "하",
       "reasons": [
         "MACD강세",
-        "RSI59.1 강세",
+        "RSI58.6 강세",
         "일목 구름위"
       ],
       "risk": "특이 위험 낮음",
@@ -222,12 +234,56 @@
       "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
     },
     {
+      "ticker": "삼화전자",
+      "code": "011230",
+      "tomorrow_up_prob": "38%",
+      "entry": 3985.0,
+      "target": 4184,
+      "stop": 3865,
+      "confidence": "하",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI68.2 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주]삼화전자, 이틀째 급등",
+          "url": "https://www.namdonews.com/news/articleView.html?idxno=914159",
+          "office": "namdonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "삼화전자 주가, 연일 강세... 무슨 회사길래?",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164558",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 삼화전자, 전기차 부품 공급 확대 기대감에 상한가 직행…AI·...",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712519",
+          "office": "ebn",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주]삼화전자, 이틀째 급등"
+    },
+    {
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "38%",
-      "entry": 33900.0,
-      "target": 35595,
-      "stop": 32883,
+      "entry": 33850.0,
+      "target": 35542,
+      "stop": 32834,
       "confidence": "하",
       "reasons": [
         "정배열",
@@ -264,50 +320,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "미래에셋생명 주가, 급등세... 시장서 주목한 배경은"
-    },
-    {
-      "ticker": "삼화전자",
-      "code": "011230",
-      "tomorrow_up_prob": "38%",
-      "entry": 3955.0,
-      "target": 4153,
-      "stop": 3836,
-      "confidence": "하",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI67.9 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주]삼화전자, 이틀째 급등",
-          "url": "https://www.namdonews.com/news/articleView.html?idxno=914159",
-          "office": "namdonews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "삼화전자 주가, 연일 강세... 무슨 회사길래?",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164558",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼화전자, 전기차 부품 공급 확대 기대감에 상한가 직행…AI·...",
-          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712519",
-          "office": "ebn",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주]삼화전자, 이틀째 급등"
     },
     {
       "ticker": "삼익제약",
@@ -354,17 +366,47 @@
       "cause_summary": "[특징주] 삼익제약, 탈모 정책 수혜 기대…'上'"
     },
     {
-      "ticker": "JW신약",
-      "code": "067290",
+      "ticker": "위더스제약",
+      "code": "330350",
       "tomorrow_up_prob": "38%",
-      "entry": 2470.0,
-      "target": 2594,
-      "stop": 2396,
+      "entry": 8960.0,
+      "target": 9408,
+      "stop": 8691,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.71)",
         "MACD강세",
-        "일목 구름위"
+        "RSI63.3 강세",
+        "Stoch골든"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "JW신약·샤페론·위더스제약 강세…탈모치료 관련주 투자심리 주목",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583274",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "JW신약·샤페론·위더스제약 강세…탈모치료 관련주 투자심리 주목"
+    }
+  ],
+  "closing_bet": [
+    {
+      "ticker": "JW신약",
+      "code": "067290",
+      "tomorrow_up_prob": "68%",
+      "entry": 2440.0,
+      "target": 2562,
+      "stop": 2367,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "일목 구름위",
+        "거래량5.65배"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -396,16 +438,14 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "JW신약 주가, 급등세... 투자심리 자극한 재료는?"
-    }
-  ],
-  "closing_bet": [
+    },
     {
       "ticker": "삼성생명",
       "code": "032830",
       "tomorrow_up_prob": "66%",
-      "entry": 492000.0,
-      "target": 516600,
-      "stop": 477240,
+      "entry": 490500.0,
+      "target": 515025,
+      "stop": 475785,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -427,41 +467,41 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "64%",
-      "entry": 58400.0,
-      "target": 61320,
-      "stop": 56648,
+      "entry": 58000.0,
+      "target": 60900,
+      "stop": 56260,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI51.5 강세"
+        "RSI51.0 강세"
       ],
       "risk": "약한 마감",
-      "day_change": -3.47
+      "day_change": -3.8
     },
     {
       "ticker": "제주반도체",
       "code": "080220",
       "tomorrow_up_prob": "62%",
-      "entry": 115000.0,
-      "target": 120750,
-      "stop": 111550,
+      "entry": 113700.0,
+      "target": 119385,
+      "stop": 110289,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "RSI64.1 강세",
+        "RSI63.0 강세",
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": -1.27
+      "day_change": -3.4
     },
     {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "61%",
-      "entry": 1753000.0,
-      "target": 1840650,
-      "stop": 1700410,
+      "entry": 1748000.0,
+      "target": 1835400,
+      "stop": 1695560,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -469,35 +509,15 @@
         "일목 구름위"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 2.76,
-      "cause_news": [
+      "day_change": 2.59,
+      "related_news": [
         {
-          "title": "[특징주] SK스퀘어, \"SK하이닉스 신고가 랠리·ADR 기대감\"에 지주사 가...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=296043",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "title": "원스토어 경영권 쥔 넥써쓰…자기보다 큰 적자 플랫폼에 600억원 ‘승...",
+          "url": "https://n.news.naver.com/mnews/article/366/0001172946",
+          "office": "조선비즈",
+          "sentiment": "혼재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK스퀘어, \"SK하이닉스 신고가 랠리·ADR 기대감\"에 지주사 가..."
-    },
-    {
-      "ticker": "NC",
-      "code": "036570",
-      "tomorrow_up_prob": "60%",
-      "entry": 272000.0,
-      "target": 285600,
-      "stop": 263840,
-      "confidence": "중",
-      "reasons": [
-        "RSI51.6 강세",
-        "Stoch골든",
-        "장중 15회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
+      ]
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
