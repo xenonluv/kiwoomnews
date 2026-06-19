@@ -143,7 +143,7 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   `GET /api/stock/search?q=` — 자동완성 프록시(ac.stock.naver.com, CSP 때문에 경유 필수).
 - `GET /api/stock/{code}/ai` — **AI(LLM) 심층 분석** (Moonshot `kimi-k2.6`, LLM 사용처는 이 `/ai`와 아래 `/ask` 둘뿐).
   룰베이스 리포트 전체를 직렬화해 Kimi에 전달 → **익일 상승 확률 `prob_up`(0~100)** 추정.
-  방향(상승/하락/관망)은 코드가 파생(≥58/≤42 — **임계값 프롬프트 노출 금지**, 재앵커링 방지).
+  방향(상승/하락/관망)은 코드가 파생(≥54/≤42 — **임계값 프롬프트 노출 금지**, 재앵커링 방지).
   `MOONSHOT_SAMPLES`(기본 3) 병렬 호출 → **중앙값 합의**(self-consistency). 버튼 클릭 시에만 호출.
   성공 30분/에러 60초 CDN 캐시 + 쿼리스트링 차단 + in-flight 디둡.
   ⚠ kimi-k2.6 함정: temperature 지정 시 400(1만 허용) / 확률 0~1로 줄 때 정규화 /
