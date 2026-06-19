@@ -1,46 +1,46 @@
 {
   "date": "20260619",
-  "as_of": "2026-06-19 09:37 KST",
+  "as_of": "2026-06-19 09:52 KST",
   "bets": [
-    {
-      "code": "028050",
-      "ticker": "삼성E&A",
-      "entry": 51300.0,
-      "target": 53865,
-      "raw": 69,
-      "prob": "69%"
-    },
-    {
-      "code": "010120",
-      "ticker": "LS ELECTRIC",
-      "entry": 269000.0,
-      "target": 282450,
-      "raw": 69,
-      "prob": "69%"
-    },
     {
       "code": "402340",
       "ticker": "SK스퀘어",
-      "entry": 1868000.0,
-      "target": 1961400,
+      "entry": 1862000.0,
+      "target": 1955100,
+      "raw": 69,
+      "prob": "69%"
+    },
+    {
+      "code": "010690",
+      "ticker": "화신",
+      "entry": 13260.0,
+      "target": 13923,
       "raw": 67,
       "prob": "67%"
     },
     {
       "code": "032830",
       "ticker": "삼성생명",
-      "entry": 511000.0,
-      "target": 536550,
+      "entry": 506000.0,
+      "target": 531300,
+      "raw": 67,
+      "prob": "67%"
+    },
+    {
+      "code": "085620",
+      "ticker": "미래에셋생명",
+      "entry": 34600.0,
+      "target": 36330,
       "raw": 66,
       "prob": "66%"
     },
     {
-      "code": "240810",
-      "ticker": "원익IPS",
-      "entry": 157200.0,
-      "target": 165060,
-      "raw": 64,
-      "prob": "64%"
+      "code": "039030",
+      "ticker": "이오테크닉스",
+      "entry": 496000.0,
+      "target": 520800,
+      "raw": 65,
+      "prob": "65%"
     }
   ]
 }
