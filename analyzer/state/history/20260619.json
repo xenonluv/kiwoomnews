@@ -1,46 +1,46 @@
 {
   "date": "20260619",
-  "as_of": "2026-06-19 13:52 KST",
+  "as_of": "2026-06-19 14:07 KST",
   "bets": [
-    {
-      "code": "067290",
-      "ticker": "JW신약",
-      "entry": 2450.0,
-      "target": 2572,
-      "raw": 68,
-      "prob": "68%"
-    },
     {
       "code": "032830",
       "ticker": "삼성생명",
-      "entry": 492500.0,
-      "target": 517125,
+      "entry": 492000.0,
+      "target": 516600,
       "raw": 66,
       "prob": "66%"
     },
     {
-      "code": "010690",
-      "ticker": "화신",
-      "entry": 13560.0,
-      "target": 14238,
-      "raw": 63,
-      "prob": "63%"
+      "code": "089030",
+      "ticker": "테크윙",
+      "entry": 58400.0,
+      "target": 61320,
+      "raw": 64,
+      "prob": "64%"
     },
     {
       "code": "080220",
       "ticker": "제주반도체",
-      "entry": 115100.0,
-      "target": 120855,
+      "entry": 115000.0,
+      "target": 120750,
       "raw": 62,
       "prob": "62%"
     },
     {
       "code": "402340",
       "ticker": "SK스퀘어",
-      "entry": 1744000.0,
-      "target": 1831200,
+      "entry": 1753000.0,
+      "target": 1840650,
       "raw": 61,
       "prob": "61%"
+    },
+    {
+      "code": "036570",
+      "ticker": "NC",
+      "entry": 272000.0,
+      "target": 285600,
+      "raw": 60,
+      "prob": "60%"
     }
   ]
 }
