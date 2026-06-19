@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-19 12:31:48 KST",
+ "generated_at": "2026-06-19 12:41:50 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -60,13 +60,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 117700.0,
-   "change_pct": 0.0,
+   "price": 118400.0,
+   "change_pct": 0.59,
    "high_pct": 9.69,
-   "fade_pct": 100.0,
-   "value_eok": 7323,
-   "ma10": 104180.0,
-   "ma10_margin_pct": 12.98,
+   "fade_pct": 93.9,
+   "value_eok": 7619,
+   "ma10": 104250.0,
+   "ma10_margin_pct": 13.57,
    "spark": {
     "clusters": []
    },
@@ -140,8 +140,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 105505.0,
-    "ma20_margin_pct": 11.56,
+    "ma20": 105540.0,
+    "ma20_margin_pct": 12.18,
     "ivtr_net": 196092,
     "ivtr_days": 4,
     "ivtr_eok": 221,
@@ -185,13 +185,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 1763000.0,
-   "change_pct": 3.71,
+   "price": 1782000.0,
+   "change_pct": 4.82,
    "high_pct": 11.24,
-   "fade_pct": 67.0,
-   "value_eok": 13708,
-   "ma10": 1412900.0,
-   "ma10_margin_pct": 24.78,
+   "fade_pct": 57.1,
+   "value_eok": 14531,
+   "ma10": 1414800.0,
+   "ma10_margin_pct": 25.95,
    "spark": {
     "clusters": []
    },
@@ -259,8 +259,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1332050.0,
-    "ma20_margin_pct": 32.35,
+    "ma20": 1333000.0,
+    "ma20_margin_pct": 33.68,
     "ivtr_net": 1395999,
     "ivtr_days": 6,
     "ivtr_eok": 18802,
@@ -304,13 +304,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 109600.0,
-   "change_pct": 1.2,
+   "price": 109800.0,
+   "change_pct": 1.39,
    "high_pct": 6.93,
-   "fade_pct": 82.7,
-   "value_eok": 1888,
-   "ma10": 93710.0,
-   "ma10_margin_pct": 16.96,
+   "fade_pct": 80.0,
+   "value_eok": 1953,
+   "ma10": 93730.0,
+   "ma10_margin_pct": 17.14,
    "spark": {
     "clusters": []
    },
@@ -374,122 +374,12 @@
     "peak_date": "20260617",
     "peak_value_eok": 5770,
     "peak_high_pct": 27.29,
-    "ma20": 89895.0,
-    "ma20_margin_pct": 21.92,
+    "ma20": 89905.0,
+    "ma20_margin_pct": 22.13,
     "ivtr_net": 306461,
     "ivtr_days": 3,
     "ivtr_eok": 312,
     "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
-    "was_theme_leader": false
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "039030",
-   "name": "이오테크닉스",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 74,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 1,
-    "re_body": 3,
-    "re_count": 0,
-    "flow": 6,
-    "explosion": 2
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 495500.0,
-   "change_pct": -2.46,
-   "high_pct": 2.95,
-   "fade_pct": 183.3,
-   "value_eok": 596,
-   "ma10": 492050.0,
-   "ma10_margin_pct": 0.7,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.85,
-    "time": "09:10",
-    "value_10m_eok": 52
-   },
-   "reignition_bars": [
-    {
-     "time": "09:10",
-     "body_pct": 3.85,
-     "value_eok": 52
-    }
-   ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0612",
-      "frgn": -92846,
-      "orgn": 146192
-     },
-     {
-      "date": "0615",
-      "frgn": 7466,
-      "orgn": -43122
-     },
-     {
-      "date": "0616",
-      "frgn": 21977,
-      "orgn": -40402
-     },
-     {
-      "date": "0617",
-      "frgn": 40244,
-      "orgn": -40902
-     },
-     {
-      "date": "0618",
-      "frgn": 29957,
-      "orgn": -32064
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 4605,
-    "peak_high_pct": 23.61,
-    "ma20": 495150.0,
-    "ma20_margin_pct": 0.07,
-    "ivtr_net": 40194,
-    "ivtr_days": 3,
-    "ivtr_eok": 348,
-    "cause_summary": "",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
@@ -533,7 +423,7 @@
    "change_pct": -3.47,
    "high_pct": 2.6,
    "fade_pct": 233.3,
-   "value_eok": 576,
+   "value_eok": 616,
    "ma10": 27030.0,
    "ma10_margin_pct": 3.03,
    "spark": {
@@ -639,13 +529,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 726000.0,
-   "change_pct": 5.68,
+   "price": 720000.0,
+   "change_pct": 4.8,
    "high_pct": 10.19,
-   "fade_pct": 44.3,
-   "value_eok": 1751,
-   "ma10": 635300.0,
-   "ma10_margin_pct": 14.28,
+   "fade_pct": 52.9,
+   "value_eok": 1828,
+   "ma10": 634700.0,
+   "ma10_margin_pct": 13.44,
    "spark": {
     "clusters": []
    },
@@ -704,12 +594,122 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 643250.0,
-    "ma20_margin_pct": 12.86,
+    "ma20": 642950.0,
+    "ma20_margin_pct": 11.98,
     "ivtr_net": 5859,
     "ivtr_days": 3,
     "ivtr_eok": 38,
     "cause_summary": "최태원·노소영 재산분할 2차 조정기일…2년 만에 법정대면",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "052710",
+   "name": "아모텍",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 66,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 0,
+    "re_body": 3,
+    "re_count": 0,
+    "flow": 1,
+    "explosion": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 30750.0,
+   "change_pct": -3.61,
+   "high_pct": 1.72,
+   "fade_pct": 309.1,
+   "value_eok": 222,
+   "ma10": 28295.0,
+   "ma10_margin_pct": 8.68,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.99,
+    "time": "09:10",
+    "value_10m_eok": 36
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 3.99,
+     "value_eok": 36
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0612",
+      "frgn": 92699,
+      "orgn": 27750
+     },
+     {
+      "date": "0615",
+      "frgn": -95889,
+      "orgn": 82850
+     },
+     {
+      "date": "0616",
+      "frgn": -98182,
+      "orgn": 115369
+     },
+     {
+      "date": "0617",
+      "frgn": -33820,
+      "orgn": 38093
+     },
+     {
+      "date": "0618",
+      "frgn": -60421,
+      "orgn": -19043
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260618",
+    "peak_value_eok": 1181,
+    "peak_high_pct": 18.85,
+    "ma20": 26868.5,
+    "ma20_margin_pct": 14.45,
+    "ivtr_net": 215715,
+    "ivtr_days": 4,
+    "ivtr_eok": 66,
+    "cause_summary": "'AI 부품 초호황' MLCC 관련주 뜨자 상한가 직행한 '이 종목'",
     "was_theme_leader": false
    },
    "leader_cohort_prob": null,
