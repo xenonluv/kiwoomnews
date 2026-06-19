@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-19 13:12:02 KST",
+ "generated_at": "2026-06-19 13:22:01 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -62,13 +62,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 118000.0,
-   "change_pct": 0.25,
+   "price": 116900.0,
+   "change_pct": -0.68,
    "high_pct": 9.69,
-   "fade_pct": 97.4,
-   "value_eok": 8222,
-   "ma10": 104210.0,
-   "ma10_margin_pct": 13.23,
+   "fade_pct": 107.0,
+   "value_eok": 8362,
+   "ma10": 104100.0,
+   "ma10_margin_pct": 12.3,
    "spark": {
     "clusters": []
    },
@@ -142,8 +142,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 105520.0,
-    "ma20_margin_pct": 11.83,
+    "ma20": 105465.0,
+    "ma20_margin_pct": 10.84,
     "ivtr_net": 196092,
     "ivtr_days": 4,
     "ivtr_eok": 221,
@@ -188,13 +188,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 1774000.0,
-   "change_pct": 4.35,
+   "price": 1787000.0,
+   "change_pct": 5.12,
    "high_pct": 11.24,
-   "fade_pct": 61.3,
-   "value_eok": 16304,
-   "ma10": 1414000.0,
-   "ma10_margin_pct": 25.46,
+   "fade_pct": 54.5,
+   "value_eok": 16936,
+   "ma10": 1415300.0,
+   "ma10_margin_pct": 26.26,
    "spark": {
     "clusters": []
    },
@@ -247,6 +247,14 @@
    },
    "news": [
     {
+     "title": "원스토어 경영권 쥔 넥써쓰…자기보다 큰 적자 플랫폼에 600억원 ‘승...",
+     "summary": "SK스퀘어, 네이버, 크래프톤은 넥써쓰 투자자로 유상증자·전환사채 발행으로 600억원 조달 적자회사 인수 소식에…19일 주가 29% 급락 넥써쓰가 국내 앱마켓 원스토어 경영권을 600억원에 인수한다. 원스토어를 인수해 ‘게임허브’로 도약한다는...",
+     "office": "조선비즈",
+     "datetime": "202606191316",
+     "url": "https://n.news.naver.com/mnews/article/366/0001172946",
+     "sentiment": "혼재"
+    },
+    {
      "title": "SK스퀘어, 7%대 강세…또 사상 최고가 경신",
      "summary": "SK스퀘어가 19일 7%대 강세를 나타내며 사상 최고가를 경신하고 있다. 19일 오전 11시8분 기준 SK스퀘어는 전장 대비 7.06% 오른 182만원에 거래되고 있다. 주가는 3.82% 상승 출발해 장중 11.24% 급등한 189만1000원을 터치하",
      "office": "뉴시스",
@@ -262,12 +270,12 @@
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1332600.0,
-    "ma20_margin_pct": 33.12,
+    "ma20": 1333250.0,
+    "ma20_margin_pct": 34.03,
     "ivtr_net": 1395999,
     "ivtr_days": 6,
     "ivtr_eok": 18802,
-    "cause_summary": "SK스퀘어, 7%대 강세…또 사상 최고가 경신",
+    "cause_summary": "원스토어 경영권 쥔 넥써쓰…자기보다 큰 적자 플랫폼에 600억원 ‘승...",
     "was_theme_leader": false,
     "source": "seed"
    },
@@ -308,13 +316,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 109400.0,
-   "change_pct": 1.02,
+   "price": 108400.0,
+   "change_pct": 0.09,
    "high_pct": 6.93,
-   "fade_pct": 85.3,
-   "value_eok": 2102,
-   "ma10": 93690.0,
-   "ma10_margin_pct": 16.77,
+   "fade_pct": 98.7,
+   "value_eok": 2127,
+   "ma10": 93590.0,
+   "ma10_margin_pct": 15.82,
    "spark": {
     "clusters": []
    },
@@ -378,125 +386,14 @@
     "peak_date": "20260617",
     "peak_value_eok": 5770,
     "peak_high_pct": 27.29,
-    "ma20": 89885.0,
-    "ma20_margin_pct": 21.71,
+    "ma20": 89835.0,
+    "ma20_margin_pct": 20.67,
     "ivtr_net": 306461,
     "ivtr_days": 3,
     "ivtr_eok": 312,
     "cause_summary": "LG AI연구원, 디앤디파마텍과 AI 기반 펩타이드 신약 공동 개발",
     "was_theme_leader": false,
     "source": "seed"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "003490",
-   "name": "대한항공",
-   "sector": "운송·창고",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 71,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 2,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 5,
-    "explosion": 2
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 27700.0,
-   "change_pct": -3.99,
-   "high_pct": 2.6,
-   "fade_pct": 253.3,
-   "value_eok": 705,
-   "ma10": 27015.0,
-   "ma10_margin_pct": 2.54,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.27,
-    "time": "09:00",
-    "value_10m_eok": 66
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 2.27,
-     "value_eok": 66
-    }
-   ],
-   "flow": {
-    "net_days": 5,
-    "today_buy": true,
-    "streak": 5,
-    "detail": [
-     {
-      "date": "0612",
-      "frgn": 1329496,
-      "orgn": 879806
-     },
-     {
-      "date": "0615",
-      "frgn": 2494164,
-      "orgn": 2307821
-     },
-     {
-      "date": "0616",
-      "frgn": 443363,
-      "orgn": 173363
-     },
-     {
-      "date": "0617",
-      "frgn": 246835,
-      "orgn": -42241
-     },
-     {
-      "date": "0618",
-      "frgn": 160392,
-      "orgn": 453849
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 3583,
-    "peak_high_pct": 17.29,
-    "ma20": 26627.5,
-    "ma20_margin_pct": 4.03,
-    "ivtr_net": 1028317,
-    "ivtr_days": 5,
-    "ivtr_eok": 301,
-    "cause_summary": "",
-    "was_theme_leader": false,
-    "source": "live"
    },
    "leader_cohort_prob": null,
    "theme_leader": false
@@ -535,13 +432,13 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 714000.0,
-   "change_pct": 3.93,
+   "price": 715000.0,
+   "change_pct": 4.08,
    "high_pct": 10.19,
-   "fade_pct": 61.4,
-   "value_eok": 2099,
-   "ma10": 634100.0,
-   "ma10_margin_pct": 12.6,
+   "fade_pct": 60.0,
+   "value_eok": 2209,
+   "ma10": 634200.0,
+   "ma10_margin_pct": 12.74,
    "spark": {
     "clusters": []
    },
@@ -600,8 +497,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 642650.0,
-    "ma20_margin_pct": 11.1,
+    "ma20": 642700.0,
+    "ma20_margin_pct": 11.25,
     "ivtr_net": 5859,
     "ivtr_days": 3,
     "ivtr_eok": 38,
