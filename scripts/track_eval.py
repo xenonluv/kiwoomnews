@@ -197,8 +197,7 @@ def evaluate():
                 if age > 25:   # 신호일 봉이 영영 없음(그날 휴장 등) → 영구 재조회 방지 위해 만료
                     t["evaluated"] = True
                     t["fwd_final"] = True
-                    if t.get("result") is None:
-                        t["result"] = None
+                    t.setdefault("result", None)  # 미평가였으면 result=None(만료) — _collect서 제외
                     changed = True
                 continue
             if not after:
