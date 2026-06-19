@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-18 17:26 KST",
+ "as_of": "2026-06-19 17:24 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 8,
+  "tracking_days": 9,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -70,6 +70,14 @@
   },
   {
    "date": "20260618",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260619",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -338,30 +346,30 @@
   "cells": [
    {
     "band": "−4~0%",
-    "n": 12,
-    "hit_rate": 58.3,
-    "avg_return": -0.68,
+    "n": 17,
+    "hit_rate": 41.2,
+    "avg_return": -1.89,
     "valid": true
    },
    {
     "band": "0~+3%",
-    "n": 12,
-    "hit_rate": 66.7,
-    "avg_return": 2.62,
+    "n": 15,
+    "hit_rate": 60.0,
+    "avg_return": 1.26,
     "valid": true
    },
    {
     "band": "+3~+6%",
-    "n": 7,
-    "hit_rate": 42.9,
-    "avg_return": -0.71,
-    "valid": false
+    "n": 11,
+    "hit_rate": 27.3,
+    "avg_return": -2.53,
+    "valid": true
    },
    {
     "band": "+6~+10%",
-    "n": 4,
-    "hit_rate": 25.0,
-    "avg_return": -1.44,
+    "n": 7,
+    "hit_rate": 28.6,
+    "avg_return": -2.33,
     "valid": false
    }
   ]
@@ -385,33 +393,33 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 35,
-   "hit_rate": 54.3,
-   "avg_return": 0.36,
-   "high3_rate": 65.7
+   "n": 50,
+   "hit_rate": 42.0,
+   "avg_return": -1.15,
+   "high3_rate": 60.0
   },
   "leader_reaccum": {
    "min_n": 10,
    "unknown_n": 0,
    "leader": {
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "high3_rate": null,
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -4.71,
+    "high3_rate": 100.0,
     "valid": false
    },
    "nonleader": {
-    "n": 35,
-    "hit_rate": 54.3,
-    "avg_return": 0.36,
-    "high3_rate": 65.7,
+    "n": 49,
+    "hit_rate": 42.9,
+    "avg_return": -1.07,
+    "high3_rate": 59.2,
     "valid": true
    },
    "all": {
-    "n": 35,
-    "hit_rate": 54.3,
-    "avg_return": 0.36,
-    "high3_rate": 65.7,
+    "n": 50,
+    "hit_rate": 42.0,
+    "avg_return": -1.15,
+    "high3_rate": 60.0,
     "valid": true
    },
    "lift": null

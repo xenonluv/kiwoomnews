@@ -183,7 +183,16 @@
    "first_seen": "2026-06-19 09:12:14 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 45,
+    "model_prob": 38,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:20 KST",
+    "verdict_score": 57,
+    "verdict_level": "중립"
+   }
   },
   "028050": {
    "name": "삼성E&A",
@@ -306,7 +315,16 @@
    "first_seen": "2026-06-19 09:12:14 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 52,
+    "model_prob": 42,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:21 KST",
+    "verdict_score": 87,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "347850": {
    "name": "디앤디파마텍",
@@ -368,7 +386,16 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 45,
+    "model_prob": 45,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:21 KST",
+    "verdict_score": 73,
+    "verdict_level": "관망·과열"
+   }
   },
   "240810": {
    "name": "원익IPS",
@@ -491,7 +518,16 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 48,
+    "model_prob": 42,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:22 KST",
+    "verdict_score": 81,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "089030": {
    "name": "테크윙",
@@ -553,7 +589,16 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 43,
+    "model_prob": 42,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:23 KST",
+    "verdict_score": 78,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "122640": {
    "name": "예스티",
@@ -676,7 +721,16 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 49,
+    "model_prob": 48,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:23 KST",
+    "verdict_score": 95,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "403870": {
    "name": "HPSP",
@@ -799,7 +853,16 @@
    "first_seen": "2026-06-19 09:31:55 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 50,
+    "model_prob": 45,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:24 KST",
+    "verdict_score": 94,
+    "verdict_level": "관망·과열"
+   }
   },
   "402340": {
    "name": "SK스퀘어",
@@ -861,7 +924,16 @@
    "first_seen": "2026-06-19 09:51:52 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 47,
+    "model_prob": 42,
+    "direction": "관망",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-19 17:24 KST",
+    "verdict_score": 49,
+    "verdict_level": "중립"
+   }
   },
   "204320": {
    "name": "HL만도",
