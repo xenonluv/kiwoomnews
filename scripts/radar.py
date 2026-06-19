@@ -72,16 +72,21 @@ def accumulation_signal(inv, days=5):
     if not inv:
         return {"net_days": 0, "today_buy": False, "streak": 0, "detail": []}
     recent = inv[-days:]
-    detail = [{"date": r["date"][4:], "frgn": int(r["frgn"]), "orgn": int(r["orgn"])}
+
+    def _fo(r):  # 외국인+기관 순매수(키 결측에도 안전)
+        return (r.get("frgn") or 0) + (r.get("orgn") or 0)
+
+    detail = [{"date": (r.get("date") or "")[4:],
+               "frgn": int(r.get("frgn") or 0), "orgn": int(r.get("orgn") or 0)}
               for r in recent]
-    net_days = sum(1 for r in recent if r["frgn"] + r["orgn"] > 0)
+    net_days = sum(1 for r in recent if _fo(r) > 0)
     streak = 0
     for r in reversed(recent):
-        if r["frgn"] + r["orgn"] > 0:
+        if _fo(r) > 0:
             streak += 1
         else:
             break
-    today_buy = bool(recent) and (recent[-1]["frgn"] + recent[-1]["orgn"] > 0)
+    today_buy = bool(recent) and _fo(recent[-1]) > 0
     return {"net_days": net_days, "today_buy": today_buy, "streak": streak,
             "detail": detail}
 

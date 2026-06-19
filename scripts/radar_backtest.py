@@ -530,6 +530,7 @@ def save_weights(tuned):
 # ── 분할 전략 실측 트래커 — 레이더 신호를 20/30/50 분할 + 7%익절/-5%손절로 매매 가정,
 #    forward 일봉으로 실현 net 수익 누적(표시 전용·라이브 보정). 손절=종가기준(저가 데이터 없음).
 STRAT = {"tranches": [0.2, 0.3, 0.5], "tp": 7.0, "sl": 5.0, "fee": 0.3, "hold": 10, "addwin": 4}
+STRATEGY_MIN_N = 30  # 분할전략 패널 유효 최소 표본(미만은 "수집 중")
 
 
 def _strategy_outcome(closes, highs, i):
@@ -612,7 +613,7 @@ def strategy_sim_stats():
             for s in hist.get("suspects", {}).values()
             if isinstance(s.get("strategy"), dict) and "ret_net" in s["strategy"]]
     n = len(rows)
-    base = {"n": n, "min_n": 30, "tp": STRAT["tp"], "sl": STRAT["sl"],
+    base = {"n": n, "min_n": STRATEGY_MIN_N, "tp": STRAT["tp"], "sl": STRAT["sl"],
             "fee": STRAT["fee"], "tranches": STRAT["tranches"]}
     if not n:
         return {**base, "win_rate": None, "stop_rate": None, "avg_net": None,

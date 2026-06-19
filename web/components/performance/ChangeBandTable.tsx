@@ -29,7 +29,11 @@ export function ChangeBandTable({ data }: { data: ChangeBandStats }) {
                 <td className="py-1.5 font-medium tabular-nums">{c.band}</td>
                 <td className="py-1.5 text-right tabular-nums">
                   {show ? (
-                    <span className={`font-semibold ${c.hit_rate! >= 50 ? "text-up" : "text-down"}`}>
+                    <span
+                      className={`font-semibold ${
+                        c.hit_rate! > 50 ? "text-up" : c.hit_rate! < 50 ? "text-down" : "text-muted-foreground"
+                      }`}
+                    >
                       {c.hit_rate}%
                     </span>
                   ) : (
