@@ -16,7 +16,7 @@ export class AiUnavailableError extends Error {}
 // 방향 파생 임계 (경계 포함). ⚠ 프롬프트에 노출 금지 — 모델이 임계 주변으로
 // 재앵커링하는 것을 막기 위해 모델은 확률만 추정하고 매핑은 코드가 한다.
 const PROB_BULL_MIN = 54; // prob_up ≥ 54 → 상승 (2026-06-20: Kimi가 보수적이라 58→54 하향, track AI_UP_MIN과 정합)
-const PROB_BEAR_MAX = 42; // prob_up ≤ 42 → 하락
+const PROB_BEAR_MAX = 46; // prob_up ≤ 46 → 하락 (2026-06-20: 상승 54와 대칭 — 관망 47~53)
 const DEFAULT_SAMPLES = 3; // MOONSHOT_SAMPLES로 1~5 조절
 // kimi-k2.6 reasoning은 15~120초+ 소요(실측, Vercel에서 종종 타임아웃) →
 // 기본은 thinking disabled(실측 2~15초). MOONSHOT_THINKING=enabled로 켜면
