@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-19 09:01:51 KST",
+ "generated_at": "2026-06-19 09:12:14 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -23,149 +23,22 @@
   "explosion_window": 6,
   "explosion_rank_n": 30
  },
- "universe_count": 69,
+ "universe_count": 70,
  "events": [],
  "suspects": [
   {
-   "code": "035420",
-   "name": "NAVER",
-   "sector": "IT 서비스",
+   "code": "080220",
+   "name": "제주반도체",
+   "sector": "전기·전자",
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 83,
+   "suspicion_score": 78,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
-    "re_value": 7,
+    "re_value": 6,
     "re_body": 0,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 6
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 241500.0,
-   "change_pct": 2.77,
-   "high_pct": 2.98,
-   "fade_pct": 7.1,
-   "value_eok": 189,
-   "ma10": 244400.0,
-   "ma10_margin_pct": -1.19,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.11,
-    "time": "09:00",
-    "value_10m_eok": 190
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 2.11,
-     "value_eok": 190
-    }
-   ],
-   "flow": {
-    "net_days": 3,
-    "today_buy": true,
-    "streak": 2,
-    "detail": [
-     {
-      "date": "0612",
-      "frgn": 654497,
-      "orgn": 750508
-     },
-     {
-      "date": "0615",
-      "frgn": -69257,
-      "orgn": -19191
-     },
-     {
-      "date": "0616",
-      "frgn": 22311,
-      "orgn": -158472
-     },
-     {
-      "date": "0617",
-      "frgn": 142287,
-      "orgn": 29639
-     },
-     {
-      "date": "0618",
-      "frgn": 197924,
-      "orgn": -149822
-     }
-    ]
-   },
-   "news": [
-    {
-     "title": "네이버, 2주간 쇼핑 축제 '넾다세일' 진행…&quot;최대 15% 할인쿠폰&quot;",
-     "summary": "네이버가 오는 22일부터 7월 5일까지 2주간 상반기 최대 쇼핑 축제인 '넾다세일'을 진행한다고 19일 밝혔다. 넾다세일은 풍성한 상품 및 할인 혜택을 제공하는 네이버플러스 스토어의 대표 쇼핑 프로모션이다. 매년 상반기와 하반기 두 차례 진행된다...",
-     "office": "뉴스1",
-     "datetime": "202606190856",
-     "url": "https://n.news.naver.com/mnews/article/421/0009012138",
-     "sentiment": "호재"
-    },
-    {
-     "title": "“네이버 리뷰가 곧 매출”…‘Npay 커넥트’ 써본 자영업자들 평가는",
-     "summary": "“손님들이 결제하고 바로 리뷰를 남겨주니까 확실히 편해졌어요. 예전에는 영수증 달라고 하고, 리뷰 써달라고 따로 안내해야 했거든요.” “외국인 손님들이 위챗페이나 알리페이로 결제할 수 있는 것도 생각보다 도움이 많이 됩니다.” 지난 15일...",
-     "office": "이코노미스트",
-     "datetime": "202606190800",
-     "url": "https://n.news.naver.com/mnews/article/243/0000099330",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260612",
-    "peak_value_eok": 13016,
-    "peak_high_pct": 17.41,
-    "ma20": 237965.0,
-    "ma20_margin_pct": 1.49,
-    "ivtr_net": 462622,
-    "ivtr_days": 4,
-    "ivtr_eok": 1316,
-    "cause_summary": "네이버, 2주간 쇼핑 축제 '넾다세일' 진행…&quot;최대 15% 할인쿠폰&quot;",
-    "was_theme_leader": false
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "475150",
-   "name": "SK이터닉스",
-   "sector": "건설",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 75,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 1,
-    "re_body": 2,
     "re_count": 0,
     "flow": 4,
     "explosion": 6
@@ -181,19 +54,19 @@
    },
    "forecast": {
     "horizon": "3일 내 +7%",
-    "prob_pct": 46,
+    "prob_pct": 52,
     "base_pct": 46,
-    "strong": false,
+    "strong": true,
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 50400.0,
-   "change_pct": 3.49,
-   "high_pct": 3.7,
-   "fade_pct": 5.6,
-   "value_eok": 46,
-   "ma10": 45035.0,
-   "ma10_margin_pct": 11.91,
+   "price": 123200.0,
+   "change_pct": 4.67,
+   "high_pct": 9.43,
+   "fade_pct": 50.5,
+   "value_eok": 1683,
+   "ma10": 104720.0,
+   "ma10_margin_pct": 17.65,
    "spark": {
     "clusters": []
    },
@@ -201,62 +74,282 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "reignition": {
-    "body_pct": 3.49,
-    "time": "09:00",
-    "value_10m_eok": 45
+    "body_pct": 2.16,
+    "time": "09:10",
+    "value_10m_eok": 170
    },
    "reignition_bars": [
     {
-     "time": "09:00",
-     "body_pct": 3.49,
-     "value_eok": 45
+     "time": "09:10",
+     "body_pct": 2.16,
+     "value_eok": 170
     }
    ],
    "flow": {
-    "net_days": 4,
+    "net_days": 2,
     "today_buy": false,
     "streak": 0,
     "detail": [
      {
       "date": "0612",
-      "frgn": 198209,
-      "orgn": 228155
+      "frgn": -39286,
+      "orgn": 84301
      },
      {
       "date": "0615",
-      "frgn": -228746,
-      "orgn": 253874
+      "frgn": -350970,
+      "orgn": 25884
      },
      {
       "date": "0616",
-      "frgn": 71150,
-      "orgn": 563982
+      "frgn": -142168,
+      "orgn": -1009
      },
      {
       "date": "0617",
-      "frgn": -218008,
-      "orgn": 294843
+      "frgn": 52548,
+      "orgn": 136071
      },
      {
       "date": "0618",
-      "frgn": -83665,
-      "orgn": 31336
+      "frgn": -148521,
+      "orgn": 93985
      }
     ]
    },
    "news": [],
    "matched_events": [],
-   "theme": "",
+   "theme": "반도체",
    "visible_experimental": true,
    "reaccum": {
-    "peak_date": "20260616",
-    "peak_value_eok": 12512,
-    "peak_high_pct": 26.71,
-    "ma20": 42555.0,
-    "ma20_margin_pct": 18.43,
-    "ivtr_net": 406666,
+    "peak_date": "20260617",
+    "peak_value_eok": 9972,
+    "peak_high_pct": 14.53,
+    "ma20": 105775.0,
+    "ma20_margin_pct": 16.47,
+    "ivtr_net": 196092,
     "ivtr_days": 4,
-    "ivtr_eok": 220,
+    "ivtr_eok": 221,
+    "cause_summary": "",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "028050",
+   "name": "삼성E&A",
+   "sector": "일반서비스",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 76,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 6,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 8,
+    "explosion": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 50800.0,
+   "change_pct": 2.21,
+   "high_pct": 2.82,
+   "fade_pct": 21.4,
+   "value_eok": 178,
+   "ma10": 49315.0,
+   "ma10_margin_pct": 3.01,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.2,
+    "time": "09:00",
+    "value_10m_eok": 157
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.2,
+     "value_eok": 157
+    }
+   ],
+   "flow": {
+    "net_days": 1,
+    "today_buy": false,
+    "streak": 0,
+    "detail": [
+     {
+      "date": "0612",
+      "frgn": -628329,
+      "orgn": 140409
+     },
+     {
+      "date": "0615",
+      "frgn": -972795,
+      "orgn": 417945
+     },
+     {
+      "date": "0616",
+      "frgn": -227821,
+      "orgn": 727193
+     },
+     {
+      "date": "0617",
+      "frgn": -629364,
+      "orgn": -607640
+     },
+     {
+      "date": "0618",
+      "frgn": 38694,
+      "orgn": -202430
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 1647,
+    "peak_high_pct": 14.71,
+    "ma20": 50245.0,
+    "ma20_margin_pct": 1.1,
+    "ivtr_net": 1080002,
+    "ivtr_days": 4,
+    "ivtr_eok": 522,
+    "cause_summary": "&quot;미·이란 전쟁 끝나면 재건사업 기회 온다&quot;…삼성E&amp;A 등 건설주 급등",
+    "was_theme_leader": false
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "003490",
+   "name": "대한항공",
+   "sector": "운송·창고",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 71,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 2,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 5,
+    "explosion": 2
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 29350.0,
+   "change_pct": 1.73,
+   "high_pct": 2.08,
+   "fade_pct": 16.7,
+   "value_eok": 83,
+   "ma10": 27180.0,
+   "ma10_margin_pct": 7.98,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.27,
+    "time": "09:00",
+    "value_10m_eok": 66
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.27,
+     "value_eok": 66
+    }
+   ],
+   "flow": {
+    "net_days": 5,
+    "today_buy": true,
+    "streak": 5,
+    "detail": [
+     {
+      "date": "0612",
+      "frgn": 1329496,
+      "orgn": 879806
+     },
+     {
+      "date": "0615",
+      "frgn": 2494164,
+      "orgn": 2307821
+     },
+     {
+      "date": "0616",
+      "frgn": 443363,
+      "orgn": 173363
+     },
+     {
+      "date": "0617",
+      "frgn": 246835,
+      "orgn": -42241
+     },
+     {
+      "date": "0618",
+      "frgn": 160392,
+      "orgn": 453849
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 3583,
+    "peak_high_pct": 17.29,
+    "ma20": 26710.0,
+    "ma20_margin_pct": 9.88,
+    "ivtr_net": 1028317,
+    "ivtr_days": 5,
+    "ivtr_eok": 301,
     "cause_summary": "",
     "was_theme_leader": false
    },
