@@ -1,9 +1,9 @@
 {
- "as_of": "2026-06-18 17:36 KST",
- "n": 14,
+ "as_of": "2026-06-19 17:39 KST",
+ "n": 25,
  "rule_buy": {
-  "n": 8,
-  "hit_rate": 25.0
+  "n": 12,
+  "hit_rate": 16.7
  },
  "ai_up": {
   "n": 0,
@@ -12,7 +12,7 @@
  "rule_buy_min": 62,
  "ai_up_min": 58,
  "min_n": 10,
- "quad_n": 14,
+ "quad_n": 25,
  "unknown_n": 0,
  "divergence": {
   "both": {
@@ -21,9 +21,9 @@
    "avg_return": null
   },
   "rule_only": {
-   "n": 8,
-   "hit_rate": 25.0,
-   "avg_return": -1.74
+   "n": 12,
+   "hit_rate": 16.7,
+   "avg_return": -1.99
   },
   "ai_only": {
    "n": 0,
@@ -31,12 +31,100 @@
    "avg_return": null
   },
   "neither": {
-   "n": 6,
-   "hit_rate": 50.0,
-   "avg_return": 0.08
+   "n": 13,
+   "hit_rate": 46.2,
+   "avg_return": -1.37
   }
  },
  "recent": [
+  {
+   "date": "20260618",
+   "name": "엑스게이트",
+   "verdict_score": 55,
+   "ai_prob": 41,
+   "hit": false,
+   "return_pct": -7.36
+  },
+  {
+   "date": "20260618",
+   "name": "케이뱅크",
+   "verdict_score": 65,
+   "ai_prob": 43,
+   "hit": true,
+   "return_pct": 1.02
+  },
+  {
+   "date": "20260618",
+   "name": "원익IPS",
+   "verdict_score": 66,
+   "ai_prob": 39,
+   "hit": false,
+   "return_pct": -4.41
+  },
+  {
+   "date": "20260618",
+   "name": "HL만도",
+   "verdict_score": 76,
+   "ai_prob": 43,
+   "hit": false,
+   "return_pct": -5.09
+  },
+  {
+   "date": "20260618",
+   "name": "테크윙",
+   "verdict_score": 81,
+   "ai_prob": 49,
+   "hit": false,
+   "return_pct": -0.5
+  },
+  {
+   "date": "20260618",
+   "name": "제주반도체",
+   "verdict_score": 75,
+   "ai_prob": 52,
+   "hit": false,
+   "return_pct": -2.89
+  },
+  {
+   "date": "20260618",
+   "name": "성호전자",
+   "verdict_score": 61,
+   "ai_prob": 39,
+   "hit": false,
+   "return_pct": -4.63
+  },
+  {
+   "date": "20260618",
+   "name": "SK",
+   "verdict_score": 91,
+   "ai_prob": 49,
+   "hit": true,
+   "return_pct": 5.39
+  },
+  {
+   "date": "20260618",
+   "name": "삼성E&A",
+   "verdict_score": 70,
+   "ai_prob": 36,
+   "hit": false,
+   "return_pct": -2.11
+  },
+  {
+   "date": "20260618",
+   "name": "LG이노텍",
+   "verdict_score": 61,
+   "ai_prob": 48,
+   "hit": false,
+   "return_pct": -10.76
+  },
+  {
+   "date": "20260618",
+   "name": "삼성전기",
+   "verdict_score": 73,
+   "ai_prob": 47,
+   "hit": true,
+   "return_pct": 3.18
+  },
   {
    "date": "20260617",
    "name": "엑스게이트",
@@ -152,15 +240,19 @@
  ],
  "tracking": [
   "009150",
+  "010690",
   "011070",
   "028050",
   "034730",
   "043260",
   "080220",
+  "085620",
   "089030",
+  "095610",
   "204320",
   "240810",
   "279570",
+  "319660",
   "356680"
  ],
  "disclaimer": "추적 종목의 종합판정(룰)·Kimi(AI) 예측을 익일 종가로 검증한 기록입니다. 투자 참고용."
