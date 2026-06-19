@@ -126,7 +126,7 @@
   "080220": {
    "name": "제주반도체",
    "sector": "전기·전자",
-   "entry": 115800.0,
+   "entry": 115400.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -136,13 +136,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": -1.61,
+   "change_pct": -1.95,
    "high_pct": 9.69,
-   "fade_pct": 116.7,
+   "fade_pct": 120.2,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 8528,
+   "value_eok": 8637,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -157,8 +157,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9972,
     "peak_high_pct": 14.53,
-    "ma20": 105410.0,
-    "ma20_margin_pct": 9.86,
+    "ma20": 105390.0,
+    "ma20_margin_pct": 9.5,
     "ivtr_net": 196092,
     "ivtr_days": 4,
     "ivtr_eok": 221,
@@ -311,7 +311,7 @@
   "347850": {
    "name": "디앤디파마텍",
    "sector": "일반서비스",
-   "entry": 107000.0,
+   "entry": 108200.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -321,13 +321,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": -1.2,
+   "change_pct": -0.09,
    "high_pct": 6.93,
-   "fade_pct": 117.3,
+   "fade_pct": 101.3,
    "pattern": "reaccum",
    "prime": false,
    "theme": "환율",
-   "value_eok": 2181,
+   "value_eok": 2212,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -342,8 +342,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 5770,
     "peak_high_pct": 27.29,
-    "ma20": 89765.0,
-    "ma20_margin_pct": 19.2,
+    "ma20": 89825.0,
+    "ma20_margin_pct": 20.46,
     "ivtr_net": 306461,
     "ivtr_days": 3,
     "ivtr_eok": 312,
@@ -495,7 +495,7 @@
   "089030": {
    "name": "테크윙",
    "sector": "기계·장비",
-   "entry": 58200.0,
+   "entry": 58400.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -505,13 +505,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": -3.8,
+   "change_pct": -3.47,
    "high_pct": 2.98,
-   "fade_pct": 227.8,
+   "fade_pct": 216.7,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 735,
+   "value_eok": 917,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -526,13 +526,14 @@
     "peak_date": "20260615",
     "peak_value_eok": 4882,
     "peak_high_pct": 13.32,
-    "ma20": 56375.0,
-    "ma20_margin_pct": 3.24,
+    "ma20": 56385.0,
+    "ma20_margin_pct": 3.57,
     "ivtr_net": 23566,
     "ivtr_days": 4,
     "ivtr_eok": 19,
     "cause_summary": "",
-    "was_theme_leader": false
+    "was_theme_leader": false,
+    "source": "seed"
    },
    "reignition": {
     "body_pct": 4.07,
@@ -551,7 +552,7 @@
    "first_seen": "2026-06-19 09:21:51 KST",
    "evaluated": false,
    "result": null,
-   "final": false
+   "final": true
   },
   "122640": {
    "name": "예스티",
@@ -739,7 +740,7 @@
   "034730": {
    "name": "SK",
    "sector": "금융",
-   "entry": 705000.0,
+   "entry": 709000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -749,13 +750,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 2.62,
+   "change_pct": 3.2,
    "high_pct": 10.19,
-   "fade_pct": 74.3,
+   "fade_pct": 68.6,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 2354,
+   "value_eok": 2419,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -770,8 +771,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1121,
     "peak_high_pct": 13.49,
-    "ma20": 642200.0,
-    "ma20_margin_pct": 9.78,
+    "ma20": 642400.0,
+    "ma20_margin_pct": 10.37,
     "ivtr_net": 5859,
     "ivtr_days": 3,
     "ivtr_eok": 38,
@@ -801,7 +802,7 @@
   "402340": {
    "name": "SK스퀘어",
    "sector": "금융",
-   "entry": 1746000.0,
+   "entry": 1744000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -811,13 +812,13 @@
     "flow": 0,
     "explosion": 0
    },
-   "change_pct": 2.71,
+   "change_pct": 2.59,
    "high_pct": 11.24,
-   "fade_pct": 75.9,
+   "fade_pct": 77.0,
    "pattern": "reaccum",
    "prime": false,
-   "theme": "금리",
-   "value_eok": 17713,
+   "theme": "반도체",
+   "value_eok": 18275,
    "theme_leader": false,
    "spark_max_x": 0.0,
    "spark_max_pct": null,
@@ -832,8 +833,8 @@
     "peak_date": "20260612",
     "peak_value_eok": 20966,
     "peak_high_pct": 15.8,
-    "ma20": 1331200.0,
-    "ma20_margin_pct": 31.16,
+    "ma20": 1331100.0,
+    "ma20_margin_pct": 31.02,
     "ivtr_net": 1395999,
     "ivtr_days": 6,
     "ivtr_eok": 18802,
@@ -983,5 +984,5 @@
    "final": false
   }
  },
- "as_of": "2026-06-19 13:41:59 KST"
+ "as_of": "2026-06-19 13:52:02 KST"
 }
