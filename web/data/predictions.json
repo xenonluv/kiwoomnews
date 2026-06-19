@@ -1,13 +1,49 @@
 {
-  "as_of": "2026-06-19 15:07 KST",
+  "as_of": "2026-06-19 15:22 KST",
   "intraday_rank": [
+    {
+      "ticker": "아모텍",
+      "code": "052710",
+      "tomorrow_up_prob": "92%",
+      "entry": 32700.0,
+      "target": 34335,
+      "stop": 31719,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.98)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 1.72,
+      "related_news": [
+        {
+          "title": "'AI 부품 초호황' MLCC 관련주 뜨자 상한가 직행한 '이 종목'",
+          "url": "https://n.news.naver.com/mnews/article/008/0005365208",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "[유상증자 모니터] 아모텍, 주주업고 MLCC 증설…수익 개선 시험대",
+          "url": "https://n.news.naver.com/mnews/article/293/0000085371",
+          "office": "블로터",
+          "sentiment": "악재"
+        },
+        {
+          "title": "증권가 &quot;MLCC 매출 꾸준히 성장&quot;…아모텍 12%↑[특징주]",
+          "url": "https://n.news.naver.com/mnews/article/018/0006291252",
+          "office": "이데일리",
+          "sentiment": "호재"
+        }
+      ]
+    },
     {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "64%",
-      "entry": 1802000.0,
-      "target": 1892100,
-      "stop": 1747940,
+      "entry": 1790000.0,
+      "target": 1879500,
+      "stop": 1736300,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -15,93 +51,66 @@
         "일목 구름위"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 5.47
-    },
-    {
-      "ticker": "제주반도체",
-      "code": "080220",
-      "tomorrow_up_prob": "62%",
-      "entry": 114200.0,
-      "target": 119910,
-      "stop": 110774,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI63.4 강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감, Stoch 과매수",
-      "day_change": -3.14
-    },
-    {
-      "ticker": "한화엔진",
-      "code": "082740",
-      "tomorrow_up_prob": "60%",
-      "entry": 61100.0,
-      "target": 64155,
-      "stop": 59267,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.85)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 3.71,
-      "cause_news": [
-        {
-          "title": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061711153592225",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13..."
-    },
-    {
-      "ticker": "NC",
-      "code": "036570",
-      "tomorrow_up_prob": "60%",
-      "entry": 274000.0,
-      "target": 287700,
-      "stop": 265780,
-      "confidence": "중",
-      "reasons": [
-        "RSI52.4 강세",
-        "Stoch골든",
-        "장중 18회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": 5.65
     },
     {
       "ticker": "삼성생명",
       "code": "032830",
-      "tomorrow_up_prob": "60%",
-      "entry": 493500.0,
-      "target": 518175,
-      "stop": 478695,
+      "tomorrow_up_prob": "64%",
+      "entry": 496000.0,
+      "target": 520800,
+      "stop": 481120,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
+      "risk": "Stoch 과매수",
+      "day_change": null
+    },
+    {
+      "ticker": "제주반도체",
+      "code": "080220",
+      "tomorrow_up_prob": "62%",
+      "entry": 113700.0,
+      "target": 119385,
+      "stop": 110289,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "RSI63.0 강세",
+        "일목 구름위"
+      ],
       "risk": "약한 마감, Stoch 과매수",
+      "day_change": -3.06
+    },
+    {
+      "ticker": "NC",
+      "code": "036570",
+      "tomorrow_up_prob": "60%",
+      "entry": 274500.0,
+      "target": 288225,
+      "stop": 266265,
+      "confidence": "중",
+      "reasons": [
+        "RSI52.6 강세",
+        "Stoch골든",
+        "장중 19회 지속"
+      ],
+      "risk": "특이 위험 낮음",
       "day_change": null
     },
     {
       "ticker": "삼성SDI",
       "code": "006400",
       "tomorrow_up_prob": "50%",
-      "entry": 553000.0,
-      "target": 580650,
-      "stop": 536410,
+      "entry": 550000.0,
+      "target": 577500,
+      "stop": 533500,
       "confidence": "하",
       "reasons": [
-        "장중 15회 지속"
+        "장중 16회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -135,56 +144,108 @@
       "cause_summary": "효성중공업·삼성SDI 강세…전력설비·이차전지주 동반 상승"
     },
     {
-      "ticker": "아모텍",
-      "code": "052710",
+      "ticker": "테크윙",
+      "code": "089030",
       "tomorrow_up_prob": "39%",
-      "entry": 31150.0,
-      "target": 32708,
-      "stop": 30216,
+      "entry": 60700.0,
+      "target": 63735,
+      "stop": 58879,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.72)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 0.17
+    },
+    {
+      "ticker": "대한항공",
+      "code": "003490",
+      "tomorrow_up_prob": "39%",
+      "entry": 27800.0,
+      "target": 29190,
+      "stop": 26966,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.5 강세"
+        "RSI55.6 강세"
+      ],
+      "risk": "약한 마감",
+      "day_change": -3.29,
+      "cause_news": [
+        {
+          "title": "[종목분석] 대한항공 목표가 18% 상향…아시아나 합병 시너지 주목",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16102132",
+          "office": "topstarnews",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        },
+        {
+          "title": "대한항공, 미래 항공기술 승부수… AI 화물 수요 증가로 실적 기대감",
+          "url": "http://www.whitepaper.co.kr/news/articleView.html?idxno=263642",
+          "office": "whitepaper",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
+        },
+        {
+          "title": "[비즈 인사이트] \"대한항공, 아시아나 그리고 수익 창출\"…통합 시험대...",
+          "url": "https://www.seoultimes.news/news/article.html?no=2000096586",
+          "office": "seoultimes",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[종목분석] 대한항공 목표가 18% 상향…아시아나 합병 시너지 주목"
+    },
+    {
+      "ticker": "화신",
+      "code": "010690",
+      "tomorrow_up_prob": "39%",
+      "entry": 14360.0,
+      "target": 15078,
+      "stop": 13929,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.73)",
+        "MACD강세",
+        "RSI60.5 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": -3.13,
-      "related_news": [
+      "day_change": null,
+      "cause_news": [
         {
-          "title": "'AI 부품 초호황' MLCC 관련주 뜨자 상한가 직행한 '이 종목'",
-          "url": "https://n.news.naver.com/mnews/article/008/0005365208",
-          "office": "머니투데이",
-          "sentiment": "호재"
-        },
-        {
-          "title": "[유상증자 모니터] 아모텍, 주주업고 MLCC 증설…수익 개선 시험대",
-          "url": "https://n.news.naver.com/mnews/article/293/0000085371",
-          "office": "블로터",
-          "sentiment": "악재"
-        },
-        {
-          "title": "증권가 &quot;MLCC 매출 꾸준히 성장&quot;…아모텍 12%↑[특징주]",
-          "url": "https://n.news.naver.com/mnews/article/018/0006291252",
-          "office": "이데일리",
-          "sentiment": "호재"
+          "title": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신",
+          "url": "https://www.yna.co.kr/view/AKR20260617047200008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
         }
-      ]
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
     },
     {
       "ticker": "디앤디파마텍",
       "code": "347850",
       "tomorrow_up_prob": "38%",
-      "entry": 111700.0,
-      "target": 117285,
-      "stop": 108349,
+      "entry": 110900.0,
+      "target": 116445,
+      "stop": 107573,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.2 강세"
+        "RSI63.8 강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 2.49,
+      "day_change": 2.82,
       "cause_news": [
         {
           "title": "[특징주] 디앤디파마텍, MASH 치료제 기대감에 18% 급등…기술수출 모멘...",
@@ -207,36 +268,36 @@
       "cause_summary": "[특징주] 디앤디파마텍, MASH 치료제 기대감에 18% 급등…기술수출 모멘..."
     },
     {
-      "ticker": "테크윙",
-      "code": "089030",
+      "ticker": "이오테크닉스",
+      "code": "039030",
       "tomorrow_up_prob": "38%",
-      "entry": 60000.0,
-      "target": 63000,
-      "stop": 58200,
+      "entry": 494000.0,
+      "target": 518700,
+      "stop": 479180,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI53.5 강세"
+        "RSI50.6 강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": -1.82
+      "risk": "약한 마감",
+      "day_change": -1.87
     },
     {
       "ticker": "SK",
       "code": "034730",
       "tomorrow_up_prob": "38%",
-      "entry": 723000.0,
-      "target": 759150,
-      "stop": 701310,
+      "entry": 717000.0,
+      "target": 752850,
+      "stop": 695490,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI68.2 강세"
+        "RSI67.6 강세"
       ],
       "risk": "약한 마감, Stoch 과매수",
-      "day_change": 4.8,
+      "day_change": 5.24,
       "cause_news": [
         {
           "title": "SK하이닉스, 차세대 AI 메모리 'HBM4E' 12단 샘플 공급",
@@ -245,54 +306,18 @@
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "AI 투자 확대에 메모리 역대급 성장···삼성·SK하이닉스 실적 기대감...",
-          "url": "https://www.smartbizn.com/news/articleView.html?idxno=146599",
-          "office": "smartbizn",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "중간",
       "cause_summary": "SK하이닉스, 차세대 AI 메모리 'HBM4E' 12단 샘플 공급"
     },
     {
-      "ticker": "화신",
-      "code": "010690",
-      "tomorrow_up_prob": "38%",
-      "entry": 14000.0,
-      "target": 14700,
-      "stop": 13580,
-      "confidence": "하",
-      "reasons": [
-        "MACD강세",
-        "RSI59.4 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신",
-          "url": "https://www.yna.co.kr/view/AKR20260617047200008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 화신, 로봇 사업 진입 가능성? 장초반 신고가 경신"
-    },
-    {
       "ticker": "미래에셋생명",
       "code": "085620",
       "tomorrow_up_prob": "38%",
-      "entry": 34100.0,
-      "target": 35805,
-      "stop": 33077,
+      "entry": 34250.0,
+      "target": 35962,
+      "stop": 33222,
       "confidence": "하",
       "reasons": [
         "정배열",
@@ -329,42 +354,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "미래에셋생명 주가, 급등세... 시장서 주목한 배경은"
-    },
-    {
-      "ticker": "LS ELECTRIC",
-      "code": "010120",
-      "tomorrow_up_prob": "38%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
-      "confidence": "하",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI53.4 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오...",
-          "url": "https://www.tokenpost.kr/news/economy/370972",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "전력 슈퍼사이클 본격화…LS ELECTRIC·효성중공업 다시 폭풍질",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461423",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오..."
     },
     {
       "ticker": "삼익제약",
@@ -413,12 +402,48 @@
   ],
   "closing_bet": [
     {
+      "ticker": "아모텍",
+      "code": "052710",
+      "tomorrow_up_prob": "92%",
+      "entry": 32700.0,
+      "target": 34335,
+      "stop": 31719,
+      "confidence": "상",
+      "reasons": [
+        "강세마감(0.98)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 1.72,
+      "related_news": [
+        {
+          "title": "'AI 부품 초호황' MLCC 관련주 뜨자 상한가 직행한 '이 종목'",
+          "url": "https://n.news.naver.com/mnews/article/008/0005365208",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "[유상증자 모니터] 아모텍, 주주업고 MLCC 증설…수익 개선 시험대",
+          "url": "https://n.news.naver.com/mnews/article/293/0000085371",
+          "office": "블로터",
+          "sentiment": "악재"
+        },
+        {
+          "title": "증권가 &quot;MLCC 매출 꾸준히 성장&quot;…아모텍 12%↑[특징주]",
+          "url": "https://n.news.naver.com/mnews/article/018/0006291252",
+          "office": "이데일리",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "64%",
-      "entry": 1802000.0,
-      "target": 1892100,
-      "stop": 1747940,
+      "entry": 1790000.0,
+      "target": 1879500,
+      "stop": 1736300,
       "confidence": "중",
       "reasons": [
         "정배열",
@@ -426,81 +451,54 @@
         "일목 구름위"
       ],
       "risk": "Stoch 과매수",
-      "day_change": 5.47
-    },
-    {
-      "ticker": "제주반도체",
-      "code": "080220",
-      "tomorrow_up_prob": "62%",
-      "entry": 114200.0,
-      "target": 119910,
-      "stop": 110774,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI63.4 강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감, Stoch 과매수",
-      "day_change": -3.14
-    },
-    {
-      "ticker": "한화엔진",
-      "code": "082740",
-      "tomorrow_up_prob": "60%",
-      "entry": 61100.0,
-      "target": 64155,
-      "stop": 59267,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.85)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 3.71,
-      "cause_news": [
-        {
-          "title": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061711153592225",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "한화그룹주, 종전 기대·캐나다 잠수함 수주 기대에 강세…한화엔진 13..."
-    },
-    {
-      "ticker": "NC",
-      "code": "036570",
-      "tomorrow_up_prob": "60%",
-      "entry": 274000.0,
-      "target": 287700,
-      "stop": 265780,
-      "confidence": "중",
-      "reasons": [
-        "RSI52.4 강세",
-        "Stoch골든",
-        "장중 18회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
+      "day_change": 5.65
     },
     {
       "ticker": "삼성생명",
       "code": "032830",
-      "tomorrow_up_prob": "60%",
-      "entry": 493500.0,
-      "target": 518175,
-      "stop": 478695,
+      "tomorrow_up_prob": "64%",
+      "entry": 496000.0,
+      "target": 520800,
+      "stop": 481120,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
+      "risk": "Stoch 과매수",
+      "day_change": null
+    },
+    {
+      "ticker": "제주반도체",
+      "code": "080220",
+      "tomorrow_up_prob": "62%",
+      "entry": 113700.0,
+      "target": 119385,
+      "stop": 110289,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "RSI63.0 강세",
+        "일목 구름위"
+      ],
       "risk": "약한 마감, Stoch 과매수",
+      "day_change": -3.06
+    },
+    {
+      "ticker": "NC",
+      "code": "036570",
+      "tomorrow_up_prob": "60%",
+      "entry": 274500.0,
+      "target": 288225,
+      "stop": 266265,
+      "confidence": "중",
+      "reasons": [
+        "RSI52.6 강세",
+        "Stoch골든",
+        "장중 19회 지속"
+      ],
+      "risk": "특이 위험 낮음",
       "day_change": null
     }
   ],
