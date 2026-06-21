@@ -164,6 +164,52 @@ export function ichimoku(
   };
 }
 
+type WeekBar = Candle & { days: number }; // days=주중 거래일 수(이번주 미완성 판별)
+
+/** 일봉을 주차(월요일 기준)로 묶어 주봉 OHLCV 생성 (과거→최신). */
+function toWeekly(candles: Candle[]): WeekBar[] {
+  const byWeek = new Map<string, WeekBar>();
+  for (const c of candles) {
+    const y = +c.date.slice(0, 4), m = +c.date.slice(4, 6) - 1, d = +c.date.slice(6, 8);
+    const dt = new Date(Date.UTC(y, m, d));
+    dt.setUTCDate(dt.getUTCDate() - ((dt.getUTCDay() + 6) % 7)); // 그 주 월요일
+    const key = dt.toISOString().slice(0, 10);
+    const w = byWeek.get(key);
+    if (!w) {
+      byWeek.set(key, { ...c, days: 1 });
+    } else {
+      w.high = Math.max(w.high, c.high);
+      w.low = Math.min(w.low, c.low);
+      w.close = c.close; // 주중 최신 종가
+      w.volume += c.volume;
+      w.date = c.date; // 주중 마지막 거래일
+      w.days += 1;
+    }
+  }
+  return [...byWeek.values()]; // 일봉이 시간순이라 Map 삽입순=주차순
+}
+
+/** 주봉 구조 — 직전 N주(최대 8) 신고가 돌파·이번주 종가위치(윗꼬리)·거래량 배수. 5주 미만이면 null.
+ * ⚠ 이번주(cur)는 미완성 부분주일 수 있어 currentWeekDays로 진행 거래일 수를 함께 노출(거래량 디플레이트 해석용). */
+function weeklyStructure(weeklies: WeekBar[]): TechnicalSection["weeklyStructure"] {
+  if (weeklies.length < 5) return null;
+  const cur = weeklies[weeklies.length - 1];
+  const prior = weeklies.slice(-9, -1); // 직전 최대 8주
+  if (prior.length < 3) return null;
+  const priorHigh = Math.max(...prior.map((w) => w.high));
+  const range = cur.high - cur.low;
+  const priorVolAvg = prior.reduce((s, w) => s + w.volume, 0) / prior.length;
+  const breakoutPct = priorHigh > 0 ? Math.round((cur.high / priorHigh - 1) * 1000) / 10 : null;
+  return {
+    weeks: prior.length,
+    currentWeekDays: cur.days,
+    brokeRecentHigh: breakoutPct !== null && breakoutPct > 0,
+    breakoutPct,
+    closePositionPct: range > 0 ? Math.round(((cur.close - cur.low) / range) * 100) : null,
+    volumeVsAvg: priorVolAvg > 0 ? Math.round((cur.volume / priorVolAvg) * 10) / 10 : null,
+  };
+}
+
 /** 일봉 → 지표 묶음. 35봉 미만(신규상장 등)이면 null. */
 export function computeIndicators(candles: Candle[]): TechnicalSection | null {
   if (candles.length < 35) return null;
@@ -193,6 +239,7 @@ export function computeIndicators(candles: Candle[]): TechnicalSection | null {
     rsi: rsi(closes),
     stochastic: stochasticSlow(highs, lows, closes),
     ichimoku: ichimoku(highs, lows, closes),
+    weeklyStructure: weeklyStructure(toWeekly(candles)),
   };
 }
 

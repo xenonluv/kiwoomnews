@@ -193,6 +193,10 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   /ai·/ask 엔진 공유. 찌라시는 **미확인 루머**로 프롬프트에 명시(작전 허위정보 경계, 데이터·수급·뉴스 우선).
   /ai와 동일 GET+30분 CDN 캐시+in-flight 디둡. UI=`PhaseCard.tsx`(`StockReportView`에서 `verdict && !tradeStop`).
   반환 `{phase, confidence, reasons[], risks[], narrative, sourceCounts}`. 시크릿 MOONSHOT_*(무KIS).
+  판정은 **3축 종합 — ①펀더멘털·가치(밸류·실적·애널 목표가, 가장 무겁게: "차트상 가격 고점 ≠ 가치 고평가",
+  저평가+성장이면 분산 단정 금지) ②재료·테마 ③수급·차트.** 주봉 구조(`technical.weeklyStructure` — 일봉을
+  주차 집계: 직전 8주 신고가 돌파%·종가 주봉레인지 위치(윗꼬리)·거래량 배수·이번주 진행 거래일수)도 입력
+  (serializeForPrompt 공유라 `/ai`에도 반영). 펀더멘털 근거는 데이터 있을 때만(환각 금지).
 - `POST /api/stock/{code}/ask` — **AI 자유질문(찌라시 RAG + 근거 종합추론)**. 사용자 질문을 그 종목의
   실제 데이터 + 수집 글(뉴스·토론방·텔레그램)을 근거로 Kimi가 답함(`/ai`와 별개 엔드포인트).
   body `{question}`(2~300자) → `{answerable, answer, facts[], rumors[], calcUnverified, droppedCount,

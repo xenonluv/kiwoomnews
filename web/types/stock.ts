@@ -109,6 +109,15 @@ export interface TechnicalSection {
     cloudTop?: number;
     cloudBot?: number;
   };
+  // 주봉 구조 — 매집/분산 판별 보조(일봉을 주차 집계). 5주 미만이면 null.
+  weeklyStructure: {
+    weeks: number; // 비교한 직전 주 수
+    currentWeekDays: number; // 이번주 진행 거래일 수(5 미만=미완성 부분주 → 거래량 디플레이트)
+    brokeRecentHigh: boolean; // 이번주 고가가 직전 N주 주봉 신고가 돌파
+    breakoutPct: number | null; // 이번주 고가 vs 직전 N주 신고가 (%, 음수=미돌파)
+    closePositionPct: number | null; // 이번주 종가의 주봉레인지 내 위치(0=저가마감/윗꼬리, 100=고가마감)
+    volumeVsAvg: number | null; // 이번주 거래량 / 직전 N주 평균(배)
+  } | null;
 }
 
 export interface FlowDay {

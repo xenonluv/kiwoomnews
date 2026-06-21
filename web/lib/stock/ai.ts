@@ -200,6 +200,16 @@ export function serializeForPrompt(r: StockReport): string {
         `일목균형표 ${t.ichimoku.aboveCloud ? "구름 위" : t.ichimoku.inCloud ? "구름 안" : "구름 아래"}${t.ichimoku.tenkanGtKijun ? "·전환>기준" : ""}`
       );
     L.push(`[기술] ${items.join(" · ")}`);
+    const w = t.weeklyStructure;
+    if (w) {
+      L.push(
+        `[주봉 구조] 직전 ${w.weeks}주 신고가 ${w.brokeRecentHigh ? `돌파(+${w.breakoutPct}%)` : `미돌파(${w.breakoutPct}%)`} · ` +
+          `이번주 종가 주봉레인지 ${w.closePositionPct ?? "?"}% 위치(낮을수록 윗꼬리=상단거부) · ` +
+          `이번주 거래량 직전 ${w.weeks}주 평균의 ${w.volumeVsAvg ?? "?"}배` +
+          `${w.currentWeekDays < 5 ? `(이번주 ${w.currentWeekDays}거래일 진행분 — 거래량은 진행 비례로 해석)` : ""}` +
+          ` — 참고: 신고가 미돌파+거래량 폭증+상단 마감은 분산보다 매집(눌림)일 수 있고, 신고가 돌파 후 큰 윗꼬리는 분산 신호.`
+      );
+    }
   }
 
   const f = r.flow;
