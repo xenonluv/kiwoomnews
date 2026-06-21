@@ -187,6 +187,12 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   **reasoning(기본값)은 15~120초+ → Vercel 타임아웃** → `thinking:{type:"disabled"}`로 5~20초.
   `MOONSHOT_THINKING=enabled`로 깊은 추론(이때 `maxDuration=300` Fluid Compute 필요).
   시크릿: `MOONSHOT_API_KEY`(+BASE_URL/MODEL) — `web/.env.local` + Vercel.
+- `GET /api/stock/{code}/phase` — **AI 국면 판정(식음 vs 고점)**. 룰베이스 게이트가 애매한 구간(폭발 직후·
+  조정 중)에서 **재매집(식음 후 재상승) vs 분산(고점) vs 중립**을 판정. `lib/stock/phase.ts`가 `buildStockReport`
+  (데이터)+`gatherRumors`(토론방·텔레그램 찌라시)+`serializeForPrompt`+`callKimiJson`(구조화 JSON) 재사용 —
+  /ai·/ask 엔진 공유. 찌라시는 **미확인 루머**로 프롬프트에 명시(작전 허위정보 경계, 데이터·수급·뉴스 우선).
+  /ai와 동일 GET+30분 CDN 캐시+in-flight 디둡. UI=`PhaseCard.tsx`(`StockReportView`에서 `verdict && !tradeStop`).
+  반환 `{phase, confidence, reasons[], risks[], narrative, sourceCounts}`. 시크릿 MOONSHOT_*(무KIS).
 - `POST /api/stock/{code}/ask` — **AI 자유질문(찌라시 RAG + 근거 종합추론)**. 사용자 질문을 그 종목의
   실제 데이터 + 수집 글(뉴스·토론방·텔레그램)을 근거로 Kimi가 답함(`/ai`와 별개 엔드포인트).
   body `{question}`(2~300자) → `{answerable, answer, facts[], rumors[], calcUnverified, droppedCount,

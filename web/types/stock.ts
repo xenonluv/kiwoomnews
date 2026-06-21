@@ -232,6 +232,22 @@ export interface AiAnalysis {
   narrative: string; // 2~4문장 한국어 서술
 }
 
+/** AI 국면 판정 — '식음(재매집) vs 고점(분산)'. 찌라시·뉴스·애널·수급을 종합한 보조 판단. */
+export type StockPhase = "재매집" | "분산" | "중립";
+
+export interface PhaseAnalysis {
+  code: string;
+  asOf: string;
+  model: string;
+  phase: StockPhase; // 재매집(식음 후 재상승) | 분산(고점) | 중립(혼재)
+  confidence: number; // 0~100 판정 신뢰도
+  reasons: string[]; // 국면 판정 핵심 근거(수급·기술·재료)
+  risks: string[]; // 반대 시나리오·주의
+  narrative: string; // 2~3문장 종합
+  sourceCounts: { news: number; board: number; telegram: number }; // 참고한 원문 수(찌라시 투명성)
+  caveat: string;
+}
+
 /** AI 자유질문 답변 — 근거 항목 1건 (사후 출처대조 통과분만). */
 export interface AskItem {
   text: string; // 한 줄 근거/주장

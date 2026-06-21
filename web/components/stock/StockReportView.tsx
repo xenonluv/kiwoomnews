@@ -17,6 +17,7 @@ import { NewsCard } from "./NewsCard";
 import { EventsCard } from "./EventsCard";
 import { VerdictCard } from "./VerdictCard";
 import { AiAnalysisCard } from "./AiAnalysisCard";
+import { PhaseCard } from "./PhaseCard";
 import { AskQuestionCard } from "./AskQuestionCard";
 import { TrackButton } from "./TrackButton";
 
@@ -124,6 +125,7 @@ export function StockReportView({ code }: { code: string }) {
       {r.verdict && <VerdictCard verdict={r.verdict} disclaimer={r.disclaimer} />}
       {/* key=code: 종목 전환 시 강제 리마운트 — 이전 종목의 늦은 AI 응답이 새 화면을 덮어쓰는 것 차단 */}
       {r.verdict && !r.tradeStop && <AiAnalysisCard key={r.code} code={r.code} />}
+      {r.verdict && !r.tradeStop && <PhaseCard key={`phase-${r.code}`} code={r.code} />}
       {!r.tradeStop && <AskQuestionCard key={`ask-${r.code}`} code={r.code} />}
       {r.price && <PriceSummaryCard price={r.price} />}
       {r.chart && <PriceChart candles={r.chart.candles} />}
