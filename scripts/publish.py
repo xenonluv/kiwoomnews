@@ -108,6 +108,8 @@ def record_history(out):
             "prime": s.get("prime", False),  # 핵심 조건 모두 충족(유력) — 향후 적중률 분리 검증용
             "theme": s.get("theme", ""),  # 상위 테마 — by_theme 성과 집계용(표시 전용, 점수 미반영)
             "value_eok": s.get("value_eok"),         # 당일 거래대금(억) — 테마 대장 판별·기록용
+            "turnover_pct": s.get("turnover_pct"),    # 당일 거래대금회전율(거래대금/시총 %)
+            "peak_turnover_pct": s.get("peak_turnover_pct"),  # 폭발일 회전율 — backtest 구간 검증 입력
             "theme_leader": s.get("theme_leader", False),  # 같은 테마 거래대금 1위 여부(표시 전용)
             # 메가스파크×수급 가설 검증용 피처 (radar_backtest spark_flow 표가 사용)
             "spark_max_x": s.get("spark_max_x"),

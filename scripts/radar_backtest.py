@@ -230,6 +230,8 @@ def collect_samples():
                                 "mega_flow": s.get("mega_flow", False),
                                 # 신호일 당일 등락률 — 등락률 구간별 익일 상승확률 분석용
                                 "change_pct": s.get("change_pct"),
+                                # 폭발일 회전율(폭발일 거래대금/시총 %) — 구간별 익일 상승확률 검증용
+                                "peak_turnover_pct": s.get("peak_turnover_pct"),
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
@@ -421,6 +423,29 @@ def change_band_stats(samples):
     cells = []
     for label, lo, hi in CHANGE_BANDS:
         grp = [s for s in known if lo <= s["change_pct"] < hi]
+        hits = sum(1 for s in grp if s["hit"])
+        rets = [s["return_pct"] for s in grp]
+        cells.append({
+            "band": label, "n": len(grp),
+            "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+            "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+            "valid": len(grp) >= FEATURE_MIN_N,
+        })
+    return {"min_n": FEATURE_MIN_N, "unknown_n": len(samples) - len(known), "cells": cells}
+
+
+TURNOVER_BANDS = [("<20%", 0.0, 20.0), ("20~40%", 20.0, 40.0), ("40~60%", 40.0, 60.0),
+                  ("60~80%", 60.0, 80.0), ("80%+", 80.0, 1e9)]
+
+
+def peak_turnover_band_stats(samples):
+    """폭발일 회전율(폭발일 거래대금/폭발일 시총) 구간별 익일 상승확률·평균수익 — '시총 대비 폭발이
+    클수록 익일 더 오르나'를 데이터로 검증(재매집 실험 풀, 코어 통계·튜닝과 격리). peak_turnover_pct
+    미기록 구표본은 제외. change_band_stats와 동일 셀 구조(웹 ChangeBandStats 타입 재사용)."""
+    known = [s for s in samples if s.get("peak_turnover_pct") is not None]
+    cells = []
+    for label, lo, hi in TURNOVER_BANDS:
+        grp = [s for s in known if lo <= s["peak_turnover_pct"] < hi]
         hits = sum(1 for s in grp if s["hit"])
         rets = [s["return_pct"] for s in grp]
         cells.append({
@@ -665,6 +690,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "spark_flow": spark_flow_matrix(samples),
         # 등락률 구간별 익일 상승확률 — '몇 % 구간 종가매수가 익일 더 오르나'(재매집 실험 풀)
         "change_bands": change_band_stats(reaccum_experimental),
+        # 폭발일 회전율 구간별 익일 상승확률 — '시총 대비 폭발이 클수록 더 오르나'(재매집 실험 풀, peak_turnover 비중 검증)
+        "peak_turnover_bands": peak_turnover_band_stats(reaccum_experimental),
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {

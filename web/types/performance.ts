@@ -278,6 +278,8 @@ export interface PerformanceData {
   spark_flow?: SparkFlowStats;
   /** 등락률 구간별 익일 상승확률 — 구버전 performance.json에는 없을 수 있음 */
   change_bands?: ChangeBandStats;
+  /** 폭발일 회전율(거래대금/시총) 구간별 익일 상승확률 — ChangeBandStats 구조 재사용 */
+  peak_turnover_bands?: ChangeBandStats;
   /** 분할 전략 실측(20/30/50+익절/손절) — 구버전 performance.json에는 없을 수 있음 */
   strategy_sim?: StrategySim;
   /** 테마별 성과 — 구버전 performance.json에는 없을 수 있음 */

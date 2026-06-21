@@ -14,6 +14,7 @@ import { WeightsPanel } from "@/components/performance/WeightsPanel";
 import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
 import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 import { ChangeBandTable } from "@/components/performance/ChangeBandTable";
+import { PeakTurnoverBandTable } from "@/components/performance/PeakTurnoverBandTable";
 import { LeaderReaccumPanel } from "@/components/performance/LeaderReaccumPanel";
 import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
 import { ThemeStatsTable } from "@/components/performance/ThemeStatsTable";
@@ -78,6 +79,8 @@ export default function PerformancePage() {
         {data.spark_flow && <SparkFlowMatrix data={data.spark_flow} />}
 
         {data.change_bands && <ChangeBandTable data={data.change_bands} />}
+
+        {data.peak_turnover_bands && <PeakTurnoverBandTable data={data.peak_turnover_bands} />}
 
         {data.experimental?.leader_reaccum && (
           <LeaderReaccumPanel data={data.experimental.leader_reaccum} />
