@@ -102,6 +102,18 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   실전 rate ~20건/초(0.06초 간격). 거래대금 순위 `FHPST01710000`(volume-rank, `FID_INPUT_ISCD`
   0001=코스피/1001=코스닥). ⚠ 등락률 순위 `FHPST01700000`은 **정렬 코드 0~4 전부 동작 안 함(실측)**
   → 등락률 TOP20은 네이버 up 랭킹 1페이지로 대체.
+  - ⚠️ **시장구분(`FID_COND_MRKT_DIV_CODE`) 분리 정책 — 가격=J / 거래대금·수급=UN**:
+    NXT(넥스트레이드) 거래가 종목별 과반인 경우가 많아(화신 6/19 KRX 1,685억 + NXT 2,996억 = UN 4,681억)
+    KRX 단독(J)은 거래대금을 과소집계 → 폭발 게이트 false negative. 그러나 **UN 종가는 NXT 시간외가 섞여
+    KRX 공식 종가와 1~6% 어긋나(실측)** MA·등락률·고가게이트·익일평가에 쓰면 왜곡된다. 그래서:
+    · **가격(OHLC)은 항상 J(KRX 공식)** — `daily_prices`/`price_now` 기본 J.
+    · **거래대금·거래량·수급(money)만 UN(통합)** — `kis_client.MONEY_MARKET`(기본 UN, `KIS_MARKET=J`로 환원).
+      레이더는 `daily_prices_jmoney_un`/`price_now_jmoney_un`(J 가격 + UN 거래대금 덮어쓰기, 2콜 병합)을 사용.
+    예외 2건(실측): ① **volume-rank는 UN 거부**(J·NX만) → 유니버스는 `value_rank_union`이 **J∪NX 합집합**.
+    ② `FHKST01010900`(inquire-investor)은 UN 미지원 — radar 미사용(투신 세분 `FHPTJ04160001` 사용)이라 무관.
+    UN 전환으로 게이트 구간 거래대금 실측 ~×1.5 → 폭발 하한 1천억→**1,500억** 재산정. 단 **투신(ivtr)
+    매집액은 UN/J≈1.0**(투신은 KRX 전용) → flow 점수 불변. 분봉(reignition)은 NXT 장전/야간 혼입 가드(정규장
+    시간창 필터)와 함께 잠정 `J` 유지(거래일 실측 검증 후 UN 전환 예정).
 - **네이버**(유니버스·뉴스): `m.stock.naver.com/api/stocks/{up|down}/{KOSPI|KOSDAQ}?page=N&pageSize=100`,
   종목뉴스 `api/news/stock/{code}`, autocomplete `ac.stock.naver.com`.
 - **정적 캘린더**: `data/macro_events.json` — FOMC(확정)/CPI·금통위·삼성 잠정실적(추정).

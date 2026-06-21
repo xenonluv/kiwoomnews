@@ -15,6 +15,10 @@ setup_mac_radar.sh
 
 # KIS 공식 API 샘플 레포 (벤더 코드, 참고용)
 open_api/
+open-trading-api/
+
+# 1회성 캘리브레이션 산출물 (재생성 가능 — nxt_calibration.py)
+data/nxt_calibration.json
 
 # 의존성
 node_modules/

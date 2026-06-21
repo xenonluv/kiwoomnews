@@ -44,7 +44,10 @@ REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
 PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
 
 # ---- 기본 임계값 ----
-EXPLOSION_VALUE = 100_000_000_000  # 재매집 폭발 거래대금 하한: 1천억(원)
+# 거래대금은 KRX+NXT 통합(UN) 기준(kis_client.MONEY_MARKET, 가격은 항상 J 공식). NXT 포함으로 J 단독 대비 게이트
+# 구간(700~1000억)에서 실측 중앙값 ~1.5배 커져, J기준 1천억을 1,500억으로 ×1.5 재산정(통계 격리·드리프트
+# 방지: 같은 '진짜 큰돈' 엄격도를 통합 기준으로 정합. 신규 포착은 유니버스 J∪NX 합집합이 담당).
+EXPLOSION_VALUE = 150_000_000_000  # 재매집 폭발 거래대금 하한: 1,500억(원, UN 통합기준 = J 1천억×1.5)
 EXPLOSION_HIGH_PCT = 13.0          # 재매집 폭발 당일 고가 등락률 하한(%)
 EXPLOSION_WINDOW = 6               # 최근 6거래일 폭발만 재매집 후보
 EXPLOSION_RANK_N = 30              # 시장별 거래대금 상위 N에서 라이브 폭발 감시
@@ -331,7 +334,7 @@ def bootstrap_seed_explosions(reg, p):
             resolved.append(it)
     for item in resolved:
         try:
-            daily = kis.daily_prices(item["code"], days=max(12, p.explosion_window + 6))
+            daily = kis.daily_prices_jmoney_un(item["code"], days=max(12, p.explosion_window + 6))  # 폭발 게이트=UN 거래대금
         except Exception as e:
             log(f"[warn] seed 일봉 실패 {item['name']}: {e}")
             continue
@@ -406,7 +409,7 @@ def update_live_explosions(reg, p):
         rows.append(row)
 
     for market in ("KOSPI", "KOSDAQ"):
-        vr = list(kis.value_rank(market, p.explosion_rank_n))        # 거래대금 순위 (KIS, raise 시 상위 try)
+        vr = list(kis.value_rank_union(market, p.explosion_rank_n))  # 거래대금 순위 J∪NX 합집합(NXT-헤비 누락 방지)
         value_rank_total += len(vr)
         for row in vr:
             _add(row)
@@ -424,7 +427,7 @@ def update_live_explosions(reg, p):
         rank_value_won = float(row.get("value_mn") or 0) * 1e6
         attempted += 1
         try:
-            now = kis.price_now(row["code"])
+            now = kis.price_now_jmoney_un(row["code"])  # 가격=J 공식 / 거래대금=UN 통합(폭발 게이트)
         except Exception as e:
             price_errors += 1
             log(f"[warn] 폭발 현재가 조회 실패 {row.get('name')}: {e}")
@@ -532,7 +535,7 @@ def scan_reaccum_candidate(rec, p, events):
     if not peak_date:
         return None
     try:
-        now = kis.price_now(code)
+        now = kis.price_now_jmoney_un(code)  # 가격=J 공식 / 거래대금·거래량=UN 통합(표시·vsurge)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 현재가 조회 실패 {e}")
         return "ERR"
@@ -545,7 +548,7 @@ def scan_reaccum_candidate(rec, p, events):
     high = now.get("high") or now["price"]
     high_pct = (high / now["prev_close"] - 1) * 100
     try:
-        daily = kis.daily_prices(code, days=25)
+        daily = kis.daily_prices_jmoney_un(code, days=25)  # MA=J 종가 / 거래대금=UN(vsurge·표시)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 일봉 실패 {e}")
         return "ERR"
@@ -604,8 +607,8 @@ def scan_reaccum_candidate(rec, p, events):
         "re_value": round(min(12, max(0, (re_value_max - 30) / 270 * 12))),   # 재반등 거래대금 30~300억→0~12
         "re_body": round(min(6, max(0, (re_body_max - 2) / 4 * 6))),          # 재반등 몸통% 2~6%→0~6
         "re_count": min(6, max(0, (len(rbars) - 1) * 3)),                     # 자격 봉 1→0·2→3·3+→6
-        "flow": round(min(8, max(0, ivtr_eok / 500 * 8))),                    # 투신 매집 ~500억→8
-        "explosion": round(min(6, max(0, (peak_eok - 1000) / 9000 * 6))),     # 폭발 규모 1천억~1조→0~6
+        "flow": round(min(8, max(0, ivtr_eok / 500 * 8))),                    # 투신 매집 ~500억→8 (UN/J≈1.0 실측 → 불변)
+        "explosion": round(min(6, max(0, (peak_eok - 1500) / 13500 * 6))),    # 폭발 규모 1,500억~1.5조→0~6 (UN기준 ×1.5)
     }
     score = min(95, REACCUM_SCORE + breakdown["re_value"] + breakdown["re_body"]
                 + breakdown["re_count"] + breakdown["flow"] + breakdown["explosion"])
@@ -692,7 +695,7 @@ def _explosion_day_value_eok(code, peak_date, cache):
         return cache[key]
     val = None
     try:
-        for bar in kis.daily_prices(code, days=12):
+        for bar in kis.daily_prices_jmoney_un(code, days=12):  # 대장 판정=폭발일 UN 거래대금
             if bar.get("date") == peak_date:
                 eok = round(float(bar.get("value") or 0) / 1e8)
                 val = eok if eok > 0 else None  # 0/결측 봉은 글리치 → None으로 폴백 유도
@@ -936,7 +939,7 @@ def main():
     ap.add_argument("--reaccum-max", type=int, default=12,
                     help="게시 단계에서 예약할 재매집 후보 슬롯 수(파라미터 기록용)")
     ap.add_argument("--explosion-value", type=float, default=EXPLOSION_VALUE,
-                    help="재매집 폭발 거래대금 하한(원, 기본 1천억)")
+                    help="재매집 폭발 거래대금 하한(원, 기본 1,500억=UN 통합기준)")
     ap.add_argument("--explosion-high-pct", type=float, default=EXPLOSION_HIGH_PCT,
                     help="재매집 폭발 당일 고가 등락률 하한(%%)")
     ap.add_argument("--explosion-window", type=int, default=EXPLOSION_WINDOW,
@@ -988,7 +991,8 @@ def main():
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
-        "params": {"reaccum_change_range": [p.reaccum_change_min, p.reaccum_change_max],
+        "params": {"market": kis.MONEY_MARKET,  # 거래대금/수급 시장구분: UN=KRX+NXT 통합 / J=KRX 단독(가격은 항상 J)
+                   "reaccum_change_range": [p.reaccum_change_min, p.reaccum_change_max],
                    "reignition_body_pct": p.reignition_body_pct,
                    "reignition_value_10m_eok": round(p.reignition_value_10m / 1e8),
                    "kimi_mode": p.kimi_mode,

@@ -28,6 +28,13 @@ BASE = "https://openapi.koreainvestment.com:9443"
 MIN_GAP = 0.06  # 실전계좌 초당 20건 제한 → 호출 간 최소 간격
 _last_call = [0.0]
 
+# 시장 구분(FID_COND_MRKT_DIV_CODE): J=KRX 정규장 단독 / NX=NXT / UN=KRX+NXT 통합.
+# ⚠ 가격(OHLC)은 **항상 J(KRX 공식)** — MA·등락률·고가게이트·익일평가의 권위 기준이다.
+#   UN 종가는 NXT 시간외 체결이 섞여 공식 종가와 1~6% 어긋나(실측) 가격에 쓰면 지표·평가가 왜곡된다.
+# 거래대금·거래량·수급(money)만 통합(UN) — NXT 거래분(종목별 과반) 누락을 막는다.
+# KIS_MARKET=J 로 money까지 KRX 단독 환원 가능.
+MONEY_MARKET = os.environ.get("KIS_MARKET", "UN")
+
 
 def _load_env():
     path = os.path.join(ROOT, ".env")
@@ -169,12 +176,14 @@ def _f(v):
         return 0.0
 
 
-def daily_prices(code, days=30):
-    """일봉 최근 days개 (오름차순). value=거래대금(원).
+def daily_prices(code, days=30, market="J"):
+    """일봉 최근 days개 (오름차순). value=거래대금(원). 기본 market="J"(KRX 공식 — 가격·평가 권위).
 
+    거래대금/거래량을 통합(UN)으로 보고 싶으면 daily_prices_jmoney_un()을 쓴다(가격은 J 유지).
     ⚠ FHKST03010100은 1콜 최대 ~100봉(KIS 한도)만 반환 → days>100이면 조회종료일(end)을
     가장 오래된 봉 직전으로 당겨가며 페이징해 합친다. days<=100이면 1콜(기존과 동일).
     """
+    mkt = market
     start = (datetime.now() - timedelta(days=days * 2 + 10)).strftime("%Y%m%d")
     acc = {}                                   # date -> bar (중복 방지)
     cur_end = datetime.now().strftime("%Y%m%d")
@@ -182,7 +191,7 @@ def daily_prices(code, days=30):
     for _ in range(max_pages):
         res = _call("/uapi/domestic-stock/v1/quotations/inquire-daily-itemchartprice",
                     "FHKST03010100",
-                    {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code,
+                    {"FID_COND_MRKT_DIV_CODE": mkt, "FID_INPUT_ISCD": code,
                      "FID_INPUT_DATE_1": start, "FID_INPUT_DATE_2": cur_end,
                      "FID_PERIOD_DIV_CODE": "D", "FID_ORG_ADJ_PRC": "0"})
         added = 0
@@ -209,11 +218,14 @@ def daily_prices(code, days=30):
     return out[-days:]
 
 
-def price_now(code):
-    """현재가 스냅샷. 등락률·당일고가·누적거래대금·업종명 포함."""
+def price_now(code, market="J"):
+    """현재가 스냅샷. 등락률·당일고가·누적거래대금·업종명 포함. 기본 market="J"(KRX 공식).
+
+    거래대금/거래량 통합(UN)이 필요하면 price_now_jmoney_un()을 쓴다(가격은 J 유지)."""
+    mkt = market
     res = _call("/uapi/domestic-stock/v1/quotations/inquire-price",
                 "FHKST01010100",
-                {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code})
+                {"FID_COND_MRKT_DIV_CODE": mkt, "FID_INPUT_ISCD": code})
     o = res["output"]
     price = _f(o.get("stck_prpr"))
     change_pct = _f(o.get("prdy_ctrt"))
@@ -234,13 +246,63 @@ def price_now(code):
             "w52_high": _f(o.get("w52_hgpr"))}
 
 
-def minute_bars_today(code, until="153000"):
+def _overlay_money(bar, un_bar):
+    """가격은 그대로 두고 거래대금/거래량만 UN 값으로 덮어쓴다(un_bar 없으면 J 유지)."""
+    if un_bar:
+        if un_bar.get("value") is not None:
+            bar["value"] = un_bar["value"]
+        if un_bar.get("volume") is not None:
+            bar["volume"] = un_bar["volume"]
+    return bar
+
+
+def daily_prices_jmoney_un(code, days=30):
+    """일봉: 가격(OHLC)=J(KRX 공식, MA·평가 권위), 거래대금/거래량=UN(통합) 덮어쓰기.
+
+    MONEY_MARKET=="J"면 추가 호출 없이 J 그대로. UN 조회 실패 시 J로 graceful degrade.
+    레이더의 거래대금 게이트·표시는 이걸 쓰고, 익일평가(track_eval·backtest)는 plain daily_prices(J)를 쓴다."""
+    jb = daily_prices(code, days=days, market="J")
+    if MONEY_MARKET == "J":
+        return jb
+    try:
+        un = {b["date"]: b for b in daily_prices(code, days=days, market="UN")}
+    except Exception:
+        return jb
+    for b in jb:
+        _overlay_money(b, un.get(b["date"]))
+    return jb
+
+
+def price_now_jmoney_un(code):
+    """현재가: 가격(현재가·고가·등락률)=J(KRX 공식), 거래대금/거래량=UN(통합) 덮어쓰기.
+
+    MONEY_MARKET=="J"면 J 그대로. UN 조회 실패 시 J로 graceful degrade."""
+    now = price_now(code, market="J")
+    if MONEY_MARKET == "J":
+        return now
+    try:
+        un = price_now(code, market="UN")
+        _overlay_money(now, un)
+    except Exception:
+        pass
+    return now
+
+
+SESSION_OPEN = "090000"   # 정규장 시작
+SESSION_CLOSE = "153000"  # 정규장 종료(동시호가 포함)
+
+
+def minute_bars_today(code, until="153000", market="J"):
     """당일 1분봉 전체 (오름차순). 1콜=30봉이라 시각을 30분씩 물려 역방향 수집.
 
     당일(stck_bsop_date == 오늘) 봉만 수집 — FID_PW_DATA_INCU_YN="N" +
     날짜 필터 이중 가드. 휴장일·개장 전에는 빈 리스트를 반환한다
     (전일 분봉이 당일로 혼입되면 스파크 오탐이 나므로 절대 섞지 않는다).
+
+    market 기본 "J"(KRX) — 재반등 10분봉은 정규장 의미라 NXT 장전/야간 혼입을 막는다.
+    UN으로 호출해도 SESSION_OPEN~CLOSE 시간창 가드로 정규장 봉만 채택한다(거래일 실측 검증 후 UN 전환).
     """
+    mkt = market
     now = datetime.now()
     today = now.strftime("%Y%m%d")
     if now.strftime("%H%M%S") < until:
@@ -250,7 +312,7 @@ def minute_bars_today(code, until="153000"):
     for _ in range(16):  # 09:00~15:30 = 390분 → 최대 13콜 + 여유
         res = _call("/uapi/domestic-stock/v1/quotations/inquire-time-itemchartprice",
                     "FHKST03010200",
-                    {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code,
+                    {"FID_COND_MRKT_DIV_CODE": mkt, "FID_INPUT_ISCD": code,
                      "FID_INPUT_HOUR_1": hour, "FID_PW_DATA_INCU_YN": "N",
                      "FID_ETC_CLS_CODE": ""})
         rows = res.get("output2", []) or []
@@ -259,6 +321,8 @@ def minute_bars_today(code, until="153000"):
             t = row.get("stck_cntg_hour", "")
             if row.get("stck_bsop_date") != today:
                 continue  # 전일/휴장일 봉 배제
+            if not (SESSION_OPEN <= t <= SESSION_CLOSE):
+                continue  # NXT 장전(~09:00)·애프터마켓(15:30~) 봉 배제 — 정규장만
             if len(t) == 6 and t not in bars:
                 bars[t] = {"time": t,
                            "open": _f(row.get("stck_oprc")),
@@ -280,7 +344,11 @@ def minute_bars_today(code, until="153000"):
 
 
 def investor_daily(code):
-    """종목별 투자자 일별 순매수량 (최근 영업일들, 오름차순). 외국인/기관/개인."""
+    """종목별 투자자 일별 순매수량 (최근 영업일들, 오름차순). 외국인/기관/개인.
+
+    ⚠ FHKST01010900은 UN(통합) 미지원(J/NX만) — "J" 고정. radar는 이 함수를 쓰지 않고
+    투신(ivtr)까지 세분되는 investor_trade_daily(FHPTJ04160001, UN 지원)를 쓴다. 셀프테스트 전용.
+    """
     res = _call("/uapi/domestic-stock/v1/quotations/inquire-investor",
                 "FHKST01010900",
                 {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code})
@@ -297,15 +365,17 @@ def investor_daily(code):
     return out
 
 
-def investor_trade_daily(code, end_date=""):
+def investor_trade_daily(code, end_date="", market=None):
     """종목별 투자자매매동향(일별) — 투신(ivtr) 포함. 최근 ~30거래일, 오름차순.
 
     FHPTJ04160001. inquire-investor(외인/기관/개인)와 달리 투신·금액까지 세분.
     ivtr=투신 순매수 수량, ivtr_won=투신 순매수 금액(백만원). reaccum 투신 매집 판정용.
+    market=None이면 MONEY_MARKET(UN) — 거래대금과 일관되게 KRX+NXT 통합 수급(수급은 가격 아님).
     """
+    mkt = market or MONEY_MARKET
     res = _call("/uapi/domestic-stock/v1/quotations/investor-trade-by-stock-daily",
                 "FHPTJ04160001",
-                {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": code,
+                {"FID_COND_MRKT_DIV_CODE": mkt, "FID_INPUT_ISCD": code,
                  "FID_INPUT_DATE_1": end_date, "FID_ORG_ADJ_PRC": "", "FID_ETC_CLS_CODE": ""})
     out = []
     for row in res.get("output2", []):
@@ -330,11 +400,17 @@ _RANK_SECTOR = {"KOSPI": "0001", "KOSDAQ": "1001"}
 _RANK_EXLS = "0110111101"
 
 
-def value_rank(market="KOSPI", top_n=20):
-    """당일 거래대금(거래금액순) 상위 종목. → [{name, code, change_pct, value_mn}]"""
+def value_rank(market="KOSPI", top_n=20, mrkt="J"):
+    """당일 거래대금(거래금액순) 상위 종목. → [{name, code, change_pct, value_mn}]
+
+    market=KOSPI/KOSDAQ (업종 구분, FID_INPUT_ISCD). mrkt=시장 구분 — ⚠ 이 순위 API(FHPST01710000)는
+    J(KRX)·NX(NXT)만 지원하고 **UN은 거부(INVALID FID_COND_MRKT_DIV_CODE, 실측 2026-06)**.
+    UN을 그대로 쓰면 깨지므로 기본 "J". NXT-헤비 종목 누락을 막으려면 호출부가
+    value_rank_union()처럼 J·NX 결과를 합집합한다.
+    """
     res = _call("/uapi/domestic-stock/v1/quotations/volume-rank",
                 "FHPST01710000",
-                {"FID_COND_MRKT_DIV_CODE": "J",
+                {"FID_COND_MRKT_DIV_CODE": mrkt,
                  "FID_COND_SCR_DIV_CODE": "20171",
                  "FID_INPUT_ISCD": _RANK_SECTOR[market],
                  "FID_DIV_CLS_CODE": "1",        # 보통주만
@@ -353,6 +429,28 @@ def value_rank(market="KOSPI", top_n=20):
                     "change_pct": _f(r.get("prdy_ctrt")),
                     "value_mn": _f(r.get("acml_tr_pbmn")) / 1e6})  # 원→백만원
     return out
+
+
+def value_rank_union(market="KOSPI", top_n=20):
+    """거래대금 상위 종목을 J(KRX)·NX(NXT) **양 시장에서 뽑아 합집합** → [{name, code, change_pct, value_mn}].
+
+    순위 API가 UN을 거부하므로, NXT에서만 거래대금이 큰 종목(예: NXT 비중 과반)이 KRX-only
+    순위에서 탈락하는 누락을 막는다. 같은 종목이 양쪽에 있으면 value_mn은 J+NX 합산(≈통합 거래대금
+    근사), change_pct는 J 우선. 결과는 value_mn 내림차순 상위 top_n."""
+    merged = {}
+    for mrkt in ("J", "NX"):
+        try:
+            rows = value_rank(market, top_n=top_n, mrkt=mrkt)
+        except Exception:
+            rows = []
+        for r in rows:
+            m = merged.get(r["code"])
+            if m:
+                m["value_mn"] += r["value_mn"]  # J+NX 합산
+            else:
+                merged[r["code"]] = dict(r)
+    out = sorted(merged.values(), key=lambda x: x["value_mn"], reverse=True)
+    return out[:top_n]
 
 
 # 참고: 등락률 순위 FHPST01700000은 정렬 코드 0~4 전부 등락률순으로 동작하지
