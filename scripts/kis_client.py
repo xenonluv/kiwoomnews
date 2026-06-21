@@ -16,6 +16,7 @@
   python3 scripts/kis_client.py rank [KOSPI|KOSDAQ]   # 거래대금 순위 점검
 """
 import os
+import sys
 import json
 import time
 import urllib.parse
@@ -247,13 +248,16 @@ def price_now(code, market="J"):
 
 
 def _overlay_money(bar, un_bar):
-    """가격은 그대로 두고 거래대금/거래량만 UN 값으로 덮어쓴다(un_bar 없으면 J 유지)."""
+    """가격은 그대로 두고 거래대금/거래량만 UN 값으로 덮어쓴다(un_bar 없거나 0이면 J 유지).
+
+    ⚠ _f()가 결측 필드를 0.0으로 강제하므로 `is not None`은 항상 참이라 무용지물 → 0으로 검사.
+    UN ⊇ KRX(통합=KRX+NXT)라 정상 데이터의 UN value/volume은 J 이상이며, 0은 곧 결측·글리치이므로
+    J 값을 보존해야 한다(0으로 덮으면 폭발 게이트가 진짜 거래대금을 0으로 보고 후보를 놓친다)."""
     if un_bar:
-        if un_bar.get("value") is not None:
+        if (un_bar.get("value") or 0) > 0:
             bar["value"] = un_bar["value"]
-        if un_bar.get("volume") is not None:
+        if (un_bar.get("volume") or 0) > 0:
             bar["volume"] = un_bar["volume"]
-    return bar
 
 
 def daily_prices_jmoney_un(code, days=30):
@@ -266,7 +270,9 @@ def daily_prices_jmoney_un(code, days=30):
         return jb
     try:
         un = {b["date"]: b for b in daily_prices(code, days=days, market="UN")}
-    except Exception:
+    except Exception as e:
+        # UN 실패 시 J로 degrade — 단 게이트는 UN 기준(1,500억)이라 J값(~2/3)이면 과소탐지 가능 → 경고.
+        sys.stderr.write(f"[kis] {code} 일봉 UN 조회 실패 → J 거래대금으로 degrade: {e}\n")
         return jb
     for b in jb:
         _overlay_money(b, un.get(b["date"]))
@@ -283,8 +289,9 @@ def price_now_jmoney_un(code):
     try:
         un = price_now(code, market="UN")
         _overlay_money(now, un)
-    except Exception:
-        pass
+    except Exception as e:
+        # UN 실패 시 J로 degrade — 게이트는 UN 기준이라 과소탐지 가능 → 경고(조용히 묻지 않음).
+        sys.stderr.write(f"[kis] {code} 현재가 UN 조회 실패 → J 거래대금으로 degrade: {e}\n")
     return now
 
 
@@ -441,7 +448,9 @@ def value_rank_union(market="KOSPI", top_n=20):
     for mrkt in ("J", "NX"):
         try:
             rows = value_rank(market, top_n=top_n, mrkt=mrkt)
-        except Exception:
+        except Exception as e:
+            # 한쪽 시장 실패는 다른 쪽으로 계속(부분 유니버스가 abort보다 안전) — 단 조용히 묻지 않게 경고.
+            sys.stderr.write(f"[kis] value_rank {market}/{mrkt} 실패(스킵): {e}\n")
             rows = []
         for r in rows:
             m = merged.get(r["code"])

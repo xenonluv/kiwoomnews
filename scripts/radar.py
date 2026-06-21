@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """이벤트 매집 레이더 — "과거 폭등 → 식음 → 오늘 재반등" 스캐너.
 
-목적: 과거 어느 날 큰돈이 들어와 폭등(1천억+고가+13%)했다가 식은 종목이,
+목적: 과거 어느 날 큰돈이 들어와 폭등(1,500억+고가+13%, UN 통합거래대금)했다가 식은 종목이,
       오늘 거래대금을 동반해 다시 상승 초입에 들어선(재매집 의심) 것을 탐지.
 
 파이프라인:
-  [폭등 캐치] 매 회차 시장별 거래대금·등락률 랭킹을 훑어 1천억 + 고가 +13% 폭발을
+  [폭등 캐치] 매 회차 시장별 거래대금·등락률 랭킹을 훑어 1,500억 + 고가 +13% 폭발을
               레지스트리(.explosion_registry.json)에 기록 → 최근 6거래일 폭발만 후보.
    ▼
   [식음(중간)] 신호일(오늘) 현재가 ≥ MA20 생존 + 폭발 전후 창에서 투신 순매수(매집).
@@ -155,7 +155,7 @@ def reignition_bars(bars, body_pct_min=REIGNITION_BODY_PCT,
     return out
 
 
-# ---------- 재매집: 1천억 폭발 레지스트리 ----------
+# ---------- 재매집: 거래대금 폭발 레지스트리 ----------
 
 def _today_yyyymmdd():
     return datetime.now(KST).strftime("%Y%m%d")
@@ -324,7 +324,7 @@ def _telegram_seed_items(p):
 
 
 def bootstrap_seed_explosions(reg, p):
-    """지정 종목 + 텔레그램 채널 언급 종목의 최근 일봉으로 과거 1천억+13% 폭발을 즉시 부트스트랩."""
+    """지정 종목 + 텔레그램 채널 언급 종목의 최근 일봉으로 과거 1,500억+고가13% 폭발을 즉시 부트스트랩."""
     count = 0
     resolved = _resolve_seed_items(p.names, p.reaccum_seed)
     seen = {r["code"] for r in resolved}
@@ -389,13 +389,13 @@ def _known_sector(reg, code):
 
 
 def update_live_explosions(reg, p):
-    """당일 1천억+13% 폭발을 감시해 registry에 적재.
+    """당일 1,500억+고가13% 폭발을 감시해 registry에 적재.
 
     유니버스 = 시장별 거래대금 순위 ∪ 등락률(네이버 up) 순위. 거래대금 순위만 보면
     등락률로만 잡힌 종목이 누락돼 6일 재매집 윈도에서 사라지므로 합집합으로 본다.
-    1천억 게이트는 사전필터 없이 KIS price_now 실거래대금(권위)으로 판정. price_now
+    폭발 거래대금 게이트는 사전필터 없이 KIS price_now 실거래대금(권위)으로 판정. price_now
     value가 0/결측인 일시 글리치일 때만 랭킹값으로 폴백해 확정 폭발 누락을 막고, 비-KIS(네이버)
-    랭킹값이 정상 경로에서 1천억 하한을 단독 충족해 sub-1천억을 오기록하지 않게 한다.
+    랭킹값이 정상 경로에서 폭발 거래대금 하한을 단독 충족해 sub-하한을 오기록하지 않게 한다.
     """
     rows = []
     seen_codes = set()
@@ -440,9 +440,9 @@ def update_live_explosions(reg, p):
         high_pct = (now["high"] / now["prev_close"] - 1) * 100
         if high_pct < p.explosion_high_pct:
             continue
-        # 1천억 게이트: KIS price_now 실거래대금(권위)으로 판정 — scan_one 거래대금 하한과 동일 철학.
+        # 폭발 거래대금 게이트: KIS price_now 실거래대금(권위)으로 판정 — scan_one 거래대금 하한과 동일 철학.
         # price_now value가 0/결측인 일시 글리치일 때만 랭킹값으로 폴백해 확정 폭발 누락을 막고,
-        # 비-KIS(네이버) 랭킹값이 정상 경로에서 1천억 하한을 단독 충족해 sub-1천억을 오기록하지 않게 한다.
+        # 비-KIS(네이버) 랭킹값이 정상 경로에서 폭발 거래대금 하한을 단독 충족해 sub-하한을 오기록하지 않게 한다.
         now_value = float(now.get("value") or 0)
         value_won = now_value if now_value > 0 else rank_value_won
         if value_won < p.explosion_value:
