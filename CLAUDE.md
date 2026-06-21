@@ -151,6 +151,9 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 - `GET /api/stock/{code}` — **온디맨드 종목 분석 리포트**(룰베이스, LLM 미사용). 네이버 공개 API 7종
   병렬 호출 → 주가·기술지표·수급·분봉 스파크·재무·재료뉴스·이벤트 민감도·종합판정. 엣지 캐시 180초.
   시크릿 불필요(KIS 미사용 — Vercel 무시크릿 유지).
+  - **거래대금·거래량은 통합(KRX+NXT)** — `totalInfos`의 `accumulatedTradingValue`(`parseEok`로 억 환산)·
+    `accumulatedTradingVolume`을 `price.tradingValue/tradingVolume`로 노출(레이더 카드와 동일 기준, AI 프롬프트에도 포함).
+    단 가격·MA·`volumeVs20d`는 일별 candles(siseJson=**KRX 단독·공식 종가**) 기반 그대로(통합 일별 이력은 네이버 공개 API에 없음).
   ⚠ 분봉 소스 fchart(`sise.nhn?timeframe=minute`) 함정: 시/고/저 "null"(종가만 유효), **거래량은
   당일 누적값**(분당=차분 필요), ~6세션치 응답(KST 당일 필터 필수), 08:30~ 장전 봉 포함.
   스파크 = `web/lib/stock/sparks.ts`(radar.py 1:1 포팅, **산식 변경 시 동기화**).

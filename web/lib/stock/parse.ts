@@ -11,6 +11,30 @@ export function num(s: unknown): number | null {
   return Number.isFinite(v) ? v : null;
 }
 
+/**
+ * 한국어 금액 단위 문자열 → 억(number). "468,099백만"→4681, "5,004억"→5004, "1,753조 8,836억"→17538836.
+ * 네이버 totalInfos의 accumulatedTradingValue("백만")·marketValue("억") 등 단위 접미사를 정규화한다.
+ * num()은 백만/억/조 접미사를 못 떼어 NaN이 되므로 금액 전용 파서가 별도로 필요하다. 실패 시 null.
+ */
+export function parseEok(s: unknown): number | null {
+  if (typeof s === "number") return Number.isFinite(s) ? s : null;
+  if (typeof s !== "string") return null;
+  const str = s.replace(/,/g, "").replace(/\s+/g, "");
+  if (!str || str === "-" || str === "N/A") return null;
+  let eok = 0;
+  let matched = false;
+  for (const [unit, mul] of [["조", 10000], ["억", 1], ["백만", 0.01], ["만", 0.0001]] as const) {
+    const m = str.match(new RegExp(`(-?\\d+(?:\\.\\d+)?)${unit}`));
+    if (m) {
+      eok += parseFloat(m[1]) * mul;
+      matched = true;
+    }
+  }
+  if (matched) return Math.round(eok * 100) / 100;
+  const won = Number(str.replace(/^\+/, "")); // 단위 없는 순수 원 → 억 환산
+  return Number.isFinite(won) ? Math.round((won / 1e8) * 100) / 100 : null;
+}
+
 /** 뉴스 제목의 HTML 태그 제거 + 기본 엔티티 디코드. */
 export function cleanText(s: unknown): string {
   if (typeof s !== "string") return "";

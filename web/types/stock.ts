@@ -44,6 +44,8 @@ export interface PriceSection {
   change: number;
   changePct: number;
   marketCap: string | null; // "1,753조 8,836억" 표시용 원문
+  tradingValue: number | null; // 당일 거래대금(억) — KRX+NXT 통합(레이더 카드와 동일 기준)
+  tradingVolume: number | null; // 당일 거래량(주) — KRX+NXT 통합
   per: number | null;
   eps: number | null;
   cnsPer: number | null; // 컨센서스 기준

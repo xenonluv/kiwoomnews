@@ -22,7 +22,7 @@ import {
   fetchNews,
   fetchTrend,
 } from "./naver";
-import { cleanText, formatKST, num } from "./parse";
+import { cleanText, formatKST, num, parseEok } from "./parse";
 import { computeIndicators } from "./indicators";
 import { detectSparks, MEGA_SPARK_X } from "./sparks";
 import { makeAliases, scoreNews } from "./news-score";
@@ -126,6 +126,10 @@ export async function buildStockReport(code: string): Promise<StockReport> {
       change: num(basic?.compareToPreviousClosePrice) ?? 0,
       changePct: num(basic?.fluctuationsRatio) ?? 0,
       marketCap: info.marketValue ?? null,
+      // 거래대금·거래량은 totalInfos의 통합(KRX+NXT) 누적값 — 레이더 카드와 동일 기준.
+      // (일별 candles의 volume은 siseJson=KRX 단독이라 별개. 가격·MA는 KRX 공식 유지.)
+      tradingValue: parseEok(info.accumulatedTradingValue),
+      tradingVolume: num(info.accumulatedTradingVolume),
       per: num(info.per),
       eps: num(info.eps),
       cnsPer: num(info.cnsPer),

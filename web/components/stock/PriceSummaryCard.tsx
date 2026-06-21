@@ -12,6 +12,10 @@ export function PriceSummaryCard({ price }: { price: PriceSection }) {
   const flat = price.changePct === 0;
   const rows: { label: string; value: string }[] = [
     { label: "시가총액", value: price.marketCap ?? "—" },
+    {
+      label: "거래대금(통합)",
+      value: price.tradingValue === null ? "—" : `${Math.round(price.tradingValue).toLocaleString("ko-KR")}억`,
+    },
     { label: "PER / 컨센서스", value: `${fmt(price.per, "배")} / ${fmt(price.cnsPer, "배")}` },
     { label: "PBR", value: fmt(price.pbr, "배") },
     { label: "EPS", value: fmt(price.eps, "원") },
