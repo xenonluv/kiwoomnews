@@ -203,7 +203,7 @@ export function serializeForPrompt(r: StockReport): string {
     const w = t.weeklyStructure;
     if (w) {
       L.push(
-        `[주봉 구조] 직전 ${w.weeks}주 신고가 ${w.brokeRecentHigh ? `돌파(+${w.breakoutPct}%)` : `미돌파(${w.breakoutPct}%)`} · ` +
+        `[주봉 구조] 직전 ${w.weeks}주 신고가 ${w.breakoutPct === null ? "비교불가" : w.brokeRecentHigh ? `돌파(+${w.breakoutPct}%)` : `미돌파(${w.breakoutPct}%)`} · ` +
           `이번주 종가 주봉레인지 ${w.closePositionPct ?? "?"}% 위치(낮을수록 윗꼬리=상단거부) · ` +
           `이번주 거래량 직전 ${w.weeks}주 평균의 ${w.volumeVsAvg ?? "?"}배` +
           `${w.currentWeekDays < 5 ? `(이번주 ${w.currentWeekDays}거래일 진행분 — 거래량은 진행 비례로 해석)` : ""}` +

@@ -638,7 +638,15 @@ def scan_reaccum_candidate(rec, p, events):
     # **폭발 게이트(bootstrap)와 동일 분모**로 통일(게이트 통과 ft와 게시 peak_turnover_pct 정합). 발행주식수
     # 결측 시 현재시총 proxy로 폴백. 화신류(폭발일 고회전) 강변별.
     peak_close = next((b["close"] for b in daily if b.get("date") == rec.get("peak_date")), None)
-    peak_cap_eok = (flisted * peak_close / 1e8) if (flisted and peak_close) else cap_eok
+    cur_close = closes[-1] if closes else None
+    # 폭발일 시총 우선순위: ① 발행주식수×폭발일종가(정확) ② 발행주식수 결측 시 현재시총을 가격비로
+    # 폭발일까지 역산(식음으로 가격 빠진 종목의 회전율 과대평가 교정) ③ 둘 다 안되면 현재시총 proxy.
+    if flisted and peak_close:
+        peak_cap_eok = flisted * peak_close / 1e8
+    elif peak_close and cur_close and cur_close > 0 and cap_eok > 0:
+        peak_cap_eok = cap_eok * (peak_close / cur_close)
+    else:
+        peak_cap_eok = cap_eok
     peak_turnover_pct = round(peak_eok / (peak_cap_eok * eff) * 100, 1) if peak_cap_eok > 0 else None
     if cap_eok <= 0:  # 시총 결측(KIS hts_avls 누락·일부 ETF/지주) → 회전율 가점 0이 되는 걸 조용히 두지 않음
         log(f"  [warn] {code} {name} 시총 결측 → 회전율 가점 0(폭발 절대규모만 반영)")
