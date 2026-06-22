@@ -604,9 +604,10 @@ def scan_reaccum_candidate(rec, p, events):
         return None
 
     # 재반등 게이트 ②③: 10분봉 몸통%≥2% + 그 10분봉 거래대금≥45억(UN 통합)
-    # 분봉=UN(KRX+NXT 통합) — 거래대금·수급과 정합. 정규장 시간창 가드(kis_client)로 NXT 장 밖 봉 배제.
+    # 분봉도 거래대금·수급과 동일하게 MONEY_MARKET(기본 UN) — KIS_MARKET=J 롤백 시 분봉도 함께 J로 환원
+    # (호출부 리터럴 대신 상수로 묶어 일관 롤백). 정규장 시간창 가드(kis_client)로 NXT 장 밖 봉 배제.
     try:
-        bars = kis.minute_bars_today(code, market="UN")
+        bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 분봉 실패 {e}")
         return "ERR"

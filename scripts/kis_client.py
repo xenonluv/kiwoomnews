@@ -327,14 +327,15 @@ def minute_bars_today(code, until="153000", market="J"):
         rows = res.get("output2", []) or []
         if not rows:
             break  # 더 이상 데이터 없음
-        page_times = []  # 이 페이지의 당일 봉 시각(가드 전 — 페이징 커서용)
+        page_earliest = None  # 이 페이지의 당일 봉 최소시각(가드 전 — 페이징 커서). None=당일 봉 없음
         for row in rows:
             t = row.get("stck_cntg_hour", "")
             if row.get("stck_bsop_date") != today:
                 continue  # 전일/휴장일 봉 배제
             if len(t) != 6:
                 continue
-            page_times.append(t)
+            if page_earliest is None or t < page_earliest:
+                page_earliest = t
             if not (SESSION_OPEN <= t <= SESSION_CLOSE):
                 continue  # NXT 장전(~09:00)·애프터마켓(15:30~) 봉 배제 — 정규장만 채택
             if t not in bars:
@@ -350,9 +351,8 @@ def minute_bars_today(code, until="153000", market="J"):
         # ※ radar 경로는 until≤15:30이라 앵커가 15:30을 안 넘어 애프터마켓 페이지는 fetch되지 않는다
         #   (실재하는 장 밖 봉은 프리마켓 08:30~09:00). until을 키워 호출하는 경우까지 일반 대비한 안전판.
         # 당일 봉이 아예 없으면(전일 진입) 종료.
-        if not page_times:
+        if page_earliest is None:
             break
-        page_earliest = min(page_times)
         if page_earliest <= "090000":  # 09:00봉까지 도달(09:00봉은 위에서 이미 수집) → 종료
             break
         # 다음 앵커는 반드시 현재 앵커 미만으로 — KIS가 앵커 이상 봉을 반환하는 이변에도 진행 보장(정지 방지).
