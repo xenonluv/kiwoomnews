@@ -1,66 +1,30 @@
 {
-  "as_of": "2026-06-22 10:07 KST",
+  "as_of": "2026-06-22 10:22 KST",
   "intraday_rank": [
-    {
-      "ticker": "한울반도체",
-      "code": "320000",
-      "tomorrow_up_prob": "69%",
-      "entry": 22450.0,
-      "target": 23572,
-      "stop": 21776,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.87)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI82.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02397686645484344",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "6월 3주차 한울반도체 주가 급등 상한가 마감",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16104733",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[19일 특징주] 한울반도체, 日 무라타와 협력 소식에 연이틀 '상한가'",
-          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=844525",
-          "office": "newsworks",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]"
-    },
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "59%",
-      "entry": 233000.0,
-      "target": 244650,
-      "stop": 226010,
+      "tomorrow_up_prob": "68%",
+      "entry": 237000.0,
+      "target": 248850,
+      "stop": 229890,
       "confidence": "중",
       "reasons": [
-        "RSI50.2 강세",
-        "호재",
-        "장중 5회 지속"
+        "강세마감(0.91)",
+        "RSI51.0 강세",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "LG전자, 엔비디아 협력 기대감에 8%대 급등…장중 23만원 돌파[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062210081260933",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] LG전자, 엔비디아와 협력 기대감에 9% 급등",
           "url": "http://www.metroseoul.co.kr/article/20260622500049",
@@ -76,56 +40,25 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "LG전자 주가, 강세... 엔비디아와 '피지컬 AI·로봇' 협력 본격화",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164817",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG전자, 엔비디아와 협력 기대감에 9% 급등"
-    },
-    {
-      "ticker": "DB하이텍",
-      "code": "000990",
-      "tomorrow_up_prob": "56%",
-      "entry": 164900.0,
-      "target": 173145,
-      "stop": 159953,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.97)",
-        "RSI50.7 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "AI칩 수혜株 옥석 가리기 시작됐나",
-          "url": "https://n.news.naver.com/mnews/article/009/0005694701",
-          "office": "매일경제",
-          "sentiment": "혼재"
-        }
-      ]
+      "cause_summary": "LG전자, 엔비디아 협력 기대감에 8%대 급등…장중 23만원 돌파[특징주]"
     },
     {
       "ticker": "LG씨엔에스",
       "code": "064400",
-      "tomorrow_up_prob": "55%",
-      "entry": 93200.0,
-      "target": 97860,
-      "stop": 90404,
+      "tomorrow_up_prob": "60%",
+      "entry": 94000.0,
+      "target": 98700,
+      "stop": 91180,
       "confidence": "중",
       "reasons": [
-        "RSI50.4 강세",
+        "RSI50.9 강세",
         "호재",
-        "장중 5회 지속"
+        "장중 6회 지속"
       ],
-      "risk": "약한 마감",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
@@ -157,9 +90,32 @@
       "cause_summary": "[특징주] LG전자, 엔비디아 협력 구체화 기대에 강세…LG씨엔에스도 9%↑"
     },
     {
+      "ticker": "DB하이텍",
+      "code": "000990",
+      "tomorrow_up_prob": "57%",
+      "entry": 165200.0,
+      "target": 173460,
+      "stop": 160244,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.94)",
+        "RSI50.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "AI칩 수혜株 옥석 가리기 시작됐나",
+          "url": "https://n.news.naver.com/mnews/article/009/0005694701",
+          "office": "매일경제",
+          "sentiment": "혼재"
+        }
+      ]
+    },
+    {
       "ticker": "서산",
       "code": "079650",
-      "tomorrow_up_prob": "55%",
+      "tomorrow_up_prob": "56%",
       "entry": 6250.0,
       "target": 6562,
       "stop": 6062,
@@ -185,37 +141,57 @@
       "cause_summary": "서산, 투자경고종목 지정 후 주가 급등→1일간 매매거래 정지"
     },
     {
-      "ticker": "원익IPS",
-      "code": "240810",
+      "ticker": "HPSP",
+      "code": "403870",
       "tomorrow_up_prob": "39%",
-      "entry": 164300.0,
-      "target": 172515,
-      "stop": 159371,
+      "entry": 59400.0,
+      "target": 62370,
+      "stop": 57618,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.71)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "RSI52.2 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.35
+      "day_change": 5.3,
+      "cause_news": [
+        {
+          "title": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583606",
+          "office": "cbci",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도"
     },
     {
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "39%",
-      "entry": 530000.0,
-      "target": 556500,
-      "stop": 514100,
+      "entry": 533000.0,
+      "target": 559650,
+      "stop": 517010,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.97)",
+        "강세마감(0.98)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.61,
+      "day_change": 7.43,
       "cause_news": [
+        {
+          "title": "삼성물산, 계열사 지분가치 159조 재평가…7%대 강세",
+          "url": "https://www.newsis.com/view/NISX20260622_0003677913",
+          "office": "newsis",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원...",
           "url": "https://www.tokenpost.kr/news/economy/371573",
@@ -231,54 +207,10 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성물산 강세, 지분가치 159조ㆍ실적 전망에⋯“목표가 70만원...",
-          "url": "https://www.etoday.co.kr/news/view/2595810",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원..."
-    },
-    {
-      "ticker": "한솔테크닉스",
-      "code": "004710",
-      "tomorrow_up_prob": "39%",
-      "entry": 13950.0,
-      "target": 14648,
-      "stop": 13532,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.87)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "&quot;한솔테크닉스, 프로브카드 품고 반도체 기업 변신 시동&quot; [줌인e종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009015418",
-          "office": "뉴스1",
-          "sentiment": "호재"
-        },
-        {
-          "title": "한솔테크닉스, 1772억에 윌테크놀러지 인수완료",
-          "url": "https://n.news.naver.com/mnews/article/008/0005373456",
-          "office": "머니투데이",
-          "sentiment": "호재"
-        },
-        {
-          "title": "반도체로 영역 넓히는 한솔그룹...&quot;사업재편으로 신성장동력 찾는다&quot;",
-          "url": "https://n.news.naver.com/mnews/article/008/0005370463",
-          "office": "머니투데이",
-          "sentiment": "호재"
-        }
-      ]
+      "cause_summary": "삼성물산, 계열사 지분가치 159조 재평가…7%대 강세"
     },
     {
       "ticker": "후성",
@@ -289,7 +221,7 @@
       "stop": 17596,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
@@ -317,48 +249,72 @@
       ]
     },
     {
-      "ticker": "HPSP",
-      "code": "403870",
+      "ticker": "한솔테크닉스",
+      "code": "004710",
+      "tomorrow_up_prob": "39%",
+      "entry": 13850.0,
+      "target": 14542,
+      "stop": 13434,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.76)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "&quot;한솔테크닉스, 프로브카드 품고 반도체 기업 변신 시동&quot; [줌인e종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009015418",
+          "office": "뉴스1",
+          "sentiment": "호재"
+        },
+        {
+          "title": "한솔테크닉스, 1772억에 윌테크놀러지 인수완료",
+          "url": "https://n.news.naver.com/mnews/article/008/0005373456",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        },
+        {
+          "title": "반도체로 영역 넓히는 한솔그룹...&quot;사업재편으로 신성장동력 찾는다&quot;",
+          "url": "https://n.news.naver.com/mnews/article/008/0005370463",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "원익IPS",
+      "code": "240810",
       "tomorrow_up_prob": "38%",
-      "entry": 60200.0,
-      "target": 63210,
-      "stop": 58394,
+      "entry": 163100.0,
+      "target": 171255,
+      "stop": 158207,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI52.7 강세"
+        "RSI59.6 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.18,
-      "cause_news": [
-        {
-          "title": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583606",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도"
+      "day_change": 5.06
     },
     {
       "ticker": "삼성E&A",
       "code": "028050",
       "tomorrow_up_prob": "38%",
-      "entry": 50600.0,
-      "target": 53130,
-      "stop": 49082,
+      "entry": 50200.0,
+      "target": 52710,
+      "stop": 48694,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.82)",
+        "강세마감(0.71)",
         "정배열",
-        "RSI50.6 강세"
+        "RSI50.0 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 4.21,
+      "day_change": 2.98,
       "related_news": [
         {
           "title": "[아침밥] 교보증권 &quot;삼성E&amp;A, LNG 플랜트 확대 수혜…중장기 기대&quot;",
@@ -378,28 +334,28 @@
       "ticker": "테크윙",
       "code": "089030",
       "tomorrow_up_prob": "38%",
-      "entry": 61000.0,
-      "target": 64050,
-      "stop": 59170,
+      "entry": 60500.0,
+      "target": 63525,
+      "stop": 58685,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI54.7 강세"
+        "RSI54.1 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 1.83
+      "day_change": 1
     },
     {
       "ticker": "SK스퀘어",
       "code": "402340",
       "tomorrow_up_prob": "38%",
-      "entry": 1927000.0,
-      "target": 2023350,
-      "stop": 1869190,
+      "entry": 1941000.0,
+      "target": 2038050,
+      "stop": 1882770,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.96)",
+        "강세마감(0.97)",
         "정배열",
         "MACD강세"
       ],
@@ -413,23 +369,73 @@
           "sentiment": "악재",
           "cause_score": 8,
           "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "“AI 반도체 훈풍에 주주환원까지”…NH투자, SK스퀘어 목표가 270만원으...",
+          "url": "https://www.viva100.com/article/20260622500245",
+          "office": "viva100",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "프리마켓서 SK하이닉스·SK스퀘어 또 강세…삼성전자는 하락[특징주]"
-    }
-  ],
-  "closing_bet": [
+    },
+    {
+      "ticker": "SK하이닉스",
+      "code": "000660",
+      "tomorrow_up_prob": "38%",
+      "entry": 2907000.0,
+      "target": 3052350,
+      "stop": 2819790,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.98)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "SK하이닉스 주가, 美 ADR 상장 임박 기대감에 강세... \"목표주가 430만원...",
+          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164819",
+          "office": "ggilbo",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        },
+        {
+          "title": "'9000선' 방어 총력전...SK하이닉스 ADR 기대에 4% 강세",
+          "url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127746",
+          "office": "ntoday",
+          "sentiment": "악재",
+          "cause_score": 6,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "‘삼전·하이닉스 직행’ 반도체 계약학과, 서울대 자연계 넘었다",
+          "url": "https://www.sedaily.com/article/20058404?ref=naver",
+          "office": "sedaily",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "SK하이닉스 주가, 美 ADR 상장 임박 기대감에 강세... \"목표주가 430만원..."
+    },
     {
       "ticker": "한울반도체",
       "code": "320000",
-      "tomorrow_up_prob": "69%",
-      "entry": 22450.0,
-      "target": 23572,
-      "stop": 21776,
-      "confidence": "중",
+      "tomorrow_up_prob": "38%",
+      "entry": 22400.0,
+      "target": 23520,
+      "stop": 21728,
+      "confidence": "하",
       "reasons": [
-        "강세마감(0.87)",
+        "강세마감(0.86)",
         "정배열",
         "MACD강세"
       ],
@@ -445,12 +451,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "6월 3주차 한울반도체 주가 급등 상한가 마감",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16104733",
-          "office": "topstarnews",
+          "title": "AI·전장화 열풍의 최대 수혜…한울반도체, 고부가 MLCC 장비로 공급망...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461943",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
         },
         {
           "title": "[19일 특징주] 한울반도체, 日 무라타와 협력 소식에 연이틀 '상한가'",
@@ -463,23 +469,33 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]"
-    },
+    }
+  ],
+  "closing_bet": [
     {
       "ticker": "LG전자",
       "code": "066570",
-      "tomorrow_up_prob": "59%",
-      "entry": 233000.0,
-      "target": 244650,
-      "stop": 226010,
+      "tomorrow_up_prob": "68%",
+      "entry": 237000.0,
+      "target": 248850,
+      "stop": 229890,
       "confidence": "중",
       "reasons": [
-        "RSI50.2 강세",
-        "호재",
-        "장중 5회 지속"
+        "강세마감(0.91)",
+        "RSI51.0 강세",
+        "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "LG전자, 엔비디아 협력 기대감에 8%대 급등…장중 23만원 돌파[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062210081260933",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
         {
           "title": "[특징주] LG전자, 엔비디아와 협력 기대감에 9% 급등",
           "url": "http://www.metroseoul.co.kr/article/20260622500049",
@@ -495,56 +511,25 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "LG전자 주가, 강세... 엔비디아와 '피지컬 AI·로봇' 협력 본격화",
-          "url": "https://www.ggilbo.com/news/articleView.html?idxno=1164817",
-          "office": "ggilbo",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG전자, 엔비디아와 협력 기대감에 9% 급등"
-    },
-    {
-      "ticker": "DB하이텍",
-      "code": "000990",
-      "tomorrow_up_prob": "56%",
-      "entry": 164900.0,
-      "target": 173145,
-      "stop": 159953,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.97)",
-        "RSI50.7 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "AI칩 수혜株 옥석 가리기 시작됐나",
-          "url": "https://n.news.naver.com/mnews/article/009/0005694701",
-          "office": "매일경제",
-          "sentiment": "혼재"
-        }
-      ]
+      "cause_summary": "LG전자, 엔비디아 협력 기대감에 8%대 급등…장중 23만원 돌파[특징주]"
     },
     {
       "ticker": "LG씨엔에스",
       "code": "064400",
-      "tomorrow_up_prob": "55%",
-      "entry": 93200.0,
-      "target": 97860,
-      "stop": 90404,
+      "tomorrow_up_prob": "60%",
+      "entry": 94000.0,
+      "target": 98700,
+      "stop": 91180,
       "confidence": "중",
       "reasons": [
-        "RSI50.4 강세",
+        "RSI50.9 강세",
         "호재",
-        "장중 5회 지속"
+        "장중 6회 지속"
       ],
-      "risk": "약한 마감",
+      "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
@@ -576,9 +561,32 @@
       "cause_summary": "[특징주] LG전자, 엔비디아 협력 구체화 기대에 강세…LG씨엔에스도 9%↑"
     },
     {
+      "ticker": "DB하이텍",
+      "code": "000990",
+      "tomorrow_up_prob": "57%",
+      "entry": 165200.0,
+      "target": 173460,
+      "stop": 160244,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.94)",
+        "RSI50.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "AI칩 수혜株 옥석 가리기 시작됐나",
+          "url": "https://n.news.naver.com/mnews/article/009/0005694701",
+          "office": "매일경제",
+          "sentiment": "혼재"
+        }
+      ]
+    },
+    {
       "ticker": "서산",
       "code": "079650",
-      "tomorrow_up_prob": "55%",
+      "tomorrow_up_prob": "56%",
       "entry": 6250.0,
       "target": 6562,
       "stop": 6062,

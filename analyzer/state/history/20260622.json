@@ -1,46 +1,38 @@
 {
   "date": "20260622",
-  "as_of": "2026-06-22 10:07 KST",
+  "as_of": "2026-06-22 10:22 KST",
   "bets": [
-    {
-      "code": "320000",
-      "ticker": "한울반도체",
-      "entry": 22450.0,
-      "target": 23572,
-      "raw": 69,
-      "prob": "69%"
-    },
     {
       "code": "066570",
       "ticker": "LG전자",
-      "entry": 233000.0,
-      "target": 244650,
-      "raw": 59,
-      "prob": "59%"
-    },
-    {
-      "code": "000990",
-      "ticker": "DB하이텍",
-      "entry": 164900.0,
-      "target": 173145,
-      "raw": 56,
-      "prob": "56%"
+      "entry": 237000.0,
+      "target": 248850,
+      "raw": 68,
+      "prob": "68%"
     },
     {
       "code": "064400",
       "ticker": "LG씨엔에스",
-      "entry": 93200.0,
-      "target": 97860,
-      "raw": 55,
-      "prob": "55%"
+      "entry": 94000.0,
+      "target": 98700,
+      "raw": 60,
+      "prob": "60%"
+    },
+    {
+      "code": "000990",
+      "ticker": "DB하이텍",
+      "entry": 165200.0,
+      "target": 173460,
+      "raw": 57,
+      "prob": "57%"
     },
     {
       "code": "079650",
       "ticker": "서산",
       "entry": 6250.0,
       "target": 6562,
-      "raw": 55,
-      "prob": "55%"
+      "raw": 56,
+      "prob": "56%"
     }
   ]
 }
