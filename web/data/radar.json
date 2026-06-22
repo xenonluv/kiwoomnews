@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22 13:12:32 KST",
+ "generated_at": "2026-06-22 13:22:30 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -9,7 +9,7 @@
    10.0
   ],
   "reignition_body_pct": 2.0,
-  "reignition_value_10m_eok": 30,
+  "reignition_value_10m_eok": 45,
   "kimi_mode": "auto",
   "kimi_max": 5,
   "kimi_window": [
@@ -28,7 +28,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 60,
+ "universe_count": 61,
  "events": [],
  "suspects": [
   {
@@ -73,8 +73,8 @@
    "change_pct": 7.12,
    "high_pct": 9.62,
    "fade_pct": 26.0,
-   "value_eok": 3926,
-   "turnover_pct": 7.2,
+   "value_eok": 3984,
+   "turnover_pct": 7.3,
    "peak_turnover_pct": 17.7,
    "float_ratio": 0.6618,
    "turnover_basis": "float",
@@ -89,18 +89,18 @@
    "reignition": {
     "body_pct": 8.91,
     "time": "09:00",
-    "value_10m_eok": 323
+    "value_10m_eok": 565
    },
    "reignition_bars": [
     {
      "time": "09:00",
      "body_pct": 8.91,
-     "value_eok": 323
+     "value_eok": 565
     },
     {
      "time": "09:10",
      "body_pct": 2.56,
-     "value_eok": 307
+     "value_eok": 640
     }
    ],
    "flow": {
@@ -156,125 +156,6 @@
    "theme_leader": false
   },
   {
-   "code": "403870",
-   "name": "HPSP",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 92,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 6,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 3,
-    "peak_turnover": 1,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 58100.0,
-   "change_pct": 2.65,
-   "high_pct": 12.19,
-   "fade_pct": 78.3,
-   "value_eok": 3813,
-   "turnover_pct": 10.2,
-   "peak_turnover_pct": 50.7,
-   "float_ratio": 0.7839,
-   "turnover_basis": "float",
-   "ma10": 62330.0,
-   "ma10_margin_pct": -6.79,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 12.16,
-    "time": "09:00",
-    "value_10m_eok": 803
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 12.16,
-     "value_eok": 803
-    }
-   ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0615",
-      "frgn": -1866211,
-      "orgn": 4654936
-     },
-     {
-      "date": "0616",
-      "frgn": -1738532,
-      "orgn": -807812
-     },
-     {
-      "date": "0617",
-      "frgn": -430041,
-      "orgn": -218911
-     },
-     {
-      "date": "0618",
-      "frgn": -336025,
-      "orgn": -343673
-     },
-     {
-      "date": "0619",
-      "frgn": 717019,
-      "orgn": -1419512
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 27304,
-    "peak_high_pct": 28.67,
-    "ma20": 56427.5,
-    "ma20_margin_pct": 2.96,
-    "ivtr_net": 4174807,
-    "ivtr_days": 3,
-    "ivtr_eok": 3452,
-    "cause_summary": "외국투자자 한달여만에 컴백 … 반도체 투톱 2조 '폭풍 쇼핑'",
-    "was_theme_leader": true,
-    "source": "seed"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
    "code": "028260",
    "name": "삼성물산",
    "sector": "유통",
@@ -312,17 +193,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 534000.0,
-   "change_pct": 8.65,
+   "price": 530000.0,
+   "change_pct": 7.83,
    "high_pct": 10.07,
-   "fade_pct": 14.1,
-   "value_eok": 4461,
-   "turnover_pct": 0.8,
+   "fade_pct": 22.2,
+   "value_eok": 4578,
+   "turnover_pct": 0.9,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 467050.0,
-   "ma10_margin_pct": 14.33,
+   "ma10": 466750.0,
+   "ma10_margin_pct": 13.55,
    "spark": {
     "clusters": []
    },
@@ -332,13 +213,13 @@
    "reignition": {
     "body_pct": 3.79,
     "time": "09:00",
-    "value_10m_eok": 513
+    "value_10m_eok": 760
    },
    "reignition_bars": [
     {
      "time": "09:00",
      "body_pct": 3.79,
-     "value_eok": 513
+     "value_eok": 760
     }
    ],
    "flow": {
@@ -381,133 +262,14 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 454450.0,
-    "ma20_margin_pct": 17.5,
+    "ma20": 454300.0,
+    "ma20_margin_pct": 16.66,
     "ivtr_net": 65910,
     "ivtr_days": 3,
     "ivtr_eok": 333,
     "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
     "was_theme_leader": false,
     "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "089030",
-   "name": "테크윙",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 74,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 5,
-    "re_body": 6,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 1,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 60200.0,
-   "change_pct": 0.0,
-   "high_pct": 6.31,
-   "fade_pct": 100.0,
-   "value_eok": 816,
-   "turnover_pct": 5.1,
-   "peak_turnover_pct": 26.8,
-   "float_ratio": 0.7229000000000001,
-   "turnover_basis": "float",
-   "ma10": 61450.0,
-   "ma10_margin_pct": -2.03,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 8.1,
-    "time": "09:00",
-    "value_10m_eok": 152
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 8.1,
-     "value_eok": 152
-    }
-   ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": true,
-    "streak": 1,
-    "detail": [
-     {
-      "date": "0615",
-      "frgn": -275851,
-      "orgn": 22200
-     },
-     {
-      "date": "0616",
-      "frgn": 35938,
-      "orgn": -98614
-     },
-     {
-      "date": "0617",
-      "frgn": -152023,
-      "orgn": 43105
-     },
-     {
-      "date": "0618",
-      "frgn": 8297,
-      "orgn": -52730
-     },
-     {
-      "date": "0619",
-      "frgn": 24982,
-      "orgn": 28993
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 4882,
-    "peak_high_pct": 13.32,
-    "ma20": 56850.0,
-    "ma20_margin_pct": 5.89,
-    "ivtr_net": 18468,
-    "ivtr_days": 4,
-    "ivtr_eok": 16,
-    "cause_summary": "",
-    "was_theme_leader": false,
-    "source": "seed"
    },
    "leader_cohort_prob": null,
    "theme_leader": false
@@ -550,17 +312,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 37800.0,
-   "change_pct": 8.62,
+   "price": 37450.0,
+   "change_pct": 7.61,
    "high_pct": 13.51,
-   "fade_pct": 36.2,
-   "value_eok": 880,
-   "turnover_pct": 15.2,
+   "fade_pct": 43.6,
+   "value_eok": 890,
+   "turnover_pct": 15.5,
    "peak_turnover_pct": 43.2,
    "float_ratio": 0.7117,
    "turnover_basis": "float",
-   "ma10": 31400.0,
-   "ma10_margin_pct": 20.38,
+   "ma10": 31365.0,
+   "ma10_margin_pct": 19.4,
    "spark": {
     "clusters": []
    },
@@ -568,20 +330,20 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "reignition": {
-    "body_pct": 12.29,
+    "body_pct": 12.44,
     "time": "09:00",
-    "value_10m_eok": 66
+    "value_10m_eok": 121
    },
    "reignition_bars": [
     {
      "time": "09:00",
-     "body_pct": 12.29,
-     "value_eok": 66
+     "body_pct": 12.44,
+     "value_eok": 121
     },
     {
      "time": "09:40",
      "body_pct": 3.79,
-     "value_eok": 46
+     "value_eok": 87
     }
    ],
    "flow": {
@@ -624,8 +386,8 @@
     "peak_date": "20260618",
     "peak_value_eok": 2642,
     "peak_high_pct": 29.57,
-    "ma20": 29390.0,
-    "ma20_margin_pct": 28.62,
+    "ma20": 29372.5,
+    "ma20_margin_pct": 27.5,
     "ivtr_net": 40168,
     "ivtr_days": 3,
     "ivtr_eok": 14,
