@@ -29,13 +29,15 @@ L_RADAR_BT="20 17 * * 1-5 cd $REPO && $PY scripts/radar_backtest.py --push >> /t
 L_TRACK_EVAL="30 17 * * 1-5 cd $REPO && $PY scripts/track_eval.py --push >> /tmp/track_eval.log 2>&1"
 # AI '클릭 예측' 임계 보정 — 'AI분석하기' 누른 전 종목의 익일 등락 채점, track_eval과 5분 시차
 L_AI_CLICK="35 17 * * 1-5 cd $REPO && $PY scripts/ai_click_eval.py --push >> /tmp/ai_click_eval.log 2>&1"
+# AI 국면 판정(재매집/분산/중립) 검증 — 'AI 국면 판정' 누른 종목의 익일 등락 채점, ai_click과 2분 시차
+L_PHASE="37 17 * * 1-5 cd $REPO && $PY scripts/phase_eval.py --push >> /tmp/phase_eval.log 2>&1"
 # NXT 시간외(야간) 급락 경고 — 레이더 후보+추적종목이 마감 후 −3%↓ 빠지면 텔레그램 1회 알림.
 # 애프터마켓(~20:00) 동안 30분 간격 감시(:05,:35) — 16~20시로 막판(19:35~20:00)·마감 정착가까지 포착.
 # 디둡으로 종목당 밤 1회. 정규장 cron과 무관.
 L_NIGHT="5,35 16-20 * * 1-5 cd $REPO && $PY scripts/night_alert.py >> /tmp/night_alert.log 2>&1"
 
 NEW_CRON="$(
-  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|scripts/track_eval.py|scripts/ai_click_eval.py|scripts/night_alert.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
+  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|scripts/track_eval.py|scripts/ai_click_eval.py|scripts/phase_eval.py|scripts/night_alert.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
   echo "PATH=/usr/local/bin:/usr/bin:/bin"
   echo "$L_PUBLISH"
   echo "$L_FORECAST"
@@ -43,6 +45,7 @@ NEW_CRON="$(
   echo "$L_RADAR_BT"
   echo "$L_TRACK_EVAL"
   echo "$L_AI_CLICK"
+  echo "$L_PHASE"
   echo "$L_NIGHT"
 )"
 

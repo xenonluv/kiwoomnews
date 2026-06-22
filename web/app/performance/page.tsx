@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import {
   getAiClickPerformance,
   getPerformance,
+  getPhasePerformance,
   getTrackPerformance,
 } from "@/lib/performance/repository";
 import { TrendChart } from "@/components/performance/TrendChart";
@@ -21,6 +22,7 @@ import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
 import { ThemeStatsTable } from "@/components/performance/ThemeStatsTable";
 import { TrackPerformancePanel } from "@/components/performance/TrackPerformancePanel";
 import { AiClickCalibrationPanel } from "@/components/performance/AiClickCalibrationPanel";
+import { PhasePerformancePanel } from "@/components/performance/PhasePerformancePanel";
 
 export const metadata: Metadata = {
   title: "성과 검증 · 자가 개선",
@@ -32,6 +34,7 @@ export default function PerformancePage() {
   const data = getPerformance();
   const track = getTrackPerformance();
   const aiClick = getAiClickPerformance();
+  const phase = getPhasePerformance();
 
   return (
     <main className="container max-w-4xl py-12">
@@ -85,6 +88,8 @@ export default function PerformancePage() {
         <TrackPerformancePanel data={track} />
 
         <AiClickCalibrationPanel data={aiClick} />
+
+        <PhasePerformancePanel data={phase} />
 
         {data.spark_flow && <SparkFlowMatrix data={data.spark_flow} />}
 

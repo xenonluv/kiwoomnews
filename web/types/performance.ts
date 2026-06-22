@@ -261,6 +261,43 @@ export interface AiClickPerformance {
   disclaimer: string;
 }
 
+/** AI 국면 판정(재매집/분산/중립) 검증 — scripts/phase_eval.py가 생성하는 phase_performance.json과 정합. */
+export interface PhaseByCell {
+  phase: "재매집" | "분산" | "중립";
+  n: number;
+  hit_rate: number | null; // 방향 적중률(재매집→상승·분산→하락). 중립은 null
+  rose_rate: number | null; // 참고: 익일 상승 비율
+  avg_return: number | null;
+  valid: boolean; // n >= min_n
+}
+export interface PhaseConfBand {
+  lo: number;
+  hi: number;
+  n: number;
+  hit_rate: number | null; // 신뢰도 구간별 방향 적중률(중립 제외)
+  valid: boolean;
+}
+export interface PhaseRecent {
+  date: string;
+  code: string;
+  phase: "재매집" | "분산" | "중립";
+  confidence: number | null;
+  hit: boolean | null; // 중립은 null
+  rose: boolean;
+  return_pct: number;
+}
+export interface PhasePerformance {
+  as_of: string | null;
+  n: number; // 방향 채점 표본(재매집+분산, 중립 제외)
+  total_n: number; // 중립 포함 전체 채점 표본
+  accuracy: number | null; // 전체 방향 적중률(%)
+  min_n: number;
+  by_phase: PhaseByCell[];
+  confidence_bands: PhaseConfBand[];
+  recent: PhaseRecent[];
+  disclaimer: string;
+}
+
 export interface PerformanceData {
   as_of: string;
   summary: {
