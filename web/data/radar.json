@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22 09:42:38 KST",
+ "generated_at": "2026-06-22 09:52:26 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -69,17 +69,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 167700.0,
-   "change_pct": 7.5,
+   "price": 168500.0,
+   "change_pct": 8.01,
    "high_pct": 8.91,
-   "fade_pct": 15.8,
-   "value_eok": 1971,
-   "turnover_pct": 3.6,
+   "fade_pct": 10.1,
+   "value_eok": 2141,
+   "turnover_pct": 3.9,
    "peak_turnover_pct": 17.7,
    "float_ratio": 0.6618,
    "turnover_basis": "float",
-   "ma10": 153930.0,
-   "ma10_margin_pct": 8.95,
+   "ma10": 154010.0,
+   "ma10_margin_pct": 9.41,
    "spark": {
     "clusters": []
    },
@@ -143,8 +143,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9306,
     "peak_high_pct": 15.25,
-    "ma20": 133750.0,
-    "ma20_margin_pct": 25.38,
+    "ma20": 133790.0,
+    "ma20_margin_pct": 25.94,
     "ivtr_net": 494291,
     "ivtr_days": 4,
     "ivtr_eok": 838,
@@ -193,17 +193,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 61700.0,
-   "change_pct": 9.01,
+   "price": 60800.0,
+   "change_pct": 7.42,
    "high_pct": 12.19,
-   "fade_pct": 26.1,
-   "value_eok": 2462,
-   "turnover_pct": 6.2,
+   "fade_pct": 39.1,
+   "value_eok": 2598,
+   "turnover_pct": 6.6,
    "peak_turnover_pct": 50.7,
    "float_ratio": 0.7839,
    "turnover_basis": "float",
-   "ma10": 62690.0,
-   "ma10_margin_pct": -1.58,
+   "ma10": 62600.0,
+   "ma10_margin_pct": -2.88,
    "spark": {
     "clusters": []
    },
@@ -262,132 +262,13 @@
     "peak_date": "20260615",
     "peak_value_eok": 27304,
     "peak_high_pct": 28.67,
-    "ma20": 56607.5,
-    "ma20_margin_pct": 9.0,
+    "ma20": 56562.5,
+    "ma20_margin_pct": 7.49,
     "ivtr_net": 4174807,
     "ivtr_days": 3,
     "ivtr_eok": 3452,
     "cause_summary": "외국투자자 한달여만에 컴백 … 반도체 투톱 2조 '폭풍 쇼핑'",
     "was_theme_leader": true,
-    "source": "seed"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "080220",
-   "name": "제주반도체",
-   "sector": "전기·전자",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 86,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 6,
-    "re_count": 0,
-    "flow": 4,
-    "explosion": 2,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 124500.0,
-   "change_pct": 8.92,
-   "high_pct": 11.02,
-   "fade_pct": 19.0,
-   "value_eok": 2719,
-   "turnover_pct": 7.4,
-   "peak_turnover_pct": 30.2,
-   "float_ratio": 0.8609,
-   "turnover_basis": "float",
-   "ma10": 106740.0,
-   "ma10_margin_pct": 16.64,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 9.38,
-    "time": "09:00",
-    "value_10m_eok": 822
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 9.38,
-     "value_eok": 822
-    }
-   ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0615",
-      "frgn": -350970,
-      "orgn": 25884
-     },
-     {
-      "date": "0616",
-      "frgn": -142168,
-      "orgn": -1009
-     },
-     {
-      "date": "0617",
-      "frgn": 52548,
-      "orgn": 136071
-     },
-     {
-      "date": "0618",
-      "frgn": -148521,
-      "orgn": 93985
-     },
-     {
-      "date": "0619",
-      "frgn": -353460,
-      "orgn": -49139
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260617",
-    "peak_value_eok": 9972,
-    "peak_high_pct": 14.53,
-    "ma20": 105670.0,
-    "ma20_margin_pct": 17.82,
-    "ivtr_net": 235540,
-    "ivtr_days": 5,
-    "ivtr_eok": 269,
-    "cause_summary": "",
-    "was_theme_leader": false,
     "source": "seed"
    },
    "leader_cohort_prob": null,
@@ -431,17 +312,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 526000.0,
-   "change_pct": 7.02,
+   "price": 528000.0,
+   "change_pct": 7.43,
    "high_pct": 8.04,
-   "fade_pct": 12.7,
-   "value_eok": 1865,
+   "fade_pct": 7.6,
+   "value_eok": 2027,
    "turnover_pct": 0.4,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 466450.0,
-   "ma10_margin_pct": 12.77,
+   "ma10": 466350.0,
+   "ma10_margin_pct": 13.22,
    "spark": {
     "clusters": []
    },
@@ -500,8 +381,8 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 454150.0,
-    "ma20_margin_pct": 15.82,
+    "ma20": 454100.0,
+    "ma20_margin_pct": 16.27,
     "ivtr_net": 65910,
     "ivtr_days": 3,
     "ivtr_eok": 333,
@@ -550,17 +431,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 50900.0,
-   "change_pct": 4.62,
+   "price": 50800.0,
+   "change_pct": 4.42,
    "high_pct": 4.83,
-   "fade_pct": 4.3,
-   "value_eok": 590,
-   "turnover_pct": 0.7,
+   "fade_pct": 8.5,
+   "value_eok": 638,
+   "turnover_pct": 0.8,
    "peak_turnover_pct": 2.0,
    "float_ratio": 0.7936,
    "turnover_basis": "float",
-   "ma10": 49745.0,
-   "ma10_margin_pct": 2.32,
+   "ma10": 49735.0,
+   "ma10_margin_pct": 2.14,
    "spark": {
     "clusters": []
    },
@@ -619,8 +500,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 1647,
     "peak_high_pct": 14.71,
-    "ma20": 50117.5,
-    "ma20_margin_pct": 1.56,
+    "ma20": 50112.5,
+    "ma20_margin_pct": 1.37,
     "ivtr_net": 1044861,
     "ivtr_days": 4,
     "ivtr_eok": 503,
@@ -669,17 +550,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 61200.0,
-   "change_pct": 1.66,
+   "price": 62100.0,
+   "change_pct": 3.16,
    "high_pct": 6.31,
-   "fade_pct": 73.7,
-   "value_eok": 476,
-   "turnover_pct": 2.9,
+   "fade_pct": 50.0,
+   "value_eok": 515,
+   "turnover_pct": 3.1,
    "peak_turnover_pct": 26.8,
    "float_ratio": 0.7229000000000001,
    "turnover_basis": "float",
-   "ma10": 61550.0,
-   "ma10_margin_pct": -0.57,
+   "ma10": 61640.0,
+   "ma10_margin_pct": 0.75,
    "spark": {
     "clusters": []
    },
@@ -738,133 +619,14 @@
     "peak_date": "20260615",
     "peak_value_eok": 4882,
     "peak_high_pct": 13.32,
-    "ma20": 56900.0,
-    "ma20_margin_pct": 7.56,
+    "ma20": 56945.0,
+    "ma20_margin_pct": 9.05,
     "ivtr_net": 18468,
     "ivtr_days": 4,
     "ivtr_eok": 16,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "seed"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "122640",
-   "name": "예스티",
-   "sector": "기계·장비",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 70,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 2,
-    "re_body": 6,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 37300.0,
-   "change_pct": 7.18,
-   "high_pct": 8.05,
-   "fade_pct": 10.7,
-   "value_eok": 365,
-   "turnover_pct": 6.4,
-   "peak_turnover_pct": 43.2,
-   "float_ratio": 0.7117,
-   "turnover_basis": "float",
-   "ma10": 31350.0,
-   "ma10_margin_pct": 18.98,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 12.29,
-    "time": "09:00",
-    "value_10m_eok": 66
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 12.29,
-     "value_eok": 66
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": true,
-    "streak": 1,
-    "detail": [
-     {
-      "date": "0615",
-      "frgn": -48938,
-      "orgn": 27505
-     },
-     {
-      "date": "0616",
-      "frgn": -80460,
-      "orgn": -34330
-     },
-     {
-      "date": "0617",
-      "frgn": -35344,
-      "orgn": 124132
-     },
-     {
-      "date": "0618",
-      "frgn": -780719,
-      "orgn": 127367
-     },
-     {
-      "date": "0619",
-      "frgn": 146997,
-      "orgn": -88704
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260618",
-    "peak_value_eok": 2642,
-    "peak_high_pct": 29.57,
-    "ma20": 29365.0,
-    "ma20_margin_pct": 27.02,
-    "ivtr_net": 40168,
-    "ivtr_days": 3,
-    "ivtr_eok": 14,
-    "cause_summary": "예스티, 메모리향 장비 공급 본격화 기대-유안타",
-    "was_theme_leader": false,
-    "source": "live"
    },
    "leader_cohort_prob": null,
    "theme_leader": false
