@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22 11:32:23 KST",
+ "generated_at": "2026-06-22 11:42:27 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -28,7 +28,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 57,
+ "universe_count": 58,
  "events": [],
  "suspects": [
   {
@@ -63,23 +63,23 @@
    },
    "forecast": {
     "horizon": "3일 내 +7%",
-    "prob_pct": 46,
+    "prob_pct": 52,
     "base_pct": 46,
-    "strong": false,
+    "strong": true,
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 166800.0,
-   "change_pct": 6.92,
-   "high_pct": 8.91,
-   "fade_pct": 22.3,
-   "value_eok": 2921,
-   "turnover_pct": 5.4,
+   "price": 170250.0,
+   "change_pct": 9.13,
+   "high_pct": 9.62,
+   "fade_pct": 5.0,
+   "value_eok": 3235,
+   "turnover_pct": 5.8,
    "peak_turnover_pct": 17.7,
    "float_ratio": 0.6618,
    "turnover_basis": "float",
-   "ma10": 153840.0,
-   "ma10_margin_pct": 8.42,
+   "ma10": 154185.0,
+   "ma10_margin_pct": 10.42,
    "spark": {
     "clusters": []
    },
@@ -143,8 +143,8 @@
     "peak_date": "20260617",
     "peak_value_eok": 9306,
     "peak_high_pct": 15.25,
-    "ma20": 133705.0,
-    "ma20_margin_pct": 24.75,
+    "ma20": 133877.5,
+    "ma20_margin_pct": 27.17,
     "ivtr_net": 494291,
     "ivtr_days": 4,
     "ivtr_eok": 838,
@@ -193,17 +193,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 58700.0,
-   "change_pct": 3.71,
+   "price": 58800.0,
+   "change_pct": 3.89,
    "high_pct": 12.19,
-   "fade_pct": 69.6,
-   "value_eok": 3530,
-   "turnover_pct": 9.3,
+   "fade_pct": 68.1,
+   "value_eok": 3564,
+   "turnover_pct": 9.4,
    "peak_turnover_pct": 50.7,
    "float_ratio": 0.7839,
    "turnover_basis": "float",
    "ma10": 62400.0,
-   "ma10_margin_pct": -5.93,
+   "ma10_margin_pct": -5.77,
    "spark": {
     "clusters": []
    },
@@ -263,7 +263,7 @@
     "peak_value_eok": 27304,
     "peak_high_pct": 28.67,
     "ma20": 56462.5,
-    "ma20_margin_pct": 3.96,
+    "ma20_margin_pct": 4.14,
     "ivtr_net": 4174807,
     "ivtr_days": 3,
     "ivtr_eok": 3452,
@@ -312,17 +312,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 526000.0,
-   "change_pct": 7.02,
+   "price": 527000.0,
+   "change_pct": 7.22,
    "high_pct": 9.66,
-   "fade_pct": 27.4,
-   "value_eok": 3504,
+   "fade_pct": 25.3,
+   "value_eok": 3579,
    "turnover_pct": 0.7,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 466350.0,
-   "ma10_margin_pct": 12.79,
+   "ma10": 466450.0,
+   "ma10_margin_pct": 12.98,
    "spark": {
     "clusters": []
    },
@@ -381,12 +381,131 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 454100.0,
-    "ma20_margin_pct": 15.83,
+    "ma20": 454150.0,
+    "ma20_margin_pct": 16.04,
     "ivtr_net": 65910,
     "ivtr_days": 3,
     "ivtr_eok": 333,
     "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "028050",
+   "name": "삼성E&A",
+   "sector": "일반서비스",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 80,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 5,
+    "re_body": 5,
+    "re_count": 0,
+    "flow": 8,
+    "explosion": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 50100.0,
+   "change_pct": 2.98,
+   "high_pct": 6.47,
+   "fade_pct": 54.0,
+   "value_eok": 1321,
+   "turnover_pct": 1.7,
+   "peak_turnover_pct": 2.0,
+   "float_ratio": 0.7936,
+   "turnover_basis": "float",
+   "ma10": 49675.0,
+   "ma10_margin_pct": 0.86,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 5.22,
+    "time": "09:00",
+    "value_10m_eok": 137
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 5.22,
+     "value_eok": 137
+    }
+   ],
+   "flow": {
+    "net_days": 2,
+    "today_buy": true,
+    "streak": 1,
+    "detail": [
+     {
+      "date": "0615",
+      "frgn": -1363690,
+      "orgn": 374906
+     },
+     {
+      "date": "0616",
+      "frgn": -251819,
+      "orgn": 729908
+     },
+     {
+      "date": "0617",
+      "frgn": -855669,
+      "orgn": -625120
+     },
+     {
+      "date": "0618",
+      "frgn": 15900,
+      "orgn": -221649
+     },
+     {
+      "date": "0619",
+      "frgn": 367996,
+      "orgn": 255120
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260615",
+    "peak_value_eok": 1647,
+    "peak_high_pct": 14.71,
+    "ma20": 50082.5,
+    "ma20_margin_pct": 0.03,
+    "ivtr_net": 1044861,
+    "ivtr_days": 4,
+    "ivtr_eok": 503,
+    "cause_summary": "&quot;미·이란 전쟁 끝나면 재건사업 기회 온다&quot;…삼성E&amp;A 등 건설주 급등",
     "was_theme_leader": false,
     "source": "live"
    },
@@ -431,17 +550,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 60200.0,
-   "change_pct": 0.0,
+   "price": 60100.0,
+   "change_pct": -0.17,
    "high_pct": 6.31,
-   "fade_pct": 100.0,
-   "value_eok": 727,
-   "turnover_pct": 4.5,
+   "fade_pct": 102.6,
+   "value_eok": 735,
+   "turnover_pct": 4.6,
    "peak_turnover_pct": 26.8,
    "float_ratio": 0.7229000000000001,
    "turnover_basis": "float",
-   "ma10": 61450.0,
-   "ma10_margin_pct": -2.03,
+   "ma10": 61440.0,
+   "ma10_margin_pct": -2.18,
    "spark": {
     "clusters": []
    },
@@ -500,8 +619,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 4882,
     "peak_high_pct": 13.32,
-    "ma20": 56850.0,
-    "ma20_margin_pct": 5.89,
+    "ma20": 56845.0,
+    "ma20_margin_pct": 5.73,
     "ivtr_net": 18468,
     "ivtr_days": 4,
     "ivtr_eok": 16,
@@ -550,17 +669,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 37550.0,
-   "change_pct": 7.9,
+   "price": 37600.0,
+   "change_pct": 8.05,
    "high_pct": 13.51,
-   "fade_pct": 41.5,
-   "value_eok": 800,
-   "turnover_pct": 13.9,
+   "fade_pct": 40.4,
+   "value_eok": 806,
+   "turnover_pct": 14.0,
    "peak_turnover_pct": 43.2,
    "float_ratio": 0.7117,
    "turnover_basis": "float",
-   "ma10": 31375.0,
-   "ma10_margin_pct": 19.68,
+   "ma10": 31380.0,
+   "ma10_margin_pct": 19.82,
    "spark": {
     "clusters": []
    },
@@ -624,8 +743,8 @@
     "peak_date": "20260618",
     "peak_value_eok": 2642,
     "peak_high_pct": 29.57,
-    "ma20": 29377.5,
-    "ma20_margin_pct": 27.82,
+    "ma20": 29380.0,
+    "ma20_margin_pct": 27.98,
     "ivtr_net": 40168,
     "ivtr_days": 3,
     "ivtr_eok": 14,
