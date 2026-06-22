@@ -58,8 +58,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:01:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 222000.0,
+    "next_high": 231000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -3.27
+   },
    "final": false
   },
   "475150": {
@@ -119,8 +126,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:01:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 40100.0,
+    "next_high": 44450.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -7.18
+   },
    "final": false
   },
   "080220": {
@@ -181,8 +195,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:12:14 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 134000.0,
+    "next_high": 138000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 17.24
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 45,
@@ -251,8 +272,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:12:14 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 49900.0,
+    "next_high": 51800.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.57
+   },
    "final": false
   },
   "003490": {
@@ -313,8 +341,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:12:14 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 27050.0,
+    "next_high": 27400.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -3.22
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 52,
@@ -384,8 +419,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 107500.0,
+    "next_high": 113100.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -3.33
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 45,
@@ -454,8 +496,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 172500.0,
+    "next_high": 176100.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 10.58
+   },
    "final": false
   },
   "039030": {
@@ -516,8 +565,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 518000.0,
+    "next_high": 523000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.91
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 48,
@@ -587,8 +643,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 61100.0,
+    "next_high": 64000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.5
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 43,
@@ -657,8 +720,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 38500.0,
+    "next_high": 39750.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 10.63
+   },
    "final": false
   },
   "052710": {
@@ -719,8 +789,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:21:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 30000.0,
+    "next_high": 33000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -7.98
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 49,
@@ -789,8 +866,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:31:55 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 60000.0,
+    "next_high": 63500.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 6.01
+   },
    "final": false
   },
   "034730": {
@@ -851,8 +935,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:31:55 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 730000.0,
+    "next_high": 750000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 0.83
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 50,
@@ -922,8 +1013,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 09:51:52 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 1970000.0,
+    "next_high": 1987000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 10.67
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 47,
@@ -992,8 +1090,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 10:01:53 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 56900.0,
+    "next_high": 64500.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -12.86
+   },
    "final": false
   },
   "011070": {
@@ -1053,8 +1158,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 10:32:25 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 1130000.0,
+    "next_high": 1182000.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -1.31
+   },
    "final": false
   },
   "082740": {
@@ -1115,8 +1227,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-19 15:02:15 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260622",
+    "next_close": 56100.0,
+    "next_high": 62100.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -8.03
+   },
    "final": false
   }
  },

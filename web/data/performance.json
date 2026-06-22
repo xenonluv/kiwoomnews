@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-19 17:24 KST",
+ "as_of": "2026-06-22 17:20 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 9,
+  "tracking_days": 10,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -78,6 +78,14 @@
   },
   {
    "date": "20260619",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260622",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -346,23 +354,23 @@
   "cells": [
    {
     "band": "−4~0%",
-    "n": 17,
-    "hit_rate": 41.2,
-    "avg_return": -1.89,
+    "n": 26,
+    "hit_rate": 50.0,
+    "avg_return": 0.01,
     "valid": true
    },
    {
     "band": "0~+3%",
-    "n": 15,
-    "hit_rate": 60.0,
-    "avg_return": 1.26,
+    "n": 19,
+    "hit_rate": 52.6,
+    "avg_return": 0.36,
     "valid": true
    },
    {
     "band": "+3~+6%",
-    "n": 11,
-    "hit_rate": 27.3,
-    "avg_return": -2.53,
+    "n": 15,
+    "hit_rate": 33.3,
+    "avg_return": -2.1,
     "valid": true
    },
    {
@@ -370,6 +378,47 @@
     "n": 7,
     "hit_rate": 28.6,
     "avg_return": -2.33,
+    "valid": false
+   }
+  ]
+ },
+ "peak_turnover_bands": {
+  "min_n": 10,
+  "unknown_n": 67,
+  "cells": [
+   {
+    "band": "<40%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "40~80%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "80~120%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "120~200%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "200%+",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
     "valid": false
    }
   ]
@@ -393,33 +442,33 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 50,
-   "hit_rate": 42.0,
-   "avg_return": -1.15,
-   "high3_rate": 60.0
+   "n": 67,
+   "hit_rate": 44.8,
+   "avg_return": -0.61,
+   "high3_rate": 59.7
   },
   "leader_reaccum": {
    "min_n": 10,
    "unknown_n": 0,
    "leader": {
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -4.71,
+    "n": 2,
+    "hit_rate": 50.0,
+    "avg_return": 0.65,
     "high3_rate": 100.0,
     "valid": false
    },
    "nonleader": {
-    "n": 49,
-    "hit_rate": 42.9,
-    "avg_return": -1.07,
-    "high3_rate": 59.2,
+    "n": 65,
+    "hit_rate": 44.6,
+    "avg_return": -0.64,
+    "high3_rate": 58.5,
     "valid": true
    },
    "all": {
-    "n": 50,
-    "hit_rate": 42.0,
-    "avg_return": -1.15,
-    "high3_rate": 60.0,
+    "n": 67,
+    "hit_rate": 44.8,
+    "avg_return": -0.61,
+    "high3_rate": 59.7,
     "valid": true
    },
    "lift": null

@@ -358,7 +358,16 @@
    "first_seen": "2026-06-22 09:12:39 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": true,
+   "ai_pred": {
+    "prob_up": 54,
+    "model_prob": 55,
+    "direction": "상승",
+    "model": "kimi-k2.6",
+    "as_of": "2026-06-22 17:20 KST",
+    "verdict_score": 93,
+    "verdict_level": "강한 매수신호"
+   }
   },
   "028050": {
    "name": "삼성E&A",
