@@ -1,112 +1,60 @@
 {
-  "as_of": "2026-06-22 09:22 KST",
+  "as_of": "2026-06-22 09:37 KST",
   "intraday_rank": [
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "69%",
-      "entry": 50400.0,
-      "target": 52920,
-      "stop": 48888,
+      "ticker": "한울반도체",
+      "code": "320000",
+      "tomorrow_up_prob": "67%",
+      "entry": 21850.0,
+      "target": 22942,
+      "stop": 21194,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.76)",
         "정배열",
-        "RSI50.3 강세"
+        "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 4.01,
-      "related_news": [
-        {
-          "title": "한성크린텍, 삼성E&amp;A와 222억원 규모 평택 설비공사 공급계약",
-          "url": "https://n.news.naver.com/mnews/article/018/0006308409",
-          "office": "이데일리",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "59%",
-      "entry": 229500.0,
-      "target": 240975,
-      "stop": 222615,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(1.0)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
+      "risk": "RSI81.4 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세",
-          "url": "https://www.tokenpost.kr/news/economy/371548",
-          "office": "tokenpost",
+          "title": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02397686645484344",
+          "office": "edaily",
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "LG전자, 엔비디아 협력 기대감에 강세…장중 5%대 상승[줍줍리포트]",
-          "url": "https://www.sedaily.com/article/20058435?ref=naver",
-          "office": "sedaily",
+          "title": "6월 3주차 한울반도체 주가 급등 상한가 마감",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16104733",
+          "office": "topstarnews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] LG전자, 엔비디아 협력 기대에 장 초반 강세…LG CNS도 동반 상...",
-          "url": "https://www.etoday.co.kr/news/view/2595783",
-          "office": "etoday",
+          "title": "[19일 특징주] 한울반도체, 日 무라타와 협력 소식에 연이틀 '상한가'",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=844525",
+          "office": "newsworks",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세"
-    },
-    {
-      "ticker": "씨에스윈드",
-      "code": "112610",
-      "tomorrow_up_prob": "58%",
-      "entry": 45050.0,
-      "target": 47302,
-      "stop": 43698,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.84)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "&quot;씨에스윈드, 글로벌 선두업체인데…경쟁사 절반 수준의 저평가&quot;-유진",
-          "url": "https://n.news.naver.com/mnews/article/015/0005301167",
-          "office": "한국경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "씨에스윈드, 외인·기관 매도세에 10.7% 하락…풍력株 약세 [핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009007997",
-          "office": "뉴스1",
-          "sentiment": "혼재"
-        }
-      ]
+      "cause_summary": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]"
     },
     {
       "ticker": "삼화전기",
       "code": "009470",
-      "tomorrow_up_prob": "55%",
-      "entry": 36950.0,
-      "target": 38798,
-      "stop": 35842,
+      "tomorrow_up_prob": "56%",
+      "entry": 36700.0,
+      "target": 38535,
+      "stop": 35599,
       "confidence": "중",
       "reasons": [
-        "RSI51.2 강세",
+        "RSI50.8 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -125,27 +73,55 @@
       "cause_summary": "[특징주] 삼화전기, \"AI서버·자율주행 MLCC 수요 증가\"에 핵심 부품 수..."
     },
     {
+      "ticker": "현대약품",
+      "code": "004310",
+      "tomorrow_up_prob": "56%",
+      "entry": 8480.0,
+      "target": 8904,
+      "stop": 8226,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "RSI64.0 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "탈모 급여 언급되자 관련주 '고공행진'…JW신약·현대약품·위더스 급등",
+          "url": "https://www.apsk.co.kr/news/articleView.html?idxno=539633",
+          "office": "apsk",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "탈모 급여 언급되자 관련주 '고공행진'…JW신약·현대약품·위더스 급등"
+    },
+    {
       "ticker": "LG씨엔에스",
       "code": "064400",
-      "tomorrow_up_prob": "52%",
-      "entry": 93000.0,
-      "target": 97650,
-      "stop": 90210,
+      "tomorrow_up_prob": "53%",
+      "entry": 92800.0,
+      "target": 97440,
+      "stop": 90016,
       "confidence": "하",
       "reasons": [
-        "RSI50.3 강세",
-        "호재"
+        "RSI50.2 강세",
+        "호재",
+        "장중 3회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] LG그룹, 엔비디아와 AI 협력 확대 기대…LG CNS 프리마켓서 10%...",
-          "url": "https://www.newspim.com/news/view/20260622000109",
-          "office": "newspim",
+          "title": "LG씨엔에스·LG전자, 엔비디아 협력 기대에 6%대 급등",
+          "url": "https://www.hankyung.com/article/2026062295076",
+          "office": "hankyung",
           "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
           "title": "[특징주] LG전자, 엔비디아 협력 기대에 장 초반 강세…LG CNS도 동반 상...",
@@ -156,21 +132,21 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "LG전자·LG씨엔에스, 엔비디아 협력 구체화 기대에 동반 강세[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02345206645484344",
-          "office": "edaily",
+          "title": "[특징주] LG전자, 엔비디아 협력 구체화 기대에 강세…LG씨엔에스도 9%↑",
+          "url": "https://biz.chosun.com/stock/stock_general/2026/06/22/QMWIVJNFV5CZHG5Q3BKWHTEG5E/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+          "office": "biz",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG그룹, 엔비디아와 AI 협력 확대 기대…LG CNS 프리마켓서 10%..."
+      "cause_summary": "LG씨엔에스·LG전자, 엔비디아 협력 기대에 6%대 급등"
     },
     {
       "ticker": "서산",
       "code": "079650",
-      "tomorrow_up_prob": "48%",
+      "tomorrow_up_prob": "53%",
       "entry": 6250.0,
       "target": 6562,
       "stop": 6062,
@@ -196,26 +172,73 @@
       "cause_summary": "서산, 투자경고종목 지정 후 주가 급등→1일간 매매거래 정지"
     },
     {
-      "ticker": "HPSP",
-      "code": "403870",
-      "tomorrow_up_prob": "39%",
-      "entry": 62300.0,
-      "target": 65415,
-      "stop": 60431,
+      "ticker": "LG전자",
+      "code": "066570",
+      "tomorrow_up_prob": "52%",
+      "entry": 230500.0,
+      "target": 242025,
+      "stop": 223585,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.86)",
-        "정배열",
-        "MACD강세"
+        "호재",
+        "장중 3회 지속"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 8.83,
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세",
+          "url": "https://www.tokenpost.kr/news/economy/371548",
+          "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] LG전자, 엔비디아와 협력 기대감에 '강세'",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=710547",
+          "office": "cstimes",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "LG씨엔에스·LG전자, 엔비디아 협력 기대에 6%대 급등",
+          "url": "https://www.hankyung.com/article/2026062295076",
+          "office": "hankyung",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세"
+    },
+    {
+      "ticker": "씨에스윈드",
+      "code": "112610",
+      "tomorrow_up_prob": "51%",
+      "entry": 45000.0,
+      "target": 47250,
+      "stop": 43650,
+      "confidence": "하",
+      "reasons": [
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
       "related_news": [
         {
-          "title": "예스티, HPSP 고압어닐링장비 특허분쟁 2심도 승소…“특허 리스크 해...",
-          "url": "https://n.news.naver.com/mnews/article/018/0006309011",
-          "office": "이데일리",
+          "title": "&quot;씨에스윈드, 글로벌 선두업체인데…경쟁사 절반 수준의 저평가&quot;-유진",
+          "url": "https://n.news.naver.com/mnews/article/015/0005301167",
+          "office": "한국경제",
           "sentiment": "호재"
+        },
+        {
+          "title": "씨에스윈드, 외인·기관 매도세에 10.7% 하락…풍력株 약세 [핫종목]",
+          "url": "https://n.news.naver.com/mnews/article/421/0009007997",
+          "office": "뉴스1",
+          "sentiment": "혼재"
         }
       ]
     },
@@ -223,74 +246,208 @@
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "39%",
-      "entry": 168000.0,
-      "target": 176400,
-      "stop": 162960,
+      "entry": 165400.0,
+      "target": 173670,
+      "stop": 160438,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.9)",
+        "강세마감(0.77)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.03
+      "day_change": 5.64
     },
     {
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "39%",
-      "entry": 510000.0,
-      "target": 535500,
-      "stop": 494700,
+      "entry": 521000.0,
+      "target": 547050,
+      "stop": 505370,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.73)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 4.58,
+      "related_news": [
+        {
+          "title": "삼성물산, 계열사 지분가치 상승에 목표가 상향-흥국증권",
+          "url": "https://n.news.naver.com/mnews/article/008/0005374996",
+          "office": "머니투데이",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "HPSP",
+      "code": "403870",
+      "tomorrow_up_prob": "38%",
+      "entry": 60900.0,
+      "target": 63945,
+      "stop": 59073,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI63.0 강세"
+        "RSI53.2 강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 5.39,
+      "day_change": 7.77,
       "cause_news": [
         {
-          "title": "[특징주] 삼성물산, 장중 15% 급등…SMR 기대감에 목표가 상향",
-          "url": "https://www.youthdaily.co.kr/news/article.html?no=221280",
-          "office": "youthdaily",
+          "title": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도",
+          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583606",
+          "office": "cbci",
           "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 삼성물산, 장중 15% 급등…SMR 기대감에 목표가 상향"
+      "cause_confidence": "중간",
+      "cause_summary": "[속보] HPSP VI 발동, 주가 주초장 장초반부터 도약…6만원선 안착 시도"
+    },
+    {
+      "ticker": "제주반도체",
+      "code": "080220",
+      "tomorrow_up_prob": "38%",
+      "entry": 124800.0,
+      "target": 131040,
+      "stop": 121056,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.93)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": 8.57
+    },
+    {
+      "ticker": "삼성E&A",
+      "code": "028050",
+      "tomorrow_up_prob": "38%",
+      "entry": 50600.0,
+      "target": 53130,
+      "stop": 49082,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.89)",
+        "정배열",
+        "RSI50.6 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 4.21,
+      "related_news": [
+        {
+          "title": "[아침밥] 교보증권 &quot;삼성E&amp;A, LNG 플랜트 확대 수혜…중장기 기대&quot;",
+          "url": "https://n.news.naver.com/mnews/article/417/0001148452",
+          "office": "동행미디어 시대",
+          "sentiment": "호재"
+        },
+        {
+          "title": "한성크린텍, 삼성E&amp;A와 222억원 규모 평택 설비공사 공급계약",
+          "url": "https://n.news.naver.com/mnews/article/018/0006308409",
+          "office": "이데일리",
+          "sentiment": "호재"
+        }
+      ]
     },
     {
       "ticker": "테크윙",
       "code": "089030",
-      "tomorrow_up_prob": "39%",
-      "entry": 62900.0,
-      "target": 66045,
-      "stop": 61013,
+      "tomorrow_up_prob": "38%",
+      "entry": 61000.0,
+      "target": 64050,
+      "stop": 59170,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.82)",
+        "정배열",
+        "MACD강세",
+        "RSI54.7 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 1.66
+    },
+    {
+      "ticker": "예스티",
+      "code": "122640",
+      "tomorrow_up_prob": "38%",
+      "entry": 35950.0,
+      "target": 37748,
+      "stop": 34872,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.7)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 4.65
+      "day_change": 5.03,
+      "cause_news": [
+        {
+          "title": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461927",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대..."
+    },
+    {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "38%",
+      "entry": 1880000.0,
+      "target": 1974000,
+      "stop": 1823600,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(1.0)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "프리마켓서 SK하이닉스·SK스퀘어 또 강세…삼성전자는 하락[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062208343411125",
+          "office": "newsway",
+          "sentiment": "악재",
+          "cause_score": 8,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 악재, 당일"
+        },
+        {
+          "title": "NH아문디운용, K-반도체 ETF에 SK스퀘어 신규 편입",
+          "url": "https://www.yna.co.kr/view/AKR20260622028400008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "프리마켓서 SK하이닉스·SK스퀘어 또 강세…삼성전자는 하락[특징주]"
     },
     {
       "ticker": "후성",
       "code": "093370",
-      "tomorrow_up_prob": "39%",
-      "entry": 17880.0,
-      "target": 18774,
-      "stop": 17344,
+      "tomorrow_up_prob": "38%",
+      "entry": 17580.0,
+      "target": 18459,
+      "stop": 17053,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.79)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "RSI57.7 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -316,193 +473,85 @@
       ]
     },
     {
-      "ticker": "제주반도체",
-      "code": "080220",
+      "ticker": "롯데쇼핑",
+      "code": "023530",
       "tomorrow_up_prob": "38%",
-      "entry": 124600.0,
-      "target": 130830,
-      "stop": 120862,
+      "entry": 187100.0,
+      "target": 196455,
+      "stop": 181487,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.93)",
+        "강세마감(0.79)",
         "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 5.69
-    },
-    {
-      "ticker": "예스티",
-      "code": "122640",
-      "tomorrow_up_prob": "38%",
-      "entry": 36700.0,
-      "target": 38535,
-      "stop": 35599,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.85)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 2.73,
-      "cause_news": [
-        {
-          "title": "예스티, 12%대 급등 마감…금리 동결·지정학적 긴장 완화에 투자심리 ...",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583130",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "예스티, 12%대 급등 마감…금리 동결·지정학적 긴장 완화에 투자심리 ..."
-    },
-    {
-      "ticker": "대덕전자",
-      "code": "353200",
-      "tomorrow_up_prob": "38%",
-      "entry": 160800.0,
-      "target": 168840,
-      "stop": 155976,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.8)",
-        "정배열",
-        "RSI54.5 강세"
+        "RSI57.6 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "[특징주] 대덕전자, 목표가 25만원 상향에 강세…판가 인상·증설 기대",
-          "url": "https://www.tokenpost.kr/news/economy/369381",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] \"레벨 달라진다\" 대덕전자, 목표가 25만원 상향",
-          "url": "https://www.newstnt.com/news/articleView.html?idxno=706356",
-          "office": "newstnt",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
+          "title": "서울·부산에서 외국 관광객이 몰려가는 이곳…목표가↑ [클릭 e종목]",
+          "url": "https://n.news.naver.com/mnews/article/277/0005777843",
+          "office": "아시아경제",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] 대덕전자, 목표가 25만원 상향에 강세…판가 인상·증설 기대"
+      ]
     }
   ],
   "closing_bet": [
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "69%",
-      "entry": 50400.0,
-      "target": 52920,
-      "stop": 48888,
+      "ticker": "한울반도체",
+      "code": "320000",
+      "tomorrow_up_prob": "67%",
+      "entry": 21850.0,
+      "target": 22942,
+      "stop": 21194,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.83)",
+        "강세마감(0.76)",
         "정배열",
-        "RSI50.3 강세"
+        "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 4.01,
-      "related_news": [
-        {
-          "title": "한성크린텍, 삼성E&amp;A와 222억원 규모 평택 설비공사 공급계약",
-          "url": "https://n.news.naver.com/mnews/article/018/0006308409",
-          "office": "이데일리",
-          "sentiment": "호재"
-        }
-      ]
-    },
-    {
-      "ticker": "LG전자",
-      "code": "066570",
-      "tomorrow_up_prob": "59%",
-      "entry": 229500.0,
-      "target": 240975,
-      "stop": 222615,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(1.0)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
+      "risk": "RSI81.4 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세",
-          "url": "https://www.tokenpost.kr/news/economy/371548",
-          "office": "tokenpost",
+          "title": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02397686645484344",
+          "office": "edaily",
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "LG전자, 엔비디아 협력 기대감에 강세…장중 5%대 상승[줍줍리포트]",
-          "url": "https://www.sedaily.com/article/20058435?ref=naver",
-          "office": "sedaily",
+          "title": "6월 3주차 한울반도체 주가 급등 상한가 마감",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16104733",
+          "office": "topstarnews",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] LG전자, 엔비디아 협력 기대에 장 초반 강세…LG CNS도 동반 상...",
-          "url": "https://www.etoday.co.kr/news/view/2595783",
-          "office": "etoday",
+          "title": "[19일 특징주] 한울반도체, 日 무라타와 협력 소식에 연이틀 '상한가'",
+          "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=844525",
+          "office": "newsworks",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] LG전자, 엔비디아와 AI·로봇 협력 확대 기대감에 강세"
-    },
-    {
-      "ticker": "씨에스윈드",
-      "code": "112610",
-      "tomorrow_up_prob": "58%",
-      "entry": 45050.0,
-      "target": 47302,
-      "stop": 43698,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.84)",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "related_news": [
-        {
-          "title": "&quot;씨에스윈드, 글로벌 선두업체인데…경쟁사 절반 수준의 저평가&quot;-유진",
-          "url": "https://n.news.naver.com/mnews/article/015/0005301167",
-          "office": "한국경제",
-          "sentiment": "호재"
-        },
-        {
-          "title": "씨에스윈드, 외인·기관 매도세에 10.7% 하락…풍력株 약세 [핫종목]",
-          "url": "https://n.news.naver.com/mnews/article/421/0009007997",
-          "office": "뉴스1",
-          "sentiment": "혼재"
-        }
-      ]
+      "cause_summary": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주]"
     },
     {
       "ticker": "삼화전기",
       "code": "009470",
-      "tomorrow_up_prob": "55%",
-      "entry": 36950.0,
-      "target": 38798,
-      "stop": 35842,
+      "tomorrow_up_prob": "56%",
+      "entry": 36700.0,
+      "target": 38535,
+      "stop": 35599,
       "confidence": "중",
       "reasons": [
-        "RSI51.2 강세",
+        "RSI50.8 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
@@ -519,6 +568,33 @@
       ],
       "cause_confidence": "중간",
       "cause_summary": "[특징주] 삼화전기, \"AI서버·자율주행 MLCC 수요 증가\"에 핵심 부품 수..."
+    },
+    {
+      "ticker": "현대약품",
+      "code": "004310",
+      "tomorrow_up_prob": "56%",
+      "entry": 8480.0,
+      "target": 8904,
+      "stop": 8226,
+      "confidence": "중",
+      "reasons": [
+        "MACD강세",
+        "RSI64.0 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "탈모 급여 언급되자 관련주 '고공행진'…JW신약·현대약품·위더스 급등",
+          "url": "https://www.apsk.co.kr/news/articleView.html?idxno=539633",
+          "office": "apsk",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "탈모 급여 언급되자 관련주 '고공행진'…JW신약·현대약품·위더스 급등"
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
