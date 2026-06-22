@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-22 14:52 KST",
+  "as_of": "2026-06-22 15:07 KST",
   "intraday_rank": [
     {
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15330.0,
-      "target": 16096,
-      "stop": 14870,
+      "entry": 15390.0,
+      "target": 16160,
+      "stop": 14928,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
@@ -49,12 +49,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 18870.0,
-      "target": 19814,
-      "stop": 18304,
+      "entry": 18920.0,
+      "target": 19866,
+      "stop": 18352,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
@@ -74,17 +74,53 @@
       "cause_summary": "후성 주가, 급등세... 배경은?"
     },
     {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "68%",
+      "entry": 1964000.0,
+      "target": 2062200,
+      "stop": 1905080,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.94)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI80.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접",
+          "url": "https://www.yna.co.kr/view/AKR20260622063900008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "'원스토어 매각' SK스퀘어, 'AI·반도체' 어디까지 통할까",
+          "url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=845610",
+          "office": "hansbiz",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접"
+    },
+    {
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169800.0,
-      "target": 178290,
-      "stop": 164706,
+      "entry": 173600.0,
+      "target": 182280,
+      "stop": 168392,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.93)",
-        "RSI52.6 강세",
-        "장중 16회 지속"
+        "강세마감(0.97)",
+        "RSI54.0 강세",
+        "장중 17회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -102,34 +138,6 @@
           "sentiment": "혼재"
         }
       ]
-    },
-    {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "58%",
-      "entry": 2675.0,
-      "target": 2809,
-      "stop": 2595,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.89)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "RSI82.7 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
     },
     {
       "ticker": "서산",
@@ -163,13 +171,13 @@
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "54%",
-      "entry": 227000.0,
-      "target": 238350,
-      "stop": 220190,
+      "entry": 227500.0,
+      "target": 238875,
+      "stop": 220675,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 24회 지속"
+        "장중 25회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -203,20 +211,48 @@
       "cause_summary": "[특징주] LG그룹, 엔비디아 본사 방문 소식에 강세...LG전자 12%대 ↑"
     },
     {
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "50%",
+      "entry": 2500.0,
+      "target": 2625,
+      "stop": 2425,
+      "confidence": "하",
+      "reasons": [
+        "MACD강세",
+        "일목 구름위",
+        "거래량16.64배"
+      ],
+      "risk": "RSI80.7 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
+    },
+    {
       "ticker": "원익IPS",
       "code": "240810",
       "tomorrow_up_prob": "39%",
-      "entry": 170300.0,
-      "target": 178815,
-      "stop": 165191,
+      "entry": 172200.0,
+      "target": 180810,
+      "stop": 167034,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.77)",
+        "강세마감(0.85)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 9.1,
+      "day_change": 9.94,
       "cause_news": [
         {
           "title": "[특징주] 원익IPS, 반도체 수출 급증에 장중 강세…소부장 전반 매수세...",
@@ -234,17 +270,17 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "39%",
-      "entry": 528000.0,
-      "target": 554400,
-      "stop": 512160,
+      "entry": 531000.0,
+      "target": 557550,
+      "stop": 515070,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.79)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 7.22,
+      "day_change": 7.73,
       "cause_news": [
         {
           "title": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원...",
@@ -267,40 +303,32 @@
       "cause_summary": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원..."
     },
     {
-      "ticker": "SK스퀘어",
-      "code": "402340",
+      "ticker": "예스티",
+      "code": "122640",
       "tomorrow_up_prob": "39%",
-      "entry": 1932000.0,
-      "target": 2028600,
-      "stop": 1874040,
+      "entry": 38150.0,
+      "target": 40058,
+      "stop": 37006,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.79)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
+      "risk": "특이 위험 낮음",
+      "day_change": 9.55,
       "cause_news": [
         {
-          "title": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접",
-          "url": "https://www.yna.co.kr/view/AKR20260622063900008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "'원스토어 매각' SK스퀘어, 'AI·반도체' 어디까지 통할까",
-          "url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=845610",
-          "office": "hansbiz",
+          "title": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461927",
+          "office": "pinpointnews",
           "sentiment": "호재",
           "cause_score": 7,
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접"
+      "cause_confidence": "중간",
+      "cause_summary": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대..."
     },
     {
       "ticker": "한울반도체",
@@ -319,6 +347,14 @@
       "day_change": null,
       "cause_news": [
         {
+          "title": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062214280687432",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "[특징주] 한울반도체, AI 검사장비 고도화·MLCC 설비 공급 확대 기대에...",
           "url": "https://www.ajunews.com/view/20260622110410190",
           "office": "ajunews",
@@ -333,18 +369,10 @@
           "sentiment": "호재",
           "cause_score": 17,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[속보] 한울반도체, 주가 상한가 도달…오전 장중 VI 2차례 발동하기도",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583679",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] 한울반도체, AI 검사장비 고도화·MLCC 설비 공급 확대 기대에..."
+      "cause_summary": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]"
     }
   ],
   "closing_bet": [
@@ -352,12 +380,12 @@
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15330.0,
-      "target": 16096,
-      "stop": 14870,
+      "entry": 15390.0,
+      "target": 16160,
+      "stop": 14928,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
@@ -396,12 +424,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 18870.0,
-      "target": 19814,
-      "stop": 18304,
+      "entry": 18920.0,
+      "target": 19866,
+      "stop": 18352,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
@@ -421,17 +449,53 @@
       "cause_summary": "후성 주가, 급등세... 배경은?"
     },
     {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "68%",
+      "entry": 1964000.0,
+      "target": 2062200,
+      "stop": 1905080,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.94)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "RSI80.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접",
+          "url": "https://www.yna.co.kr/view/AKR20260622063900008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "'원스토어 매각' SK스퀘어, 'AI·반도체' 어디까지 통할까",
+          "url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=845610",
+          "office": "hansbiz",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접"
+    },
+    {
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169800.0,
-      "target": 178290,
-      "stop": 164706,
+      "entry": 173600.0,
+      "target": 182280,
+      "stop": 168392,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.93)",
-        "RSI52.6 강세",
-        "장중 16회 지속"
+        "강세마감(0.97)",
+        "RSI54.0 강세",
+        "장중 17회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -449,34 +513,6 @@
           "sentiment": "혼재"
         }
       ]
-    },
-    {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "58%",
-      "entry": 2675.0,
-      "target": 2809,
-      "stop": 2595,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.89)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "RSI82.7 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
     },
     {
       "ticker": "서산",
