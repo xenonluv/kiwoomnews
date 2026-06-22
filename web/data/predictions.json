@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-22 14:22 KST",
+  "as_of": "2026-06-22 14:37 KST",
   "intraday_rank": [
     {
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15400.0,
-      "target": 16170,
-      "stop": 14938,
+      "entry": 15340.0,
+      "target": 16107,
+      "stop": 14880,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
@@ -49,12 +49,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 18930.0,
-      "target": 19876,
-      "stop": 18362,
+      "entry": 19120.0,
+      "target": 20076,
+      "stop": 18546,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.79)",
         "정배열",
         "MACD강세"
       ],
@@ -74,45 +74,17 @@
       "cause_summary": "후성 주가, 급등세... 배경은?"
     },
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "64%",
-      "entry": 50100.0,
-      "target": 52605,
-      "stop": 48597,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "호재",
-        "장중 13회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 2.98,
-      "cause_news": [
-        {
-          "title": "[종목분석] 삼성E&A, 美 LNG 투자 확대 수혜 기대",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16106113",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[종목분석] 삼성E&A, 美 LNG 투자 확대 수혜 기대"
-    },
-    {
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169000.0,
-      "target": 177450,
-      "stop": 163930,
+      "entry": 169300.0,
+      "target": 177765,
+      "stop": 164221,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.95)",
-        "RSI52.3 강세",
-        "장중 14회 지속"
+        "강세마감(0.97)",
+        "RSI52.4 강세",
+        "장중 15회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -130,6 +102,34 @@
           "sentiment": "혼재"
         }
       ]
+    },
+    {
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "58%",
+      "entry": 2575.0,
+      "target": 2704,
+      "stop": 2498,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.76)",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI81.6 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
     },
     {
       "ticker": "서산",
@@ -163,13 +163,13 @@
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "54%",
-      "entry": 229000.0,
-      "target": 240450,
-      "stop": 222130,
+      "entry": 228500.0,
+      "target": 239925,
+      "stop": 221645,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 22회 지속"
+        "장중 23회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -203,32 +203,32 @@
       "cause_summary": "[특징주] LG그룹, 엔비디아 본사 방문 소식에 강세...LG전자 12%대 ↑"
     },
     {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "51%",
-      "entry": 2235.0,
-      "target": 2347,
-      "stop": 2168,
+      "ticker": "원익IPS",
+      "code": "240810",
+      "tomorrow_up_prob": "39%",
+      "entry": 170300.0,
+      "target": 178815,
+      "stop": 165191,
       "confidence": "하",
       "reasons": [
-        "MACD강세",
-        "거래량15.24배",
-        "장중 22회 지속"
+        "강세마감(0.77)",
+        "정배열",
+        "MACD강세"
       ],
-      "risk": "약한 마감, Stoch 과매수",
-      "day_change": null,
+      "risk": "특이 위험 낮음",
+      "day_change": 9.1,
       "cause_news": [
         {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
+          "title": "[특징주] 원익IPS, 반도체 수출 급증에 장중 강세…소부장 전반 매수세...",
+          "url": "https://www.tokenpost.kr/news/economy/371583",
+          "office": "tokenpost",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
+      "cause_summary": "[특징주] 원익IPS, 반도체 수출 급증에 장중 강세…소부장 전반 매수세..."
     },
     {
       "ticker": "삼성물산",
@@ -244,7 +244,7 @@
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.41,
+      "day_change": 6.82,
       "cause_news": [
         {
           "title": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원...",
@@ -267,45 +267,61 @@
       "cause_summary": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원..."
     },
     {
-      "ticker": "예스티",
-      "code": "122640",
+      "ticker": "SK하이닉스",
+      "code": "000660",
       "tomorrow_up_prob": "39%",
-      "entry": 39150.0,
-      "target": 41108,
-      "stop": 37976,
+      "entry": 2899000.0,
+      "target": 3043950,
+      "stop": 2812030,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.95)",
+        "강세마감(0.79)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 9.63,
+      "risk": "Stoch 과매수",
+      "day_change": null,
       "cause_news": [
         {
-          "title": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461927",
-          "office": "pinpointnews",
+          "title": "SK하이닉스 340% 급등에 홍콩 ETF도 부담…CSOP, 옵션 한도 확대",
+          "url": "https://www.ajunews.com/view/20260622141943505",
+          "office": "ajunews",
           "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] SK하이닉스, 25년만에 장중 시총 1위 뒤집었다",
+          "url": "https://www.seoulfn.com/news/articleView.html?idxno=631632",
+          "office": "seoulfn",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "SK하이닉스, 삼성전자 제치고 시총 1위…25년 만에 왕좌 교체[특징주]",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062213211612354",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "\"반도체·디스플레이 다 잡았다\"...예스티, 고도화 공정 투자 확대 최대..."
+      "cause_confidence": "높음",
+      "cause_summary": "SK하이닉스 340% 급등에 홍콩 ETF도 부담…CSOP, 옵션 한도 확대"
     },
     {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "39%",
-      "entry": 1923000.0,
-      "target": 2019150,
-      "stop": 1865310,
+      "tomorrow_up_prob": "38%",
+      "entry": 1918000.0,
+      "target": 2013900,
+      "stop": 1860460,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.71)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "일목 구름위"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -329,42 +345,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 하이닉스 업은 SK스퀘어, 주가 200만원에 근접"
-    },
-    {
-      "ticker": "SK하이닉스",
-      "code": "000660",
-      "tomorrow_up_prob": "39%",
-      "entry": 2893000.0,
-      "target": 3037650,
-      "stop": 2806210,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.76)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "외국계 IB가 본 삼성전자·SK하이닉스 하반기 전망",
-          "url": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=86652",
-          "office": "ekoreanews",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
-        },
-        {
-          "title": "SK하이닉스, 장중 시총 1위 첫 등극…\"삼성전자 25년 아성 깨졌다\"",
-          "url": "https://www.seoultimes.news/news/article.html?no=2000096884",
-          "office": "seoultimes",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "외국계 IB가 본 삼성전자·SK하이닉스 하반기 전망"
     },
     {
       "ticker": "한울반도체",
@@ -416,12 +396,12 @@
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15400.0,
-      "target": 16170,
-      "stop": 14938,
+      "entry": 15340.0,
+      "target": 16107,
+      "stop": 14880,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.72)",
         "정배열",
         "MACD강세"
       ],
@@ -460,12 +440,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 18930.0,
-      "target": 19876,
-      "stop": 18362,
+      "entry": 19120.0,
+      "target": 20076,
+      "stop": 18546,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.73)",
+        "강세마감(0.79)",
         "정배열",
         "MACD강세"
       ],
@@ -485,45 +465,17 @@
       "cause_summary": "후성 주가, 급등세... 배경은?"
     },
     {
-      "ticker": "삼성E&A",
-      "code": "028050",
-      "tomorrow_up_prob": "64%",
-      "entry": 50100.0,
-      "target": 52605,
-      "stop": 48597,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "호재",
-        "장중 13회 지속"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": 2.98,
-      "cause_news": [
-        {
-          "title": "[종목분석] 삼성E&A, 美 LNG 투자 확대 수혜 기대",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16106113",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[종목분석] 삼성E&A, 美 LNG 투자 확대 수혜 기대"
-    },
-    {
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169000.0,
-      "target": 177450,
-      "stop": 163930,
+      "entry": 169300.0,
+      "target": 177765,
+      "stop": 164221,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.95)",
-        "RSI52.3 강세",
-        "장중 14회 지속"
+        "강세마감(0.97)",
+        "RSI52.4 강세",
+        "장중 15회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -541,6 +493,34 @@
           "sentiment": "혼재"
         }
       ]
+    },
+    {
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "58%",
+      "entry": 2575.0,
+      "target": 2704,
+      "stop": 2498,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(0.76)",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI81.6 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
     },
     {
       "ticker": "서산",
