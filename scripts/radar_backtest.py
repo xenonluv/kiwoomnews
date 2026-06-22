@@ -200,6 +200,8 @@ def collect_samples():
                 samples.append({"date": hist["date"],  # 신호일 (result의 평가일과 별개)
                                 "code": code, "name": s.get("name"),
                                 "score": s.get("score", 0),
+                                # 표시 점수(reaccum은 score_raw=0이라 분리) — publish가 기록한 신규 history만 존재
+                                "suspicion_score": s.get("suspicion_score"),
                                 "breakdown": s.get("breakdown", {}),
                                 "pattern": s.get("pattern", "unknown"),
                                 "sector": s.get("sector") or "unknown",
@@ -666,6 +668,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
     experimental_dropouts = experimental_dropouts or []
     reaccum_experimental = [s for s in experimental + experimental_dropouts
                             if s.get("pattern") == "reaccum"]
+    reaccum_sorted = sorted(reaccum_experimental, key=lambda s: (s.get("date", ""), s.get("code", "")))
     dn = len(dropouts)
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
@@ -699,7 +702,17 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {
-            "reaccum": sample_stats(reaccum_experimental),
+            # 재매집(reaccum) = 현 파이프라인 주력 산출물. core(fade/shakeout)와 격리(score_raw=0)돼
+            # 메인 통계엔 미반영이나, 실제 매일 쌓이는 트랙이라 자체 적중률 추세·최근표를 노출한다.
+            "reaccum": {
+                **sample_stats(reaccum_experimental),
+                "tracking_days": len(series),
+                "series": build_series(reaccum_experimental),
+                "recent": [{"date": s["date"], "name": s["name"],
+                            "score": s.get("suspicion_score") or 0,  # 표시점수(구표본 미기록=0)
+                            "hit": s["hit"], "return_pct": s["return_pct"]}
+                           for s in reaccum_sorted[-20:]][::-1],
+            },
             # '예전 대장' 재매집 엣지 검증(대장 vs 비대장 익일 적중률 A/B·lift) — 코어 격리
             "leader_reaccum": leader_reaccum_stats(reaccum_experimental),
         },

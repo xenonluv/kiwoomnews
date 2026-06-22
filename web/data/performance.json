@@ -1,5 +1,5 @@
 {
- "as_of": "2026-06-22 17:20 KST",
+ "as_of": "2026-06-22 19:22 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -445,7 +445,232 @@
    "n": 67,
    "hit_rate": 44.8,
    "avg_return": -0.61,
-   "high3_rate": 59.7
+   "high3_rate": 59.7,
+   "tracking_days": 10,
+   "series": [
+    {
+     "date": "20260610",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 0,
+     "cum_hit_rate": null
+    },
+    {
+     "date": "20260611",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 0,
+     "cum_hit_rate": null
+    },
+    {
+     "date": "20260612",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 0,
+     "cum_hit_rate": null
+    },
+    {
+     "date": "20260613",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 0,
+     "cum_hit_rate": null
+    },
+    {
+     "date": "20260615",
+     "n": 5,
+     "hits": 1,
+     "hit_rate": 20,
+     "cum_n": 5,
+     "cum_hit_rate": 20.0
+    },
+    {
+     "date": "20260616",
+     "n": 12,
+     "hits": 9,
+     "hit_rate": 75,
+     "cum_n": 17,
+     "cum_hit_rate": 58.8
+    },
+    {
+     "date": "20260617",
+     "n": 18,
+     "hits": 9,
+     "hit_rate": 50,
+     "cum_n": 35,
+     "cum_hit_rate": 54.3
+    },
+    {
+     "date": "20260618",
+     "n": 15,
+     "hits": 2,
+     "hit_rate": 13,
+     "cum_n": 50,
+     "cum_hit_rate": 42.0
+    },
+    {
+     "date": "20260619",
+     "n": 17,
+     "hits": 9,
+     "hit_rate": 53,
+     "cum_n": 67,
+     "cum_hit_rate": 44.8
+    },
+    {
+     "date": "20260622",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 67,
+     "cum_hit_rate": 44.8
+    }
+   ],
+   "recent": [
+    {
+     "date": "20260619",
+     "name": "SK이터닉스",
+     "score": 0,
+     "hit": false,
+     "return_pct": -7.18
+    },
+    {
+     "date": "20260619",
+     "name": "HPSP",
+     "score": 0,
+     "hit": true,
+     "return_pct": 6.01
+    },
+    {
+     "date": "20260619",
+     "name": "SK스퀘어",
+     "score": 0,
+     "hit": true,
+     "return_pct": 10.67
+    },
+    {
+     "date": "20260619",
+     "name": "디앤디파마텍",
+     "score": 0,
+     "hit": false,
+     "return_pct": -3.33
+    },
+    {
+     "date": "20260619",
+     "name": "원익IPS",
+     "score": 0,
+     "hit": true,
+     "return_pct": 10.58
+    },
+    {
+     "date": "20260619",
+     "name": "HL만도",
+     "score": 0,
+     "hit": false,
+     "return_pct": -12.86
+    },
+    {
+     "date": "20260619",
+     "name": "예스티",
+     "score": 0,
+     "hit": true,
+     "return_pct": 10.63
+    },
+    {
+     "date": "20260619",
+     "name": "테크윙",
+     "score": 0,
+     "hit": true,
+     "return_pct": 1.5
+    },
+    {
+     "date": "20260619",
+     "name": "한화엔진",
+     "score": 0,
+     "hit": false,
+     "return_pct": -8.03
+    },
+    {
+     "date": "20260619",
+     "name": "제주반도체",
+     "score": 0,
+     "hit": true,
+     "return_pct": 17.24
+    },
+    {
+     "date": "20260619",
+     "name": "아모텍",
+     "score": 0,
+     "hit": false,
+     "return_pct": -7.98
+    },
+    {
+     "date": "20260619",
+     "name": "이오테크닉스",
+     "score": 0,
+     "hit": true,
+     "return_pct": 3.91
+    },
+    {
+     "date": "20260619",
+     "name": "NAVER",
+     "score": 0,
+     "hit": false,
+     "return_pct": -3.27
+    },
+    {
+     "date": "20260619",
+     "name": "SK",
+     "score": 0,
+     "hit": true,
+     "return_pct": 0.83
+    },
+    {
+     "date": "20260619",
+     "name": "삼성E&A",
+     "score": 0,
+     "hit": true,
+     "return_pct": 2.57
+    },
+    {
+     "date": "20260619",
+     "name": "LG이노텍",
+     "score": 0,
+     "hit": false,
+     "return_pct": -1.31
+    },
+    {
+     "date": "20260619",
+     "name": "대한항공",
+     "score": 0,
+     "hit": false,
+     "return_pct": -3.22
+    },
+    {
+     "date": "20260618",
+     "name": "SK이터닉스",
+     "score": 0,
+     "hit": false,
+     "return_pct": -11.29
+    },
+    {
+     "date": "20260618",
+     "name": "HPSP",
+     "score": 0,
+     "hit": false,
+     "return_pct": -4.71
+    },
+    {
+     "date": "20260618",
+     "name": "SK스퀘어",
+     "score": 0,
+     "hit": true,
+     "return_pct": 4.71
+    }
+   ]
   },
   "leader_reaccum": {
    "min_n": 10,

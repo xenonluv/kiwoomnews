@@ -16,6 +16,7 @@ import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 import { ChangeBandTable } from "@/components/performance/ChangeBandTable";
 import { PeakTurnoverBandTable } from "@/components/performance/PeakTurnoverBandTable";
 import { LeaderReaccumPanel } from "@/components/performance/LeaderReaccumPanel";
+import { ReaccumPerformancePanel } from "@/components/performance/ReaccumPerformancePanel";
 import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
 import { ThemeStatsTable } from "@/components/performance/ThemeStatsTable";
 import { TrackPerformancePanel } from "@/components/performance/TrackPerformancePanel";
@@ -52,8 +53,17 @@ export default function PerformancePage() {
       <div className="space-y-6">
         <StatCards data={data} />
 
+        {/* 재매집(reaccum) = 현 주력 산출물 — 매일 갱신되는 트랙. core보다 먼저 노출. */}
+        {data.experimental?.reaccum && (
+          <ReaccumPerformancePanel data={data.experimental.reaccum} />
+        )}
+
         <section>
-          <h2 className="mb-2 text-lg font-bold">누적 적중률 추세</h2>
+          <h2 className="mb-1 text-lg font-bold">누적 적중률 추세 (core 트랙)</h2>
+          <p className="mb-2 text-xs text-muted-foreground">
+            급등 후 식음(fade)·눌림(shakeout) 트랙. 레이더가 재매집만 산출하는 기간엔 신규 표본이 없어
+            정지할 수 있습니다(재매집은 위 패널에서 별도 집계).
+          </p>
           {data.summary.n === 0 ? (
             <div className="flex min-h-40 flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-border text-sm text-muted-foreground">
               <p>검증 데이터 수집 중 — {data.summary.tracking_days}일째</p>

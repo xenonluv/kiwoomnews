@@ -167,6 +167,9 @@ export interface ExperimentalStats {
     hit_rate: number | null;
     avg_return: number | null;
     high3_rate: number | null;
+    tracking_days?: number; // 구버전 JSON엔 없음
+    series?: PerfPoint[]; // 재매집 트랙 누적 적중률 추세
+    recent?: RecentSample[]; // 최근 채점 결과(표시점수 score, 구표본=0)
   };
   leader_reaccum?: LeaderReaccumStats; // 구버전 JSON엔 없음
 }
