@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22 12:32:22 KST",
+ "generated_at": "2026-06-22 12:42:21 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -69,17 +69,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 169500.0,
-   "change_pct": 8.65,
+   "price": 169300.0,
+   "change_pct": 8.53,
    "high_pct": 9.62,
-   "fade_pct": 10.0,
-   "value_eok": 3647,
-   "turnover_pct": 6.6,
+   "fade_pct": 11.3,
+   "value_eok": 3769,
+   "turnover_pct": 6.9,
    "peak_turnover_pct": 17.7,
    "float_ratio": 0.6618,
    "turnover_basis": "float",
    "ma10": 154110.0,
-   "ma10_margin_pct": 9.99,
+   "ma10_margin_pct": 9.86,
    "spark": {
     "clusters": []
    },
@@ -144,7 +144,7 @@
     "peak_value_eok": 9306,
     "peak_high_pct": 15.25,
     "ma20": 133840.0,
-    "ma20_margin_pct": 26.64,
+    "ma20_margin_pct": 26.49,
     "ivtr_net": 494291,
     "ivtr_days": 4,
     "ivtr_eok": 838,
@@ -197,7 +197,7 @@
    "change_pct": 3.71,
    "high_pct": 12.19,
    "fade_pct": 69.6,
-   "value_eok": 3702,
+   "value_eok": 3727,
    "turnover_pct": 9.8,
    "peak_turnover_pct": 50.7,
    "float_ratio": 0.7839,
@@ -316,13 +316,13 @@
    "change_pct": 8.24,
    "high_pct": 10.07,
    "fade_pct": 18.2,
-   "value_eok": 4117,
+   "value_eok": 4179,
    "turnover_pct": 0.8,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 467050.0,
-   "ma10_margin_pct": 13.91,
+   "ma10": 466950.0,
+   "ma10_margin_pct": 13.93,
    "spark": {
     "clusters": []
    },
@@ -381,131 +381,12 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 454450.0,
-    "ma20_margin_pct": 17.06,
+    "ma20": 454400.0,
+    "ma20_margin_pct": 17.08,
     "ivtr_net": 65910,
     "ivtr_days": 3,
     "ivtr_eok": 333,
     "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "028050",
-   "name": "삼성E&A",
-   "sector": "일반서비스",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 80,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 5,
-    "re_body": 5,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 50100.0,
-   "change_pct": 2.98,
-   "high_pct": 6.47,
-   "fade_pct": 54.0,
-   "value_eok": 1398,
-   "turnover_pct": 1.8,
-   "peak_turnover_pct": 2.0,
-   "float_ratio": 0.7936,
-   "turnover_basis": "float",
-   "ma10": 49665.0,
-   "ma10_margin_pct": 0.88,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 5.22,
-    "time": "09:00",
-    "value_10m_eok": 137
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 5.22,
-     "value_eok": 137
-    }
-   ],
-   "flow": {
-    "net_days": 2,
-    "today_buy": true,
-    "streak": 1,
-    "detail": [
-     {
-      "date": "0615",
-      "frgn": -1363690,
-      "orgn": 374906
-     },
-     {
-      "date": "0616",
-      "frgn": -251819,
-      "orgn": 729908
-     },
-     {
-      "date": "0617",
-      "frgn": -855669,
-      "orgn": -625120
-     },
-     {
-      "date": "0618",
-      "frgn": 15900,
-      "orgn": -221649
-     },
-     {
-      "date": "0619",
-      "frgn": 367996,
-      "orgn": 255120
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260615",
-    "peak_value_eok": 1647,
-    "peak_high_pct": 14.71,
-    "ma20": 50077.5,
-    "ma20_margin_pct": 0.04,
-    "ivtr_net": 1044861,
-    "ivtr_days": 4,
-    "ivtr_eok": 503,
-    "cause_summary": "&quot;미·이란 전쟁 끝나면 재건사업 기회 온다&quot;…삼성E&amp;A 등 건설주 급등",
     "was_theme_leader": false,
     "source": "live"
    },
@@ -550,17 +431,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 60200.0,
-   "change_pct": 0.0,
+   "price": 60150.0,
+   "change_pct": -0.08,
    "high_pct": 6.31,
-   "fade_pct": 100.0,
-   "value_eok": 785,
+   "fade_pct": 101.3,
+   "value_eok": 795,
    "turnover_pct": 4.9,
    "peak_turnover_pct": 26.8,
    "float_ratio": 0.7229000000000001,
    "turnover_basis": "float",
-   "ma10": 61450.0,
-   "ma10_margin_pct": -2.03,
+   "ma10": 61445.0,
+   "ma10_margin_pct": -2.11,
    "spark": {
     "clusters": []
    },
@@ -619,8 +500,8 @@
     "peak_date": "20260615",
     "peak_value_eok": 4882,
     "peak_high_pct": 13.32,
-    "ma20": 56850.0,
-    "ma20_margin_pct": 5.89,
+    "ma20": 56847.5,
+    "ma20_margin_pct": 5.81,
     "ivtr_net": 18468,
     "ivtr_days": 4,
     "ivtr_eok": 16,
@@ -673,8 +554,8 @@
    "change_pct": 8.19,
    "high_pct": 13.51,
    "fade_pct": 39.4,
-   "value_eok": 831,
-   "turnover_pct": 14.4,
+   "value_eok": 841,
+   "turnover_pct": 14.5,
    "peak_turnover_pct": 43.2,
    "float_ratio": 0.7117,
    "turnover_basis": "float",
