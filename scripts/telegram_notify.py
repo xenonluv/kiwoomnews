@@ -65,7 +65,11 @@ def _load_state(path):
 
 def _save_state(path, state):
     try:
-        json.dump(state, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        # 원자적 저장(tmp+replace) — 쓰기 중 종료 시 상태 파일이 truncate돼 '오늘 보낸 봉' 집합이
+        # 통째로 소실되면 같은 완성 봉에 알림이 중복 발송된다(디둡 무력화). 그것을 방지.
+        tmp = path + ".tmp"
+        json.dump(state, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        os.replace(tmp, path)
     except Exception as e:
         log(f"[telegram] 상태 저장 실패: {e}")
 

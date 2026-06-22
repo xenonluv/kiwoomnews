@@ -181,7 +181,10 @@ export async function answerQuestion(code: string, question: string): Promise<St
       facts.push({ text: e.text, label: "데이터" });
       continue;
     }
-    const src = sourceMap.get(e.src.toUpperCase());
+    // 모델이 src를 'N1, N3'·'n1 (뉴스)'처럼 복수 ID·부연과 함께 줄 수 있어 첫 ID 토큰만 추출 —
+    // 정확 인용이 단순 형식 차이로 dropped(거짓 음성)되는 것 방지.
+    const srcKey = (e.src.match(/[A-Za-z]+\d+/)?.[0] ?? e.src).toUpperCase();
+    const src = sourceMap.get(srcKey);
     if (!src) {
       dropped++; // 존재하지 않는 출처 ID
       continue;

@@ -168,14 +168,18 @@ export async function fetchDaily(code: string, calendarDays = 300): Promise<Cand
     // [날짜, 시가, 고가, 저가, 종가, 거래량, ...]
     if (!Array.isArray(row) || row.length < 6) continue;
     const [date, open, high, low, close, volume] = row;
-    if (typeof close !== "number" || close <= 0) continue;
+    const o = Number(open), h = Number(high), l = Number(low), c = Number(close);
+    // close만이 아니라 OHLC 전부 유효수 검증 — 하나라도 NaN/비정상이면(거래정지·신규상장 첫행 등)
+    // stochastic(-Infinity 비교)·주봉 Math.max·일목 등으로 NaN이 전파돼 지표가 조용히 틀린 값을 낸다.
+    if (![o, h, l, c].every(Number.isFinite) || c <= 0) continue;
+    const v = Number(volume);
     out.push({
       date: String(date),
-      open: Number(open),
-      high: Number(high),
-      low: Number(low),
-      close: Number(close),
-      volume: Number(volume),
+      open: o,
+      high: h,
+      low: l,
+      close: c,
+      volume: Number.isFinite(v) ? v : 0,
     });
   }
   return out;

@@ -28,7 +28,13 @@ export function makeAliases(name: string): string[] {
 function mentions(text: string, aliases: string[]): boolean {
   if (aliases.length === 0) return true;
   const t = text.toLowerCase();
-  return aliases.some((a) => t.includes(a));
+  return aliases.some((a) => {
+    if (!t.includes(a)) return false;
+    // 영문 약어(lg·sk 등)는 무관 단어 내부 우연일치(flagship·risk·task) 방지 — 영숫자 경계 요구.
+    // 한글 별칭은 \b가 무의미하므로 substring 그대로(종목명은 충분히 변별적).
+    if (/^[a-z0-9]+$/.test(a)) return new RegExp(`(?<![a-z0-9])${a}(?![a-z0-9])`).test(t);
+    return true;
+  });
 }
 
 // 강한 시황/일반(노이즈) — 제목에 있으면 무조건 제외

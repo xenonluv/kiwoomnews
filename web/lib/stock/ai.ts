@@ -92,7 +92,11 @@ export async function callKimiJson(args: {
   }
   try {
     const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
-    return JSON.parse(data.choices?.[0]?.message?.content ?? "");
+    const raw = (data.choices?.[0]?.message?.content ?? "").trim();
+    // 모델이 response_format 지정에도 가끔 ```json 펜스나 선행 설명을 붙여 응답한다 — 첫 '{'~마지막 '}'만
+    // 추출해 파싱을 견고화(없으면 원문 그대로 → 파싱 실패 시 기존대로 강등). 펜스 한 줄에 N샘플 전건 503 방지.
+    const i = raw.indexOf("{"), j = raw.lastIndexOf("}");
+    return JSON.parse(i >= 0 && j > i ? raw.slice(i, j + 1) : raw);
   } catch {
     throw new AiUnavailableError("AI 응답 파싱 실패");
   }

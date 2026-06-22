@@ -39,12 +39,25 @@ def make_aliases(name):
     return {a.lower() for a in al if a and len(a) >= 2}
 
 
+_ASCII_ALIAS = re.compile(r"^[a-z0-9]+$")
+
+
 def mentions(text, aliases):
     """본문/제목에 종목(별칭) 언급 여부."""
     if not aliases:
         return True  # 별칭 미지정 시 검사 생략(하위호환)
     t = text.lower()
-    return any(a in t for a in aliases)
+    for a in aliases:
+        if a not in t:
+            continue
+        # 영문 약어(lg·sk 등)는 무관 단어 내부 우연일치(flagship·risk·task) 방지 — 영숫자 경계 요구.
+        # 한글 별칭은 단어경계가 무의미하므로 substring 그대로(종목명은 충분히 변별적). news-score.ts와 정합.
+        if _ASCII_ALIAS.match(a):
+            if re.search(r"(?<![a-z0-9])" + a + r"(?![a-z0-9])", t):
+                return True
+        else:
+            return True
+    return False
 
 
 # 강한 시황/일반(노이즈) — 제목에 있으면 재료 키워드와 무관하게 무조건 제외

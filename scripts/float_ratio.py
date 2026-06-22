@@ -41,9 +41,17 @@ def _load_cache():
 def _save_cache(cache):
     try:
         os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
-        json.dump(cache, open(CACHE_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        # 원자적 저장(tmp+replace) — 쓰기 도중 종료(Mac 잠자기 등) 시 캐시 truncate/손상 방지
+        tmp = CACHE_PATH + ".tmp"
+        json.dump(cache, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        os.replace(tmp, CACHE_PATH)
     except Exception as e:
         _log(f"[float] 캐시 저장 실패: {e}")
+
+
+def _in_band(r):
+    """유효 유동비율(0.03~1.0)인지 — 캐시에 든 구버전·손상·이상치 값을 반환 전에 거른다."""
+    return isinstance(r, (int, float)) and 0.03 <= r <= 1.0
 
 
 def _fetch(code):
@@ -88,12 +96,17 @@ def get_float_ratio(code, cache=None):
         cache = _load_cache()
     today = datetime.now(KST).strftime("%Y%m%d")
     rec = cache.get(code)
-    if rec and rec.get("ratio") is not None and rec.get("date"):
+    # 캐시 값은 반환 전 밴드 검증 — _fetch만 밴드를 체크하므로, 구버전 코드가 쓴/손상된 밴드 밖
+    # 값(예 0.01)이 그대로 새어 나가면 유통회전율이 ~100배 부풀어 점수가 거짓 포화된다.
+    cached = rec.get("ratio") if rec else None
+    if not _in_band(cached):
+        cached = None
+    if cached is not None and rec.get("date"):
         try:
             age = (datetime.strptime(today, "%Y%m%d")
                    - datetime.strptime(rec["date"], "%Y%m%d")).days
             if age < CACHE_TTL_DAYS:
-                return rec["ratio"]
+                return cached
         except Exception:
             pass
     ratio, listed = _fetch(code)
@@ -101,8 +114,8 @@ def get_float_ratio(code, cache=None):
         cache[code] = {"ratio": ratio, "listed": listed, "date": today}
         if own:
             _save_cache(cache)
-    elif rec and rec.get("ratio") is not None:
-        return rec["ratio"]  # 신선도 지났어도 과거 값 폴백(스크랩 일시 실패 < 무값)
+    elif cached is not None:
+        return cached  # 신선도 지났어도 밴드 내 과거 값 폴백(스크랩 일시 실패 < 무값)
     return ratio
 
 

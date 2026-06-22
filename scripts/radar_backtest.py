@@ -85,6 +85,9 @@ def next_day_bar(code, date):
     except Exception as e:
         log(f"  [warn] {code} 일봉 실패: {e}")
         return None, None
+    # 거래정지(종가 0/결측) 봉 제외 — track_eval/ai_click_eval과 동일. D+1이 정지면 close=0이 되어
+    # hit=False·수익률 −100%인 거짓 표본이 core 통계·가중치 튜닝을 오염시키므로, 종가 유효 봉만 본다.
+    bars = [b for b in bars if b.get("close")]
     sig = next((b for b in bars if b["date"] == date), None)
     if not sig:
         return None, None

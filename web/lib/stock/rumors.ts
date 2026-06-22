@@ -84,9 +84,13 @@ export async function fetchTelegramMentions(
     slug: m[1],
   }));
   const out: RumorItem[] = [];
+  // 코드(6자리)는 숫자 경계로만 매칭 — '...005930원'·'주문번호 2005930' 같은 무관 숫자열에 우연
+  // 포함된 코드로 무관 루머가 근거 풀에 들어가는 것 방지. 6자리 아니면 기존 includes 폴백.
+  const codeRe = /^\d{6}$/.test(code) ? new RegExp(`(?<!\\d)${code}(?!\\d)`) : null;
   for (const m of texts) {
     const text = stripTags(m[1]);
-    if (!text || (!text.includes(name) && !text.includes(code))) continue;
+    const hitCode = codeRe ? codeRe.test(text) : text.includes(code);
+    if (!text || (!text.includes(name) && !hitCode)) continue;
     // 메시지 위치 이후 가장 가까운 time 태그
     const pos = m.index ?? 0;
     const t = times.find((x) => x.pos >= pos);

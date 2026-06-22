@@ -278,19 +278,23 @@ def main():
     open(RADAR_JSON, "w", encoding="utf-8").write(new)  # git 락 보유 중 (위에서 획득)
     git("add", "web/data/radar.json")
     git("commit", "-q", "-m", f"data: 레이더 자동 게시 (수상종목 {len(out['suspects'])}건)")
-    # push 전 원격 변경 먼저 통합 (다중 머신 공존)
-    pl = git("pull", "--rebase", "--autostash", "origin", "main")
-    if pl.returncode != 0:
-        sys.stderr.write("pull --rebase 실패(충돌 가능) — 수동 확인 필요:\n" + pl.stderr[-500:])
-        git("rebase", "--abort")
-        sys.exit(1)
-    pr = git("push", "origin", "main")
-    if pr.returncode != 0:
-        sys.stderr.write("push 실패:\n" + pr.stderr[-500:])
-        sys.exit(1)
-    print(f"게시 완료: 수상종목 {len(out['suspects'])}건 push")
-    for s in out["suspects"]:
-        print(f"  - {s['name']} score={s['suspicion_score']}")
+    # push 전 원격 변경 먼저 통합 (다중 머신 공존). 동시 푸셔(backtest·track·forecast) 경합으로
+    # push가 non-fast-forward 거부되면 1회 재시도 — 단발 실패로 radar.json 커밋이 로컬에만 남아
+    # 사이트가 stale해지는 것 방지(push_state retry 패턴과 정합).
+    for _attempt in range(2):
+        pl = git("pull", "--rebase", "--autostash", "origin", "main")
+        if pl.returncode != 0:
+            sys.stderr.write("pull --rebase 실패(충돌 가능) — 수동 확인 필요:\n" + pl.stderr[-500:])
+            git("rebase", "--abort")
+            sys.exit(1)
+        pr = git("push", "origin", "main")
+        if pr.returncode == 0:
+            print(f"게시 완료: 수상종목 {len(out['suspects'])}건 push")
+            for s in out["suspects"]:
+                print(f"  - {s['name']} score={s['suspicion_score']}")
+            return
+    sys.stderr.write("push 실패(재시도 후):\n" + pr.stderr[-500:])
+    sys.exit(1)
 
 
 if __name__ == "__main__":
