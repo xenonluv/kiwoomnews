@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-22 15:42:20 KST",
+ "generated_at": "2026-06-22 15:52:23 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -73,7 +73,7 @@
    "change_pct": 5.8,
    "high_pct": 10.07,
    "fade_pct": 42.4,
-   "value_eok": 6380,
+   "value_eok": 6431,
    "turnover_pct": 1.2,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
