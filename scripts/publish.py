@@ -92,7 +92,7 @@ def record_history(out):
                 os.replace(path, path + ".corrupt")
             except OSError:
                 pass
-    for s in out.get("suspects", []):
+    for rank, s in enumerate(out.get("suspects", []), 1):
         prev = hist["suspects"].get(s["code"], {})
         hist["suspects"][s["code"]] = {
             "name": s["name"],
@@ -101,6 +101,11 @@ def record_history(out):
             # 통계용은 raw(가중치 적용 전) — 튜닝 체제가 바뀌어도 표본 일관성 유지
             "score": s.get("score_raw", s["suspicion_score"]),
             "breakdown": s.get("score_breakdown_raw") or s.get("score_breakdown", {}),
+            # 표시 전용 — "그날 화면에서 몇 위·몇 점이었나" 추적용(통계는 위 raw score 사용).
+            # reaccum은 raw=0이라 위 score/breakdown만으론 순위 재현 불가 → 표시값을 함께 남긴다.
+            "suspicion_score": s.get("suspicion_score"),
+            "score_breakdown_display": s.get("score_breakdown", {}),
+            "rank": rank,                 # 이번 회차 게시 순위(1=최상단). 매 회차 덮어써 마지막 회차 확정값
             "change_pct": s.get("change_pct"),
             "high_pct": s.get("high_pct"),
             "fade_pct": s.get("fade_pct"),
