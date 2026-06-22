@@ -1,16 +1,16 @@
 {
-  "as_of": "2026-06-22 14:37 KST",
+  "as_of": "2026-06-22 14:52 KST",
   "intraday_rank": [
     {
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15340.0,
-      "target": 16107,
-      "stop": 14880,
+      "entry": 15330.0,
+      "target": 16096,
+      "stop": 14870,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
@@ -49,12 +49,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 19120.0,
-      "target": 20076,
-      "stop": 18546,
+      "entry": 18870.0,
+      "target": 19814,
+      "stop": 18304,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.79)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
@@ -77,14 +77,14 @@
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169300.0,
-      "target": 177765,
-      "stop": 164221,
+      "entry": 169800.0,
+      "target": 178290,
+      "stop": 164706,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.97)",
-        "RSI52.4 강세",
-        "장중 15회 지속"
+        "강세마감(0.93)",
+        "RSI52.6 강세",
+        "장중 16회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -107,16 +107,16 @@
       "ticker": "보해양조",
       "code": "000890",
       "tomorrow_up_prob": "58%",
-      "entry": 2575.0,
-      "target": 2704,
-      "stop": 2498,
+      "entry": 2675.0,
+      "target": 2809,
+      "stop": 2595,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.89)",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI81.6 과매수, Stoch 과매수",
+      "risk": "RSI82.7 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -163,13 +163,13 @@
       "ticker": "LG전자",
       "code": "066570",
       "tomorrow_up_prob": "54%",
-      "entry": 228500.0,
-      "target": 239925,
-      "stop": 221645,
+      "entry": 227000.0,
+      "target": 238350,
+      "stop": 220190,
       "confidence": "하",
       "reasons": [
         "호재",
-        "장중 23회 지속"
+        "장중 24회 지속"
       ],
       "risk": "약한 마감",
       "day_change": null,
@@ -234,17 +234,17 @@
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "39%",
-      "entry": 527000.0,
-      "target": 553350,
-      "stop": 511190,
+      "entry": 528000.0,
+      "target": 554400,
+      "stop": 512160,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.71)",
+        "강세마감(0.73)",
         "정배열",
         "MACD강세"
       ],
       "risk": "특이 위험 낮음",
-      "day_change": 6.82,
+      "day_change": 7.22,
       "cause_news": [
         {
           "title": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원...",
@@ -267,61 +267,17 @@
       "cause_summary": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원..."
     },
     {
-      "ticker": "SK하이닉스",
-      "code": "000660",
-      "tomorrow_up_prob": "39%",
-      "entry": 2899000.0,
-      "target": 3043950,
-      "stop": 2812030,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.79)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "SK하이닉스 340% 급등에 홍콩 ETF도 부담…CSOP, 옵션 한도 확대",
-          "url": "https://www.ajunews.com/view/20260622141943505",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] SK하이닉스, 25년만에 장중 시총 1위 뒤집었다",
-          "url": "https://www.seoulfn.com/news/articleView.html?idxno=631632",
-          "office": "seoulfn",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "SK하이닉스, 삼성전자 제치고 시총 1위…25년 만에 왕좌 교체[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062213211612354",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "SK하이닉스 340% 급등에 홍콩 ETF도 부담…CSOP, 옵션 한도 확대"
-    },
-    {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "38%",
-      "entry": 1918000.0,
-      "target": 2013900,
-      "stop": 1860460,
+      "tomorrow_up_prob": "39%",
+      "entry": 1932000.0,
+      "target": 2028600,
+      "stop": 1874040,
       "confidence": "하",
       "reasons": [
+        "강세마감(0.76)",
         "정배열",
-        "MACD강세",
-        "일목 구름위"
+        "MACD강세"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -396,12 +352,12 @@
       "ticker": "한솔테크닉스",
       "code": "004710",
       "tomorrow_up_prob": "95%",
-      "entry": 15340.0,
-      "target": 16107,
-      "stop": 14880,
+      "entry": 15330.0,
+      "target": 16096,
+      "stop": 14870,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.72)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
@@ -440,12 +396,12 @@
       "ticker": "후성",
       "code": "093370",
       "tomorrow_up_prob": "95%",
-      "entry": 19120.0,
-      "target": 20076,
-      "stop": 18546,
+      "entry": 18870.0,
+      "target": 19814,
+      "stop": 18304,
       "confidence": "상",
       "reasons": [
-        "강세마감(0.79)",
+        "강세마감(0.71)",
         "정배열",
         "MACD강세"
       ],
@@ -468,14 +424,14 @@
       "ticker": "DB하이텍",
       "code": "000990",
       "tomorrow_up_prob": "64%",
-      "entry": 169300.0,
-      "target": 177765,
-      "stop": 164221,
+      "entry": 169800.0,
+      "target": 178290,
+      "stop": 164706,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.97)",
-        "RSI52.4 강세",
-        "장중 15회 지속"
+        "강세마감(0.93)",
+        "RSI52.6 강세",
+        "장중 16회 지속"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -498,16 +454,16 @@
       "ticker": "보해양조",
       "code": "000890",
       "tomorrow_up_prob": "58%",
-      "entry": 2575.0,
-      "target": 2704,
-      "stop": 2498,
+      "entry": 2675.0,
+      "target": 2809,
+      "stop": 2595,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
+        "강세마감(0.89)",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI81.6 과매수, Stoch 과매수",
+      "risk": "RSI82.7 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
