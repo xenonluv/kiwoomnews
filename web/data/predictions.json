@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 15:22 KST",
+  "as_of": "2026-06-23 15:37 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -129,14 +129,14 @@
       "ticker": "엑스게이트",
       "code": "356680",
       "tomorrow_up_prob": "38%",
-      "entry": 19700.0,
-      "target": 20685,
-      "stop": 19109,
+      "entry": 19690.0,
+      "target": 20674,
+      "stop": 19099,
       "confidence": "하",
       "reasons": [
         "RSI54.5 강세",
         "Stoch골든",
-        "거래량3.43배"
+        "거래량3.46배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -173,9 +173,9 @@
       "ticker": "JW신약",
       "code": "067290",
       "tomorrow_up_prob": "38%",
-      "entry": 3115.0,
-      "target": 3271,
-      "stop": 3022,
+      "entry": 3105.0,
+      "target": 3260,
+      "stop": 3012,
       "confidence": "하",
       "reasons": [
         "MACD강세",
