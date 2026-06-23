@@ -4,7 +4,7 @@
   "028260": {
    "name": "삼성물산",
    "sector": "유통",
-   "entry": 534000.0,
+   "entry": 527000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -28,14 +28,14 @@
     "re_turnover": 0
    },
    "rank": 1,
-   "change_pct": 2.69,
+   "change_pct": 1.35,
    "high_pct": 6.15,
-   "fade_pct": 56.2,
+   "fade_pct": 78.1,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 3763,
-   "turnover_pct": 0.7,
+   "value_eok": 4021,
+   "turnover_pct": 0.8,
    "peak_turnover_pct": 2.2,
    "turnover_basis": "float",
    "theme_leader": false,
@@ -52,8 +52,8 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 459475.0,
-    "ma20_margin_pct": 16.22,
+    "ma20": 459075.0,
+    "ma20_margin_pct": 14.8,
     "ivtr_net": 112946,
     "ivtr_days": 4,
     "ivtr_eok": 581,
@@ -162,5 +162,5 @@
    "final": false
   }
  },
- "as_of": "2026-06-23 09:52:21 KST"
+ "as_of": "2026-06-23 10:02:20 KST"
 }
