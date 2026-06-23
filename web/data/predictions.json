@@ -1,50 +1,6 @@
 {
-  "as_of": "2026-06-23 11:07 KST",
+  "as_of": "2026-06-23 11:22 KST",
   "intraday_rank": [
-    {
-      "ticker": "제이앤티씨",
-      "code": "204270",
-      "tomorrow_up_prob": "69%",
-      "entry": 23200.0,
-      "target": 24360,
-      "stop": 22504,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI64.6 강세"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": 1.53,
-      "cause_news": [
-        {
-          "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
-          "url": "https://www.ajunews.com/view/20260619125402870",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
-        },
-        {
-          "title": "제이앤티씨, 세계 첫 2.0mmT TGV 유리기판 개발 성공 소식에 '상한가'[특...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03204566645483360",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
-        },
-        {
-          "title": "제이앤티씨, 글로벌 완성차 3곳서 2500억 수주...차량용 커버글라스 존...",
-          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1378921",
-          "office": "daily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가"
-    },
     {
       "ticker": "보해양조",
       "code": "000890",
@@ -70,20 +26,20 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
+          "title": "보해양조, '반도체 유치설' 수혜 기대감에 상한가…거래소 투자주의 지...",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062310361833307",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "[특징주] 보해양조, 반도체 호남 유치설 영향 '상승'",
           "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1267691",
           "office": "jeonmae",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "상한가 종목 속출…미래나노텍·보해양조·모헨즈 등 매수세 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583934",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -93,13 +49,13 @@
       "ticker": "대원전선",
       "code": "006340",
       "tomorrow_up_prob": "64%",
-      "entry": 11040.0,
-      "target": 11592,
-      "stop": 10709,
+      "entry": 11100.0,
+      "target": 11655,
+      "stop": 10767,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "거래량2.33배",
+        "거래량2.37배",
         "호재"
       ],
       "risk": "약한 마감",
@@ -178,58 +134,20 @@
       "cause_summary": "건설 경기 회복 기대감에 시멘트주 강세… 서산 모헨즈 주가 파죽지세"
     },
     {
-      "ticker": "부국철강",
-      "code": "026940",
-      "tomorrow_up_prob": "38%",
-      "entry": 3400.0,
-      "target": 3570,
-      "stop": 3298,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.77)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[급등락주 짚어보기] 중동 긴장 완화·주주환원 정책에 부국철강ㆍ비비...",
-          "url": "https://www.etoday.co.kr/news/view/2596047",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[이격도과열 종목] 키스트론·한울반도체· 부국철강· 한울소재과학 펄...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462146",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[급등락주 짚어보기] 중동 긴장 완화·주주환원 정책에 부국철강ㆍ비비..."
-    }
-  ],
-  "closing_bet": [
-    {
       "ticker": "제이앤티씨",
       "code": "204270",
-      "tomorrow_up_prob": "69%",
-      "entry": 23200.0,
-      "target": 24360,
-      "stop": 22504,
-      "confidence": "중",
+      "tomorrow_up_prob": "38%",
+      "entry": 22300.0,
+      "target": 23415,
+      "stop": 21631,
+      "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.6 강세"
+        "RSI61.5 강세"
       ],
-      "risk": "Stoch 과매수",
-      "day_change": 1.53,
+      "risk": "특이 위험 낮음",
+      "day_change": -0.22,
       "cause_news": [
         {
           "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
@@ -260,6 +178,44 @@
       "cause_summary": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가"
     },
     {
+      "ticker": "부국철강",
+      "code": "026940",
+      "tomorrow_up_prob": "38%",
+      "entry": 3580.0,
+      "target": 3759,
+      "stop": 3473,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.99)",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[급등락주 짚어보기] 중동 긴장 완화·주주환원 정책에 부국철강ㆍ비비...",
+          "url": "https://www.etoday.co.kr/news/view/2596047",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[이격도과열 종목] 키스트론·한울반도체· 부국철강· 한울소재과학 펄...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462146",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[급등락주 짚어보기] 중동 긴장 완화·주주환원 정책에 부국철강ㆍ비비..."
+    }
+  ],
+  "closing_bet": [
+    {
       "ticker": "보해양조",
       "code": "000890",
       "tomorrow_up_prob": "65%",
@@ -284,20 +240,20 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
+          "title": "보해양조, '반도체 유치설' 수혜 기대감에 상한가…거래소 투자주의 지...",
+          "url": "https://www.newsway.co.kr/news/view?ud=2026062310361833307",
+          "office": "newsway",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
           "title": "[특징주] 보해양조, 반도체 호남 유치설 영향 '상승'",
           "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1267691",
           "office": "jeonmae",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "상한가 종목 속출…미래나노텍·보해양조·모헨즈 등 매수세 집중",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583934",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -307,13 +263,13 @@
       "ticker": "대원전선",
       "code": "006340",
       "tomorrow_up_prob": "64%",
-      "entry": 11040.0,
-      "target": 11592,
-      "stop": 10709,
+      "entry": 11100.0,
+      "target": 11655,
+      "stop": 10767,
       "confidence": "중",
       "reasons": [
         "정배열",
-        "거래량2.33배",
+        "거래량2.37배",
         "호재"
       ],
       "risk": "약한 마감",
