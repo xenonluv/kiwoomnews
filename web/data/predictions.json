@@ -1,20 +1,94 @@
 {
-  "as_of": "2026-06-23 10:07 KST",
+  "as_of": "2026-06-23 10:22 KST",
   "intraday_rank": [
     {
-      "ticker": "대원전선",
-      "code": "006340",
-      "tomorrow_up_prob": "64%",
-      "entry": 11160.0,
-      "target": 11718,
-      "stop": 10825,
+      "ticker": "삼양식품",
+      "code": "003230",
+      "tomorrow_up_prob": "63%",
+      "entry": 1121000.0,
+      "target": 1177050,
+      "stop": 1087370,
       "confidence": "중",
       "reasons": [
-        "정배열",
-        "거래량2.07배",
+        "강세마감(0.87)",
+        "Stoch골든",
         "호재"
       ],
       "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "삼양애니, '페포월드닷컴' 오픈…참여형 플랫폼 구축",
+          "url": "https://n.news.naver.com/mnews/article/629/0000509680",
+          "office": "더팩트",
+          "sentiment": "호재"
+        },
+        {
+          "title": "K푸드 넘어 콘텐츠로…‘불닭 IP’ 키우는 삼양",
+          "url": "https://n.news.naver.com/mnews/article/092/0002427557",
+          "office": "지디넷코리아",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "62%",
+      "entry": 3040.0,
+      "target": 3192,
+      "stop": 2949,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI86.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260623050300008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 보해양조, 반도체 호남 유치설 영향 '상승'",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1267691",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정"
+    },
+    {
+      "ticker": "대원전선",
+      "code": "006340",
+      "tomorrow_up_prob": "62%",
+      "entry": 11040.0,
+      "target": 11592,
+      "stop": 10709,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "거래량2.17배",
+        "호재"
+      ],
+      "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
         {
@@ -34,67 +108,31 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462277",
-          "office": "pinpointnews",
+          "title": "대원전선, 4거래일만에 8% 급등...1만1000원선 회복",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=440055",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'"
     },
     {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "61%",
-      "entry": 2770.0,
-      "target": 2908,
-      "stop": 2687,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.83)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "RSI84.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정",
-          "url": "https://www.yna.co.kr/view/AKR20260623050300008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정"
-    },
-    {
       "ticker": "삼성생명",
       "code": "032830",
-      "tomorrow_up_prob": "59%",
-      "entry": 474000.0,
-      "target": 497700,
-      "stop": 459780,
+      "tomorrow_up_prob": "56%",
+      "entry": 472000.0,
+      "target": 495600,
+      "stop": 457840,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI63.8 강세"
+        "RSI63.5 강세"
       ],
-      "risk": "악재",
+      "risk": "약한 마감, 악재",
       "day_change": null,
       "cause_news": [
         {
@@ -112,17 +150,17 @@
     {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "55%",
-      "entry": 2071000.0,
-      "target": 2174550,
-      "stop": 2008870,
+      "tomorrow_up_prob": "56%",
+      "entry": 2061000.0,
+      "target": 2164050,
+      "stop": 1999170,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI82.2 과매수, Stoch 과매수",
+      "risk": "RSI82.0 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -134,17 +172,17 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
         },
         {
-          "title": "SK스퀘어, 211만원 돌파하며 7%대 강세…증권가 목표가 270만원 제시",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583903",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주] SK스퀘어, 210만원 돌파 후 숨고르기…SK하이닉스 지분가치 부...",
           "url": "https://www.tokenpost.kr/news/economy/371922",
           "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주} SK스퀘어, '시총 1위' SK하이닉스 효과에 장중 신고가",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=710719",
+          "office": "cstimes",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
@@ -156,7 +194,7 @@
     {
       "ticker": "서산",
       "code": "079650",
-      "tomorrow_up_prob": "50%",
+      "tomorrow_up_prob": "51%",
       "entry": 8120.0,
       "target": 8526,
       "stop": 7876,
@@ -198,20 +236,50 @@
       "cause_summary": "건설 경기 회복 기대감에 시멘트주 강세… 서산 모헨즈 주가 파죽지세"
     },
     {
+      "ticker": "예스티",
+      "code": "122640",
+      "tomorrow_up_prob": "39%",
+      "entry": 42850.0,
+      "target": 44992,
+      "stop": 41564,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.91)",
+        "정배열",
+        "MACD강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": 10,
+      "related_news": [
+        {
+          "title": "HPSP·예스티 특허분쟁 2심…특허 유효·비침해 판단",
+          "url": "https://n.news.naver.com/mnews/article/030/0003439161",
+          "office": "전자신문",
+          "sentiment": "혼재"
+        },
+        {
+          "title": "특허법원 &quot;HPSP 특허 유효, 예스티 비침해&quot; 판결",
+          "url": "https://n.news.naver.com/mnews/article/092/0002427176",
+          "office": "지디넷코리아",
+          "sentiment": "혼재"
+        }
+      ]
+    },
+    {
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "38%",
-      "entry": 524000.0,
-      "target": 550200,
-      "stop": 508280,
+      "entry": 513000.0,
+      "target": 538650,
+      "stop": 497610,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.7 강세"
+        "RSI62.6 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 1.35,
+      "day_change": 0.96,
       "cause_news": [
         {
           "title": "[특징주] 삼성물산, 장 초반 강세…계열사 지분가치 재평가 기대",
@@ -229,9 +297,9 @@
       "ticker": "SK",
       "code": "034730",
       "tomorrow_up_prob": "38%",
-      "entry": 791000.0,
-      "target": 830550,
-      "stop": 767270,
+      "entry": 783500.0,
+      "target": 822675,
+      "stop": 759995,
       "confidence": "하",
       "reasons": [
         "정배열",
@@ -246,16 +314,8 @@
           "url": "https://www.cstimes.com/news/articleView.html?idxno=710719",
           "office": "cstimes",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "25년 철옹성 무너졌다…SK하이닉스, 시총 1위 등극",
-          "url": "https://www.sedaily.com/article/20058914?ref=naver",
-          "office": "sedaily",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         },
         {
           "title": "[특징주] SK스퀘어, 210만원 돌파 후 숨고르기…SK하이닉스 지분가치 부...",
@@ -264,6 +324,14 @@
           "sentiment": "호재",
           "cause_score": 9,
           "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "마이크론 25일(한국시간) 새벽 실적 발표 주가 분수령될 듯...SK하이닉스...",
+          "url": "http://www.beyondpost.co.kr/view.php?ud=2026062309584944602aaae0046f_30",
+          "office": "beyondpost",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 재료, 일반뉴스, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -272,19 +340,93 @@
   ],
   "closing_bet": [
     {
-      "ticker": "대원전선",
-      "code": "006340",
-      "tomorrow_up_prob": "64%",
-      "entry": 11160.0,
-      "target": 11718,
-      "stop": 10825,
+      "ticker": "삼양식품",
+      "code": "003230",
+      "tomorrow_up_prob": "63%",
+      "entry": 1121000.0,
+      "target": 1177050,
+      "stop": 1087370,
       "confidence": "중",
       "reasons": [
-        "정배열",
-        "거래량2.07배",
+        "강세마감(0.87)",
+        "Stoch골든",
         "호재"
       ],
       "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "삼양애니, '페포월드닷컴' 오픈…참여형 플랫폼 구축",
+          "url": "https://n.news.naver.com/mnews/article/629/0000509680",
+          "office": "더팩트",
+          "sentiment": "호재"
+        },
+        {
+          "title": "K푸드 넘어 콘텐츠로…‘불닭 IP’ 키우는 삼양",
+          "url": "https://n.news.naver.com/mnews/article/092/0002427557",
+          "office": "지디넷코리아",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "62%",
+      "entry": 3040.0,
+      "target": 3192,
+      "stop": 2949,
+      "confidence": "중",
+      "reasons": [
+        "강세마감(1.0)",
+        "MACD강세",
+        "일목 구름위"
+      ],
+      "risk": "RSI86.3 과매수, Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정",
+          "url": "https://www.yna.co.kr/view/AKR20260623050300008?input=1195m",
+          "office": "yna",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 보해양조, 반도체 호남 유치설 영향 '상승'",
+          "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1267691",
+          "office": "jeonmae",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정"
+    },
+    {
+      "ticker": "대원전선",
+      "code": "006340",
+      "tomorrow_up_prob": "62%",
+      "entry": 11040.0,
+      "target": 11592,
+      "stop": 10709,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "거래량2.17배",
+        "호재"
+      ],
+      "risk": "약한 마감",
       "day_change": null,
       "cause_news": [
         {
@@ -304,67 +446,31 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌...",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462277",
-          "office": "pinpointnews",
+          "title": "대원전선, 4거래일만에 8% 급등...1만1000원선 회복",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=440055",
+          "office": "econonews",
           "sentiment": "호재",
           "cause_score": 11,
-          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'"
     },
     {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "61%",
-      "entry": 2770.0,
-      "target": 2908,
-      "stop": 2687,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.83)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "RSI84.0 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정",
-          "url": "https://www.yna.co.kr/view/AKR20260623050300008?input=1195m",
-          "office": "yna",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 보해양조, '반도체 호남 유치설'에 강세…투자주의 지정"
-    },
-    {
       "ticker": "삼성생명",
       "code": "032830",
-      "tomorrow_up_prob": "59%",
-      "entry": 474000.0,
-      "target": 497700,
-      "stop": 459780,
+      "tomorrow_up_prob": "56%",
+      "entry": 472000.0,
+      "target": 495600,
+      "stop": 457840,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI63.8 강세"
+        "RSI63.5 강세"
       ],
-      "risk": "악재",
+      "risk": "약한 마감, 악재",
       "day_change": null,
       "cause_news": [
         {
@@ -382,17 +488,17 @@
     {
       "ticker": "SK스퀘어",
       "code": "402340",
-      "tomorrow_up_prob": "55%",
-      "entry": 2071000.0,
-      "target": 2174550,
-      "stop": 2008870,
+      "tomorrow_up_prob": "56%",
+      "entry": 2061000.0,
+      "target": 2164050,
+      "stop": 1999170,
       "confidence": "중",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "RSI82.2 과매수, Stoch 과매수",
+      "risk": "RSI82.0 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
@@ -404,17 +510,17 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 당일"
         },
         {
-          "title": "SK스퀘어, 211만원 돌파하며 7%대 강세…증권가 목표가 270만원 제시",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583903",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
           "title": "[특징주] SK스퀘어, 210만원 돌파 후 숨고르기…SK하이닉스 지분가치 부...",
           "url": "https://www.tokenpost.kr/news/economy/371922",
           "office": "tokenpost",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주} SK스퀘어, '시총 1위' SK하이닉스 효과에 장중 신고가",
+          "url": "https://www.cstimes.com/news/articleView.html?idxno=710719",
+          "office": "cstimes",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
