@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 14:52 KST",
+  "as_of": "2026-06-23 15:07 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -90,50 +90,6 @@
       "cause_summary": "건설 경기 회복 기대감에 시멘트주 강세… 서산 모헨즈 주가 파죽지세"
     },
     {
-      "ticker": "제이앤티씨",
-      "code": "204270",
-      "tomorrow_up_prob": "38%",
-      "entry": 21900.0,
-      "target": 22995,
-      "stop": 21243,
-      "confidence": "하",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI59.9 강세"
-      ],
-      "risk": "약한 마감",
-      "day_change": -3.5,
-      "cause_news": [
-        {
-          "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
-          "url": "https://www.ajunews.com/view/20260619125402870",
-          "office": "ajunews",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
-        },
-        {
-          "title": "제이앤티씨, 세계 첫 2.0mmT TGV 유리기판 개발 성공 소식에 '상한가'[특...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03204566645483360",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
-        },
-        {
-          "title": "제이앤티씨, 글로벌 완성차 3곳서 2500억 수주...차량용 커버글라스 존...",
-          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1378921",
-          "office": "daily",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가"
-    },
-    {
       "ticker": "부국철강",
       "code": "026940",
       "tomorrow_up_prob": "38%",
@@ -173,14 +129,14 @@
       "ticker": "엑스게이트",
       "code": "356680",
       "tomorrow_up_prob": "38%",
-      "entry": 19970.0,
-      "target": 20968,
-      "stop": 19371,
+      "entry": 19690.0,
+      "target": 20674,
+      "stop": 19099,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.77)",
-        "RSI55.1 강세",
-        "Stoch골든"
+        "RSI54.5 강세",
+        "Stoch골든",
+        "거래량3.24배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -212,34 +168,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "자사 홈페이지 ‘양자내성암호’ 전환…엑스게이트 8%↑[특징주]"
-    },
-    {
-      "ticker": "JW신약",
-      "code": "067290",
-      "tomorrow_up_prob": "38%",
-      "entry": 3160.0,
-      "target": 3318,
-      "stop": 3065,
-      "confidence": "하",
-      "reasons": [
-        "MACD강세",
-        "일목 구름위",
-        "거래량3.92배"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑[...",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02689606645484672",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑[..."
     }
   ],
   "closing_bet": [
