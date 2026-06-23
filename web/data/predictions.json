@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 12:37 KST",
+  "as_of": "2026-06-23 12:52 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -92,18 +92,18 @@
     {
       "ticker": "제이앤티씨",
       "code": "204270",
-      "tomorrow_up_prob": "39%",
-      "entry": 22550.0,
-      "target": 23678,
-      "stop": 21874,
+      "tomorrow_up_prob": "38%",
+      "entry": 23000.0,
+      "target": 24150,
+      "stop": 22310,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI62.5 강세"
+        "RSI64.1 강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": 1.31,
+      "risk": "Stoch 과매수",
+      "day_change": -0.44,
       "cause_news": [
         {
           "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
@@ -173,14 +173,14 @@
       "ticker": "포스코스틸리온",
       "code": "058430",
       "tomorrow_up_prob": "38%",
-      "entry": 6250.0,
-      "target": 6562,
-      "stop": 6062,
+      "entry": 6100.0,
+      "target": 6405,
+      "stop": 5917,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.96)",
-        "RSI54.0 강세",
-        "거래량3.99배"
+        "강세마감(0.78)",
+        "RSI52.5 강세",
+        "거래량4.8배"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
