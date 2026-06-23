@@ -1,245 +1,102 @@
 {
-  "as_of": "2026-06-23 09:22 KST",
+  "as_of": "2026-06-23 09:37 KST",
   "intraday_rank": [
     {
-      "ticker": "SK",
-      "code": "034730",
-      "tomorrow_up_prob": "68%",
-      "entry": 765000.0,
-      "target": 803250,
-      "stop": 742050,
+      "ticker": "우리금융지주",
+      "code": "316140",
+      "tomorrow_up_prob": "63%",
+      "entry": 31250.0,
+      "target": 32812,
+      "stop": 30312,
       "confidence": "중",
+      "reasons": [
+        "강세마감(0.79)",
+        "RSI50.2 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "related_news": [
+        {
+          "title": "[2026 100대 CEO] 임종룡 우리금융지주 회장",
+          "url": "https://n.news.naver.com/mnews/article/050/0000107664",
+          "office": "한경비즈니스",
+          "sentiment": "호재"
+        },
+        {
+          "title": "동양생명 소액주주 반발에…우리금융 &quot;보험, 상위권 수준 육성&quot;",
+          "url": "https://n.news.naver.com/mnews/article/648/0000048235",
+          "office": "비즈워치",
+          "sentiment": "호재"
+        }
+      ]
+    },
+    {
+      "ticker": "두산",
+      "code": "000150",
+      "tomorrow_up_prob": "58%",
+      "entry": 1717000.0,
+      "target": 1802850,
+      "stop": 1665490,
+      "confidence": "중",
+      "reasons": [
+        "RSI52.4 강세",
+        "호재"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462277",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌..."
+    },
+    {
+      "ticker": "SK스퀘어",
+      "code": "402340",
+      "tomorrow_up_prob": "54%",
+      "entry": 2099000.0,
+      "target": 2203950,
+      "stop": 2036030,
+      "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
         "일목 구름위"
       ],
-      "risk": "Stoch 과매수",
+      "risk": "RSI82.6 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
           "title": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년...",
           "url": "https://biz.chosun.com/stock/stock_general/2026/06/23/MGOG2M7EZNA7JF6MRSERXM75JU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
           "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "프리마켓서 '300만닉스' 터치…SK스퀘어도 15% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062308320454033",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년..."
-    },
-    {
-      "ticker": "LS ELECTRIC",
-      "code": "010120",
-      "tomorrow_up_prob": "67%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI53.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오...",
-          "url": "https://www.tokenpost.kr/news/economy/370972",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오..."
-    },
-    {
-      "ticker": "한울반도체",
-      "code": "320000",
-      "tomorrow_up_prob": "66%",
-      "entry": 27850.0,
-      "target": 29242,
-      "stop": 27014,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.79)",
-        "정배열",
-        "MACD강세"
-      ],
-      "risk": "RSI86.6 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062214280687432",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "MLCC 업사이클 수혜 예상…한울반도체 4거래일 연속 급등[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03102886645484672",
-          "office": "edaily",
           "sentiment": "호재",
           "cause_score": 15,
           "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "한울반도체, 투자경고종목 지정예고→단기 급등세에 투자자 주의",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16106793",
-          "office": "topstarnews",
+          "title": "삼전닉스 지분 보유한 종목들 동반 강세… SK스퀘어, 200만원 돌파",
+          "url": "https://www.mt.co.kr/stock/2026/06/23/2026062309093541703",
+          "office": "mt",
           "sentiment": "호재",
           "cause_score": 13,
           "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]"
-    },
-    {
-      "ticker": "두산",
-      "code": "000150",
-      "tomorrow_up_prob": "65%",
-      "entry": 1715000.0,
-      "target": 1800750,
-      "stop": 1663550,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.76)",
-        "RSI52.3 강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[속보] 두산에너빌리티·우리기술 등 동반 강세…원전주, 일제히 상승세",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583884",
-          "office": "cbci",
-          "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[속보] 두산에너빌리티·우리기술 등 동반 강세…원전주, 일제히 상승세"
-    },
-    {
-      "ticker": "이수페타시스",
-      "code": "007660",
-      "tomorrow_up_prob": "64%",
-      "entry": 122100.0,
-      "target": 128205,
-      "stop": 118437,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.71)",
-        "MACD강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "'AI 성장통' 앓는 이수페타시스, 돈을 벌었는데 지갑은 얇아져…고평가...",
-          "url": "https://www.newsquest.co.kr/news/articleView.html?idxno=268320",
-          "office": "newsquest",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "'AI 성장통' 앓는 이수페타시스, 돈을 벌었는데 지갑은 얇아져…고평가..."
-    },
-    {
-      "ticker": "신한지주",
-      "code": "055550",
-      "tomorrow_up_prob": "62%",
-      "entry": 101800.0,
-      "target": 106890,
-      "stop": 98746,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "RSI53.5 강세",
-        "일목 구름위"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
-    },
-    {
-      "ticker": "보해양조",
-      "code": "000890",
-      "tomorrow_up_prob": "51%",
-      "entry": 2740.0,
-      "target": 2877,
-      "stop": 2658,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.78)",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "RSI83.7 과매수, Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
-          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
-          "office": "pinpointnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
-    },
-    {
-      "ticker": "SK스퀘어",
-      "code": "402340",
-      "tomorrow_up_prob": "49%",
-      "entry": 2054000.0,
-      "target": 2156700,
-      "stop": 1992380,
-      "confidence": "하",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "약한 마감, RSI81.9 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/23/MGOG2M7EZNA7JF6MRSERXM75JU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
         },
         {
-          "title": "프리마켓서 '300만닉스' 터치…SK스퀘어도 15% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062308320454033",
-          "office": "newsway",
+          "title": "[특징주] SK스퀘어, 장중 210만원 돌파...최고가 경신",
+          "url": "http://www.metroseoul.co.kr/article/20260623500040",
+          "office": "metroseoul",
           "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -248,7 +105,7 @@
     {
       "ticker": "서산",
       "code": "079650",
-      "tomorrow_up_prob": "47%",
+      "tomorrow_up_prob": "48%",
       "entry": 8120.0,
       "target": 8526,
       "stop": 7876,
@@ -261,6 +118,14 @@
       "risk": "RSI97.0 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
+        {
+          "title": "건설 경기 회복 기대감에 시멘트주 강세… 서산 모헨즈 주가 파죽지세",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462284",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
+        },
         {
           "title": "[공시] 서산·크레오에스지 '거래정지 예고', 카카오게임즈·팬오션 '공...",
           "url": "https://www.newstnt.com/news/articleView.html?idxno=707339",
@@ -278,107 +143,157 @@
           "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
         }
       ],
-      "cause_confidence": "중간",
-      "cause_summary": "[공시] 서산·크레오에스지 '거래정지 예고', 카카오게임즈·팬오션 '공..."
+      "cause_confidence": "높음",
+      "cause_summary": "건설 경기 회복 기대감에 시멘트주 강세… 서산 모헨즈 주가 파죽지세"
     },
     {
-      "ticker": "SK이터닉스",
-      "code": "475150",
-      "tomorrow_up_prob": "43%",
-      "entry": 42050.0,
-      "target": 44152,
-      "stop": 40788,
+      "ticker": "보해양조",
+      "code": "000890",
+      "tomorrow_up_prob": "44%",
+      "entry": 2635.0,
+      "target": 2767,
+      "stop": 2556,
       "confidence": "하",
       "reasons": [
-        "근거 부족"
+        "MACD강세",
+        "일목 구름위",
+        "거래량2.96배"
       ],
-      "risk": "특이 위험 낮음",
+      "risk": "RSI82.6 과매수, Stoch 과매수",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295868",
-          "office": "widedaily",
+          "title": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462034",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 검색맥락, 오래됨"
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] SK이터닉스, \"SK그룹 1.8조 신재생 사업 재편\" 기대감에 연일 ..."
+      "cause_summary": "주류주 변동성 확대… 보해양조·한울앤제주 강세, 대형주 조정"
     },
     {
       "ticker": "삼성물산",
       "code": "028260",
       "tomorrow_up_prob": "38%",
-      "entry": 534000.0,
-      "target": 560700,
-      "stop": 517980,
+      "entry": 531000.0,
+      "target": 557550,
+      "stop": 515070,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI66.0 강세"
+        "RSI65.6 강세"
       ],
       "risk": "약한 마감",
-      "day_change": 5.19,
+      "day_change": 2.88,
       "cause_news": [
         {
-          "title": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/23/MGOG2M7EZNA7JF6MRSERXM75JU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성물산, 삼전 약보합에도 지분가치 재평가 부각에 5%대 강세",
-          "url": "https://www.etoday.co.kr/news/view/2596203",
-          "office": "etoday",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "[특징주] 삼성물산, 지분가치 159조 재평가에 7%대 강세…목표가 70만원...",
-          "url": "https://www.tokenpost.kr/news/economy/371573",
-          "office": "tokenpost",
+          "title": "삼성물산 3%↑…삼성전자·삼성생명 지분가치 부각[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03204566645484672",
+          "office": "edaily",
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년..."
+      "cause_summary": "삼성물산 3%↑…삼성전자·삼성생명 지분가치 부각[특징주]"
     },
     {
       "ticker": "대원전선",
       "code": "006340",
       "tomorrow_up_prob": "38%",
-      "entry": 12750.0,
-      "target": 13388,
-      "stop": 12368,
+      "entry": 11810.0,
+      "target": 12400,
+      "stop": 11456,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.98)",
+        "정배열",
+        "MACD강세",
+        "RSI51.8 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "전선업계, 사상 최대 수주잔고 행진…대원전선, 18%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03194726645484672",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462277",
+          "office": "pinpointnews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "전선업계, 사상 최대 수주잔고 행진…대원전선, 18%↑[특징주]"
+    },
+    {
+      "ticker": "SK",
+      "code": "034730",
+      "tomorrow_up_prob": "38%",
+      "entry": 783000.0,
+      "target": 822150,
+      "stop": 759510,
+      "confidence": "하",
+      "reasons": [
+        "강세마감(0.78)",
         "정배열",
         "MACD강세"
       ],
-      "risk": "특이 위험 낮음",
-      "day_change": null
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] SK스퀘어, 장중 210만원 돌파...최고가 경신",
+          "url": "http://www.metroseoul.co.kr/article/20260623500040",
+          "office": "metroseoul",
+          "sentiment": "호재",
+          "cause_score": 15,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "[특징주] 삼전·SK하닉 장초반 약세⋯ 프리마켓서 36만전자·300만닉스 찍...",
+          "url": "https://www.etoday.co.kr/news/view/2596223",
+          "office": "etoday",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "삼전닉스 지분 보유한 종목들 동반 강세… SK스퀘어, 200만원 돌파",
+          "url": "https://www.mt.co.kr/stock/2026/06/23/2026062309093541703",
+          "office": "mt",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] SK스퀘어, 장중 210만원 돌파...최고가 경신"
     },
     {
       "ticker": "삼성생명",
       "code": "032830",
       "tomorrow_up_prob": "38%",
-      "entry": 484000.0,
-      "target": 508200,
-      "stop": 469480,
+      "entry": 480500.0,
+      "target": 504525,
+      "stop": 466085,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.9 강세"
+        "RSI64.5 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -392,12 +307,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
         },
         {
-          "title": "[특징주] 삼성생명, 삼성전자 지분가치 재평가에 10% 급등",
-          "url": "https://www.etoday.co.kr/news/view/2596196",
-          "office": "etoday",
+          "title": "삼성물산 3%↑…삼성전자·삼성생명 지분가치 부각[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03204566645484672",
+          "office": "edaily",
           "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+          "cause_score": 9,
+          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -407,14 +322,14 @@
       "ticker": "가온전선",
       "code": "000500",
       "tomorrow_up_prob": "38%",
-      "entry": 357000.0,
-      "target": 374850,
-      "stop": 346290,
+      "entry": 358000.0,
+      "target": 375900,
+      "stop": 347260,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.87)",
         "정배열",
-        "MACD강세"
+        "MACD강세",
+        "RSI54.0 강세"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
@@ -426,184 +341,85 @@
           "sentiment": "호재",
           "cause_score": 11,
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
-        },
-        {
-          "title": "가온전선, 美 AI 데이터센터 수주 확대에 11%대 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026061814060790981",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 오래됨"
         }
       ],
       "cause_confidence": "높음",
       "cause_summary": "[특징주] 가온전선, 美 AI·전력망 수혜 기대에 14%대 급등"
+    },
+    {
+      "ticker": "신한지주",
+      "code": "055550",
+      "tomorrow_up_prob": "38%",
+      "entry": 102200.0,
+      "target": 107310,
+      "stop": 99134,
+      "confidence": "하",
+      "reasons": [
+        "정배열",
+        "MACD강세",
+        "RSI54.0 강세"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null
     }
   ],
   "closing_bet": [
     {
-      "ticker": "SK",
-      "code": "034730",
-      "tomorrow_up_prob": "68%",
-      "entry": 765000.0,
-      "target": 803250,
-      "stop": 742050,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "일목 구름위"
-      ],
-      "risk": "Stoch 과매수",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년...",
-          "url": "https://biz.chosun.com/stock/stock_general/2026/06/23/MGOG2M7EZNA7JF6MRSERXM75JU/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-          "office": "biz",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 당일"
-        },
-        {
-          "title": "프리마켓서 '300만닉스' 터치…SK스퀘어도 15% 급등[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062308320454033",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 11,
-          "cause_reason": "제목 언급, 원인표현, 재료, 검색맥락, 당일"
-        }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "[특징주] “SK스퀘어처럼 삼성계열사 지분가치 수혜”…삼성물산 ‘1년..."
-    },
-    {
-      "ticker": "LS ELECTRIC",
-      "code": "010120",
-      "tomorrow_up_prob": "67%",
-      "entry": 255500.0,
-      "target": 268275,
-      "stop": 247835,
-      "confidence": "중",
-      "reasons": [
-        "정배열",
-        "MACD강세",
-        "RSI53.0 강세"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오...",
-          "url": "https://www.tokenpost.kr/news/economy/370972",
-          "office": "tokenpost",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "[특징주] LS ELECTRIC, 수주 기대에 8%대 강세…전력기기주 다시 달아오..."
-    },
-    {
-      "ticker": "한울반도체",
-      "code": "320000",
-      "tomorrow_up_prob": "66%",
-      "entry": 27850.0,
-      "target": 29242,
-      "stop": 27014,
+      "ticker": "우리금융지주",
+      "code": "316140",
+      "tomorrow_up_prob": "63%",
+      "entry": 31250.0,
+      "target": 32812,
+      "stop": 30312,
       "confidence": "중",
       "reasons": [
         "강세마감(0.79)",
-        "정배열",
-        "MACD강세"
+        "RSI50.2 강세",
+        "호재"
       ],
-      "risk": "RSI86.6 과매수, Stoch 과매수",
+      "risk": "특이 위험 낮음",
       "day_change": null,
-      "cause_news": [
+      "related_news": [
         {
-          "title": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062214280687432",
-          "office": "newsway",
-          "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "title": "[2026 100대 CEO] 임종룡 우리금융지주 회장",
+          "url": "https://n.news.naver.com/mnews/article/050/0000107664",
+          "office": "한경비즈니스",
+          "sentiment": "호재"
         },
         {
-          "title": "MLCC 업사이클 수혜 예상…한울반도체 4거래일 연속 급등[특징주]",
-          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03102886645484672",
-          "office": "edaily",
-          "sentiment": "호재",
-          "cause_score": 15,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 재료, 검색맥락, 당일"
-        },
-        {
-          "title": "한울반도체, 투자경고종목 지정예고→단기 급등세에 투자자 주의",
-          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16106793",
-          "office": "topstarnews",
-          "sentiment": "호재",
-          "cause_score": 13,
-          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+          "title": "동양생명 소액주주 반발에…우리금융 &quot;보험, 상위권 수준 육성&quot;",
+          "url": "https://n.news.naver.com/mnews/article/648/0000048235",
+          "office": "비즈워치",
+          "sentiment": "호재"
         }
-      ],
-      "cause_confidence": "높음",
-      "cause_summary": "한울반도체, AI 검사장비 고도화 기대감에 상한가[특징주]"
+      ]
     },
     {
       "ticker": "두산",
       "code": "000150",
-      "tomorrow_up_prob": "65%",
-      "entry": 1715000.0,
-      "target": 1800750,
-      "stop": 1663550,
+      "tomorrow_up_prob": "58%",
+      "entry": 1717000.0,
+      "target": 1802850,
+      "stop": 1665490,
       "confidence": "중",
       "reasons": [
-        "강세마감(0.76)",
-        "RSI52.3 강세",
+        "RSI52.4 강세",
         "호재"
       ],
       "risk": "특이 위험 낮음",
       "day_change": null,
       "cause_news": [
         {
-          "title": "[속보] 두산에너빌리티·우리기술 등 동반 강세…원전주, 일제히 상승세",
-          "url": "https://www.cbci.co.kr/news/articleView.html?idxno=583884",
-          "office": "cbci",
+          "title": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌...",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462277",
+          "office": "pinpointnews",
           "sentiment": "호재",
-          "cause_score": 9,
-          "cause_reason": "제목 언급, 원인표현, 검색맥락, 당일"
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 인과표현, 재료, 당일"
         }
       ],
       "cause_confidence": "높음",
-      "cause_summary": "[속보] 두산에너빌리티·우리기술 등 동반 강세…원전주, 일제히 상승세"
-    },
-    {
-      "ticker": "이수페타시스",
-      "code": "007660",
-      "tomorrow_up_prob": "64%",
-      "entry": 122100.0,
-      "target": 128205,
-      "stop": 118437,
-      "confidence": "중",
-      "reasons": [
-        "강세마감(0.71)",
-        "MACD강세",
-        "호재"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "'AI 성장통' 앓는 이수페타시스, 돈을 벌었는데 지갑은 얇아져…고평가...",
-          "url": "https://www.newsquest.co.kr/news/articleView.html?idxno=268320",
-          "office": "newsquest",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 주어, 재료, 일반뉴스, 당일"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "'AI 성장통' 앓는 이수페타시스, 돈을 벌었는데 지갑은 얇아져…고평가..."
+      "cause_summary": "데이터센터 시대 최대 수혜주는 전력설비…대원전선 KBI메탈 두산에너빌..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
