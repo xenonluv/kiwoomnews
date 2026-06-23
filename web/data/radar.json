@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-23 09:22:21 KST",
+ "generated_at": "2026-06-23 09:32:34 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,17 +83,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 528000.0,
-   "change_pct": 1.54,
+   "price": 535000.0,
+   "change_pct": 2.88,
    "high_pct": 6.15,
-   "fade_pct": 75.0,
-   "value_eok": 2927,
+   "fade_pct": 53.1,
+   "value_eok": 3282,
    "turnover_pct": 0.6,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 475750.0,
-   "ma10_margin_pct": 10.98,
+   "ma10": 476350.0,
+   "ma10_margin_pct": 12.31,
    "spark": {
     "clusters": []
    },
@@ -162,8 +162,8 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 459225.0,
-    "ma20_margin_pct": 14.98,
+    "ma20": 459525.0,
+    "ma20_margin_pct": 16.42,
     "ivtr_net": 112946,
     "ivtr_days": 4,
     "ivtr_eok": 581,
