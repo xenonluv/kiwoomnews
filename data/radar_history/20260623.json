@@ -164,7 +164,7 @@
   "204270": {
    "name": "제이앤티씨",
    "sector": "전기·전자",
-   "entry": 23200.0,
+   "entry": 23150.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -188,14 +188,14 @@
     "re_turnover": 0
    },
    "rank": 1,
-   "change_pct": 1.53,
+   "change_pct": 1.31,
    "high_pct": 10.5,
-   "fade_pct": 85.4,
+   "fade_pct": 87.5,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 979,
-   "turnover_pct": 22.5,
+   "value_eok": 998,
+   "turnover_pct": 23.0,
    "peak_turnover_pct": 54.0,
    "turnover_basis": "float",
    "theme_leader": false,
@@ -212,8 +212,8 @@
     "peak_date": "20260622",
     "peak_value_eok": 2310,
     "peak_high_pct": 19.05,
-    "ma20": 18854.0,
-    "ma20_margin_pct": 23.05,
+    "ma20": 18851.5,
+    "ma20_margin_pct": 22.8,
     "ivtr_net": 293,
     "ivtr_days": 2,
     "ivtr_eok": 0,
@@ -243,5 +243,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-23 12:22:17 KST"
+ "as_of": "2026-06-23 12:32:17 KST"
 }
