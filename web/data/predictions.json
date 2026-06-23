@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 12:52 KST",
+  "as_of": "2026-06-23 13:07 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -44,6 +44,86 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "\"소주 회사가 반도체 수혜주?\"…보해양조, 장성 유치설에 급등"
+    },
+    {
+      "ticker": "대원전선",
+      "code": "006340",
+      "tomorrow_up_prob": "64%",
+      "entry": 11060.0,
+      "target": 11613,
+      "stop": 10728,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "거래량2.61배",
+        "호재"
+      ],
+      "risk": "약한 마감",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'",
+          "url": "https://www.g-enews.com/view.php?ud=20260623093944718944093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "전선업계, 사상 최대 수주잔고 행진…대원전선, 18%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03194726645484672",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "대원전선, 4거래일만에 8% 급등...1만1000원선 회복",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=440055",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'"
+    },
+    {
+      "ticker": "포스코스틸리온",
+      "code": "058430",
+      "tomorrow_up_prob": "61%",
+      "entry": 5650.0,
+      "target": 5932,
+      "stop": 5480,
+      "confidence": "중",
+      "reasons": [
+        "거래량5.33배",
+        "호재",
+        "장중 6회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대...",
+          "url": "https://cwn.kr/article/1065601400861973",
+          "office": "cwn",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 포스코스틸리온, \"호르무즈 해협 우회 송유관 건설 추진\" 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295951",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대..."
     },
     {
       "ticker": "서산",
@@ -93,17 +173,17 @@
       "ticker": "제이앤티씨",
       "code": "204270",
       "tomorrow_up_prob": "38%",
-      "entry": 23000.0,
-      "target": 24150,
-      "stop": 22310,
+      "entry": 23050.0,
+      "target": 24202,
+      "stop": 22358,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.1 강세"
+        "RSI64.3 강세"
       ],
       "risk": "Stoch 과매수",
-      "day_change": -0.44,
+      "day_change": 0.66,
       "cause_news": [
         {
           "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
@@ -168,42 +248,6 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "[급등락주 짚어보기] 중동 긴장 완화·주주환원 정책에 부국철강ㆍ비비..."
-    },
-    {
-      "ticker": "포스코스틸리온",
-      "code": "058430",
-      "tomorrow_up_prob": "38%",
-      "entry": 6100.0,
-      "target": 6405,
-      "stop": 5917,
-      "confidence": "하",
-      "reasons": [
-        "강세마감(0.78)",
-        "RSI52.5 강세",
-        "거래량4.8배"
-      ],
-      "risk": "특이 위험 낮음",
-      "day_change": null,
-      "cause_news": [
-        {
-          "title": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대...",
-          "url": "https://cwn.kr/article/1065601400861973",
-          "office": "cwn",
-          "sentiment": "호재",
-          "cause_score": 7,
-          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 오래됨"
-        },
-        {
-          "title": "[특징주] 포스코스틸리온, \"호르무즈 해협 우회 송유관 건설 추진\" 기대...",
-          "url": "https://www.widedaily.com/news/articleView.html?idxno=295951",
-          "office": "widedaily",
-          "sentiment": "호재",
-          "cause_score": 5,
-          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
-        }
-      ],
-      "cause_confidence": "중간",
-      "cause_summary": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대..."
     }
   ],
   "closing_bet": [
@@ -250,6 +294,86 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "\"소주 회사가 반도체 수혜주?\"…보해양조, 장성 유치설에 급등"
+    },
+    {
+      "ticker": "대원전선",
+      "code": "006340",
+      "tomorrow_up_prob": "64%",
+      "entry": 11060.0,
+      "target": 11613,
+      "stop": 10728,
+      "confidence": "중",
+      "reasons": [
+        "정배열",
+        "거래량2.61배",
+        "호재"
+      ],
+      "risk": "약한 마감",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'",
+          "url": "https://www.g-enews.com/view.php?ud=20260623093944718944093b5d4e_1",
+          "office": "g-enews",
+          "sentiment": "호재",
+          "cause_score": 17,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "전선업계, 사상 최대 수주잔고 행진…대원전선, 18%↑[특징주]",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=03194726645484672",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 원인표현, 재료, 검색맥락, 당일"
+        },
+        {
+          "title": "대원전선, 4거래일만에 8% 급등...1만1000원선 회복",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=440055",
+          "office": "econonews",
+          "sentiment": "호재",
+          "cause_score": 11,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "[특징주] 대원전선, \"전선업계 사상 최대 수주 잔고\".. 11%대 '급등'"
+    },
+    {
+      "ticker": "포스코스틸리온",
+      "code": "058430",
+      "tomorrow_up_prob": "61%",
+      "entry": 5650.0,
+      "target": 5932,
+      "stop": 5480,
+      "confidence": "중",
+      "reasons": [
+        "거래량5.33배",
+        "호재",
+        "장중 6회 지속"
+      ],
+      "risk": "특이 위험 낮음",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대...",
+          "url": "https://cwn.kr/article/1065601400861973",
+          "office": "cwn",
+          "sentiment": "호재",
+          "cause_score": 7,
+          "cause_reason": "제목 언급, 원인표현, 인과표현, 검색맥락, 오래됨"
+        },
+        {
+          "title": "[특징주] 포스코스틸리온, \"호르무즈 해협 우회 송유관 건설 추진\" 기대...",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=295951",
+          "office": "widedaily",
+          "sentiment": "호재",
+          "cause_score": 5,
+          "cause_reason": "제목 언급, 주어, 원인표현, 검색맥락, 오래됨"
+        }
+      ],
+      "cause_confidence": "중간",
+      "cause_summary": "철강주 일제히 급등…포스코스틸리온 17%↑ '미국·이란 종전 재건 기대..."
     }
   ],
   "disclaimer": "예측·투자 참고용이며 매수 추천이 아닙니다. 갭 리스크가 있으니 손절을 지키세요.",
