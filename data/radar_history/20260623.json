@@ -80,7 +80,7 @@
    "first_seen": "2026-06-23 09:12:28 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "122640": {
    "name": "예스티",
@@ -164,7 +164,7 @@
   "204270": {
    "name": "제이앤티씨",
    "sector": "전기·전자",
-   "entry": 23800.0,
+   "entry": 23450.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -187,15 +187,15 @@
     "peak_turnover": 1,
     "re_turnover": 0
    },
-   "rank": 2,
-   "change_pct": 4.16,
+   "rank": 1,
+   "change_pct": 2.63,
    "high_pct": 10.5,
-   "fade_pct": 60.4,
+   "fade_pct": 75.0,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 610,
-   "turnover_pct": 13.7,
+   "value_eok": 719,
+   "turnover_pct": 16.4,
    "peak_turnover_pct": 54.0,
    "turnover_basis": "float",
    "theme_leader": false,
@@ -212,8 +212,8 @@
     "peak_date": "20260622",
     "peak_value_eok": 2310,
     "peak_high_pct": 19.05,
-    "ma20": 18881.5,
-    "ma20_margin_pct": 26.05,
+    "ma20": 18866.5,
+    "ma20_margin_pct": 24.29,
     "ivtr_net": 293,
     "ivtr_days": 2,
     "ivtr_eok": 0,
@@ -243,5 +243,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-23 10:42:24 KST"
+ "as_of": "2026-06-23 10:52:24 KST"
 }
