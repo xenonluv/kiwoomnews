@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 15:37 KST",
+  "as_of": "2026-06-23 15:52 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -34,12 +34,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "보해양조, '반도체 유치설' 수혜 기대감에 상한가…거래소 투자주의 지...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062310361833307",
-          "office": "newsway",
+          "title": "[특징주] 보해양조, 투자주의 지정에도…상한가 마감(종합)",
+          "url": "https://www.yna.co.kr/view/AKR20260623050351008?input=1195m",
+          "office": "yna",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 12,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 리스트감점, 당일"
         }
       ],
       "cause_confidence": "높음",
@@ -180,7 +180,7 @@
       "reasons": [
         "MACD강세",
         "일목 구름위",
-        "거래량4.11배"
+        "거래량4.12배"
       ],
       "risk": "Stoch 과매수",
       "day_change": null,
@@ -232,12 +232,12 @@
           "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
         },
         {
-          "title": "보해양조, '반도체 유치설' 수혜 기대감에 상한가…거래소 투자주의 지...",
-          "url": "https://www.newsway.co.kr/news/view?ud=2026062310361833307",
-          "office": "newsway",
+          "title": "[특징주] 보해양조, 투자주의 지정에도…상한가 마감(종합)",
+          "url": "https://www.yna.co.kr/view/AKR20260623050351008?input=1195m",
+          "office": "yna",
           "sentiment": "호재",
-          "cause_score": 17,
-          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 당일"
+          "cause_score": 12,
+          "cause_reason": "제목 언급, 주어, 원인표현, 인과표현, 재료, 검색맥락, 리스트감점, 당일"
         }
       ],
       "cause_confidence": "높음",
