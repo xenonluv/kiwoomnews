@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-23 10:02:20 KST",
+ "generated_at": "2026-06-23 10:12:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,17 +83,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 527000.0,
-   "change_pct": 1.35,
+   "price": 525000.0,
+   "change_pct": 0.96,
    "high_pct": 6.15,
-   "fade_pct": 78.1,
-   "value_eok": 4021,
+   "fade_pct": 84.4,
+   "value_eok": 4218,
    "turnover_pct": 0.8,
    "peak_turnover_pct": 2.2,
    "float_ratio": 0.616,
    "turnover_basis": "float",
-   "ma10": 475450.0,
-   "ma10_margin_pct": 10.84,
+   "ma10": 475350.0,
+   "ma10_margin_pct": 10.44,
    "spark": {
     "clusters": []
    },
@@ -162,12 +162,136 @@
     "peak_date": "20260619",
     "peak_value_eok": 10802,
     "peak_high_pct": 15.14,
-    "ma20": 459075.0,
-    "ma20_margin_pct": 14.8,
+    "ma20": 459025.0,
+    "ma20_margin_pct": 14.37,
     "ivtr_net": 112946,
     "ivtr_days": 4,
     "ivtr_eok": 581,
     "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "122640",
+   "name": "예스티",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 72,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_value": 5,
+    "re_body": 2,
+    "re_count": 3,
+    "flow": 0,
+    "explosion": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_value": 0,
+    "re_body": 0,
+    "re_count": 0,
+    "flow": 0,
+    "explosion": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 42350.0,
+   "change_pct": 10.0,
+   "high_pct": 12.47,
+   "fade_pct": 19.8,
+   "value_eok": 1269,
+   "turnover_pct": 19.5,
+   "peak_turnover_pct": 43.2,
+   "float_ratio": 0.7117,
+   "turnover_basis": "float",
+   "ma10": 33130.0,
+   "ma10_margin_pct": 27.83,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": 0.0,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.32,
+    "time": "09:40",
+    "value_10m_eok": 207
+   },
+   "reignition_bars": [
+    {
+     "time": "09:30",
+     "body_pct": 3.17,
+     "value_eok": 113
+    },
+    {
+     "time": "09:40",
+     "body_pct": 3.32,
+     "value_eok": 207
+    }
+   ],
+   "flow": {
+    "net_days": 3,
+    "today_buy": true,
+    "streak": 2,
+    "detail": [
+     {
+      "date": "0616",
+      "frgn": -80460,
+      "orgn": -34330
+     },
+     {
+      "date": "0617",
+      "frgn": -35344,
+      "orgn": 124132
+     },
+     {
+      "date": "0618",
+      "frgn": -780719,
+      "orgn": 127367
+     },
+     {
+      "date": "0619",
+      "frgn": 146997,
+      "orgn": -88704
+     },
+     {
+      "date": "0622",
+      "frgn": 86469,
+      "orgn": 67674
+     }
+    ]
+   },
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260618",
+    "peak_value_eok": 2642,
+    "peak_high_pct": 29.57,
+    "ma20": 30040.0,
+    "ma20_margin_pct": 40.98,
+    "ivtr_net": 73775,
+    "ivtr_days": 4,
+    "ivtr_eok": 27,
+    "cause_summary": "예스티, 메모리향 장비 공급 본격화 기대-유안타",
     "was_theme_leader": false,
     "source": "live"
    },
