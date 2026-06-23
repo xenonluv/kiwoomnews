@@ -16,3 +16,9 @@ export function getRadar(): RadarData {
 export function getExplosions(): Explosion[] {
   return RADAR.explosions ?? [];
 }
+
+/** 폭발 게이트 임계값 — 화면 문구가 하드코딩 대신 radar params를 따르게(운영자가 튜닝해도 정합). */
+export function getExplosionThresholds(): { highPct: number; volTurnover: number } {
+  const p = RADAR.params ?? {};
+  return { highPct: p.explosion_high_pct ?? 22, volTurnover: p.explosion_vol_turnover ?? 90 };
+}

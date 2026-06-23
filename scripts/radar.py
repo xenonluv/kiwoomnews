@@ -641,14 +641,16 @@ def scan_reaccum_candidate(rec, p, events):
     # 회전율(유통주식수 대비, 거래량 기준) — 폭발일 회전율은 registry 저장값(vol_turnover_pct, 위 게이트로
     # 항상 존재). 당일 회전율 = 당일 거래량 / 유통주식수(float_ratio.vol_turnover 공유 산식).
     fr, flisted = float_ratio.get_float_and_listed(code)  # 유동비율·발행주식수(보통주만, 캐시)
-    turnover_basis = "float" if (fr and fr > 0 and flisted) else "cap"
     turnover_pct = float_ratio.vol_turnover(float(now.get("volume") or 0), fr, flisted)
+    # basis는 '실제 산출된 값'에 맞춘다 — 거래량 0 글리치(turnover_pct=None)면 "cap"(값 없음과 일관).
+    turnover_basis = "float" if turnover_pct is not None else "cap"
     peak_turnover_pct = rec.get("vol_turnover_pct")  # 새 게이트 통과 레코드라 항상 non-None
     breakdown = {
         "base": REACCUM_SCORE,
         "drawdown": round(min(10, max(0, (drawdown - p.fade_drawdown_min)
                        / max(1e-9, p.fade_drawdown_max - p.fade_drawdown_min) * 10))),  # 식음 깊이 15~40%→0~10
-        "re_count": min(8, max(0, (len(rbars) - 1) * 2)),                  # 양봉 2→2·3→4·4→6·5+→8
+        # 게이트 최소 횟수(min_count)를 0점 기준으로 — 최소통과=baseline, 초과분만 가점(임계 바꿔도 정합).
+        "re_count": min(8, max(0, (len(rbars) - p.reignition_min_count + 1) * 2)),  # min→2·+1→4·+2→6·+3↑→8
         "re_body": round(min(6, max(0, (re_body_max - 2) / 4 * 6))),       # 최대 몸통% 2~6%→0~6
         "peak_turnover": round(min(10, max(0, ((peak_turnover_pct or 0) - 90) / 110 * 10))),  # 폭발일 회전율 90~200%→0~10
         "re_turnover": round(min(6, max(0, ((turnover_pct or 0) - 30) / 70 * 6))),  # 당일 회전율 30~100%→0~6

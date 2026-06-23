@@ -71,8 +71,17 @@ function ExplosionCard({ e, rank }: { e: Explosion; rank: number }) {
   );
 }
 
-export function ExplosionList({ initial }: { initial: Explosion[] }) {
+type Thresholds = { highPct: number; volTurnover: number };
+
+export function ExplosionList({
+  initial,
+  thresholds,
+}: {
+  initial: Explosion[];
+  thresholds: Thresholds;
+}) {
   const [explosions, setExplosions] = useState<Explosion[]>(initial);
+  const [th, setTh] = useState<Thresholds>(thresholds);
   const [phase, setPhase] = useState<MarketPhase>("closed");
 
   useEffect(() => {
@@ -82,7 +91,14 @@ export function ExplosionList({ initial }: { initial: Explosion[] }) {
     async function refresh() {
       try {
         const data = await radarClientService.get();
-        if (alive) setExplosions(data.explosions ?? []);
+        if (!alive) return;
+        setExplosions(data.explosions ?? []);
+        if (data.params?.explosion_high_pct != null || data.params?.explosion_vol_turnover != null) {
+          setTh((prev) => ({
+            highPct: data.params.explosion_high_pct ?? prev.highPct,
+            volTurnover: data.params.explosion_vol_turnover ?? prev.volTurnover,
+          }));
+        }
       } catch {
         /* 조용히 무시 */
       }
@@ -112,7 +128,7 @@ export function ExplosionList({ initial }: { initial: Explosion[] }) {
         <div className="rounded-xl border border-white/10 bg-white/[0.03] py-16 text-center">
           <p className="text-lg font-semibold">오늘은 폭발 종목이 없습니다</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            고가 +22% 이상 AND 당일 거래량이 유통주식수의 90% 이상인 종목만 표시합니다.
+            고가 +{th.highPct}% 이상 AND 당일 거래량이 유통주식수의 {th.volTurnover}% 이상인 종목만 표시합니다.
           </p>
         </div>
       ) : (
