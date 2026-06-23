@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-22 15:52:23 KST",
- "market_session": "closed",
+ "generated_at": "2026-06-23 09:02:26 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -28,127 +28,21 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 64,
- "events": [],
- "suspects": [
+ "universe_count": 55,
+ "events": [
   {
-   "code": "028260",
-   "name": "삼성물산",
-   "sector": "유통",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 87,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 3,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 2,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 520000.0,
-   "change_pct": 5.8,
-   "high_pct": 10.07,
-   "fade_pct": 42.4,
-   "value_eok": 6431,
-   "turnover_pct": 1.2,
-   "peak_turnover_pct": 2.2,
-   "float_ratio": 0.616,
-   "turnover_basis": "float",
-   "ma10": 465750.0,
-   "ma10_margin_pct": 11.65,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.79,
-    "time": "09:00",
-    "value_10m_eok": 760
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 3.79,
-     "value_eok": 760
-    }
+   "id": "2026-07-03_미국 고용보고서 (7월",
+   "date": "2026-07-03",
+   "dday": 10,
+   "title": "미국 고용보고서 (7월 발표)",
+   "category": [
+    "금리",
+    "환율"
    ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0616",
-      "frgn": -39747,
-      "orgn": 29502
-     },
-     {
-      "date": "0617",
-      "frgn": -6662,
-      "orgn": -40605
-     },
-     {
-      "date": "0618",
-      "frgn": -13405,
-      "orgn": -20198
-     },
-     {
-      "date": "0619",
-      "frgn": -99,
-      "orgn": 28315
-     },
-     {
-      "date": "0622",
-      "frgn": -121736,
-      "orgn": 75543
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260619",
-    "peak_value_eok": 10802,
-    "peak_high_pct": 15.14,
-    "ma20": 453800.0,
-    "ma20_margin_pct": 14.59,
-    "ivtr_net": 113045,
-    "ivtr_days": 4,
-    "ivtr_eok": 582,
-    "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
+   "importance": 8,
+   "country": "US",
+   "estimated": true
   }
- ]
+ ],
+ "suspects": []
 }
