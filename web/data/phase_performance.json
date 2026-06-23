@@ -1,11 +1,65 @@
 {
- "as_of": null,
+ "as_of": "2026-06-23 17:47 KST",
  "n": 0,
  "total_n": 0,
  "accuracy": null,
  "min_n": 10,
- "by_phase": [],
- "confidence_bands": [],
+ "by_phase": [
+  {
+   "phase": "재매집",
+   "n": 0,
+   "hit_rate": null,
+   "rose_rate": null,
+   "avg_return": null,
+   "valid": false
+  },
+  {
+   "phase": "분산",
+   "n": 0,
+   "hit_rate": null,
+   "rose_rate": null,
+   "avg_return": null,
+   "valid": false
+  },
+  {
+   "phase": "중립",
+   "n": 0,
+   "hit_rate": null,
+   "rose_rate": null,
+   "avg_return": null,
+   "valid": false
+  }
+ ],
+ "confidence_bands": [
+  {
+   "lo": 0,
+   "hi": 60,
+   "n": 0,
+   "hit_rate": null,
+   "valid": false
+  },
+  {
+   "lo": 60,
+   "hi": 70,
+   "n": 0,
+   "hit_rate": null,
+   "valid": false
+  },
+  {
+   "lo": 70,
+   "hi": 80,
+   "n": 0,
+   "hit_rate": null,
+   "valid": false
+  },
+  {
+   "lo": 80,
+   "hi": 101,
+   "n": 0,
+   "hit_rate": null,
+   "valid": false
+  }
+ ],
  "recent": [],
  "disclaimer": "사용자가 종목상세에서 'AI 국면 판정'을 호출한 종목의 판정을 익일 등락으로 채점한 기록입니다. 재매집→상승·분산→하락을 적중으로 보며(중립은 방향 무판단이라 적중 집계 제외), 표시·검증 전용이라 자동 튜닝에 쓰지 않습니다. 약세 단일 레짐·소표본 한계 — 보장이 아닌 참고."
 }
