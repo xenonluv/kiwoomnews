@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-23 10:42:24 KST",
+ "generated_at": "2026-06-23 10:52:24 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,135 +46,6 @@
  ],
  "suspects": [
   {
-   "code": "028260",
-   "name": "삼성물산",
-   "sector": "유통",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 84,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_value": 12,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 8,
-    "explosion": 2,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_value": 0,
-    "re_body": 0,
-    "re_count": 0,
-    "flow": 0,
-    "explosion": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 512000.0,
-   "change_pct": -1.54,
-   "high_pct": 6.15,
-   "fade_pct": 125.0,
-   "value_eok": 4677,
-   "turnover_pct": 0.9,
-   "peak_turnover_pct": 2.2,
-   "float_ratio": 0.616,
-   "turnover_basis": "float",
-   "ma10": 474050.0,
-   "ma10_margin_pct": 8.01,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": 0.0,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.24,
-    "time": "09:00",
-    "value_10m_eok": 815
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 2.24,
-     "value_eok": 815
-    }
-   ],
-   "flow": {
-    "net_days": 1,
-    "today_buy": false,
-    "streak": 0,
-    "detail": [
-     {
-      "date": "0616",
-      "frgn": -39747,
-      "orgn": 29502
-     },
-     {
-      "date": "0617",
-      "frgn": -6662,
-      "orgn": -40605
-     },
-     {
-      "date": "0618",
-      "frgn": -13405,
-      "orgn": -20198
-     },
-     {
-      "date": "0619",
-      "frgn": -99,
-      "orgn": 28315
-     },
-     {
-      "date": "0622",
-      "frgn": -156791,
-      "orgn": 76470
-     }
-    ]
-   },
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-07-03_미국 고용보고서 (7월",
-     "title": "미국 고용보고서 (7월 발표)",
-     "dday": 10,
-     "categories": [
-      "금리"
-     ],
-     "score": 0.4
-    }
-   ],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260619",
-    "peak_value_eok": 10802,
-    "peak_high_pct": 15.14,
-    "ma20": 458375.0,
-    "ma20_margin_pct": 11.7,
-    "ivtr_net": 112946,
-    "ivtr_days": 4,
-    "ivtr_eok": 581,
-    "cause_summary": "&quot;삼성물산, 올해 주당 배당금 전년比 720% 늘 것…목표가↑&quot;-DS",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
    "code": "204270",
    "name": "제이앤티씨",
    "sector": "전기·전자",
@@ -212,17 +83,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 23800.0,
-   "change_pct": 4.16,
+   "price": 23450.0,
+   "change_pct": 2.63,
    "high_pct": 10.5,
-   "fade_pct": 60.4,
-   "value_eok": 610,
-   "turnover_pct": 13.7,
+   "fade_pct": 75.0,
+   "value_eok": 719,
+   "turnover_pct": 16.4,
    "peak_turnover_pct": 54.0,
    "float_ratio": 0.32380000000000003,
    "turnover_basis": "float",
-   "ma10": 18358.0,
-   "ma10_margin_pct": 29.64,
+   "ma10": 18328.0,
+   "ma10_margin_pct": 27.95,
    "spark": {
     "clusters": []
    },
@@ -296,8 +167,8 @@
     "peak_date": "20260622",
     "peak_value_eok": 2310,
     "peak_high_pct": 19.05,
-    "ma20": 18881.5,
-    "ma20_margin_pct": 26.05,
+    "ma20": 18866.5,
+    "ma20_margin_pct": 24.29,
     "ivtr_net": 293,
     "ivtr_days": 2,
     "ivtr_eok": 0,
