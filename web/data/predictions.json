@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-23 14:22 KST",
+  "as_of": "2026-06-23 14:37 KST",
   "intraday_rank": [
     {
       "ticker": "보해양조",
@@ -92,18 +92,18 @@
     {
       "ticker": "제이앤티씨",
       "code": "204270",
-      "tomorrow_up_prob": "38%",
-      "entry": 22950.0,
-      "target": 24098,
-      "stop": 22262,
+      "tomorrow_up_prob": "39%",
+      "entry": 22400.0,
+      "target": 23520,
+      "stop": 21728,
       "confidence": "하",
       "reasons": [
         "정배열",
         "MACD강세",
-        "RSI64.0 강세"
+        "RSI61.9 강세"
       ],
-      "risk": "Stoch 과매수",
-      "day_change": 0.44,
+      "risk": "특이 위험 낮음",
+      "day_change": -0.66,
       "cause_news": [
         {
           "title": "[특징주] 제이앤티씨, 글로벌 첫 2.0㎜T TGV 유리기판 개발에 상한가",
@@ -173,13 +173,13 @@
       "ticker": "엑스게이트",
       "code": "356680",
       "tomorrow_up_prob": "38%",
-      "entry": 19760.0,
-      "target": 20748,
-      "stop": 19167,
+      "entry": 20250.0,
+      "target": 21262,
+      "stop": 19642,
       "confidence": "하",
       "reasons": [
-        "강세마감(0.96)",
-        "RSI54.7 강세",
+        "강세마감(0.85)",
+        "RSI55.6 강세",
         "Stoch골든"
       ],
       "risk": "특이 위험 낮음",
@@ -212,6 +212,34 @@
       ],
       "cause_confidence": "높음",
       "cause_summary": "자사 홈페이지 ‘양자내성암호’ 전환…엑스게이트 8%↑[특징주]"
+    },
+    {
+      "ticker": "JW신약",
+      "code": "067290",
+      "tomorrow_up_prob": "38%",
+      "entry": 3175.0,
+      "target": 3334,
+      "stop": 3080,
+      "confidence": "하",
+      "reasons": [
+        "MACD강세",
+        "일목 구름위",
+        "거래량3.83배"
+      ],
+      "risk": "Stoch 과매수",
+      "day_change": null,
+      "cause_news": [
+        {
+          "title": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑[...",
+          "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02689606645484672",
+          "office": "edaily",
+          "sentiment": "호재",
+          "cause_score": 13,
+          "cause_reason": "제목 언급, 주어, 인과표현, 재료, 당일"
+        }
+      ],
+      "cause_confidence": "높음",
+      "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑[..."
     }
   ],
   "closing_bet": [
