@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-24 10:51:56 KST",
+ "generated_at": "2026-06-24 11:01:56 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -17,7 +17,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 45,
+ "universe_count": 46,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
@@ -39,10 +39,20 @@
    "name": "부국철강",
    "sector": "금속",
    "high_pct": 24.9,
-   "vol_turnover_pct": 193.4,
-   "value_eok": 809,
-   "price": 4525.0,
-   "change_pct": 20.51
+   "vol_turnover_pct": 202.1,
+   "value_eok": 849,
+   "price": 4615.0,
+   "change_pct": 22.9
+  },
+  {
+   "code": "006920",
+   "name": "모헨즈",
+   "sector": "비금속",
+   "high_pct": 29.84,
+   "vol_turnover_pct": 93.1,
+   "value_eok": 312,
+   "price": 4790.0,
+   "change_pct": 11.66
   }
  ],
  "suspects": []
