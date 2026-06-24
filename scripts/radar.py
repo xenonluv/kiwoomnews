@@ -597,13 +597,25 @@ def update_live_explosions(reg, p):
     return count, scan_ok, today_explosions, today_youtong
 
 
+def _forecast_rank_key(e):
+    """/forecast 폭발 종목 순위(폭발순위기준.md): ① 유통주식 회전율 90~130 밴드 종목이 최상위
+    (그 안에선 당일 거래대금 내림차순) ② 130 초과는 그 아래, 회전율 오름차순(클수록 뒤로 — 흔히 저유동
+    품절주 펌프)·거래대금 보조. 폭발 게이트가 회전율≥90 보장이라 90~130=정상 밴드. 라이브/백필 구분 없이
+    순수 기준만(백필은 '랭킹 밀림' 배지·실시간 현재가로 구분). 균일 길이 3-튜플(tier가 먼저라 밴드 안/밖 불혼합)."""
+    t = float(e.get("vol_turnover_pct") or 0)   # 유통주식 회전율(%)
+    v = float(e.get("value_eok") or 0)          # 당일 거래대금(억)
+    if 90 <= t <= 130:
+        return (0, -v, 0.0)   # 밴드[90~130]: 거래대금 내림차순
+    return (1, t, -v)         # 130 초과: 회전율 오름차순(높을수록 뒤로) + 거래대금 내림차순 보조
+
+
 def _backfill_today_explosions(today_explosions, reg, today):
     """/forecast '당일 폭발' 리스트 안정화: 오전에 폭발해 registry에 든 종목이 오후 네이버 up 랭킹
     상위에서 밀려 이번 회차 라이브 스캔에 안 잡혀도(또는 스캔이 예외로 실패해도), registry의
     오늘(peak_date==today) 레코드로 백필해 리스트가 장중에 깜빡이지 않게 한다. 고가·회전율은 폭발
     시점(stored)값이지만 **현재가·현재 등락률은 종목별 price_now로 실시간 조회**해 카드에 채운다
     (registry의 peak_change_pct는 장중 스냅샷 max 병합이라 '현재 등락률'이 아니므로 쓰지 않는다 —
-    조회 실패 시에만 None). 라이브 행 우선·회전율 내림차순 정렬. 라이브 스캔 try 밖에서 호출."""
+    조회 실패 시에만 None). 폭발순위기준(_forecast_rank_key)으로 정렬. 라이브 스캔 try 밖에서 호출."""
     seen_today = {e["code"] for e in today_explosions}
     for r in reg.get("records", {}).values():
         if r.get("peak_date") != today or r.get("code") in seen_today:
@@ -630,9 +642,9 @@ def _backfill_today_explosions(today_explosions, reg, today):
             "backfill": True,          # 랭킹에서 밀린 종목(폭발은 오늘, 현재가는 실시간)
         })
         seen_today.add(r["code"])
-    # 회전율 내림차순, 단 라이브(랭킹 잔류) 행 우선 — 밀려난 백필 행이 활발히 거래되는 라이브 폭발보다
-    # #1 자리(Flame 배지)를 차지하지 않게(시각적 위계 = 현재 랭킹 잔류 우선).
-    today_explosions.sort(key=lambda e: (bool(e.get("backfill")), -(e.get("vol_turnover_pct") or 0)))
+    # 폭발순위기준(폭발순위기준.md): 회전율 90~130 밴드 + 거래대금 최다 우선, 130 초과는 회전율 높을수록 뒤로.
+    # 라이브/백필 구분 없이 순수 기준만(백필은 '랭킹 밀림' 배지·실시간 현재가로 이미 구분 — 거래대금 큰 폭발이면 #1 가능).
+    today_explosions.sort(key=_forecast_rank_key)
     return today_explosions
 
 
