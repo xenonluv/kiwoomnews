@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-24 15:12:20 KST",
+ "generated_at": "2026-06-24 15:22:23 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -49,17 +49,17 @@
    "name": "삼익제약",
    "sector": "제약",
    "high_pct": 23.58,
-   "vol_turnover_pct": 235.2,
-   "value_eok": 816,
-   "price": null,
-   "change_pct": 19.07
+   "vol_turnover_pct": 241.0,
+   "value_eok": 836,
+   "price": 8460.0,
+   "change_pct": 12.05
   },
   {
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
    "high_pct": 29.84,
-   "vol_turnover_pct": 137.0,
+   "vol_turnover_pct": 137.1,
    "value_eok": 458,
    "price": 5570.0,
    "change_pct": 29.84
@@ -99,8 +99,8 @@
    "name": "씨피시스템",
    "sector": "화학",
    "high_pct": 29.89,
-   "vol_turnover_pct": 106.0,
-   "value_eok": 352,
+   "vol_turnover_pct": 107.5,
+   "value_eok": 357,
    "price": 3520.0,
    "change_pct": 29.89
   },
@@ -109,10 +109,10 @@
    "name": "헝셩그룹",
    "sector": "외국증권",
    "high_pct": 29.97,
-   "vol_turnover_pct": 97.6,
-   "value_eok": 119,
-   "price": 833.0,
-   "change_pct": 15.06
+   "vol_turnover_pct": 101.0,
+   "value_eok": 124,
+   "price": 828.0,
+   "change_pct": 14.36
   }
  ],
  "suspects": [
@@ -148,16 +148,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 22275.0,
-   "change_pct": 13.13,
+   "price": 22250.0,
+   "change_pct": 13.0,
    "high_pct": 20.37,
-   "value_eok": 4934,
-   "turnover_pct": 172.6,
+   "value_eok": 4976,
+   "turnover_pct": 174.1,
    "peak_turnover_pct": 159.3,
    "float_ratio": 0.45530000000000004,
    "turnover_basis": "float",
-   "ma10": 17907.5,
-   "ma10_margin_pct": 24.39,
+   "ma10": 17905.0,
+   "ma10_margin_pct": 24.27,
    "spark": {
     "clusters": []
    },
@@ -228,8 +228,8 @@
     "peak_turnover_pct": 159.3,
     "peak_ibs": 0.69,
     "peak_uppertail": 5.6,
-    "ma20": 19043.8,
-    "ma20_margin_pct": 16.97,
+    "ma20": 19042.5,
+    "ma20_margin_pct": 16.84,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
     "was_theme_leader": false,
     "source": "live"
