@@ -47,12 +47,11 @@ export interface MatchedEvent {
   score: number;
 }
 
-/** 반등조짐 점수 해부 (결정론 가산점 — 표시 전용 '강도', raw에는 없음) */
+/** 재매집(반등) 점수 해부 (결정론 가산점 — 표시 전용 '강도', raw에는 없음) */
 export interface ScoreBreakdown {
   base: number;
-  drawdown?: number; // 식음 깊이(고점 대비 −15~−40%)
-  re_count?: number; // 당일 15분 양봉 자격 봉 개수
-  re_body?: number; // 최대 15분 양봉 몸통%
+  re_count?: number; // 당일 5분 양봉 스파크 자격 봉 개수
+  re_body?: number; // 최대 5분 양봉 몸통%
   peak_turnover?: number; // 폭발일 회전율(거래량/유통주식수) 가점 — 폭발의 자명함(주신호)
   re_turnover?: number; // 당일 회전율(거래량/유통주식수) 가점
 }
@@ -80,14 +79,12 @@ export interface DeepShakeInfo {
   bars15_count: number;
 }
 
-/** 반등조짐 후보 메타 — 폭발(고가22%+거래량90%) 이후 식음(고점 대비 −15~−40%) 구간 감시 */
+/** 재매집(반등) 후보 메타 — 최근 6거래일 폭발(고가22%+거래량90%) 종목 */
 export interface ReaccumInfo {
   peak_date: string; // YYYYMMDD
   peak_value_eok: number;
-  peak_high?: number; // 폭발 후 고점(식음 drawdown 기준가)
   peak_high_pct: number;
   peak_turnover_pct?: number | null; // 폭발일 거래량 회전율(유통주식수 대비 %)
-  drawdown_pct?: number; // 고점 대비 식음 하락률(%)
   ma20?: number;
   ma20_margin_pct?: number;
   cause_summary?: string; // 폭발 catalyst 한 줄("왜 올랐나") — 구버전 JSON엔 없음
@@ -95,20 +92,14 @@ export interface ReaccumInfo {
   was_theme_leader?: boolean;
   /** 진입 경로 — "live"(랭킹) | "seed"(시드파일) | "telegram"(채널 언급發). 구버전 JSON엔 없음 */
   source?: "live" | "seed" | "telegram";
-  // ── 구버전(재매집 v1) JSON 하위호환 ──
-  ivtr_net?: number;
-  ivtr_days?: number;
-  ivtr_eok?: number;
-  orgn_net_after_peak?: number;
 }
 
-/** 반등조짐(오늘) 신호 — 식음 종목이 오늘 15분봉 양봉으로 다시 살아나는지 */
+/** 재매집(오늘) 신호 — 폭발 종목이 오늘 5분봉 양봉으로 다시 분출(스파크)하는지 */
 export interface ReignitionInfo {
-  body_pct: number; // 15분봉 양봉 몸통%(|종가−시가|/시가) 최댓값
-  time: string; // 대표(최대 몸통) 15분봉 시각 "HH:MM"
-  count?: number; // 당일 자격 양봉 수(게이트 ≥2)
-  value_15m_eok?: number; // 그 15분봉 1개의 거래대금(억) — 메타데이터(미표시)
-  value_10m_eok?: number; // 구버전 JSON 하위호환
+  body_pct: number; // 5분봉 양봉 몸통%(|종가−시가|/시가) 최댓값
+  time: string; // 대표(최대 몸통) 5분 스파크 시각 "HH:MM"
+  count?: number; // 당일 자격 양봉 스파크 수(게이트 ≥3)
+  value_eok?: number; // 그 5분봉 1개의 거래대금(억) — 메타데이터(미표시)
 }
 
 /** 당일 폭발 종목 — 고가등락률 ≥22% AND 당일 거래량/유통주식수 ≥90% (/forecast 게시) */
@@ -163,8 +154,6 @@ export interface Suspect {
   price: number;
   change_pct: number; // 현재 등락률
   high_pct: number; // 당일 고가 등락률
-  drawdown_pct?: number; // 식음 깊이 — 폭발 후 고점 대비 현재가 하락률(%)
-  fade_pct?: number; // 구버전 JSON 하위호환(고가 후퇴율)
   value_eok: number; // 당일 거래대금(억)
   turnover_pct?: number | null; // 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도
   peak_turnover_pct?: number | null; // 폭발일 회전율(거래량/유통주식수 %)
@@ -194,13 +183,11 @@ export interface RadarData {
   market_session: "open" | "closed";
   disclaimer: string;
   params: {
-    /** 식음: 폭발 후 고점 대비 하락률 허용 범위 [하한, 상한] */
-    fade_drawdown_range?: [number, number];
-    /** 반등: 15분 양봉 몸통% 하한 */
+    /** 반등: 5분 양봉 몸통% 하한 */
     reignition_body_pct?: number;
     /** 반등: 분봉 합성 단위(분) */
     reignition_span_min?: number;
-    /** 반등: 당일 자격 양봉 최소 횟수 */
+    /** 반등: 당일 자격 양봉 스파크 최소 횟수 */
     reignition_min_count?: number;
     /** 폭발: 거래량/유통주식수 회전율 하한(%) */
     explosion_vol_turnover?: number;

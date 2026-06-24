@@ -1,4 +1,4 @@
-import { Newspaper, TrendingDown } from "lucide-react";
+import { Newspaper, TrendingUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -46,9 +46,6 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const trendMargin = fmtChange(trendVal);
   const trendLabel = `${ma20Margin != null ? "20일선" : "10일선"} ${trendVal >= 0 ? "위" : "아래"}`;
   const strong = s.suspicion_score >= 75;
-  // 식음 깊이: 폭발 후 고점 대비 현재가 하락률(%). 마커는 100−drawdown 위치(고점에 가까울수록 우측).
-  const drawdown = s.drawdown_pct ?? s.reaccum?.drawdown_pct ?? null;
-  const ddPos = drawdown != null ? Math.max(0, Math.min(100, 100 - drawdown)) : null;
 
   return (
     <Card
@@ -68,8 +65,8 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
-            <Badge variant="warning" title="최근 6거래일 내 고가+22%·거래량 90%+ 폭발 후 고점 대비 −15~−40% 식음 + 오늘 15분 양봉 2회+ — 직접 확인하고 진입(매수 추천 아님)">
-              반등조짐
+            <Badge variant="warning" title="최근 6거래일 고가+22%·거래량 90%+ 폭발 종목이 오늘 5분 양봉 몸통2%+ 스파크 3회+ 재분출 — 직접 확인하고 진입(매수 추천 아님)">
+              재매집
             </Badge>
             {s.reaccum?.source === "telegram" && (
               <Badge
@@ -146,28 +143,9 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
         <div className="flex items-center gap-5">
           <SuspicionGauge value={s.suspicion_score} size={104} />
           <div className="flex-1 space-y-3">
-            {/* 폭발 고점 → 현재 식음 바 */}
-            {ddPos != null && drawdown != null && (
-              <div>
-                <div className="mb-1 flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <TrendingDown className="size-3" aria-hidden />
-                    폭발 고점 대비{" "}
-                    <span className="font-semibold tabular-nums text-down">-{drawdown.toFixed(1)}%</span> 식음
-                  </span>
-                </div>
-                <div className="relative h-2 rounded-full bg-gradient-to-r from-down/50 to-white/10">
-                  <span
-                    className="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-background bg-foreground"
-                    style={{ left: `${ddPos}%` }}
-                    title={`폭발 고점 대비 -${drawdown.toFixed(1)}% (현재 ${change.text})`}
-                  />
-                </div>
-              </div>
-            )}
             {s.reaccum && (
               <p className="text-[11px] text-warning">
-                반등조짐: {peakDaysAgo(s.reaccum.peak_date) ?? "-"}일 전{" "}
+                재매집: {peakDaysAgo(s.reaccum.peak_date) ?? "-"}일 전{" "}
                 고가 <span className="tabular-nums">+{s.reaccum.peak_high_pct.toFixed(1)}%</span> 폭발
                 {(s.peak_turnover_pct ?? s.reaccum.peak_turnover_pct) != null && (
                   <span className="tabular-nums" title="폭발일 거래량/유통주식수 — 유통주식 손바뀜 강도">
@@ -175,18 +153,12 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                     {s.peak_turnover_pct ?? s.reaccum.peak_turnover_pct}%{")"}
                   </span>
                 )}
-                {drawdown != null && (
-                  <>
-                    {" → 고점 대비 "}
-                    <span className="tabular-nums text-down">-{drawdown.toFixed(1)}%</span>
-                    {" 식음"}
-                  </>
-                )}
               </p>
             )}
             {s.reignition && (
               <p className="text-[11px] text-up">
-                오늘 반등: 15분 양봉{" "}
+                <TrendingUp className="mr-0.5 inline size-3" aria-hidden />
+                오늘 5분 스파크{" "}
                 <span className="tabular-nums">{s.reignition.count ?? "-"}회</span>
                 {" · 최대 몸통 "}
                 <span className="tabular-nums">{s.reignition.body_pct}%</span>

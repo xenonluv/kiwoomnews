@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """레이더 재반등 봉 텔레그램 알림 (표준 라이브러리만).
 
-publish.py가 게시 후보를 정한 뒤 호출 → 후보의 '완성된' 자격 15분봉마다 1통 전송.
+publish.py가 게시 후보를 정한 뒤 호출 → 후보의 '완성된' 자격 5분 스파크마다 1통 전송.
 봉 시각(날짜:코드:HH:MM)으로 중복 제거 → 같은 봉 재전송 안 함(회차 도배 방지),
 새 자격 봉이 또 뜨면 또 전송. 토큰 미설정/전송 실패는 조용히 skip(publish 본작업 보호).
 
@@ -74,8 +74,8 @@ def _save_state(path, state):
         log(f"[telegram] 상태 저장 실패: {e}")
 
 
-def _bar_complete(bar_time_hhmm, now=None, span_min=15):
-    """버킷 시작 'HH:MM'의 15분봉이 완성됐나(now ≥ 시작+15분). 형성 중 봉은 알림 보류."""
+def _bar_complete(bar_time_hhmm, now=None, span_min=5):
+    """버킷 시작 'HH:MM'의 분봉이 완성됐나(now ≥ 시작+span_min분). 형성 중 봉은 알림 보류."""
     now = now or datetime.now(KST)
     try:
         hh, mm = bar_time_hhmm.split(":")
@@ -89,14 +89,14 @@ def _format(s, bar):
     code = s.get("code") or ""
     name = s.get("name") or code
     r = s.get("reaccum") or {}
-    dd = r.get("drawdown_pct")
     pt = r.get("peak_turnover_pct")
+    cnt = (s.get("reignition") or {}).get("count")
     line3 = f"등락 {s.get('change_pct')}%"
-    if dd is not None:
-        line3 += f" · 고점대비 -{dd}%"
+    if cnt is not None:
+        line3 += f" · 5분 스파크 {cnt}회"
     if pt is not None:
         line3 += f" · 폭발일 회전 {pt}%"
-    # 15분 양봉 게이트는 거래대금 하한이 없어 value_eok이 0/소액일 수 있음 → 0이면 거래대금 표기 생략.
+    # 5분 양봉 스파크 게이트는 거래대금 하한이 없어 value_eok이 0/소액일 수 있음 → 0이면 거래대금 표기 생략.
     bar_line = f"{bar['time']} · 몸통 {bar['body_pct']}%"
     if (bar.get("value_eok") or 0) > 0:
         bar_line += f" · 거래대금 {bar['value_eok']}억"
@@ -108,9 +108,9 @@ def _format(s, bar):
     ])
 
 
-def notify_reignitions(suspects, state_path=STATE_PATH, now=None, span_min=15):
+def notify_reignitions(suspects, state_path=STATE_PATH, now=None, span_min=5):
     """게시 후보의 '완성된' 자격 봉마다 1통 — 봉 시각 기준 중복 제거. 보낸 건수 반환.
-    span_min = 재반등 봉 합성 단위(radar의 --reignition-span-min, 기본 15). 봉 완성 판정에 사용."""
+    span_min = 재반등 스파크 합성 단위(radar의 --reignition-span-min, 기본 5). 봉 완성 판정에 사용."""
     load_env()
     if not os.environ.get("TELEGRAM_BOT_TOKEN") or not os.environ.get("TELEGRAM_CHAT_ID"):
         return 0  # 미설정 → 조용히 skip

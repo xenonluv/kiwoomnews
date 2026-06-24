@@ -2,10 +2,9 @@ import type { ScoreBreakdown } from "@/types/radar";
 
 type Item = { key: keyof ScoreBreakdown; label: string; max: number };
 
-// 반등조짐(reaccum) 변별 가산점 — 표시 전용 '강도'(검증된 확률 아님). 현 파이프라인의 유일 산출물.
+// 재매집(reaccum) 변별 가산점 — 표시 전용 '강도'(검증된 확률 아님). 현 파이프라인의 유일 산출물.
 const REACCUM_ITEMS: Item[] = [
-  { key: "drawdown", label: "식음 깊이", max: 10 },
-  { key: "re_count", label: "15분 양봉 수", max: 8 },
+  { key: "re_count", label: "5분 스파크 수", max: 10 },
   { key: "re_body", label: "양봉 몸통%", max: 6 },
   { key: "peak_turnover", label: "폭발일 회전율", max: 10 },
   { key: "re_turnover", label: "당일 회전율", max: 6 },

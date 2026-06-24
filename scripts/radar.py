@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""이벤트 매집 레이더 — "당일 폭발 → 식음 → 반등조짐" 스캐너 (2026-06 정의 전면 개편).
+"""이벤트 매집 레이더 — "당일 폭발 → 오늘 5분 양봉 스파크(재매집)" 스캐너 (2026-06 정의 개편).
 
-목적: 당일 큰 폭발(고가 +22% AND 거래량이 유통주식수의 90%+)이 난 종목이, 며칠 안에 고점 대비
-      −15%~−40% 폭락(식음)한 뒤, 당일 15분봉 양봉으로 다시 살아나는(반등조짐) 것을 탐지.
+목적: 최근 6거래일 큰 폭발(고가 +22% AND 거래량이 유통주식수의 90%+)이 난 종목이, (하락 여부 무관)
+      당일 5분봉 양봉(몸통%≥2%)으로 3회 이상 다시 분출하는(재매집) 것을 탐지.
 
 파이프라인:
   [폭발 캐치] 매 회차 시장별 네이버 up(등락률) 랭킹을 훑어 '고가 +22% AND 당일 거래량/유통주식수 ≥90%'
               폭발을 레지스트리(.explosion_registry.json)에 기록 → 최근 6거래일 폭발만 추적.
               (거래대금 순위·등락률 합집합 유니버스는 폐지. 당일 폭발은 /forecast 페이지에 게시.)
    ▼
-  [식음] 폭발 후 고점(폭발일 이후 일봉 최고가) 대비 현재가가 −15%~−40% 폭락한 상태.
-   ▼
-  [반등조짐] 당일 15분봉 양봉(몸통%≥2%)이 2회 이상.   ← KIS 현재가·일봉·분봉
+  [재매집(반등)] 전일 폭발 종목이 당일 5분봉 양봉(몸통%≥2%) 3회 이상 스파크.   ← KIS 현재가·일봉·분봉
+                 (식음=고점 대비 하락 게이트는 폐지 — 하락 등락률은 보지 않는다.)
    ▼
   [조건1·5] 이벤트 캘린더 × 뉴스 민감도 → event_calendar/theme_map (표시 가점)
 
@@ -49,15 +48,13 @@ PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
 #    거래대금 순위·등락률 합집합 유니버스는 폐지 — 폭발 스캔 소스는 네이버 up(등락률) 랭킹뿐.
 EXPLOSION_HIGH_PCT = 22.0          # 폭발 당일 고가 등락률 하한(%)
 EXPLOSION_VOL_TURNOVER = 90.0      # 폭발 당일 거래량 / 유통주식수 회전율 하한(%) — 유동비율 없으면 미확정(스킵)
-EXPLOSION_WINDOW = 6               # 최근 6거래일 폭발만 식음·반등 후보로 추적
+EXPLOSION_WINDOW = 6               # 최근 6거래일 폭발만 재매집(반등) 후보로 추적
 EXPLOSION_SCAN_N = 50              # 시장별 네이버 up(등락률) 상위 N에서 폭발 감시(22%+ 누락 방지)
-# ── 식음 정의: 폭발 후 윈도 내 고점(폭발일 이후 최고가) 대비 현재가가 −15%~−40% 폭락한 상태.
-FADE_DRAWDOWN_MIN = 15.0           # 고점 대비 하락률 하한(%) — 최소 이만큼은 빠져야 '식음'
-FADE_DRAWDOWN_MAX = 40.0           # 고점 대비 하락률 상한(%) — 이보다 깊으면 추세 이탈로 제외
-# ── 반등조짐 정의: 식음 상태에서 당일 15분봉 '양봉 몸통%≥2%'가 2회 이상(거래대금 게이트 없음).
-REIGNITION_SPAN_MIN = 15           # 재반등 판정 분봉 합성 단위(분)
-REIGNITION_BODY_PCT = 2.0          # 15분 양봉 몸통%(|종가−시가|/시가) 하한
-REIGNITION_MIN_COUNT = 2           # 당일 자격 양봉이 이 수 이상이어야 반등조짐 인정
+# ── 반등(재매집) 정의: 최근 6거래일 폭발 종목이 (하락 여부 무관) 당일 5분봉 '양봉 몸통%≥2%'가 3회 이상
+#    스파크. 식음(고점 대비 하락) 게이트는 폐지 — 하락 등락률 퍼센트는 보지 않는다.
+REIGNITION_SPAN_MIN = 5            # 재반등 스파크 판정 분봉 합성 단위(분)
+REIGNITION_BODY_PCT = 2.0          # 5분 양봉 몸통%(|종가−시가|/시가) 하한
+REIGNITION_MIN_COUNT = 3           # 당일 자격 양봉(스파크)이 이 수 이상이어야 반등 인정
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
 # "예전 대장"(was_theme_leader) 판정 — regex 테마가 아니라 권위 업종(sector) 기준.
 LEADER_MIN_GROUP = 3               # 같은 (폭발일, 업종) 폭발군이 이 수 이상일 때만 대장 판정
@@ -109,24 +106,24 @@ def aggregate_minute_bars(bars, span_min):
 
 def reignition_bars(bars, body_pct_min=REIGNITION_BODY_PCT,
                     span_min=REIGNITION_SPAN_MIN):
-    """오늘 재반등 자격 15분봉 '전체'를 시각순으로.
+    """오늘 재반등 자격 5분봉(스파크) '전체'를 시각순으로.
 
-    자격: 당일 '상승' 15분봉(종가>시가) 중 몸통%((종가−시가)/시가×100) ≥ body_pct_min 인 봉.
-    → "큰 상승 몸통"이 식음 구간에서 다시 살아나는 신호. 거래대금 게이트는 없다(횟수만으로 판정).
+    자격: 당일 '상승' 5분봉(종가>시가) 중 몸통%((종가−시가)/시가×100) ≥ body_pct_min 인 봉.
+    → "큰 상승 몸통" 스파크 = 폭발 종목에 돈이 다시 들어오는 재매집 신호. 거래대금 게이트는 없다(횟수만으로 판정).
     하락·도지 봉은 제외(폭락 중 오탐 방지). 각 봉 {body_pct, time("HH:MM"=버킷 시작), value_eok,
-    close, open}. 게이트(2회+)·표시(대표봉)와 텔레그램 봉단위 알림이 공용으로 쓴다(value_eok는 표시용).
+    close, open}. 게이트(3회+)·표시(대표봉)와 텔레그램 봉단위 알림이 공용으로 쓴다(value_eok는 표시용).
     """
     out = []
-    for b15 in aggregate_minute_bars(bars, span_min):
-        if b15["open"] <= 0 or b15["close"] <= b15["open"]:
+    for bar in aggregate_minute_bars(bars, span_min):
+        if bar["open"] <= 0 or bar["close"] <= bar["open"]:
             continue  # 상승 몸통만 (하락·도지 제외)
-        body = (b15["close"] - b15["open"]) / b15["open"] * 100
+        body = (bar["close"] - bar["open"]) / bar["open"] * 100
         if body < body_pct_min:
             continue
         out.append({"body_pct": round(body, 2),
-                    "time": f"{b15['time'][:2]}:{b15['time'][2:4]}",
-                    "value_eok": round(b15["value"] / 1e8),
-                    "close": b15["close"], "open": b15["open"]})
+                    "time": f"{bar['time'][:2]}:{bar['time'][2:4]}",
+                    "value_eok": round(bar["value"] / 1e8),
+                    "close": bar["close"], "open": bar["open"]})
     return out
 
 
@@ -181,10 +178,8 @@ def _upsert_explosion(reg, rec):
                                    float(rec.get("peak_high_pct", 0) or 0))
         rec["peak_change_pct"] = max(float(old.get("peak_change_pct", 0) or 0),
                                      float(rec.get("peak_change_pct", 0) or 0))
-        # 폭발일 고가(절대값)·거래량 회전율도 max 병합 — 장중 누적이라 단조증가지만, 부분 회차·소스
-        # 혼용(seed 종일 vs live 장중)에서 더 큰(완결된) 값을 보존(식음 drawdown 기준·회전율 점수 안정).
-        rec["peak_high"] = max(float(old.get("peak_high", 0) or 0),
-                               float(rec.get("peak_high", 0) or 0)) or None
+        # 폭발일 거래량 회전율도 max 병합 — 장중 누적이라 단조증가지만, 부분 회차·소스 혼용
+        # (seed 종일 vs live 장중)에서 더 큰(완결된) 값을 보존(회전율 점수 안정·게이트 재검증 일관).
         rec["vol_turnover_pct"] = max(float(old.get("vol_turnover_pct", 0) or 0),
                                       float(rec.get("vol_turnover_pct", 0) or 0)) or None
         # source는 권위 순(live>seed>telegram)으로 승격 — 텔레그램 시드가 bootstrap에서 먼저
@@ -345,7 +340,6 @@ def bootstrap_seed_explosions(reg, p):
                 "name": item["name"],
                 "peak_date": bar["date"],
                 "peak_value_eok": round(bar["value"] / 1e8),
-                "peak_high": round(float(bar["high"]), 2),
                 "peak_high_pct": round(high_pct, 2),
                 "peak_change_pct": round((bar["close"] / prev_close - 1) * 100, 2),
                 "vol_turnover_pct": round(vol_turnover, 1),
@@ -451,7 +445,6 @@ def update_live_explosions(reg, p):
             "name": row["name"],
             "peak_date": trade_date,
             "peak_value_eok": round(value_won / 1e8),
-            "peak_high": round(float(now["high"]), 2),      # 폭발일 고가 절대값 — 식음 drawdown 기준
             "peak_high_pct": round(high_pct, 2),
             "peak_change_pct": round(float(now.get("change_pct") or 0), 2),
             "vol_turnover_pct": round(vol_turnover, 1),     # 폭발일 거래량 회전율(유통주식수 대비 %)
@@ -576,8 +569,9 @@ def forecast_prob(mom3, mom5, ma20_gap, vol_surge):
 
 
 def scan_reaccum_candidate(rec, p, events):
-    """폭발 이후 식음(고점 대비 −15%~−40% 폭락) 구간에서 당일 15분봉 양봉(몸통%≥2%)이 2회 이상
-    나온 '반등조짐' 후보를 만든다. 등락률·MA20·투신 수급 게이트는 모두 폐지(차트 게이트만)."""
+    """최근 6거래일 폭발(고가≥22% AND 거래량/유통주식수≥90%) 종목이 (하락 여부 무관) 당일 5분봉
+    양봉(몸통%≥2%)이 3회 이상 스파크한 '재매집' 후보를 만든다. 식음(고점 대비 하락)·등락률·MA20·
+    투신 수급 게이트는 모두 폐지(전일 폭발 + 당일 5분 양봉 스파크 횟수만 본다)."""
     code, name = rec["code"], rec.get("name") or rec["code"]
     peak_date = rec.get("peak_date")
     if not peak_date:
@@ -597,8 +591,7 @@ def scan_reaccum_candidate(rec, p, events):
     high = now.get("high") or now["price"]
     high_pct = (high / now["prev_close"] - 1) * 100
     try:
-        # 25봉 + 폭발 윈도 여유 — 식음 고점(peak_date 이후 최고가)이 윈도를 넓혀도 창에서 누락되지 않게.
-        daily = kis.daily_prices_jmoney_un(code, days=max(25, p.explosion_window + 5))  # 가격=J 종가 / 거래대금=UN
+        daily = kis.daily_prices_jmoney_un(code, days=25)  # MA20·vsurge·forecast 피처용(가격=J / 거래대금=UN)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 일봉 실패 {e}")
         return "ERR"
@@ -610,18 +603,8 @@ def scan_reaccum_candidate(rec, p, events):
         return None
     ma20 = sum(closes[-20:]) / 20
     ma10 = sum(closes[-10:]) / 10
-    # ── 식음 게이트: 폭발일 이후 고점(일봉 최고가) 대비 현재가가 −15%~−40% 폭락한 상태여야 한다.
-    #    폭발일 절대고가(rec["peak_high"])를 기준에 포함해 폭발 당일이 최고점인 경우도 포착.
-    highs_after = [d["high"] for d in daily if d.get("high") and d.get("date", "") >= peak_date]
-    peak_high = max(highs_after) if highs_after else float(rec.get("peak_high") or 0)
-    peak_high = max(peak_high, float(rec.get("peak_high") or 0))
-    if peak_high <= 0:
-        return None
-    drawdown = (peak_high - now["price"]) / peak_high * 100
-    if not (p.fade_drawdown_min <= drawdown <= p.fade_drawdown_max):
-        return None
-
-    # ── 반등 게이트: 당일 15분봉 양봉 몸통%≥2%가 REIGNITION_MIN_COUNT(2)회 이상.
+    # ── 반등 게이트: 당일 5분봉 양봉 몸통%≥2% 스파크가 REIGNITION_MIN_COUNT(3)회 이상.
+    #    (식음 게이트 폐지 — 하락 등락률 무관. 전일 폭발 종목이 오늘 다시 분출하는지만 본다.)
     # 분봉도 거래대금·수급과 동일하게 MONEY_MARKET(기본 UN). 정규장 시간창 가드(kis_client)로 NXT 장 밖 봉 배제.
     try:
         bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
@@ -647,15 +630,13 @@ def scan_reaccum_candidate(rec, p, events):
     peak_turnover_pct = rec.get("vol_turnover_pct")  # 새 게이트 통과 레코드라 항상 non-None
     breakdown = {
         "base": REACCUM_SCORE,
-        "drawdown": round(min(10, max(0, (drawdown - p.fade_drawdown_min)
-                       / max(1e-9, p.fade_drawdown_max - p.fade_drawdown_min) * 10))),  # 식음 깊이 15~40%→0~10
         # 게이트 최소 횟수(min_count)를 0점 기준으로 — 최소통과=baseline, 초과분만 가점(임계 바꿔도 정합).
-        "re_count": min(8, max(0, (len(rbars) - p.reignition_min_count + 1) * 2)),  # min→2·+1→4·+2→6·+3↑→8
+        "re_count": min(10, max(0, (len(rbars) - p.reignition_min_count + 1) * 2)),  # min→2·+1→4·+2→6·+3→8·+4↑→10
         "re_body": round(min(6, max(0, (re_body_max - 2) / 4 * 6))),       # 최대 몸통% 2~6%→0~6
         "peak_turnover": round(min(10, max(0, ((peak_turnover_pct or 0) - 90) / 110 * 10))),  # 폭발일 회전율 90~200%→0~10
         "re_turnover": round(min(6, max(0, ((turnover_pct or 0) - 30) / 70 * 6))),  # 당일 회전율 30~100%→0~6
     }
-    score = min(95, REACCUM_SCORE + breakdown["drawdown"] + breakdown["re_count"]
+    score = min(95, REACCUM_SCORE + breakdown["re_count"]
                 + breakdown["re_body"] + breakdown["peak_turnover"] + breakdown["re_turnover"])
     raw_breakdown = {k: 0 for k in breakdown}
     # 익일~3일 상승확률 라벨(표시 전용·보장 아님) — 동결 모델. daily/now에서 0 API로 피처 산출.
@@ -695,7 +676,6 @@ def scan_reaccum_candidate(rec, p, events):
         "price": now["price"],
         "change_pct": round(now["change_pct"], 2),
         "high_pct": round(high_pct, 2),
-        "drawdown_pct": round(drawdown, 1),   # 식음 깊이 — 폭발 후 고점 대비 현재가 하락률(%)
         "value_eok": round(float(now.get("value") or 0) / 1e8),
         "turnover_pct": turnover_pct,   # 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도
         "peak_turnover_pct": peak_turnover_pct,  # 폭발일 회전율(거래량/유통주식수 %) — 폭발의 자명함
@@ -707,14 +687,14 @@ def scan_reaccum_candidate(rec, p, events):
         "spark_max_x": 0.0,
         "spark_max_pct": None,
         "mega_flow": False,
-        # 재반등(오늘) 신호 — 대표(최대 몸통) 15분봉
+        # 재반등(오늘) 신호 — 대표(최대 몸통) 5분 스파크
         "reignition": {
             "body_pct": reignition["body_pct"],
             "time": reignition["time"],
-            "value_15m_eok": reignition["value_eok"],
-            "count": len(rbars),   # 당일 자격 양봉 수(게이트 ≥2)
+            "value_eok": reignition["value_eok"],
+            "count": len(rbars),   # 당일 자격 양봉 스파크 수(게이트 ≥3)
         },
-        # 당일 자격 15분봉 전체 — 텔레그램 봉단위 알림용(표시는 reignition 대표봉만 사용)
+        # 당일 자격 5분 스파크 전체 — 텔레그램 봉단위 알림용(표시는 reignition 대표봉만 사용)
         "reignition_bars": [{"time": b["time"], "body_pct": b["body_pct"], "value_eok": b["value_eok"]}
                             for b in rbars],
         "news": news_items,
@@ -724,10 +704,8 @@ def scan_reaccum_candidate(rec, p, events):
         "reaccum": {
             "peak_date": peak_date,
             "peak_value_eok": int(float(rec.get("peak_value_eok") or 0)),
-            "peak_high": round(float(rec.get("peak_high") or peak_high), 2),  # 폭발 후 고점(식음 기준)
             "peak_high_pct": round(float(rec.get("peak_high_pct") or 0), 2),
             "peak_turnover_pct": peak_turnover_pct,  # 폭발일 거래량 회전율(유통주식수 대비 %)
-            "drawdown_pct": round(drawdown, 1),   # 고점 대비 식음 하락률(%)
             "ma20": round(ma20, 1),
             "ma20_margin_pct": round(ma20_margin, 2),
             "cause_summary": cause_summary,  # 폭발 catalyst 한 줄("왜 올랐나")
@@ -894,18 +872,14 @@ def _rank_page(direction, market, page):
 
 def main():
     ap = argparse.ArgumentParser(
-        description="이벤트 매집 레이더 — 과거 폭등 → 식음 → 오늘 재반등 탐지")
-    # 식음(고점 대비 폭락) + 반등(15분 양봉) 게이트 — 등락률·MA20·투신 게이트는 폐지
-    ap.add_argument("--fade-drawdown-min", type=float, default=FADE_DRAWDOWN_MIN,
-                    help="식음 하한: 폭발 후 고점 대비 최소 하락률(%%, 기본 15)")
-    ap.add_argument("--fade-drawdown-max", type=float, default=FADE_DRAWDOWN_MAX,
-                    help="식음 상한: 폭발 후 고점 대비 최대 하락률(%%, 기본 40)")
+        description="이벤트 매집 레이더 — 과거 폭발 → 오늘 5분 양봉 스파크(재매집) 탐지")
+    # 반등(재매집) 게이트 = 전일 폭발 종목 + 당일 5분 양봉 스파크 횟수 — 식음·등락률·MA20·투신 게이트 폐지
     ap.add_argument("--reignition-body-pct", type=float, default=REIGNITION_BODY_PCT,
-                    help="15분 양봉 몸통%% 하한(기본 2)")
+                    help="5분 양봉 몸통%% 하한(기본 2)")
     ap.add_argument("--reignition-span-min", type=int, default=REIGNITION_SPAN_MIN,
-                    help="재반등 판정 분봉 합성 단위(분, 기본 15)")
+                    help="재반등 스파크 판정 분봉 합성 단위(분, 기본 5)")
     ap.add_argument("--reignition-min-count", type=int, default=REIGNITION_MIN_COUNT,
-                    help="당일 자격 양봉 최소 횟수(기본 2)")
+                    help="당일 자격 양봉 스파크 최소 횟수(기본 3)")
     ap.add_argument("--names", nargs="*", default=[], help="watchlist 강제 포함")
     ap.add_argument("--no-reaccum", dest="reaccum_enabled", action="store_false",
                     help="재매집(reaccum) registry 감시와 후보 생성을 비활성화")
@@ -968,7 +942,6 @@ def main():
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
         "params": {"market": kis.MONEY_MARKET,  # 거래대금/수급 시장구분: UN=KRX+NXT 통합 / J=KRX 단독(가격은 항상 J)
-                   "fade_drawdown_range": [p.fade_drawdown_min, p.fade_drawdown_max],
                    "reignition_body_pct": p.reignition_body_pct,
                    "reignition_span_min": p.reignition_span_min,
                    "reignition_min_count": p.reignition_min_count,
