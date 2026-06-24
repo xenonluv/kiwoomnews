@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-24 15:22:23 KST",
- "market_session": "open",
+ "generated_at": "2026-06-24 15:32:34 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -49,10 +49,10 @@
    "name": "삼익제약",
    "sector": "제약",
    "high_pct": 23.58,
-   "vol_turnover_pct": 241.0,
-   "value_eok": 836,
-   "price": 8460.0,
-   "change_pct": 12.05
+   "vol_turnover_pct": 242.3,
+   "value_eok": 841,
+   "price": 8600.0,
+   "change_pct": 13.91
   },
   {
    "code": "006920",
@@ -100,7 +100,7 @@
    "sector": "화학",
    "high_pct": 29.89,
    "vol_turnover_pct": 107.5,
-   "value_eok": 357,
+   "value_eok": 358,
    "price": 3520.0,
    "change_pct": 29.89
   },
@@ -148,16 +148,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 22250.0,
-   "change_pct": 13.0,
+   "price": 22350.0,
+   "change_pct": 13.51,
    "high_pct": 20.37,
-   "value_eok": 4976,
-   "turnover_pct": 174.1,
+   "value_eok": 4983,
+   "turnover_pct": 174.3,
    "peak_turnover_pct": 159.3,
    "float_ratio": 0.45530000000000004,
    "turnover_basis": "float",
-   "ma10": 17905.0,
-   "ma10_margin_pct": 24.27,
+   "ma10": 17915.0,
+   "ma10_margin_pct": 24.76,
    "spark": {
     "clusters": []
    },
@@ -228,8 +228,8 @@
     "peak_turnover_pct": 159.3,
     "peak_ibs": 0.69,
     "peak_uppertail": 5.6,
-    "ma20": 19042.5,
-    "ma20_margin_pct": 16.84,
+    "ma20": 19047.5,
+    "ma20_margin_pct": 17.34,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
     "was_theme_leader": false,
     "source": "live"
