@@ -1,49 +1,49 @@
 {
- "as_of": "2026-06-23 17:47 KST",
- "n": 0,
- "hit_rate": null,
- "avg_prob": null,
- "brier": null,
+ "as_of": "2026-06-24 17:50 KST",
+ "n": 19,
+ "hit_rate": 5.3,
+ "avg_prob": 43.6,
+ "brier": 0.2011,
  "min_n": 20,
  "prob_bands": [
   {
    "lo": 0,
    "hi": 40,
-   "n": 0,
-   "avg_prob": null,
-   "actual_rate": null,
+   "n": 5,
+   "avg_prob": 36.4,
+   "actual_rate": 0.0,
    "valid": false
   },
   {
    "lo": 40,
    "hi": 46,
-   "n": 0,
-   "avg_prob": null,
-   "actual_rate": null,
+   "n": 8,
+   "avg_prob": 43.0,
+   "actual_rate": 12.5,
    "valid": false
   },
   {
    "lo": 46,
    "hi": 50,
-   "n": 0,
-   "avg_prob": null,
-   "actual_rate": null,
+   "n": 3,
+   "avg_prob": 48.3,
+   "actual_rate": 0.0,
    "valid": false
   },
   {
    "lo": 50,
    "hi": 54,
-   "n": 0,
-   "avg_prob": null,
-   "actual_rate": null,
+   "n": 1,
+   "avg_prob": 50.0,
+   "actual_rate": 0.0,
    "valid": false
   },
   {
    "lo": 54,
    "hi": 60,
-   "n": 0,
-   "avg_prob": null,
-   "actual_rate": null,
+   "n": 2,
+   "avg_prob": 54.0,
+   "actual_rate": 0.0,
    "valid": false
   },
   {
@@ -59,84 +59,218 @@
   "rows": [
    {
     "t": 46,
-    "n_pred_up": 0,
-    "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "n_pred_up": 6,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tnr": 66.7,
+    "balanced_acc": 33.3,
+    "accuracy": 63.2
    },
    {
     "t": 48,
-    "n_pred_up": 0,
-    "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "n_pred_up": 5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tnr": 72.2,
+    "balanced_acc": 36.1,
+    "accuracy": 68.4
    },
    {
     "t": 50,
-    "n_pred_up": 0,
-    "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "n_pred_up": 3,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tnr": 83.3,
+    "balanced_acc": 41.7,
+    "accuracy": 78.9
    },
    {
     "t": 52,
-    "n_pred_up": 0,
-    "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "n_pred_up": 2,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tnr": 88.9,
+    "balanced_acc": 44.4,
+    "accuracy": 84.2
    },
    {
     "t": 54,
-    "n_pred_up": 0,
-    "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "n_pred_up": 2,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tnr": 88.9,
+    "balanced_acc": 44.4,
+    "accuracy": 84.2
    },
    {
     "t": 56,
     "n_pred_up": 0,
     "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "recall": 0.0,
+    "tnr": 100.0,
+    "balanced_acc": 50.0,
+    "accuracy": 94.7
    },
    {
     "t": 58,
     "n_pred_up": 0,
     "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "recall": 0.0,
+    "tnr": 100.0,
+    "balanced_acc": 50.0,
+    "accuracy": 94.7
    },
    {
     "t": 60,
     "n_pred_up": 0,
     "precision": null,
-    "recall": null,
-    "tnr": null,
-    "balanced_acc": null,
-    "accuracy": null
+    "recall": 0.0,
+    "tnr": 100.0,
+    "balanced_acc": 50.0,
+    "accuracy": 94.7
    }
   ],
   "recommended_up_min": null,
   "current_up_min": 54,
   "current_down_max": 46,
   "min_n": 30,
-  "pos": 0,
-  "neg": 0
+  "pos": 1,
+  "neg": 18
  },
- "recent": [],
+ "recent": [
+  {
+   "date": "20260622",
+   "code": "356680",
+   "ai_prob": 43,
+   "hit": true,
+   "return_pct": 21.54
+  },
+  {
+   "date": "20260622",
+   "code": "319660",
+   "ai_prob": 45,
+   "hit": false,
+   "return_pct": -11.38
+  },
+  {
+   "date": "20260622",
+   "code": "279570",
+   "ai_prob": 41,
+   "hit": false,
+   "return_pct": -3.66
+  },
+  {
+   "date": "20260622",
+   "code": "240810",
+   "ai_prob": 43,
+   "hit": false,
+   "return_pct": -12.99
+  },
+  {
+   "date": "20260622",
+   "code": "204320",
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -13.27
+  },
+  {
+   "date": "20260622",
+   "code": "122640",
+   "ai_prob": 54,
+   "hit": false,
+   "return_pct": 0.0
+  },
+  {
+   "date": "20260622",
+   "code": "095610",
+   "ai_prob": 49,
+   "hit": false,
+   "return_pct": -14.01
+  },
+  {
+   "date": "20260622",
+   "code": "089030",
+   "ai_prob": 45,
+   "hit": false,
+   "return_pct": -14.08
+  },
+  {
+   "date": "20260622",
+   "code": "085620",
+   "ai_prob": 32,
+   "hit": false,
+   "return_pct": -19.01
+  },
+  {
+   "date": "20260622",
+   "code": "080220",
+   "ai_prob": 47,
+   "hit": false,
+   "return_pct": -17.31
+  },
+  {
+   "date": "20260622",
+   "code": "043260",
+   "ai_prob": 40,
+   "hit": false,
+   "return_pct": -14.91
+  },
+  {
+   "date": "20260622",
+   "code": "034730",
+   "ai_prob": 49,
+   "hit": false,
+   "return_pct": -3.42
+  },
+  {
+   "date": "20260622",
+   "code": "028260",
+   "ai_prob": 54,
+   "hit": false,
+   "return_pct": -12.5
+  },
+  {
+   "date": "20260622",
+   "code": "028050",
+   "ai_prob": 43,
+   "hit": false,
+   "return_pct": -10.12
+  },
+  {
+   "date": "20260622",
+   "code": "017670",
+   "ai_prob": 36,
+   "hit": false,
+   "return_pct": -4.56
+  },
+  {
+   "date": "20260622",
+   "code": "011070",
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -12.3
+  },
+  {
+   "date": "20260622",
+   "code": "010690",
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -4.08
+  },
+  {
+   "date": "20260622",
+   "code": "009150",
+   "ai_prob": 44,
+   "hit": false,
+   "return_pct": -10.68
+  },
+  {
+   "date": "20260622",
+   "code": "004710",
+   "ai_prob": 50,
+   "hit": false,
+   "return_pct": -16.75
+  }
+ ],
  "disclaimer": "사용자가 'AI분석하기'를 누른 모든 종목의 AI 상승확률을 익일 등락으로 채점한 기록입니다. 확률 구간별 실측 상승률·최적 임계는 표시·참고용이며 자동 적용되지 않습니다(권고치 확인 후 수동 조정). 약세 단일 레짐 표본 한계."
 }
