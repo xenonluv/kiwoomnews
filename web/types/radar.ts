@@ -85,6 +85,8 @@ export interface ReaccumInfo {
   peak_value_eok: number;
   peak_high_pct: number;
   peak_turnover_pct?: number | null; // 폭발일 거래량 회전율(유통주식수 대비 %)
+  peak_ibs?: number | null; // 폭발일 마감강도 IBS(0=저가마감·1=고가마감) — 약마감(낮음)일수록 익일 연속성↑ 경향(전진검증중)
+  peak_uppertail?: number | null; // 폭발일 윗꼬리%((고가−종가)/종가) — 클수록 약마감
   ma20?: number;
   ma20_margin_pct?: number;
   cause_summary?: string; // 폭발 catalyst 한 줄("왜 올랐나") — 구버전 JSON엔 없음

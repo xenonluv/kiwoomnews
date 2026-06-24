@@ -153,6 +153,17 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                     {s.peak_turnover_pct ?? s.reaccum.peak_turnover_pct}%{")"}
                   </span>
                 )}
+                {s.reaccum.peak_ibs != null && (
+                  <span
+                    className="tabular-nums"
+                    title="폭발일 마감강도 IBS(0=저가마감·1=고가마감)·윗꼬리%. 7일 표본: 약마감(윗꼬리 큰)이 익일 연속성↑, 상한가류 강마감은 식음↑ 경향(검증 중·점수 미반영)"
+                  >
+                    {" · 마감 "}
+                    {s.reaccum.peak_ibs >= 0.7 ? "강함" : s.reaccum.peak_ibs <= 0.4 ? "약함" : "중간"}
+                    (IBS {s.reaccum.peak_ibs}
+                    {s.reaccum.peak_uppertail != null && `·윗꼬리 ${s.reaccum.peak_uppertail}%`})
+                  </span>
+                )}
               </p>
             )}
             {s.reignition && (

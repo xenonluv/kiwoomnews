@@ -302,6 +302,17 @@ def _telegram_seed_items(p):
     return out
 
 
+def _close_strength(high, low, close):
+    """폭발일 마감 강도 → (IBS, 윗꼬리%). IBS=(종가−저가)/(고가−저가)[1=고가마감, 0=저가마감],
+    윗꼬리%=(고가−종가)/종가×100. 7일 표본 실증: 약마감(IBS↓·윗꼬리↑=장중 찍고 종가 밀림)이 익일
+    연속성↑, 강마감(상한가류, IBS↑)은 익일 식음↑ 경향 — 표시·전진검증용(소표본이라 점수·게이트 미반영)."""
+    hi, lo, cl = float(high or 0), float(low or 0), float(close or 0)
+    # 클램프: 일봉 EOD에선 lo≤cl≤hi이지만, 혹시 모를 글리치(cl>hi 등)에도 0..1 / 윗꼬리≥0 보장.
+    ibs = round(min(1.0, max(0.0, (cl - lo) / (hi - lo))), 2) if hi > lo else 1.0
+    uppertail = round(max(0.0, (hi - cl) / cl * 100), 1) if cl > 0 else 0.0
+    return ibs, uppertail
+
+
 def _scan_code_window(reg, code, name, source, p):
     """code의 최근 윈도(explosion_window 거래일) 일봉을 훑어 새 정의(고가≥22% AND 거래량/유통주식수≥90%)
     폭발일을 찾아 registry에 upsert(vol_turnover_pct 포함). seed 부트스트랩·6일 소급 백필 공용 per-stock 스캔.
@@ -494,6 +505,8 @@ def update_live_explosions(reg, p):
             continue
         vol_turnover = vt
         value_won = float(now.get("value") or 0)   # 당일 거래대금(UN, 표시용)
+        # 마감강도(peak_ibs)는 장중 현재가로 산출하면 종가와 달라 오염되므로 여기서 저장하지 않는다.
+        # 수상종목(전일 폭발)으로 노출될 때 scan_reaccum_candidate가 '완결된 폭발일 일봉'에서 산출(EOD 정확).
         rec_new = {
             "code": row["code"],
             "name": row["name"],
@@ -688,6 +701,12 @@ def scan_reaccum_candidate(rec, p, events):
     # basis는 '실제 산출된 값'에 맞춘다 — 거래량 0 글리치(turnover_pct=None)면 "cap"(값 없음과 일관).
     turnover_basis = "float" if turnover_pct is not None else "cap"
     peak_turnover_pct = rec.get("vol_turnover_pct")  # 새 게이트 통과 레코드라 항상 non-None
+    # 폭발일 마감강도 — 항상 '완결된 폭발일 일봉'(EOD)에서 산출. peak_date < signal_date(가드)라 그 일봉은
+    # 완성된 종가다 → 장중 proxy로 인한 오염 없음(전진검증·표시 전용, 점수 미반영).
+    peak_ibs = peak_uppertail = None
+    pbar = next((d for d in daily if d.get("date") == peak_date), None)
+    if pbar:
+        peak_ibs, peak_uppertail = _close_strength(pbar.get("high"), pbar.get("low"), pbar.get("close"))
     breakdown = {
         "base": REACCUM_SCORE,
         # 게이트 최소 횟수(min_count)를 0점 기준으로 — 최소통과=baseline, 초과분만 가점(임계 바꿔도 정합).
@@ -766,6 +785,8 @@ def scan_reaccum_candidate(rec, p, events):
             "peak_value_eok": int(float(rec.get("peak_value_eok") or 0)),
             "peak_high_pct": round(float(rec.get("peak_high_pct") or 0), 2),
             "peak_turnover_pct": peak_turnover_pct,  # 폭발일 거래량 회전율(유통주식수 대비 %)
+            "peak_ibs": peak_ibs,         # 폭발일 마감강도(0=저가마감·1=고가마감) — 표시·전진검증용
+            "peak_uppertail": peak_uppertail,  # 폭발일 윗꼬리%((고가−종가)/종가) — 약마감일수록 큼
             "ma20": round(ma20, 1),
             "ma20_margin_pct": round(ma20_margin, 2),
             "cause_summary": cause_summary,  # 폭발 catalyst 한 줄("왜 올랐나")

@@ -56,6 +56,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
             **회전율은 '유통주식수 기준·거래량'**(당일 거래량/유통주식수). 유동비율(발행주식수)은
             `float_ratio.py`가 wisereport(`navercomp.wisereport.co.kr` "발행주식수/유동비율") 스크랩·캐시
             (data/float_ratio.json, 7일). suspect에 turnover_pct·peak_turnover_pct·float_ratio·turnover_basis 노출.
+            **폭발일 마감강도**(reaccum.peak_ibs=(종가−저가)/(고가−저가)·peak_uppertail=(고가−종가)/종가%)도 registry·
+            history에 적재(7일 표본 실증: 약마감[윗꼬리 큰]이 익일 연속성↑·상한가류 강마감은 식음↑ 경향). **소표본이라
+            점수·게이트 미반영, 표시·전진검증 전용**(history에 쌓아 향후 검증 후 점수 반영 여부 결정).
    fade/shakeout: raw 가중합(통계 반영)
    forecast: 동결 모델 "3일내 +7% 터치" 과거 실측 확률 라벨(표시 전용)
    ▼
