@@ -27,8 +27,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 3801,
-   "turnover_pct": 133.9,
+   "value_eok": 3826,
+   "turnover_pct": 134.8,
    "peak_turnover_pct": 159.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -70,5 +70,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-24 13:02:21 KST"
+ "as_of": "2026-06-24 13:12:15 KST"
 }
