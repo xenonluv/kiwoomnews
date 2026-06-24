@@ -4,32 +4,67 @@
   "028260": {
    "phase": "재매집",
    "confidence": 78,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260623",
+    "next_close": 455000.0,
+    "entry_close": 520000.0,
+    "rose": false,
+    "hit": false,
+    "return_pct": -12.5
+   }
   },
   "095610": {
    "phase": "재매집",
    "confidence": 72,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260623",
+    "next_close": 157700.0,
+    "entry_close": 183400.0,
+    "rose": false,
+    "hit": false,
+    "return_pct": -14.01
+   }
   },
   "122640": {
    "phase": "재매집",
    "confidence": 72,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260623",
+    "next_close": 38500.0,
+    "entry_close": 38500.0,
+    "rose": false,
+    "hit": false,
+    "return_pct": 0.0
+   }
   },
   "240810": {
    "phase": "중립",
    "confidence": 55,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260623",
+    "next_close": 150100.0,
+    "entry_close": 172500.0,
+    "rose": false,
+    "hit": null,
+    "return_pct": -12.99
+   }
   },
   "004710": {
    "phase": "재매집",
    "confidence": 72,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260623",
+    "next_close": 12870.0,
+    "entry_close": 15460.0,
+    "rose": false,
+    "hit": false,
+    "return_pct": -16.75
+   }
   }
  }
 }
