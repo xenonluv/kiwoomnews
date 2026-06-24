@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-24 11:52:18 KST",
+ "generated_at": "2026-06-24 12:02:28 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -39,20 +39,20 @@
    "name": "부국철강",
    "sector": "금속",
    "high_pct": 24.9,
-   "vol_turnover_pct": 241.7,
-   "value_eok": 1019,
-   "price": 4105.0,
-   "change_pct": 9.32
+   "vol_turnover_pct": 248.6,
+   "value_eok": 1048,
+   "price": 4305.0,
+   "change_pct": 14.65
   },
   {
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
    "high_pct": 29.84,
-   "vol_turnover_pct": 99.8,
-   "value_eok": 333,
-   "price": 4890.0,
-   "change_pct": 13.99
+   "vol_turnover_pct": 100.6,
+   "value_eok": 335,
+   "price": 4850.0,
+   "change_pct": 13.05
   }
  ],
  "suspects": [
@@ -63,11 +63,11 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 88,
+   "suspicion_score": 90,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
-    "re_count": 8,
+    "re_count": 10,
     "re_body": 6,
     "peak_turnover": 6,
     "re_turnover": 6
@@ -88,16 +88,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 22200.0,
-   "change_pct": 12.75,
+   "price": 22150.0,
+   "change_pct": 12.49,
    "high_pct": 18.84,
-   "value_eok": 3386,
-   "turnover_pct": 119.6,
+   "value_eok": 3531,
+   "turnover_pct": 124.6,
    "peak_turnover_pct": 159.3,
    "float_ratio": 0.45530000000000004,
    "turnover_basis": "float",
-   "ma10": 17905.0,
-   "ma10_margin_pct": 23.99,
+   "ma10": 17895.0,
+   "ma10_margin_pct": 23.78,
    "spark": {
     "clusters": []
    },
@@ -108,7 +108,7 @@
     "body_pct": 8.01,
     "time": "09:00",
     "value_eok": 211,
-    "count": 6
+    "count": 7
    },
    "reignition_bars": [
     {
@@ -140,6 +140,11 @@
      "time": "11:40",
      "body_pct": 2.55,
      "value_eok": 34
+    },
+    {
+     "time": "11:50",
+     "body_pct": 2.71,
+     "value_eok": 66
     }
    ],
    "news": [],
@@ -151,8 +156,8 @@
     "peak_value_eok": 3960,
     "peak_high_pct": 28.4,
     "peak_turnover_pct": 159.3,
-    "ma20": 19042.5,
-    "ma20_margin_pct": 16.58,
+    "ma20": 19037.5,
+    "ma20_margin_pct": 16.35,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
     "was_theme_leader": false,
     "source": "live"
