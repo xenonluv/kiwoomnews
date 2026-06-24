@@ -4,7 +4,7 @@
   "356680": {
    "name": "엑스게이트",
    "sector": "IT 서비스",
-   "entry": 21650.0,
+   "entry": 22200.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -13,22 +13,22 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 86,
+   "suspicion_score": 88,
    "score_breakdown_display": {
     "base": 62,
-    "re_count": 6,
+    "re_count": 8,
     "re_body": 6,
     "peak_turnover": 6,
     "re_turnover": 6
    },
    "rank": 1,
-   "change_pct": 9.95,
+   "change_pct": 12.75,
    "high_pct": 18.84,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 3268,
-   "turnover_pct": 115.5,
+   "value_eok": 3386,
+   "turnover_pct": 119.6,
    "peak_turnover_pct": 159.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -43,8 +43,8 @@
     "peak_value_eok": 3960,
     "peak_high_pct": 28.4,
     "peak_turnover_pct": 159.3,
-    "ma20": 19012.5,
-    "ma20_margin_pct": 13.87,
+    "ma20": 19042.5,
+    "ma20_margin_pct": 16.58,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
     "was_theme_leader": false,
     "source": "live"
@@ -53,7 +53,7 @@
     "body_pct": 8.01,
     "time": "09:00",
     "value_eok": 211,
-    "count": 5
+    "count": 6
    },
    "forecast": {
     "horizon": "3일 내 +7%",
@@ -70,5 +70,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-24 11:42:19 KST"
+ "as_of": "2026-06-24 11:52:18 KST"
 }
