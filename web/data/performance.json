@@ -1,5 +1,5 @@
 {
- "as_of": "2026-06-24 15:14 KST",
+ "as_of": "2026-06-24 17:20 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -223,26 +223,26 @@
   "prob_bands": [
    {
     "lo": 0,
-    "hi": 43,
-    "n": 1,
-    "avg_prob": 41.0,
-    "actual_rate": 0,
-    "valid": false
-   },
-   {
-    "lo": 43,
-    "hi": 58,
+    "hi": 47,
     "n": 4,
-    "avg_prob": 46.2,
-    "actual_rate": 75,
+    "avg_prob": 42.5,
+    "actual_rate": 50,
     "valid": false
    },
    {
-    "lo": 58,
-    "hi": 101,
+    "lo": 47,
+    "hi": 54,
     "n": 0,
     "avg_prob": null,
     "actual_rate": null,
+    "valid": false
+   },
+   {
+    "lo": 54,
+    "hi": 101,
+    "n": 1,
+    "avg_prob": 56.0,
+    "actual_rate": 100,
     "valid": false
    }
   ],
@@ -251,7 +251,7 @@
   "brier": 0.239,
   "divergence": {
    "rule_buy_min": 62,
-   "ai_up_min": 58,
+   "ai_up_min": 54,
    "min_n": 10,
    "unknown_n": 0,
    "cells": [
@@ -259,18 +259,18 @@
      "key": "동행 강세 (룰 매수 + AI 상승)",
      "rule_buy": true,
      "ai_up": true,
-     "n": 0,
-     "hit_rate": null,
-     "avg_return": null,
+     "n": 1,
+     "hit_rate": 100.0,
+     "avg_return": 8.92,
      "valid": false
     },
     {
      "key": "룰만 강세 (룰 매수 + AI 비상승)",
      "rule_buy": true,
      "ai_up": false,
-     "n": 5,
-     "hit_rate": 60.0,
-     "avg_return": 0.15,
+     "n": 4,
+     "hit_rate": 50.0,
+     "avg_return": -2.04,
      "valid": false
     },
     {
