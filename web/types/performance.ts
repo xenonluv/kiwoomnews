@@ -320,6 +320,10 @@ export interface PerformanceData {
   change_bands?: ChangeBandStats;
   /** 폭발일 회전율(거래대금/시총) 구간별 익일 상승확률 — ChangeBandStats 구조 재사용 */
   peak_turnover_bands?: ChangeBandStats;
+  /** 5분 스파크 횟수 구간별 익일 상승확률(주식분석.md ③ 전진검증) — ChangeBandStats 구조 재사용 */
+  reignition_count_bands?: ChangeBandStats;
+  /** 폭발일 마감강도(IBS) 구간별 익일 상승확률(7일 표본 가설 전진검증) — ChangeBandStats 구조 재사용 */
+  peak_ibs_bands?: ChangeBandStats;
   /** 분할 전략 실측(20/30/50+익절/손절) — 구버전 performance.json에는 없을 수 있음 */
   strategy_sim?: StrategySim;
   /** 테마별 성과 — 구버전 performance.json에는 없을 수 있음 */

@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-23 17:20 KST",
+ "as_of": "2026-06-24 15:14 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 11,
+  "tracking_days": 12,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -94,6 +94,14 @@
   },
   {
    "date": "20260623",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260624",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -192,15 +200,6 @@
    "valid": false,
    "leader_name": "HL만도",
    "leader_count": 1
-  }
- ],
- "by_ai_verdict": [
-  {
-   "key": "none",
-   "n": 10,
-   "hit_rate": 60.0,
-   "avg_return": 0.68,
-   "high3_rate": 90.0
   }
  ],
  "ai": {
@@ -361,69 +360,130 @@
   "unknown_n": 0,
   "cells": [
    {
-    "band": "−4~0%",
-    "n": 26,
-    "hit_rate": 50.0,
-    "avg_return": 0.01,
+    "band": "≤−5%",
+    "n": 3,
+    "hit_rate": 33.3,
+    "avg_return": -2.3,
+    "valid": false
+   },
+   {
+    "band": "−5~0%",
+    "n": 25,
+    "hit_rate": 56.0,
+    "avg_return": 0.68,
     "valid": true
    },
    {
-    "band": "0~+3%",
-    "n": 21,
-    "hit_rate": 47.6,
-    "avg_return": -0.9,
+    "band": "0~+5%",
+    "n": 31,
+    "hit_rate": 41.9,
+    "avg_return": -1.53,
     "valid": true
    },
    {
-    "band": "+3~+6%",
-    "n": 17,
-    "hit_rate": 29.4,
-    "avg_return": -3.18,
+    "band": "+5~+15%",
+    "n": 18,
+    "hit_rate": 22.2,
+    "avg_return": -4.22,
     "valid": true
    },
    {
-    "band": "+6~+10%",
-    "n": 10,
-    "hit_rate": 20.0,
-    "avg_return": -4.66,
-    "valid": true
+    "band": "+15%+",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
    }
   ]
  },
  "peak_turnover_bands": {
   "min_n": 10,
-  "unknown_n": 67,
+  "unknown_n": 77,
   "cells": [
    {
-    "band": "<40%",
-    "n": 5,
-    "hit_rate": 0.0,
-    "avg_return": -13.4,
-    "valid": false
-   },
-   {
-    "band": "40~80%",
-    "n": 2,
-    "hit_rate": 0.0,
-    "avg_return": -5.83,
-    "valid": false
-   },
-   {
-    "band": "80~120%",
+    "band": "90~120%",
     "n": 0,
     "hit_rate": null,
     "avg_return": null,
     "valid": false
    },
    {
-    "band": "120~200%",
+    "band": "120~160%",
     "n": 0,
     "hit_rate": null,
     "avg_return": null,
     "valid": false
    },
    {
-    "band": "200%+",
+    "band": "160~220%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "220~300%",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "300%+",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   }
+  ]
+ },
+ "reignition_count_bands": {
+  "min_n": 10,
+  "unknown_n": 77,
+  "cells": [
+   {
+    "band": "3회",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "4~5회",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "6회+",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   }
+  ]
+ },
+ "peak_ibs_bands": {
+  "min_n": 10,
+  "unknown_n": 77,
+  "cells": [
+   {
+    "band": "약마감 <0.4",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "중간 0.4~0.7",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "강마감 ≥0.7",
     "n": 0,
     "hit_rate": null,
     "avg_return": null,
@@ -450,11 +510,11 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 74,
-   "hit_rate": 40.5,
-   "avg_return": -1.61,
-   "high3_rate": 56.8,
-   "tracking_days": 11,
+   "n": 77,
+   "hit_rate": 41.6,
+   "avg_return": -1.47,
+   "high3_rate": 58.4,
+   "tracking_days": 12,
    "series": [
     {
      "date": "20260610",
@@ -538,14 +598,43 @@
     },
     {
      "date": "20260623",
+     "n": 3,
+     "hits": 2,
+     "hit_rate": 67,
+     "cum_n": 77,
+     "cum_hit_rate": 41.6
+    },
+    {
+     "date": "20260624",
      "n": 0,
      "hits": 0,
      "hit_rate": null,
-     "cum_n": 74,
-     "cum_hit_rate": 40.5
+     "cum_n": 77,
+     "cum_hit_rate": 41.6
     }
    ],
    "recent": [
+    {
+     "date": "20260623",
+     "name": "제이앤티씨",
+     "score": 78,
+     "hit": true,
+     "return_pct": 2.78
+    },
+    {
+     "date": "20260623",
+     "name": "예스티",
+     "score": 72,
+     "hit": false,
+     "return_pct": -3.9
+    },
+    {
+     "date": "20260623",
+     "name": "삼성물산",
+     "score": 84,
+     "hit": true,
+     "return_pct": 7.03
+    },
     {
      "date": "20260622",
      "name": "HPSP",
@@ -664,27 +753,6 @@
      "score": 0,
      "hit": true,
      "return_pct": 17.24
-    },
-    {
-     "date": "20260619",
-     "name": "아모텍",
-     "score": 0,
-     "hit": false,
-     "return_pct": -7.98
-    },
-    {
-     "date": "20260619",
-     "name": "이오테크닉스",
-     "score": 0,
-     "hit": true,
-     "return_pct": 3.91
-    },
-    {
-     "date": "20260619",
-     "name": "NAVER",
-     "score": 0,
-     "hit": false,
-     "return_pct": -3.27
     }
    ]
   },
@@ -699,17 +767,17 @@
     "valid": false
    },
    "nonleader": {
-    "n": 71,
-    "hit_rate": 40.8,
-    "avg_return": -1.53,
-    "high3_rate": 56.3,
+    "n": 74,
+    "hit_rate": 41.9,
+    "avg_return": -1.39,
+    "high3_rate": 58.1,
     "valid": true
    },
    "all": {
-    "n": 74,
-    "hit_rate": 40.5,
-    "avg_return": -1.61,
-    "high3_rate": 56.8,
+    "n": 77,
+    "hit_rate": 41.6,
+    "avg_return": -1.47,
+    "high3_rate": 58.4,
     "valid": true
    },
    "lift": null

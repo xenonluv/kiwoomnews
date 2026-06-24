@@ -16,6 +16,7 @@ import { AiPredictionPanel } from "@/components/performance/AiPredictionPanel";
 import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 import { ChangeBandTable } from "@/components/performance/ChangeBandTable";
 import { PeakTurnoverBandTable } from "@/components/performance/PeakTurnoverBandTable";
+import { HitBandTable } from "@/components/performance/HitBandTable";
 import { LeaderReaccumPanel } from "@/components/performance/LeaderReaccumPanel";
 import { ReaccumPerformancePanel } from "@/components/performance/ReaccumPerformancePanel";
 import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
@@ -96,6 +97,26 @@ export default function PerformancePage() {
         {data.change_bands && <ChangeBandTable data={data.change_bands} />}
 
         {data.peak_turnover_bands && <PeakTurnoverBandTable data={data.peak_turnover_bands} />}
+
+        {data.reignition_count_bands && (
+          <HitBandTable
+            data={data.reignition_count_bands}
+            title="5분 스파크 횟수별 익일 상승확률"
+            subtitle="폭발 종목의 당일 5분봉 양봉(몸통%≥2%) 스파크 횟수별 '익일 종가 상승' 비율과 평균수익(주식분석 가설 전진검증)"
+            bandHeader="스파크 횟수"
+            footnote="가설: 스파크가 많을수록 익일 상승 경향. 게이트가 3회+라 3회 이상 구간만 비교. 표시·검증 전용(점수 미반영)."
+          />
+        )}
+
+        {data.peak_ibs_bands && (
+          <HitBandTable
+            data={data.peak_ibs_bands}
+            title="폭발일 마감강도(IBS)별 익일 상승확률"
+            subtitle="폭발일 마감강도 IBS=(종가−저가)/(고가−저가)[0=저가마감·1=고가마감] 구간별 '익일 종가 상승' 비율과 평균수익"
+            bandHeader="마감강도"
+            footnote="7일 표본 반직관 가설: 약마감(윗꼬리 큰)이 익일 연속성↑·상한가류 강마감은 식음↑. 표시·검증 전용(점수 미반영)."
+          />
+        )}
 
         {data.experimental?.leader_reaccum && (
           <LeaderReaccumPanel data={data.experimental.leader_reaccum} />

@@ -158,7 +158,8 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   `reignition`(5분 스파크·count)·`forecast` 포함.
 - `/performance` — 자가 검증 대시보드. 데이터 = `web/data/performance.json`. 패널: TrendChart(적중률 추세),
   CalibrationTable(점수대 보정), WeightsPanel(가중치), AiPredictionPanel(AI 방향별 적중·Brier),
-  **ChangeBandTable**(등락률 구간별 익일 상승확률), **PeakTurnoverBandTable**(폭발일 회전율 구간별 익일 상승확률), **StrategySimPanel**(분할매매 실현성적),
+  **ChangeBandTable**(등락률 구간별 익일 상승확률), **PeakTurnoverBandTable**(폭발일 회전율 구간별 익일 상승확률),
+  **HitBandTable**(범용 — reignition_count_bands=5분 스파크 횟수별·peak_ibs_bands=폭발일 마감강도(IBS)별 익일 상승확률, 주식분석.md 가설 전진검증), **StrategySimPanel**(분할매매 실현성적),
   **TrackPerformancePanel**(검색 추적 룰 vs AI 4분면, 데이터 = `track_performance.json`),
   ThemeStatsTable·SparkFlowMatrix. 모든 패널 `min_n` 게이트.
 - `GET /api/predictions` — (레거시) analyzer 종가베팅용. cron 폐지로 데이터 정체 — `/forecast`는 이제 미사용.

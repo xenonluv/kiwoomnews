@@ -215,7 +215,8 @@ def collect_samples():
                                 "final": s.get("final", True),
                                 # 화면에는 노출하지만 기존 성과·튜닝 기준선에서는 제외할 실험 표본.
                                 "visible_experimental": s.get("visible_experimental", False),
-                                "reaccum": s.get("reaccum"),
+                                "reaccum": s.get("reaccum"),  # peak_ibs·peak_uppertail 포함(마감강도 밴드용)
+                                "reignition": s.get("reignition"),  # 5분 스파크 count(스파크 횟수 밴드용)
                                 # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
                                 "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
                                 "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
@@ -468,6 +469,43 @@ def peak_turnover_band_stats(samples):
     return {"min_n": FEATURE_MIN_N, "unknown_n": len(samples) - len(known), "cells": cells}
 
 
+# 5분 스파크 횟수·폭발일 마감강도(IBS) 구간 — 주식분석.md ③·7일 표본 가설의 전진 검증용.
+REIGNITION_COUNT_BANDS = [("3회", 3, 4), ("4~5회", 4, 6), ("6회+", 6, 1e9)]
+PEAK_IBS_BANDS = [("약마감 <0.4", 0.0, 0.4), ("중간 0.4~0.7", 0.4, 0.7), ("강마감 ≥0.7", 0.7, 2.0)]
+
+
+def _hit_band_cells(known, keyfn, bands):
+    """구간별 익일 적중률·평균수익 셀 — change_band/peak_turnover_band과 동일 셀 구조 공용."""
+    cells = []
+    for label, lo, hi in bands:
+        grp = [s for s in known if lo <= keyfn(s) < hi]
+        hits = sum(1 for s in grp if s["hit"])
+        rets = [s["return_pct"] for s in grp]
+        cells.append({
+            "band": label, "n": len(grp),
+            "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+            "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+            "valid": len(grp) >= FEATURE_MIN_N,
+        })
+    return cells
+
+
+def reignition_count_band_stats(samples):
+    """당일 5분봉 양봉 스파크 횟수 구간별 익일 상승확률 — '스파크가 많을수록 익일 더 오르나'(주식분석.md ③
+    전진 검증). 게이트가 3회+라 분포는 3 이상. ChangeBandStats 구조 재사용(웹 패널 공용)."""
+    known = [s for s in samples if (s.get("reignition") or {}).get("count") is not None]
+    return {"min_n": FEATURE_MIN_N, "unknown_n": len(samples) - len(known),
+            "cells": _hit_band_cells(known, lambda s: s["reignition"]["count"], REIGNITION_COUNT_BANDS)}
+
+
+def peak_ibs_band_stats(samples):
+    """폭발일 마감강도(IBS=(종가−저가)/(고가−저가)) 구간별 익일 상승확률 — 7일 표본 반직관 가설('약마감
+    [윗꼬리 큰]이 익일 연속성↑·상한가류 강마감은 식음↑')의 전진 검증. peak_ibs는 신규 history만 존재(구표본 제외)."""
+    known = [s for s in samples if (s.get("reaccum") or {}).get("peak_ibs") is not None]
+    return {"min_n": FEATURE_MIN_N, "unknown_n": len(samples) - len(known),
+            "cells": _hit_band_cells(known, lambda s: s["reaccum"]["peak_ibs"], PEAK_IBS_BANDS)}
+
+
 def leader_reaccum_stats(reaccum_experimental):
     """'예전 대장' 재매집 엣지 검증 — was_theme_leader 코호트 A/B.
 
@@ -703,6 +741,10 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "change_bands": change_band_stats(reaccum_experimental),
         # 폭발일 회전율 구간별 익일 상승확률 — '시총 대비 폭발이 클수록 더 오르나'(재매집 실험 풀, peak_turnover 비중 검증)
         "peak_turnover_bands": peak_turnover_band_stats(reaccum_experimental),
+        # 5분 스파크 횟수 구간별 익일 상승확률 — 주식분석.md ③ '스파크 많을수록 오르나' 전진 검증(재매집 실험 풀)
+        "reignition_count_bands": reignition_count_band_stats(reaccum_experimental),
+        # 폭발일 마감강도(IBS) 구간별 익일 상승확률 — 7일 표본 반직관 가설('약마감↑') 전진 검증(재매집 실험 풀)
+        "peak_ibs_bands": peak_ibs_band_stats(reaccum_experimental),
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {
