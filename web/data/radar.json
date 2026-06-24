@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-24 15:52:21 KST",
+ "generated_at": "2026-06-24 16:06:07 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -35,16 +35,6 @@
  ],
  "explosions": [
   {
-   "code": "026940",
-   "name": "부국철강",
-   "sector": "금속",
-   "high_pct": 24.9,
-   "vol_turnover_pct": 306.9,
-   "value_eok": 1293,
-   "price": null,
-   "change_pct": 22.9
-  },
-  {
    "code": "014950",
    "name": "삼익제약",
    "sector": "제약",
@@ -65,36 +55,6 @@
    "change_pct": 29.84
   },
   {
-   "code": "002070",
-   "name": "비비안",
-   "sector": "섬유·의류",
-   "high_pct": 29.96,
-   "vol_turnover_pct": 112.2,
-   "value_eok": 196,
-   "price": null,
-   "change_pct": 21.58
-  },
-  {
-   "code": "034940",
-   "name": "조아제약",
-   "sector": "제약",
-   "high_pct": 25.0,
-   "vol_turnover_pct": 111.9,
-   "value_eok": 270,
-   "price": null,
-   "change_pct": 19.74
-  },
-  {
-   "code": "043650",
-   "name": "국순당",
-   "sector": "음식료·담배",
-   "high_pct": 24.18,
-   "vol_turnover_pct": 111.6,
-   "value_eok": 425,
-   "price": null,
-   "change_pct": 18.35
-  },
-  {
    "code": "413630",
    "name": "씨피시스템",
    "sector": "화학",
@@ -105,6 +65,46 @@
    "change_pct": 29.89
   },
   {
+   "code": "026940",
+   "name": "부국철강",
+   "sector": "금속",
+   "high_pct": 24.9,
+   "vol_turnover_pct": 306.9,
+   "value_eok": 1293,
+   "price": null,
+   "change_pct": null
+  },
+  {
+   "code": "002070",
+   "name": "비비안",
+   "sector": "섬유·의류",
+   "high_pct": 29.96,
+   "vol_turnover_pct": 112.2,
+   "value_eok": 196,
+   "price": null,
+   "change_pct": null
+  },
+  {
+   "code": "034940",
+   "name": "조아제약",
+   "sector": "제약",
+   "high_pct": 25.0,
+   "vol_turnover_pct": 111.9,
+   "value_eok": 270,
+   "price": null,
+   "change_pct": null
+  },
+  {
+   "code": "043650",
+   "name": "국순당",
+   "sector": "음식료·담배",
+   "high_pct": 24.18,
+   "vol_turnover_pct": 111.6,
+   "value_eok": 425,
+   "price": null,
+   "change_pct": null
+  },
+  {
    "code": "900270",
    "name": "헝셩그룹",
    "sector": "외국증권",
@@ -112,7 +112,7 @@
    "vol_turnover_pct": 101.0,
    "value_eok": 124,
    "price": null,
-   "change_pct": 15.06
+   "change_pct": null
   }
  ],
  "suspects": [
@@ -151,8 +151,8 @@
    "price": 22350.0,
    "change_pct": 13.51,
    "high_pct": 20.37,
-   "value_eok": 5018,
-   "turnover_pct": 175.5,
+   "value_eok": 5030,
+   "turnover_pct": 175.9,
    "peak_turnover_pct": 159.3,
    "float_ratio": 0.45530000000000004,
    "turnover_basis": "float",
@@ -231,6 +231,97 @@
     "ma20": 19047.5,
     "ma20_margin_pct": 17.34,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": true
+  },
+  {
+   "code": "122640",
+   "name": "예스티",
+   "sector": "기계·장비",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 66,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 0,
+    "peak_turnover": 2,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 37500.0,
+   "change_pct": -2.6,
+   "high_pct": 4.81,
+   "value_eok": 1294,
+   "turnover_pct": 21.7,
+   "peak_turnover_pct": 110.6,
+   "float_ratio": 0.7117,
+   "turnover_basis": "float",
+   "ma10": 34080.0,
+   "ma10_margin_pct": 10.04,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.26,
+    "time": "09:50",
+    "value_eok": 20,
+    "count": 3
+   },
+   "reignition_bars": [
+    {
+     "time": "09:25",
+     "body_pct": 2.04,
+     "value_eok": 30
+    },
+    {
+     "time": "09:45",
+     "body_pct": 2.04,
+     "value_eok": 16
+    },
+    {
+     "time": "09:50",
+     "body_pct": 2.26,
+     "value_eok": 20
+    }
+   ],
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260618",
+    "peak_value_eok": 6552,
+    "peak_high_pct": 29.57,
+    "peak_turnover_pct": 110.6,
+    "peak_ibs": 0.69,
+    "peak_uppertail": 9.4,
+    "ma20": 30115.0,
+    "ma20_margin_pct": 24.52,
+    "cause_summary": "예스티, 메모리향 장비 공급 본격화 기대-유안타",
     "was_theme_leader": false,
     "source": "live"
    },

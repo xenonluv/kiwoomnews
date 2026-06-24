@@ -66,7 +66,7 @@ def log(msg):
 
 
 
-# ---------- 재반등 신호: 15분봉 양봉 몸통(거래대금 게이트 없음) ----------
+# ---------- 재반등 신호: 5분봉 양봉 몸통 스파크(거래대금 게이트 없음) ----------
 
 def aggregate_minute_bars(bars, span_min):
     """당일 1분봉을 장 시작(09:00) 기준 span_min분봉으로 합성.
@@ -179,8 +179,6 @@ def _upsert_explosion(reg, rec):
                                     float(rec.get("peak_value_eok", 0) or 0))
         rec["peak_high_pct"] = max(float(old.get("peak_high_pct", 0) or 0),
                                    float(rec.get("peak_high_pct", 0) or 0))
-        rec["peak_change_pct"] = max(float(old.get("peak_change_pct", 0) or 0),
-                                     float(rec.get("peak_change_pct", 0) or 0))
         # 폭발일 거래량 회전율도 max 병합 — 장중 누적이라 단조증가지만, 부분 회차·소스 혼용
         # (seed 종일 vs live 장중)에서 더 큰(완결된) 값을 보존(회전율 점수 안정·게이트 재검증 일관).
         rec["vol_turnover_pct"] = max(float(old.get("vol_turnover_pct", 0) or 0),
@@ -213,9 +211,20 @@ def _recent_active_explosions(reg, window):
         if not code:
             continue
         prev = latest.get(code)
-        if prev is None or rec.get("peak_date", "") > prev.get("peak_date", ""):
+        if prev is None or _explosion_supersedes(rec, prev):
             latest[code] = rec
     return latest
+
+
+def _explosion_supersedes(rec, prev):
+    """code별 대표 폭발 레코드 선정 우선순위: ① 새 정의로 검증된(vol_turnover_pct 적재) 레코드가
+    구 정의(None) 레코드를 항상 이긴다 — 마이그레이션 윈도(~6일) 동안 더 최근 peak_date의 legacy
+    레코드가 유효한 옛 폭발을 가려(shadow) reaccum 후보를 억누르는 것 방지. ② 동급이면 최근 peak_date."""
+    rec_valid = rec.get("vol_turnover_pct") is not None
+    prev_valid = prev.get("vol_turnover_pct") is not None
+    if rec_valid != prev_valid:
+        return rec_valid
+    return rec.get("peak_date", "") > prev.get("peak_date", "")
 
 
 def _snapshot_trade_date(code, now):
@@ -354,7 +363,6 @@ def _scan_code_window(reg, code, name, source, p):
             "code": code, "name": name, "peak_date": bar["date"],
             "peak_value_eok": round(bar["value"] / 1e8),
             "peak_high_pct": round(high_pct, 2),
-            "peak_change_pct": round((bar["close"] / prev_close - 1) * 100, 2),
             "vol_turnover_pct": round(vol_turnover, 1),
             "source": source,
         })
@@ -399,9 +407,10 @@ def _known_sector(reg, code):
 
 
 def _up_ranking_rows(p):
-    """시장별 네이버 up(등락률) 랭킹 상위 explosion_scan_n을 code 기준 dedup → (rows, 총행수).
-    폭발 라이브 감시·6일 소급 백필이 공용으로 쓰는 스캔 유니버스(현 등락률 정렬)."""
-    rows, seen, total = [], set(), 0
+    """시장별 네이버 up(등락률) 랭킹 상위 explosion_scan_n을 code 기준 dedup → (rows, 총행수, 실패 시장 수).
+    폭발 라이브 감시·6일 소급 백필이 공용으로 쓰는 스캔 유니버스(현 등락률 정렬).
+    fail_count>0 = 한 시장 랭킹이 비정상(그 시장 폭발 누락 가능) → scan_ok 판정에 반영(거짓 '깨끗' 방지)."""
+    rows, seen, total, fail = [], set(), 0, 0
     for market in ("KOSPI", "KOSDAQ"):
         try:
             up_rows, _ = _rank_page("up", market, 1)
@@ -412,8 +421,9 @@ def _up_ranking_rows(p):
                     seen.add(c)
                     rows.append(row)
         except Exception as e:
+            fail += 1
             log(f"[warn] {market} 등락률 랭킹 수집 실패: {e}")
-    return rows, total
+    return rows, total, fail
 
 
 def backfill_window_explosions(reg, p):
@@ -467,7 +477,7 @@ def update_live_explosions(reg, p):
 
     반환 (count, scan_ok, today_explosions) — today_explosions는 /forecast '당일 폭발 종목' 리스트.
     """
-    rows, up_rank_total = _up_ranking_rows(p)  # 네이버 up(등락률) 상위 dedup + 도달성 카운트
+    rows, up_rank_total, rank_fail = _up_ranking_rows(p)  # 네이버 up(등락률) 상위 dedup + 도달성·실패시장 카운트
     count = 0
     attempted = price_errors = 0  # price_now 도달성 — 전수 실패면 KIS 부분장애 신호
     high_pass = float_missing = 0  # 22% 고가 게이트 통과 수 / 그중 유동비율 결측으로 탈락한 수
@@ -513,7 +523,6 @@ def update_live_explosions(reg, p):
             "peak_date": trade_date,
             "peak_value_eok": round(value_won / 1e8),
             "peak_high_pct": round(high_pct, 2),
-            "peak_change_pct": round(float(now.get("change_pct") or 0), 2),
             "vol_turnover_pct": round(vol_turnover, 1),     # 폭발일 거래량 회전율(유통주식수 대비 %)
             "source": "live",
             "sector": now.get("sector", ""),  # 0 API
@@ -549,9 +558,10 @@ def update_live_explosions(reg, p):
     if count == 0 and high_pass >= 3 and float_missing == high_pass:
         log(f"[warn] 22% 고가 통과 {high_pass}종목 전부 유동비율 결측 → 폭발 0건. "
             f"wisereport(float) 소스 장애 의심(캐시 만료/차단). data/float_ratio.json 확인 권장.")
-    # KIS 도달성: 네이버 up 랭킹이 양 시장 모두 빈손이거나 price_now가 절반 이상 실패하면
-    # 'KIS/네이버 부분장애'로 본다(스캔 소스는 성공했는데 price_now 전수 실패하는 케이스 포착).
-    scan_ok = up_rank_total > 0 and not (
+    # KIS/네이버 도달성: 한 시장이라도 랭킹 수집이 실패(rank_fail>0)했거나, 양 시장 모두 빈손이거나,
+    # price_now가 절반 이상 실패하면 '부분장애'로 본다 — 한 시장만 죽고 다른 시장 행이 있어 거짓 '깨끗'
+    # 게시(그 시장 폭발 누락)되는 것을 방지(개편 전 단일시장 실패 전파 동작 복원).
+    scan_ok = up_rank_total > 0 and rank_fail == 0 and not (
         attempted > 0 and price_errors >= max(2, (attempted + 1) // 2))
     return count, scan_ok, today_explosions
 
@@ -574,11 +584,15 @@ def _backfill_today_explosions(today_explosions, reg, today):
             "high_pct": round(float(r.get("peak_high_pct") or 0), 2),
             "vol_turnover_pct": r.get("vol_turnover_pct"),
             "value_eok": int(float(r.get("peak_value_eok") or 0)),
-            "price": None,  # 랭킹에서 밀린 백필 종목 — 현재가는 미표시(폭발 사실만)
-            "change_pct": round(float(r.get("peak_change_pct") or 0), 2),
+            "price": None,   # 랭킹에서 밀린 백필 종목 — 현재가 미표시(폭발 사실만)
+            # 백필 행은 등락률 미표시(None) — 폭발 후 랭킹에서 밀려 신뢰할 현재가/종가가 없다(price=None).
+            # 거짓 등락률 표기를 막으려 아예 노출 안 함. 폭발 사실은 high_pct·회전율로 충분히 전달.
+            "change_pct": None,
         })
         seen_today.add(r["code"])
-    today_explosions.sort(key=lambda e: -(e.get("vol_turnover_pct") or 0))
+    # 회전율 내림차순, 단 라이브 행(price!=None) 우선 — 밀려난 백필 행(stale)이 활발히 거래되는
+    # 라이브 폭발보다 #1 자리(Flame 배지)를 차지하지 않게(시각적 위계 = 현재 거래 우선).
+    today_explosions.sort(key=lambda e: (e.get("price") is None, -(e.get("vol_turnover_pct") or 0)))
     return today_explosions
 
 
@@ -641,6 +655,14 @@ def forecast_prob(mom3, mom5, ma20_gap, vol_surge):
     }
 
 
+def _reaccum_eligible(rec, p):
+    """이 레코드가 reaccum(반등조짐) 후보 대상인가 — 새 폭발 정의로 검증(vol_turnover_pct 적재)되고
+    고가등락률 ≥ 임계인 레코드만. 구 게이트(거래대금 1,500억/13%) legacy 레코드는 vol_turnover_pct가
+    없어 제외. scan_reaccum_candidate의 KIS 호출 직전 게이트와 high_fail 가드 분모가 공유한다."""
+    return (rec.get("vol_turnover_pct") is not None
+            and float(rec.get("peak_high_pct") or 0) >= p.explosion_high_pct)
+
+
 def scan_reaccum_candidate(rec, p, events):
     """최근 6거래일 폭발(고가≥22% AND 거래량/유통주식수≥90%) 종목이 (하락 여부 무관) 당일 5분봉
     양봉(몸통%≥2%)이 3회 이상 스파크한 '재매집' 후보를 만든다. 식음(고점 대비 하락)·등락률·MA20·
@@ -652,7 +674,7 @@ def scan_reaccum_candidate(rec, p, events):
     # 새 폭발 정의(고가≥22% AND 거래량/유통주식수≥90%)로 적재된 레코드만 후보로 본다. 개편 전(거래대금
     # 1,500억/13% 게이트) 레코드는 vol_turnover_pct가 없어 — 재검증 없이 식음·반등 후보로 새는 걸 차단
     # (마이그레이션 윈도 ~6일간 정의 불일치 후보 방지. 구 레코드는 윈도 만료로 자가 소거).
-    if rec.get("vol_turnover_pct") is None or float(rec.get("peak_high_pct") or 0) < p.explosion_high_pct:
+    if not _reaccum_eligible(rec, p):
         return None
     try:
         now = kis.price_now_jmoney_un(code)  # 가격=J 공식 / 거래대금·거래량=UN 통합(표시·vsurge)
@@ -763,7 +785,7 @@ def scan_reaccum_candidate(rec, p, events):
         "ma10": round(ma10, 1),
         "ma10_margin_pct": round(ma10_margin, 2),
         "spark": {"clusters": []},
-        "spark_max_x": 0.0,
+        "spark_max_x": None,   # reaccum은 분봉 스파크 클러스터 없음(None=미산출) — 레거시 spark_flow 통계가 제외
         "spark_max_pct": None,
         "mega_flow": False,
         # 재반등(오늘) 신호 — 대표(최대 몸통) 5분 스파크
@@ -1008,15 +1030,20 @@ def main():
     reaccum_added, err_count = attach_reaccum_candidates(
         suspects, active_explosions, p, events)
     total = len(active_explosions)
-    log(f"[radar] reaccum 후보 {reaccum_added}건 (폭발감시 {total}종목, 조회실패 {err_count}, live_ok={live_scan_ok})")
+    # high_fail 분모는 '실제 KIS 조회를 시도하는' 적격(새 정의 검증) 레코드 수만 — legacy(vol_turnover_pct
+    # None) 레코드는 scan_reaccum_candidate가 KIS 호출 전에 None 반환이라 ERR로 안 잡힌다. 마이그레이션
+    # 윈도 동안 legacy가 다수면 total이 부풀어 '절반 실패' 비율이 희석돼 부분장애를 놓치는 걸 방지.
+    eligible = sum(1 for r in active_explosions.values() if _reaccum_eligible(r, p))
+    log(f"[radar] reaccum 후보 {reaccum_added}건 (폭발감시 {total}종목·적격 {eligible}, 조회실패 {err_count}, live_ok={live_scan_ok})")
     # 데이터 수집 장애 가드 — KIS 토큰/키 장애 시 거짓 '빈 레이더' 게시 방지(구 유니버스 exit(2) 대체).
-    #  (a) 폭발감시(KIS 랭킹)가 전면 실패 + 후보도 0건 → 시장 도달 확인 불가(빈 레지스트리 포함).
-    #  (b) 후보가 있는데 절반 이상 조회 실패 → KIS 장애로 반쪽 게시 방지(소형 레지스트리도 floor=2로 포착).
+    #  (a) 폭발감시 전면 실패 + 수상종목 0 + 당일 폭발(/forecast)도 0 → 시장 도달 확인 불가(빈 레지스트리 포함).
+    #  (b) 적격 후보가 있는데 절반 이상 조회 실패 → KIS 장애로 반쪽 게시 방지(소형 레지스트리도 floor=2로 포착).
     # 빈 레지스트리·조건 미달로 인한 0건은 정상('레이더 깨끗') — live_scan_ok=True면 종료하지 않는다.
-    collection_dead = (not live_scan_ok) and reaccum_added == 0
-    high_fail = total > 0 and err_count >= max(2, (total + 1) // 2)
+    # ⚠ today_explosions(/forecast)가 registry 백필로 채워졌으면 보여줄 실데이터가 있으므로 중단하지 않는다.
+    collection_dead = (not live_scan_ok) and reaccum_added == 0 and len(today_explosions) == 0
+    high_fail = eligible > 0 and err_count >= max(2, (eligible + 1) // 2)
     if collection_dead or high_fail:
-        log(f"[error] 데이터 수집 장애 의심(live_ok={live_scan_ok}, 실패 {err_count}/{total}, 후보 {reaccum_added}) — 게시 중단")
+        log(f"[error] 데이터 수집 장애 의심(live_ok={live_scan_ok}, 실패 {err_count}/{eligible}적격, 후보 {reaccum_added}) — 게시 중단")
         sys.exit(3)
     suspects.sort(key=lambda x: -x["suspicion_score"])
 

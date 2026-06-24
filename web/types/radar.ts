@@ -114,7 +114,8 @@ export interface Explosion {
   value_eok: number; // 당일 거래대금(억)
   /** 현재가 — 랭킹에서 밀려 registry로 백필된 종목은 null(현재가 미표시) */
   price: number | null;
-  change_pct: number; // 현재 등락률(라이브) | 폭발일 종가 등락률(백필 행)
+  /** 현재 등락률(라이브 행). 백필 행(price=null)은 신뢰할 등락률이 없어 null — 미표시 */
+  change_pct: number | null;
 }
 
 /** 3일내 +7% 상승확률 라벨 — 6개월 백테스트 보정(과거 실측·보장 아님) */

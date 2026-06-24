@@ -46,14 +46,15 @@ SPARK_BUCKETS = [("<10x", 0.0, 10.0), ("10~40x", 10.0, MEGA_X), ("≥40x", MEGA_
 FEATURE_MIN_N = 10      # 피처 셀 유효 최소 표본 (탐색용 — 보정표보다 낮은 임계)
 
 # AI(prob_up) 예측 기록 — 웹과 동일한 프로덕션 엔드포인트 호출 (로직 중복 없음).
-# 방향 파생 임계(58/42)와 정합하는 확률 구간으로 보정 검증.
+# 방향 파생 임계(상승≥54/하락≤46)와 정합하는 확률 구간으로 보정 검증 — 프로덕션 ai.ts
+# PROB_BULL_MIN=54·PROB_BEAR_MAX=46(2026-06-20 58→54 하향)과 일치(track_eval·ai_click_eval도 54).
 AI_ENDPOINT = os.environ.get(
     "RADAR_AI_ENDPOINT", "https://stocknews-cyan.vercel.app/api/stock/{code}/ai")
-AI_PROB_BANDS = [(0, 43), (43, 58), (58, 101)]
+AI_PROB_BANDS = [(0, 47), (47, 54), (54, 101)]   # 하락(≤46)/관망(47~53)/상승(≥54)
 # 룰베이스 vs AI 괴리 분석: 룰 "매수 우위" 임계(/stock scoring.ts 62점)와
-# AI "상승" 임계(58)의 일치/불일치 4분면 — 어느 쪽이 맞는지 데이터로 판별
+# AI "상승" 임계(54, 사이트 방향배지와 동일)의 일치/불일치 4분면 — 어느 쪽이 맞는지 데이터로 판별
 RULE_BUY_MIN = 62
-AI_UP_MIN = 58
+AI_UP_MIN = 54
 
 DISCLAIMER = ("백테스트는 '당일 종가 매수 → 익일 종가 매도' 가정의 참고 지표이며 "
               "수수료·슬리피지 미반영. 매수 추천이 아닙니다.")

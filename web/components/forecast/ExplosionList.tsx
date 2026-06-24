@@ -35,6 +35,15 @@ function ExplosionCard({ e, rank }: { e: Explosion; rank: number }) {
                 <Flame className="mr-1 size-3.5" aria-hidden /> #{rank}
               </Badge>
               {e.sector && <Badge variant="neutral">{e.sector}</Badge>}
+              {e.price == null && (
+                <Badge
+                  variant="outline"
+                  className="border-muted-foreground/40 text-muted-foreground"
+                  title="장중 폭발 후 등락률 상위에서 밀려 실시간 갱신 대상이 아닌 종목. 폭발 사실(고가·회전율)만 표시하고 등락률은 생략합니다(실시간/종가 미확정)."
+                >
+                  장중 폭발(폭발일 기준)
+                </Badge>
+              )}
             </div>
             <span className="text-xs text-muted-foreground tabular-nums">
               거래대금 {e.value_eok.toLocaleString()}억
@@ -42,10 +51,13 @@ function ExplosionCard({ e, rank }: { e: Explosion; rank: number }) {
           </div>
           <h2 className="flex items-baseline gap-2 text-2xl font-bold tracking-tight">
             <span>{e.name}</span>
-            <span className={`text-base font-semibold tabular-nums ${changeClass(e.change_pct)}`}>
-              {e.change_pct > 0 ? "+" : ""}
-              {e.change_pct.toFixed(2)}%
-            </span>
+            {/* 라이브 행만 현재 등락률 표기. 백필(price=null) 행은 신뢰할 등락률이 없어(폭발 후 밀려난 종목) 생략 — 거짓 표기 방지 */}
+            {e.change_pct != null && (
+              <span className={`text-base font-semibold tabular-nums ${changeClass(e.change_pct)}`}>
+                {e.change_pct > 0 ? "+" : ""}
+                {e.change_pct.toFixed(2)}%
+              </span>
+            )}
             <ArrowRight className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
           </h2>
         </CardHeader>
