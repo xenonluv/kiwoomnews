@@ -4,7 +4,7 @@
   "356680": {
    "name": "엑스게이트",
    "sector": "IT 서비스",
-   "entry": 22275.0,
+   "entry": 22250.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,13 +22,13 @@
     "re_turnover": 6
    },
    "rank": 1,
-   "change_pct": 13.13,
+   "change_pct": 13.0,
    "high_pct": 20.37,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 4934,
-   "turnover_pct": 172.6,
+   "value_eok": 4976,
+   "turnover_pct": 174.1,
    "peak_turnover_pct": 159.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -45,8 +45,8 @@
     "peak_turnover_pct": 159.3,
     "peak_ibs": 0.69,
     "peak_uppertail": 5.6,
-    "ma20": 19043.8,
-    "ma20_margin_pct": 16.97,
+    "ma20": 19042.5,
+    "ma20_margin_pct": 16.84,
     "cause_summary": "엑스게이트, 양자암호·AI 앞세워 방산 보안 시장 공략",
     "was_theme_leader": false,
     "source": "live"
@@ -72,5 +72,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-24 15:12:20 KST"
+ "as_of": "2026-06-24 15:22:23 KST"
 }

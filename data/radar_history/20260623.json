@@ -78,8 +78,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-23 09:12:28 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260624",
+    "next_close": 487000.0,
+    "next_high": 522000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 7.03
+   },
    "final": false
   },
   "122640": {
@@ -157,8 +164,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-23 09:42:18 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260624",
+    "next_close": 37000.0,
+    "next_high": 40350.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -3.9
+   },
    "final": false
   },
   "204270": {
@@ -238,8 +252,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-23 10:42:24 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260624",
+    "next_close": 22200.0,
+    "next_high": 23100.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.78
+   },
    "final": false
   }
  },
