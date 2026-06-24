@@ -1,0 +1,205 @@
+{
+ "date": "20260624",
+ "tracks": {
+  "004710": {
+   "name": "한솔테크닉스",
+   "entry": 11770,
+   "verdict_score": 64,
+   "verdict_level": "매수 우위",
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "009150": {
+   "name": "삼성전기",
+   "entry": 1964000,
+   "verdict_score": 70,
+   "verdict_level": "매수 우위",
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "010690": {
+   "name": "화신",
+   "entry": 12100,
+   "verdict_score": 76,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "011070": {
+   "name": "LG이노텍",
+   "entry": 957000,
+   "verdict_score": 48,
+   "verdict_level": "중립",
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "017670": {
+   "name": "SK텔레콤",
+   "entry": 91000,
+   "verdict_score": 67,
+   "verdict_level": "매수 우위",
+   "ai_prob": 43,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "028050": {
+   "name": "삼성E&A",
+   "entry": 43950,
+   "verdict_score": 50,
+   "verdict_level": "중립",
+   "ai_prob": 39,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "028260": {
+   "name": "삼성물산",
+   "entry": 481500,
+   "verdict_score": 78,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 40,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "034730": {
+   "name": "SK",
+   "entry": 712000,
+   "verdict_score": 85,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 50,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "043260": {
+   "name": "성호전자",
+   "entry": 30050,
+   "verdict_score": 75,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "080220": {
+   "name": "제주반도체",
+   "entry": 112900,
+   "verdict_score": 59,
+   "verdict_level": "중립",
+   "ai_prob": 40,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "085620": {
+   "name": "미래에셋생명",
+   "entry": 19820,
+   "verdict_score": 62,
+   "verdict_level": "관망·과열",
+   "ai_prob": 31,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "089030": {
+   "name": "테크윙",
+   "entry": 49900,
+   "verdict_score": 45,
+   "verdict_level": "중립",
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "095610": {
+   "name": "테스",
+   "entry": 162500,
+   "verdict_score": 74,
+   "verdict_level": "매수 우위",
+   "ai_prob": 49,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "122640": {
+   "name": "예스티",
+   "entry": 37500,
+   "verdict_score": 94,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "204320": {
+   "name": "HL만도",
+   "entry": 50900,
+   "verdict_score": 54,
+   "verdict_level": "중립",
+   "ai_prob": 39,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "240810": {
+   "name": "원익IPS",
+   "entry": 150600,
+   "verdict_score": 80,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 41,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "279570": {
+   "name": "케이뱅크",
+   "entry": 5870,
+   "verdict_score": 70,
+   "verdict_level": "매수 우위",
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "319660": {
+   "name": "피에스케이",
+   "entry": 169700,
+   "verdict_score": 80,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 52,
+   "ai_dir": "관망",
+   "evaluated": false,
+   "result": null
+  },
+  "356680": {
+   "name": "엑스게이트",
+   "entry": 22350,
+   "verdict_score": 70,
+   "verdict_level": "매수 우위",
+   "ai_prob": 45,
+   "ai_dir": "하락",
+   "evaluated": false,
+   "result": null
+  },
+  "413630": {
+   "name": "씨피시스템",
+   "entry": 3520,
+   "verdict_score": 77,
+   "verdict_level": "강한 매수신호",
+   "ai_prob": 56,
+   "ai_dir": "상승",
+   "evaluated": false,
+   "result": null
+  }
+ }
+}

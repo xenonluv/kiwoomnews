@@ -17,11 +17,11 @@
     "high3": false,
     "return_pct": -10.68,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": -0.4,
-     "mae": -11.4
+     "mae": -14.68
     }
    }
   },
@@ -41,11 +41,11 @@
     "high3": true,
     "return_pct": -4.08,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 6.24,
-     "mae": -8.39
+     "mae": -9.19
     }
    }
   },
@@ -65,11 +65,11 @@
     "high3": false,
     "return_pct": -12.3,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 0.18,
-     "mae": -13.89
+     "mae": -17.17
     }
    }
   },
@@ -89,11 +89,11 @@
     "high3": true,
     "return_pct": -4.56,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 3.18,
-     "mae": -4.99
+     "mae": -5.94
     }
    }
   },
@@ -113,11 +113,11 @@
     "high3": false,
     "return_pct": -10.12,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": -0.4,
-     "mae": -10.22
+     "mae": -13.83
     }
    }
   },
@@ -137,7 +137,7 @@
     "high3": true,
     "return_pct": -12.5,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 6.15,
@@ -161,11 +161,11 @@
     "high3": true,
     "return_pct": -3.42,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 13.7,
-     "mae": -3.97
+     "mae": -5.34
     }
    }
   },
@@ -185,11 +185,11 @@
     "high3": false,
     "return_pct": -14.91,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 0.95,
-     "mae": -14.91
+     "mae": -20.33
     }
    }
   },
@@ -209,11 +209,11 @@
     "high3": false,
     "return_pct": -17.31,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": -0.52,
-     "mae": -17.31
+     "mae": -19.48
     }
    }
   },
@@ -233,11 +233,11 @@
     "high3": false,
     "return_pct": -19.01,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 2.69,
-     "mae": -19.13
+     "mae": -22.31
     }
    }
   },
@@ -257,11 +257,11 @@
     "high3": false,
     "return_pct": -14.08,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": -0.49,
-     "mae": -14.4
+     "mae": -18.82
     }
    }
   },
@@ -281,11 +281,11 @@
     "high3": false,
     "return_pct": -14.01,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": -0.05,
-     "mae": -16.25
+     "mae": -16.74
     }
    }
   },
@@ -305,11 +305,11 @@
     "high3": true,
     "return_pct": 0.0,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 14.29,
-     "mae": -0.91
+     "mae": -6.88
     }
    }
   },
@@ -329,7 +329,7 @@
     "high3": false,
     "return_pct": -13.27,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 1.05,
@@ -353,11 +353,11 @@
     "high3": false,
     "return_pct": -12.99,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 0.58,
-     "mae": -12.99
+     "mae": -17.1
     }
    }
   },
@@ -377,11 +377,11 @@
     "high3": true,
     "return_pct": -3.66,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 3.98,
-     "mae": -3.98
+     "mae": -8.28
     }
    }
   },
@@ -401,7 +401,7 @@
     "high3": false,
     "return_pct": -11.38,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 0.0,
@@ -425,10 +425,10 @@
     "high3": true,
     "return_pct": 21.54,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 28.4,
+     "mfe": 46.3,
      "mae": 6.23
     }
    }

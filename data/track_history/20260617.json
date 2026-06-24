@@ -17,11 +17,11 @@
     "high3": true,
     "return_pct": 8.27,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -3.35,
      "d10_return": null,
      "mfe": 18.95,
-     "mae": -2.85
+     "mae": -6.45
     }
    }
   },
@@ -41,11 +41,11 @@
     "high3": true,
     "return_pct": 2.8,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -23.32,
      "d10_return": null,
      "mfe": 5.77,
-     "mae": -22.04
+     "mae": -25.0
     }
    }
   },
@@ -65,11 +65,11 @@
     "high3": false,
     "return_pct": -5.33,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -16.29,
      "d10_return": null,
      "mfe": 1.71,
-     "mae": -14.67
+     "mae": -18.1
     }
    }
   },
@@ -89,8 +89,8 @@
     "high3": false,
     "return_pct": -2.97,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": 0.56,
      "d10_return": null,
      "mfe": 17.23,
      "mae": -6.5
@@ -113,11 +113,11 @@
     "high3": false,
     "return_pct": -6.32,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -29.63,
      "d10_return": null,
      "mfe": 0.59,
-     "mae": -26.46
+     "mae": -31.15
     }
    }
   },
@@ -137,8 +137,8 @@
     "high3": true,
     "return_pct": 5.56,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": 1.26,
      "d10_return": null,
      "mfe": 23.77,
      "mae": -4.48
@@ -161,11 +161,11 @@
     "high3": false,
     "return_pct": -2.58,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -19.65,
      "d10_return": null,
      "mfe": 3.06,
-     "mae": -15.78
+     "mae": -20.13
     }
    }
   },
@@ -185,8 +185,8 @@
     "high3": true,
     "return_pct": -6.9,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -31.12,
      "d10_return": null,
      "mfe": 4.87,
      "mae": -33.63
@@ -209,11 +209,11 @@
     "high3": false,
     "return_pct": -4.44,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": -18.47,
      "d10_return": null,
      "mfe": 2.64,
-     "mae": -16.25
+     "mae": -20.0
     }
    }
   },
@@ -233,10 +233,10 @@
     "high3": false,
     "return_pct": -5.19,
     "fwd": {
-     "n_bars": 4,
-     "d5_return": null,
+     "n_bars": 5,
+     "d5_return": 20.94,
      "d10_return": null,
-     "mfe": 12.55,
+     "mfe": 28.25,
      "mae": -16.13
     }
    }
