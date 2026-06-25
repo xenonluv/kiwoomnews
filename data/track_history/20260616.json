@@ -17,7 +17,7 @@
     "high3": false,
     "return_pct": -0.78,
     "fwd": {
-     "n_bars": 6,
+     "n_bars": 7,
      "d5_return": -2.83,
      "d10_return": null,
      "mfe": 18.02,
@@ -41,7 +41,7 @@
     "high3": true,
     "return_pct": 3.67,
     "fwd": {
-     "n_bars": 6,
+     "n_bars": 7,
      "d5_return": -12.35,
      "d10_return": null,
      "mfe": 7.51,
@@ -65,11 +65,11 @@
     "high3": false,
     "return_pct": -3.9,
     "fwd": {
-     "n_bars": 6,
+     "n_bars": 7,
      "d5_return": -35.83,
      "d10_return": null,
      "mfe": 2.86,
-     "mae": -36.22
+     "mae": -36.87
     }
    }
   },
@@ -89,7 +89,7 @@
     "high3": true,
     "return_pct": 4.65,
     "fwd": {
-     "n_bars": 6,
+     "n_bars": 7,
      "d5_return": -12.06,
      "d10_return": null,
      "mfe": 7.41,

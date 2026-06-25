@@ -17,11 +17,11 @@
     "high3": false,
     "return_pct": -8.55,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 1.55,
-     "mae": -12.67
+     "mae": -14.92
     }
    }
   },
@@ -41,10 +41,10 @@
     "high3": true,
     "return_pct": -1.31,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 5.03,
+     "mfe": 5.13,
      "mae": -4.47
     }
    }
@@ -65,11 +65,11 @@
     "high3": false,
     "return_pct": 0.83,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 1.67,
-     "mae": -5.33
+     "mfe": 1.92,
+     "mae": -9.33
     }
    }
   },
@@ -89,7 +89,7 @@
     "high3": true,
     "return_pct": -3.43,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 3.13,
@@ -113,7 +113,7 @@
     "high3": true,
     "return_pct": 1.22,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 3.11,
@@ -137,7 +137,7 @@
     "high3": false,
     "return_pct": -2.01,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 1.56,
@@ -161,10 +161,10 @@
     "high3": true,
     "return_pct": 5.82,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 14.73,
+     "mfe": 23.74,
      "mae": 3.3
     }
    }
@@ -185,10 +185,10 @@
     "high3": true,
     "return_pct": 0.99,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 4.96,
+     "mfe": 25.25,
      "mae": -1.99
     }
    }
@@ -209,11 +209,11 @@
     "high3": true,
     "return_pct": -4.3,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 3.66,
-     "mae": -6.37
+     "mae": -9.87
     }
    }
   },
@@ -233,11 +233,11 @@
     "high3": true,
     "return_pct": 1.9,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 9.57,
-     "mae": -2.62
+     "mfe": 11.46,
+     "mae": -4.96
     }
    }
   },
@@ -257,10 +257,10 @@
     "high3": true,
     "return_pct": 1.12,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 7.4,
+     "mfe": 17.86,
      "mae": -4.08
     }
    }
@@ -281,10 +281,10 @@
     "high3": false,
     "return_pct": -4.95,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 2.67,
+     "mfe": 13.14,
      "mae": -5.52
     }
    }
@@ -305,10 +305,10 @@
     "high3": true,
     "return_pct": 3.04,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 7.17,
+     "mfe": 16.74,
      "mae": -3.17
     }
    }
@@ -329,11 +329,11 @@
     "high3": true,
     "return_pct": -2.6,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 4.81,
-     "mae": -6.88
+     "mae": -8.83
     }
    }
   },
@@ -353,11 +353,11 @@
     "high3": true,
     "return_pct": 3.14,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 5.17,
-     "mae": -0.51
+     "mfe": 5.98,
+     "mae": -1.62
     }
    }
   },
@@ -377,7 +377,7 @@
     "high3": true,
     "return_pct": 0.33,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 8.66,
@@ -401,10 +401,10 @@
     "high3": false,
     "return_pct": -2.98,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 2.15,
+     "mfe": 6.12,
      "mae": -4.79
     }
    }
@@ -425,10 +425,10 @@
     "high3": true,
     "return_pct": 6.26,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
-     "mfe": 9.02,
+     "mfe": 14.59,
      "mae": -0.25
     }
    }
@@ -449,11 +449,11 @@
     "high3": true,
     "return_pct": 13.51,
     "fwd": {
-     "n_bars": 1,
+     "n_bars": 2,
      "d5_return": null,
      "d10_return": null,
      "mfe": 20.37,
-     "mae": 4.11
+     "mae": -8.38
     }
    }
   }

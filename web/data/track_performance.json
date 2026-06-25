@@ -1,17 +1,17 @@
 {
- "as_of": "2026-06-24 17:50 KST",
- "n": 77,
+ "as_of": "2026-06-25 17:47 KST",
+ "n": 97,
  "fwd_n": 0,
  "rule_buy": {
-  "n": 40,
-  "hit_rate": 37.5,
-  "avg_d5": -7.25,
+  "n": 54,
+  "hit_rate": 42.6,
+  "avg_d5": -8.17,
   "avg_d10": null,
   "fwd_n": 0
  },
  "ai_up": {
-  "n": 3,
-  "hit_rate": 33.3,
+  "n": 4,
+  "hit_rate": 25.0,
   "avg_d5": -5.55,
   "avg_d10": null,
   "fwd_n": 0
@@ -19,22 +19,22 @@
  "rule_buy_min": 62,
  "ai_up_min": 54,
  "min_n": 10,
- "quad_n": 77,
+ "quad_n": 97,
  "unknown_n": 0,
  "divergence": {
   "both": {
-   "n": 2,
-   "hit_rate": 50.0,
-   "avg_return": 1.29,
+   "n": 3,
+   "hit_rate": 33.3,
+   "avg_return": -2.92,
    "avg_d5": 0.91,
    "avg_d10": null,
    "fwd_n": 0
   },
   "rule_only": {
-   "n": 38,
-   "hit_rate": 36.8,
-   "avg_return": -2.49,
-   "avg_d5": -9.97,
+   "n": 51,
+   "hit_rate": 43.1,
+   "avg_return": -1.84,
+   "avg_d5": -9.98,
    "avg_d10": null,
    "fwd_n": 0
   },
@@ -47,15 +47,255 @@
    "fwd_n": 0
   },
   "neither": {
-   "n": 36,
+   "n": 42,
    "hit_rate": 33.3,
-   "avg_return": -3.15,
-   "avg_d5": -21.14,
+   "avg_return": -2.5,
+   "avg_d5": -14.78,
    "avg_d10": null,
    "fwd_n": 0
   }
  },
  "recent": [
+  {
+   "date": "20260624",
+   "name": "씨피시스템",
+   "verdict_score": 77,
+   "ai_prob": 56,
+   "hit": false,
+   "return_pct": -11.36,
+   "d5": null,
+   "d10": null,
+   "mfe": 7.95,
+   "mae": -14.63
+  },
+  {
+   "date": "20260624",
+   "name": "엑스게이트",
+   "verdict_score": 70,
+   "ai_prob": 45,
+   "hit": false,
+   "return_pct": -16.82,
+   "d5": null,
+   "d10": null,
+   "mfe": -6.04,
+   "mae": -19.28
+  },
+  {
+   "date": "20260624",
+   "name": "피에스케이",
+   "verdict_score": 80,
+   "ai_prob": 52,
+   "hit": true,
+   "return_pct": 0.53,
+   "d5": null,
+   "d10": null,
+   "mfe": 7.84,
+   "mae": -3.12
+  },
+  {
+   "date": "20260624",
+   "name": "케이뱅크",
+   "verdict_score": 70,
+   "ai_prob": 36,
+   "hit": true,
+   "return_pct": 4.6,
+   "d5": null,
+   "d10": null,
+   "mfe": 9.37,
+   "mae": 0.68
+  },
+  {
+   "date": "20260624",
+   "name": "원익IPS",
+   "verdict_score": 80,
+   "ai_prob": 41,
+   "hit": true,
+   "return_pct": 2.72,
+   "d5": null,
+   "d10": null,
+   "mfe": 7.04,
+   "mae": -1.73
+  },
+  {
+   "date": "20260624",
+   "name": "HL만도",
+   "verdict_score": 54,
+   "ai_prob": 39,
+   "hit": false,
+   "return_pct": -3.83,
+   "d5": null,
+   "d10": null,
+   "mfe": 2.75,
+   "mae": -4.62
+  },
+  {
+   "date": "20260624",
+   "name": "예스티",
+   "verdict_score": 94,
+   "ai_prob": 47,
+   "hit": false,
+   "return_pct": -4.67,
+   "d5": null,
+   "d10": null,
+   "mfe": 2.27,
+   "mae": -6.4
+  },
+  {
+   "date": "20260624",
+   "name": "테스",
+   "verdict_score": 74,
+   "ai_prob": 49,
+   "hit": true,
+   "return_pct": 2.22,
+   "d5": null,
+   "d10": null,
+   "mfe": 13.29,
+   "mae": 0.86
+  },
+  {
+   "date": "20260624",
+   "name": "테크윙",
+   "verdict_score": 45,
+   "ai_prob": 34,
+   "hit": true,
+   "return_pct": 4.81,
+   "d5": null,
+   "d10": null,
+   "mfe": 19.04,
+   "mae": 2.61
+  },
+  {
+   "date": "20260624",
+   "name": "미래에셋생명",
+   "verdict_score": 62,
+   "ai_prob": 31,
+   "hit": true,
+   "return_pct": 13.77,
+   "d5": null,
+   "d10": null,
+   "mfe": 16.55,
+   "mae": -1.61
+  },
+  {
+   "date": "20260624",
+   "name": "제주반도체",
+   "verdict_score": 59,
+   "ai_prob": 40,
+   "hit": false,
+   "return_pct": -4.25,
+   "d5": null,
+   "d10": null,
+   "mfe": 9.39,
+   "mae": -6.73
+  },
+  {
+   "date": "20260624",
+   "name": "성호전자",
+   "verdict_score": 75,
+   "ai_prob": 47,
+   "hit": false,
+   "return_pct": -4.33,
+   "d5": null,
+   "d10": null,
+   "mfe": 7.99,
+   "mae": -5.82
+  },
+  {
+   "date": "20260624",
+   "name": "SK",
+   "verdict_score": 85,
+   "ai_prob": 50,
+   "hit": true,
+   "return_pct": 20.51,
+   "d5": null,
+   "d10": null,
+   "mfe": 24.02,
+   "mae": 8.43
+  },
+  {
+   "date": "20260624",
+   "name": "삼성물산",
+   "verdict_score": 78,
+   "ai_prob": 40,
+   "hit": true,
+   "return_pct": 7.79,
+   "d5": null,
+   "d10": null,
+   "mfe": 16.93,
+   "mae": 7.79
+  },
+  {
+   "date": "20260624",
+   "name": "삼성E&A",
+   "verdict_score": 50,
+   "ai_prob": 39,
+   "hit": false,
+   "return_pct": -1.71,
+   "d5": null,
+   "d10": null,
+   "mfe": 3.3,
+   "mae": -2.16
+  },
+  {
+   "date": "20260624",
+   "name": "SK텔레콤",
+   "verdict_score": 67,
+   "ai_prob": 43,
+   "hit": true,
+   "return_pct": 0.44,
+   "d5": null,
+   "d10": null,
+   "mfe": 1.1,
+   "mae": -1.1
+  },
+  {
+   "date": "20260624",
+   "name": "LG이노텍",
+   "verdict_score": 48,
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -0.42,
+   "d5": null,
+   "d10": null,
+   "mfe": 6.17,
+   "mae": -1.46
+  },
+  {
+   "date": "20260624",
+   "name": "화신",
+   "verdict_score": 76,
+   "ai_prob": 47,
+   "hit": false,
+   "return_pct": -9.67,
+   "d5": null,
+   "d10": null,
+   "mfe": 1.07,
+   "mae": -10.08
+  },
+  {
+   "date": "20260624",
+   "name": "삼성전기",
+   "verdict_score": 70,
+   "ai_prob": 36,
+   "hit": true,
+   "return_pct": 1.68,
+   "d5": null,
+   "d10": null,
+   "mfe": 6.52,
+   "mae": 0.05
+  },
+  {
+   "date": "20260624",
+   "name": "한솔테크닉스",
+   "verdict_score": 64,
+   "ai_prob": 38,
+   "hit": false,
+   "return_pct": -4.5,
+   "d5": null,
+   "d10": null,
+   "mfe": 5.27,
+   "mae": -6.97
+  },
   {
    "date": "20260623",
    "name": "엑스게이트",
@@ -66,7 +306,7 @@
    "d5": null,
    "d10": null,
    "mfe": 20.37,
-   "mae": 4.11
+   "mae": -8.38
   },
   {
    "date": "20260623",
@@ -77,7 +317,7 @@
    "return_pct": 6.26,
    "d5": null,
    "d10": null,
-   "mfe": 9.02,
+   "mfe": 14.59,
    "mae": -0.25
   },
   {
@@ -89,7 +329,7 @@
    "return_pct": -2.98,
    "d5": null,
    "d10": null,
-   "mfe": 2.15,
+   "mfe": 6.12,
    "mae": -4.79
   },
   {
@@ -113,8 +353,8 @@
    "return_pct": 3.14,
    "d5": null,
    "d10": null,
-   "mfe": 5.17,
-   "mae": -0.51
+   "mfe": 5.98,
+   "mae": -1.62
   },
   {
    "date": "20260623",
@@ -126,7 +366,7 @@
    "d5": null,
    "d10": null,
    "mfe": 4.81,
-   "mae": -6.88
+   "mae": -8.83
   },
   {
    "date": "20260623",
@@ -137,7 +377,7 @@
    "return_pct": 3.04,
    "d5": null,
    "d10": null,
-   "mfe": 7.17,
+   "mfe": 16.74,
    "mae": -3.17
   },
   {
@@ -149,7 +389,7 @@
    "return_pct": -4.95,
    "d5": null,
    "d10": null,
-   "mfe": 2.67,
+   "mfe": 13.14,
    "mae": -5.52
   },
   {
@@ -161,7 +401,7 @@
    "return_pct": 1.12,
    "d5": null,
    "d10": null,
-   "mfe": 7.4,
+   "mfe": 17.86,
    "mae": -4.08
   },
   {
@@ -173,251 +413,12 @@
    "return_pct": 1.9,
    "d5": null,
    "d10": null,
-   "mfe": 9.57,
-   "mae": -2.62
-  },
-  {
-   "date": "20260623",
-   "name": "성호전자",
-   "verdict_score": 51,
-   "ai_prob": 37,
-   "hit": false,
-   "return_pct": -4.3,
-   "d5": null,
-   "d10": null,
-   "mfe": 3.66,
-   "mae": -6.37
-  },
-  {
-   "date": "20260623",
-   "name": "SK",
-   "verdict_score": 85,
-   "ai_prob": 41,
-   "hit": true,
-   "return_pct": 0.99,
-   "d5": null,
-   "d10": null,
-   "mfe": 4.96,
-   "mae": -1.99
-  },
-  {
-   "date": "20260623",
-   "name": "삼성물산",
-   "verdict_score": 70,
-   "ai_prob": 36,
-   "hit": true,
-   "return_pct": 5.82,
-   "d5": null,
-   "d10": null,
-   "mfe": 14.73,
-   "mae": 3.3
-  },
-  {
-   "date": "20260623",
-   "name": "삼성E&A",
-   "verdict_score": 58,
-   "ai_prob": 35,
-   "hit": false,
-   "return_pct": -2.01,
-   "d5": null,
-   "d10": null,
-   "mfe": 1.56,
-   "mae": -4.12
-  },
-  {
-   "date": "20260623",
-   "name": "SK텔레콤",
-   "verdict_score": 59,
-   "ai_prob": 34,
-   "hit": true,
-   "return_pct": 1.22,
-   "d5": null,
-   "d10": null,
-   "mfe": 3.11,
-   "mae": -1.45
-  },
-  {
-   "date": "20260623",
-   "name": "LG이노텍",
-   "verdict_score": 46,
-   "ai_prob": 32,
-   "hit": false,
-   "return_pct": -3.43,
-   "d5": null,
-   "d10": null,
-   "mfe": 3.13,
-   "mae": -5.55
-  },
-  {
-   "date": "20260623",
-   "name": "화신",
-   "verdict_score": 66,
-   "ai_prob": 40,
-   "hit": true,
-   "return_pct": 0.83,
-   "d5": null,
-   "d10": null,
-   "mfe": 1.67,
-   "mae": -5.33
-  },
-  {
-   "date": "20260623",
-   "name": "삼성전기",
-   "verdict_score": 56,
-   "ai_prob": 38,
-   "hit": false,
-   "return_pct": -1.31,
-   "d5": null,
-   "d10": null,
-   "mfe": 5.03,
-   "mae": -4.47
-  },
-  {
-   "date": "20260623",
-   "name": "한솔테크닉스",
-   "verdict_score": 77,
-   "ai_prob": 36,
-   "hit": false,
-   "return_pct": -8.55,
-   "d5": null,
-   "d10": null,
-   "mfe": 1.55,
-   "mae": -12.67
-  },
-  {
-   "date": "20260622",
-   "name": "엑스게이트",
-   "verdict_score": 53,
-   "ai_prob": 43,
-   "hit": true,
-   "return_pct": 21.54,
-   "d5": null,
-   "d10": null,
-   "mfe": 46.3,
-   "mae": 6.23
-  },
-  {
-   "date": "20260622",
-   "name": "피에스케이",
-   "verdict_score": 58,
-   "ai_prob": 45,
-   "hit": false,
-   "return_pct": -11.38,
-   "d5": null,
-   "d10": null,
-   "mfe": 0.0,
-   "mae": -11.76
-  },
-  {
-   "date": "20260622",
-   "name": "케이뱅크",
-   "verdict_score": 77,
-   "ai_prob": 41,
-   "hit": false,
-   "return_pct": -3.66,
-   "d5": null,
-   "d10": null,
-   "mfe": 3.98,
-   "mae": -8.28
-  },
-  {
-   "date": "20260622",
-   "name": "원익IPS",
-   "verdict_score": 69,
-   "ai_prob": 43,
-   "hit": false,
-   "return_pct": -12.99,
-   "d5": null,
-   "d10": null,
-   "mfe": 0.58,
-   "mae": -17.1
-  },
-  {
-   "date": "20260622",
-   "name": "HL만도",
-   "verdict_score": 73,
-   "ai_prob": 38,
-   "hit": false,
-   "return_pct": -13.27,
-   "d5": null,
-   "d10": null,
-   "mfe": 1.05,
-   "mae": -13.8
-  },
-  {
-   "date": "20260622",
-   "name": "예스티",
-   "verdict_score": 95,
-   "ai_prob": 52,
-   "hit": false,
-   "return_pct": 0.0,
-   "d5": null,
-   "d10": null,
-   "mfe": 14.29,
-   "mae": -6.88
-  },
-  {
-   "date": "20260622",
-   "name": "테스",
-   "verdict_score": 93,
-   "ai_prob": 49,
-   "hit": false,
-   "return_pct": -14.01,
-   "d5": null,
-   "d10": null,
-   "mfe": -0.05,
-   "mae": -16.74
-  },
-  {
-   "date": "20260622",
-   "name": "테크윙",
-   "verdict_score": 69,
-   "ai_prob": 45,
-   "hit": false,
-   "return_pct": -14.08,
-   "d5": null,
-   "d10": null,
-   "mfe": -0.49,
-   "mae": -18.82
-  },
-  {
-   "date": "20260622",
-   "name": "미래에셋생명",
-   "verdict_score": 67,
-   "ai_prob": 32,
-   "hit": false,
-   "return_pct": -19.01,
-   "d5": null,
-   "d10": null,
-   "mfe": 2.69,
-   "mae": -22.31
-  },
-  {
-   "date": "20260622",
-   "name": "제주반도체",
-   "verdict_score": 69,
-   "ai_prob": 49,
-   "hit": false,
-   "return_pct": -17.31,
-   "d5": null,
-   "d10": null,
-   "mfe": -0.52,
-   "mae": -19.48
-  },
-  {
-   "date": "20260622",
-   "name": "성호전자",
-   "verdict_score": 52,
-   "ai_prob": 40,
-   "hit": false,
-   "return_pct": -14.91,
-   "d5": null,
-   "d10": null,
-   "mfe": 0.95,
-   "mae": -20.33
+   "mfe": 11.46,
+   "mae": -4.96
   }
  ],
  "tracking": [
+  "002070",
   "004710",
   "009150",
   "010690",
@@ -426,11 +427,15 @@
   "028050",
   "028260",
   "034730",
+  "037710",
   "043260",
+  "043650",
+  "058730",
   "080220",
   "085620",
   "089030",
   "095610",
+  "111710",
   "122640",
   "204320",
   "240810",

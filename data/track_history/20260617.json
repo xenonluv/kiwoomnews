@@ -17,7 +17,7 @@
     "high3": true,
     "return_pct": 8.27,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -3.35,
      "d10_return": null,
      "mfe": 18.95,
@@ -41,7 +41,7 @@
     "high3": true,
     "return_pct": 2.8,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -23.32,
      "d10_return": null,
      "mfe": 5.77,
@@ -65,7 +65,7 @@
     "high3": false,
     "return_pct": -5.33,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -16.29,
      "d10_return": null,
      "mfe": 1.71,
@@ -89,10 +89,10 @@
     "high3": false,
     "return_pct": -2.97,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": 0.56,
      "d10_return": null,
-     "mfe": 17.23,
+     "mfe": 24.72,
      "mae": -6.5
     }
    }
@@ -113,11 +113,11 @@
     "high3": false,
     "return_pct": -6.32,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -29.63,
      "d10_return": null,
      "mfe": 0.59,
-     "mae": -31.15
+     "mae": -33.72
     }
    }
   },
@@ -137,11 +137,11 @@
     "high3": true,
     "return_pct": 5.56,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": 1.26,
      "d10_return": null,
      "mfe": 23.77,
-     "mae": -4.48
+     "mae": -5.56
     }
    }
   },
@@ -161,7 +161,7 @@
     "high3": false,
     "return_pct": -2.58,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -19.65,
      "d10_return": null,
      "mfe": 3.06,
@@ -185,11 +185,11 @@
     "high3": true,
     "return_pct": -6.9,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -31.12,
      "d10_return": null,
      "mfe": 4.87,
-     "mae": -33.63
+     "mae": -34.3
     }
    }
   },
@@ -209,7 +209,7 @@
     "high3": false,
     "return_pct": -4.44,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": -18.47,
      "d10_return": null,
      "mfe": 2.64,
@@ -233,7 +233,7 @@
     "high3": false,
     "return_pct": -5.19,
     "fwd": {
-     "n_bars": 5,
+     "n_bars": 6,
      "d5_return": 20.94,
      "d10_return": null,
      "mfe": 28.25,
