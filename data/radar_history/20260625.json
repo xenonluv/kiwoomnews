@@ -4,7 +4,7 @@
   "067290": {
    "name": "JW신약",
    "sector": "제약",
-   "entry": 2780.0,
+   "entry": 2770.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -21,14 +21,14 @@
     "peak_turnover": 8,
     "re_turnover": 0
    },
-   "rank": 3,
-   "change_pct": 5.7,
+   "rank": 4,
+   "change_pct": 5.32,
    "high_pct": 10.27,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 165,
-   "turnover_pct": 15.7,
+   "value_eok": 173,
+   "turnover_pct": 16.4,
    "peak_turnover_pct": 177.1,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -45,8 +45,8 @@
     "peak_turnover_pct": 177.1,
     "peak_ibs": 0.47,
     "peak_uppertail": 11.6,
-    "ma20": 1827.8,
-    "ma20_margin_pct": 52.1,
+    "ma20": 1827.0,
+    "ma20_margin_pct": 51.61,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
@@ -74,7 +74,7 @@
   "034940": {
    "name": "조아제약",
    "sector": "제약",
-   "entry": 1030.0,
+   "entry": 1009.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -83,22 +83,22 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 76,
+   "suspicion_score": 78,
    "score_breakdown_display": {
     "base": 62,
-    "re_count": 6,
+    "re_count": 8,
     "re_body": 6,
     "peak_turnover": 2,
     "re_turnover": 0
    },
-   "rank": 2,
-   "change_pct": 14.44,
+   "rank": 3,
+   "change_pct": 12.11,
    "high_pct": 17.78,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 58,
-   "turnover_pct": 24.2,
+   "value_eok": 68,
+   "turnover_pct": 28.4,
    "peak_turnover_pct": 111.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -115,8 +115,8 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 0.5,
     "peak_uppertail": 18.9,
-    "ma20": 693.6,
-    "ma20_margin_pct": 48.49,
+    "ma20": 692.6,
+    "ma20_margin_pct": 45.68,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -125,7 +125,7 @@
     "body_pct": 10.76,
     "time": "10:00",
     "value_eok": 13,
-    "count": 5
+    "count": 6
    },
    "forecast": {
     "horizon": "3일 내 +7%",
@@ -216,7 +216,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 46100.0,
+   "entry": 47300.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -233,18 +233,18 @@
     "peak_turnover": 2,
     "re_turnover": 6
    },
-   "rank": 1,
-   "change_pct": 7.46,
+   "rank": 2,
+   "change_pct": 10.26,
    "high_pct": 17.48,
    "pattern": "reaccum",
    "prime": false,
    "theme": "유가",
-   "value_eok": 1391,
-   "turnover_pct": 113.7,
+   "value_eok": 1419,
+   "turnover_pct": 116.0,
    "peak_turnover_pct": 115.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": false,
+   "theme_leader": true,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -257,8 +257,8 @@
     "peak_turnover_pct": 115.6,
     "peak_ibs": 0.98,
     "peak_uppertail": 0.5,
-    "ma20": 36220.0,
-    "ma20_margin_pct": 27.28,
+    "ma20": 36280.0,
+    "ma20_margin_pct": 30.37,
     "cause_summary": "주식으로 번 '돈'이 움직인다…줄줄이 '신고가' 뚫었다",
     "was_theme_leader": false,
     "source": "live"
@@ -286,7 +286,7 @@
   "900270": {
    "name": "헝셩그룹",
    "sector": "외국증권",
-   "entry": 841.0,
+   "entry": 835.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -295,22 +295,22 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 73,
+   "suspicion_score": 75,
    "score_breakdown_display": {
     "base": 62,
-    "re_count": 4,
+    "re_count": 6,
     "re_body": 6,
     "peak_turnover": 1,
     "re_turnover": 0
    },
-   "rank": 4,
-   "change_pct": 12.13,
+   "rank": 5,
+   "change_pct": 11.33,
    "high_pct": 18.4,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 25,
-   "turnover_pct": 20.7,
+   "value_eok": 27,
+   "turnover_pct": 22.6,
    "peak_turnover_pct": 101.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -327,8 +327,8 @@
     "peak_turnover_pct": 101.0,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.5,
-    "ma20": 693.8,
-    "ma20_margin_pct": 21.23,
+    "ma20": 693.5,
+    "ma20_margin_pct": 20.41,
     "cause_summary": "헝셩그룹, 168억원 규모 제3자배정 유상증자 결정",
     "was_theme_leader": false,
     "source": "live"
@@ -337,7 +337,7 @@
     "body_pct": 8.18,
     "time": "09:35",
     "value_eok": 1,
-    "count": 4
+    "count": 5
    },
    "forecast": {
     "horizon": "3일 내 +7%",
@@ -358,7 +358,7 @@
   "043650": {
    "name": "국순당",
    "sector": "음식료·담배",
-   "entry": 4335.0,
+   "entry": 4360.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -375,14 +375,14 @@
     "peak_turnover": 2,
     "re_turnover": 0
    },
-   "rank": 5,
-   "change_pct": -1.48,
+   "rank": 8,
+   "change_pct": -0.91,
    "high_pct": 12.05,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 49,
-   "turnover_pct": 13.3,
+   "value_eok": 50,
+   "turnover_pct": 13.5,
    "peak_turnover_pct": 111.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -399,8 +399,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3599.0,
-    "ma20_margin_pct": 20.45,
+    "ma20": 3600.2,
+    "ma20_margin_pct": 21.1,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
@@ -424,7 +424,219 @@
    "evaluated": false,
    "result": null,
    "final": true
+  },
+  "198440": {
+   "name": "강동씨앤엘",
+   "sector": "비금속",
+   "entry": 1932.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 79,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 6,
+    "peak_turnover": 9,
+    "re_turnover": 0
+   },
+   "rank": 1,
+   "change_pct": -10.76,
+   "high_pct": 0.69,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 82,
+   "turnover_pct": 22.7,
+   "peak_turnover_pct": 185.9,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": true,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260623",
+    "peak_value_eok": 819,
+    "peak_high_pct": 27.36,
+    "peak_turnover_pct": 185.9,
+    "peak_ibs": 0.47,
+    "peak_uppertail": 16.9,
+    "ma20": 1381.0,
+    "ma20_margin_pct": 39.9,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 8.7,
+    "time": "10:15",
+    "value_eok": 6,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-25 10:22:35 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "413630": {
+   "name": "씨피시스템",
+   "sector": "화학",
+   "entry": 3630.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 70,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 3,
+    "peak_turnover": 2,
+    "re_turnover": 1
+   },
+   "rank": 6,
+   "change_pct": 3.12,
+   "high_pct": 7.95,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "유가",
+   "value_eok": 161,
+   "turnover_pct": 42.8,
+   "peak_turnover_pct": 107.6,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260624",
+    "peak_value_eok": 358,
+    "peak_high_pct": 29.89,
+    "peak_turnover_pct": 107.6,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 2801.2,
+    "ma20_margin_pct": 29.59,
+    "cause_summary": "씨피시스템, 1분기 매출 52억…순이익 전년比 83.2%↑",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 3.87,
+    "time": "10:15",
+    "value_eok": 40,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-25 10:22:35 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "002070": {
+   "name": "비비안",
+   "sector": "섬유·의류",
+   "entry": 9890.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 68,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 2,
+    "peak_turnover": 2,
+    "re_turnover": 0
+   },
+   "rank": 7,
+   "change_pct": -11.14,
+   "high_pct": 3.32,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "실적",
+   "value_eok": 16,
+   "turnover_pct": 11.6,
+   "peak_turnover_pct": 112.2,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260624",
+    "peak_value_eok": 196,
+    "peak_high_pct": 29.96,
+    "peak_turnover_pct": 112.2,
+    "peak_ibs": 0.04,
+    "peak_uppertail": 28.2,
+    "ma20": 7834.0,
+    "ma20_margin_pct": 26.24,
+    "cause_summary": "[ET특징주]비비안, 250억 유상증자에 상승세",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 3.16,
+    "time": "10:10",
+    "value_eok": 0,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-03_미국 고용보고서 (7월"
+   ],
+   "first_seen": "2026-06-25 10:22:35 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
   }
  },
- "as_of": "2026-06-25 10:12:34 KST"
+ "as_of": "2026-06-25 10:22:35 KST"
 }
