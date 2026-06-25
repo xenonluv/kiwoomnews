@@ -58,11 +58,15 @@ YOUTONG_CHANGE_PCT = 7.0           # /youtong 게이트: 현재 등락률 하한
 YOUTONG_TURNOVER_MIN = 50.0        # /youtong 유통주식 회전율 하한(%) — 상한 없음
 YOUTONG_START_HHMM = "0930"        # /youtong 감지 시작 시각(그 전 무시) + 스파크 시각 하한
 YOUTONG_SPARK_MIN = 1              # /youtong: 시작시각 이후 5분 양봉 스파크 최소 수(몸통%·span은 REIGNITION_* 재사용)
-# ── 반등(재매집) 정의: 최근 6거래일 폭발 종목이 (하락 여부 무관) 당일 5분봉 '양봉 몸통%≥2%'가 3회 이상
-#    스파크. 식음(고점 대비 하락) 게이트는 폐지 — 하락 등락률 퍼센트는 보지 않는다.
+# ── 반등(재매집) 정의: 최근 6거래일 폭발 종목이 **14:30~장종료** 5분봉 '양봉 몸통%≥2%'가 2회 이상 스파크
+#    (마감 직전 재분출) AND **현재 등락률 −5%~+7%**(깊은 식음/이미 분출 제외, 조용한 매집 구간). 폭발→식음→
+#    재반등 흐름으로 레이더 수상종목에 노출되는 건 동일하되, 위 두 게이트로 한정한다.
 REIGNITION_SPAN_MIN = 5            # 재반등 스파크 판정 분봉 합성 단위(분)
 REIGNITION_BODY_PCT = 2.0          # 5분 양봉 몸통%(|종가−시가|/시가) 하한
-REIGNITION_MIN_COUNT = 3           # 당일 자격 양봉(스파크)이 이 수 이상이어야 반등 인정
+REIGNITION_MIN_COUNT = 2           # 시작시각 이후 자격 양봉(스파크)이 이 수 이상이어야 반등 인정
+REIGNITION_START_HHMM = "1430"     # 재반등 스파크 집계 시작 시각(그 전 양봉은 미집계 — 마감 직전 재분출만)
+REACCUM_CHANGE_MIN = -5.0          # 재매집 현재 등락률 하한(% — 이보다 더 빠지면 깊은 식음으로 제외)
+REACCUM_CHANGE_MAX = 7.0           # 재매집 현재 등락률 상한(% — 이보다 높으면 이미 분출로 제외)
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
 # "예전 대장"(was_theme_leader) 판정 — regex 테마가 아니라 권위 업종(sector) 기준.
 LEADER_MIN_GROUP = 3               # 같은 (폭발일, 업종) 폭발군이 이 수 이상일 때만 대장 판정
@@ -847,9 +851,9 @@ def _reaccum_eligible(rec, p):
 
 
 def scan_reaccum_candidate(rec, p, events):
-    """최근 6거래일 폭발(고가≥22% AND 거래량/유통주식수≥90%) 종목이 (하락 여부 무관) 당일 5분봉
-    양봉(몸통%≥2%)이 3회 이상 스파크한 '재매집' 후보를 만든다. 식음(고점 대비 하락)·등락률·MA20·
-    투신 수급 게이트는 모두 폐지(전일 폭발 + 당일 5분 양봉 스파크 횟수만 본다)."""
+    """최근 6거래일 폭발(고가≥22% AND 거래량/유통주식수≥90%) 종목이 **14:30~장종료** 5분봉 양봉(몸통%≥2%)이
+    2회 이상 스파크(마감 직전 재분출) AND **현재 등락률 −5%~+7%**(깊은 식음/이미 분출 제외)인 '재매집' 후보를
+    만든다. 폭발→식음→재반등 흐름으로 노출되는 건 동일하되 두 게이트로 한정(MA20·투신·거래원 게이트는 미사용)."""
     code, name = rec["code"], rec.get("name") or rec["code"]
     peak_date = rec.get("peak_date")
     if not peak_date:
@@ -866,6 +870,10 @@ def scan_reaccum_candidate(rec, p, events):
         return "ERR"
     if not now.get("price") or not now.get("prev_close"):
         return None
+    change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
+    # 현재 등락률 게이트: −5%~+7% 밖이면 제외(깊은 식음/이미 분출). 일봉·분봉 조회 전에 컷(비용 절감).
+    if not (p.reaccum_change_min <= change_pct <= p.reaccum_change_max):
+        return None
     high = now.get("high") or now["price"]
     high_pct = (high / now["prev_close"] - 1) * 100
     try:
@@ -881,15 +889,17 @@ def scan_reaccum_candidate(rec, p, events):
         return None
     ma20 = sum(closes[-20:]) / 20
     ma10 = sum(closes[-10:]) / 10
-    # ── 반등 게이트: 당일 5분봉 양봉 몸통%≥2% 스파크가 REIGNITION_MIN_COUNT(3)회 이상.
-    #    (식음 게이트 폐지 — 하락 등락률 무관. 전일 폭발 종목이 오늘 다시 분출하는지만 본다.)
+    # ── 반등 게이트: **14:30~장종료** 5분봉 양봉 몸통%≥2% 스파크가 REIGNITION_MIN_COUNT(2)회 이상(마감 직전
+    #    재분출). 시작시각(reignition_start) 이전 양봉은 미집계 — 장중 일반 변동이 아니라 종가 직전 재매집만 본다.
     # 분봉도 거래대금·수급과 동일하게 MONEY_MARKET(기본 UN). 정규장 시간창 가드(kis_client)로 NXT 장 밖 봉 배제.
     try:
         bars = _minute_bars_with_fallback(code, name)  # UN 우선, 결측 시 J 폴백(공용 헬퍼)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 분봉 실패 {e}")
         return "ERR"
-    rbars = reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)
+    reign_start_colon = p.reignition_start[:2] + ":" + p.reignition_start[2:]  # "1430" → "14:30"
+    rbars = [b for b in reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)
+             if b["time"] >= reign_start_colon]   # 시작시각 이후 양봉 스파크만(마감 직전 재분출)
     if len(rbars) < p.reignition_min_count:
         return None
     reignition = max(rbars, key=lambda b: b["body_pct"])  # 대표(최대 몸통) 봉 — 표시용
@@ -958,7 +968,7 @@ def scan_reaccum_candidate(rec, p, events):
         "score_breakdown_raw": raw_breakdown,
         "forecast": forecast,   # 3일내 +7% 과거 실측 확률 라벨(표시 전용·보장 아님)
         "price": now["price"],
-        "change_pct": round(now["change_pct"], 2),
+        "change_pct": change_pct,
         "high_pct": round(high_pct, 2),
         "value_eok": round(float(now.get("value") or 0) / 1e8),
         "turnover_pct": turnover_pct,   # 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도
@@ -976,7 +986,7 @@ def scan_reaccum_candidate(rec, p, events):
             "body_pct": reignition["body_pct"],
             "time": reignition["time"],
             "value_eok": reignition["value_eok"],
-            "count": len(rbars),   # 당일 자격 양봉 스파크 수(게이트 ≥3)
+            "count": len(rbars),   # 14:30 이후 자격 양봉 스파크 수(게이트 ≥2)
         },
         # 당일 자격 5분 스파크 전체 — 텔레그램 봉단위 알림용(표시는 reignition 대표봉만 사용)
         "reignition_bars": [{"time": b["time"], "body_pct": b["body_pct"], "value_eok": b["value_eok"]}
@@ -1165,7 +1175,13 @@ def main():
     ap.add_argument("--reignition-span-min", type=int, default=REIGNITION_SPAN_MIN,
                     help="재반등 스파크 판정 분봉 합성 단위(분, 기본 5)")
     ap.add_argument("--reignition-min-count", type=int, default=REIGNITION_MIN_COUNT,
-                    help="당일 자격 양봉 스파크 최소 횟수(기본 3)")
+                    help="시작시각 이후 자격 양봉 스파크 최소 횟수(기본 2)")
+    ap.add_argument("--reignition-start", default=REIGNITION_START_HHMM,
+                    help="재반등 스파크 집계 시작 시각 HHMM(그 전 양봉 미집계, 기본 1430)")
+    ap.add_argument("--reaccum-change-min", type=float, default=REACCUM_CHANGE_MIN,
+                    help="재매집 현재 등락률 하한(%%, 기본 -5)")
+    ap.add_argument("--reaccum-change-max", type=float, default=REACCUM_CHANGE_MAX,
+                    help="재매집 현재 등락률 상한(%%, 기본 7)")
     ap.add_argument("--names", nargs="*", default=[], help="watchlist 강제 포함")
     ap.add_argument("--no-reaccum", dest="reaccum_enabled", action="store_false",
                     help="재매집(reaccum) registry 감시와 후보 생성을 비활성화")
@@ -1209,6 +1225,8 @@ def main():
     p.explosion_scan_n = max(1, int(p.explosion_scan_n))
     p.reignition_span_min = max(1, int(p.reignition_span_min))
     p.reignition_min_count = max(1, int(p.reignition_min_count))
+    _rs = str(p.reignition_start).strip()  # "HHMM" 4자리 숫자만 — 오입력은 기본값(시각 비교 깨짐 방지)
+    p.reignition_start = _rs.zfill(4)[:4] if _rs.isdigit() else REIGNITION_START_HHMM
     p.youtong_spark_min = max(1, int(p.youtong_spark_min))
     _ys = str(p.youtong_start).strip()  # "HHMM" 4자리 숫자만 — 비숫자/콜론 등 오입력은 기본값으로(시각 비교 깨짐 방지)
     p.youtong_start = _ys.zfill(4)[:4] if _ys.isdigit() else YOUTONG_START_HHMM
@@ -1247,6 +1265,9 @@ def main():
                    "reignition_body_pct": p.reignition_body_pct,
                    "reignition_span_min": p.reignition_span_min,
                    "reignition_min_count": p.reignition_min_count,
+                   "reignition_start": p.reignition_start,            # 재반등 스파크 집계 시작 시각 HHMM
+                   "reaccum_change_min": p.reaccum_change_min,        # 재매집 현재 등락률 하한(%)
+                   "reaccum_change_max": p.reaccum_change_max,        # 재매집 현재 등락률 상한(%)
                    "reaccum_enabled": p.reaccum_enabled,
                    "reaccum_visible": p.reaccum_visible,
                    "reaccum_max": p.reaccum_max,
