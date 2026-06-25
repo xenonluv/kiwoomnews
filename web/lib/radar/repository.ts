@@ -30,11 +30,11 @@ export function getYoutong(): Youtong[] {
 }
 
 /** /youtong 게이트 임계값 — 화면 문구가 radar params를 따르게(운영자가 튜닝해도 정합). */
-export function getYoutongThresholds(): { changePct: number; turnoverMin: number; turnoverMax: number } {
+export function getYoutongThresholds(): { changePct: number; turnoverMin: number; startHhmm: string } {
   const p = RADAR.params ?? {};
   return {
-    changePct: p.youtong_change_pct ?? 10,
-    turnoverMin: p.youtong_turnover_min ?? 70,
-    turnoverMax: p.youtong_turnover_max ?? 100,
+    changePct: p.youtong_change_pct ?? 7,
+    turnoverMin: p.youtong_turnover_min ?? 50,
+    startHhmm: p.youtong_start ?? "1030",
   };
 }

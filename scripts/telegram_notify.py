@@ -143,11 +143,11 @@ def _format_youtong(y):
     parts = [f"현재 {y.get('change_pct')}%", f"유통 회전율 {y.get('vol_turnover_pct')}%"]
     if (y.get("value_eok") or 0) > 0:
         parts.append(f"거래대금 {y.get('value_eok')}억")
-    return "\n".join([
-        f"⚡ {name} ({code}) 곧 폭발 후보",
-        " · ".join(parts),
-        f"{BASE}/stock/{code}",
-    ])
+    lines = [f"⚡ {name} ({code}) 곧 폭발 후보", " · ".join(parts)]
+    if y.get("first_seen"):
+        lines.append(f"포착 {y['first_seen']}")
+    lines.append(f"{BASE}/stock/{code}")
+    return "\n".join(lines)
 
 
 def notify_youtong(youtong, state_path=YOUTONG_STATE_PATH, now=None):

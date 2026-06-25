@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Zap, ArrowRight } from "lucide-react";
+import { Zap, ArrowRight, Clock } from "lucide-react";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,7 @@ import type { Youtong } from "@/types/radar";
 const POLL_MS = 60_000;
 
 const PHASE_MSG: Record<MarketPhase, { dot: string; text: string }> = {
-  pre: { dot: "bg-muted-foreground/50", text: "개장 전 · 09:00부터 감시 시작" },
+  pre: { dot: "bg-muted-foreground/50", text: "개장 전 · 10:30부터 감시 시작" },
   intraday: { dot: "bg-warning animate-pulse", text: "곧 폭발 후보 감시 (실시간 갱신)" },
   locked: { dot: "bg-warning animate-pulse", text: "곧 폭발 후보 감시 (실시간 갱신)" },
   closed: { dot: "bg-muted-foreground/50", text: "장 마감 · 다음 거래일 갱신" },
@@ -22,6 +22,11 @@ const PHASE_MSG: Record<MarketPhase, { dot: string; text: string }> = {
 /** 등락률 표기 (한국 색 관례: 상승=빨강 up, 하락=파랑 down) */
 function changeClass(v: number) {
   return v > 0 ? "text-up" : v < 0 ? "text-down" : "text-muted-foreground";
+}
+
+/** "1030" → "10:30" */
+function hhmm(s: string) {
+  return s.length === 4 ? `${s.slice(0, 2)}:${s.slice(2)}` : s;
 }
 
 function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
@@ -35,6 +40,15 @@ function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
                 <Zap className="mr-1 size-3.5" aria-hidden /> #{rank}
               </Badge>
               {e.sector && <Badge variant="neutral">{e.sector}</Badge>}
+              {e.first_seen && (
+                <Badge
+                  variant="outline"
+                  className="border-muted-foreground/40 text-muted-foreground"
+                  title="처음 포착된 시각 — 한 번 포착되면 장 마감까지 목록에 유지됩니다(현재가는 실시간 갱신)."
+                >
+                  <Clock className="mr-1 size-3" aria-hidden /> {e.first_seen} 포착
+                </Badge>
+              )}
             </div>
             <span className="text-xs text-muted-foreground tabular-nums">
               거래대금 {e.value_eok.toLocaleString()}억
@@ -42,11 +56,13 @@ function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
           </div>
           <h2 className="flex items-baseline gap-2 text-2xl font-bold tracking-tight">
             <span>{e.name}</span>
-            {/* 현재 등락률(실시간) — 한국 색 관례 */}
-            <span className={`text-base font-semibold tabular-nums ${changeClass(e.change_pct)}`}>
-              {e.change_pct > 0 ? "+" : ""}
-              {e.change_pct.toFixed(2)}%
-            </span>
+            {/* 현재 등락률(실시간) — 조회 실패(지속 종목 일시 결측) 시에만 생략 */}
+            {e.change_pct != null && (
+              <span className={`text-base font-semibold tabular-nums ${changeClass(e.change_pct)}`}>
+                {e.change_pct > 0 ? "+" : ""}
+                {e.change_pct.toFixed(2)}%
+              </span>
+            )}
             <ArrowRight className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
           </h2>
         </CardHeader>
@@ -54,7 +70,7 @@ function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
           <div>
             <p
               className="text-[11px] text-muted-foreground"
-              title="당일 거래량 / 유통주식수 — 유통주식이 손바뀐 강도. 90%+면 폭발(/forecast)로 분류"
+              title="당일 거래량 / 유통주식수 — 유통주식이 손바뀐 강도(매집 진행도). 50%+부터 후보, 상한 없음"
             >
               유통주식 회전율
             </p>
@@ -72,7 +88,7 @@ function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
   );
 }
 
-type Thresholds = { changePct: number; turnoverMin: number; turnoverMax: number };
+type Thresholds = { changePct: number; turnoverMin: number; startHhmm: string };
 
 export function YoutongList({
   initial,
@@ -95,11 +111,11 @@ export function YoutongList({
         if (!alive) return;
         setYoutong(data.youtong ?? []);
         const p = data.params ?? {};
-        if (p.youtong_change_pct != null || p.youtong_turnover_min != null || p.youtong_turnover_max != null) {
+        if (p.youtong_change_pct != null || p.youtong_turnover_min != null || p.youtong_start != null) {
           setTh((prev) => ({
             changePct: p.youtong_change_pct ?? prev.changePct,
             turnoverMin: p.youtong_turnover_min ?? prev.turnoverMin,
-            turnoverMax: p.youtong_turnover_max ?? prev.turnoverMax,
+            startHhmm: p.youtong_start ?? prev.startHhmm,
           }));
         }
       } catch {
@@ -131,8 +147,8 @@ export function YoutongList({
         <div className="rounded-xl border border-white/10 bg-white/[0.03] py-16 text-center">
           <p className="text-lg font-semibold">현재 조건을 충족하는 종목이 없습니다</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            현재 등락률 +{th.changePct}% 이상 AND 유통주식 회전율 {th.turnoverMin}~{th.turnoverMax}%인 종목만
-            표시합니다 (이미 폭발한 종목은 제외 — 폭발은 폭발 페이지에서 확인).
+            {hhmm(th.startHhmm)} 이후 · 현재 등락률 +{th.changePct}% 이상 · 유통주식 회전율 {th.turnoverMin}%+ ·
+            5분봉 양봉 분출(스파크) 발생 시 포착합니다 (한 번 뜨면 종일 유지, 이미 폭발한 종목은 폭발 페이지에서 확인).
           </p>
         </div>
       ) : (

@@ -10,6 +10,8 @@ kis_devlp.yaml
 .kis_token.json
 .explosion_registry.json
 .explosion_registry.json.tmp
+.youtong_registry.json
+.youtong_registry.json.tmp
 .telegram_notified.json
 .night_alert_notified.json
 .youtong_notified.json

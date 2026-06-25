@@ -39,6 +39,7 @@ import float_ratio
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXPLOSION_REGISTRY_PATH = os.path.join(REPO, ".explosion_registry.json")
+YOUTONG_REGISTRY_PATH = os.path.join(REPO, ".youtong_registry.json")  # youtong 당일 지속 상태(종일 유지)
 REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
 PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
 
@@ -50,11 +51,13 @@ EXPLOSION_HIGH_PCT = 22.0          # 폭발 당일 고가 등락률 하한(%)
 EXPLOSION_VOL_TURNOVER = 90.0      # 폭발 당일 거래량 / 유통주식수 회전율 하한(%) — 유동비율 없으면 미확정(스킵)
 EXPLOSION_WINDOW = 6               # 최근 6거래일 폭발만 재매집(반등) 후보로 추적
 EXPLOSION_SCAN_N = 50              # 시장별 네이버 up(등락률) 상위 N에서 폭발 감시(22%+ 누락 방지)
-# ── /youtong '곧 폭발할 후보' 게이트: 당일 현재 등락률 ≥10% AND 유통주식 회전율 70~100%,
-#    단 이미 폭발(고가≥22% AND 회전율≥90%)한 종목은 제외(forecast와 역할 분리). 라이브 스냅샷 전용·표시용.
-YOUTONG_CHANGE_PCT = 10.0          # /youtong 게이트: 당일 현재 등락률 하한(%)
-YOUTONG_TURNOVER_MIN = 70.0        # /youtong 유통주식 회전율 하한(%)
-YOUTONG_TURNOVER_MAX = 100.0       # /youtong 유통주식 회전율 상한(%) — 초과(>100, 전량 손바뀜)는 사실상 폭발권
+# ── /youtong '곧 폭발할 후보'(위로 올라오며 분출): 10:30 이후, 현재 등락률 ≥7% AND 유통주식 회전율 ≥50%
+#    (상한 없음) AND 10:30 이후 5분봉 양봉(몸통%≥2%) 스파크 ≥1회. 이미 폭발(고가≥22% AND 회전율≥90%)은 제외
+#    (forecast로 분리). 한 번 포착되면 종일 지속(registry, 현재가 실시간 갱신). 표시·알림 전용(통계 무관).
+YOUTONG_CHANGE_PCT = 7.0           # /youtong 게이트: 현재 등락률 하한(%)
+YOUTONG_TURNOVER_MIN = 50.0        # /youtong 유통주식 회전율 하한(%) — 상한 없음
+YOUTONG_START_HHMM = "1030"        # /youtong 감지 시작 시각(그 전 무시) + 스파크 시각 하한
+YOUTONG_SPARK_MIN = 1              # /youtong: 시작시각 이후 5분 양봉 스파크 최소 수(몸통%·span은 REIGNITION_* 재사용)
 # ── 반등(재매집) 정의: 최근 6거래일 폭발 종목이 (하락 여부 무관) 당일 5분봉 '양봉 몸통%≥2%'가 3회 이상
 #    스파크. 식음(고점 대비 하락) 게이트는 폐지 — 하락 등락률 퍼센트는 보지 않는다.
 REIGNITION_SPAN_MIN = 5            # 재반등 스파크 판정 분봉 합성 단위(분)
@@ -135,6 +138,20 @@ def reignition_bars(bars, body_pct_min=REIGNITION_BODY_PCT,
 def _has_live_bars(bars):
     """유효(비제로 종가) 분봉이 하나라도 있나 — UN 분봉 결측(빈 리스트/전부 0) 판별용."""
     return any((b.get("close") or 0) > 0 for b in bars)
+
+
+def _minute_bars_with_fallback(code, label=""):
+    """당일 분봉 — MONEY_MARKET(UN) 우선, UN이 비었거나 전부 0이면 J(KRX) 폴백. 일부 종목은 UN 일봉/
+    거래대금은 정상인데 UN '분봉' 피드만 결측(전부 0)이라(NXT 분봉 미제공·키스트론류 실측) 그대로 두면
+    KRX엔 명백한 분출이 있어도 0봉으로 계산돼 누락된다. UN 분봉 있으면 UN 유지(NXT 봉 반영 불변).
+    reaccum·youtong 공용. 예외는 호출부로 전파(상위에서 처리)."""
+    bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
+    if kis.MONEY_MARKET != "J" and not _has_live_bars(bars):
+        jbars = kis.minute_bars_today(code, market="J")
+        if _has_live_bars(jbars):
+            log(f"  [info] {label or code}: UN 분봉 결측(전부 0) → J(KRX) 분봉 폴백")
+            bars = jbars
+    return bars
 
 
 # ---------- 재매집: 거래대금 폭발 레지스트리 ----------
@@ -485,8 +502,9 @@ def update_live_explosions(reg, p):
     거래량=UN 통합)와 float_ratio(유통비율·발행주식수)로 판정한다. 유동비율이 없으면 90% 회전율을
     확정할 수 없어 폭발 미확정으로 스킵한다(22% 단독으로는 폭발로 보지 않음).
 
-    반환 (count, scan_ok, today_explosions, today_youtong) — today_explosions=/forecast 당일 폭발,
-    today_youtong=/youtong '곧 폭발할 후보'(현재 등락률≥10 AND 유통회전율 70~100, 폭발 종목은 제외).
+    반환 (count, scan_ok, today_explosions, youtong_candidates) — today_explosions=/forecast 당일 폭발,
+    youtong_candidates=/youtong 싼 게이트(현재 등락률≥7 AND 회전율≥50 AND 미폭발) 통과분.
+    5분봉 스파크 확정·종일 지속은 prepare_youtong이 처리(분봉 조회 비용 가드).
     """
     rows, up_rank_total, rank_fail = _up_ranking_rows(p)  # 네이버 up(등락률) 상위 dedup + 도달성·실패시장 카운트
     count = 0
@@ -494,7 +512,7 @@ def update_live_explosions(reg, p):
     high_pass = float_missing = 0  # 22% 고가 게이트 통과 수 / 그중 유동비율 결측으로 탈락한 수
     live_dates = set()
     today_explosions = []
-    today_youtong = []   # /youtong '곧 폭발할 후보'(라이브 스냅샷 전용 — registry 미적재·백필 없음)
+    youtong_candidates = []   # /youtong 싼 게이트 통과분(스파크·지속은 prepare_youtong에서)
     today = _today_yyyymmdd()
     for row in rows:
         attempted += 1
@@ -512,7 +530,7 @@ def update_live_explosions(reg, p):
         high_pct = (now["high"] / now["prev_close"] - 1) * 100
         change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
         want_explosion = high_pct >= p.explosion_high_pct          # 폭발 후보(고가 게이트 ①: ≥22%)
-        want_youtong = change_pct >= p.youtong_change_pct          # /youtong 후보(현재 등락률 ≥10%)
+        want_youtong = change_pct >= p.youtong_change_pct          # /youtong 후보(현재 등락률 ≥7%)
         if not (want_explosion or want_youtong):
             continue
         value_won = float(now.get("value") or 0)   # 당일 거래대금(UN, 표시용)
@@ -524,17 +542,17 @@ def update_live_explosions(reg, p):
         vt = float_ratio.vol_turnover(volume, fr, flisted)  # 공유 산식(거래량/유통주식수 %), 결측 시 None
         float_ok = bool(fr and fr > 0 and flisted and flisted > 0)
         is_explosion = want_explosion and vt is not None and vt >= p.explosion_vol_turnover
-        # /youtong '곧 폭발할 후보': 현재 등락률≥10 AND 회전율 70~100 AND (아직) 폭발 아님. 라이브 스냅샷
-        # 전용(registry 미적재·백필 없음) — 표시·참고용, score_raw/통계 무관.
+        # /youtong 싼 게이트: 현재 등락률≥7 AND 회전율≥50(상한 없음) AND 아직 폭발 아님. 5분봉 스파크
+        # 확정·종일 지속은 prepare_youtong이 처리(분봉은 신규 후보만 1회 조회 — 비용 가드).
         if (want_youtong and vt is not None and not is_explosion
-                and p.youtong_turnover_min <= vt <= p.youtong_turnover_max):
-            today_youtong.append({
+                and vt >= p.youtong_turnover_min):
+            youtong_candidates.append({
                 "code": row["code"],
                 "name": row["name"],
                 "sector": now.get("sector", ""),
                 "change_pct": change_pct,            # 현재 등락률(실시간)
                 "high_pct": round(high_pct, 2),      # 당일 고가 등락률(참고)
-                "vol_turnover_pct": round(vt, 1),    # 유통주식 회전율(70~100)
+                "vol_turnover_pct": round(vt, 1),    # 유통주식 회전율(≥50, 상한 없음)
                 "value_eok": round(value_won / 1e8),
                 # KIS _f()가 결측가를 0.0으로 강제 → 0/음수는 미상으로 보고 null(타입 계약: number|null=미상 null).
                 "price": (now.get("price") if (now.get("price") or 0) > 0 else None),
@@ -600,7 +618,7 @@ def update_live_explosions(reg, p):
     # 게시(그 시장 폭발 누락)되는 것을 방지(개편 전 단일시장 실패 전파 동작 복원).
     scan_ok = up_rank_total > 0 and rank_fail == 0 and not (
         attempted > 0 and price_errors >= max(2, (attempted + 1) // 2))
-    return count, scan_ok, today_explosions, today_youtong
+    return count, scan_ok, today_explosions, youtong_candidates
 
 
 def _forecast_rank_key(e):
@@ -657,19 +675,102 @@ def _backfill_today_explosions(today_explosions, reg, today):
     return today_explosions
 
 
+def _load_youtong_registry(path=YOUTONG_REGISTRY_PATH, today=None):
+    """youtong 당일 지속 상태 {date, codes:{code:{first_seen,name,sector,high_pct,vol_turnover_pct,value_eok}}}.
+    date가 오늘이 아니면(전일자) 리셋 — 매일 새로 시작. 손상 파일도 안전하게 빈 상태."""
+    today = today or _today_yyyymmdd()
+    try:
+        d = json.load(open(path, encoding="utf-8"))
+        if isinstance(d, dict) and d.get("date") == today and isinstance(d.get("codes"), dict):
+            return d
+    except Exception:
+        pass
+    return {"date": today, "codes": {}}
+
+
+def _save_youtong_registry(reg, path=YOUTONG_REGISTRY_PATH):
+    try:
+        tmp = path + ".tmp"
+        json.dump(reg, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        os.replace(tmp, path)
+    except Exception as e:
+        log(f"[warn] youtong registry 저장 실패: {e}")
+
+
+def prepare_youtong(candidates, p, now=None, registry_path=None):
+    """/youtong '곧 폭발할 후보'(위로 올라오며 분출) — 싼 게이트(등락률≥7·회전율≥50·미폭발) 통과 후보 중
+    '시작시각(10:30) 이후 5분봉 양봉(몸통%≥2%) 스파크 ≥1회'를 만족하면 당일 registry에 적재 → **종일 지속**.
+    한 번 들면 장 마감까지 유지(현재가/등락률은 매 회차 갱신, first_seen='처음 포착 HH:MM' 보존). 분봉은
+    신규 후보만 1회 조회(이미 적재면 스킵 — 비용 가드). 시작시각 전엔 빈 목록(감지 시작 전).
+    now/registry_path는 테스트 주입용(기본 실시각·기본 경로)."""
+    now = now or datetime.now(KST)
+    if now.strftime("%H%M") < p.youtong_start:   # 감지 시작 시각(예 1030) 전 — 아무것도 포착 안 함
+        return []
+    start_colon = p.youtong_start[:2] + ":" + p.youtong_start[2:]  # "1030" → "10:30"(스파크 time 비교용)
+    path = registry_path or YOUTONG_REGISTRY_PATH
+    reg = _load_youtong_registry(path, now.strftime("%Y%m%d"))
+    codes = reg["codes"]
+    cand_by_code = {c["code"]: c for c in candidates}
+    # 1) 신규 후보만 5분봉 스파크 확정 → registry 적재(이미 있으면 분봉 재조회 스킵)
+    for code, c in cand_by_code.items():
+        if code in codes:
+            continue
+        try:
+            bars = _minute_bars_with_fallback(code, c.get("name"))
+        except Exception as e:
+            log(f"  [skip] youtong 분봉 실패 {c.get('name') or code}: {e}")
+            continue
+        sparks = [b for b in reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)
+                  if b["time"] >= start_colon]   # 시작시각 이후 양봉 스파크만(위로 올라오는 신호)
+        if len(sparks) >= p.youtong_spark_min:
+            codes[code] = {
+                "first_seen": now.strftime("%H:%M"),
+                "name": c.get("name") or code, "sector": c.get("sector", ""),
+                "high_pct": c.get("high_pct"), "vol_turnover_pct": c.get("vol_turnover_pct"),
+                "value_eok": c.get("value_eok"),
+            }
+    # 2) registry(오늘 적재분) 전체를 youtong[]로 렌더 — 종일 지속. 현재가는 실시간 갱신.
+    out = []
+    for code, rec in codes.items():
+        c = cand_by_code.get(code)
+        if c:   # 이번 회차 랭킹에 다시 잡힘 — fresh 값
+            price, change_pct = c.get("price"), c.get("change_pct")
+            vt, high_pct, value_eok = c.get("vol_turnover_pct"), c.get("high_pct"), c.get("value_eok")
+        else:   # 랭킹서 밀린 지속 종목 — 현재가만 재조회(백필식), 회전율·고가는 적재값 유지
+            price = change_pct = None
+            try:
+                nowq = kis.price_now(code)
+                pr = nowq.get("price")
+                if pr and pr > 0:
+                    price = pr
+                    cp = nowq.get("change_pct")
+                    change_pct = round(float(cp), 2) if cp is not None else None
+            except Exception as e:
+                log(f"  [warn] youtong 지속 현재가 조회 실패 {rec.get('name') or code}: {e}")
+            vt, high_pct, value_eok = rec.get("vol_turnover_pct"), rec.get("high_pct"), rec.get("value_eok")
+        out.append({
+            "code": code, "name": rec.get("name") or code, "sector": rec.get("sector", ""),
+            "change_pct": change_pct, "high_pct": high_pct, "vol_turnover_pct": vt,
+            "value_eok": value_eok, "price": price, "first_seen": rec.get("first_seen"),
+        })
+    if not p.dry_run:
+        _save_youtong_registry(reg, path)
+    return out
+
+
 def prepare_reaccum_registry(p):
     """(active_explosions, live_scan_ok, today_explosions, today_youtong) 반환. live_scan_ok=False면
     폭발감시 자체가 전면 실패 = KIS/네이버 장애 신호 → 호출부의 수집장애 가드가 사용한다.
-    today_explosions=/forecast 당일 폭발, today_youtong=/youtong '곧 폭발할 후보'(라이브 스냅샷)."""
+    today_explosions=/forecast 당일 폭발, today_youtong=/youtong '곧 폭발할 후보'(종일 지속)."""
     if not p.reaccum_enabled:
         return {}, True, [], []
     reg = load_explosion_registry()
     seed_count = bootstrap_seed_explosions(reg, p)
     live_scan_ok = True
     today_explosions = []
-    today_youtong = []
+    youtong_candidates = []
     try:
-        live_count, live_scan_ok, today_explosions, today_youtong = update_live_explosions(reg, p)
+        live_count, live_scan_ok, today_explosions, youtong_candidates = update_live_explosions(reg, p)
     except Exception as e:
         live_count = 0
         live_scan_ok = False  # 폭발 스캔 전면 실패(raise) — KIS/네이버 장애 의심
@@ -682,6 +783,12 @@ def prepare_reaccum_registry(p):
         log(f"[warn] 6일 소급 백필 실패(라이브/시드만 사용): {e}")
     # 라이브 스캔 성공/예외 무관하게 registry 기반 백필 — 예외 경로에서도 /forecast가 비지 않게(try 밖).
     today_explosions = _backfill_today_explosions(today_explosions, reg, _today_yyyymmdd())
+    # youtong: 싼 게이트 통과분(candidates)을 5분봉 스파크로 확정 + 종일 지속(별도 registry). try 밖(격리).
+    try:
+        today_youtong = prepare_youtong(youtong_candidates, p)
+    except Exception as e:
+        today_youtong = []
+        log(f"[warn] youtong 처리 실패(빈 목록): {e}")
     if not p.dry_run:
         save_explosion_registry(reg)
     elif seed_count or live_count:
@@ -765,16 +872,7 @@ def scan_reaccum_candidate(rec, p, events):
     #    (식음 게이트 폐지 — 하락 등락률 무관. 전일 폭발 종목이 오늘 다시 분출하는지만 본다.)
     # 분봉도 거래대금·수급과 동일하게 MONEY_MARKET(기본 UN). 정규장 시간창 가드(kis_client)로 NXT 장 밖 봉 배제.
     try:
-        bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
-        # UN(통합) 분봉이 비었거나 전부 0이면 J(KRX) 분봉으로 폴백. 일부 종목은 UN 일봉/거래대금은
-        # 정상인데 UN '분봉' 피드만 결측이라 전부 0으로 온다(NXT 분봉 미제공 — 키스트론류 실측). 그대로 두면
-        # KRX엔 명백한 5분봉 재분출이 있어도 reignition 0회로 계산돼 수상종목에서 누락된다. UN 분봉이 있으면
-        # UN 유지(기존 동작·NXT 봉 반영 불변) — 결측일 때만 J 폴백. 폴백 fetch도 같은 try 안(예외→ERR 일관).
-        if kis.MONEY_MARKET != "J" and not _has_live_bars(bars):
-            jbars = kis.minute_bars_today(code, market="J")
-            if _has_live_bars(jbars):
-                log(f"  [info] {name}: UN 분봉 결측(전부 0) → J(KRX) 분봉 폴백")
-                bars = jbars
+        bars = _minute_bars_with_fallback(code, name)  # UN 우선, 결측 시 J 폴백(공용 헬퍼)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 분봉 실패 {e}")
         return "ERR"
@@ -1073,11 +1171,13 @@ def main():
     ap.add_argument("--explosion-scan-n", type=int, default=EXPLOSION_SCAN_N,
                     help="시장별 네이버 up(등락률) 상위 N종목에서 폭발 감시")
     ap.add_argument("--youtong-change-pct", type=float, default=YOUTONG_CHANGE_PCT,
-                    help="/youtong 게이트: 당일 현재 등락률 하한(%%, 기본 10)")
+                    help="/youtong 게이트: 현재 등락률 하한(%%, 기본 7)")
     ap.add_argument("--youtong-turnover-min", type=float, default=YOUTONG_TURNOVER_MIN,
-                    help="/youtong 유통주식 회전율 하한(%%, 기본 70)")
-    ap.add_argument("--youtong-turnover-max", type=float, default=YOUTONG_TURNOVER_MAX,
-                    help="/youtong 유통주식 회전율 상한(%%, 기본 100)")
+                    help="/youtong 유통주식 회전율 하한(%%, 기본 50, 상한 없음)")
+    ap.add_argument("--youtong-start", default=YOUTONG_START_HHMM,
+                    help="/youtong 감지 시작 시각 HHMM(그 전 무시·스파크 시각 하한, 기본 1030)")
+    ap.add_argument("--youtong-spark-min", type=int, default=YOUTONG_SPARK_MIN,
+                    help="/youtong: 시작시각 이후 5분 양봉 스파크 최소 수(기본 1)")
     ap.add_argument("--reaccum-seed", default=REACCUM_SEED_PATH,
                     help="즉시 부트스트랩용 재매집 seed JSON 경로")
     ap.add_argument("--no-telegram-seed", dest="telegram_seed", action="store_false",
@@ -1096,6 +1196,8 @@ def main():
     p.explosion_scan_n = max(1, int(p.explosion_scan_n))
     p.reignition_span_min = max(1, int(p.reignition_span_min))
     p.reignition_min_count = max(1, int(p.reignition_min_count))
+    p.youtong_spark_min = max(1, int(p.youtong_spark_min))
+    p.youtong_start = str(p.youtong_start).strip().zfill(4)[:4]  # "HHMM"(비교용 4자리 보정)
     p.reaccum_max = max(0, int(p.reaccum_max))
     active_explosions, live_scan_ok, today_explosions, today_youtong = prepare_reaccum_registry(p)
 
@@ -1138,15 +1240,16 @@ def main():
                    "explosion_high_pct": p.explosion_high_pct,
                    "explosion_window": p.explosion_window,
                    "explosion_scan_n": p.explosion_scan_n,
-                   "youtong_change_pct": p.youtong_change_pct,        # /youtong: 당일 현재 등락률 하한(%)
-                   "youtong_turnover_min": p.youtong_turnover_min,    # /youtong: 유통 회전율 하한(%)
-                   "youtong_turnover_max": p.youtong_turnover_max,    # /youtong: 유통 회전율 상한(%)
+                   "youtong_change_pct": p.youtong_change_pct,        # /youtong: 현재 등락률 하한(%)
+                   "youtong_turnover_min": p.youtong_turnover_min,    # /youtong: 유통 회전율 하한(%, 상한 없음)
+                   "youtong_start": p.youtong_start,                  # /youtong: 감지 시작 시각 HHMM
+                   "youtong_spark_min": p.youtong_spark_min,          # /youtong: 시작시각 이후 5분 스파크 최소 수
                    "telegram_seed": p.telegram_seed,
                    "telegram_channel": p.telegram_channel if p.telegram_seed else None},
         "universe_count": len(active_explosions),
         "events": events,
         "explosions": today_explosions,   # 당일 폭발 종목(/forecast 게시용)
-        # /youtong '곧 폭발할 후보' — 회전율 내림차순(폭발 임박순). 라이브 스냅샷·표시용(통계 무관).
+        # /youtong '곧 폭발할 후보' — 회전율 내림차순(폭발 임박순). 종일 지속(registry)·표시용(통계 무관).
         "youtong": sorted(today_youtong, key=lambda e: -(e.get("vol_turnover_pct") or 0)),
         "suspects": suspects,
     }

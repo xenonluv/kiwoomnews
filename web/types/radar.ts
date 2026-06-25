@@ -125,11 +125,12 @@ export interface Youtong {
   code: string;
   name: string;
   sector: string;
-  change_pct: number; // 현재 등락률(%) — 실시간
+  change_pct: number | null; // 현재 등락률(%) — 실시간(조회 실패 시 null)
   high_pct: number; // 당일 고가 등락률(%) — 참고
-  vol_turnover_pct: number; // 당일 거래량 / 유통주식수 회전율(%, 70~100)
+  vol_turnover_pct: number; // 당일 거래량 / 유통주식수 회전율(%, ≥50 상한 없음)
   value_eok: number; // 당일 거래대금(억)
   price: number | null; // 현재가(실시간)
+  first_seen?: string; // 처음 포착 시각 "HH:MM"(종일 지속)
 }
 
 /** 3일내 +7% 상승확률 라벨 — 6개월 백테스트 보정(과거 실측·보장 아님) */
@@ -236,11 +237,15 @@ export interface RadarData {
     reaccum_max?: number;
     explosion_high_pct?: number;
     explosion_window?: number;
-    /** /youtong: 당일 현재 등락률 하한(%) */
+    /** /youtong: 현재 등락률 하한(%) */
     youtong_change_pct?: number;
-    /** /youtong: 유통 회전율 하한(%) */
+    /** /youtong: 유통 회전율 하한(%, 상한 없음) */
     youtong_turnover_min?: number;
-    /** /youtong: 유통 회전율 상한(%) */
+    /** /youtong: 감지 시작 시각 HHMM(그 전 무시) */
+    youtong_start?: string;
+    /** /youtong: 시작시각 이후 5분 양봉 스파크 최소 수 */
+    youtong_spark_min?: number;
+    /** @deprecated 구버전 — 상한 폐지(하위호환) */
     youtong_turnover_max?: number;
   };
   universe_count: number;
