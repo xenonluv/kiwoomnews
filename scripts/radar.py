@@ -67,6 +67,8 @@ REIGNITION_MIN_COUNT = 2           # 시작시각 이후 자격 양봉(스파크
 REIGNITION_START_HHMM = "1430"     # 재반등 스파크 집계 시작 시각(그 전 양봉은 미집계 — 마감 직전 재분출만)
 REACCUM_CHANGE_MIN = -5.0          # 재매집 현재 등락률 하한(% — 이보다 더 빠지면 깊은 식음으로 제외)
 REACCUM_CHANGE_MAX = 7.0           # 재매집 현재 등락률 상한(% — 이보다 높으면 이미 분출로 제외)
+NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
+                                   # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
 # "예전 대장"(was_theme_leader) 판정 — regex 테마가 아니라 권위 업종(sector) 기준.
 LEADER_MIN_GROUP = 3               # 같은 (폭발일, 업종) 폭발군이 이 수 이상일 때만 대장 판정
@@ -904,9 +906,11 @@ def scan_reaccum_candidate(rec, p, events):
         return None
     change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
     change_basis = "KRX"
-    # 정규장 마감(15:30) 후엔 NXT 애프터마켓 야간가로 '현재 등락률'을 재평가 — NXT 시간외에서 회복(예: 정규장
-    # +8%→NXT −5%, 또는 −9%→−5%)하면 그때 밴드 진입, 이탈하면 빠짐(스파크는 정규장 것 유지 — NXT 분봉 미제공).
-    if datetime.now(KST).strftime("%H%M%S") > kis.SESSION_CLOSE:
+    # NXT 애프터마켓 야간가로 '현재 등락률' 재평가 — NXT 시간외 회복(정규장 +8%→NXT −5%, −9%→−5%)이면 밴드
+    # 진입, 이탈이면 빠짐(스파크는 정규장 것 유지 — NXT 분봉 미제공). **재평가 시작은 16:00(=15:30+신선도상한
+    # 30분)부터** — 그 전(15:31~15:51)엔 정규장 막판 5분 양봉이 아직 신선해 텔레그램으로 나가야 하므로 KRX 유지.
+    # 16:00이면 막판 봉은 이미 상한 초과 + NXT 애프터마켓 단일가가 실제 체결되는 시점이라 야간가도 그때 존재.
+    if datetime.now(KST).strftime("%H%M") >= NXT_REEVAL_START_HHMM:
         nxt_chg = _nxt_change_pct(code, now.get("prev_close"))
         if nxt_chg is not None:
             change_pct, change_basis = nxt_chg, "NXT"
