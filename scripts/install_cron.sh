@@ -15,7 +15,9 @@ PY="$(command -v python3 || echo /usr/bin/python3)"
 # 레이더 publish는 인자 불필요(전수 스캔이라 watchlist 없어도 누락 없음).
 # 10분 간격 + 1분 오프셋(:01,:11,…). 당일 폭발 종목(/forecast) + 식음·반등 수상종목(메인)을 함께 게시.
 # (구 analyzer 종가베팅 잡은 폐지 — /forecast는 이제 publish.py가 만든 당일 폭발 리스트를 보여준다.)
-L_PUBLISH="1,11,21,31,41,51 9-15 * * 1-5 cd $REPO && $PY scripts/publish.py >> /tmp/publish.log 2>&1"
+# 9~20시: 정규장(9~15:30) + **NXT 애프터마켓(~20:00)**. 마감 후엔 reaccum '현재 등락률'을 NXT 야간가로
+# 재평가(스파크는 정규장 것 유지 — KIS가 NXT 분봉 미제공). 변경 시에만 push라 야간 추가 회차 비용은 미미.
+L_PUBLISH="1,11,21,31,41,51 9-20 * * 1-5 cd $REPO && $PY scripts/publish.py >> /tmp/publish.log 2>&1"
 # 레이더 자가 검증(익일 적중 채점 + 가중치 튜닝 + /performance 데이터)
 L_RADAR_BT="20 17 * * 1-5 cd $REPO && $PY scripts/radar_backtest.py --push >> /tmp/radar_backtest.log 2>&1"
 # 추적 종목(검색 후 📌 추적) 일일 검증 — 종합판정(룰) vs Kimi(AI), radar_backtest와 10분 시차

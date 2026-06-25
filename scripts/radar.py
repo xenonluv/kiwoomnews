@@ -159,6 +159,35 @@ def _minute_bars_with_fallback(code, label=""):
     return bars
 
 
+def _nxt_change_pct(code, prev_close):
+    """정규장 마감 후 NXT 애프터마켓 '야간가'(네이버 overMarketPriceInfo)로 '현재 등락률'(전일 종가 대비)을
+    재계산해 반환. KIS는 NXT 애프터마켓 분봉을 안 줘(분봉이 15:30서 끊김) 스파크는 정규장 것을 그대로 쓰되,
+    종목의 '현재 위치(등락률)'만 NXT 시간외가로 보정 — 마감 후 NXT에서 회복/이탈하면 reaccum 밴드 재판정.
+    정규장 중(marketStatus==OPEN)·야간가 결측·같은 거래일 아님·전일종가 없음이면 None(=정규장 KIS 등락률 유지).
+    네이버 공개 API(시크릿 불필요). 실패는 None으로 흡수(fail-safe — 정규장 등락률로 폴백)."""
+    if not prev_close:
+        return None
+    try:
+        b = json.loads(get_bytes(f"https://m.stock.naver.com/api/stock/{code}/basic", UA))
+    except Exception:
+        return None
+    if str(b.get("marketStatus") or "") == "OPEN":
+        return None  # 정규장 중엔 보정 안 함(전일 시간외 혼동 방지) — KIS 실시간 등락률 사용
+    om = b.get("overMarketPriceInfo") or {}
+    if om.get("overMarketStatus") not in ("CLOSE", "TRADING"):
+        return None
+    om_day = str(om.get("localTradedAt") or "")[:10]
+    if not om_day or om_day != str(b.get("localTradedAt") or "")[:10]:
+        return None  # 시간외·정규장 체결이 같은 거래일일 때만(개장 전 전일 시간외 오대조 방지)
+    try:
+        over = float(str(om.get("overPrice")).replace(",", ""))
+    except (TypeError, ValueError):
+        return None
+    if over <= 0:
+        return None
+    return round((over / prev_close - 1) * 100, 2)
+
+
 # ---------- 재매집: 거래대금 폭발 레지스트리 ----------
 
 def _today_yyyymmdd():
@@ -872,6 +901,13 @@ def scan_reaccum_candidate(rec, p, events):
     if not now.get("price") or not now.get("prev_close"):
         return None
     change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
+    change_basis = "KRX"
+    # 정규장 마감(15:30) 후엔 NXT 애프터마켓 야간가로 '현재 등락률'을 재평가 — NXT 시간외에서 회복(예: 정규장
+    # +8%→NXT −5%, 또는 −9%→−5%)하면 그때 밴드 진입, 이탈하면 빠짐(스파크는 정규장 것 유지 — NXT 분봉 미제공).
+    if datetime.now(KST).strftime("%H%M%S") > kis.SESSION_CLOSE:
+        nxt_chg = _nxt_change_pct(code, now.get("prev_close"))
+        if nxt_chg is not None:
+            change_pct, change_basis = nxt_chg, "NXT"
     # 현재 등락률 게이트: −5%~+7% 밖이면 제외(깊은 식음/이미 분출). 일봉·분봉 조회 전에 컷(비용 절감).
     if not (p.reaccum_change_min <= change_pct <= p.reaccum_change_max):
         return None
@@ -971,6 +1007,7 @@ def scan_reaccum_candidate(rec, p, events):
         "forecast": forecast,   # 3일내 +7% 과거 실측 확률 라벨(표시 전용·보장 아님)
         "price": now["price"],
         "change_pct": change_pct,
+        "change_basis": change_basis,   # "KRX"(정규장) / "NXT"(마감 후 시간외 야간가로 등락률 재평가)
         "high_pct": round(high_pct, 2),
         "value_eok": round(float(now.get("value") or 0) / 1e8),
         "turnover_pct": turnover_pct,   # 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도

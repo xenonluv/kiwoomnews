@@ -172,6 +172,7 @@ export interface Suspect {
   score_breakdown_raw?: ScoreBreakdown;
   price: number;
   change_pct: number; // 현재 등락률
+  change_basis?: string; // "KRX"(정규장) / "NXT"(마감 후 시간외 야간가로 등락률 재평가)
   high_pct: number; // 당일 고가 등락률
   value_eok: number; // 당일 거래대금(억)
   turnover_pct?: number | null; // 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도

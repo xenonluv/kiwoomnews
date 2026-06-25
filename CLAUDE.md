@@ -32,7 +32,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   양봉(몸통%≥2%)이 2회 이상 스파크**(마감 직전 재분출) AND **현재 등락률 −5%~+7%**(깊은 식음/이미 분출 제외,
   조용한 매집 구간)인 상태. ⚠️ 스파크는 **그 봉의 절대 등락률과 무관하게 카운트** — −9%에서 양봉으로 회복해
   −5% 마감한 깊은 식음 반등도 잡는다(현재 등락률 게이트가 최종 위치만 판정). MA20·투신·거래원·거래대금 게이트는
-  미사용. 당일 폭발(signal_date==peak_date)은 `/forecast`에만, 수상종목은 '과거 폭발 + 오늘 재분출'.
+  미사용. ⚠️ **정규장 마감(15:30) 후엔 '현재 등락률'을 NXT 애프터마켓 야간가(네이버 `overMarketPriceInfo`)로
+  재평가**(`_nxt_change_pct`) — NXT 시간외에서 회복(정규장 +8%→NXT −5%, −9%→−5%)하면 그때 밴드 진입,
+  이탈하면 빠진다. **스파크(≥2)는 정규장 14:30~15:30 것 그대로** — KIS가 NXT 애프터마켓 분봉을 안 줘(분봉
+  15:30서 끊김, 실측) NXT 5분봉 스파크는 데이터 부재로 불가, 위치(등락률)만 보정. suspect에 `change_basis`
+  ("KRX"/"NXT") 노출(웹 'NXT 시간외' 배지). publish cron이 **9~20시**로 확장돼 애프터마켓을 커버.
+  당일 폭발(signal_date==peak_date)은 `/forecast`에만, 수상종목은 '과거 폭발 + 오늘 재분출'.
 - **곧 폭발할 후보(youtong)** — **위로 올라오며 분출하는 종목**: **09:30 이후**(`--youtong-start` 0930, 그 전 무시),
   **현재 등락률 ≥7% AND 유통주식 회전율 ≥50%(상한 없음) AND 09:30 이후 5분봉 양봉(몸통%≥2%) 스파크 ≥1회**.
   단 **이미 폭발(고가≥22% AND 회전율≥90%)한 종목은 제외**(=/forecast로 분류). **`/youtong`에 게시.**
@@ -148,7 +153,7 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 `bash scripts/install_cron.sh`로 일괄 설치(idempotent). 핵심 잡:
 
 ```
-1,11,21,31,41,51 9-15 * * 1-5  publish.py                 # 10분 간격, :01 오프셋(당일 폭발 + 재매집 반등 게시)
+1,11,21,31,41,51 9-20 * * 1-5  publish.py                 # 10분 간격, :01 오프셋(당일 폭발+재매집 게시). 9~20시=정규장+NXT 애프터마켓(마감 후 reaccum 현재 등락률을 NXT 야간가로 재평가)
 20 17 * * 1-5                  radar_backtest.py --push   # 익일 적중·AI예측·strategy_sim·change_band
 30 17 * * 1-5                  track_eval.py --push       # 검색 추적 종목 룰 vs AI
 35 17 * * 1-5                  ai_click_eval.py --push    # AI 클릭 예측 익일 채점·임계 보정

@@ -125,6 +125,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
           <span className={`text-base font-semibold tabular-nums ${change.cls}`}>
             {change.text}
           </span>
+          {s.change_basis === "NXT" && (
+            <span
+              className="rounded bg-warning/15 px-1.5 py-0.5 text-[10px] font-medium text-warning"
+              title="정규장 마감 후 — NXT 시간외(애프터마켓) 야간가 기준 등락률"
+            >
+              NXT 시간외
+            </span>
+          )}
         </h2>
         {s.calibrated_prob?.rate != null && (
           <p className="text-[11px] text-muted-foreground">
