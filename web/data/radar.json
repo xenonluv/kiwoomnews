@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-25 12:32:46 KST",
+ "generated_at": "2026-06-25 12:42:37 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -44,8 +44,8 @@
    "high_pct": 26.85,
    "vol_turnover_pct": 129.2,
    "value_eok": 763,
-   "price": 6030.0,
-   "change_pct": -25.74,
+   "price": 6050.0,
+   "change_pct": -25.49,
    "backfill": true
   },
   {
@@ -53,10 +53,10 @@
    "name": "다스코",
    "sector": "금속",
    "high_pct": 29.91,
-   "vol_turnover_pct": 94.3,
-   "value_eok": 405,
-   "price": 3840.0,
-   "change_pct": 21.52,
+   "vol_turnover_pct": 99.8,
+   "value_eok": 429,
+   "price": 3825.0,
+   "change_pct": 21.04,
    "backfill": false
   },
   {
@@ -66,9 +66,9 @@
    "high_pct": 29.88,
    "vol_turnover_pct": 96.5,
    "value_eok": 217,
-   "price": 2610.0,
-   "change_pct": 8.3,
-   "backfill": false
+   "price": 2465.0,
+   "change_pct": 2.28,
+   "backfill": true
   },
   {
    "code": "111710",
@@ -77,8 +77,8 @@
    "high_pct": 29.63,
    "vol_turnover_pct": 117.2,
    "value_eok": 196,
-   "price": 4030.0,
-   "change_pct": -15.6,
+   "price": 4000.0,
+   "change_pct": -16.23,
    "backfill": true
   }
  ],
@@ -87,21 +87,21 @@
    "code": "034940",
    "name": "조아제약",
    "sector": "제약",
-   "change_pct": 13.22,
+   "change_pct": 11.33,
    "high_pct": 26.56,
-   "vol_turnover_pct": 76.5,
-   "value_eok": 195,
-   "price": 1019.0
+   "vol_turnover_pct": 78.6,
+   "value_eok": 201,
+   "price": 1002.0
   },
   {
    "code": "419050",
    "name": "삼기에너지솔루션즈",
    "sector": "운송장비·부품",
-   "change_pct": 22.25,
+   "change_pct": 24.72,
    "high_pct": 29.96,
-   "vol_turnover_pct": 70.5,
-   "value_eok": 353,
-   "price": 1775.0
+   "vol_turnover_pct": 71.6,
+   "value_eok": 359,
+   "price": 1811.0
   }
  ],
  "suspects": [
@@ -137,16 +137,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 9510.0,
-   "change_pct": 10.58,
-   "high_pct": 17.33,
-   "value_eok": 565,
-   "turnover_pct": 148.2,
+   "price": 9920.0,
+   "change_pct": 15.35,
+   "high_pct": 17.79,
+   "value_eok": 610,
+   "turnover_pct": 159.4,
    "peak_turnover_pct": 243.3,
    "float_ratio": 0.40700000000000003,
    "turnover_basis": "float",
-   "ma10": 7681.0,
-   "ma10_margin_pct": 23.81,
+   "ma10": 7722.0,
+   "ma10_margin_pct": 28.46,
    "spark": {
     "clusters": []
    },
@@ -157,7 +157,7 @@
     "body_pct": 7.29,
     "time": "11:10",
     "value_eok": 56,
-    "count": 9
+    "count": 11
    },
    "reignition_bars": [
     {
@@ -204,6 +204,16 @@
      "time": "12:10",
      "body_pct": 3.23,
      "value_eok": 16
+    },
+    {
+     "time": "12:35",
+     "body_pct": 2.43,
+     "value_eok": 13
+    },
+    {
+     "time": "12:40",
+     "body_pct": 2.17,
+     "value_eok": 29
     }
    ],
    "news": [],
@@ -217,14 +227,115 @@
     "peak_turnover_pct": 243.3,
     "peak_ibs": 0.68,
     "peak_uppertail": 8.5,
-    "ma20": 6859.0,
-    "ma20_margin_pct": 38.65,
+    "ma20": 6879.5,
+    "ma20_margin_pct": 44.2,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
    },
    "leader_cohort_prob": null,
    "theme_leader": true
+  },
+  {
+   "code": "198440",
+   "name": "강동씨앤엘",
+   "sector": "비금속",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 84,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 6,
+    "re_body": 6,
+    "peak_turnover": 9,
+    "re_turnover": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 1617.0,
+   "change_pct": -25.31,
+   "high_pct": 0.69,
+   "value_eok": 144,
+   "turnover_pct": 42.6,
+   "peak_turnover_pct": 185.9,
+   "float_ratio": 0.306,
+   "turnover_basis": "float",
+   "ma10": 1730.3,
+   "ma10_margin_pct": -6.55,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 8.7,
+    "time": "10:15",
+    "value_eok": 6,
+    "count": 5
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 4.27,
+     "value_eok": 9
+    },
+    {
+     "time": "10:10",
+     "body_pct": 4.84,
+     "value_eok": 4
+    },
+    {
+     "time": "10:15",
+     "body_pct": 8.7,
+     "value_eok": 6
+    },
+    {
+     "time": "11:30",
+     "body_pct": 2.09,
+     "value_eok": 1
+    },
+    {
+     "time": "12:35",
+     "body_pct": 7.24,
+     "value_eok": 9
+    }
+   ],
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260623",
+    "peak_value_eok": 819,
+    "peak_high_pct": 27.36,
+    "peak_turnover_pct": 185.9,
+    "peak_ibs": 0.47,
+    "peak_uppertail": 16.9,
+    "ma20": 1366.1,
+    "ma20_margin_pct": 18.37,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
   },
   {
    "code": "034940",
@@ -258,16 +369,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 1019.0,
-   "change_pct": 13.22,
+   "price": 992.0,
+   "change_pct": 10.22,
    "high_pct": 26.56,
-   "value_eok": 196,
-   "turnover_pct": 76.9,
+   "value_eok": 201,
+   "turnover_pct": 78.7,
    "peak_turnover_pct": 111.9,
    "float_ratio": 0.8,
    "turnover_basis": "float",
-   "ma10": 711.8,
-   "ma10_margin_pct": 43.16,
+   "ma10": 709.1,
+   "ma10_margin_pct": 39.9,
    "spark": {
     "clusters": []
    },
@@ -353,104 +464,8 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 0.5,
     "peak_uppertail": 18.9,
-    "ma20": 693.1,
-    "ma20_margin_pct": 47.01,
-    "cause_summary": "",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  },
-  {
-   "code": "198440",
-   "name": "강동씨앤엘",
-   "sector": "비금속",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 82,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 4,
-    "re_body": 6,
-    "peak_turnover": 9,
-    "re_turnover": 1
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 1520.0,
-   "change_pct": -29.79,
-   "high_pct": 0.69,
-   "value_eok": 132,
-   "turnover_pct": 38.5,
-   "peak_turnover_pct": 185.9,
-   "float_ratio": 0.306,
-   "turnover_basis": "float",
-   "ma10": 1718.9,
-   "ma10_margin_pct": -11.57,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 8.7,
-    "time": "10:15",
-    "value_eok": 6,
-    "count": 4
-   },
-   "reignition_bars": [
-    {
-     "time": "09:00",
-     "body_pct": 4.27,
-     "value_eok": 9
-    },
-    {
-     "time": "10:10",
-     "body_pct": 4.84,
-     "value_eok": 4
-    },
-    {
-     "time": "10:15",
-     "body_pct": 8.7,
-     "value_eok": 6
-    },
-    {
-     "time": "11:30",
-     "body_pct": 2.09,
-     "value_eok": 1
-    }
-   ],
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260623",
-    "peak_value_eok": 819,
-    "peak_high_pct": 27.36,
-    "peak_turnover_pct": 185.9,
-    "peak_ibs": 0.47,
-    "peak_uppertail": 16.9,
-    "ma20": 1360.4,
-    "ma20_margin_pct": 11.73,
+    "ma20": 691.8,
+    "ma20_margin_pct": 43.39,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -465,12 +480,12 @@
    "pattern": "reaccum",
    "shake": null,
    "deep_shake": null,
-   "suspicion_score": 81,
+   "suspicion_score": 84,
    "calibrated_prob": null,
    "score_breakdown": {
     "base": 62,
-    "re_count": 8,
-    "re_body": 3,
+    "re_count": 10,
+    "re_body": 4,
     "peak_turnover": 2,
     "re_turnover": 6
    },
@@ -490,16 +505,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 42150.0,
-   "change_pct": -1.75,
+   "price": 43400.0,
+   "change_pct": 1.17,
    "high_pct": 17.48,
-   "value_eok": 1703,
-   "turnover_pct": 140.3,
+   "value_eok": 1728,
+   "turnover_pct": 142.4,
    "peak_turnover_pct": 115.6,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
-   "ma10": 37395.0,
-   "ma10_margin_pct": 12.72,
+   "ma10": 37515.0,
+   "ma10_margin_pct": 15.69,
    "spark": {
     "clusters": []
    },
@@ -507,10 +522,10 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "reignition": {
-    "body_pct": 3.71,
-    "time": "09:35",
-    "value_eok": 94,
-    "count": 6
+    "body_pct": 4.46,
+    "time": "12:35",
+    "value_eok": 15,
+    "count": 7
    },
    "reignition_bars": [
     {
@@ -542,6 +557,11 @@
      "time": "11:50",
      "body_pct": 3.12,
      "value_eok": 16
+    },
+    {
+     "time": "12:35",
+     "body_pct": 4.46,
+     "value_eok": 15
     }
    ],
    "news": [],
@@ -555,8 +575,8 @@
     "peak_turnover_pct": 115.6,
     "peak_ibs": 0.98,
     "peak_uppertail": 0.5,
-    "ma20": 36022.5,
-    "ma20_margin_pct": 17.01,
+    "ma20": 36082.5,
+    "ma20_margin_pct": 20.28,
     "cause_summary": "주식으로 번 '돈'이 움직인다…줄줄이 '신고가' 뚫었다",
     "was_theme_leader": false,
     "source": "live"
@@ -596,16 +616,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 851.0,
-   "change_pct": 13.47,
+   "price": 862.0,
+   "change_pct": 14.93,
    "high_pct": 20.67,
-   "value_eok": 55,
-   "turnover_pct": 44.7,
+   "value_eok": 56,
+   "turnover_pct": 45.4,
    "peak_turnover_pct": 101.0,
    "float_ratio": 0.579,
    "turnover_basis": "float",
-   "ma10": 672.1,
-   "ma10_margin_pct": 26.62,
+   "ma10": 673.2,
+   "ma10_margin_pct": 28.05,
    "spark": {
     "clusters": []
    },
@@ -691,8 +711,8 @@
     "peak_turnover_pct": 101.0,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.5,
-    "ma20": 694.2,
-    "ma20_margin_pct": 22.58,
+    "ma20": 694.8,
+    "ma20_margin_pct": 24.06,
     "cause_summary": "헝셩그룹, 168억원 규모 제3자배정 유상증자 결정",
     "was_theme_leader": false,
     "source": "live"
@@ -732,16 +752,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 15820.0,
-   "change_pct": -22.64,
+   "price": 15810.0,
+   "change_pct": -22.69,
    "high_pct": 9.54,
-   "value_eok": 385,
-   "turnover_pct": 47.9,
+   "value_eok": 395,
+   "turnover_pct": 49.3,
    "peak_turnover_pct": 292.9,
    "float_ratio": 0.6586,
    "turnover_basis": "float",
-   "ma10": 15796.0,
-   "ma10_margin_pct": 0.15,
+   "ma10": 15795.0,
+   "ma10_margin_pct": 0.09,
    "spark": {
     "clusters": []
    },
@@ -797,8 +817,8 @@
     "peak_turnover_pct": 292.9,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.2,
-    "ma20": 13647.5,
-    "ma20_margin_pct": 15.92,
+    "ma20": 13647.0,
+    "ma20_margin_pct": 15.85,
     "cause_summary": "MLCC 업사이클 수혜 예상…한울반도체 4거래일 연속 급등[특징주]",
     "was_theme_leader": false,
     "source": "live"
@@ -838,16 +858,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 6310.0,
-   "change_pct": 5.52,
+   "price": 6080.0,
+   "change_pct": 1.67,
    "high_pct": 29.93,
-   "value_eok": 333,
-   "turnover_pct": 98.2,
+   "value_eok": 358,
+   "turnover_pct": 106.6,
    "peak_turnover_pct": 95.4,
    "float_ratio": 0.4113,
    "turnover_basis": "float",
-   "ma10": 4542.5,
-   "ma10_margin_pct": 38.91,
+   "ma10": 4518.5,
+   "ma10_margin_pct": 34.56,
    "spark": {
     "clusters": []
    },
@@ -878,8 +898,8 @@
     },
     {
      "time": "12:30",
-     "body_pct": 4.99,
-     "value_eok": 10
+     "body_pct": 5.32,
+     "value_eok": 20
     }
    ],
    "news": [
@@ -920,8 +940,8 @@
     "peak_turnover_pct": 95.4,
     "peak_ibs": 0.46,
     "peak_uppertail": 13.5,
-    "ma20": 3989.5,
-    "ma20_margin_pct": 58.17,
+    "ma20": 3977.5,
+    "ma20_margin_pct": 52.86,
     "cause_summary": "삼전·닉스 투자처 거론 광주·전남…지역 기업주가 '훨훨'",
     "was_theme_leader": false,
     "source": "backfill"
@@ -961,16 +981,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 2365.0,
-   "change_pct": -10.08,
+   "price": 2315.0,
+   "change_pct": -11.98,
    "high_pct": 10.27,
-   "value_eok": 279,
-   "turnover_pct": 27.3,
+   "value_eok": 285,
+   "turnover_pct": 28.0,
    "peak_turnover_pct": 177.1,
    "float_ratio": 0.6898000000000001,
    "turnover_basis": "float",
-   "ma10": 2250.4,
-   "ma10_margin_pct": 5.09,
+   "ma10": 2245.4,
+   "ma10_margin_pct": 3.1,
    "spark": {
     "clusters": []
    },
@@ -1016,8 +1036,8 @@
     "peak_turnover_pct": 177.1,
     "peak_ibs": 0.47,
     "peak_uppertail": 11.6,
-    "ma20": 1806.8,
-    "ma20_margin_pct": 30.9,
+    "ma20": 1804.2,
+    "ma20_margin_pct": 28.31,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
@@ -1057,16 +1077,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 6500.0,
-   "change_pct": 14.64,
-   "high_pct": 17.46,
-   "value_eok": 460,
-   "turnover_pct": 114.3,
+   "price": 6480.0,
+   "change_pct": 14.29,
+   "high_pct": 17.64,
+   "value_eok": 517,
+   "turnover_pct": 127.7,
    "peak_turnover_pct": 111.9,
    "float_ratio": 0.3636,
    "turnover_basis": "float",
-   "ma10": 5161.0,
-   "ma10_margin_pct": 25.94,
+   "ma10": 5159.0,
+   "ma10_margin_pct": 25.61,
    "spark": {
     "clusters": []
    },
@@ -1123,8 +1143,8 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 4920.0,
-    "ma20_margin_pct": 32.11,
+    "ma20": 4919.0,
+    "ma20_margin_pct": 31.73,
     "cause_summary": "팬스타엔터 최대주주 지분 33% 보호예수 해제",
     "was_theme_leader": false,
     "source": "live"
@@ -1167,8 +1187,8 @@
    "price": 3075.0,
    "change_pct": -12.64,
    "high_pct": 7.95,
-   "value_eok": 264,
-   "turnover_pct": 72.1,
+   "value_eok": 266,
+   "turnover_pct": 72.8,
    "peak_turnover_pct": 107.6,
    "float_ratio": 0.2802,
    "turnover_basis": "float",
@@ -1260,16 +1280,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 4315.0,
-   "change_pct": -22.53,
+   "price": 4300.0,
+   "change_pct": -22.8,
    "high_pct": 0.36,
-   "value_eok": 177,
-   "turnover_pct": 55.8,
+   "value_eok": 182,
+   "turnover_pct": 57.7,
    "peak_turnover_pct": 137.2,
    "float_ratio": 0.5756,
    "turnover_basis": "float",
-   "ma10": 4019.0,
-   "ma10_margin_pct": 7.37,
+   "ma10": 4017.5,
+   "ma10_margin_pct": 7.03,
    "spark": {
     "clusters": []
    },
@@ -1310,8 +1330,8 @@
     "peak_turnover_pct": 137.2,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 3807.5,
-    "ma20_margin_pct": 13.33,
+    "ma20": 3806.8,
+    "ma20_margin_pct": 12.96,
     "cause_summary": "모헨즈, 작년 영업손실 29억 '적자전환'",
     "was_theme_leader": false,
     "source": "live"
@@ -1351,16 +1371,16 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 4265.0,
-   "change_pct": -3.07,
+   "price": 4310.0,
+   "change_pct": -2.05,
    "high_pct": 12.05,
    "value_eok": 65,
-   "turnover_pct": 17.7,
+   "turnover_pct": 17.8,
    "peak_turnover_pct": 111.6,
    "float_ratio": 0.45299999999999996,
    "turnover_basis": "float",
-   "ma10": 3648.0,
-   "ma10_margin_pct": 16.91,
+   "ma10": 3652.5,
+   "ma10_margin_pct": 18.0,
    "spark": {
     "clusters": []
    },
@@ -1411,8 +1431,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3595.5,
-    "ma20_margin_pct": 18.62,
+    "ma20": 3597.8,
+    "ma20_margin_pct": 19.8,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
