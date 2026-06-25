@@ -4,7 +4,7 @@
   "067290": {
    "name": "JW신약",
    "sector": "제약",
-   "entry": 2315.0,
+   "entry": 2340.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,13 +22,13 @@
     "re_turnover": 0
    },
    "rank": 8,
-   "change_pct": -11.98,
+   "change_pct": -11.03,
    "high_pct": 10.27,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 285,
-   "turnover_pct": 28.0,
+   "value_eok": 293,
+   "turnover_pct": 28.9,
    "peak_turnover_pct": 177.1,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -45,8 +45,8 @@
     "peak_turnover_pct": 177.1,
     "peak_ibs": 0.47,
     "peak_uppertail": 11.6,
-    "ma20": 1804.2,
-    "ma20_margin_pct": 28.31,
+    "ma20": 1805.5,
+    "ma20_margin_pct": 29.6,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
@@ -74,7 +74,7 @@
   "034940": {
    "name": "조아제약",
    "sector": "제약",
-   "entry": 992.0,
+   "entry": 961.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -92,13 +92,13 @@
     "re_turnover": 4
    },
    "rank": 3,
-   "change_pct": 10.22,
+   "change_pct": 6.78,
    "high_pct": 26.56,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 201,
-   "turnover_pct": 78.7,
+   "value_eok": 204,
+   "turnover_pct": 80.1,
    "peak_turnover_pct": 111.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -115,8 +115,8 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 0.5,
     "peak_uppertail": 18.9,
-    "ma20": 691.8,
-    "ma20_margin_pct": 43.39,
+    "ma20": 690.2,
+    "ma20_margin_pct": 39.22,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -216,7 +216,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 43400.0,
+   "entry": 42750.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -234,13 +234,13 @@
     "re_turnover": 6
    },
    "rank": 4,
-   "change_pct": 1.17,
+   "change_pct": -0.35,
    "high_pct": 17.48,
    "pattern": "reaccum",
    "prime": false,
    "theme": "유가",
-   "value_eok": 1728,
-   "turnover_pct": 142.4,
+   "value_eok": 1743,
+   "turnover_pct": 143.8,
    "peak_turnover_pct": 115.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -257,8 +257,8 @@
     "peak_turnover_pct": 115.6,
     "peak_ibs": 0.98,
     "peak_uppertail": 0.5,
-    "ma20": 36082.5,
-    "ma20_margin_pct": 20.28,
+    "ma20": 36052.5,
+    "ma20_margin_pct": 18.58,
     "cause_summary": "주식으로 번 '돈'이 움직인다…줄줄이 '신고가' 뚫었다",
     "was_theme_leader": false,
     "source": "live"
@@ -286,7 +286,7 @@
   "900270": {
    "name": "헝셩그룹",
    "sector": "외국증권",
-   "entry": 862.0,
+   "entry": 856.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -304,13 +304,13 @@
     "re_turnover": 1
    },
    "rank": 5,
-   "change_pct": 14.93,
+   "change_pct": 14.13,
    "high_pct": 20.67,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 56,
-   "turnover_pct": 45.4,
+   "value_eok": 57,
+   "turnover_pct": 46.1,
    "peak_turnover_pct": 101.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -327,8 +327,8 @@
     "peak_turnover_pct": 101.0,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.5,
-    "ma20": 694.8,
-    "ma20_margin_pct": 24.06,
+    "ma20": 694.5,
+    "ma20_margin_pct": 23.25,
     "cause_summary": "헝셩그룹, 168억원 규모 제3자배정 유상증자 결정",
     "was_theme_leader": false,
     "source": "live"
@@ -358,7 +358,7 @@
   "043650": {
    "name": "국순당",
    "sector": "음식료·담배",
-   "entry": 4310.0,
+   "entry": 4270.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -376,13 +376,13 @@
     "re_turnover": 0
    },
    "rank": 12,
-   "change_pct": -2.05,
+   "change_pct": -2.95,
    "high_pct": 12.05,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 65,
-   "turnover_pct": 17.8,
+   "value_eok": 66,
+   "turnover_pct": 17.9,
    "peak_turnover_pct": 111.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -399,8 +399,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3597.8,
-    "ma20_margin_pct": 19.8,
+    "ma20": 3595.8,
+    "ma20_margin_pct": 18.75,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
@@ -428,7 +428,7 @@
   "198440": {
    "name": "강동씨앤엘",
    "sector": "비금속",
-   "entry": 1617.0,
+   "entry": 1589.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -446,13 +446,13 @@
     "re_turnover": 1
    },
    "rank": 2,
-   "change_pct": -25.31,
+   "change_pct": -26.61,
    "high_pct": 0.69,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 144,
-   "turnover_pct": 42.6,
+   "value_eok": 148,
+   "turnover_pct": 43.9,
    "peak_turnover_pct": 185.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -469,8 +469,8 @@
     "peak_turnover_pct": 185.9,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.9,
-    "ma20": 1366.1,
-    "ma20_margin_pct": 18.37,
+    "ma20": 1363.8,
+    "ma20_margin_pct": 16.51,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -498,7 +498,7 @@
   "413630": {
    "name": "씨피시스템",
    "sector": "화학",
-   "entry": 3075.0,
+   "entry": 3070.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -516,13 +516,13 @@
     "re_turnover": 4
    },
    "rank": 10,
-   "change_pct": -12.64,
+   "change_pct": -12.78,
    "high_pct": 7.95,
    "pattern": "reaccum",
    "prime": false,
    "theme": "유가",
-   "value_eok": 266,
-   "turnover_pct": 72.8,
+   "value_eok": 269,
+   "turnover_pct": 73.8,
    "peak_turnover_pct": 107.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -539,8 +539,8 @@
     "peak_turnover_pct": 107.6,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 2773.2,
-    "ma20_margin_pct": 10.88,
+    "ma20": 2773.0,
+    "ma20_margin_pct": 10.71,
     "cause_summary": "씨피시스템, 1분기 매출 52억…순이익 전년比 83.2%↑",
     "was_theme_leader": false,
     "source": "live"
@@ -640,7 +640,7 @@
   "014950": {
    "name": "삼익제약",
    "sector": "제약",
-   "entry": 9920.0,
+   "entry": 9610.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -658,13 +658,13 @@
     "re_turnover": 6
    },
    "rank": 1,
-   "change_pct": 15.35,
+   "change_pct": 11.74,
    "high_pct": 17.79,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 610,
-   "turnover_pct": 159.4,
+   "value_eok": 636,
+   "turnover_pct": 165.9,
    "peak_turnover_pct": 243.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -681,8 +681,8 @@
     "peak_turnover_pct": 243.3,
     "peak_ibs": 0.68,
     "peak_uppertail": 8.5,
-    "ma20": 6879.5,
-    "ma20_margin_pct": 44.2,
+    "ma20": 6864.0,
+    "ma20_margin_pct": 40.01,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
@@ -710,7 +710,7 @@
   "006920": {
    "name": "모헨즈",
    "sector": "비금속",
-   "entry": 4300.0,
+   "entry": 4230.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -728,13 +728,13 @@
     "re_turnover": 2
    },
    "rank": 11,
-   "change_pct": -22.8,
+   "change_pct": -24.06,
    "high_pct": 0.36,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 182,
-   "turnover_pct": 57.7,
+   "value_eok": 186,
+   "turnover_pct": 58.9,
    "peak_turnover_pct": 137.2,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -751,8 +751,8 @@
     "peak_turnover_pct": 137.2,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 3806.8,
-    "ma20_margin_pct": 12.96,
+    "ma20": 3803.2,
+    "ma20_margin_pct": 11.22,
     "cause_summary": "모헨즈, 작년 영업손실 29억 '적자전환'",
     "was_theme_leader": false,
     "source": "live"
@@ -780,7 +780,7 @@
   "320000": {
    "name": "한울반도체",
    "sector": "기계·장비",
-   "entry": 15810.0,
+   "entry": 16070.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -798,13 +798,13 @@
     "re_turnover": 2
    },
    "rank": 6,
-   "change_pct": -22.69,
+   "change_pct": -21.42,
    "high_pct": 9.54,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 395,
-   "turnover_pct": 49.3,
+   "value_eok": 399,
+   "turnover_pct": 50.0,
    "peak_turnover_pct": 292.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -821,8 +821,8 @@
     "peak_turnover_pct": 292.9,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.2,
-    "ma20": 13647.0,
-    "ma20_margin_pct": 15.85,
+    "ma20": 13660.0,
+    "ma20_margin_pct": 17.64,
     "cause_summary": "MLCC 업사이클 수혜 예상…한울반도체 4거래일 연속 급등[특징주]",
     "was_theme_leader": false,
     "source": "live"
@@ -852,7 +852,7 @@
   "475430": {
    "name": "키스트론",
    "sector": "전기·전자",
-   "entry": 6480.0,
+   "entry": 6320.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -870,13 +870,13 @@
     "re_turnover": 6
    },
    "rank": 9,
-   "change_pct": 14.29,
+   "change_pct": 11.46,
    "high_pct": 17.64,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 517,
-   "turnover_pct": 127.7,
+   "value_eok": 551,
+   "turnover_pct": 135.9,
    "peak_turnover_pct": 111.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -893,8 +893,8 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 4919.0,
-    "ma20_margin_pct": 31.73,
+    "ma20": 4911.0,
+    "ma20_margin_pct": 28.69,
     "cause_summary": "팬스타엔터 최대주주 지분 33% 보호예수 해제",
     "was_theme_leader": false,
     "source": "live"
@@ -924,7 +924,7 @@
   "091590": {
    "name": "남화토건",
    "sector": "건설",
-   "entry": 6080.0,
+   "entry": 5520.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -942,13 +942,13 @@
     "re_turnover": 6
    },
    "rank": 7,
-   "change_pct": 1.67,
+   "change_pct": -7.69,
    "high_pct": 29.93,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 358,
-   "turnover_pct": 106.6,
+   "value_eok": 377,
+   "turnover_pct": 113.2,
    "peak_turnover_pct": 95.4,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -965,8 +965,8 @@
     "peak_turnover_pct": 95.4,
     "peak_ibs": 0.46,
     "peak_uppertail": 13.5,
-    "ma20": 3977.5,
-    "ma20_margin_pct": 52.86,
+    "ma20": 3949.5,
+    "ma20_margin_pct": 39.76,
     "cause_summary": "삼전·닉스 투자처 거론 광주·전남…지역 기업주가 '훨훨'",
     "was_theme_leader": false,
     "source": "backfill"
@@ -994,5 +994,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-25 12:42:37 KST"
+ "as_of": "2026-06-25 12:52:37 KST"
 }
