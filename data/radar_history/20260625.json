@@ -1,5 +1,148 @@
 {
  "date": "20260625",
- "suspects": {},
- "as_of": "2026-06-25 09:22:12 KST"
+ "suspects": {
+  "067290": {
+   "name": "JW신약",
+   "sector": "제약",
+   "entry": 2765.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 75,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 3,
+    "peak_turnover": 8,
+    "re_turnover": 0
+   },
+   "rank": 1,
+   "change_pct": 5.13,
+   "high_pct": 10.27,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "전쟁",
+   "value_eok": 105,
+   "turnover_pct": 10.1,
+   "peak_turnover_pct": 177.1,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260623",
+    "peak_value_eok": 2177,
+    "peak_high_pct": 26.92,
+    "peak_turnover_pct": 177.1,
+    "peak_ibs": 0.47,
+    "peak_uppertail": 11.6,
+    "ma20": 1827.1,
+    "ma20_margin_pct": 51.33,
+    "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 4.23,
+    "time": "09:25",
+    "value_eok": 17,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-25 09:33:50 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "034940": {
+   "name": "조아제약",
+   "sector": "제약",
+   "entry": 927.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 70,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 4,
+    "peak_turnover": 2,
+    "re_turnover": 0
+   },
+   "rank": 2,
+   "change_pct": 3.0,
+   "high_pct": 6.44,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 18,
+   "turnover_pct": 8.2,
+   "peak_turnover_pct": 111.9,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260624",
+    "peak_value_eok": 270,
+    "peak_high_pct": 25.0,
+    "peak_turnover_pct": 111.9,
+    "peak_ibs": 0.5,
+    "peak_uppertail": 18.9,
+    "ma20": 688.5,
+    "ma20_margin_pct": 34.63,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 4.88,
+    "time": "09:15",
+    "value_eok": 3,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-03_미국 고용보고서 (7월"
+   ],
+   "first_seen": "2026-06-25 09:33:50 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  }
+ },
+ "as_of": "2026-06-25 09:33:50 KST"
 }
