@@ -102,9 +102,8 @@ def _format(s, bar):
     r = s.get("reaccum") or {}
     pt = r.get("peak_turnover_pct")
     cnt = (s.get("reignition") or {}).get("count")
-    # 마감 후엔 change_pct가 NXT 시간외 야간가 기준(change_basis=="NXT") — 정규장 스파크 봉 옆이라 라벨로 구분.
-    nxt = " (NXT 시간외)" if s.get("change_basis") == "NXT" else ""
-    line3 = f"등락 {s.get('change_pct')}%{nxt}"
+    # change_pct는 정규장(KRX) 기준 — notify_reignitions가 change_basis=="NXT" 종목을 스킵하므로 여기 도달하는 건 KRX뿐.
+    line3 = f"등락 {s.get('change_pct')}%"
     if cnt is not None:
         line3 += f" · 5분 스파크 {cnt}회"
     if pt is not None:
@@ -133,6 +132,12 @@ def notify_reignitions(suspects, state_path=STATE_PATH, now=None, span_min=5):
     sent = set(state.get(today, []))  # 오늘 보낸 "코드:HH:MM" 집합
     n_sent = 0
     for s in suspects:
+        # 마감 후 NXT 시간외가로 밴드에 '재진입'한 종목(change_basis=="NXT")은 스킵 — reignition_bars는
+        # 전부 정규장(14:30~15:30) 옛 봉이라 '지금 일어나는 신선한 재분출'이 아니다. 봉 나이 상한(30분)만으론
+        # 첫 post-close 회차(15:31~)에서 15:00~15:30 봉이 아직 ≤30분이라 뒷북 발송되는데, 그 근원을 차단.
+        # (정규장 중엔 change_basis가 항상 "KRX"라 정상 알림엔 영향 없음.)
+        if s.get("change_basis") == "NXT":
+            continue
         code = s.get("code")
         for bar in s.get("reignition_bars") or []:
             if not _bar_complete(bar.get("time", ""), now, span_min):
