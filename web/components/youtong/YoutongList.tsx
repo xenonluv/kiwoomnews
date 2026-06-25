@@ -131,7 +131,14 @@ export function YoutongList({
     };
   }, []);
 
-  const status = PHASE_MSG[phase];
+  // 개장(09:00)~감지 시작(startHhmm, 09:30) 사이엔 phase가 intraday여도 youtong 감지는 아직 시작 전 →
+  // 펄스 '실시간 감시 중' 대신 '감시 시작 전' 배너로(빈 목록 오해 방지). 클라 KST 기준.
+  const k = new Date(Date.now() + 9 * 3600_000);
+  const nowHhmm = `${String(k.getUTCHours()).padStart(2, "0")}${String(k.getUTCMinutes()).padStart(2, "0")}`;
+  const beforeStart = (phase === "intraday" || phase === "locked") && nowHhmm < th.startHhmm;
+  const status = beforeStart
+    ? { dot: "bg-muted-foreground/50", text: `개장 후 · ${hhmm(th.startHhmm)}부터 감시 시작` }
+    : PHASE_MSG[phase];
 
   return (
     <>

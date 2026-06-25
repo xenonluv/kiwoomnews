@@ -120,7 +120,8 @@ export interface Explosion {
   backfill?: boolean;
 }
 
-/** 곧 폭발할 후보 — 당일 현재 등락률 ≥10% AND 유통주식 회전율 70~100% (폭발 종목 제외, /youtong 게시) */
+/** 곧 폭발할 후보 — 09:30↑ 현재 등락률 ≥7% AND 유통회전율 ≥50%(상한없음) AND 09:30↑ 5분봉 양봉 스파크≥1
+ *  (폭발 종목 제외, 종일 지속, /youtong 게시) */
 export interface Youtong {
   code: string;
   name: string;

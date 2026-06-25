@@ -536,7 +536,7 @@ def update_live_explosions(reg, p):
         value_won = float(now.get("value") or 0)   # 당일 거래대금(UN, 표시용)
         # 게이트 ②(회전율)용 유동비율 — 폭발·youtong 어느 한쪽이라도 후보면 1회 조회(공유). 유통주식수 =
         # 발행주식수 × 유동비율, 없으면 회전율 확정 불가(fail-safe). 조회 대상이 high≥22 → 'high≥22 OR
-        # change≥10'으로 넓어지나 float_ratio 7일 캐시로 완충(price_now는 이미 전 행 조회 — 추가 KIS 콜 없음).
+        # change≥youtong_change_pct(7)'으로 넓어지나 float_ratio 7일 캐시로 완충(price_now는 이미 전 행 조회 — 추가 KIS 콜 없음).
         volume = float(now.get("volume") or 0)
         fr, flisted = float_ratio.get_float_and_listed(row["code"])
         vt = float_ratio.vol_turnover(volume, fr, flisted)  # 공유 산식(거래량/유통주식수 %), 결측 시 None
@@ -738,6 +738,12 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
         if code in explosion_codes:   # youtong 후보였다가 폭발 승격 → /forecast로, youtong서 제거(역할 분리)
             codes.pop(code, None)
             continue
+        # 적재값 회전율·고가·거래대금은 항상 숫자(후보 게이트가 보장) — 손상 레코드(수동편집 등)면 스킵·제거
+        # (웹 카드가 toLocaleString을 호출해 None이면 크래시 → 방어).
+        rvt, rhigh, rval = rec.get("vol_turnover_pct"), rec.get("high_pct"), rec.get("value_eok")
+        if not all(isinstance(v, (int, float)) for v in (rvt, rhigh, rval)):
+            codes.pop(code, None)
+            continue
         c = cand_by_code.get(code)
         if c:   # 이번 회차 랭킹에 다시 잡힘 — fresh 값
             price, change_pct = c.get("price"), c.get("change_pct")
@@ -747,13 +753,12 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
             try:
                 nowq = kis.price_now(code)
                 pr = nowq.get("price")
-                if pr and pr > 0:
+                if pr and pr > 0:   # 유효 현재가일 때만 — KIS _f()가 결측을 0.0으로 강제하므로 0/음수는 미상 처리
                     price = pr
-                    cp = nowq.get("change_pct")
-                    change_pct = round(float(cp), 2) if cp is not None else None
+                    change_pct = round(float(nowq.get("change_pct") or 0), 2)
             except Exception as e:
                 log(f"  [warn] youtong 지속 현재가 조회 실패 {rec.get('name') or code}: {e}")
-            vt, high_pct, value_eok = rec.get("vol_turnover_pct"), rec.get("high_pct"), rec.get("value_eok")
+            vt, high_pct, value_eok = rvt, rhigh, rval
         out.append({
             "code": code, "name": rec.get("name") or code, "sector": rec.get("sector", ""),
             "change_pct": change_pct, "high_pct": high_pct, "vol_turnover_pct": vt,
