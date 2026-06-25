@@ -4,7 +4,7 @@
   "067290": {
    "name": "JW신약",
    "sector": "제약",
-   "entry": 2730.0,
+   "entry": 2780.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -21,14 +21,14 @@
     "peak_turnover": 8,
     "re_turnover": 0
    },
-   "rank": 2,
-   "change_pct": 3.8,
+   "rank": 3,
+   "change_pct": 5.7,
    "high_pct": 10.27,
    "pattern": "reaccum",
    "prime": false,
    "theme": "전쟁",
-   "value_eok": 158,
-   "turnover_pct": 15.0,
+   "value_eok": 165,
+   "turnover_pct": 15.7,
    "peak_turnover_pct": 177.1,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -45,8 +45,8 @@
     "peak_turnover_pct": 177.1,
     "peak_ibs": 0.47,
     "peak_uppertail": 11.6,
-    "ma20": 1825.0,
-    "ma20_margin_pct": 49.59,
+    "ma20": 1827.8,
+    "ma20_margin_pct": 52.1,
     "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
     "was_theme_leader": false,
     "source": "live"
@@ -74,7 +74,7 @@
   "034940": {
    "name": "조아제약",
    "sector": "제약",
-   "entry": 989.0,
+   "entry": 1030.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -83,22 +83,22 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 75,
+   "suspicion_score": 76,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 6,
-    "re_body": 5,
+    "re_body": 6,
     "peak_turnover": 2,
     "re_turnover": 0
    },
-   "rank": 3,
-   "change_pct": 9.89,
-   "high_pct": 9.89,
+   "rank": 2,
+   "change_pct": 14.44,
+   "high_pct": 17.78,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 33,
-   "turnover_pct": 14.3,
+   "value_eok": 58,
+   "turnover_pct": 24.2,
    "peak_turnover_pct": 111.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -115,16 +115,16 @@
     "peak_turnover_pct": 111.9,
     "peak_ibs": 0.5,
     "peak_uppertail": 18.9,
-    "ma20": 691.6,
-    "ma20_margin_pct": 42.99,
+    "ma20": 693.6,
+    "ma20_margin_pct": 48.49,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
    },
    "reignition": {
-    "body_pct": 5.32,
+    "body_pct": 10.76,
     "time": "10:00",
-    "value_eok": 4,
+    "value_eok": 13,
     "count": 5
    },
    "forecast": {
@@ -216,7 +216,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 47600.0,
+   "entry": 46100.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -234,13 +234,13 @@
     "re_turnover": 6
    },
    "rank": 1,
-   "change_pct": 10.96,
+   "change_pct": 7.46,
    "high_pct": 17.48,
    "pattern": "reaccum",
    "prime": false,
    "theme": "유가",
-   "value_eok": 1348,
-   "turnover_pct": 110.3,
+   "value_eok": 1391,
+   "turnover_pct": 113.7,
    "peak_turnover_pct": 115.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -257,8 +257,8 @@
     "peak_turnover_pct": 115.6,
     "peak_ibs": 0.98,
     "peak_uppertail": 0.5,
-    "ma20": 36295.0,
-    "ma20_margin_pct": 31.15,
+    "ma20": 36220.0,
+    "ma20_margin_pct": 27.28,
     "cause_summary": "주식으로 번 '돈'이 움직인다…줄줄이 '신고가' 뚫었다",
     "was_theme_leader": false,
     "source": "live"
@@ -286,7 +286,7 @@
   "900270": {
    "name": "헝셩그룹",
    "sector": "외국증권",
-   "entry": 833.0,
+   "entry": 841.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -304,13 +304,13 @@
     "re_turnover": 0
    },
    "rank": 4,
-   "change_pct": 11.07,
+   "change_pct": 12.13,
    "high_pct": 18.4,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 22,
-   "turnover_pct": 18.7,
+   "value_eok": 25,
+   "turnover_pct": 20.7,
    "peak_turnover_pct": 101.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -327,8 +327,8 @@
     "peak_turnover_pct": 101.0,
     "peak_ibs": 0.32,
     "peak_uppertail": 25.5,
-    "ma20": 693.2,
-    "ma20_margin_pct": 20.16,
+    "ma20": 693.8,
+    "ma20_margin_pct": 21.23,
     "cause_summary": "헝셩그룹, 168억원 규모 제3자배정 유상증자 결정",
     "was_theme_leader": false,
     "source": "live"
@@ -358,7 +358,7 @@
   "043650": {
    "name": "국순당",
    "sector": "음식료·담배",
-   "entry": 4415.0,
+   "entry": 4335.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -376,13 +376,13 @@
     "re_turnover": 0
    },
    "rank": 5,
-   "change_pct": 0.34,
+   "change_pct": -1.48,
    "high_pct": 12.05,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 47,
-   "turnover_pct": 12.9,
+   "value_eok": 49,
+   "turnover_pct": 13.3,
    "peak_turnover_pct": 111.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -399,8 +399,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3603.0,
-    "ma20_margin_pct": 22.54,
+    "ma20": 3599.0,
+    "ma20_margin_pct": 20.45,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
@@ -426,5 +426,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-25 10:02:41 KST"
+ "as_of": "2026-06-25 10:12:34 KST"
 }
