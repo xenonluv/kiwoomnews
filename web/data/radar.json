@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-25 09:12:30 KST",
+ "generated_at": "2026-06-25 09:33:50 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -20,7 +20,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 47,
+ "universe_count": 48,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
@@ -37,6 +37,210 @@
   }
  ],
  "explosions": [],
- "youtong": [],
- "suspects": []
+ "youtong": [
+  {
+   "code": "079650",
+   "name": "서산",
+   "sector": "비금속",
+   "change_pct": 17.73,
+   "high_pct": 26.85,
+   "vol_turnover_pct": 75.0,
+   "value_eok": 453,
+   "price": 9560.0
+  }
+ ],
+ "suspects": [
+  {
+   "code": "067290",
+   "name": "JW신약",
+   "sector": "제약",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 75,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 3,
+    "peak_turnover": 8,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 2765.0,
+   "change_pct": 5.13,
+   "high_pct": 10.27,
+   "value_eok": 105,
+   "turnover_pct": 10.1,
+   "peak_turnover_pct": 177.1,
+   "float_ratio": 0.6898000000000001,
+   "turnover_basis": "float",
+   "ma10": 2291.1,
+   "ma10_margin_pct": 20.68,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.23,
+    "time": "09:25",
+    "value_eok": 17,
+    "count": 3
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.15,
+     "value_eok": 20
+    },
+    {
+     "time": "09:10",
+     "body_pct": 4.21,
+     "value_eok": 16
+    },
+    {
+     "time": "09:25",
+     "body_pct": 4.23,
+     "value_eok": 17
+    }
+   ],
+   "news": [],
+   "matched_events": [],
+   "theme": "전쟁",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260623",
+    "peak_value_eok": 2177,
+    "peak_high_pct": 26.92,
+    "peak_turnover_pct": 177.1,
+    "peak_ibs": 0.47,
+    "peak_uppertail": 11.6,
+    "ma20": 1827.1,
+    "ma20_margin_pct": 51.33,
+    "cause_summary": "시지메드텍, 최대주주 PE 인수에 ‘上’…탈모주 삼익제약·JW신약도↑...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "034940",
+   "name": "조아제약",
+   "sector": "제약",
+   "pattern": "reaccum",
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 70,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 4,
+    "peak_turnover": 2,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 927.0,
+   "change_pct": 3.0,
+   "high_pct": 6.44,
+   "value_eok": 18,
+   "turnover_pct": 8.2,
+   "peak_turnover_pct": 111.9,
+   "float_ratio": 0.8,
+   "turnover_basis": "float",
+   "ma10": 702.6,
+   "ma10_margin_pct": 31.94,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.88,
+    "time": "09:15",
+    "value_eok": 3,
+    "count": 3
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.52,
+     "value_eok": 3
+    },
+    {
+     "time": "09:15",
+     "body_pct": 4.88,
+     "value_eok": 3
+    },
+    {
+     "time": "09:30",
+     "body_pct": 4.86,
+     "value_eok": 1
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 8,
+     "categories": [
+      "환율"
+     ],
+     "score": 0.7
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260624",
+    "peak_value_eok": 270,
+    "peak_high_pct": 25.0,
+    "peak_turnover_pct": 111.9,
+    "peak_ibs": 0.5,
+    "peak_uppertail": 18.9,
+    "ma20": 688.5,
+    "ma20_margin_pct": 34.63,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  }
+ ]
 }
