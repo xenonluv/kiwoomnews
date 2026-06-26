@@ -70,16 +70,7 @@
    "first_seen": "2026-06-26 15:02:35 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 41,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-06-26 17:20 KST",
-    "verdict_score": 70,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "198440": {
    "name": "강동씨앤엘",
@@ -150,17 +141,8 @@
    "first_seen": "2026-06-26 15:22:20 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 34,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-06-26 17:21 KST",
-    "verdict_score": 66,
-    "verdict_level": "관망·과열"
-   }
+   "final": true
   }
  },
- "as_of": "2026-06-26 17:12:22 KST"
+ "as_of": "2026-06-26 17:22:21 KST"
 }
