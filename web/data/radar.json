@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-26 16:12:22 KST",
+ "generated_at": "2026-06-26 16:22:22 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,8 +46,8 @@
    "name": "광주신세계",
    "sector": "유통",
    "high_pct": 29.98,
-   "vol_turnover_pct": 276.2,
-   "value_eok": 3534,
+   "vol_turnover_pct": 279.7,
+   "value_eok": 3582,
    "price": 52900.0,
    "change_pct": 29.98,
    "backfill": false
@@ -57,7 +57,7 @@
    "name": "키스트론",
    "sector": "전기·전자",
    "high_pct": 24.52,
-   "vol_turnover_pct": 358.5,
+   "vol_turnover_pct": 358.6,
    "value_eok": 1657,
    "price": 6610.0,
    "change_pct": 5.25,
@@ -132,6 +132,17 @@
    "first_seen": "12:11"
   },
   {
+   "code": "003200",
+   "name": "일신방직",
+   "sector": "섬유·의류",
+   "change_pct": 13.16,
+   "high_pct": 19.68,
+   "vol_turnover_pct": 59.0,
+   "value_eok": 629,
+   "price": 10750.0,
+   "first_seen": "15:01"
+  },
+  {
    "code": "241790",
    "name": "티이엠씨씨엔에스",
    "sector": "기계·장비",
@@ -141,17 +152,6 @@
    "value_eok": 218,
    "price": 6500.0,
    "first_seen": "14:51"
-  },
-  {
-   "code": "003200",
-   "name": "일신방직",
-   "sector": "섬유·의류",
-   "change_pct": 13.16,
-   "high_pct": 19.68,
-   "vol_turnover_pct": 57.9,
-   "value_eok": 618,
-   "price": 10750.0,
-   "first_seen": "15:01"
   },
   {
    "code": "389260",
@@ -225,7 +225,7 @@
    "change_basis": "KRX",
    "high_pct": 17.72,
    "value_eok": 170,
-   "turnover_pct": 55.8,
+   "turnover_pct": 55.9,
    "peak_turnover_pct": 185.9,
    "float_ratio": 0.306,
    "turnover_basis": "float",
@@ -316,7 +316,7 @@
    "change_pct": 2.09,
    "change_basis": "KRX",
    "high_pct": 17.02,
-   "value_eok": 64,
+   "value_eok": 65,
    "turnover_pct": 19.5,
    "peak_turnover_pct": 111.6,
    "float_ratio": 0.45299999999999996,
