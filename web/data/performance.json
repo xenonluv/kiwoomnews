@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-25 17:27 KST",
+ "as_of": "2026-06-26 17:21 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 13,
+  "tracking_days": 14,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -110,6 +110,14 @@
   },
   {
    "date": "20260625",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260626",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -369,16 +377,16 @@
   "cells": [
    {
     "band": "≤−5%",
-    "n": 3,
-    "hit_rate": 33.3,
-    "avg_return": -2.3,
-    "valid": false
+    "n": 14,
+    "hit_rate": 57.1,
+    "avg_return": 2.18,
+    "valid": true
    },
    {
     "band": "−5~0%",
-    "n": 25,
-    "hit_rate": 56.0,
-    "avg_return": 0.68,
+    "n": 26,
+    "hit_rate": 53.8,
+    "avg_return": 0.65,
     "valid": true
    },
    {
@@ -390,16 +398,16 @@
    },
    {
     "band": "+5~+15%",
-    "n": 19,
-    "hit_rate": 21.1,
-    "avg_return": -4.89,
+    "n": 20,
+    "hit_rate": 25.0,
+    "avg_return": -4.38,
     "valid": true
    },
    {
     "band": "+15%+",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -2.11,
     "valid": false
    }
   ]
@@ -410,30 +418,30 @@
   "cells": [
    {
     "band": "90~120%",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 8,
+    "hit_rate": 62.5,
+    "avg_return": 6.16,
     "valid": false
    },
    {
     "band": "120~160%",
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -16.82,
+    "n": 2,
+    "hit_rate": 50.0,
+    "avg_return": -8.29,
     "valid": false
    },
    {
     "band": "160~220%",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 3,
+    "hit_rate": 66.7,
+    "avg_return": 2.79,
     "valid": false
    },
    {
     "band": "220~300%",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 2,
+    "hit_rate": 0.0,
+    "avg_return": -8.64,
     "valid": false
    },
    {
@@ -450,25 +458,25 @@
   "unknown_n": 77,
   "cells": [
    {
-    "band": "3회",
+    "band": "2회",
     "n": 0,
     "hit_rate": null,
     "avg_return": null,
     "valid": false
    },
    {
-    "band": "4~5회",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "band": "3~4회",
+    "n": 4,
+    "hit_rate": 50.0,
+    "avg_return": -2.58,
     "valid": false
    },
    {
-    "band": "6회+",
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -16.82,
-    "valid": false
+    "band": "5회+",
+    "n": 11,
+    "hit_rate": 54.5,
+    "avg_return": 3.1,
+    "valid": true
    }
   ]
  },
@@ -478,23 +486,23 @@
   "cells": [
    {
     "band": "약마감 <0.4",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 3,
+    "hit_rate": 0.0,
+    "avg_return": -8.8,
     "valid": false
    },
    {
     "band": "중간 0.4~0.7",
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -16.82,
+    "n": 7,
+    "hit_rate": 71.4,
+    "avg_return": 4.32,
     "valid": false
    },
    {
     "band": "강마감 ≥0.7",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 5,
+    "hit_rate": 60.0,
+    "avg_return": 3.98,
     "valid": false
    }
   ]
@@ -518,11 +526,11 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 78,
-   "hit_rate": 41.0,
-   "avg_return": -1.67,
-   "high3_rate": 57.7,
-   "tracking_days": 13,
+   "n": 92,
+   "hit_rate": 43.5,
+   "avg_return": -0.97,
+   "high3_rate": 63.0,
+   "tracking_days": 14,
    "series": [
     {
      "date": "20260610",
@@ -622,14 +630,120 @@
     },
     {
      "date": "20260625",
+     "n": 14,
+     "hits": 8,
+     "hit_rate": 57,
+     "cum_n": 92,
+     "cum_hit_rate": 43.5
+    },
+    {
+     "date": "20260626",
      "n": 0,
      "hits": 0,
      "hit_rate": null,
-     "cum_n": 78,
-     "cum_hit_rate": 41.0
+     "cum_n": 92,
+     "cum_hit_rate": 43.5
     }
    ],
    "recent": [
+    {
+     "date": "20260625",
+     "name": "헝셩그룹",
+     "score": 82,
+     "hit": false,
+     "return_pct": -2.71
+    },
+    {
+     "date": "20260625",
+     "name": "키스트론",
+     "score": 86,
+     "hit": true,
+     "return_pct": 5.25
+    },
+    {
+     "date": "20260625",
+     "name": "씨피시스템",
+     "score": 75,
+     "hit": false,
+     "return_pct": -13.46
+    },
+    {
+     "date": "20260625",
+     "name": "한울반도체",
+     "score": 90,
+     "hit": false,
+     "return_pct": -17.28
+    },
+    {
+     "date": "20260625",
+     "name": "강동씨앤엘",
+     "score": 89,
+     "hit": true,
+     "return_pct": 5.47
+    },
+    {
+     "date": "20260625",
+     "name": "남화토건",
+     "score": 84,
+     "hit": true,
+     "return_pct": 29.96
+    },
+    {
+     "date": "20260625",
+     "name": "서산",
+     "score": 84,
+     "hit": false,
+     "return_pct": -2.11
+    },
+    {
+     "date": "20260625",
+     "name": "JW신약",
+     "score": 77,
+     "hit": true,
+     "return_pct": 5.01
+    },
+    {
+     "date": "20260625",
+     "name": "국순당",
+     "score": 72,
+     "hit": true,
+     "return_pct": 2.09
+    },
+    {
+     "date": "20260625",
+     "name": "광주신세계",
+     "score": 84,
+     "hit": true,
+     "return_pct": 29.98
+    },
+    {
+     "date": "20260625",
+     "name": "조아제약",
+     "score": 86,
+     "hit": true,
+     "return_pct": 4.55
+    },
+    {
+     "date": "20260625",
+     "name": "삼익제약",
+     "score": 94,
+     "hit": false,
+     "return_pct": 0.0
+    },
+    {
+     "date": "20260625",
+     "name": "모헨즈",
+     "score": 76,
+     "hit": true,
+     "return_pct": 0.24
+    },
+    {
+     "date": "20260625",
+     "name": "비비안",
+     "score": 72,
+     "hit": false,
+     "return_pct": -6.41
+    },
     {
      "date": "20260624",
      "name": "엑스게이트",
@@ -671,104 +785,6 @@
      "score": 93,
      "hit": false,
      "return_pct": -12.99
-    },
-    {
-     "date": "20260622",
-     "name": "예스티",
-     "score": 76,
-     "hit": false,
-     "return_pct": 0.0
-    },
-    {
-     "date": "20260622",
-     "name": "테크윙",
-     "score": 0,
-     "hit": false,
-     "return_pct": -14.08
-    },
-    {
-     "date": "20260622",
-     "name": "제주반도체",
-     "score": 0,
-     "hit": false,
-     "return_pct": -17.31
-    },
-    {
-     "date": "20260622",
-     "name": "삼성물산",
-     "score": 87,
-     "hit": false,
-     "return_pct": -12.5
-    },
-    {
-     "date": "20260622",
-     "name": "삼성E&A",
-     "score": 80,
-     "hit": false,
-     "return_pct": -10.12
-    },
-    {
-     "date": "20260619",
-     "name": "SK이터닉스",
-     "score": 0,
-     "hit": false,
-     "return_pct": -7.18
-    },
-    {
-     "date": "20260619",
-     "name": "HPSP",
-     "score": 0,
-     "hit": true,
-     "return_pct": 6.01
-    },
-    {
-     "date": "20260619",
-     "name": "SK스퀘어",
-     "score": 0,
-     "hit": true,
-     "return_pct": 10.67
-    },
-    {
-     "date": "20260619",
-     "name": "디앤디파마텍",
-     "score": 0,
-     "hit": false,
-     "return_pct": -3.33
-    },
-    {
-     "date": "20260619",
-     "name": "원익IPS",
-     "score": 0,
-     "hit": true,
-     "return_pct": 10.58
-    },
-    {
-     "date": "20260619",
-     "name": "HL만도",
-     "score": 0,
-     "hit": false,
-     "return_pct": -12.86
-    },
-    {
-     "date": "20260619",
-     "name": "예스티",
-     "score": 0,
-     "hit": true,
-     "return_pct": 10.63
-    },
-    {
-     "date": "20260619",
-     "name": "테크윙",
-     "score": 0,
-     "hit": true,
-     "return_pct": 1.5
-    },
-    {
-     "date": "20260619",
-     "name": "한화엔진",
-     "score": 0,
-     "hit": false,
-     "return_pct": -8.03
     }
    ]
   },
@@ -783,17 +799,17 @@
     "valid": false
    },
    "nonleader": {
-    "n": 75,
-    "hit_rate": 41.3,
-    "avg_return": -1.6,
-    "high3_rate": 57.3,
+    "n": 89,
+    "hit_rate": 43.8,
+    "avg_return": -0.89,
+    "high3_rate": 62.9,
     "valid": true
    },
    "all": {
-    "n": 78,
-    "hit_rate": 41.0,
-    "avg_return": -1.67,
-    "high3_rate": 57.7,
+    "n": 92,
+    "hit_rate": 43.5,
+    "avg_return": -0.97,
+    "high3_rate": 63.0,
     "valid": true
    },
    "lift": null

@@ -67,8 +67,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 09:33:50 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 2410.0,
+    "next_high": 2550.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 5.01
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 34,
@@ -148,8 +155,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 09:33:50 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 735.0,
+    "next_high": 868.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.55
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 36,
@@ -227,8 +241,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 09:42:49 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 5570.0,
+    "next_high": 7160.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -2.11
+   },
    "final": false
   },
   "037710": {
@@ -297,8 +318,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 09:42:49 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 52900.0,
+    "next_high": 52900.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.98
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 39,
@@ -378,8 +406,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 09:42:49 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 682.0,
+    "next_high": 844.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -2.71
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 38,
@@ -457,8 +492,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 09:42:49 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 3900.0,
+    "next_high": 4470.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.09
+   },
    "final": false
   },
   "198440": {
@@ -527,8 +569,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 10:22:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 1619.0,
+    "next_high": 1807.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 5.47
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 32,
@@ -606,8 +655,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 10:22:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 2700.0,
+    "next_high": 3540.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -13.46
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 36,
@@ -687,8 +743,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 10:22:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 7300.0,
+    "next_high": 7760.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -6.41
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 36,
@@ -766,8 +829,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 10:32:39 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 8360.0,
+    "next_high": 9690.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": 0.0
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 38,
@@ -845,8 +915,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-25 10:32:39 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 4100.0,
+    "next_high": 4790.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 0.24
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 32,
@@ -926,8 +1003,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 11:22:22 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 13930.0,
+    "next_high": 17740.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -17.28
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 36,
@@ -1007,8 +1091,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 12:02:32 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 6610.0,
+    "next_high": 7820.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 5.25
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 47,
@@ -1088,8 +1179,15 @@
     "2026-07-03_미국 고용보고서 (7월"
    ],
    "first_seen": "2026-06-25 12:22:33 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 6680.0,
+    "next_high": 6680.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.96
+   },
    "final": true,
    "ai_pred": {
     "prob_up": 41,
