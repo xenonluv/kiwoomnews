@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-26 14:22:22 KST",
+ "generated_at": "2026-06-26 14:32:32 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,8 +46,8 @@
    "name": "광주신세계",
    "sector": "유통",
    "high_pct": 29.98,
-   "vol_turnover_pct": 235.2,
-   "value_eok": 2989,
+   "vol_turnover_pct": 240.5,
+   "value_eok": 3056,
    "price": 47950.0,
    "change_pct": 17.81,
    "backfill": false
@@ -57,10 +57,10 @@
    "name": "키스트론",
    "sector": "전기·전자",
    "high_pct": 24.52,
-   "vol_turnover_pct": 335.0,
-   "value_eok": 1556,
-   "price": 6830.0,
-   "change_pct": 8.76,
+   "vol_turnover_pct": 341.8,
+   "value_eok": 1585,
+   "price": 6690.0,
+   "change_pct": 6.53,
    "backfill": false
   },
   {
@@ -70,8 +70,8 @@
    "high_pct": 25.83,
    "vol_turnover_pct": 613.5,
    "value_eok": 2342,
-   "price": 5470.0,
-   "change_pct": -3.87,
+   "price": 5460.0,
+   "change_pct": -4.04,
    "backfill": true
   }
  ],
@@ -80,33 +80,33 @@
    "code": "058730",
    "name": "다스코",
    "sector": "금속",
-   "change_pct": -21.56,
+   "change_pct": -20.22,
    "high_pct": 14.49,
    "vol_turnover_pct": 123.5,
    "value_eok": 605,
-   "price": 3220.0,
+   "price": 3275.0,
    "first_seen": "09:41"
   },
   {
    "code": "000890",
    "name": "보해양조",
    "sector": "음식료·담배",
-   "change_pct": -15.91,
+   "change_pct": -14.65,
    "high_pct": 14.47,
    "vol_turnover_pct": 105.2,
    "value_eok": 571,
-   "price": 2325.0,
+   "price": 2360.0,
    "first_seen": "11:41"
   },
   {
    "code": "026940",
    "name": "부국철강",
    "sector": "금속",
-   "change_pct": -9.26,
+   "change_pct": -8.17,
    "high_pct": 11.43,
    "vol_turnover_pct": 80.3,
    "value_eok": 224,
-   "price": 2500.0,
+   "price": 2530.0,
    "first_seen": "11:51"
   },
   {
@@ -124,44 +124,44 @@
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
-   "change_pct": 0.86,
+   "change_pct": -2.57,
    "high_pct": 17.11,
    "vol_turnover_pct": 63.6,
    "value_eok": 176,
-   "price": 4125.0,
+   "price": 3985.0,
    "first_seen": "12:11"
   },
   {
    "code": "389260",
    "name": "대명에너지",
    "sector": "건설",
-   "change_pct": -1.69,
+   "change_pct": -1.76,
    "high_pct": 19.78,
    "vol_turnover_pct": 57.5,
    "value_eok": 473,
-   "price": 14560.0,
+   "price": 14550.0,
    "first_seen": "12:21"
   },
   {
    "code": "014950",
    "name": "삼익제약",
    "sector": "제약",
-   "change_pct": 2.15,
+   "change_pct": 0.48,
    "high_pct": 15.91,
    "vol_turnover_pct": 57.1,
    "value_eok": 214,
-   "price": 8540.0,
+   "price": 8400.0,
    "first_seen": "10:01"
   },
   {
    "code": "419050",
    "name": "삼기에너지솔루션즈",
    "sector": "운송장비·부품",
-   "change_pct": -19.98,
+   "change_pct": -18.07,
    "high_pct": 18.44,
    "vol_turnover_pct": 55.0,
    "value_eok": 326,
-   "price": 1510.0,
+   "price": 1546.0,
    "first_seen": "09:41"
   }
  ],
