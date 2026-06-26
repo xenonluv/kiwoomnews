@@ -1,16 +1,16 @@
 {
- "as_of": "2026-06-25 17:47 KST",
- "n": 5,
- "total_n": 6,
- "accuracy": 20.0,
+ "as_of": "2026-06-26 17:48 KST",
+ "n": 6,
+ "total_n": 12,
+ "accuracy": 16.7,
  "min_n": 10,
  "by_phase": [
   {
    "phase": "재매집",
-   "n": 5,
-   "hit_rate": 20.0,
-   "rose_rate": 20.0,
-   "avg_return": -8.49,
+   "n": 6,
+   "hit_rate": 16.7,
+   "rose_rate": 16.7,
+   "avg_return": -8.68,
    "valid": false
   },
   {
@@ -23,10 +23,10 @@
   },
   {
    "phase": "중립",
-   "n": 1,
+   "n": 6,
    "hit_rate": null,
    "rose_rate": 0.0,
-   "avg_return": -12.99,
+   "avg_return": -13.79,
    "valid": false
   }
  ],
@@ -48,8 +48,8 @@
   {
    "lo": 70,
    "hi": 80,
-   "n": 5,
-   "hit_rate": 20.0,
+   "n": 6,
+   "hit_rate": 16.7,
    "valid": false
   },
   {
@@ -61,6 +61,60 @@
   }
  ],
  "recent": [
+  {
+   "date": "20260624",
+   "code": "356680",
+   "phase": "중립",
+   "confidence": 55,
+   "hit": null,
+   "rose": false,
+   "return_pct": -16.82
+  },
+  {
+   "date": "20260624",
+   "code": "122640",
+   "phase": "중립",
+   "confidence": 55,
+   "hit": null,
+   "rose": false,
+   "return_pct": -4.67
+  },
+  {
+   "date": "20260624",
+   "code": "043650",
+   "phase": "중립",
+   "confidence": 58,
+   "hit": null,
+   "rose": false,
+   "return_pct": -13.18
+  },
+  {
+   "date": "20260624",
+   "code": "037710",
+   "phase": "중립",
+   "confidence": 55,
+   "hit": null,
+   "rose": false,
+   "return_pct": -5.13
+  },
+  {
+   "date": "20260624",
+   "code": "010690",
+   "phase": "재매집",
+   "confidence": 72,
+   "hit": false,
+   "rose": false,
+   "return_pct": -9.67
+  },
+  {
+   "date": "20260624",
+   "code": "002070",
+   "phase": "중립",
+   "confidence": 55,
+   "hit": null,
+   "rose": false,
+   "return_pct": -29.92
+  },
   {
    "date": "20260623",
    "code": "010690",
