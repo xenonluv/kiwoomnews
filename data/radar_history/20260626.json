@@ -4,7 +4,7 @@
   "043650": {
    "name": "국순당",
    "sector": "음식료·담배",
-   "entry": 3920.0,
+   "entry": 3870.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,14 +22,14 @@
     "re_turnover": 0
    },
    "rank": 1,
-   "change_pct": 2.62,
+   "change_pct": 1.31,
    "change_basis": "KRX",
    "high_pct": 17.02,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
    "value_eok": 63,
-   "turnover_pct": 19.0,
+   "turnover_pct": 19.2,
    "peak_turnover_pct": 111.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3576.8,
-    "ma20_margin_pct": 9.6,
+    "ma20": 3574.2,
+    "ma20_margin_pct": 8.27,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
@@ -73,5 +73,5 @@
    "final": true
   }
  },
- "as_of": "2026-06-26 15:02:35 KST"
+ "as_of": "2026-06-26 15:12:18 KST"
 }
