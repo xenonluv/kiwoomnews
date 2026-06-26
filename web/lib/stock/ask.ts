@@ -216,12 +216,11 @@ export async function answerQuestion(code: string, question: string): Promise<St
   // 부호·콤마·공백·% 제거 후 수치화, 양쪽 정수 반올림 후 집합 비교. 데이터 밖 %(생짜 계산)만 미검증 처리.
   const PCT_RE = /-?\d[\d,]*(?:\.\d+)?\s*%/g;
   const pctVal = (s: string) => parseFloat(s.replace(/[,\s%]/g, "").replace(/^[+\-]/, "")); // 부호 무시(크기 비교)
-  const dataPctInts = new Set(
-    (dataText.match(PCT_RE) ?? []).map((p) => Math.round(pctVal(p))).filter(Number.isFinite)
-  );
+  // 허용오차 ±0.55 — 2dp 데이터를 모델이 1dp/정수로 반올림 인용해도(어느 방향이든) 통과(정수반올림 .5경계 비대칭 제거).
+  const dataPctVals = (dataText.match(PCT_RE) ?? []).map(pctVal).filter(Number.isFinite);
   const pctUngrounded = (answer.match(PCT_RE) ?? []).some((p) => {
     const v = pctVal(p);
-    return Number.isFinite(v) && !dataPctInts.has(Math.round(v));
+    return Number.isFinite(v) && !dataPctVals.some((dv) => Math.abs(dv - v) <= 0.55);
   });
   const calcUnverified =
     answerNums.some((d) => d.length >= 4 && !dataDigits.includes(d)) || pctUngrounded;
