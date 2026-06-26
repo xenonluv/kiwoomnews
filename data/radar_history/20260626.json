@@ -4,7 +4,7 @@
   "043650": {
    "name": "국순당",
    "sector": "음식료·담배",
-   "entry": 3870.0,
+   "entry": 3850.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -21,15 +21,15 @@
     "peak_turnover": 2,
     "re_turnover": 0
    },
-   "rank": 1,
-   "change_pct": 1.31,
+   "rank": 2,
+   "change_pct": 0.79,
    "change_basis": "KRX",
    "high_pct": 17.02,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 63,
-   "turnover_pct": 19.2,
+   "value_eok": 64,
+   "turnover_pct": 19.3,
    "peak_turnover_pct": 111.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 111.6,
     "peak_ibs": 0.47,
     "peak_uppertail": 16.1,
-    "ma20": 3574.2,
-    "ma20_margin_pct": 8.27,
+    "ma20": 3573.2,
+    "ma20_margin_pct": 7.75,
     "cause_summary": "호텔 뷔페서 즐기는 전통주…국순당, 페어몬트 앰배서더 서울과 협업",
     "was_theme_leader": false,
     "source": "live"
@@ -60,9 +60,9 @@
    },
    "forecast": {
     "horizon": "3일 내 +7%",
-    "prob_pct": 52,
+    "prob_pct": 46,
     "base_pct": 46,
-    "strong": true,
+    "strong": false,
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
@@ -71,7 +71,78 @@
    "evaluated": false,
    "result": null,
    "final": true
+  },
+  "198440": {
+   "name": "강동씨앤엘",
+   "sector": "비금속",
+   "entry": 1627.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 82,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 4,
+    "re_body": 5,
+    "peak_turnover": 9,
+    "re_turnover": 2
+   },
+   "rank": 1,
+   "change_pct": 5.99,
+   "change_basis": "KRX",
+   "high_pct": 17.72,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 168,
+   "turnover_pct": 55.1,
+   "peak_turnover_pct": 185.9,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260623",
+    "peak_value_eok": 819,
+    "peak_high_pct": 27.36,
+    "peak_turnover_pct": 185.9,
+    "peak_ibs": 0.47,
+    "peak_uppertail": 16.9,
+    "ma20": 1392.8,
+    "ma20_margin_pct": 16.82,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 5.27,
+    "time": "15:15",
+    "value_eok": 2,
+    "count": 3
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [],
+   "first_seen": "2026-06-26 15:22:20 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
   }
  },
- "as_of": "2026-06-26 15:12:18 KST"
+ "as_of": "2026-06-26 15:22:20 KST"
 }
