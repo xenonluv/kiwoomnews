@@ -41,27 +41,29 @@ export function computeFloatTurnover(
     cum5: null, cum20: null, rankWindow: candles.length, rankToday: null, percentile: null,
   };
   if (!eff || candles.length === 0) return empty;
-  const series = turnoverSeries(candles, eff).filter((x): x is number => x != null);
+  const seriesAll = turnoverSeries(candles, eff); // index-aligned(거래정지일 null)
+  const series = seriesAll.filter((x): x is number => x != null); // 통계 풀(0거래량·null 제외)
+  // 오늘 = '마지막 캔들' 그대로 — 오늘이 거래정지(거래량 0)면 today=null(직전일 값으로 오표기 방지)
+  const today = seriesAll[seriesAll.length - 1];
   if (series.length === 0) return empty;
-  const today = series[series.length - 1];
   const tail = (n: number) => series.slice(Math.max(0, series.length - n));
   const avg = (a: number[]) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
   const avg20 = avg(tail(20));
   const cum5 = r1(tail(5).reduce((s, x) => s + x, 0));
   const cum20 = r1(tail(20).reduce((s, x) => s + x, 0));
-  const rankToday = 1 + series.filter((x) => x > today).length; // 1 = 역대 최고
   const rankWindow = series.length;
+  const rankToday = today != null ? 1 + series.filter((x) => x > today).length : null; // 1 = 역대 최고
   return {
     basis,
     floatShares: eff,
-    today: r1(today),
+    today: today != null ? r1(today) : null,
     avg20: avg20 != null ? r1(avg20) : null,
-    todayVsAvg: avg20 && avg20 > 0 ? r1(today / avg20) : null,
+    todayVsAvg: today != null && avg20 && avg20 > 0 ? r1(today / avg20) : null,
     cum5,
     cum20,
     rankWindow,
     rankToday,
-    percentile: Math.round((1 - (rankToday - 1) / rankWindow) * 100),
+    percentile: rankToday != null ? Math.round((1 - (rankToday - 1) / rankWindow) * 100) : null,
   };
 }
 
@@ -84,13 +86,17 @@ export function computeDownCandles(
   if (candles.length < 2) return { days: [], overall: "정보부족", recentExplosion: null };
   const eff = ft.floatShares;
   const series = turnoverSeries(candles, eff);
-  const sortedTurn = series.filter((x): x is number => x != null).slice().sort((a, b) => a - b);
-  const pctile = (v: number | null): number | null => {
-    if (v == null || sortedTurn.length === 0) return null;
-    const below = sortedTurn.filter((x) => x <= v).length;
-    return Math.round((below / sortedTurn.length) * 100);
+  // 시점별 누수 방지(lookahead): day i의 percentile·avg20은 candles[0..i]만으로 산정(미래 캔들 미반영).
+  const pctileAt = (i: number, v: number | null): number | null => {
+    if (v == null) return null;
+    const past = series.slice(0, i + 1).filter((x): x is number => x != null);
+    if (past.length === 0) return null;
+    return Math.round((past.filter((x) => x <= v).length / past.length) * 100);
   };
-  const avg20 = ft.avg20;
+  const avg20At = (i: number): number | null => {
+    const win = series.slice(Math.max(0, i - 19), i + 1).filter((x): x is number => x != null);
+    return win.length ? win.reduce((s, x) => s + x, 0) / win.length : null;
+  };
   const flowByDate = new Map<string, FlowDay>();
   for (const f of flowDaily) flowByDate.set(f.date, f);
 
@@ -99,18 +105,18 @@ export function computeDownCandles(
   const hpAll: (number | null)[] = candles.map((c, i) =>
     i > 0 && candles[i - 1].close > 0 ? (c.high / candles[i - 1].close - 1) * 100 : null
   );
-  // 폭발 = 고가등락률≥15% AND 종가 상승(전일 대비). 종가 하락(윗꼬리 큰 음봉)은 '실패한 분출'이라 폭발에서 제외 —
-  // 안 그러면 판정 당일 음봉이 자신을 '직전 폭발'로 자기지목하거나 explodedBefore가 오탐(폭발→눌림 맥락 왜곡).
-  const isExplosion = (j: number): boolean =>
-    j > 0 && hpAll[j] != null && hpAll[j]! >= EXPLOSION_HIGH_PCT && candles[j].close >= candles[j - 1].close;
-  // 표시용 '최근 폭발' = lookback 창 안에서 가장 최근(날짜 max) 폭발일
+  // 큰 급등(고가등락률≥15%). radar.py 폭발 정의(고가등락률+회전율, 종가 무관)와 정합 — 빨간 마감 캐털리스트도 폭발.
+  const isBigSpike = (j: number): boolean => j > 0 && hpAll[j] != null && hpAll[j]! >= EXPLOSION_HIGH_PCT;
+  // 표시용 '최근 폭발'엔 종가 상승까지 요구 — 판정 당일 음봉(윗꼬리 큰)이 자신을 '직전 폭발'로 자기지목하는 표시 오류 차단.
+  const isUpExplosion = (j: number): boolean => isBigSpike(j) && candles[j].close >= candles[j - 1].close;
   let recentExplosion: { date: string; highPct: number } | null = null;
   for (let i = start; i < candles.length; i++) {
-    if (isExplosion(i)) recentExplosion = { date: candles[i].date, highPct: r1(hpAll[i]!) };
+    if (isUpExplosion(i)) recentExplosion = { date: candles[i].date, highPct: r1(hpAll[i]!) };
   }
-  // 그 날보다 '이른' 거래일(직전 lookback 내)에 폭발이 있었나 — 폭발→눌림→재분출 맥락
+  // 그 날보다 '이른' 거래일(직전 lookback 내)에 큰 급등이 있었나 — 폭발→눌림→재분출 맥락. j<i라 자기지목 불가능하므로
+  // 종가 조건 불필요(빨간 마감 캐털리스트 다음날 재분출도 잡아야 함 — radar.py 폭발 정의와 정합).
   const explodedBefore = (i: number): boolean => {
-    for (let j = Math.max(1, i - lookback); j < i; j++) if (isExplosion(j)) return true;
+    for (let j = Math.max(1, i - lookback); j < i; j++) if (isBigSpike(j)) return true;
     return false;
   };
 
@@ -131,14 +137,15 @@ export function computeDownCandles(
     const foreignNet = f ? f.foreign : null;
     const organNet = f ? f.organ : null;
     const instNet = foreignNet != null || organNet != null ? (foreignNet ?? 0) + (organNet ?? 0) : null;
-    const p = pctile(ftPct);
-    const extreme = ftPct != null && ((p != null && p >= 80) || (avg20 != null && avg20 > 0 && ftPct >= avg20 * 3));
+    const p = pctileAt(i, ftPct); // 시점별 백분위(미래 미반영)
+    const avg20i = avg20At(i); // 시점별 20일 평균(미래 미반영)
+    const extreme = ftPct != null && ((p != null && p >= 80) || (avg20i != null && avg20i > 0 && ftPct >= avg20i * 3));
     const afterExplosion = explodedBefore(i); // 직전 lookback 내에 폭발이 있었나
 
     let label: DownCandleSignal["label"] = "중립";
     if (isDown && extreme && afterExplosion) label = "재분출후보";
-    else if (isDown && instNet != null && instNet > 0 && lowerWickPct != null && lowerWickPct >= BIG_WICK && ftPct != null && avg20 != null && avg20 > 0 && ftPct >= avg20) label = "매집후보";
-    else if (isDown && ftPct != null && avg20 != null && ftPct < avg20 && instNet != null && instNet < 0) label = "분산우려";
+    else if (isDown && instNet != null && instNet > 0 && lowerWickPct != null && lowerWickPct >= BIG_WICK && ftPct != null && avg20i != null && avg20i > 0 && ftPct >= avg20i) label = "매집후보";
+    else if (isDown && ftPct != null && avg20i != null && avg20i > 0 && ftPct < avg20i && instNet != null && instNet < 0) label = "분산우려";
 
     days.push({ date: c.date, isDown, changePct, highPct, upperWickPct, lowerWickPct, floatTurnoverPct: ftPct, foreignNet, organNet, label });
   }
