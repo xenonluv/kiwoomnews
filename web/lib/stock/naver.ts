@@ -125,7 +125,12 @@ export async function fetchMinuteCandles(code: string, count = 480): Promise<Min
  * KIS·네이버모바일엔 유통주식수가 없어 '유통주식 회전율'(거래대금/유통시총)을 못 내므로 여기서 보충.
  * HTML 스크랩이라 best-effort: 실패·파싱불가·이상치(0/>1)면 null → 호출부가 전체 시총 기준으로 폴백.
  */
-export async function fetchFloatRatio(code: string): Promise<number | null> {
+export interface FloatInfo {
+  ratio: number; // 유동비율(0~1)
+  listed: number | null; // 상장(발행)주식수(주) — 같은 셀에서 함께 파싱(유통주식수 = listed × ratio)
+}
+
+export async function fetchFloat(code: string): Promise<FloatInfo | null> {
   // 보통주(6자리·끝자리 0)만 — wisereport가 우선주/ETN 코드를 보통주 페이지로 합쳐 응답해 오귀속됨.
   if (!/^\d{5}0$/.test(code)) return null;
   try {
@@ -139,13 +144,42 @@ export async function fetchFloatRatio(code: string): Promise<number | null> {
     });
     if (!res.ok) return null;
     const html = await res.text();
-    // "발행주식수/유동비율" 행의 td 셀만 잡고(다음 행 숫자로 넘어가 오매칭 방지) 그 안에서 % 추출
+    // "발행주식수/유동비율" 행의 td 셀만 잡고(다음 행 숫자로 넘어가 오매칭 방지) 그 안에서 주식수·% 추출.
+    // 셀 예: "19,948,221주 / 56.77%" — m[1]=발행주식수, m[2]=유동비율%.
     const cellM = html.match(/발행주식수\/유동비율\s*<\/th>\s*<td[^>]*>([\s\S]*?)<\/td>/);
-    const m = cellM && cellM[1].match(/[\d,]+\s*주\s*\/\s*([\d.]+)\s*%/);
+    const m = cellM && cellM[1].match(/([\d,]+)\s*주\s*\/\s*([\d.]+)\s*%/);
     if (!m) return null;
-    const r = Number(m[1]) / 100;
+    const r = Number(m[2]) / 100;
     // 3%~100%만 유효 — <3%(품절주·이상치)는 유통시총 극소→회전율 폭증이라 폴백
-    return r >= 0.03 && r <= 1 ? r : null;
+    if (!(r >= 0.03 && r <= 1)) return null;
+    const listed = Number(m[1].replace(/,/g, ""));
+    return { ratio: r, listed: Number.isFinite(listed) && listed > 0 ? listed : null };
+  } catch {
+    return null;
+  }
+}
+
+/** 유동비율만 필요한 기존 호출부 호환 래퍼. */
+export async function fetchFloatRatio(code: string): Promise<number | null> {
+  return (await fetchFloat(code))?.ratio ?? null;
+}
+
+/**
+ * 시장 지수(코스피/코스닥) 당일 종가·등락률 — fetchBasic과 동일 패턴(무인증).
+ * 음봉이 시장 전체 하락 때문인지 종목 고유인지 구분하는 [시장 레짐] 맥락용. 실패 시 null(graceful).
+ */
+export async function fetchIndex(
+  market: "KOSPI" | "KOSDAQ"
+): Promise<{ name: string; close: number; changePct: number } | null> {
+  try {
+    const d = await fetchJson<any>(
+      `https://m.stock.naver.com/api/index/${market}/basic`,
+      4000
+    );
+    const close = Number(String(d?.closePrice ?? "").replace(/,/g, ""));
+    const changePct = Number(String(d?.fluctuationsRatio ?? "").replace(/,/g, ""));
+    if (!Number.isFinite(close) || !Number.isFinite(changePct)) return null;
+    return { name: String(d?.stockName ?? market), close, changePct };
   } catch {
     return null;
   }

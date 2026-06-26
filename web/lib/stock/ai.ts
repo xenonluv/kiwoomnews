@@ -114,6 +114,16 @@ export function serializeForPrompt(r: StockReport): string {
   if (r.tradeStop) L.push("⚠ 거래정지");
   if (r.isEtf) L.push("ETF·ETN 종목");
 
+  const mr = r.marketRegime;
+  if (mr && (mr.kospi || mr.kosdaq)) {
+    const ix = (x: { close: number; changePct: number } | null) =>
+      x ? `${x.close.toLocaleString()}(${x.changePct > 0 ? "+" : ""}${x.changePct}%)` : "?";
+    L.push(
+      `[시장 레짐] 코스피 ${ix(mr.kospi)} · 코스닥 ${ix(mr.kosdaq)}` +
+        ` — 음봉이 시장 전체 하락 때문인지 종목 고유 약세인지 구분 기준(지수 동반 급락이면 종목 고유 분산 단정 금지)`
+    );
+  }
+
   const p = r.price;
   if (p) {
     L.push(
@@ -134,6 +144,18 @@ export function serializeForPrompt(r: StockReport): string {
           `(정규장 마감 후 변동 — 익일 시초 갭 리스크)`
       );
     }
+  }
+
+  const ftv = r.floatTurnover;
+  if (ftv && ftv.today != null) {
+    L.push(
+      `[유통·회전율 정밀] 오늘 유통회전율 ${ftv.today}%(${ftv.basis === "float" ? "유통주식수 기준" : "상장주식수 폴백"})` +
+        (ftv.avg20 != null ? ` · 20일평균 ${ftv.avg20}%` : "") +
+        (ftv.todayVsAvg != null ? `의 ${ftv.todayVsAvg}배` : "") +
+        (ftv.rankToday != null ? ` · 표본 ${ftv.rankWindow}일 중 ${ftv.rankToday}위(백분위 ${ftv.percentile}, 100=역대급)` : "") +
+        (ftv.cum5 != null ? ` · 누적손바뀜 5일 ${ftv.cum5}%/20일 ${ftv.cum20}%` : "") +
+        ` — 회전율이 역대급이거나 직전 폭발일보다 크면 매물 흡수(손바뀜)일 수 있음`
+    );
   }
 
   if (r.chart && r.chart.candles.length >= 5) {
@@ -216,6 +238,28 @@ export function serializeForPrompt(r: StockReport): string {
     }
   }
 
+  const dc = r.downCandle;
+  if (dc && dc.days.length > 0) {
+    const wick = (u: number | null, l: number | null) =>
+      `윗꼬리 ${u ?? "?"}/아래꼬리 ${l ?? "?"}`;
+    const flowStr = (fn: number | null, on: number | null) =>
+      fn == null && on == null ? "수급n/a" : `외인 ${fn ?? 0}/기관 ${on ?? 0}`;
+    L.push("[음봉 판별 신호] (최근 거래일 · 라벨=가격형태+회전율+수급 기반 참고 힌트, 확정 아님)");
+    for (const d of dc.days) {
+      L.push(
+        `- ${d.date}: ${d.changePct > 0 ? "+" : ""}${d.changePct}%` +
+          (d.highPct != null ? ` (고가 ${d.highPct > 0 ? "+" : ""}${d.highPct}%)` : "") +
+          ` · 회전 ${d.floatTurnoverPct ?? "?"}% · ${wick(d.upperWickPct, d.lowerWickPct)} · ${flowStr(d.foreignNet, d.organNet)} → ${d.label}`
+      );
+    }
+    if (dc.recentExplosion)
+      L.push(`  최근 폭발: ${dc.recentExplosion.date} 고가 +${dc.recentExplosion.highPct}%`);
+    L.push(
+      `  종합 참고: ${dc.overall} — **역대급 회전율 + 직전 폭발 + 재료 생존이면 음봉이라도 재분출/흔들기**` +
+        `(윗꼬리·기관 순매도만으로 분산 단정 금지). 회전율 급감 + 순매도면 분산.`
+    );
+  }
+
   const f = r.flow;
   if (f) {
     const recent3 = f.daily
@@ -243,16 +287,14 @@ export function serializeForPrompt(r: StockReport): string {
       `[뉴스 요약] 종합 ${n.summary.sentiment} · 중요도 ${n.summary.importance}/10 · 영향 ${n.summary.impact} · 관련기사 ${n.summary.relevantCount}건(호재 ${n.summary.posCount}/악재 ${n.summary.negCount})`
     );
     const top = n.items.filter((i) => i.relevant).slice(0, 8);
-    if (top.length > 0) {
-      for (const it of top) L.push(`- (${it.sentiment}) ${it.title}`);
-    } else {
-      // 종목 직접 언급 기사가 없는 날도 시황 기사로 업황·테마 맥락은 전달
-      // (예: "반도체 장비株 급등" — 재료필터엔 비관련이지만 LLM 판단엔 유효한 배경)
-      const ctx = n.items.slice(0, 5);
-      if (ctx.length > 0) {
-        L.push("(종목 직접 언급 기사 없음 — 아래는 같은 날 시황 기사 참고)");
-        for (const it of ctx) L.push(`- (시황) ${it.title}`);
-      }
+    for (const it of top) L.push(`- (${it.sentiment}) ${it.title}`);
+    // 시황 기사도 항상 병기 — 시장 전체 급락·서킷브레이커("코스피 −X% 급락" 등) 맥락이 음봉 해석에
+    // 결정적이라 종목 직접기사 유무와 무관하게 넣는다(과거엔 직접기사 없을 때만 넣어 누락됐음).
+    const topTitles = new Set(top.map((t) => t.title));
+    const ctx = n.items.filter((i) => !i.relevant && !topTitles.has(i.title)).slice(0, 3);
+    if (ctx.length > 0) {
+      L.push("(같은 날 시황 기사 — 시장 전체 흐름 참고)");
+      for (const it of ctx) L.push(`- (시황) ${it.title}`);
     }
   }
 

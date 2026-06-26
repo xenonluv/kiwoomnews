@@ -139,6 +139,46 @@ export interface FlowSection {
   };
 }
 
+/** 시장 지수 레짐 — 음봉이 시장 전체 하락 때문인지 종목 고유인지 구분하는 맥락. */
+export interface MarketRegimeSection {
+  kospi: { close: number; changePct: number } | null;
+  kosdaq: { close: number; changePct: number } | null;
+}
+
+/** 유통주식 회전율(거래량/유통주식수) 정밀 — radar scripts/float_ratio.py:vol_turnover와 동일 산식. */
+export interface FloatTurnoverSection {
+  basis: "float" | "cap"; // float=유통주식수 기준 / cap=상장주식수 폴백
+  floatShares: number | null; // 유통주식수(=상장×유동비율, 주)
+  today: number | null; // 오늘 회전율(%)
+  avg20: number | null; // 최근 20거래일 평균 회전율(%)
+  todayVsAvg: number | null; // today/avg20 (배)
+  cum5: number | null; // 최근 5일 누적 회전율(%) — 누적 손바뀜
+  cum20: number | null;
+  rankWindow: number; // 순위 산정 표본 거래일 수
+  rankToday: number | null; // 오늘이 표본 내 N위(1=역대 최고)
+  percentile: number | null; // 백분위(100=역대급)
+}
+
+/** 음봉(하락일) 매집/흔들기/분산 판별 신호 — 회전율 역대급·직전 폭발 연속성 우선. */
+export interface DownCandleSignal {
+  date: string;
+  isDown: boolean; // close < prevClose
+  changePct: number;
+  highPct: number | null; // high/prevClose-1 (%, 폭발 감지)
+  upperWickPct: number | null; // (high-close)/(high-low)
+  lowerWickPct: number | null; // (close-low)/(high-low) = closeStrength
+  floatTurnoverPct: number | null;
+  foreignNet: number | null;
+  organNet: number | null;
+  label: "재분출후보" | "매집후보" | "분산우려" | "흔들기" | "중립";
+}
+
+export interface DownCandleSection {
+  days: DownCandleSignal[]; // 최근 lookback 거래일(오름차순)
+  overall: DownCandleSignal["label"] | "정보부족";
+  recentExplosion: { date: string; highPct: number } | null; // 최근 lookback 내 폭발(highPct 최대)
+}
+
 export interface FinancialSection {
   periods: { label: string; isEstimate: boolean }[]; // "2025.12." / 컨센서스 연도
   rows: { label: string; values: (number | null)[] }[]; // 매출액·영업이익 등 (억원)
@@ -304,6 +344,9 @@ export interface StockReport {
   chart: { candles: Candle[] } | null;
   technical: TechnicalSection | null;
   flow: FlowSection | null;
+  marketRegime: MarketRegimeSection | null; // 코스피/코스닥 당일 등락(시장 레짐)
+  floatTurnover: FloatTurnoverSection | null; // 유통주식수 기준 회전율 정밀
+  downCandle: DownCandleSection | null; // 음봉 매집/흔들기/분산 판별 신호
   spark: SparkSection | null;
   financials: FinancialSection | null;
   news: NewsSection | null;

@@ -16,7 +16,8 @@ import type {
 import {
   fetchBasic,
   fetchDaily,
-  fetchFloatRatio,
+  fetchFloat,
+  fetchIndex,
   fetchFinanceAnnual,
   fetchIntegration,
   fetchMinuteCandles,
@@ -25,6 +26,7 @@ import {
 } from "./naver";
 import { cleanText, formatKST, num, parseEok } from "./parse";
 import { computeIndicators } from "./indicators";
+import { computeFloatTurnover, computeDownCandles } from "./turnover";
 import { detectSparks, MEGA_SPARK_X } from "./sparks";
 import { makeAliases, scoreNews } from "./news-score";
 import { matchEvents } from "./theme-match";
@@ -60,16 +62,19 @@ function parseMarketAlert(raw: any): MarketAlert | null {
 }
 
 export async function buildStockReport(code: string): Promise<StockReport> {
-  const [basicR, integR, dailyR, newsR, trendR, finR, minuteR, floatR] = await Promise.allSettled([
-    fetchBasic(code),
-    fetchIntegration(code),
-    fetchDaily(code),
-    fetchNews(code),
-    fetchTrend(code),
-    fetchFinanceAnnual(code),
-    fetchMinuteCandles(code),
-    fetchFloatRatio(code),
-  ]);
+  const [basicR, integR, dailyR, newsR, trendR, finR, minuteR, floatR, kospiR, kosdaqR] =
+    await Promise.allSettled([
+      fetchBasic(code),
+      fetchIntegration(code),
+      fetchDaily(code),
+      fetchNews(code),
+      fetchTrend(code),
+      fetchFinanceAnnual(code),
+      fetchMinuteCandles(code),
+      fetchFloat(code),
+      fetchIndex("KOSPI"),
+      fetchIndex("KOSDAQ"),
+    ]);
 
   const basic = val(basicR);
   const integ = val(integR);
@@ -77,7 +82,10 @@ export async function buildStockReport(code: string): Promise<StockReport> {
   const rawNews = val(newsR);
   const trend = val(trendR);
   const fin = val(finR);
-  const floatRatio = val(floatR) ?? null; // 유동비율(0~1) — null이면 전체 시총 기준 폴백
+  const floatInfo = val(floatR); // {ratio, listed} — null이면 전체 시총 기준 폴백
+  const floatRatio = floatInfo?.ratio ?? null; // 유동비율(0~1)
+  const kospi = val(kospiR);
+  const kosdaq = val(kosdaqR);
 
   if (!basic && !integ && candles.length === 0 && !rawNews && !trend && !fin) {
     throw new UnreachableError("네이버 응답 없음");
@@ -236,6 +244,22 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     warnings.push("투자자 수급 데이터를 불러오지 못했습니다.");
   }
 
+  // ── 유통주식 회전율(거래량/유통주식수) 정밀 + 음봉 판별 + 시장 레짐 ──
+  // 유통주식수 = 상장×유동비율(우선). 없으면 시총÷종가로 상장주식수 추정 → cap 폴백(computeFloatTurnover 내부).
+  const capEokFt = parseEok(info.marketValue);
+  const fallbackListed =
+    capEokFt != null && capEokFt > 0 && close && close > 0 ? (capEokFt * 1e8) / close : null;
+  const floatShares =
+    floatInfo?.listed && floatInfo?.ratio ? floatInfo.listed * floatInfo.ratio : null;
+  const floatTurnover =
+    candles.length > 0 ? computeFloatTurnover(candles, floatShares, fallbackListed) : null;
+  const downCandle =
+    floatTurnover && candles.length > 1
+      ? computeDownCandles(candles, flow?.daily ?? [], floatTurnover, 10)
+      : null;
+  const marketRegime = kospi || kosdaq ? { kospi, kosdaq } : null;
+  if (!kospi && !kosdaq) warnings.push("시장 지수(코스피/코스닥) 맥락을 불러오지 못했습니다.");
+
   // ── 당일 분봉 스파크 (radar 조건2 — fchart 무인증 분봉) ──
   // fetch 실패만 경고. 당일 봉 <30(휴장·주말·개장 직후)은 조용히 null → 카드 숨김.
   let spark: SparkSection | null = null;
@@ -388,6 +412,9 @@ export async function buildStockReport(code: string): Promise<StockReport> {
     chart,
     technical,
     flow,
+    marketRegime,
+    floatTurnover,
+    downCandle,
     spark,
     financials,
     news,
