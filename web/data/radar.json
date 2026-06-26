@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-26 10:32:26 KST",
+ "generated_at": "2026-06-26 10:42:11 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,45 +46,34 @@
    "name": "키스트론",
    "sector": "전기·전자",
    "high_pct": 24.52,
-   "vol_turnover_pct": 209.7,
-   "value_eok": 993,
-   "price": 7380.0,
-   "change_pct": 17.52,
+   "vol_turnover_pct": 215.4,
+   "value_eok": 1021,
+   "price": 7210.0,
+   "change_pct": 14.81,
    "backfill": false
   }
  ],
  "youtong": [
   {
-   "code": "058730",
-   "name": "다스코",
-   "sector": "금속",
-   "change_pct": 7.55,
-   "high_pct": 21.56,
-   "vol_turnover_pct": 220.3,
-   "value_eok": 1116,
-   "price": 4415.0,
-   "first_seen": "09:41"
-  },
-  {
    "code": "037710",
    "name": "광주신세계",
    "sector": "유통",
-   "change_pct": 13.27,
-   "high_pct": 19.53,
-   "vol_turnover_pct": 118.5,
-   "value_eok": 1442,
-   "price": 46100.0,
+   "change_pct": 20.15,
+   "high_pct": 20.64,
+   "vol_turnover_pct": 129.9,
+   "value_eok": 1585,
+   "price": 48900.0,
    "first_seen": "09:41"
   },
   {
-   "code": "419050",
-   "name": "삼기에너지솔루션즈",
-   "sector": "운송장비·부품",
-   "change_pct": 7.31,
-   "high_pct": 18.44,
-   "vol_turnover_pct": 74.4,
-   "value_eok": 439,
-   "price": 2025.0,
+   "code": "058730",
+   "name": "다스코",
+   "sector": "금속",
+   "change_pct": 6.7,
+   "high_pct": 14.49,
+   "vol_turnover_pct": 123.5,
+   "value_eok": 605,
+   "price": 4380.0,
    "first_seen": "09:41"
   },
   {
@@ -93,8 +82,8 @@
    "sector": "오락·문화",
    "change_pct": 29.97,
    "high_pct": 29.97,
-   "vol_turnover_pct": 59.6,
-   "value_eok": 82,
+   "vol_turnover_pct": 60.0,
+   "value_eok": 83,
    "price": 4900.0,
    "first_seen": "10:11"
   },
@@ -102,12 +91,23 @@
    "code": "014950",
    "name": "삼익제약",
    "sector": "제약",
-   "change_pct": 5.86,
+   "change_pct": 3.59,
    "high_pct": 15.91,
    "vol_turnover_pct": 57.1,
    "value_eok": 214,
-   "price": 8850.0,
+   "price": 8660.0,
    "first_seen": "10:01"
+  },
+  {
+   "code": "419050",
+   "name": "삼기에너지솔루션즈",
+   "sector": "운송장비·부품",
+   "change_pct": 0.74,
+   "high_pct": 18.44,
+   "vol_turnover_pct": 55.0,
+   "value_eok": 326,
+   "price": 1901.0,
+   "first_seen": "09:41"
   }
  ],
  "suspects": []
