@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-26 09:42:15 KST",
+ "generated_at": "2026-06-26 09:52:12 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,10 +46,10 @@
    "name": "키스트론",
    "sector": "전기·전자",
    "high_pct": 24.52,
-   "vol_turnover_pct": 140.5,
-   "value_eok": 660,
-   "price": 7390.0,
-   "change_pct": 17.68,
+   "vol_turnover_pct": 155.9,
+   "value_eok": 732,
+   "price": 7220.0,
+   "change_pct": 14.97,
    "backfill": false
   }
  ],
@@ -58,33 +58,33 @@
    "code": "058730",
    "name": "다스코",
    "sector": "금속",
-   "change_pct": 14.49,
-   "high_pct": 14.49,
-   "vol_turnover_pct": 123.5,
-   "value_eok": 605,
-   "price": 4700.0,
+   "change_pct": 16.0,
+   "high_pct": 21.56,
+   "vol_turnover_pct": 164.9,
+   "value_eok": 830,
+   "price": 4762.0,
    "first_seen": "09:41"
   },
   {
    "code": "037710",
    "name": "광주신세계",
    "sector": "유통",
-   "change_pct": 19.16,
+   "change_pct": 16.09,
    "high_pct": 19.53,
-   "vol_turnover_pct": 93.6,
-   "value_eok": 1135,
-   "price": 48500.0,
+   "vol_turnover_pct": 102.7,
+   "value_eok": 1248,
+   "price": 47250.0,
    "first_seen": "09:41"
   },
   {
    "code": "419050",
    "name": "삼기에너지솔루션즈",
    "sector": "운송장비·부품",
-   "change_pct": 8.64,
+   "change_pct": 13.94,
    "high_pct": 18.44,
-   "vol_turnover_pct": 55.0,
-   "value_eok": 326,
-   "price": 2050.0,
+   "vol_turnover_pct": 61.3,
+   "value_eok": 363,
+   "price": 2150.0,
    "first_seen": "09:41"
   }
  ],
