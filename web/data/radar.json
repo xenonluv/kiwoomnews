@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-26 12:52:13 KST",
+ "generated_at": "2026-06-26 13:02:26 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,8 +46,8 @@
    "name": "광주신세계",
    "sector": "유통",
    "high_pct": 29.98,
-   "vol_turnover_pct": 175.8,
-   "value_eok": 2203,
+   "vol_turnover_pct": 177.4,
+   "value_eok": 2227,
    "price": 52900.0,
    "change_pct": 29.98,
    "backfill": false
@@ -59,76 +59,65 @@
    "high_pct": 24.52,
    "vol_turnover_pct": 277.0,
    "value_eok": 1300,
-   "price": 6660.0,
-   "change_pct": 6.05,
-   "backfill": false
+   "price": 6380.0,
+   "change_pct": 1.59,
+   "backfill": true
   },
   {
    "code": "079650",
    "name": "서산",
    "sector": "비금속",
    "high_pct": 25.83,
-   "vol_turnover_pct": 487.6,
-   "value_eok": 1867,
-   "price": 6610.0,
-   "change_pct": 16.17,
+   "vol_turnover_pct": 505.1,
+   "value_eok": 1940,
+   "price": 6460.0,
+   "change_pct": 13.53,
    "backfill": false
   }
  ],
  "youtong": [
   {
-   "code": "000890",
-   "name": "보해양조",
-   "sector": "음식료·담배",
-   "change_pct": 13.56,
-   "high_pct": 19.35,
-   "vol_turnover_pct": 150.2,
-   "value_eok": 859,
-   "price": 3140.0,
-   "first_seen": "11:41"
-  },
-  {
-   "code": "419050",
-   "name": "삼기에너지솔루션즈",
-   "sector": "운송장비·부품",
-   "change_pct": 11.82,
-   "high_pct": 18.44,
-   "vol_turnover_pct": 129.5,
-   "value_eok": 747,
-   "price": 2110.0,
-   "first_seen": "09:41"
-  },
-  {
    "code": "058730",
    "name": "다스코",
    "sector": "금속",
-   "change_pct": -3.41,
+   "change_pct": -7.43,
    "high_pct": 14.49,
    "vol_turnover_pct": 123.5,
    "value_eok": 605,
-   "price": 3965.0,
+   "price": 3800.0,
    "first_seen": "09:41"
+  },
+  {
+   "code": "000890",
+   "name": "보해양조",
+   "sector": "음식료·담배",
+   "change_pct": 5.61,
+   "high_pct": 14.47,
+   "vol_turnover_pct": 105.2,
+   "value_eok": 571,
+   "price": 2920.0,
+   "first_seen": "11:41"
   },
   {
    "code": "026940",
    "name": "부국철강",
    "sector": "금속",
-   "change_pct": 2.36,
+   "change_pct": -3.63,
    "high_pct": 11.43,
    "vol_turnover_pct": 80.3,
    "value_eok": 224,
-   "price": 2820.0,
+   "price": 2655.0,
    "first_seen": "11:51"
   },
   {
    "code": "389260",
    "name": "대명에너지",
    "sector": "건설",
-   "change_pct": 13.3,
+   "change_pct": 7.83,
    "high_pct": 19.78,
-   "vol_turnover_pct": 69.2,
-   "value_eok": 575,
-   "price": 16780.0,
+   "vol_turnover_pct": 72.4,
+   "value_eok": 601,
+   "price": 15970.0,
    "first_seen": "12:21"
   },
   {
@@ -146,23 +135,34 @@
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
-   "change_pct": 6.85,
+   "change_pct": 1.71,
    "high_pct": 17.11,
    "vol_turnover_pct": 63.6,
    "value_eok": 176,
-   "price": 4370.0,
+   "price": 4160.0,
    "first_seen": "12:11"
   },
   {
    "code": "014950",
    "name": "삼익제약",
    "sector": "제약",
-   "change_pct": -0.12,
+   "change_pct": -0.72,
    "high_pct": 15.91,
    "vol_turnover_pct": 57.1,
    "value_eok": 214,
-   "price": 8350.0,
+   "price": 8300.0,
    "first_seen": "10:01"
+  },
+  {
+   "code": "419050",
+   "name": "삼기에너지솔루션즈",
+   "sector": "운송장비·부품",
+   "change_pct": 5.99,
+   "high_pct": 18.44,
+   "vol_turnover_pct": 55.0,
+   "value_eok": 326,
+   "price": 2000.0,
+   "first_seen": "09:41"
   }
  ],
  "suspects": []
