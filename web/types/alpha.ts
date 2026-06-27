@@ -6,6 +6,7 @@ export interface AlphaMover {
   sector?: string;
   mover_type?: string; // explosion | youtong | reaccum
   date?: string; // 신호일(YYYYMMDD) — 최근 며칠 합쳐 게시
+  file_date?: string; // 출처 forward 파일 sig_date(파일당 유니크) — React key 충돌 방지축
   change_pct?: number | null;
   is_eumbong?: boolean;
   below_prev?: boolean;

@@ -12,7 +12,7 @@ import config
 GIT_LOCK = "/tmp/stocknews_git.lock"   # 코어 publish.py와 공유(직렬화)
 RECENT_DAYS = 3                         # 라벨된 익일결과가 보이도록 최근 N개 forward 파일 합침
 
-_MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "change_pct", "is_eumbong", "below_prev",
+_MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "change_pct", "is_eumbong", "below_prev",
                  "turnover_pct", "turnover_2d_pct", "close_strength", "upper_wick_pct", "lower_wick_pct",
                  "spark_1430_count", "spark_source", "frgn_net", "orgn_net", "prsn_net",
                  "kiwoom_buy_concentration", "kiwoom_is_top_buyer", "glob_net_qty",
@@ -34,8 +34,14 @@ def _recent_forward(n=RECENT_DAYS, cap=60):
             day = json.load(open(fp, encoding="utf-8"))
         except Exception:
             continue
+        # 파일 sig_date(파일명) = 행의 유니크 출처축. 행 내부 date는 정지종목 등에서 stale 고정될 수 있어
+        # (code,date)만으론 두 파일 행이 충돌 → 웹 React key 충돌·카드 무음 누락. file_date로 갈라줌.
+        fdate = os.path.splitext(os.path.basename(fp))[0]
         latest = day.get("date") or latest
-        rows.extend((day.get("rows") or {}).values())
+        for r in (day.get("rows") or {}).values():
+            r = dict(r)
+            r["file_date"] = fdate
+            rows.append(r)
     rows.sort(key=lambda r: ((r.get("date") or ""), (r.get("turnover_2d_pct") or 0)), reverse=True)
     return latest, rows[:cap]
 
