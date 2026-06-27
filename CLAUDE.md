@@ -2,8 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> 최종 갱신: **2026-06-23 폭발 정의 전면 개편 기준** (이전: `패치0618.md`).
-> ⚠️ 폭발/식음/반등 정의가 전면 교체됨 — 아래 "탐지 트랙"·"Architecture"가 현행 기준.
+> 최종 갱신: **2026-06-27 agent_alpha 사이드카 추가** (이전: 2026-06-23 폭발 정의 전면 개편 / `패치0618.md`).
+> ⚠️ 폭발/식음/반등 정의는 "탐지 트랙"·"Architecture"가 현행. **격리 실험모듈 agent_alpha/·`/alpha`는 별도 섹션 참조.**
 
 ## Project Status
 
@@ -124,6 +124,57 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 - `/performance` **StrategySimPanel**: 거래수·승률·net 평균·손절률·수익거래%·최악. `min_n=30` 미만은 "수집 중".
 - **표시 전용 · core 통계 미반영 · 보장 아님 · 종가손절 가정** 명시.
 
+## agent_alpha 사이드카 (전진수집기 + LLM 알파) — 격리 모듈
+
+> 추가: **2026-06-27**. 코어와 **완전 격리된 별도 폴더** `agent_alpha/`. 오너의 실제 매매신호
+> (**14:30↑ 5분봉 양봉 스파크 + 거래원 키움집중 + 투자자별 교차 + 유통회전율**)는 과거 데이터가 없어
+> 백테스트 불가(157k 백테스트가 "고회전 음봉→익일상승" 극단을 반증) → **오늘부터 라이브 적재해 전진검증**하는
+> 게 유일한 길. 거기에 LLM 재료·찌라시 추론을 결합하고 `/alpha`에서 **실측 익일확률**로 가시화한다.
+
+**핵심 축 = 유통주식 회전율(거래량/유통주식수).** "고회전=상승"이 아니라(반증됨) **회전율을 스파크·받힘·수급·
+거래원과 교차해 "어떤 조합일 때 통하나"를 측정**하는 게 목적. 모든 산출물은 `score_raw=0`과 동급 — **표시·실험
+전용, core 적중률·가중치 튜닝에 절대 미반영**.
+
+⚠️ **격리/삭제안전 원칙 (불변):**
+1. 코어 `scripts/`·기존 web 파일은 agent_alpha를 **절대 참조 안 함** — `grep -rn agent_alpha scripts` = **빈결과**.
+2. agent_alpha는 `scripts/kis_client.py`·`scripts/float_ratio.py`를 **읽기전용 import**만(Option A — 토큰캐시·레이트 공유).
+3. agent_alpha 쓰기는 `agent_alpha/data/`에만(gitignore). **유일 예외 = `publish_alpha.py`가 `web/data/alpha.json` 생성/커밋/푸시.**
+   코어 `data/float_ratio.json`은 `get_float_and_listed(code, cache=)`에 자체 캐시 dict를 넘겨 디스크쓰기 회피.
+4. **삭제** = `rm -rf agent_alpha` + cron 블록(`install_cron.sh --uninstall`) + 웹신규파일(`web/{app/alpha,components/alpha,
+   lib/alpha,app/api/alpha,types/alpha.ts,data/alpha.json}`) 삭제. 코어 기능 그대로.
+
+| 파일 | 역할 |
+|------|------|
+| `config.py` | sys.path 부트스트랩(agent_alpha/·sources/·agents/·repo/scripts) + 상수(스파크 14:30·몸통2%·≥2회, turnover_2d/종가강도 밴드, `CALIB_MIN_N`=20) + 경로(forward/judgments/calibration/float캐시/notified/alpha.json) + `today_yyyymmdd`/`now_iso`/`ensure_dirs`. |
+| `kis_extra.py` | **거래원(증권사 창구) 조회** — 코어에 없는 TR `FHKST01010600`을 `_call`로 추가(읽기전용). 매수/매도 상위 5창구 + 키움 집중도 + 외국계 순매수(`glob_yn`). 당일 스냅샷만(과거 불가). **거래원 행 전무 시 0.0 날조 대신 `None`**(원칙: 창구≠주체, 약신호). |
+| `sources/movers.py` | 코어 `radar`/registry에서 당일 폭발·youtong·reaccum mover 풀 수집(읽기전용). |
+| `sources/sparks_min.py` | 코어 `radar.aggregate_minute_bars`/`reignition_bars`/`_has_live_bars` 미러 + UN→J 분봉 폴백. `spark_1430(code)`→(count,max_body,bars,source). source="none"=라이브봉 없음(미측정). |
+| `sources/quant.py` | **(code,date) 정량행** — 캔들(종가강도·실꼬리)·**유통회전율(turnover_pct·turnover_2d_pct)**·14:30스파크·투자자별·거래원·레짐. 결측은 **전부 null(날조 금지)** — OHLC 0·investor 전부0·거래원 빈응답을 가짜값으로 안 채움. |
+| `sources/news.py`·`rumors.py`·`regime.py` | 종목뉴스·찌라시(토론방/텔레그램, 미확인 루머)·시장레짐(코스피/코스닥 등락). best-effort. |
+| `agents/llm.py` | Moonshot(kimi) 최소 클라이언트(urllib·thinking disabled·json_object·temperature 금지). 키 없으면 no-op. |
+| `agents/analyst.py` | 1차 LLM 판단 — catalyst·real_likelihood·sustainability·manipulation_risk·prob_up·confidence·evidence. `_p01`이 0~1/0~100 양규약 수용(코어 ai.ts 정합). |
+| `agents/redteam.py` | 적대적 검증 — 찌라시가 개미 유인 작전/허위 덫인가 → `redteam_flag`(문자열 'false' 오판 방지 안전파싱). |
+| `collect.py` | **EOD 수집(cron 15:40)** — mover 풀 → quant 행 → `data_ok` 필터 → `forward/{sig_date}.json`(미라벨). sig_date=행 date 최빈값. |
+| `loop.py` | **장중 LLM 루프(cron 10분)** — mover에 analyst/redteam judgment 결합 → judgments + 고신뢰 텔레그램. |
+| `label.py` | **익일 라벨(cron 09:10)** — forward 미라벨 행에 익일봉(J 공식) 종가·hit(익일종가>신호종가)·next_return 채움. 윈도(40거래일) 신호일 미커버 시 보류, 30일+ 미라벨은 만료(hit=None). `forward_samples.jsonl` 재생성. |
+| `calibrate.py` | **채점·보정(cron 17:45)** — 라벨 표본으로 정량밴드(turnover_2d × 스파크 × 종가강도 × 음봉)별 **실측 익일확률** + LLM Brier → `calibration.json`. **min_n=20 게이트**(부족 셀 "관찰중", 전 셀 보고=체리피킹 금지). 스파크축은 측정행(source≠none)만. |
+| `notify.py` | 자체 텔레그램 "🧠 [알파]" — 고신뢰(confidence≥0.6) 판단만 종목·일자 1회 디둡. 코어 `telegram_notify.send`/`load_env` 재사용. 기존 🚨/⚡와 분리. |
+| `publish_alpha.py` | **web 게시(cron 15:55·17:47)** — 최근 3 forward 파일(라벨 익일결과 포함, 코드 디둡 없음) + calibration → `web/data/alpha.json`. 변경판정=**git HEAD 커밋본 기준**, pathspec 한정 commit + `GIT_LOCK` 공유 직렬화 + 변경 시에만 push. `--dry-run` 미기록. |
+| `install_cron.sh` | agent_alpha 자체 cron 설치/제거(`# AGENT_ALPHA_BEGIN/END` 네임스페이스 블록, 멱등·`--uninstall`·`--dry-run`). 코어 cron 무손상. |
+
+- **전진수집 레코드**: `(code,date)` 1행 — 캔들·**유통회전율(turnover_pct·turnover_2d_pct)**·14:30스파크(count·max_body·source)·
+  투자자별(frgn/orgn/prsn_net)·거래원(kiwoom_buy_concentration·glob_net_qty·top_buyers/sellers)·레짐·LLM 판단·**익일라벨**.
+- **정직한 한계(UI에도 박음)**: 전진데이터 **수 주~수개월** 쌓여야 결론 — 그 전 `/alpha` calibration은 "관찰중(n부족)".
+  스파크는 **미증명 가설**. 거래원=EOD 스냅샷·창구≠주체. 단일레짐·공개신호 엣지 얇음 → 안 되면 `rm -rf`.
+
+```bash
+python3 agent_alpha/collect.py                  # EOD 수집(당일 분봉 필요·시크릿 필요)
+python3 agent_alpha/publish_alpha.py --dry-run  # alpha.json 미리보기(미기록)
+python3 agent_alpha/label.py                    # 익일 라벨 + forward_samples.jsonl 재생성
+python3 agent_alpha/calibrate.py                # calibration.json 산출
+bash    agent_alpha/install_cron.sh --dry-run   # 설치될 cron 블록 미리보기
+```
+
 ## 데이터 소스
 
 - **KIS 공식 API** (`openapi.koreainvestment.com:9443`, .env의 KIS_APP_KEY/SECRET):
@@ -163,6 +214,17 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 ```
 > ⚠️ analyzer 종가베팅 잡(`analyzer/run.py`·`analyzer/backtest.py`)은 폐지됨(2026-06-23 개편).
 
+**agent_alpha 자체 cron** (`bash agent_alpha/install_cron.sh`, 네임스페이스 블록 — 코어 cron 무수정·무손상):
+
+```
+1,11,…,51 9-15 * * 1-5  agent_alpha/loop.py            # 장중 LLM 판단(재료·찌라시·조작) → judgments
+40 15 * * 1-5           agent_alpha/collect.py         # EOD 전진수집(당일 분봉 필요)
+10 9  * * 1-5           agent_alpha/label.py           # 익일 라벨(다음 거래일 아침)
+45 17 * * 1-5           agent_alpha/calibrate.py       # 채점·보정 → calibration.json
+55 15 / 47 17 * * 1-5   agent_alpha/publish_alpha.py   # /alpha 게시(수집후·보정후, 변경 시에만 push)
+```
+> 제거: `bash agent_alpha/install_cron.sh --uninstall`. 로그: `/tmp/agent_alpha_*.log`. cron이 `/usr/bin/python3`(3.9) 사용.
+
 - "변경 시에만 push"로 Vercel 무료 한도 내 안정. **PC가 켜져 있어야 함.**
 - ⚠️ **cron(특히 publish 10분 간격)을 바꾸면 Mac에서 `install_cron.sh` 재실행 필요.**
 - 재매집 스파크는 5분봉이라 텔레그램 알림은 봉 완성(:05/:10/…/:00) 후 다음 publish 회차에 전송(지연 ≤~10분).
@@ -183,6 +245,12 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
   (포착 후 마감까지 유지·"처음 포착 HH:MM" 배지·현재가 실시간). 회전율 내림차순, 앰버 액센트. 빈 상태도 유효.
   UI=`components/youtong/YoutongList.tsx`, 임계 문구는 `params.youtong_*`. **10분 publish cron 재사용**(별도 잡 없음).
   최초 포착 시 **텔레그램 알림**("⚡ …곧 폭발 후보 / 포착 HH:MM", `notify_youtong`, 종목·일자 1회 디둡 — Mac만).
+- `GET /api/alpha` — **agent_alpha 사이드카** 출력 `web/data/alpha.json` 패스스루(`lib/alpha/repository.ts` SSOT). 엣지 캐시.
+  `{generated_at, date, movers[], calibration, disclaimer}`. mover에 `file_date`(출처 파일 sig_date·React key축)·유통회전율
+  ·14:30스파크·거래원·LLM 판단·익일라벨. **코어 `radar`와 무관**(별도 데이터·삭제안전). 위 "agent_alpha 사이드카" 참조.
+- `/alpha` — **알파 전진검증** 페이지(SSG + 60초 폴링). 데이터 = `alpha.json`. mover 카드(유통회전율 2일·종가강도·14:30스파크·
+  거래원 키움집중·외인/기관 교차·LLM catalyst/조작위험·prob_up·익일결과) + **CalibrationPanel**(turnover_2d×스파크×받힘×음봉
+  실측 익일확률, **min_n 게이트**=부족 셀 "관찰중"). UI=`components/alpha/AlphaList.tsx`. 빈 상태 유효. **측정·실험·매수추천 아님**.
 - `/performance` — 자가 검증 대시보드. 데이터 = `web/data/performance.json`. 패널: TrendChart(적중률 추세),
   CalibrationTable(점수대 보정), WeightsPanel(가중치), AiPredictionPanel(AI 방향별 적중·Brier),
   **ChangeBandTable**(등락률 구간별 익일 상승확률), **PeakTurnoverBandTable**(폭발일 회전율 구간별 익일 상승확률),
@@ -262,7 +330,9 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 - 레이더 UI: `components/radar/` — EventStrip·ThemeStrip(칩 필터), SuspectCard(페이드/재반등 바+스파크
   타임라인+점수 해부도+수급+forecast 라벨), LiveRadar(60초 폴링), SuspicionGauge, ScoreBreakdownBars.
 - 폭발/후보 UI: `components/forecast/ExplosionList.tsx`(/forecast 당일 폭발), `components/youtong/YoutongList.tsx`(/youtong
-  곧 폭발 후보). 둘 다 60초 폴링·SSG 초기값. 홈(`app/page.tsx`) 네비 카드 3열(폭발🔥·곧 폭발⚡·성과📈).
+  곧 폭발 후보). 둘 다 60초 폴링·SSG 초기값. 홈(`app/page.tsx`) 네비 카드(폭발🔥·곧 폭발⚡·알파🧠·성과📈).
+- 알파 UI: `components/alpha/AlphaList.tsx`(/alpha 전진검증 mover 카드 + CalibrationPanel). 60초 폴링·SSG. **agent_alpha 사이드카**
+  전용(코어 무관·삭제안전, 위 "agent_alpha 사이드카" 참조). 빈/관찰중 상태 유효, "측정·실험" 면책.
 - 성과 UI: `components/performance/` (위 `/performance` 패널 목록 참조).
 - 종목 분석 UI: 메인 검색박스(`components/stock/SearchBox`) → `/stock/[code]`. 엔진 = `web/lib/stock/`
   — `indicators.ts`(analyzer/indicators.py 1:1 포팅), `news-score.ts`, `theme-match.ts`, `scoring.ts`,
