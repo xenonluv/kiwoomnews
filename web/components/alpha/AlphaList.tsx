@@ -219,9 +219,11 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
     };
   }, []);
 
+  // 종합점수 = 스파크 횟수(미측정 -1) + 키움 속 외인매집 강도(0~3). 둘 다 강한 종목이 최상위. 동점은 2일회전율.
+  const combined = (m: AlphaMover) => sparkRank(m) + hiddenForeign(m);
   const movers = [...(data.movers ?? [])].sort((a, b) => {
-    const d = sparkRank(b) - sparkRank(a); // 스파크 큰 순
-    return d !== 0 ? d : (b.turnover_2d_pct ?? 0) - (a.turnover_2d_pct ?? 0); // 동순위는 회전율
+    const d = combined(b) - combined(a);
+    return d !== 0 ? d : (b.turnover_2d_pct ?? 0) - (a.turnover_2d_pct ?? 0);
   });
   return (
     <div className="space-y-6">
