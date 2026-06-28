@@ -18,6 +18,20 @@ function inst(m: AlphaMover) {
   return `외인+기관 ${v > 0 ? "+" : ""}${v.toLocaleString()}`;
 }
 
+// 14:30 스파크 강도별 색(한국 관례: 빨강=강함). 미측정/0=회색 → 앰버 → 주황 → 빨강(굵게).
+function sparkClass(count?: number | null, source?: string) {
+  if (source === "none" || count == null) return "text-muted-foreground";
+  if (count >= 5) return "text-up font-bold";
+  if (count >= 3) return "text-orange-400 font-semibold";
+  if (count >= 1) return "text-amber-400 font-medium";
+  return "text-muted-foreground"; // 측정됐으나 0회
+}
+
+// 스파크 큰 순 정렬값 — 미측정(none)은 맨 뒤(-1), 측정 0은 0.
+function sparkRank(m: AlphaMover) {
+  return m.spark_source === "none" ? -1 : m.spark_1430_count ?? -1;
+}
+
 function CalibCellRow({ label, c }: { label: string; c?: AlphaCalibCell }) {
   return (
     <div className="flex items-center justify-between gap-2 text-xs tabular-nums">
@@ -104,7 +118,7 @@ function MoverCard({ m }: { m: AlphaMover }) {
       <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs tabular-nums text-muted-foreground">
         <span>회전2d <b className="text-foreground">{m.turnover_2d_pct ?? "—"}%</b></span>
         <span>종가강도 {m.close_strength ?? "—"}</span>
-        <span>14:30스파크 <b className="text-foreground">{m.spark_source === "none" ? "— 미측정" : (m.spark_1430_count ?? "—")}</b></span>
+        <span>14:30스파크 <b className={sparkClass(m.spark_1430_count, m.spark_source)}>{m.spark_source === "none" ? "— 미측정" : (m.spark_1430_count ?? "—")}</b></span>
         <span>{inst(m)}</span>
         <span>키움 {m.kiwoom_buy_concentration != null ? Math.round(m.kiwoom_buy_concentration * 100) + "%" : "—"}</span>
       </div>
@@ -161,7 +175,10 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
     };
   }, []);
 
-  const movers = data.movers ?? [];
+  const movers = [...(data.movers ?? [])].sort((a, b) => {
+    const d = sparkRank(b) - sparkRank(a); // 스파크 큰 순
+    return d !== 0 ? d : (b.turnover_2d_pct ?? 0) - (a.turnover_2d_pct ?? 0); // 동순위는 회전율
+  });
   return (
     <div className="space-y-6">
       <p className="text-xs text-muted-foreground tabular-nums">
