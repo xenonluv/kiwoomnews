@@ -104,7 +104,7 @@ function MoverCard({ m }: { m: AlphaMover }) {
       <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs tabular-nums text-muted-foreground">
         <span>회전2d <b className="text-foreground">{m.turnover_2d_pct ?? "—"}%</b></span>
         <span>종가강도 {m.close_strength ?? "—"}</span>
-        <span>14:30스파크 <b className="text-foreground">{m.spark_1430_count ?? "—"}</b></span>
+        <span>14:30스파크 <b className="text-foreground">{m.spark_source === "none" ? "— 미측정" : (m.spark_1430_count ?? "—")}</b></span>
         <span>{inst(m)}</span>
         <span>키움 {m.kiwoom_buy_concentration != null ? Math.round(m.kiwoom_buy_concentration * 100) + "%" : "—"}</span>
       </div>
