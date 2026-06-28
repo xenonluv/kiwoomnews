@@ -112,7 +112,7 @@ def _minute_bars(code):
 
 
 def spark_1430(code):
-    """(count, max_body_pct, bars[], source) — 14:30↑ 5분 양봉 몸통%≥2% 스파크.
+    """(count, max_body_pct, bars[], source) — 14:30↑ 5분 양봉 몸통%≥SPARK_BODY_PCT(1.5) 스파크.
     분봉 결측(과거일·미체결)이면 (0,0,[],"none") — 날조 금지."""
     try:
         bars, src = _minute_bars(code)
