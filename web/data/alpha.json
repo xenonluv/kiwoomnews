@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-28T16:05:39+09:00",
+ "generated_at": "2026-06-28T16:42:20+09:00",
  "date": "20260626",
  "movers": [
   {
@@ -596,7 +596,7 @@
   }
  ],
  "calibration": {
-  "generated_at": "2026-06-28T16:05:39+09:00",
+  "generated_at": "2026-06-28T16:40:56+09:00",
   "total_labeled": 0,
   "overall": {
    "n": 0,
@@ -681,6 +681,45 @@
     "status": "관찰중"
    },
    "0.6~1.01": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false,
+    "status": "관찰중"
+   }
+  },
+  "by_spark_count": {
+   "0": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false,
+    "status": "관찰중"
+   },
+   "1~1": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false,
+    "status": "관찰중"
+   },
+   ">=2": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false,
+    "status": "관찰중"
+   }
+  },
+  "by_hidden_foreign": {
+   "해당": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false,
+    "status": "관찰중"
+   },
+   "미해당": {
     "n": 0,
     "hit_rate": null,
     "avg_return": null,
