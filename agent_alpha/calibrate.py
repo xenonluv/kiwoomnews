@@ -25,11 +25,17 @@ def _load_labeled():
 def _stat(rows):
     n = len(rows)
     if n == 0:
-        return {"n": 0, "hit_rate": None, "avg_return": None, "valid": False, "status": "관찰중"}
+        return {"n": 0, "hit_rate": None, "avg_return": None, "avg_high": None, "touch7_rate": None,
+                "valid": False, "status": "관찰중"}
     hit = sum(1 for r in rows if r.get("hit"))
     avg = sum(r["next_return_pct"] for r in rows) / n
+    # 종가 베팅 가정 시 익일 '고가' 도달폭 — avg_high=평균 익일고가 등락(종가 대비), touch7=익일 +7% 고가 터치율(익절 도달).
+    highs = [r["next_high_pct"] for r in rows if r.get("next_high_pct") is not None]
+    avg_high = round(sum(highs) / len(highs), 2) if highs else None
+    touch7 = round(sum(1 for h in highs if h >= 7) / len(highs) * 100, 1) if highs else None
     valid = n >= config.CALIB_MIN_N
     return {"n": n, "hit_rate": round(hit / n * 100, 1), "avg_return": round(avg, 2),
+            "avg_high": avg_high, "touch7_rate": touch7,
             "valid": valid, "status": "입증가능" if valid else "관찰중"}
 
 

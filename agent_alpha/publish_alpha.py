@@ -19,7 +19,7 @@ _MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "c
                  "hidden_foreign_level", "combined_score",
                  "kospi_chg", "kosdaq_chg", "catalyst", "real_likelihood", "sustainability",
                  "manipulation_risk", "prob_up", "confidence", "redteam_flag",
-                 "labeled", "hit", "next_return_pct", "next_date")
+                 "labeled", "hit", "next_return_pct", "next_high_pct", "next_date")
 
 
 def _recent_forward(n=RECENT_DAYS, cap=120):

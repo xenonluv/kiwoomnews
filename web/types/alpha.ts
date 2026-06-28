@@ -37,6 +37,7 @@ export interface AlphaMover {
   labeled?: boolean;
   hit?: boolean | null;
   next_return_pct?: number | null;
+  next_high_pct?: number | null; // 종가 대비 익일 고가 등락(종가베팅→다음날 고가 도달폭)
   next_date?: string;
 }
 
@@ -44,6 +45,8 @@ export interface AlphaCalibCell {
   n: number;
   hit_rate: number | null;
   avg_return: number | null;
+  avg_high?: number | null; // 평균 익일 고가 등락(종가 대비)
+  touch7_rate?: number | null; // 익일 +7% 고가 터치율(익절 도달%)
   valid: boolean;
   status: string; // "입증가능" | "관찰중"
   turnover2d?: string;

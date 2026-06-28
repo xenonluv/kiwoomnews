@@ -61,7 +61,11 @@ function CalibCellRow({ label, c }: { label: string; c?: AlphaCalibCell }) {
           <span className={c.hit_rate != null && c.hit_rate >= 50 ? "text-up" : "text-down"}>
             익일상승 {c.hit_rate}%
           </span>{" "}
-          · 평균 {pct(c.avg_return, 2)} · n={c.n}{" "}
+          · 평균 {pct(c.avg_return, 2)} · 고가 {pct(c.avg_high, 1)} · +7%터치{" "}
+          <span className={c.touch7_rate != null && c.touch7_rate >= 50 ? "text-up" : ""}>
+            {c.touch7_rate != null ? `${c.touch7_rate}%` : "—"}
+          </span>{" "}
+          · n={c.n}{" "}
           <span className={c.valid ? "text-foreground" : "text-warning"}>
             {c.valid ? "" : "(관찰중)"}
           </span>
@@ -193,6 +197,7 @@ function MoverCard({ m }: { m: AlphaMover }) {
         {m.labeled && m.hit != null && (
           <span className={`rounded px-1.5 py-0.5 ${m.hit ? "bg-up/15 text-up" : "bg-down/15 text-down"}`}>
             익일 {m.hit ? "↑" : "↓"} {pct(m.next_return_pct, 1)}
+            {m.next_high_pct != null ? ` · 고가 ${pct(m.next_high_pct, 1)}` : ""}
           </span>
         )}
       </div>
