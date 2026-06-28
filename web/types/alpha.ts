@@ -59,7 +59,7 @@ export interface AlphaCalibration {
   by_spark_eumbong_hi_turnover?: Record<string, AlphaCalibCell>;
   by_close_strength_eumbong?: Record<string, AlphaCalibCell>;
   cells?: AlphaCalibCell[];
-  llm?: { n: number; brier: number } | null;
+  llm?: { n: number; brier: number; by_prob_band?: Record<string, AlphaCalibCell> } | null;
   note?: string;
 }
 

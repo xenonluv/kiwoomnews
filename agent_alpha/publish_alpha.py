@@ -21,9 +21,11 @@ _MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "c
                  "labeled", "hit", "next_return_pct", "next_date")
 
 
-def _recent_forward(n=RECENT_DAYS, cap=60):
+def _recent_forward(n=RECENT_DAYS, cap=120):
     """최근 n개 forward 파일의 행을 '전부' 합침(코드 디둡 안 함) — 같은 코드의 오늘 미라벨 + 어제 라벨(익일결과)
-    행이 각각 날짜와 함께 보이게(디둡하면 최신 미라벨이 어제 라벨 결과를 가려 목적 위배). 날짜·회전율 내림차순, cap개."""
+    행이 각각 날짜와 함께 보이게(디둡하면 최신 미라벨이 어제 라벨 결과를 가려 목적 위배). 날짜·회전율 내림차순, cap개.
+    cap은 런어웨이 가드일 뿐 — n(3)일 × MAX_MOVERS(30)=90을 덮도록 120(꽉 찬 주에 오래된 날의 라벨행이 잘려
+    '어제 익일결과 노출' 목적이 깨지지 않게). 실제 reaccum 종목은 보통 수십 미만이라 평시엔 무영향."""
     files = sorted(glob.glob(os.path.join(config.FORWARD_DIR, "*.json")))[-n:]
     if not files:
         return None, []
