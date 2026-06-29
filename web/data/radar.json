@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29 15:02:35 KST",
+ "generated_at": "2026-06-29 15:12:27 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,7 +83,7 @@
    "name": "다스코",
    "sector": "금속",
    "high_pct": 29.99,
-   "vol_turnover_pct": 118.6,
+   "vol_turnover_pct": 118.7,
    "value_eok": 552,
    "price": 4465.0,
    "change_pct": 29.99,
@@ -94,8 +94,8 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 30.0,
-   "vol_turnover_pct": 134.6,
-   "value_eok": 240,
+   "vol_turnover_pct": 136.1,
+   "value_eok": 243,
    "price": 6370.0,
    "change_pct": 30.0,
    "backfill": false
@@ -108,8 +108,8 @@
    "sector": "오락·문화",
    "change_pct": 30.0,
    "high_pct": 30.0,
-   "vol_turnover_pct": 134.6,
-   "value_eok": 240,
+   "vol_turnover_pct": 136.1,
+   "value_eok": 243,
    "price": 6370.0,
    "first_seen": "12:31",
    "exploded": true
@@ -118,11 +118,11 @@
    "code": "122350",
    "name": "삼기",
    "sector": "운송장비·부품",
-   "change_pct": 3.87,
+   "change_pct": 0.05,
    "high_pct": 19.96,
    "vol_turnover_pct": 131.7,
    "value_eok": 665,
-   "price": 1905.0,
+   "price": 1835.0,
    "first_seen": "14:32",
    "exploded": false
   },
@@ -132,33 +132,21 @@
    "sector": "금속",
    "change_pct": 29.99,
    "high_pct": 29.99,
-   "vol_turnover_pct": 118.6,
+   "vol_turnover_pct": 118.7,
    "value_eok": 552,
    "price": 4465.0,
    "first_seen": "12:25",
    "exploded": true
   },
   {
-   "code": "198440",
-   "name": "강동씨앤엘",
-   "sector": "비금속",
-   "change_pct": 23.1,
-   "high_pct": 29.71,
-   "vol_turnover_pct": 54.2,
-   "value_eok": 196,
-   "price": 1993.0,
-   "first_seen": "14:41",
-   "exploded": false
-  },
-  {
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
-   "change_pct": 11.71,
+   "change_pct": 11.59,
    "high_pct": 27.8,
    "vol_turnover_pct": 52.9,
    "value_eok": 158,
-   "price": 4580.0,
+   "price": 4575.0,
    "first_seen": "13:21",
    "exploded": false
   },
@@ -166,130 +154,26 @@
    "code": "475150",
    "name": "SK이터닉스",
    "sector": "건설",
-   "change_pct": 15.97,
+   "change_pct": 16.2,
    "high_pct": 25.23,
-   "vol_turnover_pct": 51.9,
-   "value_eok": 5088,
-   "price": 50100.0,
+   "vol_turnover_pct": 52.8,
+   "value_eok": 5176,
+   "price": 50200.0,
+   "first_seen": "14:41",
+   "exploded": false
+  },
+  {
+   "code": "198440",
+   "name": "강동씨앤엘",
+   "sector": "비금속",
+   "change_pct": 21.99,
+   "high_pct": 29.71,
+   "vol_turnover_pct": 50.4,
+   "value_eok": 182,
+   "price": 1975.0,
    "first_seen": "14:41",
    "exploded": false
   }
  ],
- "suspects": [
-  {
-   "code": "037710",
-   "name": "광주신세계",
-   "sector": "유통",
-   "pattern": "reaccum",
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 84,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 2,
-    "re_body": 4,
-    "peak_turnover": 10,
-    "re_turnover": 6
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 52700.0,
-   "change_pct": -0.38,
-   "change_basis": "KRX",
-   "high_pct": 12.67,
-   "value_eok": 3593,
-   "turnover_pct": 248.9,
-   "peak_turnover_pct": 300.9,
-   "float_ratio": 0.3444,
-   "turnover_basis": "float",
-   "ma10": 40320.0,
-   "ma10_margin_pct": 30.7,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 4.59,
-    "time": "14:50",
-    "value_eok": 134,
-    "count": 2
-   },
-   "reignition_bars": [
-    {
-     "time": "14:50",
-     "body_pct": 4.59,
-     "value_eok": 134
-    },
-    {
-     "time": "15:00",
-     "body_pct": 2.53,
-     "value_eok": 26
-    }
-   ],
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-07-07_삼성전자 2분기 잠정실",
-     "title": "삼성전자 2분기 잠정실적",
-     "dday": 8,
-     "categories": [
-      "반도체"
-     ],
-     "score": 2.2
-    },
-    {
-     "id": "2026-07-03_미국 고용보고서 (7월",
-     "title": "미국 고용보고서 (7월 발표)",
-     "dday": 4,
-     "categories": [
-      "금리"
-     ],
-     "score": 1.5
-    },
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 10,
-     "categories": [
-      "금리"
-     ],
-     "score": 0.2
-    }
-   ],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260626",
-    "peak_value_eok": 3871,
-    "peak_high_pct": 29.98,
-    "peak_turnover_pct": 300.9,
-    "peak_ibs": 1.0,
-    "peak_uppertail": 0.0,
-    "ma20": 37805.0,
-    "ma20_margin_pct": 39.4,
-    "cause_summary": "삼전닉스 호남권에 공장 건설한다는 소식에… 금호건설, 14%대 ↑",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "theme_leader": false
-  }
- ]
+ "suspects": []
 }
