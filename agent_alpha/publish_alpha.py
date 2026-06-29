@@ -10,7 +10,8 @@ import fcntl
 import config
 
 GIT_LOCK = "/tmp/stocknews_git.lock"   # 코어 publish.py와 공유(직렬화)
-RECENT_DAYS = 3                         # 라벨된 익일결과가 보이도록 최근 N개 forward 파일 합침
+RECENT_DAYS = 1                         # /alpha는 '최신 거래일(오늘)' 종목만 — 어제·오늘 혼재 방지(회장님 지시 2026-06-29).
+#                                         익일결과 라벨·검증은 calibrate(forward_samples 전체 표본)가 담당 — 화면은 당일만.
 
 _MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "provisional", "change_pct", "is_eumbong", "below_prev",
                  "turnover_pct", "turnover_2d_pct", "close_strength", "upper_wick_pct", "lower_wick_pct",
