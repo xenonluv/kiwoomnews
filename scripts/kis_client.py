@@ -117,6 +117,20 @@ def get_token(force=False):
     return token
 
 
+def revoke_token(token):
+    """KIS 접근토큰 폐기(/oauth2/revokeP). KIS는 유효 토큰이 있으면 tokenP가 '기존 토큰'을 반환하므로,
+    07:00 고정 재발급을 위해 먼저 기존 토큰을 폐기해야 새 토큰(=새 만료시각)이 나온다. 실패는 dict로 흡수."""
+    app_key, app_secret = _keys()
+    body = json.dumps({"appkey": app_key, "appsecret": app_secret, "token": token}).encode()
+    req = urllib.request.Request(BASE + "/oauth2/revokeP", data=body,
+                                 headers={"content-type": "application/json; charset=utf-8"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.load(r)
+    except Exception as e:
+        return {"_error": str(e)}
+
+
 TOKEN_ERR_CODES = ("EGW00121", "EGW00123")  # 토큰 무효 / 토큰 만료
 
 
@@ -484,6 +498,25 @@ def value_rank_union(market="KOSPI", top_n=20):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--issue-token":
+        # 매일 아침 07:00 cron 고정 발행 — KIS는 유효 토큰 있으면 tokenP가 기존을 반환(force 무시)하므로,
+        # 기존 토큰을 revoke(폐기)한 뒤 새로 발급해야 만료시각이 07:00 기준으로 고정된다.
+        if os.path.exists(TOKEN_CACHE):
+            try:
+                _old = json.load(open(TOKEN_CACHE, encoding="utf-8")).get("token")
+                if _old:
+                    rv = revoke_token(_old)
+                    print("[kis] 기존 토큰 폐기:", rv.get("code") or rv.get("message") or rv.get("_error") or rv)
+            except Exception as e:
+                print("[kis] revoke 스킵:", e)
+            _invalidate_token()  # 로컬 캐시 삭제 → 다음 get_token이 새로 발급
+        get_token(force=True)
+        try:
+            print("[kis] 토큰 신규 발급 완료(07:00 고정) — 만료:",
+                  json.load(open(TOKEN_CACHE, encoding="utf-8")).get("expired"))
+        except Exception:
+            print("[kis] 토큰 신규 발급 완료(07:00 고정)")
+        sys.exit(0)
     if len(sys.argv) > 1 and sys.argv[1] == "rank":
         markets = [sys.argv[2]] if len(sys.argv) > 2 else ["KOSPI", "KOSDAQ"]
         for mkt in markets:

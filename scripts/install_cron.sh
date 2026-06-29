@@ -30,10 +30,14 @@ L_PHASE="37 17 * * 1-5 cd $REPO && $PY scripts/phase_eval.py --push >> /tmp/phas
 # 애프터마켓(~20:00) 동안 30분 간격 감시(:05,:35) — 16~20시로 막판(19:35~20:00)·마감 정착가까지 포착.
 # 디둡으로 종목당 밤 1회. 정규장 cron과 무관.
 L_NIGHT="5,35 16-20 * * 1-5 cd $REPO && $PY scripts/night_alert.py >> /tmp/night_alert.log 2>&1"
+# KIS 토큰 매일 07:00 고정 발행 — 장중 임의 시각 재발급(만료 24시간 주기로 드리프트, 예 12:52) 방지.
+# force 재발급이라 07:00 발급분이 장중(9~15:30)·애프터마켓(~20시) 내내 신선(회장님 지시 2026-06-29).
+L_TOKEN="0 7 * * * cd $REPO && $PY scripts/kis_client.py --issue-token >> /tmp/kis_token.log 2>&1"
 
 NEW_CRON="$(
-  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|scripts/track_eval.py|scripts/ai_click_eval.py|scripts/phase_eval.py|scripts/night_alert.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
+  crontab -l 2>/dev/null | grep -v -E "scripts/publish.py|scripts/radar_backtest.py|scripts/track_eval.py|scripts/ai_click_eval.py|scripts/phase_eval.py|scripts/night_alert.py|scripts/kis_client.py|analyzer/run.py|analyzer/backtest.py|^PATH=/usr/local/bin:/usr/bin:/bin$" || true
   echo "PATH=/usr/local/bin:/usr/bin:/bin"
+  echo "$L_TOKEN"
   echo "$L_PUBLISH"
   echo "$L_RADAR_BT"
   echo "$L_TRACK_EVAL"
