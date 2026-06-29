@@ -1231,7 +1231,7 @@ def main():
         description="이벤트 매집 레이더 — 과거 폭발 → 오늘 5분 양봉 스파크(재매집) 탐지")
     # 반등(재매집) 게이트 = 전일 폭발 종목 + 당일 5분 양봉 스파크 횟수 — 식음·등락률·MA20·투신 게이트 폐지
     ap.add_argument("--reignition-body-pct", type=float, default=REIGNITION_BODY_PCT,
-                    help="5분 양봉 몸통%% 하한(기본 2)")
+                    help="5분 양봉 몸통%% 하한(기본 1.5)")
     ap.add_argument("--reignition-span-min", type=int, default=REIGNITION_SPAN_MIN,
                     help="재반등 스파크 판정 분봉 합성 단위(분, 기본 5)")
     ap.add_argument("--reignition-min-count", type=int, default=REIGNITION_MIN_COUNT,
