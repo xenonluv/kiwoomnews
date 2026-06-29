@@ -24,7 +24,9 @@ def _next_bar(code, signal_date):
     ⚠ 윈도(최근 40거래일)가 신호일을 못 덮으면 after[0]가 진짜 익일봉이 아니므로 None(aged 행 far-future 오라벨 방지)."""
     now = datetime.now(config.KST)
     today = now.strftime("%Y%m%d")
-    inc_today = now.strftime("%H%M") >= "1530"   # 마감 후 = 오늘봉 완성 → 익일결과로 채택
+    # 종가 확정은 동시호가(15:20~15:30) 정산 후 보통 15:40~16:00에 KIS 일봉에 반영 → '1600'부터 today봉 채택.
+    # (마감 직후 15:30~16:00 수동 실행 시 미확정 종가로 오라벨되는 창을 차단. cron 16:00은 게이트 통과·정산 후 안전.)
+    inc_today = now.strftime("%H%M") >= "1600"
     try:
         d = kis.daily_prices(code, days=40, market="J")
     except Exception:
@@ -73,12 +75,14 @@ def run():
                     r.update({"labeled": True, "hit": None, "label_basis": "expired_unlabeled"})
                     dirty = True
                 continue  # 익일봉 아직(주말/공휴일) — 다음 실행에 재시도
+            # today봉으로 라벨한 경우(마감 후 16:00 즉시) 추적용 basis 구분 — 정산 직후라 향후 재검증 식별 가능.
+            basis = "kis_daily_J_sameday" if nb["date"] == today else "kis_daily_J"
             r.update({"labeled": True, "next_date": nb["date"], "next_close": nb["close"],
                       "next_open": nb.get("open"),
                       "next_high_pct": round((nb["high"] / sig - 1) * 100, 2) if nb.get("high") else None,
                       "hit": nb["close"] > sig,
                       "next_return_pct": round((nb["close"] / sig - 1) * 100, 2),
-                      "label_basis": "kis_daily_J"})
+                      "label_basis": basis})
             dirty = True
             changed += 1
         if dirty:
