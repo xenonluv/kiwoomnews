@@ -186,6 +186,8 @@ def notify_youtong(youtong, state_path=YOUTONG_STATE_PATH, now=None):
         code = y.get("code")
         if not code or code in sent:
             continue
+        if y.get("exploded"):
+            continue  # 이미 폭발(고가≥22·회전율≥90)한 종목 — '곧 폭발 후보' 알림은 의미 거꾸로. /forecast·🔥배지로 커버, 텔레그램 스킵
         if send(_format_youtong(y)):
             sent.add(code)
             n_sent += 1
