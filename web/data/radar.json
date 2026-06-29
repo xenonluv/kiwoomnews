@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-29 15:22:38 KST",
- "market_session": "open",
+ "generated_at": "2026-06-29 15:32:30 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -118,11 +118,11 @@
    "code": "122350",
    "name": "삼기",
    "sector": "운송장비·부품",
-   "change_pct": 0.27,
+   "change_pct": 3.98,
    "high_pct": 19.96,
    "vol_turnover_pct": 131.7,
    "value_eok": 665,
-   "price": 1839.0,
+   "price": 1907.0,
    "first_seen": "14:32",
    "exploded": false
   },
@@ -144,8 +144,8 @@
    "sector": "건설",
    "change_pct": 15.74,
    "high_pct": 25.23,
-   "vol_turnover_pct": 53.6,
-   "value_eok": 5253,
+   "vol_turnover_pct": 54.0,
+   "value_eok": 5287,
    "price": 50000.0,
    "first_seen": "14:41",
    "exploded": false
