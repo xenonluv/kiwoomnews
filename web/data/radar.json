@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29 11:52:45 KST",
+ "generated_at": "2026-06-29 12:02:17 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,10 +83,10 @@
    "name": "다스코",
    "sector": "금속",
    "high_pct": 25.18,
-   "vol_turnover_pct": 91.1,
-   "value_eok": 417,
-   "price": 4170.0,
-   "change_pct": 21.4,
+   "vol_turnover_pct": 92.1,
+   "value_eok": 421,
+   "price": 4210.0,
+   "change_pct": 22.56,
    "backfill": false
   },
   {
@@ -94,10 +94,10 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 29.8,
-   "vol_turnover_pct": 102.8,
-   "value_eok": 182,
-   "price": 6040.0,
-   "change_pct": 23.27,
+   "vol_turnover_pct": 103.4,
+   "value_eok": 183,
+   "price": 6000.0,
+   "change_pct": 22.45,
    "backfill": false
   }
  ],
