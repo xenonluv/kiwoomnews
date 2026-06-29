@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29 13:12:18 KST",
+ "generated_at": "2026-06-29 13:22:23 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,8 +83,8 @@
    "name": "다스코",
    "sector": "금속",
    "high_pct": 29.99,
-   "vol_turnover_pct": 117.7,
-   "value_eok": 547,
+   "vol_turnover_pct": 117.8,
+   "value_eok": 548,
    "price": 4465.0,
    "change_pct": 29.99,
    "backfill": false
@@ -94,37 +94,49 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 29.8,
-   "vol_turnover_pct": 116.5,
-   "value_eok": 206,
-   "price": 5860.0,
-   "change_pct": 19.59,
+   "vol_turnover_pct": 118.4,
+   "value_eok": 209,
+   "price": 5890.0,
+   "change_pct": 20.2,
    "backfill": false
   }
  ],
  "youtong": [
+  {
+   "code": "111710",
+   "name": "남화산업",
+   "sector": "오락·문화",
+   "change_pct": 20.2,
+   "high_pct": 29.8,
+   "vol_turnover_pct": 118.4,
+   "value_eok": 209,
+   "price": 5890.0,
+   "first_seen": "12:31",
+   "exploded": true
+  },
   {
    "code": "058730",
    "name": "다스코",
    "sector": "금속",
    "change_pct": 29.99,
    "high_pct": 29.99,
-   "vol_turnover_pct": 117.7,
-   "value_eok": 547,
+   "vol_turnover_pct": 117.8,
+   "value_eok": 548,
    "price": 4465.0,
    "first_seen": "12:25",
    "exploded": true
   },
   {
-   "code": "111710",
-   "name": "남화산업",
-   "sector": "오락·문화",
-   "change_pct": 19.59,
-   "high_pct": 29.8,
-   "vol_turnover_pct": 116.5,
-   "value_eok": 206,
-   "price": 5860.0,
-   "first_seen": "12:31",
-   "exploded": true
+   "code": "006920",
+   "name": "모헨즈",
+   "sector": "비금속",
+   "change_pct": 24.88,
+   "high_pct": 27.8,
+   "vol_turnover_pct": 52.9,
+   "value_eok": 158,
+   "price": 5120.0,
+   "first_seen": "13:21",
+   "exploded": false
   }
  ],
  "suspects": []
