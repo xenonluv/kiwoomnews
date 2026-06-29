@@ -1,5 +1,81 @@
 {
  "date": "20260629",
- "suspects": {},
- "as_of": "2026-06-29 14:52:29 KST"
+ "suspects": {
+  "037710": {
+   "name": "광주신세계",
+   "sector": "유통",
+   "entry": 52700.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 84,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 4,
+    "peak_turnover": 10,
+    "re_turnover": 6
+   },
+   "rank": 1,
+   "change_pct": -0.38,
+   "change_basis": "KRX",
+   "high_pct": 12.67,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 3593,
+   "turnover_pct": 248.9,
+   "peak_turnover_pct": 300.9,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260626",
+    "peak_value_eok": 3871,
+    "peak_high_pct": 29.98,
+    "peak_turnover_pct": 300.9,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 37805.0,
+    "ma20_margin_pct": 39.4,
+    "cause_summary": "삼전닉스 호남권에 공장 건설한다는 소식에… 금호건설, 14%대 ↑",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 4.59,
+    "time": "14:50",
+    "value_eok": 134,
+    "count": 2
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-07_삼성전자 2분기 잠정실",
+    "2026-07-03_미국 고용보고서 (7월",
+    "2026-07-09_한국은행 금통위 기준금"
+   ],
+   "first_seen": "2026-06-29 15:02:35 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  }
+ },
+ "as_of": "2026-06-29 15:02:35 KST"
 }
