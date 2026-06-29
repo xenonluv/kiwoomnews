@@ -4,8 +4,15 @@
   "058730": {
    "phase": "중립",
    "confidence": 55,
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260626",
+    "next_close": 3435.0,
+    "entry_close": 4105.0,
+    "rose": false,
+    "hit": null,
+    "return_pct": -16.32
+   }
   }
  }
 }
