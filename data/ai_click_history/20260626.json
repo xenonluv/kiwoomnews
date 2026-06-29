@@ -1,0 +1,187 @@
+{
+ "date": "20260626",
+ "tracks": {
+  "319660": {
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "verdict_score": 79,
+   "evaluated": false,
+   "result": null
+  },
+  "204320": {
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "verdict_score": 47,
+   "evaluated": false,
+   "result": null
+  },
+  "034730": {
+   "ai_prob": 41,
+   "ai_dir": "하락",
+   "verdict_score": 81,
+   "evaluated": false,
+   "result": null
+  },
+  "089030": {
+   "ai_prob": 37,
+   "ai_dir": "하락",
+   "verdict_score": 43,
+   "evaluated": false,
+   "result": null
+  },
+  "095610": {
+   "ai_prob": 52,
+   "ai_dir": "관망",
+   "verdict_score": 76,
+   "evaluated": false,
+   "result": null
+  },
+  "002070": {
+   "ai_prob": 33,
+   "ai_dir": "하락",
+   "verdict_score": 73,
+   "evaluated": false,
+   "result": null
+  },
+  "028050": {
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "verdict_score": 68,
+   "evaluated": false,
+   "result": null
+  },
+  "413630": {
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "verdict_score": 62,
+   "evaluated": false,
+   "result": null
+  },
+  "009150": {
+   "ai_prob": 43,
+   "ai_dir": "하락",
+   "verdict_score": 42,
+   "evaluated": false,
+   "result": null
+  },
+  "011070": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 61,
+   "evaluated": false,
+   "result": null
+  },
+  "043260": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 80,
+   "evaluated": false,
+   "result": null
+  },
+  "085620": {
+   "ai_prob": 31,
+   "ai_dir": "하락",
+   "verdict_score": 55,
+   "evaluated": false,
+   "result": null
+  },
+  "037710": {
+   "ai_prob": 48,
+   "ai_dir": "관망",
+   "verdict_score": 68,
+   "evaluated": false,
+   "result": null
+  },
+  "111710": {
+   "ai_prob": 50,
+   "ai_dir": "관망",
+   "verdict_score": 93,
+   "evaluated": false,
+   "result": null
+  },
+  "198440": {
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "verdict_score": 66,
+   "evaluated": false,
+   "result": null
+  },
+  "279570": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 56,
+   "evaluated": false,
+   "result": null
+  },
+  "043650": {
+   "ai_prob": 41,
+   "ai_dir": "하락",
+   "verdict_score": 70,
+   "evaluated": false,
+   "result": null
+  },
+  "122640": {
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "verdict_score": 91,
+   "evaluated": false,
+   "result": null
+  },
+  "240810": {
+   "ai_prob": 47,
+   "ai_dir": "관망",
+   "verdict_score": 73,
+   "evaluated": false,
+   "result": null
+  },
+  "028260": {
+   "ai_prob": 38,
+   "ai_dir": "하락",
+   "verdict_score": 70,
+   "evaluated": false,
+   "result": null
+  },
+  "017670": {
+   "ai_prob": 46,
+   "ai_dir": "하락",
+   "verdict_score": 64,
+   "evaluated": false,
+   "result": null
+  },
+  "356680": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 56,
+   "evaluated": false,
+   "result": null
+  },
+  "004710": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 61,
+   "evaluated": false,
+   "result": null
+  },
+  "010690": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 54,
+   "evaluated": false,
+   "result": null
+  },
+  "058730": {
+   "ai_prob": 36,
+   "ai_dir": "하락",
+   "verdict_score": 58,
+   "evaluated": false,
+   "result": null
+  },
+  "080220": {
+   "ai_prob": 34,
+   "ai_dir": "하락",
+   "verdict_score": 52,
+   "evaluated": false,
+   "result": null
+  }
+ }
+}
