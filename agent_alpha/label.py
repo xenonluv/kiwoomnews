@@ -49,6 +49,8 @@ def run():
         for code, r in rows.items():
             if r.get("labeled"):
                 continue
+            if r.get("provisional"):
+                continue  # 장중 잠정 수집(close 미확정) — 마감후 확정 수집이 덮어쓸 때까지 라벨 보류(검증 오염 방지)
             sig = r.get("close")
             if not sig:
                 r["labeled"] = True

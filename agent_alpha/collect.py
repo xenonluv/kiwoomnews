@@ -42,6 +42,11 @@ def _save_fcache(c):
 def run(dry=False, max_movers=None):
     config.ensure_dirs()
     date = config.today_yyyymmdd()
+    # 장중(정규장 마감 15:30 전) 수집이면 '잠정' — close·종가강도·회전율·스파크가 미확정 장중값.
+    # 회장님 15:30 종가베팅 전 표시(15:15 수집)용. 15:40 마감후 확정 수집이 같은 sig_date 파일을 덮어써 정본.
+    # label.py는 provisional 행을 라벨 보류(잠정 종가로 익일검증 오염 방지).
+    from datetime import datetime
+    provisional = datetime.now(config.KST).strftime("%H%M") < "1530"
     mv = movers_mod.movers()[: (max_movers or config.MAX_MOVERS)]
     if not mv:
         print(f"[alpha-collect] {date} movers 0 — 스킵")
@@ -52,6 +57,7 @@ def run(dry=False, max_movers=None):
     rows = []
     for m in mv:
         r = quant_mod.build(m, fcache, reg)
+        r["provisional"] = provisional
         j = judg.get(m["code"])
         if j:
             for k in ("catalyst", "real_likelihood", "sustainability", "manipulation_risk",

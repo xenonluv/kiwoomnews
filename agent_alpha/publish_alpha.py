@@ -12,7 +12,7 @@ import config
 GIT_LOCK = "/tmp/stocknews_git.lock"   # 코어 publish.py와 공유(직렬화)
 RECENT_DAYS = 3                         # 라벨된 익일결과가 보이도록 최근 N개 forward 파일 합침
 
-_MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "change_pct", "is_eumbong", "below_prev",
+_MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "provisional", "change_pct", "is_eumbong", "below_prev",
                  "turnover_pct", "turnover_2d_pct", "close_strength", "upper_wick_pct", "lower_wick_pct",
                  "spark_1430_count", "spark_source", "frgn_net", "orgn_net", "prsn_net",
                  "kiwoom_buy_concentration", "kiwoom_is_top_buyer", "glob_net_qty",

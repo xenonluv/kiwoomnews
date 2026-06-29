@@ -12,14 +12,14 @@ END="# AGENT_ALPHA_END"
 BLOCK="$BEGIN
 # 장중 LLM 루프(재료·찌라시·조작 판단 → judgments). 10분 간격.
 1,11,21,31,41,51 9-15 * * 1-5 cd $REPO && $PY agent_alpha/loop.py >> /tmp/agent_alpha_loop.log 2>&1
-# 전진수집(EOD, 마감 후 — 당일 분봉 필요). 코어 publish(9-20)와 KIS 레이트만 공유, 별개 프로세스.
-40 15 * * 1-5 cd $REPO && $PY agent_alpha/collect.py >> /tmp/agent_alpha_collect.log 2>&1
+# 전진수집 2회 — 15:15 장중 잠정(회장님 15:30 종가베팅 전 표시용·provisional) + 15:40 마감후 확정(정본·익일라벨 기준).
+15,40 15 * * 1-5 cd $REPO && $PY agent_alpha/collect.py >> /tmp/agent_alpha_collect.log 2>&1
 # 익일 라벨(다음 거래일 아침)
 10 9 * * 1-5 cd $REPO && $PY agent_alpha/label.py >> /tmp/agent_alpha_label.log 2>&1
 # 채점·보정(장후)
 45 17 * * 1-5 cd $REPO && $PY agent_alpha/calibrate.py >> /tmp/agent_alpha_calibrate.log 2>&1
-# 웹 /alpha 1차 게시(수집 여유 후 — calibration은 전일값, 변경 시에만 push). collect(40)와 15분차로 지연 흡수.
-55 15 * * 1-5 cd $REPO && $PY agent_alpha/publish_alpha.py >> /tmp/agent_alpha_publish.log 2>&1
+# 웹 /alpha 게시 2회 — 15:18 잠정(15:15 수집 직후, 베팅 전 표시) + 15:43 확정(15:40 수집 직후). 변경 시에만 push.
+18,43 15 * * 1-5 cd $REPO && $PY agent_alpha/publish_alpha.py >> /tmp/agent_alpha_publish.log 2>&1
 # 웹 /alpha 2차 게시(보정 후 — 당일 calibration 반영)
 47 17 * * 1-5 cd $REPO && $PY agent_alpha/publish_alpha.py >> /tmp/agent_alpha_publish.log 2>&1
 $END"

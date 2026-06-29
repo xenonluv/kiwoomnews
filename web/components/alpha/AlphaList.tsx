@@ -185,6 +185,7 @@ function MoverCard({ m }: { m: AlphaMover }) {
             {m.confidence != null ? ` · conf ${Math.round((m.confidence ?? 0) * 100)}%` : ""}
           </span>
         )}
+        {m.provisional && <span className="rounded bg-warning/10 px-1.5 py-0.5 text-warning">🕒 장중 잠정</span>}
         {danger && <span className="rounded bg-warning/15 px-1.5 py-0.5 text-warning">⚠ 작전/조작 의심</span>}
         {hf > 0 && (
           <span
@@ -245,6 +246,9 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
     <div className="space-y-6">
       <p className="text-xs text-muted-foreground tabular-nums">
         기준 {data.date ?? "—"} · 갱신 {data.generated_at} · {movers.length}종목
+        {movers.some((m) => m.provisional) && (
+          <span className="ml-2 rounded bg-warning/15 px-1.5 py-0.5 text-warning">🕒 장중 잠정(15:15 기준 · 마감 후 확정)</span>
+        )}
       </p>
       <CalibrationPanel data={data} />
       {movers.length === 0 ? (
