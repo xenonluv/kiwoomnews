@@ -68,8 +68,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-26 15:02:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260629",
+    "next_close": 4135.0,
+    "next_high": 4675.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 6.03
+   },
    "final": true
   },
   "198440": {
@@ -139,8 +146,15 @@
    },
    "matched_events": [],
    "first_seen": "2026-06-26 15:22:20 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260629",
+    "next_close": 1802.0,
+    "next_high": 2100.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 11.3
+   },
    "final": true
   }
  },
