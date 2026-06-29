@@ -132,6 +132,7 @@ export interface Youtong {
   value_eok: number; // 당일 거래대금(억)
   price: number | null; // 현재가(실시간)
   first_seen?: string; // 처음 포착 시각 "HH:MM"(종일 지속)
+  exploded?: boolean; // 폭발(고가≥22·회전율≥90) 승격 — youtong 유지하되 /forecast 병행·🔥 배지
 }
 
 /** 3일내 +7% 상승확률 라벨 — 6개월 백테스트 보정(과거 실측·보장 아님) */

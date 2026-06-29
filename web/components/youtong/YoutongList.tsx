@@ -49,6 +49,15 @@ function YoutongCard({ e, rank }: { e: Youtong; rank: number }) {
                   <Clock className="mr-1 size-3" aria-hidden /> {e.first_seen} 포착
                 </Badge>
               )}
+              {e.exploded && (
+                <Badge
+                  variant="outline"
+                  className="border-up/50 text-up"
+                  title="이 후보가 실제 폭발(고가≥22%·회전율≥90%)했습니다 — /forecast에도 노출되며 youtong 목록에 유지됩니다."
+                >
+                  🔥 폭발
+                </Badge>
+              )}
             </div>
             <span className="text-xs text-muted-foreground tabular-nums">
               거래대금 {e.value_eok.toLocaleString()}억

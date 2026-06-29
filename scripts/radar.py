@@ -582,8 +582,9 @@ def update_live_explosions(reg, p):
         is_explosion = want_explosion and vt is not None and vt >= p.explosion_vol_turnover
         # /youtong 싼 게이트: 현재 등락률≥7 AND 회전율≥50(상한 없음) AND 아직 폭발 아님. 5분봉 스파크
         # 확정·종일 지속은 prepare_youtong이 처리(분봉은 신규 후보만 1회 조회 — 비용 가드).
-        if (want_youtong and vt is not None and not is_explosion
-                and vt >= p.youtong_turnover_min):
+        # ⚠ 폭발 승격(is_explosion) 종목도 youtong 후보로 수집 — 한 번 youtong에 뜬 종목은 폭발해도 삭제하지
+        # 않고 유지(회장님 지시 2026-06-29 "삭제말고 냅둬"). /forecast에도 병행 노출되며 youtong엔 '🔥 폭발' 배지.
+        if (want_youtong and vt is not None and vt >= p.youtong_turnover_min):
             youtong_candidates.append({
                 "code": row["code"],
                 "name": row["name"],
@@ -594,6 +595,7 @@ def update_live_explosions(reg, p):
                 "value_eok": round(value_won / 1e8),
                 # KIS _f()가 결측가를 0.0으로 강제 → 0/음수는 미상으로 보고 null(타입 계약: number|null=미상 null).
                 "price": (now.get("price") if (now.get("price") or 0) > 0 else None),
+                "exploded": bool(is_explosion),      # 폭발 승격 여부(배지용)
             })
         # ── 폭발(explosion) 경로 — 고가 게이트 통과분만(high_pass·float_missing 회계·게이트 동작 불변) ──
         if not want_explosion:
@@ -752,9 +754,10 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
     reg = _load_youtong_registry(path, now.strftime("%Y%m%d"))
     codes = reg["codes"]
     cand_by_code = {c["code"]: c for c in candidates}
-    # 1) 신규 후보만 5분봉 스파크 확정 → registry 적재(이미 있으면 분봉 재조회 스킵). 폭발 승격 종목은 적재 안 함.
+    # 1) 신규 후보만 5분봉 스파크 확정 → registry 적재(이미 있으면 분봉 재조회 스킵).
+    # ⚠ 폭발 승격 종목도 적재(회장님 지시: 폭발해도 youtong에서 삭제 말고 유지). 스파크는 충족해야 적재.
     for code, c in cand_by_code.items():
-        if code in codes or code in explosion_codes:
+        if code in codes:
             continue
         try:
             bars = _minute_bars_with_fallback(code, c.get("name"))
@@ -773,9 +776,7 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
     # 2) registry(오늘 적재분) 전체를 youtong[]로 렌더 — 종일 지속. 현재가는 실시간 갱신.
     out = []
     for code, rec in list(codes.items()):
-        if code in explosion_codes:   # youtong 후보였다가 폭발 승격 → /forecast로, youtong서 제거(역할 분리)
-            codes.pop(code, None)
-            continue
+        # (폭발 승격해도 youtong 유지 — 회장님 지시. /forecast와 병행 노출, '🔥 폭발' 배지로 구분)
         # 적재값 회전율·고가·거래대금은 항상 숫자(후보 게이트가 보장) — 손상 레코드(수동편집 등)면 스킵·제거
         # (웹 카드가 toLocaleString을 호출해 None이면 크래시 → 방어).
         rvt, rhigh, rval = rec.get("vol_turnover_pct"), rec.get("high_pct"), rec.get("value_eok")
@@ -801,6 +802,7 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
             "code": code, "name": rec.get("name") or code, "sector": rec.get("sector", ""),
             "change_pct": change_pct, "high_pct": high_pct, "vol_turnover_pct": vt,
             "value_eok": value_eok, "price": price, "first_seen": rec.get("first_seen"),
+            "exploded": code in explosion_codes,   # 폭발 승격 여부(youtong 유지·🔥 배지·/forecast 병행)
         })
     if not p.dry_run:
         _save_youtong_registry(reg, path)
