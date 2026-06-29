@@ -93,7 +93,9 @@ def _cmp_key(data):
     calib = data.get("calibration")
     if isinstance(calib, dict):
         calib = {k: v for k, v in calib.items() if k != "generated_at"}
-    return json.dumps({"movers": data.get("movers"), "calibration": calib}, ensure_ascii=False, sort_keys=True)
+    return json.dumps({"movers": data.get("movers"), "yesterday_results": data.get("yesterday_results"),
+                       "yesterday_date": data.get("yesterday_date"), "calibration": calib},
+                      ensure_ascii=False, sort_keys=True)
 
 
 def _committed_key():
