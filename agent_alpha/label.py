@@ -50,7 +50,13 @@ def run():
             if r.get("labeled"):
                 continue
             if r.get("provisional"):
-                continue  # 장중 잠정 수집(close 미확정) — 마감후 확정 수집이 덮어쓸 때까지 라벨 보류(검증 오염 방지)
+                # 이 루프는 date<today 파일만(위 45행 가드) — 잠정 행이 여기 왔다 = 마감일 당일 15:40 확정
+                # 수집이 그 파일을 못 덮어씀(KIS 장애 등 실패) = stale. 잠정(장중 미확정) 종가로 익일라벨하면
+                # 오염되므로 라벨하지 않되, 만료 처리해 영구 고착·웹 '🕒 장중 잠정' stale 배지를 끊는다.
+                r.update({"labeled": True, "hit": None, "provisional": False,
+                          "label_basis": "expired_provisional_unconfirmed"})
+                dirty = True
+                continue
             sig = r.get("close")
             if not sig:
                 r["labeled"] = True

@@ -71,7 +71,10 @@ def run(dry=False, max_movers=None):
     _save_fcache(fcache)
     rows = [r for r in rows if r.get("data_ok")]   # 일봉<2 퇴화행 제외(신호일 어긋남·degenerate 방지)
     if not rows:
-        print("[alpha-collect] 유효 행 0(일봉 결측) — 스킵")
+        msg = "[alpha-collect] 유효 행 0(일봉 결측) — 스킵"
+        if not provisional:   # 마감후 확정 수집인데 빈 결과 → 직전 잠정 파일이 미확정으로 남음(label이 익일 만료)
+            msg += " ⚠ 확정 수집 빈 결과 — 직전 잠정 파일 미확정 잔존(label.py가 익일 expired_provisional 처리)"
+        print(msg)
         return []
     if dry:
         print(f"[alpha-collect] DRY {len(rows)}행(미기록)")
