@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29 10:52:16 KST",
+ "generated_at": "2026-06-29 11:02:15 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,10 +83,10 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 29.8,
-   "vol_turnover_pct": 94.5,
-   "value_eok": 167,
-   "price": 6270.0,
-   "change_pct": 27.96,
+   "vol_turnover_pct": 97.2,
+   "value_eok": 172,
+   "price": 6140.0,
+   "change_pct": 25.31,
    "backfill": false
   }
  ],
@@ -95,11 +95,11 @@
    "code": "058730",
    "name": "다스코",
    "sector": "금속",
-   "change_pct": 16.89,
+   "change_pct": 17.61,
    "high_pct": 21.54,
-   "vol_turnover_pct": 60.8,
-   "value_eok": 274,
-   "price": 4015.0,
+   "vol_turnover_pct": 62.1,
+   "value_eok": 280,
+   "price": 4040.0,
    "first_seen": "10:22"
   }
  ],
