@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-29 14:32:35 KST",
+ "generated_at": "2026-06-29 14:42:32 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -94,8 +94,8 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 30.0,
-   "vol_turnover_pct": 133.6,
-   "value_eok": 238,
+   "vol_turnover_pct": 134.1,
+   "value_eok": 239,
    "price": 6370.0,
    "change_pct": 30.0,
    "backfill": false
@@ -108,8 +108,8 @@
    "sector": "오락·문화",
    "change_pct": 30.0,
    "high_pct": 30.0,
-   "vol_turnover_pct": 133.6,
-   "value_eok": 238,
+   "vol_turnover_pct": 134.1,
+   "value_eok": 239,
    "price": 6370.0,
    "first_seen": "12:31",
    "exploded": true
@@ -118,11 +118,11 @@
    "code": "122350",
    "name": "삼기",
    "sector": "운송장비·부품",
-   "change_pct": 13.96,
+   "change_pct": 10.14,
    "high_pct": 19.96,
    "vol_turnover_pct": 131.7,
    "value_eok": 665,
-   "price": 2090.0,
+   "price": 2020.0,
    "first_seen": "14:32",
    "exploded": false
   },
@@ -142,12 +142,36 @@
    "code": "006920",
    "name": "모헨즈",
    "sector": "비금속",
-   "change_pct": 10.73,
+   "change_pct": 16.1,
    "high_pct": 27.8,
    "vol_turnover_pct": 52.9,
    "value_eok": 158,
-   "price": 4540.0,
+   "price": 4760.0,
    "first_seen": "13:21",
+   "exploded": false
+  },
+  {
+   "code": "198440",
+   "name": "강동씨앤엘",
+   "sector": "비금속",
+   "change_pct": 26.0,
+   "high_pct": 29.71,
+   "vol_turnover_pct": 50.4,
+   "value_eok": 182,
+   "price": 2040.0,
+   "first_seen": "14:41",
+   "exploded": false
+  },
+  {
+   "code": "475150",
+   "name": "SK이터닉스",
+   "sector": "건설",
+   "change_pct": 18.29,
+   "high_pct": 25.23,
+   "vol_turnover_pct": 50.3,
+   "value_eok": 4928,
+   "price": 51100.0,
+   "first_seen": "14:41",
    "exploded": false
   }
  ],
