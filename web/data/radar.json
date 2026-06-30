@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-30 15:22:18 KST",
- "market_session": "open",
+ "generated_at": "2026-06-30 15:32:21 KST",
+ "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -85,8 +85,8 @@
    "high_pct": 22.65,
    "vol_turnover_pct": 133.3,
    "value_eok": 1301,
-   "price": 16600.0,
-   "change_pct": -5.31,
+   "price": 16640.0,
+   "change_pct": -5.08,
    "backfill": true
   },
   {
@@ -94,8 +94,8 @@
    "name": "금호건설",
    "sector": "건설",
    "high_pct": 29.97,
-   "vol_turnover_pct": 165.0,
-   "value_eok": 3117,
+   "vol_turnover_pct": 165.1,
+   "value_eok": 3118,
    "price": 11190.0,
    "change_pct": 29.97,
    "backfill": false
@@ -107,8 +107,8 @@
    "high_pct": 22.76,
    "vol_turnover_pct": 255.0,
    "value_eok": 493,
-   "price": 5330.0,
-   "change_pct": -16.33,
+   "price": 5450.0,
+   "change_pct": -14.44,
    "backfill": true
   },
   {
@@ -116,11 +116,11 @@
    "name": "금호전기",
    "sector": "전기·전자",
    "high_pct": 26.96,
-   "vol_turnover_pct": 270.6,
-   "value_eok": 1334,
-   "price": 1147.0,
-   "change_pct": 4.46,
-   "backfill": true
+   "vol_turnover_pct": 280.0,
+   "value_eok": 1381,
+   "price": 1174.0,
+   "change_pct": 6.92,
+   "backfill": false
   }
  ],
  "youtong": [
@@ -128,11 +128,11 @@
    "code": "001210",
    "name": "금호전기",
    "sector": "전기·전자",
-   "change_pct": 4.46,
+   "change_pct": 6.92,
    "high_pct": 26.96,
-   "vol_turnover_pct": 270.6,
-   "value_eok": 1334,
-   "price": 1147.0,
+   "vol_turnover_pct": 280.0,
+   "value_eok": 1381,
+   "price": 1174.0,
    "first_seen": "10:01",
    "exploded": true
   },
@@ -140,11 +140,11 @@
    "code": "111710",
    "name": "남화산업",
    "sector": "오락·문화",
-   "change_pct": -16.33,
+   "change_pct": -14.44,
    "high_pct": 22.76,
    "vol_turnover_pct": 255.0,
    "value_eok": 493,
-   "price": 5330.0,
+   "price": 5450.0,
    "first_seen": "13:21",
    "exploded": true
   },
@@ -154,8 +154,8 @@
    "sector": "건설",
    "change_pct": 29.97,
    "high_pct": 29.97,
-   "vol_turnover_pct": 165.0,
-   "value_eok": 3117,
+   "vol_turnover_pct": 165.1,
+   "value_eok": 3118,
    "price": 11190.0,
    "first_seen": "09:41",
    "exploded": true
@@ -164,11 +164,11 @@
    "code": "153890",
    "name": "져스텍",
    "sector": "전기·전자",
-   "change_pct": -5.31,
+   "change_pct": -5.08,
    "high_pct": 22.65,
    "vol_turnover_pct": 133.3,
    "value_eok": 1301,
-   "price": 16600.0,
+   "price": 16640.0,
    "first_seen": "09:41",
    "exploded": true
   },
@@ -188,11 +188,11 @@
    "code": "475430",
    "name": "키스트론",
    "sector": "전기·전자",
-   "change_pct": 0.0,
+   "change_pct": -0.15,
    "high_pct": 10.94,
    "vol_turnover_pct": 52.9,
    "value_eok": 244,
-   "price": 6670.0,
+   "price": 6660.0,
    "first_seen": "09:41",
    "exploded": false
   }
@@ -230,17 +230,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 4140.0,
-   "change_pct": -2.7,
+   "price": 4265.0,
+   "change_pct": 0.24,
    "change_basis": "KRX",
    "high_pct": 9.05,
-   "value_eok": 608,
-   "turnover_pct": 223.4,
+   "value_eok": 613,
+   "turnover_pct": 225.1,
    "peak_turnover_pct": 712.6,
    "float_ratio": 0.32130000000000003,
    "turnover_basis": "float",
-   "ma10": 5548.0,
-   "ma10_margin_pct": -25.38,
+   "ma10": 5560.5,
+   "ma10_margin_pct": -23.3,
    "spark": {
     "clusters": []
    },
@@ -248,9 +248,9 @@
    "spark_max_pct": null,
    "mega_flow": false,
    "reignition": {
-    "body_pct": 2.74,
+    "body_pct": 3.11,
     "time": "15:15",
-    "value_eok": 4,
+    "value_eok": 7,
     "count": 2
    },
    "reignition_bars": [
@@ -261,8 +261,8 @@
     },
     {
      "time": "15:15",
-     "body_pct": 2.74,
-     "value_eok": 4
+     "body_pct": 3.11,
+     "value_eok": 7
     }
    ],
    "news": [],
@@ -286,8 +286,8 @@
     "peak_turnover_pct": 712.6,
     "peak_ibs": 0.35,
     "peak_uppertail": 28.5,
-    "ma20": 3500.8,
-    "ma20_margin_pct": 18.26,
+    "ma20": 3507.0,
+    "ma20_margin_pct": 21.61,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
