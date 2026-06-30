@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-29 18:02:27 KST",
- "market_session": "closed",
+ "generated_at": "2026-06-30 09:02:07 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -24,12 +24,12 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 38,
+ "universe_count": 27,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
    "date": "2026-07-03",
-   "dday": 4,
+   "dday": 3,
    "title": "미국 고용보고서 (7월 발표)",
    "category": [
     "금리",
@@ -42,7 +42,7 @@
   {
    "id": "2026-07-07_삼성전자 2분기 잠정실",
    "date": "2026-07-07",
-   "dday": 8,
+   "dday": 7,
    "title": "삼성전자 2분기 잠정실적",
    "category": [
     "반도체",
@@ -55,7 +55,7 @@
   {
    "id": "2026-07-09_한국은행 금통위 기준금",
    "date": "2026-07-09",
-   "dday": 10,
+   "dday": 9,
    "title": "한국은행 금통위 기준금리 결정",
    "category": [
     "금리"
@@ -67,7 +67,7 @@
   {
    "id": "2026-07-09_한국 옵션·선물 동시만",
    "date": "2026-07-09",
-   "dday": 10,
+   "dday": 9,
    "title": "한국 옵션·선물 동시만기일 (7월)",
    "category": [
     "수급"
@@ -77,103 +77,7 @@
    "estimated": false
   }
  ],
- "explosions": [
-  {
-   "code": "058730",
-   "name": "다스코",
-   "sector": "금속",
-   "high_pct": 29.99,
-   "vol_turnover_pct": 127.3,
-   "value_eok": 596,
-   "price": 4465.0,
-   "change_pct": 29.99,
-   "backfill": false
-  },
-  {
-   "code": "111710",
-   "name": "남화산업",
-   "sector": "오락·문화",
-   "high_pct": 30.0,
-   "vol_turnover_pct": 136.6,
-   "value_eok": 243,
-   "price": 6370.0,
-   "change_pct": 30.0,
-   "backfill": false
-  }
- ],
- "youtong": [
-  {
-   "code": "111710",
-   "name": "남화산업",
-   "sector": "오락·문화",
-   "change_pct": 30.0,
-   "high_pct": 30.0,
-   "vol_turnover_pct": 136.6,
-   "value_eok": 243,
-   "price": 6370.0,
-   "first_seen": "12:31",
-   "exploded": true
-  },
-  {
-   "code": "122350",
-   "name": "삼기",
-   "sector": "운송장비·부품",
-   "change_pct": 3.98,
-   "high_pct": 19.96,
-   "vol_turnover_pct": 131.7,
-   "value_eok": 665,
-   "price": 1907.0,
-   "first_seen": "14:32",
-   "exploded": false
-  },
-  {
-   "code": "058730",
-   "name": "다스코",
-   "sector": "금속",
-   "change_pct": 29.99,
-   "high_pct": 29.99,
-   "vol_turnover_pct": 127.3,
-   "value_eok": 596,
-   "price": 4465.0,
-   "first_seen": "12:25",
-   "exploded": true
-  },
-  {
-   "code": "475150",
-   "name": "SK이터닉스",
-   "sector": "건설",
-   "change_pct": 15.74,
-   "high_pct": 25.23,
-   "vol_turnover_pct": 54.4,
-   "value_eok": 5327,
-   "price": 50000.0,
-   "first_seen": "14:41",
-   "exploded": false
-  },
-  {
-   "code": "006920",
-   "name": "모헨즈",
-   "sector": "비금속",
-   "change_pct": 17.56,
-   "high_pct": 27.8,
-   "vol_turnover_pct": 52.9,
-   "value_eok": 158,
-   "price": 4820.0,
-   "first_seen": "13:21",
-   "exploded": false
-  },
-  {
-   "code": "198440",
-   "name": "강동씨앤엘",
-   "sector": "비금속",
-   "change_pct": 11.3,
-   "high_pct": 29.71,
-   "vol_turnover_pct": 50.4,
-   "value_eok": 182,
-   "price": 1802.0,
-   "first_seen": "14:41",
-   "exploded": false
-  }
- ],
+ "explosions": [],
+ "youtong": [],
  "suspects": []
 }
