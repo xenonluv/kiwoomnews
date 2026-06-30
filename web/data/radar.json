@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-30 09:42:06 KST",
+ "generated_at": "2026-06-30 09:51:58 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -24,7 +24,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 27,
+ "universe_count": 28,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
@@ -77,29 +77,41 @@
    "estimated": false
   }
  ],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "153890",
+   "name": "져스텍",
+   "sector": "전기·전자",
+   "high_pct": 22.65,
+   "vol_turnover_pct": 93.7,
+   "value_eok": 910,
+   "price": 20400.0,
+   "change_pct": 16.37,
+   "backfill": false
+  }
+ ],
  "youtong": [
   {
    "code": "153890",
    "name": "져스텍",
    "sector": "전기·전자",
-   "change_pct": 17.8,
-   "high_pct": 17.8,
-   "vol_turnover_pct": 75.7,
-   "value_eok": 721,
-   "price": 20650.0,
+   "change_pct": 16.37,
+   "high_pct": 22.65,
+   "vol_turnover_pct": 93.7,
+   "value_eok": 910,
+   "price": 20400.0,
    "first_seen": "09:41",
-   "exploded": false
+   "exploded": true
   },
   {
    "code": "002990",
    "name": "금호건설",
    "sector": "건설",
-   "change_pct": 14.17,
-   "high_pct": 15.45,
-   "vol_turnover_pct": 60.1,
-   "value_eok": 1014,
-   "price": 9830.0,
+   "change_pct": 22.53,
+   "high_pct": 25.78,
+   "vol_turnover_pct": 75.0,
+   "value_eok": 1307,
+   "price": 10550.0,
    "first_seen": "09:41",
    "exploded": false
   },
@@ -107,11 +119,11 @@
    "code": "475430",
    "name": "키스트론",
    "sector": "전기·전자",
-   "change_pct": 7.5,
+   "change_pct": 8.85,
    "high_pct": 10.94,
-   "vol_turnover_pct": 52.9,
-   "value_eok": 244,
-   "price": 7170.0,
+   "vol_turnover_pct": 61.5,
+   "value_eok": 285,
+   "price": 7260.0,
    "first_seen": "09:41",
    "exploded": false
   }
