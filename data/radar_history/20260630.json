@@ -28,8 +28,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 619,
-   "turnover_pct": 227.3,
+   "value_eok": 621,
+   "turnover_pct": 228.0,
    "peak_turnover_pct": 712.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -72,17 +72,8 @@
    "first_seen": "2026-06-30 15:22:18 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 34,
-    "model_prob": 25,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-06-30 17:20 KST",
-    "verdict_score": 51,
-    "verdict_level": "중립"
-   }
+   "final": true
   }
  },
- "as_of": "2026-06-30 17:12:30 KST"
+ "as_of": "2026-06-30 17:22:25 KST"
 }
