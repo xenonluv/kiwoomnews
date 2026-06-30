@@ -1,11 +1,11 @@
 {
- "as_of": "2026-06-29 17:20 KST",
+ "as_of": "2026-06-30 17:20 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 15,
+  "tracking_days": 16,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -126,6 +126,14 @@
   },
   {
    "date": "20260629",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260630",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -392,9 +400,9 @@
    },
    {
     "band": "−5~0%",
-    "n": 26,
-    "hit_rate": 53.8,
-    "avg_return": 0.65,
+    "n": 27,
+    "hit_rate": 51.9,
+    "avg_return": 0.21,
     "valid": true
    },
    {
@@ -454,9 +462,9 @@
    },
    {
     "band": "300%+",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -11.21,
     "valid": false
    }
   ]
@@ -467,9 +475,9 @@
   "cells": [
    {
     "band": "2회",
-    "n": 1,
-    "hit_rate": 100.0,
-    "avg_return": 6.03,
+    "n": 2,
+    "hit_rate": 50.0,
+    "avg_return": -2.59,
     "valid": false
    },
    {
@@ -508,9 +516,9 @@
    },
    {
     "band": "강마감 ≥0.7",
-    "n": 5,
-    "hit_rate": 60.0,
-    "avg_return": 3.98,
+    "n": 6,
+    "hit_rate": 50.0,
+    "avg_return": 1.45,
     "valid": false
    }
   ]
@@ -534,11 +542,11 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 94,
-   "hit_rate": 44.7,
-   "avg_return": -0.77,
-   "high3_rate": 63.8,
-   "tracking_days": 15,
+   "n": 95,
+   "hit_rate": 44.2,
+   "avg_return": -0.88,
+   "high3_rate": 63.2,
+   "tracking_days": 16,
    "series": [
     {
      "date": "20260610",
@@ -654,14 +662,29 @@
     },
     {
      "date": "20260629",
+     "n": 1,
+     "hits": 0,
+     "hit_rate": 0,
+     "cum_n": 95,
+     "cum_hit_rate": 44.2
+    },
+    {
+     "date": "20260630",
      "n": 0,
      "hits": 0,
      "hit_rate": null,
-     "cum_n": 94,
-     "cum_hit_rate": 44.7
+     "cum_n": 95,
+     "cum_hit_rate": 44.2
     }
    ],
    "recent": [
+    {
+     "date": "20260629",
+     "name": "광주신세계",
+     "score": 84,
+     "hit": false,
+     "return_pct": -11.21
+    },
     {
      "date": "20260626",
      "name": "강동씨앤엘",
@@ -794,13 +817,6 @@
      "score": 72,
      "hit": false,
      "return_pct": -3.9
-    },
-    {
-     "date": "20260623",
-     "name": "삼성물산",
-     "score": 84,
-     "hit": true,
-     "return_pct": 7.03
     }
    ]
   },
@@ -815,17 +831,17 @@
     "valid": false
    },
    "nonleader": {
-    "n": 91,
-    "hit_rate": 45.1,
-    "avg_return": -0.68,
-    "high3_rate": 63.7,
+    "n": 92,
+    "hit_rate": 44.6,
+    "avg_return": -0.79,
+    "high3_rate": 63.0,
     "valid": true
    },
    "all": {
-    "n": 94,
-    "hit_rate": 44.7,
-    "avg_return": -0.77,
-    "high3_rate": 63.8,
+    "n": 95,
+    "hit_rate": 44.2,
+    "avg_return": -0.88,
+    "high3_rate": 63.2,
     "valid": true
    },
    "lift": null

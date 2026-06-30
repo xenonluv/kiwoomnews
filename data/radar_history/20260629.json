@@ -72,8 +72,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-06-29 15:02:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260630",
+    "next_close": 44750.0,
+    "next_high": 48000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -11.21
+   },
    "final": false
   }
  },
