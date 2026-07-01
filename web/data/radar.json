@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-01 10:02:07 KST",
+ "generated_at": "2026-07-01 10:12:07 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -77,29 +77,41 @@
    "estimated": false
   }
  ],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "111710",
+   "name": "남화산업",
+   "sector": "오락·문화",
+   "high_pct": 29.91,
+   "vol_turnover_pct": 95.2,
+   "value_eok": 185,
+   "price": 7080.0,
+   "change_pct": 29.91,
+   "backfill": false
+  }
+ ],
  "youtong": [
   {
    "code": "111710",
    "name": "남화산업",
    "sector": "오락·문화",
-   "change_pct": 29.36,
-   "high_pct": 29.36,
-   "vol_turnover_pct": 85.0,
-   "value_eok": 163,
-   "price": 7050.0,
+   "change_pct": 29.91,
+   "high_pct": 29.91,
+   "vol_turnover_pct": 95.2,
+   "value_eok": 185,
+   "price": 7080.0,
    "first_seen": "09:31",
-   "exploded": false
+   "exploded": true
   },
   {
    "code": "001210",
    "name": "금호전기",
    "sector": "전기·전자",
-   "change_pct": 21.55,
+   "change_pct": 22.06,
    "high_pct": 26.75,
-   "vol_turnover_pct": 69.8,
-   "value_eok": 392,
-   "price": 1427.0,
+   "vol_turnover_pct": 77.9,
+   "value_eok": 440,
+   "price": 1433.0,
    "first_seen": "09:31",
    "exploded": false
   }
