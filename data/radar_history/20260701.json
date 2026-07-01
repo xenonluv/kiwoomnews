@@ -4,7 +4,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 44950.0,
+   "entry": 44600.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,14 +22,14 @@
     "re_turnover": 5
    },
    "rank": 1,
-   "change_pct": 0.45,
+   "change_pct": -0.34,
    "change_basis": "KRX",
    "high_pct": 4.58,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 994,
-   "turnover_pct": 85.9,
+   "value_eok": 1010,
+   "turnover_pct": 87.3,
    "peak_turnover_pct": 300.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 300.9,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 38800.0,
-    "ma20_margin_pct": 15.85,
+    "ma20": 38782.5,
+    "ma20_margin_pct": 15.0,
     "cause_summary": "삼전닉스 호남권에 공장 건설한다는 소식에… 금호건설, 14%대 ↑",
     "was_theme_leader": false,
     "source": "live"
@@ -77,5 +77,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-01 14:52:25 KST"
+ "as_of": "2026-07-01 15:02:28 KST"
 }
