@@ -62,6 +62,18 @@ function fitnessTier(score: number): { cls: string; label: string } {
   return { cls: "bg-white/5 text-muted-foreground", label: "부적합" };
 }
 
+// 종베 적합도 정렬 순위 배지 색 (한국 관례: 빨강=상위). 1위 최강조 → 하위 회색.
+function rankClass(rank: number): string {
+  if (rank === 1) return "bg-up text-white font-bold";
+  if (rank === 2) return "bg-orange-400/40 text-orange-100 font-bold";
+  if (rank === 3) return "bg-amber-400/30 text-amber-100 font-semibold";
+  if (rank <= 5) return "bg-white/10 text-foreground";
+  return "bg-white/5 text-muted-foreground";
+}
+
+// mover 유형 한글 라벨 (표시용).
+const MTYPE_LABEL: Record<string, string> = { reaccum: "재매집", youtong: "후보", explosion: "폭발" };
+
 // '키움 속 숨은 외국인 매집' 흔적 강도(0=없음, 1~3 강). 정의: 투자자별 외국인 순매수(+)인데
 // 외국계 창구 순매수는 거의 0(<외인순매수×10%) AND 키움 매수집중≥30% → 외국인이 외국계 창구를
 // 안 거치고 키움 등 리테일 창구로 숨어 매집한 흔적(의심). 데이터 결측(null)이면 판정 안 함.
@@ -177,7 +189,7 @@ function CalibrationPanel({ data }: { data: AlphaData }) {
   );
 }
 
-function MoverCard({ m }: { m: AlphaMover }) {
+function MoverCard({ m, rank }: { m: AlphaMover; rank?: number }) {
   const danger = m.redteam_flag || (m.manipulation_risk ?? 0) >= 0.6;
   const hf = hiddenForeign(m);
   const { score, reasons } = closeBetFitness(m);
@@ -186,10 +198,20 @@ function MoverCard({ m }: { m: AlphaMover }) {
   return (
     <div className="space-y-2 rounded-lg border border-white/10 bg-white/[0.045] p-4">
       <div className="flex items-baseline justify-between gap-2">
-        <h3 className="text-lg font-bold tracking-tight">
-          {m.name}
+        <h3 className="flex items-baseline gap-1.5 text-lg font-bold tracking-tight">
+          {rank != null && (
+            <span className={`shrink-0 rounded px-1.5 py-0.5 text-xs tabular-nums ${rankClass(rank)}`}>
+              {rank}위
+            </span>
+          )}
+          <span>{m.name}</span>
+          {m.mover_type && (
+            <span className="shrink-0 rounded bg-white/10 px-1 py-0.5 text-[10px] font-normal text-muted-foreground">
+              {MTYPE_LABEL[m.mover_type] ?? m.mover_type}
+            </span>
+          )}
           {m.date && (
-            <span className="ml-1.5 text-[10px] font-normal text-muted-foreground tabular-nums">
+            <span className="text-[10px] font-normal text-muted-foreground tabular-nums">
               {m.date.length === 8 ? `${m.date.slice(4, 6)}/${m.date.slice(6)}` : m.date}
             </span>
           )}
@@ -311,7 +333,7 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {movers.map((m, i) => (
-            <MoverCard key={`${m.code}-${m.file_date ?? m.date ?? i}`} m={m} />
+            <MoverCard key={`${m.code}-${m.file_date ?? m.date ?? i}`} m={m} rank={i + 1} />
           ))}
         </div>
       )}
