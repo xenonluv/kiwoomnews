@@ -4,7 +4,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 43800.0,
+   "entry": 43900.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,14 +22,14 @@
     "re_turnover": 5
    },
    "rank": 1,
-   "change_pct": -2.12,
+   "change_pct": -1.9,
    "change_basis": "KRX",
    "high_pct": 4.58,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1025,
-   "turnover_pct": 88.6,
+   "value_eok": 1034,
+   "turnover_pct": 89.3,
    "peak_turnover_pct": 300.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 300.9,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 38742.5,
-    "ma20_margin_pct": 13.05,
+    "ma20": 38747.5,
+    "ma20_margin_pct": 13.3,
     "cause_summary": "삼전닉스 호남권에 공장 건설한다는 소식에… 금호건설, 14%대 ↑",
     "was_theme_leader": false,
     "source": "live"
@@ -79,7 +79,7 @@
   "413630": {
    "name": "씨피시스템",
    "sector": "화학",
-   "entry": 2955.0,
+   "entry": 2965.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -97,14 +97,14 @@
     "re_turnover": 0
    },
    "rank": 2,
-   "change_pct": 3.68,
+   "change_pct": 4.04,
    "change_basis": "KRX",
    "high_pct": 7.19,
    "pattern": "reaccum",
    "prime": false,
    "theme": "유가",
-   "value_eok": 26,
-   "turnover_pct": 9.0,
+   "value_eok": 29,
+   "turnover_pct": 9.8,
    "peak_turnover_pct": 107.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -121,8 +121,8 @@
     "peak_turnover_pct": 107.6,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 2767.8,
-    "ma20_margin_pct": 6.77,
+    "ma20": 2768.2,
+    "ma20_margin_pct": 7.11,
     "cause_summary": "씨피시스템, 1분기 매출 52억…순이익 전년比 83.2%↑",
     "was_theme_leader": false,
     "source": "live"
@@ -150,5 +150,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-01 15:12:33 KST"
+ "as_of": "2026-07-01 15:23:14 KST"
 }
