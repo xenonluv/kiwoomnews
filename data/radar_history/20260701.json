@@ -13,13 +13,13 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 80,
+   "suspicion_score": 81,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 2,
     "re_body": 1,
     "peak_turnover": 10,
-    "re_turnover": 5
+    "re_turnover": 6
    },
    "rank": 1,
    "change_pct": -2.79,
@@ -28,8 +28,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1081,
-   "turnover_pct": 93.3,
+   "value_eok": 1092,
+   "turnover_pct": 94.3,
    "peak_turnover_pct": 300.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -150,5 +150,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-01 15:52:26 KST"
+ "as_of": "2026-07-01 16:02:29 KST"
 }
