@@ -4,7 +4,7 @@
   "037710": {
    "name": "광주신세계",
    "sector": "유통",
-   "entry": 44600.0,
+   "entry": 43800.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,14 +22,14 @@
     "re_turnover": 5
    },
    "rank": 1,
-   "change_pct": -0.34,
+   "change_pct": -2.12,
    "change_basis": "KRX",
    "high_pct": 4.58,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1010,
-   "turnover_pct": 87.3,
+   "value_eok": 1025,
+   "turnover_pct": 88.6,
    "peak_turnover_pct": 300.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 300.9,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 38782.5,
-    "ma20_margin_pct": 15.0,
+    "ma20": 38742.5,
+    "ma20_margin_pct": 13.05,
     "cause_summary": "삼전닉스 호남권에 공장 건설한다는 소식에… 금호건설, 14%대 ↑",
     "was_theme_leader": false,
     "source": "live"
@@ -75,7 +75,80 @@
    "evaluated": false,
    "result": null,
    "final": true
+  },
+  "413630": {
+   "name": "씨피시스템",
+   "sector": "화학",
+   "entry": 2955.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 67,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 1,
+    "peak_turnover": 2,
+    "re_turnover": 0
+   },
+   "rank": 2,
+   "change_pct": 3.68,
+   "change_basis": "KRX",
+   "high_pct": 7.19,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "유가",
+   "value_eok": 26,
+   "turnover_pct": 9.0,
+   "peak_turnover_pct": 107.6,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260624",
+    "peak_value_eok": 358,
+    "peak_high_pct": 29.89,
+    "peak_turnover_pct": 107.6,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 2767.8,
+    "ma20_margin_pct": 6.77,
+    "cause_summary": "씨피시스템, 1분기 매출 52억…순이익 전년比 83.2%↑",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 2.3,
+    "time": "14:55",
+    "value_eok": 1,
+    "count": 2
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-09_한국 옵션·선물 동시만"
+   ],
+   "first_seen": "2026-07-01 15:12:33 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
   }
  },
- "as_of": "2026-07-01 15:02:28 KST"
+ "as_of": "2026-07-01 15:12:33 KST"
 }
