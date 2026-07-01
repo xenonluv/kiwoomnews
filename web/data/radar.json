@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-01 16:22:28 KST",
+ "generated_at": "2026-07-01 16:32:32 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,8 +83,8 @@
    "name": "금호전기",
    "sector": "전기·전자",
    "high_pct": 26.75,
-   "vol_turnover_pct": 158.8,
-   "value_eok": 906,
+   "vol_turnover_pct": 158.9,
+   "value_eok": 907,
    "price": 1389.0,
    "change_pct": 18.31,
    "backfill": false
@@ -143,8 +143,8 @@
    "sector": "전기·전자",
    "change_pct": 18.31,
    "high_pct": 26.75,
-   "vol_turnover_pct": 158.8,
-   "value_eok": 906,
+   "vol_turnover_pct": 158.9,
+   "value_eok": 907,
    "price": 1389.0,
    "first_seen": "09:31",
    "exploded": true
@@ -167,8 +167,8 @@
    "sector": "건설",
    "change_pct": 14.89,
    "high_pct": 19.92,
-   "vol_turnover_pct": 78.6,
-   "value_eok": 8785,
+   "vol_turnover_pct": 78.7,
+   "value_eok": 8787,
    "price": 59400.0,
    "first_seen": "13:21",
    "exploded": false
@@ -179,8 +179,8 @@
    "sector": "비금속",
    "change_pct": 25.84,
    "high_pct": 29.84,
-   "vol_turnover_pct": 72.5,
-   "value_eok": 249,
+   "vol_turnover_pct": 72.6,
+   "value_eok": 250,
    "price": 1982.0,
    "first_seen": "13:21",
    "exploded": false
@@ -191,8 +191,8 @@
    "sector": "전기·전자",
    "change_pct": 28.69,
    "high_pct": 29.98,
-   "vol_turnover_pct": 63.3,
-   "value_eok": 5294,
+   "vol_turnover_pct": 63.4,
+   "value_eok": 5304,
    "price": 300500.0,
    "first_seen": "13:51",
    "exploded": false
@@ -204,7 +204,7 @@
    "change_pct": 29.97,
    "high_pct": 29.97,
    "vol_turnover_pct": 57.9,
-   "value_eok": 3993,
+   "value_eok": 3994,
    "price": 13400.0,
    "first_seen": "13:11",
    "exploded": false
@@ -247,8 +247,8 @@
    "change_pct": -2.79,
    "change_basis": "KRX",
    "high_pct": 4.58,
-   "value_eok": 1116,
-   "turnover_pct": 96.4,
+   "value_eok": 1120,
+   "turnover_pct": 96.7,
    "peak_turnover_pct": 300.9,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
