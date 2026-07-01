@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-01 11:02:14 KST",
+ "generated_at": "2026-07-01 11:12:12 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -83,10 +83,10 @@
    "name": "금호전기",
    "sector": "전기·전자",
    "high_pct": 26.75,
-   "vol_turnover_pct": 96.7,
-   "value_eok": 551,
-   "price": 1453.0,
-   "change_pct": 23.76,
+   "vol_turnover_pct": 99.2,
+   "value_eok": 566,
+   "price": 1450.0,
+   "change_pct": 23.51,
    "backfill": false
   },
   {
@@ -94,10 +94,10 @@
    "name": "남화산업",
    "sector": "오락·문화",
    "high_pct": 29.91,
-   "vol_turnover_pct": 118.7,
-   "value_eok": 234,
-   "price": 6780.0,
-   "change_pct": 24.4,
+   "vol_turnover_pct": 124.7,
+   "value_eok": 246,
+   "price": 6720.0,
+   "change_pct": 23.3,
    "backfill": false
   }
  ],
@@ -106,11 +106,11 @@
    "code": "111710",
    "name": "남화산업",
    "sector": "오락·문화",
-   "change_pct": 24.4,
+   "change_pct": 23.3,
    "high_pct": 29.91,
-   "vol_turnover_pct": 118.7,
-   "value_eok": 234,
-   "price": 6780.0,
+   "vol_turnover_pct": 124.7,
+   "value_eok": 246,
+   "price": 6720.0,
    "first_seen": "09:31",
    "exploded": true
   },
@@ -118,11 +118,11 @@
    "code": "001210",
    "name": "금호전기",
    "sector": "전기·전자",
-   "change_pct": 23.76,
+   "change_pct": 23.51,
    "high_pct": 26.75,
-   "vol_turnover_pct": 96.7,
-   "value_eok": 551,
-   "price": 1453.0,
+   "vol_turnover_pct": 99.2,
+   "value_eok": 566,
+   "price": 1450.0,
    "first_seen": "09:31",
    "exploded": true
   }
