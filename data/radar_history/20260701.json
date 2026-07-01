@@ -28,8 +28,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1178,
-   "turnover_pct": 101.6,
+   "value_eok": 1182,
+   "turnover_pct": 101.9,
    "peak_turnover_pct": 300.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -74,16 +74,7 @@
    "first_seen": "2026-07-01 14:52:25 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 39,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-01 17:20 KST",
-    "verdict_score": 83,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "413630": {
    "name": "씨피시스템",
@@ -156,17 +147,8 @@
    "first_seen": "2026-07-01 15:12:33 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 43,
-    "model_prob": 42,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-01 17:21 KST",
-    "verdict_score": 79,
-    "verdict_level": "강한 매수신호"
-   }
+   "final": true
   }
  },
- "as_of": "2026-07-01 17:12:28 KST"
+ "as_of": "2026-07-01 17:22:29 KST"
 }
