@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-02 16:51:54 KST",
+ "generated_at": "2026-07-02 17:01:54 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -84,7 +84,7 @@
    "sector": "건설",
    "high_pct": 29.41,
    "vol_turnover_pct": 92.2,
-   "value_eok": 1396,
+   "value_eok": 1397,
    "price": 25800.0,
    "change_pct": 8.4,
    "backfill": false
@@ -105,8 +105,8 @@
    "name": "남화토건",
    "sector": "건설",
    "high_pct": 26.58,
-   "vol_turnover_pct": 105.8,
-   "value_eok": 506,
+   "vol_turnover_pct": 106.0,
+   "value_eok": 507,
    "price": 10360.0,
    "change_pct": 7.58,
    "backfill": false
@@ -170,6 +170,18 @@
    "exploded": true
   },
   {
+   "code": "091590",
+   "name": "남화토건",
+   "sector": "건설",
+   "change_pct": 7.58,
+   "high_pct": 26.58,
+   "vol_turnover_pct": 106.0,
+   "value_eok": 507,
+   "price": 10360.0,
+   "first_seen": "09:52",
+   "exploded": true
+  },
+  {
    "code": "001260",
    "name": "남광토건",
    "sector": "건설",
@@ -179,18 +191,6 @@
    "value_eok": 467,
    "price": 10270.0,
    "first_seen": "10:01",
-   "exploded": true
-  },
-  {
-   "code": "091590",
-   "name": "남화토건",
-   "sector": "건설",
-   "change_pct": 7.58,
-   "high_pct": 26.58,
-   "vol_turnover_pct": 105.8,
-   "value_eok": 506,
-   "price": 10360.0,
-   "first_seen": "09:52",
    "exploded": true
   },
   {
@@ -248,7 +248,7 @@
    "change_pct": 8.4,
    "high_pct": 29.41,
    "vol_turnover_pct": 92.2,
-   "value_eok": 1396,
+   "value_eok": 1397,
    "price": 25800.0,
    "first_seen": "13:51",
    "exploded": true
@@ -271,7 +271,7 @@
    "sector": "건설",
    "change_pct": 15.83,
    "high_pct": 29.98,
-   "vol_turnover_pct": 74.5,
+   "vol_turnover_pct": 74.6,
    "value_eok": 344,
    "price": 3805.0,
    "first_seen": "13:41",
@@ -283,8 +283,8 @@
    "sector": "IT 서비스",
    "change_pct": 9.94,
    "high_pct": 29.82,
-   "vol_turnover_pct": 60.9,
-   "value_eok": 696,
+   "vol_turnover_pct": 61.5,
+   "value_eok": 703,
    "price": 4700.0,
    "first_seen": "15:21",
    "exploded": false
