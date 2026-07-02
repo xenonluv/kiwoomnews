@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-02 18:42:03 KST",
+ "generated_at": "2026-07-02 18:52:13 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -283,8 +283,8 @@
    "sector": "IT 서비스",
    "change_pct": 9.94,
    "high_pct": 29.82,
-   "vol_turnover_pct": 65.9,
-   "value_eok": 750,
+   "vol_turnover_pct": 66.1,
+   "value_eok": 752,
    "price": 4700.0,
    "first_seen": "15:21",
    "exploded": false
@@ -295,8 +295,8 @@
    "sector": "전기·전자",
    "change_pct": 18.91,
    "high_pct": 25.82,
-   "vol_turnover_pct": 52.5,
-   "value_eok": 900,
+   "vol_turnover_pct": 52.8,
+   "value_eok": 904,
    "price": 14460.0,
    "first_seen": "17:51",
    "exploded": false
