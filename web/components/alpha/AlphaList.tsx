@@ -409,7 +409,6 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
           <span className="ml-2 rounded bg-warning/15 px-1.5 py-0.5 text-warning">🕒 장중 잠정(15:15 기준 · 마감 후 확정)</span>
         )}
       </p>
-      <CalibrationPanel data={data} />
       {movers.length === 0 ? (
         <div className="flex min-h-40 items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted-foreground">
           아직 적재된 알파 movers가 없습니다 — 거래일 마감 후 수집됩니다.
@@ -441,6 +440,8 @@ export function AlphaList({ initial }: { initial: AlphaData }) {
           </div>
         </div>
       )}
+      {/* 전진검증(실측 익일확률) 패널 — 종목 카드가 먼저 보이도록 맨 아래 배치(회장님 지시 2026-07-02) */}
+      <CalibrationPanel data={data} />
       <p className="text-xs text-warning">{data.disclaimer}</p>
     </div>
   );
