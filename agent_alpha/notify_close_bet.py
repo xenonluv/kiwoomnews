@@ -81,7 +81,10 @@ def build_message(movers):
             f"   당일 {'' if chg is None else f'{chg:+.1f}%'} · 대금 {val if val is not None else '—'}억"
             f" · 강스파크 {ssc if ssc is not None else '—'}개"
         )
-        lines.append(f"   {tg.BASE}/stock/{m.get('code')}")
+        # 가점/감점 근거 칩 — 산식 SSOT(fitness.close_bet_breakdown)에서 직접, 0점 칩은 생략
+        chips = " · ".join(f"{k}({v:+d})" for k, v in fitness.close_bet_breakdown(m)[1] if v)
+        if chips:
+            lines.append(f"   {chips}")
     if crash_n:
         lines.append(f"(폭락제외 벌점 발동 {crash_n}종 — 하위 강등)")
     lines.append("전략: 익일 장중 +7% 익절 / −5% 손절 · 잠정 휴리스틱·매수추천 아님")

@@ -44,47 +44,60 @@ def _hidden_foreign(row):
     return 3 if fn >= 100000 else 2 if fn >= 30000 else 1
 
 
-def close_bet_fitness(row):
-    """정량 행(dict) → 종베 적합도 점수(int 0~100). v4."""
+def close_bet_breakdown(row):
+    """정량 행(dict) → (종베 점수 0~100, 근거 칩 [(라벨, 가감)]). 라벨은 웹 closeBetFitness 칩과 1:1."""
+    reasons = []
     s = 50
+
+    def add(k, v):
+        nonlocal s
+        s += v
+        reasons.append((k, v))
+
     mt = row.get("mover_type")
     if mt == "reaccum":
-        s += 10
+        add("재매집", 10)
     elif mt == "explosion":
-        s -= 50
+        add("폭발(추격불가)", -50)
     # 유동성 결핍(통합) — 둘 다 해당해도 한 번만 −15
     v = row.get("value_eok")
     t = row.get("turnover_2d_pct")
     if (v is not None and v < 50) or (t is not None and t < 40):
-        s -= 15
+        add("유동성결핍", -15)
     # 거래대금 대형 가점
     if v is not None and v >= 1000:
-        s += 10
+        add("대금1000억↑", 10)
     # 당일등락
     c = row.get("change_pct")
     if c is not None:
-        s += 15 if c <= -10 else 8 if c < 0 else 12 if c < 8 else -20 if c < 15 else -30 if c < 22 else -40
+        cv = 15 if c <= -10 else 8 if c < 0 else 12 if c < 8 else -20 if c < 15 else -30 if c < 22 else -40
+        add(f"당일{c:+.0f}%", cv)
     # 약스파크 벌점 (최대몸통 0<x<3% — 강1회/무스파크는 중립)
     mx = row.get("spark_max_body_pct")
     if mx is not None and 0 < mx < 3.0:
-        s -= 8
+        add("약스파크", -8)
     # 강스파크(3%↑) 2회 이상 +8 — 저장값(spark_strong_count) 우선, 옛 행은 spark_bars로 재계산(웹 미러와 1:1)
     ssc = row.get("spark_strong_count")
     if ssc is None and row.get("spark_source") not in (None, "none") and row.get("spark_bars") is not None:
         ssc = sum(1 for b in row["spark_bars"] if (b.get("body_pct") or 0) >= 3.0)
     if ssc is not None and ssc >= 2:
-        s += 8
+        add("강스파크x2", 8)
     # 강마감
     cs = row.get("close_strength")
     if cs is not None and cs >= 0.6:
-        s -= 5
+        add("강마감", -5)
     if _hidden_foreign(row) >= 1:
-        s -= 5
+        add("외인매집", -5)
     # 폭락 제외 (회장님 지시) — 과확장 붕괴·연속 하락 중인 종목은 눌림 가점이 있어도 상위 진입 차단
     r6 = row.get("run_6d_pct")
     if r6 is not None and r6 >= 100 and c is not None and c < 0:
-        s -= 30
+        add("과확장붕괴", -30)
     ds = row.get("down_streak")
     if ds is not None and ds >= 4:
-        s -= 15
-    return max(0, min(100, s))
+        add(f"연속하락{ds}일", -15)
+    return max(0, min(100, s)), reasons
+
+
+def close_bet_fitness(row):
+    """정량 행(dict) → 종베 적합도 점수(int 0~100). v4. (근거 칩까지 필요하면 close_bet_breakdown.)"""
+    return close_bet_breakdown(row)[0]
