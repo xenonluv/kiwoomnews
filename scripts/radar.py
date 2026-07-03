@@ -1444,7 +1444,12 @@ def main():
     suspects.sort(key=lambda x: (
         not x.get("alert_release"),                                             # 🔓 경고 해제 예정 최상단
         (x.get("alert_now") in ("경고", "위험")) and not x.get("alert_release"),  # 경고/위험 지정 → 급소여도 최후순위
-        not x.get("geupso"), not x.get("low_accum"), -x["suspicion_score"]))    # 🎯급소 > 🧲저점매집 상단
+        not x.get("geupso"), not x.get("low_accum"),                            # 🎯급소 > 🧲저점매집 상단
+        # 🧲 그룹 내부는 '폭락일 회전율 오름차순' — 회전이 작을수록(아무도 안 던짐+지문만 남음) 진짜 매집
+        # (회장님 지시 2026-07-03: 덕신 10.3% vs 삼호개발 52.8% — 저회전 폭락+지문이 종가 1위여야).
+        # 회전 미상(None)은 9999로 최하위(모르면 뒤로). 비저점매집 종목은 0 고정(이 키 무영향).
+        (x.get("turnover_pct") if x.get("turnover_pct") is not None else 9999) if x.get("low_accum") else 0,
+        -x["suspicion_score"]))
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
