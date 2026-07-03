@@ -28,8 +28,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1679,
-   "turnover_pct": 81.8,
+   "value_eok": 1680,
+   "turnover_pct": 81.9,
    "peak_turnover_pct": 165.1,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -266,7 +266,7 @@
    "prime": false,
    "theme": "반도체",
    "value_eok": 218,
-   "turnover_pct": 63.0,
+   "turnover_pct": 63.1,
    "peak_turnover_pct": 159.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -363,8 +363,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 183,
-   "turnover_pct": 64.5,
+   "value_eok": 184,
+   "turnover_pct": 64.6,
    "peak_turnover_pct": 96.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1061,5 +1061,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-03 16:55:12 KST"
+ "as_of": "2026-07-03 17:04:19 KST"
 }
