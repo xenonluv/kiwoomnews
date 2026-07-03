@@ -28,7 +28,7 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1678,
+   "value_eok": 1679,
    "turnover_pct": 81.8,
    "peak_turnover_pct": 165.1,
    "turnover_basis": "float",
@@ -364,7 +364,7 @@
    "prime": false,
    "theme": "금리",
    "value_eok": 183,
-   "turnover_pct": 64.3,
+   "turnover_pct": 64.4,
    "peak_turnover_pct": 96.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1061,5 +1061,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-03 16:34:08 KST"
+ "as_of": "2026-07-03 16:44:50 KST"
 }
