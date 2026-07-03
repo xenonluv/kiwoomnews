@@ -105,6 +105,7 @@
     }
    ],
    "alert_now": "경고",
+   "alert_release": false,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -151,7 +152,7 @@
    "prime": false,
    "theme": "금리",
    "value_eok": 298,
-   "turnover_pct": 52.4,
+   "turnover_pct": 52.5,
    "peak_turnover_pct": 185.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -218,6 +219,7 @@
     }
    ],
    "alert_now": null,
+   "alert_release": null,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -315,6 +317,7 @@
     }
    ],
    "alert_now": "경고",
+   "alert_release": false,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 46,
@@ -429,6 +432,7 @@
     }
    ],
    "alert_now": "경고",
+   "alert_release": false,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 46,
@@ -525,6 +529,7 @@
     }
    ],
    "alert_now": null,
+   "alert_release": null,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -618,6 +623,7 @@
     }
    ],
    "alert_now": null,
+   "alert_release": null,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -711,6 +717,7 @@
     }
    ],
    "alert_now": null,
+   "alert_release": null,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -808,6 +815,7 @@
     }
    ],
    "alert_now": "주의",
+   "alert_release": null,
    "forecast": {
     "horizon": "3일 내 +7%",
     "prob_pct": 52,
@@ -1053,5 +1061,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-03 15:44:04 KST"
+ "as_of": "2026-07-03 16:03:48 KST"
 }
