@@ -1562,14 +1562,13 @@ def main():
                 s["alert_release"] = None
     suspects.sort(key=lambda x: (
         (x.get("alert_now") in ("경고", "위험")) and not x.get("alert_release"),  # 경고/위험 지정 → 무조건 최후순위
-        not x.get("shakeout"),                                                  # 💥 흔들기 최상단(실측 68%·EV+4.6)
+        not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
         not x.get("alert_release"),                                             # 🔓 경고 해제 예정
-        not x.get("geupso"), not x.get("low_accum"),                            # 🎯급소 > 🧲저점매집 상단
-        # 🧲 그룹 내부는 '폭락일 회전율 오름차순' — 회전이 작을수록(아무도 안 던짐+지문만 남음) 진짜 매집
-        # (회장님 지시 2026-07-03: 덕신 10.3% vs 삼호개발 52.8% — 저회전 폭락+지문이 종가 1위여야).
-        # 회전 미상(None)은 9999로 최하위(모르면 뒤로). 비저점매집 종목은 0 고정(이 키 무영향).
-        (x.get("turnover_pct") if x.get("turnover_pct") is not None else 9999) if x.get("low_accum") else 0,
+        not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
         -x["suspicion_score"]))
+        # ⚠ 🧲 저점매집 '우선순위 승격'·'저회전 오름차순' 정렬 철회(2026-07-04 회장님 결정): 익일 기준 미검증
+        #   (저회전<15% 폭락 표본 n=2·둘다 익일 +13% 실패, 5분봉 지문 소급 불가). 이번 주 손실의 뿌리 =
+        #   미검증 신호를 1위로 올린 것. low_accum은 배지·by_low_accum 관찰축으로만 유지(표본 성숙 후 재도입 판단).
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
