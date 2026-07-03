@@ -73,6 +73,15 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 💥 흔들기
               </Badge>
             )}
+            {s.shakeout && s.tp_hint && (
+              <Badge
+                variant="outline"
+                className="border-up/60 text-up"
+                title="회전율 밴드별 익일 고가 천장 실측(60건) 기반 익절선 힌트 — 90~120% 회전은 +12%가 천장(+13 걸면 기대값 역전). 보장 아님"
+              >
+                익절힌트 {s.tp_hint}
+              </Badge>
+            )}
             {s.alert_release && (
               <Badge
                 className="bg-up px-2.5 py-1 text-base font-black text-white"
@@ -109,9 +118,12 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 {s.alert_now === "주의" ? "⚠️투자주의" : s.alert_now === "경고" ? "🚨투자경고" : "⛔투자위험"}
               </Badge>
             )}
-            <Badge variant="warning" title="최근 6거래일 고가+22%·거래량 90%+ 폭발 종목이 14:30~장종료 5분 양봉 몸통2%+ 스파크 2회+ AND 현재 등락률 −5~+7% 재분출 — 직접 확인하고 진입(매수 추천 아님)">
-              재매집
-            </Badge>
+            {/* 재매집 게이트 설명 배지 — 흔들기 레코드는 그 게이트를 통과한 게 아니므로 미표시(리뷰 2026-07-04) */}
+            {s.pattern !== "shakeout" && (
+              <Badge variant="warning" title="최근 6거래일 고가+22%·거래량 90%+ 폭발 종목이 14:30~장종료 5분 양봉 몸통2%+ 스파크 2회+ AND 현재 등락률 −5~+7% 재분출 — 직접 확인하고 진입(매수 추천 아님)">
+                재매집
+              </Badge>
+            )}
             {s.reaccum?.source === "telegram" && (
               <Badge
                 variant="outline"

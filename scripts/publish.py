@@ -134,6 +134,7 @@ def record_history(out):
             "alert_release": s.get("alert_release"),   # 🔓 투자경고 내일 해제 예정 예측 — True면 최상단 승격
             "shakeout": s.get("shakeout", False),      # 💥 흔들기(고가+20%↑·페이드15%p↑·회전40%↑·MA20위) — 전진검증용
             "fade_pct": s.get("fade_pct"),
+            "tp_hint": s.get("tp_hint"),               # 회전밴드별 익절선 힌트(90~120→+7~10 등)
             "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
 
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],

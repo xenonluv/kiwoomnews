@@ -176,6 +176,8 @@ export interface Suspect {
    *  실측 n=38: 익일 고가 +13% 터치 68%·평균 +18% — 게시 정렬 최상단. */
   shakeout?: boolean;
   fade_pct?: number | null;
+  /** 💥 회전밴드별 익절선 힌트(실측 60건: 90~120% 회전은 +12%가 천장 → +7~10 익절) — 표시 전용 */
+  tp_hint?: string | null;
   /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */
   forecast?: ForecastInfo | null;
   suspicion_score: number; // 0~100

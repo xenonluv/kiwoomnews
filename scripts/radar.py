@@ -1390,10 +1390,21 @@ def scan_shakeout(p):
         if _alert_level(code) in ("경고", "위험"):
             continue                                  # 경고 지정 재급등 = 매매정지 코스 — 실측 실패 유형 차단
         ma10 = sum(closes[-10:]) / 10
+        # 밴드별 익절 힌트 — 회전율 밴드별 익일 고가 천장 실측(2026-07-04 전수 60건, 회장님 관찰:
+        # 90~120%는 +12%가 천장이라 +13 익절 걸면 EV 역전). 표시 전용.
+        if turnover >= 120:
+            tp_hint = "+13%"
+        elif turnover >= 90:
+            tp_hint = "+7~10% (12% 천장 실측)"
+        elif turnover >= 70:
+            tp_hint = "⚠ 약체 밴드(70~90%, 표본소)"
+        else:
+            tp_hint = "+15% (양극단·표본소)"
         out.append({
             "code": code, "name": row.get("name") or code, "sector": now.get("sector", ""),
             "pattern": "shakeout",
             "shakeout": True,
+            "tp_hint": tp_hint,                       # 익절선 힌트(회전 밴드 실측) — 표시 전용
             "fade_pct": round(fade, 1),               # 고가 대비 밀림 폭(%p)
             "suspicion_score": int(min(95, 55 + fade * 0.6 + min(turnover, 200) * 0.08)),  # 표시 전용
             "score_raw": 0, "score_breakdown": {}, "score_breakdown_raw": {},  # 통계 격리
