@@ -1348,8 +1348,11 @@ def scan_shakeout(p):
                 c, r = row.get("code"), row.get("change_pct")
                 if not c or c in seen or r is None:
                     continue
-                # 산술 프리필터(KIS 콜 절감): fade≥15 & 고가≤+30(가격제한) → 현재등락 ≤ +15.5 / 고가≥+20 → ≥ −26
-                if r > SHAKEOUT_HIGH_PCT - SHAKEOUT_FADE_PCT + 0.5 or r < -26:
+                # 산술 프리필터(KIS 콜 절감): fade≥15 & 고가≤+30(가격제한) → 현재등락 ≤ 30−15+0.5=15.5.
+                # ⚠ 상한은 '가격제한 30'이 기준(고가 게이트 20이 아님) — 20을 쓰면 상한이 5.5로 잘못 좁아져
+                #    종가 +5.5~+15.5%로 마감한 흔들기(고가 상한권 터치 후 소폭 상승 마감, 예: 남화토건 6/19
+                #    고가+28→종가+13→익일고가+12) 승자가 KIS 조회 전 전부 드롭됨(리뷰 2026-07-04 확정 버그).
+                if r > 30.0 - SHAKEOUT_FADE_PCT + 0.5 or r < -26:
                     continue
                 seen.add(c)
                 cand.append(row)
