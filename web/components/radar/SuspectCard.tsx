@@ -65,6 +65,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {s.alert_release && (
+              <Badge
+                className="bg-up px-2.5 py-1 text-base font-black text-white"
+                title="KRX 투자경고 지정해제 공식(지정 후 10매매일 경과 + 5일 +45%↓ + 15일 +75%↓ + 15일 최고가 아님) 오늘 종가 기준 충족 예측 — 내일부터 해제 예상(=억눌림 해소 재료). 예측이며 KRX 최종 판단·보장 아님"
+              >
+                🔓 투자경고 해제 예정
+              </Badge>
+            )}
             {s.geupso && (
               <Badge
                 className="bg-up px-2 py-0.5 text-sm font-bold text-white"

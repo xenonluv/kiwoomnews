@@ -80,7 +80,9 @@ def build_message(movers):
         medal = ["🥇", "🥈", "🥉"][i - 1] if i <= 3 else "▫️"
         # KRX 시장경보 배지 — 현재 지정 + 마감 직전 공식 예측(회장님 지시 2026-07-03: 알고 들어가 폭락=기회)
         alerts = []
-        if m.get("alert_now"):
+        if m.get("alert_release"):
+            alerts.append("🔓투자경고 해제예정")   # 해제=재료(최대 가산점 근거) — 경고 배지 대신 표기
+        elif m.get("alert_now"):
             alerts.append(f"⚠️투자{m['alert_now']}")
         if m.get("alert_forecast"):
             alerts.append(f"🚨{m['alert_forecast']}")

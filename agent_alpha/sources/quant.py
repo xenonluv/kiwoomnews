@@ -151,6 +151,16 @@ def build(mover, fcache, reg):
     except Exception:
         row["alert_now"] = None
         row["alert_forecast"] = None
+    # 🔓 투자경고 '해제 예정' 예측(경고 지정 종목만) — KRX 해제공식(코어 scripts/alert_release.py 읽기전용 import).
+    # True면 fitness가 벌점(−30) 대신 최대 가산점(+20) — 회장님 지시 2026-07-03(해제=재료, 최상위로).
+    try:
+        if row.get("alert_now") == "경고":
+            import alert_release
+            row["alert_release"] = alert_release.forecast_release_for(code, d, c)
+        else:
+            row["alert_release"] = None
+    except Exception:
+        row["alert_release"] = None
 
     # ── 종가베팅 적합도 점수 (SSOT 산식=fitness.close_bet_fitness). 참고·투명 노출용 저장 —
     #    /alpha 정렬(AlphaList.tsx closeBetFitness)·calibrate 검증(_cbf)은 저장값을 신뢰하지 않고 현행 산식으로 재계산.

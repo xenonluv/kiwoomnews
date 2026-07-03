@@ -170,6 +170,8 @@ export interface Suspect {
   low_accum_bars?: { time: string; body_pct: number }[];
   /** KRX 시장경보 현재 지정: "주의"/"경고"/"위험" — 경고/위험은 게시 정렬 최후순위(회장님 지시 2026-07-03) */
   alert_now?: string | null;
+  /** 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — True면 최후순위 강등 대신 최상단 승격 */
+  alert_release?: boolean | null;
   /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */
   forecast?: ForecastInfo | null;
   suspicion_score: number; // 0~100

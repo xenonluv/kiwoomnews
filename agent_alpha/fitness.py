@@ -105,9 +105,13 @@ def close_bet_breakdown(row):
     # KRX 시장경보 '지정' 벌점 (회장님 지시 2026-07-03: 투자경고 지정 종목이 85점 1위 추천 — 적어도 후순위로).
     # 경고 지정 후 재상승 시 매매정지 지정 리스크 = 실행성 벌점(위험은 사실상 진입 금지급).
     # 주의(1단계·계좌기반 흔한 지정)와 예측(alert_forecast — 아직 미지정·기회 관점)은 배지만, 무감점 유지.
+    # 단 '내일 해제 예정'(alert_release=True, KRX 해제공식 예측)이면 반대로 최대 가산점 — 해제=재료(회장님 지시).
     an = row.get("alert_now")
     if an == "경고":
-        add("투자경고", -30)
+        if row.get("alert_release"):
+            add("경고해제예정", 20)
+        else:
+            add("투자경고", -30)
     elif an == "위험":
         add("투자위험", -60)
     return max(0, min(100, s)), reasons

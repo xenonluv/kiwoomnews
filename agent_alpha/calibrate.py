@@ -294,7 +294,8 @@ def run():
     # 시장경보 지정 전진검증 — 필드 없는 옛 행 제외("alert_now" in r 게이트). None=무경보.
     out["by_alert"]["무경보"] = _stat([r for r in rows if "alert_now" in r and not r.get("alert_now")])
     out["by_alert"]["주의"] = _stat([r for r in rows if r.get("alert_now") == "주의"])
-    out["by_alert"]["경고·위험"] = _stat([r for r in rows if r.get("alert_now") in ("경고", "위험")])
+    out["by_alert"]["경고해제예정"] = _stat([r for r in rows if r.get("alert_now") == "경고" and r.get("alert_release")])
+    out["by_alert"]["경고·위험"] = _stat([r for r in rows if r.get("alert_now") in ("경고", "위험") and not r.get("alert_release")])
 
     # LLM Brier(있으면)
     llm_rows = [r for r in rows if isinstance(r.get("prob_up"), (int, float))]

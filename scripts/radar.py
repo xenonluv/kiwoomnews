@@ -35,6 +35,7 @@ from event_calendar import upcoming_events
 from theme_map import match_events, match_sensitivity, THEMES
 import kis_client as kis
 import float_ratio
+import alert_release
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1431,10 +1432,19 @@ def main():
         sys.exit(3)
     # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜) — 경고/위험 지정은 무조건 후순위 강등
     # (회장님 지시 2026-07-03: 투자경고 종목이 상위 추천됨. 경고 후 재상승=매매정지 지정 리스크). fail-safe(None=무경보 취급).
+    # 단 경고 종목이 '내일 해제 예정'(KRX 해제공식 충족 예측, alert_release.py)이면 반대로 최상단 승격(해제=재료).
     for s in suspects:
         s["alert_now"] = _alert_level(s["code"])
-    suspects.sort(key=lambda x: (x.get("alert_now") in ("경고", "위험"),  # 경고/위험 지정 → 급소여도 최후순위
-                                 not x.get("geupso"), not x.get("low_accum"), -x["suspicion_score"]))  # 🎯급소 > 🧲저점매집 최상단
+        if s["alert_now"] == "경고":
+            try:
+                s["alert_release"] = alert_release.forecast_release_for(
+                    s["code"], kis.daily_prices(s["code"], days=25), s.get("price"))
+            except Exception:
+                s["alert_release"] = None
+    suspects.sort(key=lambda x: (
+        not x.get("alert_release"),                                             # 🔓 경고 해제 예정 최상단
+        (x.get("alert_now") in ("경고", "위험")) and not x.get("alert_release"),  # 경고/위험 지정 → 급소여도 최후순위
+        not x.get("geupso"), not x.get("low_accum"), -x["suspicion_score"]))    # 🎯급소 > 🧲저점매집 상단
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),

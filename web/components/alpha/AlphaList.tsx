@@ -71,8 +71,11 @@ function closeBetFitness(m: AlphaMover): { score: number; reasons: { k: string; 
   //    과거 38표본 전원 20일선 위 = 오폭 0건. 역배열=위쪽 매물벽.
   if (m.ma20_gap_pct != null && m.ma20_gap_pct < 0) add("20일선아래", -20);
   // KRX 시장경보 '지정' 벌점 — fitness.py와 1:1(회장님 지시 2026-07-03). 주의·예측은 배지만.
-  if (m.alert_now === "경고") add("투자경고", -30);
-  else if (m.alert_now === "위험") add("투자위험", -60);
+  // 단 '내일 해제 예정'(alert_release) 경고 종목은 벌점 대신 최대 가산점(해제=재료).
+  if (m.alert_now === "경고") {
+    if (m.alert_release) add("경고해제예정", 20);
+    else add("투자경고", -30);
+  } else if (m.alert_now === "위험") add("투자위험", -60);
   return { score: Math.max(0, Math.min(100, s)), reasons };
 }
 
@@ -320,6 +323,15 @@ function MoverCard({ m, rank }: { m: AlphaMover; rank?: number }) {
         >
           종베 {score}
         </span>
+        {/* 🔓 투자경고 해제 예정 — 카드에서 가장 큰 텍스트(회장님 지시 2026-07-03). KRX 해제공식 예측 충족 시 */}
+        {m.alert_release && (
+          <span
+            className="rounded bg-up px-2 py-0.5 text-base font-black text-white"
+            title="KRX 투자경고 지정해제 공식(지정 후 10매매일 경과 + 5일 +45%↓ + 15일 +75%↓ + 15일 최고가 아님) 오늘 종가 기준 충족 예측 — 내일부터 해제 예상(=억눌림 해소 재료). 예측이며 KRX 최종 판단·보장 아님"
+          >
+            🔓 투자경고 해제 예정
+          </span>
+        )}
         {/* KRX 시장경보 대형 배지 — 점수 무반영 정보 배지. 폭락 시 추가매수 기회 관점 */}
         {m.alert_now && (
           <span
