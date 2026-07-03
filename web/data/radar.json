@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-03 19:23:34 KST",
+ "generated_at": "2026-07-03 19:33:48 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -256,8 +256,8 @@
    "sector": "화학",
    "change_pct": 24.13,
    "high_pct": 26.21,
-   "vol_turnover_pct": 53.1,
-   "value_eok": 1053,
+   "vol_turnover_pct": 53.4,
+   "value_eok": 1061,
    "price": 8950.0,
    "first_seen": "18:12",
    "exploded": false
