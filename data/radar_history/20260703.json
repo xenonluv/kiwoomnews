@@ -28,7 +28,7 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1680,
+   "value_eok": 1681,
    "turnover_pct": 81.9,
    "peak_turnover_pct": 165.1,
    "turnover_basis": "float",
@@ -122,16 +122,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 36,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:20 KST",
-    "verdict_score": 78,
-    "verdict_level": "관망·과열"
-   }
+   "final": true
   },
   "010960": {
    "name": "삼호개발",
@@ -161,7 +152,7 @@
    "prime": false,
    "theme": "금리",
    "value_eok": 299,
-   "turnover_pct": 52.5,
+   "turnover_pct": 52.6,
    "peak_turnover_pct": 185.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -245,16 +236,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 41,
-    "model_prob": 38,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:21 KST",
-    "verdict_score": 67,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "001210": {
    "name": "금호전기",
@@ -352,16 +334,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 36,
-    "model_prob": 25,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:21 KST",
-    "verdict_score": 61,
-    "verdict_level": "중립"
-   }
+   "final": true
   },
   "228340": {
    "name": "동양파일",
@@ -391,7 +364,7 @@
    "prime": false,
    "theme": "금리",
    "value_eok": 184,
-   "turnover_pct": 64.7,
+   "turnover_pct": 64.9,
    "peak_turnover_pct": 96.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -475,16 +448,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 31,
-    "model_prob": 25,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:22 KST",
-    "verdict_score": 62,
-    "verdict_level": "관망·과열"
-   }
+   "final": true
   },
   "025950": {
    "name": "동신건설",
@@ -582,16 +546,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 47,
-    "model_prob": 42,
-    "direction": "관망",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:23 KST",
-    "verdict_score": 80,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "013580": {
    "name": "계룡건설",
@@ -685,16 +640,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 34,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:23 KST",
-    "verdict_score": 82,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "017000": {
    "name": "신원종합개발",
@@ -788,16 +734,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 36,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:24 KST",
-    "verdict_score": 67,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "090410": {
    "name": "덕신이피씨",
@@ -893,16 +830,7 @@
    "first_seen": "2026-07-03 14:23:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true,
-   "ai_pred": {
-    "prob_up": 41,
-    "model_prob": 35,
-    "direction": "하락",
-    "model": "kimi-k2.6",
-    "as_of": "2026-07-03 17:25 KST",
-    "verdict_score": 66,
-    "verdict_level": "매수 우위"
-   }
+   "final": true
   },
   "091590": {
    "name": "남화토건",
@@ -1133,5 +1061,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-03 17:14:37 KST"
+ "as_of": "2026-07-03 17:24:13 KST"
 }
