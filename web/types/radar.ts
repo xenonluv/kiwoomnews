@@ -161,6 +161,10 @@ export interface Suspect {
   reaccum?: ReaccumInfo | null;
   /** 재반등(오늘) 신호 — pattern==="reaccum" 카드에 존재. 구버전 JSON엔 없음 */
   reignition?: ReignitionInfo | null;
+  /** 🎯 매수급소 — 당일 14:30↑ 몸통 2%+ 양봉 스파크 ≥2회(등락률 밴드 무제한·폭발 후 20일선 위 장기추적).
+   *  회장님 15년 신호: '큰손이 아직 받치고 있다'는 지문(덕신 5.67/3.11% 2개 vs 상지 1.51% 1개 사례). */
+  geupso?: boolean;
+  geupso_bars?: { time: string; body_pct: number }[];
   /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */
   forecast?: ForecastInfo | null;
   suspicion_score: number; // 0~100

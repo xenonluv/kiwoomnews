@@ -65,6 +65,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {s.geupso && (
+              <Badge
+                className="bg-up px-2 py-0.5 text-sm font-bold text-white"
+                title="🎯 매수급소 — 당일 14:30 이후 몸통 2%+ 5분 양봉 스파크 2회 이상(등락률 무관·폭발 이력 장기추적). 큰손이 아직 받치고 있다는 지문 = 식음 중 매수 시점 신호(매수 추천 아님)"
+              >
+                🎯 매수급소
+              </Badge>
+            )}
             <Badge variant="warning" title="최근 6거래일 고가+22%·거래량 90%+ 폭발 종목이 14:30~장종료 5분 양봉 몸통2%+ 스파크 2회+ AND 현재 등락률 −5~+7% 재분출 — 직접 확인하고 진입(매수 추천 아님)">
               재매집
             </Badge>
@@ -184,6 +192,11 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 {" ("}
                 {s.reignition.time}
                 {")"}
+              </p>
+            )}
+            {s.geupso && (s.geupso_bars?.length ?? 0) > 0 && (
+              <p className="text-[11px] font-semibold text-up tabular-nums">
+                🎯 2%+ 급소 스파크: {s.geupso_bars!.map((b) => `${b.time} ${b.body_pct}%`).join(" · ")}
               </p>
             )}
             {s.reaccum?.cause_summary && (

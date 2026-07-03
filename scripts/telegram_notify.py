@@ -112,8 +112,11 @@ def _format(s, bar):
     bar_line = f"{bar['time']} · 몸통 {bar['body_pct']}%"
     if (bar.get("value_eok") or 0) > 0:
         bar_line += f" · 거래대금 {bar['value_eok']}억"
+    # 🎯 매수급소(14:30↑ 몸통 2%+ 양봉 ≥2회, 밴드 무제한) — 일반 재반등과 제목으로 구분(회장님 지시 2026-07-03)
+    title = (f"🎯 {name} ({code}) 매수급소 — 2%+ 재반등" if s.get("geupso")
+             else f"🚨 {name} ({code}) 재반등 봉")
     return "\n".join([
-        f"🚨 {name} ({code}) 재반등 봉",
+        title,
         bar_line,
         line3,
         f"{BASE}/stock/{code}",

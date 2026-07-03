@@ -67,6 +67,10 @@ REIGNITION_MIN_COUNT = 2           # 시작시각 이후 자격 양봉(스파크
 REIGNITION_START_HHMM = "1430"     # 재반등 스파크 집계 시작 시각(그 전 양봉은 미집계 — 마감 직전 재분출만)
 REACCUM_CHANGE_MIN = -5.0          # 재매집 현재 등락률 하한(% — 이보다 더 빠지면 깊은 식음으로 제외)
 REACCUM_CHANGE_MAX = 7.0           # 재매집 현재 등락률 상한(% — 이보다 높으면 이미 분출로 제외)
+GEUPSO_BODY_PCT = 2.0              # 🎯 매수급소: 14:30↑ 5분 양봉 몸통% 하한(회장님 지시 2026-07-03 —
+                                   # 덕신 5.67/3.11% 2개=폭락에도 안심 vs 상지 1.51% 찔끔=받침 없음)
+GEUPSO_MIN_COUNT = 2               # 🎯 매수급소: 2%+ 양봉 최소 개수. 급소는 등락률 밴드 무제한(폭락 중이든 급등 중이든)
+REACCUM_TRACK_DAYS = 30            # 폭발 후 장기 추적 상한(거래일) — 6일 지나도 '20일선 위인 동안' 계속 추적(급소 감시)
 NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
                                    # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
@@ -261,23 +265,32 @@ def _upsert_explosion(reg, rec):
     reg["records"][key] = rec
 
 
-def _recent_active_explosions(reg, window):
+def _recent_active_explosions(reg, window, track_days=None):
+    """폭발 레코드 → 후보 풀. 기본 = 최근 window(6) 거래일 폭발.
+    track_days(예: 30)를 주면 6일 초과~track_days 이내 폭발도 `_extended_track=True` 플래그로 포함 —
+    '식음 이후에도 20일선 위인 동안 계속 추적'(회장님 지시 2026-07-03, 🎯 매수급소 감시).
+    MA20 생존 판정은 scan_reaccum_candidate가 이미 받는 일봉으로 수행(추가 API 0)."""
     dates = sorted(d for d in reg.get("trading_days", []) if isinstance(d, str))
-    if dates:
-        active_dates = set(dates[-window:])
-    else:
-        active_dates = set(sorted({r.get("peak_date") for r in reg.get("records", {}).values()
-                                   if r.get("peak_date")})[-window:])
+    if not dates:
+        dates = sorted({r.get("peak_date") for r in reg.get("records", {}).values() if r.get("peak_date")})
+    active_dates = set(dates[-window:])
+    ext_dates = (set(dates[-track_days:]) - active_dates) if track_days and track_days > window else set()
     latest = {}
     for rec in reg.get("records", {}).values():
-        if rec.get("peak_date") not in active_dates:
+        pd = rec.get("peak_date")
+        if pd in active_dates:
+            cand = rec
+        elif pd in ext_dates:
+            cand = dict(rec)
+            cand["_extended_track"] = True   # 장기 추적분 — 20일선 아래로 깨지면 scan에서 탈락
+        else:
             continue
-        code = rec.get("code")
+        code = cand.get("code")
         if not code:
             continue
         prev = latest.get(code)
-        if prev is None or _explosion_supersedes(rec, prev):
-            latest[code] = rec
+        if prev is None or _explosion_supersedes(cand, prev):
+            latest[code] = cand
     return latest
 
 
@@ -862,8 +875,9 @@ def prepare_reaccum_registry(p):
         save_explosion_registry(reg)
     elif seed_count or live_count:
         log("[radar] dry-run: 폭발 레지스트리 저장 생략")
-    active = _recent_active_explosions(reg, p.explosion_window)
-    log(f"[radar] reaccum registry active={len(active)} seed={seed_count} live={live_count} "
+    active = _recent_active_explosions(reg, p.explosion_window, p.reaccum_track_days)
+    n_ext = sum(1 for r in active.values() if r.get("_extended_track"))
+    log(f"[radar] reaccum registry active={len(active)}(장기추적 {n_ext}) seed={seed_count} live={live_count} "
         f"당일폭발={len(today_explosions)} youtong={len(today_youtong)}")
     return active, live_scan_ok, today_explosions, today_youtong
 
@@ -932,8 +946,16 @@ def scan_reaccum_candidate(rec, p, events):
         nxt_chg = _nxt_change_pct(code, now.get("prev_close"))
         if nxt_chg is not None:
             change_pct, change_basis = nxt_chg, "NXT"
-    # 현재 등락률 게이트: −5%~+7% 밖이면 제외(깊은 식음/이미 분출). 일봉·분봉 조회 전에 컷(비용 절감).
-    if not (p.reaccum_change_min <= change_pct <= p.reaccum_change_max):
+    # 현재 등락률 게이트: −5%~+7% 밖이면 원칙 제외(깊은 식음/이미 분출) — 단 🎯 매수급소(14:30↑ 2%+ 양봉
+    # ≥2회)는 밴드 무제한(회장님 지시 2026-07-03: 폭락 중이든 급등 중이든 급소가 뜨는 날이 매수 시점).
+    # 급소는 14:30 이후에만 발동 가능 → 그 전엔 밴드 밖 후보를 기존처럼 조기 컷(비용 절감 유지).
+    in_band = (p.reaccum_change_min <= change_pct <= p.reaccum_change_max)
+    _hhmm = datetime.now(KST).strftime("%H%M")
+    if not in_band and _hhmm < p.reignition_start:
+        return None
+    # 장기 추적분(폭발 후 6일 초과, _extended_track)은 '🎯 매수급소 전용' — 급소는 14:30 이후에만 발동
+    # 가능하므로 그 전엔 스킵(풀 ~100종목 × 일봉·분봉 조회를 오전 내내 하지 않는 비용 가드).
+    if rec.get("_extended_track") and _hhmm < p.reignition_start:
         return None
     high = now.get("high") or now["price"]
     high_pct = (high / now["prev_close"] - 1) * 100
@@ -950,6 +972,9 @@ def scan_reaccum_candidate(rec, p, events):
         return None
     ma20 = sum(closes[-20:]) / 20
     ma10 = sum(closes[-10:]) / 10
+    # 장기 추적(폭발 후 6일 초과) 후보는 '20일선 위인 동안만' 유지 — 깨지면 추적 종료(추세 사망, 회장님 정의).
+    if rec.get("_extended_track") and now["price"] < ma20:
+        return None
     # ── 반등 게이트: **14:30~장종료** 5분봉 양봉 몸통%≥1.5% 스파크가 REIGNITION_MIN_COUNT(2)회 이상(마감 직전
     #    재분출). 시작시각(reignition_start) 이전 양봉은 미집계. 스파크는 **그 봉의 절대 등락률과 무관하게** 센다 —
     #    −9%에서 양봉으로 회복해 −5% 마감한 깊은 식음 반등도 잡아야 하므로(현재 등락률 게이트[−5~+7]가 최종 위치만 판정).
@@ -963,6 +988,15 @@ def scan_reaccum_candidate(rec, p, events):
     rbars = [b for b in reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)
              if b["time"] >= reign_start_colon]  # 14:30↑ 양봉 스파크(봉 절대 등락률 무관 — 회복분도 카운트)
     if len(rbars) < p.reignition_min_count:
+        return None
+    # 🎯 매수급소 판정 — 몸통 2%+ 양봉 ≥2회(회장님 15년 신호: '큰손이 아직 받치고 있다'는 지문.
+    # 덕신 7/2 5.67/3.11% 2개=익일 폭락에도 안심 vs 상지 1.51% 1개=받침 없음). 밴드 밖 후보는 급소만 통과.
+    gbars = [b for b in rbars if b["body_pct"] >= p.geupso_body_pct]
+    geupso = len(gbars) >= p.geupso_min_count
+    if not in_band and not geupso:
+        return None
+    # 장기 추적분은 급소일 때만 노출 — 6일 이내 폭발만 기존 '재매집' 의미론 유지(순수 확장, 기존 동작 불변).
+    if rec.get("_extended_track") and not geupso:
         return None
     reignition = max(rbars, key=lambda b: b["body_pct"])  # 대표(최대 몸통) 봉 — 표시용
 
@@ -1021,6 +1055,8 @@ def scan_reaccum_candidate(rec, p, events):
         "name": name,
         "sector": now.get("sector", ""),
         "pattern": "reaccum",
+        "geupso": geupso,               # 🎯 매수급소 — 14:30↑ 몸통 2%+ 양봉 ≥2회(밴드 무제한·장기추적 포함)
+        "geupso_bars": [{"time": b["time"], "body_pct": b["body_pct"]} for b in gbars],
         "shake": None,
         "deep_shake": None,
         "suspicion_score": score,
@@ -1245,6 +1281,12 @@ def main():
                     help="재매집 현재 등락률 하한(%%, 기본 -5)")
     ap.add_argument("--reaccum-change-max", type=float, default=REACCUM_CHANGE_MAX,
                     help="재매집 현재 등락률 상한(%%, 기본 7)")
+    ap.add_argument("--geupso-body-pct", type=float, default=GEUPSO_BODY_PCT,
+                    help="🎯 매수급소 5분 양봉 몸통%% 하한(기본 2.0 — 밴드 무제한 급소 판정)")
+    ap.add_argument("--geupso-min-count", type=int, default=GEUPSO_MIN_COUNT,
+                    help="🎯 매수급소 최소 양봉 수(기본 2)")
+    ap.add_argument("--reaccum-track-days", type=int, default=REACCUM_TRACK_DAYS,
+                    help="폭발 후 장기 추적 상한 거래일(기본 30 — 6일 초과분은 20일선 위인 동안만 유지)")
     ap.add_argument("--names", nargs="*", default=[], help="watchlist 강제 포함")
     ap.add_argument("--no-reaccum", dest="reaccum_enabled", action="store_false",
                     help="재매집(reaccum) registry 감시와 후보 생성을 비활성화")
@@ -1294,6 +1336,9 @@ def main():
     _ys = str(p.youtong_start).strip()  # "HHMM" 4자리 숫자만 — 비숫자/콜론 등 오입력은 기본값으로(시각 비교 깨짐 방지)
     p.youtong_start = _ys if (len(_ys) == 4 and _ys.isdigit()) else YOUTONG_START_HHMM  # 정확히 4자리 HHMM만
     p.reaccum_max = max(0, int(p.reaccum_max))
+    p.geupso_body_pct = max(0.5, float(p.geupso_body_pct))
+    p.geupso_min_count = max(1, int(p.geupso_min_count))
+    p.reaccum_track_days = max(p.explosion_window, int(p.reaccum_track_days))  # 최소 기존 윈도(6) 이상
     active_explosions, live_scan_ok, today_explosions, today_youtong = prepare_reaccum_registry(p)
 
     # 조건 1: D-10 이벤트 캘린더 (재반등 후보의 이벤트 민감도 표시용)
@@ -1320,7 +1365,7 @@ def main():
     if collection_dead or high_fail:
         log(f"[error] 데이터 수집 장애 의심(live_ok={live_scan_ok}, 실패 {err_count}/{eligible}적격, 후보 {reaccum_added}) — 게시 중단")
         sys.exit(3)
-    suspects.sort(key=lambda x: -x["suspicion_score"])
+    suspects.sort(key=lambda x: (not x.get("geupso"), -x["suspicion_score"]))  # 🎯 매수급소 최상단
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
@@ -1342,6 +1387,9 @@ def main():
                    "youtong_turnover_min": p.youtong_turnover_min,    # /youtong: 유통 회전율 하한(%, 상한 없음)
                    "youtong_start": p.youtong_start,                  # /youtong: 감지 시작 시각 HHMM
                    "youtong_spark_min": p.youtong_spark_min,          # /youtong: 시작시각 이후 5분 스파크 최소 수
+                   "geupso_body_pct": p.geupso_body_pct,              # 🎯 매수급소: 5분 양봉 몸통% 하한(2.0)
+                   "geupso_min_count": p.geupso_min_count,            # 🎯 매수급소: 최소 양봉 수(2)
+                   "reaccum_track_days": p.reaccum_track_days,        # 폭발 후 장기 추적 상한(거래일)
                    "telegram_seed": p.telegram_seed,
                    "telegram_channel": p.telegram_channel if p.telegram_seed else None},
         "universe_count": len(active_explosions),
