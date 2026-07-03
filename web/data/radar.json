@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-03 14:12:37 KST",
+ "generated_at": "2026-07-03 14:23:36 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -24,10 +24,13 @@
   "geupso_body_pct": 2.0,
   "geupso_min_count": 2,
   "reaccum_track_days": 30,
+  "lowaccum_change_max": -10.0,
+  "lowaccum_body_pct": 2.0,
+  "lowaccum_min_count": 3,
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 123,
+ "universe_count": 129,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
@@ -86,10 +89,10 @@
    "name": "져스텍",
    "sector": "전기·전자",
    "high_pct": 29.96,
-   "vol_turnover_pct": 122.9,
-   "value_eok": 907,
-   "price": 15300.0,
-   "change_pct": 25.93,
+   "vol_turnover_pct": 124.3,
+   "value_eok": 917,
+   "price": 15360.0,
+   "change_pct": 26.42,
    "backfill": false
   },
   {
@@ -97,10 +100,10 @@
    "name": "우원개발",
    "sector": "건설",
    "high_pct": 22.08,
-   "vol_turnover_pct": 98.7,
-   "value_eok": 497,
-   "price": 4300.0,
-   "change_pct": 13.01,
+   "vol_turnover_pct": 106.2,
+   "value_eok": 536,
+   "price": 4375.0,
+   "change_pct": 14.98,
    "backfill": false
   },
   {
@@ -108,8 +111,8 @@
    "name": "삼화전자",
    "sector": "전기·전자",
    "high_pct": 30.0,
-   "vol_turnover_pct": 123.9,
-   "value_eok": 416,
+   "vol_turnover_pct": 124.1,
+   "value_eok": 417,
    "price": 3575.0,
    "change_pct": 30.0,
    "backfill": false
@@ -121,8 +124,8 @@
    "high_pct": 26.8,
    "vol_turnover_pct": 188.6,
    "value_eok": 1176,
-   "price": 1846.0,
-   "change_pct": -5.04,
+   "price": 1814.0,
+   "change_pct": -6.69,
    "backfill": true
   }
  ],
@@ -131,12 +134,24 @@
    "code": "419050",
    "name": "삼기에너지솔루션즈",
    "sector": "운송장비·부품",
-   "change_pct": -5.04,
+   "change_pct": -6.69,
    "high_pct": 26.8,
    "vol_turnover_pct": 188.6,
    "value_eok": 1176,
-   "price": 1846.0,
+   "price": 1814.0,
    "first_seen": "09:42",
+   "exploded": true
+  },
+  {
+   "code": "153890",
+   "name": "져스텍",
+   "sector": "전기·전자",
+   "change_pct": 26.42,
+   "high_pct": 29.96,
+   "vol_turnover_pct": 124.3,
+   "value_eok": 917,
+   "price": 15360.0,
+   "first_seen": "10:12",
    "exploded": true
   },
   {
@@ -145,33 +160,21 @@
    "sector": "전기·전자",
    "change_pct": 30.0,
    "high_pct": 30.0,
-   "vol_turnover_pct": 123.9,
-   "value_eok": 416,
+   "vol_turnover_pct": 124.1,
+   "value_eok": 417,
    "price": 3575.0,
    "first_seen": "10:51",
-   "exploded": true
-  },
-  {
-   "code": "153890",
-   "name": "져스텍",
-   "sector": "전기·전자",
-   "change_pct": 25.93,
-   "high_pct": 29.96,
-   "vol_turnover_pct": 122.9,
-   "value_eok": 907,
-   "price": 15300.0,
-   "first_seen": "10:12",
    "exploded": true
   },
   {
    "code": "046940",
    "name": "우원개발",
    "sector": "건설",
-   "change_pct": 13.01,
+   "change_pct": 14.98,
    "high_pct": 22.08,
-   "vol_turnover_pct": 98.7,
-   "value_eok": 497,
-   "price": 4300.0,
+   "vol_turnover_pct": 106.2,
+   "value_eok": 536,
+   "price": 4375.0,
    "first_seen": "13:22",
    "exploded": true
   },
@@ -179,11 +182,11 @@
    "code": "037070",
    "name": "파세코",
    "sector": "전기·전자",
-   "change_pct": 10.05,
+   "change_pct": 11.89,
    "high_pct": 24.29,
-   "vol_turnover_pct": 71.7,
-   "value_eok": 286,
-   "price": 6570.0,
+   "vol_turnover_pct": 72.2,
+   "value_eok": 288,
+   "price": 6680.0,
    "first_seen": "11:21",
    "exploded": false
   },
@@ -191,11 +194,11 @@
    "code": "079650",
    "name": "서산",
    "sector": "비금속",
-   "change_pct": -6.85,
+   "change_pct": -6.71,
    "high_pct": 13.15,
    "vol_turnover_pct": 58.2,
    "value_eok": 133,
-   "price": 3330.0,
+   "price": 3335.0,
    "first_seen": "12:32",
    "exploded": false
   },
@@ -203,11 +206,11 @@
    "code": "002780",
    "name": "진흥기업",
    "sector": "건설",
-   "change_pct": -18.04,
+   "change_pct": -18.83,
    "high_pct": 26.27,
    "vol_turnover_pct": 55.6,
    "value_eok": 541,
-   "price": 936.0,
+   "price": 927.0,
    "first_seen": "09:42",
    "exploded": false
   },
@@ -215,14 +218,1253 @@
    "code": "477850",
    "name": "마키나락스",
    "sector": "IT 서비스",
-   "change_pct": -2.35,
+   "change_pct": -1.41,
    "high_pct": 19.72,
    "vol_turnover_pct": 55.5,
    "value_eok": 1296,
-   "price": 20800.0,
+   "price": 21000.0,
    "first_seen": "10:01",
    "exploded": false
   }
  ],
- "suspects": []
+ "suspects": [
+  {
+   "code": "002990",
+   "name": "금호건설",
+   "sector": "건설",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 73,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 7,
+    "re_turnover": 4
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 9670.0,
+   "change_pct": -17.56,
+   "change_basis": "KRX",
+   "high_pct": 14.58,
+   "value_eok": 1580,
+   "turnover_pct": 76.5,
+   "peak_turnover_pct": 165.1,
+   "float_ratio": 0.52,
+   "turnover_basis": "float",
+   "ma10": 8007.5,
+   "ma10_margin_pct": 20.76,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 9.97,
+    "time": "09:00",
+    "value_eok": 153,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 9.97,
+     "value_eok": 153
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.4,
+     "value_eok": 15
+    },
+    {
+     "time": "11:55",
+     "body_pct": 2.03,
+     "value_eok": 19
+    },
+    {
+     "time": "12:20",
+     "body_pct": 4.11,
+     "value_eok": 21
+    },
+    {
+     "time": "12:30",
+     "body_pct": 3.28,
+     "value_eok": 41
+    },
+    {
+     "time": "13:00",
+     "body_pct": 3.49,
+     "value_eok": 15
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 9.97
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.4
+    },
+    {
+     "time": "11:55",
+     "body_pct": 2.03
+    },
+    {
+     "time": "12:20",
+     "body_pct": 4.11
+    },
+    {
+     "time": "12:30",
+     "body_pct": 3.28
+    },
+    {
+     "time": "13:00",
+     "body_pct": 3.49
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 5.2
+    },
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 4.8
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.2
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260630",
+    "peak_value_eok": 3119,
+    "peak_high_pct": 29.97,
+    "peak_turnover_pct": 165.1,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 5991.8,
+    "ma20_margin_pct": 61.39,
+    "cause_summary": "[특징주] '호남 반도체' 테마주에 잇단 투자경고…장 초반 혼조",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": true
+  },
+  {
+   "code": "010960",
+   "name": "삼호개발",
+   "sector": "건설",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 73,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 9,
+    "re_turnover": 2
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 3810.0,
+   "change_pct": -12.81,
+   "change_basis": "KRX",
+   "high_pct": 5.15,
+   "value_eok": 280,
+   "turnover_pct": 49.1,
+   "peak_turnover_pct": 185.6,
+   "float_ratio": 0.6053999999999999,
+   "turnover_basis": "float",
+   "ma10": 3555.0,
+   "ma10_margin_pct": 7.17,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 6.25,
+    "time": "12:50",
+    "value_eok": 14,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 2.85,
+     "value_eok": 13
+    },
+    {
+     "time": "11:55",
+     "body_pct": 2.49,
+     "value_eok": 2
+    },
+    {
+     "time": "12:15",
+     "body_pct": 2.43,
+     "value_eok": 4
+    },
+    {
+     "time": "12:35",
+     "body_pct": 2.44,
+     "value_eok": 1
+    },
+    {
+     "time": "12:50",
+     "body_pct": 6.25,
+     "value_eok": 14
+    },
+    {
+     "time": "13:20",
+     "body_pct": 2.46,
+     "value_eok": 4
+    },
+    {
+     "time": "13:40",
+     "body_pct": 4.22,
+     "value_eok": 16
+    },
+    {
+     "time": "13:45",
+     "body_pct": 2.4,
+     "value_eok": 9
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 2.85
+    },
+    {
+     "time": "11:55",
+     "body_pct": 2.49
+    },
+    {
+     "time": "12:15",
+     "body_pct": 2.43
+    },
+    {
+     "time": "12:35",
+     "body_pct": 2.44
+    },
+    {
+     "time": "12:50",
+     "body_pct": 6.25
+    },
+    {
+     "time": "13:20",
+     "body_pct": 2.46
+    },
+    {
+     "time": "13:40",
+     "body_pct": 4.22
+    },
+    {
+     "time": "13:45",
+     "body_pct": 2.4
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 4.8
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.2
+    },
+    {
+     "id": "2026-07-09_한국 옵션·선물 동시만",
+     "title": "한국 옵션·선물 동시만기일 (7월)",
+     "dday": 6,
+     "categories": [
+      "수급"
+     ],
+     "score": 0.8
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260702",
+    "peak_value_eok": 1334,
+    "peak_high_pct": 29.87,
+    "peak_turnover_pct": 185.6,
+    "peak_ibs": 0.18,
+    "peak_uppertail": 25.9,
+    "ma20": 3366.0,
+    "ma20_margin_pct": 13.19,
+    "cause_summary": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "001210",
+   "name": "금호전기",
+   "sector": "전기·전자",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 71,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 6,
+    "re_turnover": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 745.0,
+   "change_pct": -24.21,
+   "change_basis": "KRX",
+   "high_pct": 9.26,
+   "value_eok": 207,
+   "turnover_pct": 59.2,
+   "peak_turnover_pct": 159.5,
+   "float_ratio": 0.6665000000000001,
+   "turnover_basis": "float",
+   "ma10": 835.0,
+   "ma10_margin_pct": -10.78,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.58,
+    "time": "12:20",
+    "value_eok": 4,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 3.07,
+     "value_eok": 17
+    },
+    {
+     "time": "09:30",
+     "body_pct": 3.53,
+     "value_eok": 8
+    },
+    {
+     "time": "12:20",
+     "body_pct": 4.58,
+     "value_eok": 4
+    },
+    {
+     "time": "12:30",
+     "body_pct": 3.59,
+     "value_eok": 7
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 3.07
+    },
+    {
+     "time": "09:30",
+     "body_pct": 3.53
+    },
+    {
+     "time": "12:20",
+     "body_pct": 4.58
+    },
+    {
+     "time": "12:30",
+     "body_pct": 3.59
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 5.2
+    },
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리",
+      "환율"
+     ],
+     "score": 2.4
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 1.1
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260701",
+    "peak_value_eok": 910,
+    "peak_high_pct": 26.75,
+    "peak_turnover_pct": 159.5,
+    "peak_ibs": 0.77,
+    "peak_uppertail": 7.1,
+    "ma20": 668.5,
+    "ma20_margin_pct": 11.44,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "228340",
+   "name": "동양파일",
+   "sector": "비금속",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 66,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 1,
+    "re_turnover": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 3180.0,
+   "change_pct": -27.23,
+   "change_basis": "KRX",
+   "high_pct": -0.69,
+   "value_eok": 171,
+   "turnover_pct": 59.6,
+   "peak_turnover_pct": 96.5,
+   "float_ratio": 0.4,
+   "turnover_basis": "float",
+   "ma10": 3333.4,
+   "ma10_margin_pct": -4.6,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.58,
+    "time": "12:15",
+    "value_eok": 2,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:25",
+     "body_pct": 3.08,
+     "value_eok": 7
+    },
+    {
+     "time": "10:05",
+     "body_pct": 2.44,
+     "value_eok": 3
+    },
+    {
+     "time": "11:05",
+     "body_pct": 2.22,
+     "value_eok": 2
+    },
+    {
+     "time": "12:15",
+     "body_pct": 3.58,
+     "value_eok": 2
+    },
+    {
+     "time": "12:20",
+     "body_pct": 3.45,
+     "value_eok": 4
+    },
+    {
+     "time": "12:50",
+     "body_pct": 2.51,
+     "value_eok": 1
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:25",
+     "body_pct": 3.08
+    },
+    {
+     "time": "10:05",
+     "body_pct": 2.44
+    },
+    {
+     "time": "11:05",
+     "body_pct": 2.22
+    },
+    {
+     "time": "12:15",
+     "body_pct": 3.58
+    },
+    {
+     "time": "12:20",
+     "body_pct": 3.45
+    },
+    {
+     "time": "12:50",
+     "body_pct": 2.51
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.4
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 1.1
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260625",
+    "peak_value_eok": 217,
+    "peak_high_pct": 29.88,
+    "peak_turnover_pct": 96.5,
+    "peak_ibs": 0.19,
+    "peak_uppertail": 42.9,
+    "ma20": 2556.8,
+    "ma20_margin_pct": 24.38,
+    "cause_summary": "동양파일 480억 묶인 사이…한림건설 김상수 골프장 확장에 주주 '부글...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "025950",
+   "name": "동신건설",
+   "sector": "건설",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 63,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 1,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 14200.0,
+   "change_pct": -10.13,
+   "change_basis": "KRX",
+   "high_pct": 6.27,
+   "value_eok": 144,
+   "turnover_pct": 35.8,
+   "peak_turnover_pct": 97.8,
+   "float_ratio": 0.3265,
+   "turnover_basis": "float",
+   "ma10": 11856.0,
+   "ma10_margin_pct": 19.77,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 15.79,
+    "time": "09:05",
+    "value_eok": 25,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 15.79,
+     "value_eok": 25
+    },
+    {
+     "time": "12:35",
+     "body_pct": 2.05,
+     "value_eok": 3
+    },
+    {
+     "time": "12:50",
+     "body_pct": 5.04,
+     "value_eok": 2
+    },
+    {
+     "time": "13:00",
+     "body_pct": 4.82,
+     "value_eok": 2
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 15.79
+    },
+    {
+     "time": "12:35",
+     "body_pct": 2.05
+    },
+    {
+     "time": "12:50",
+     "body_pct": 5.04
+    },
+    {
+     "time": "13:00",
+     "body_pct": 4.82
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 7.2
+    },
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 3.4
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 3.3
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260702",
+    "peak_value_eok": 467,
+    "peak_high_pct": 29.97,
+    "peak_turnover_pct": 97.8,
+    "peak_ibs": 0.33,
+    "peak_uppertail": 13.4,
+    "ma20": 11999.5,
+    "ma20_margin_pct": 18.34,
+    "cause_summary": "반도체 메가 프로젝트 수혜 기대감에…지역 건설주 상한가",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "013580",
+   "name": "계룡건설",
+   "sector": "건설",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 22900.0,
+   "change_pct": -11.24,
+   "change_basis": "KRX",
+   "high_pct": 12.02,
+   "value_eok": 418,
+   "turnover_pct": 29.8,
+   "peak_turnover_pct": 92.5,
+   "float_ratio": 0.6175,
+   "turnover_basis": "float",
+   "ma10": 21149.0,
+   "ma10_margin_pct": 8.28,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 5.7,
+    "time": "09:00",
+    "value_eok": 66,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 5.7,
+     "value_eok": 66
+    },
+    {
+     "time": "09:05",
+     "body_pct": 2.35,
+     "value_eok": 50
+    },
+    {
+     "time": "11:25",
+     "body_pct": 3.06,
+     "value_eok": 3
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 5.7
+    },
+    {
+     "time": "09:05",
+     "body_pct": 2.35
+    },
+    {
+     "time": "11:25",
+     "body_pct": 3.06
+    }
+   ],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 7.2
+    },
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 5.2
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 3.3
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260702",
+    "peak_value_eok": 1401,
+    "peak_high_pct": 29.41,
+    "peak_turnover_pct": 92.5,
+    "peak_ibs": 0.34,
+    "peak_uppertail": 19.4,
+    "ma20": 20554.0,
+    "ma20_margin_pct": 11.41,
+    "cause_summary": "계룡건설, 국토부 '건설사업자간 상호협력평가' 7년 연속 '최우수'",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": true
+  },
+  {
+   "code": "017000",
+   "name": "신원종합개발",
+   "sector": "건설",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 2675.0,
+   "change_pct": -16.14,
+   "change_basis": "KRX",
+   "high_pct": 6.11,
+   "value_eok": 86,
+   "turnover_pct": 32.3,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.7968000000000001,
+   "turnover_basis": "float",
+   "ma10": 2411.5,
+   "ma10_margin_pct": 10.93,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.39,
+    "time": "10:05",
+    "value_eok": 1,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.02,
+     "value_eok": 4
+    },
+    {
+     "time": "10:05",
+     "body_pct": 4.39,
+     "value_eok": 1
+    },
+    {
+     "time": "10:10",
+     "body_pct": 2.95,
+     "value_eok": 4
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.02
+    },
+    {
+     "time": "10:05",
+     "body_pct": 4.39
+    },
+    {
+     "time": "10:10",
+     "body_pct": 2.95
+    }
+   ],
+   "news": [
+    {
+     "title": "신원종합개발, 2286억 리조트 신축공사 1년 연장",
+     "summary": "신원종합개발은 유니리조트개발과 맺은 2287억원 규모의 '마운트나인 리조트 콘도미니엄 신축공사' 계약 종료일을 2027년 5월10일로 1년 연장했다고 8일 공시했다. 기존 종료일이었던 2026년 5월10일에서 미뤄졌다. 전체 공사 기간은...",
+     "office": "블로터",
+     "datetime": "202605081457",
+     "url": "https://n.news.naver.com/mnews/article/293/0000084207",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-03_미국 고용보고서 (7월",
+     "title": "미국 고용보고서 (7월 발표)",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 7.2
+    },
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 3.3
+    },
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 1.7
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260702",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 2415.2,
+    "ma20_margin_pct": 10.75,
+    "cause_summary": "신원종합개발, 2286억 리조트 신축공사 1년 연장",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  },
+  {
+   "code": "090410",
+   "name": "덕신이피씨",
+   "sector": "금속",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 951.0,
+   "change_pct": -17.3,
+   "change_basis": "KRX",
+   "high_pct": -2.61,
+   "value_eok": 29,
+   "turnover_pct": 9.3,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.6607999999999999,
+   "turnover_basis": "float",
+   "ma10": 845.3,
+   "ma10_margin_pct": 12.5,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.26,
+    "time": "11:05",
+    "value_eok": 1,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "11:05",
+     "body_pct": 3.26,
+     "value_eok": 1
+    },
+    {
+     "time": "11:20",
+     "body_pct": 2.15,
+     "value_eok": 0
+    },
+    {
+     "time": "11:30",
+     "body_pct": 2.22,
+     "value_eok": 1
+    },
+    {
+     "time": "13:10",
+     "body_pct": 2.27,
+     "value_eok": 0
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "11:05",
+     "body_pct": 3.26
+    },
+    {
+     "time": "11:20",
+     "body_pct": 2.15
+    },
+    {
+     "time": "11:30",
+     "body_pct": 2.22
+    },
+    {
+     "time": "13:10",
+     "body_pct": 2.27
+    }
+   ],
+   "news": [
+    {
+     "title": "덕신EPC, 美 반도체 공장 본 시공 착수",
+     "summary": "애리조나주 반도체기업 엠코그룹에 한국형 데크플레이트 공급 국내 데크플레이트 1위 기업인 덕신EPC(덕신이피씨)가 29일(현지시간) 미국 반도체 공장에 한국형 데크플레이트 공급을 시작했다고 30일 밝혔다. 덕신이피씨는 미국 애리조나주 피오리아에...",
+     "office": "매일경제",
+     "datetime": "202606301507",
+     "url": "https://n.news.naver.com/mnews/article/009/0005700748",
+     "sentiment": "호재"
+    },
+    {
+     "title": "덕신이피씨, 156억 규모 삼성전자 평택 P5 FAB동 시공 계약 수주",
+     "summary": "데크플레이트 전문기업 덕신이피씨는 삼성물산과 156억원 규모의 삼성전자 평택캠퍼스 P5-PJT 현장 FAB동 관련 데크플레이트 시공 계약을 체결했다고 13일 밝혔다. 2024년 매출액의 10.6%에 해당하는 규모로 계약 기간은 오는 2028년 12월 ",
+     "office": "뉴시스",
+     "datetime": "202603130818",
+     "url": "https://n.news.naver.com/mnews/article/003/0013819501",
+     "sentiment": "호재"
+    },
+    {
+     "title": "덕신이피씨, 삼성물산과 156억 규모 공사계약 체결",
+     "summary": "덕신이피씨(090410)는 삼성물산과 평택캠퍼스 2단지 조성공사 및 P5 FAB 건축 데크플레이트 공사 계약을 체결했다고 12일 공시했다. 계약금액은 156억원으로 지난 2024년 매출액의 10.6%에 해당한다. 계약기간은 오는 13일부터 2028년 ",
+     "office": "이데일리",
+     "datetime": "202603121759",
+     "url": "https://n.news.naver.com/mnews/article/018/0006233699",
+     "sentiment": "호재"
+    },
+    {
+     "title": "美 반도체 공장에 덕신EPC 바닥재 깔린다",
+     "summary": "엠코어 반도체 공장 시공 미국에 첫 정식계약 진출 건축자재기업 덕신EPC(이피씨)가 미국 반도체 공장에 스피드데크(데크플레이트)를 공급하는 계약을 했다고 11일 밝혔다. 덕신이피씨는 그간 미국 상업시설 등에 데크플레이트 샘플 시공을...",
+     "office": "매일경제",
+     "datetime": "202602111721",
+     "url": "https://n.news.naver.com/mnews/article/009/0005636079",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 4,
+     "categories": [
+      "반도체"
+     ],
+     "score": 3.4
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260702",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 0.53,
+    "peak_uppertail": 17.3,
+    "ma20": 879.0,
+    "ma20_margin_pct": 8.2,
+    "cause_summary": "덕신EPC, 美 반도체 공장 본 시공 착수",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "theme_leader": false
+  }
+ ]
 }
