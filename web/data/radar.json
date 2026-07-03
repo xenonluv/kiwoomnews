@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-03 15:44:04 KST",
+ "generated_at": "2026-07-03 16:03:48 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -185,7 +185,7 @@
    "change_pct": 14.41,
    "high_pct": 24.29,
    "vol_turnover_pct": 80.4,
-   "value_eok": 319,
+   "value_eok": 320,
    "price": 6830.0,
    "first_seen": "11:21",
    "exploded": false
@@ -221,7 +221,7 @@
    "change_pct": 8.84,
    "high_pct": 13.18,
    "vol_turnover_pct": 58.0,
-   "value_eok": 4097,
+   "value_eok": 4102,
    "price": 13050.0,
    "first_seen": "14:32",
    "exploded": false
@@ -303,7 +303,7 @@
    "change_basis": "KRX",
    "high_pct": 5.15,
    "value_eok": 298,
-   "turnover_pct": 52.4,
+   "turnover_pct": 52.5,
    "peak_turnover_pct": 185.6,
    "float_ratio": 0.6053999999999999,
    "turnover_basis": "float",
@@ -1201,6 +1201,7 @@
    },
    "leader_cohort_prob": null,
    "alert_now": "경고",
+   "alert_release": false,
    "theme_leader": true
   },
   {
@@ -1349,6 +1350,7 @@
    },
    "leader_cohort_prob": null,
    "alert_now": "경고",
+   "alert_release": false,
    "theme_leader": false
   },
   {
@@ -1489,6 +1491,7 @@
    },
    "leader_cohort_prob": null,
    "alert_now": "경고",
+   "alert_release": false,
    "theme_leader": false
   }
  ]
