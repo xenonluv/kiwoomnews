@@ -36,7 +36,7 @@ export interface AlphaMover {
   combined_score?: number; // (레거시) 스파크 횟수 + 외인매집 강도 합산, quant SSOT
   close_bet_fitness?: number; // 종가베팅 적합도 0~100 (quant 저장·참고용). /alpha 정렬·calibrate 검증은 저장값 대신 현행 산식으로 재계산 — fitness.py 변경 시 AlphaList.tsx closeBetFitness도 1:1 동기화 필수.
   alert_now?: string | null; // KRX 시장경보 현재 지정: "주의"/"경고"/"위험" (네이버 marketAlertType)
-  alert_forecast?: string | null; // 경고예고/지정 공식 예측: "경고예고 예상"/"경고지정 요건충족" — 정보 배지 전용(점수 무반영)
+  alert_forecast?: string | null; // 경고예고/지정 공식 예측: "경고예고 예상"/"경고지정 요건충족" — 경고/위험 미지정 시 −25 감점(덕신 7/2 재발 차단) + 배지
   alert_release?: boolean | null; // 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — True면 −30 대신 +20 최대 가산점
   spark_allday_strong?: number | null; // 시간 무관(세션 전체) 몸통 2%↑ 양봉 수 — 🧲 저점매집 입력. null=미측정
   low_accum?: boolean; // 🧲 저점매집 의심(당일 ≤−10% & MA20 위 & 2%+ 양봉 ≥3) — 배지·관찰축 전용(점수 무반영)

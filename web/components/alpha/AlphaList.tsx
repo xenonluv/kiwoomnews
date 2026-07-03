@@ -70,12 +70,15 @@ function closeBetFitness(m: AlphaMover): { score: number; reasons: { k: string; 
   // ⑨ 20일선 아래(역배열) −20 — 회장님 지시 2026-07-03 "적어도 20일선 위에는 있어야"(희림 사례).
   //    과거 38표본 전원 20일선 위 = 오폭 0건. 역배열=위쪽 매물벽.
   if (m.ma20_gap_pct != null && m.ma20_gap_pct < 0) add("20일선아래", -20);
-  // KRX 시장경보 '지정' 벌점 — fitness.py와 1:1(회장님 지시 2026-07-03). 주의·예측은 배지만.
-  // 단 '내일 해제 예정'(alert_release) 경고 종목은 벌점 대신 최대 가산점(해제=재료).
+  // KRX 시장경보 벌점 — fitness.py와 1:1(회장님 지시 2026-07-03).
+  // '내일 해제 예정'(alert_release) 경고 종목은 벌점 대신 최대 가산점(해제=재료).
   if (m.alert_now === "경고") {
     if (m.alert_release) add("경고해제예정", 20);
     else add("투자경고", -30);
   } else if (m.alert_now === "위험") add("투자위험", -60);
+  else if (m.alert_now === "주의") add("투자주의", -10);
+  // 경고지정 예측 −25 — 지정 전날 종베 차단(덕신 7/2: 무감점 1위 → 익일 −17.8%)
+  if (m.alert_forecast && m.alert_now !== "경고" && m.alert_now !== "위험") add("경고지정예측", -25);
   return { score: Math.max(0, Math.min(100, s)), reasons };
 }
 
@@ -332,7 +335,7 @@ function MoverCard({ m, rank }: { m: AlphaMover; rank?: number }) {
             🔓 투자경고 해제 예정
           </span>
         )}
-        {/* KRX 시장경보 대형 배지 — 점수 무반영 정보 배지. 폭락 시 추가매수 기회 관점 */}
+        {/* KRX 시장경보 대형 배지 — 점수는 closeBetBreakdown에서 감점(주의 −10/경고 −30/위험 −60/예측 −25) */}
         {m.alert_now && (
           <span
             className={`rounded px-1.5 py-0.5 text-xs font-bold ${

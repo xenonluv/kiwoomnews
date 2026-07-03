@@ -140,7 +140,8 @@ def build(mover, fcache, reg):
     sr = -1 if row.get("spark_source") == "none" else (row.get("spark_1430_count") or 0)  # 미측정 -1
     row["combined_score"] = (sr + hf) if hf is not None else None  # 외인매집 결측(None)이면 종합점수도 None(calibrate 밴드 오염 방지)
 
-    # ── 시장경보 (현재 지정 + 마감 직전 경고예고/지정 공식 예측 — 회장님 지시 2026-07-03. 점수 무반영·정보 배지 전용) ──
+    # ── 시장경보 (현재 지정 + 마감 직전 경고예고/지정 공식 예측 — 회장님 지시 2026-07-03.
+    #    fitness가 감점: 주의 −10/경고 −30/위험 −60/경고지정예측 −25, 해제예정 +20. 배지 병행) ──
     try:
         import alert_watch
         an = alert_watch.alert_now(code)
