@@ -8,8 +8,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 31,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 6490.0,
+    "entry_close": 6600.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -1.67,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 0.15,
+     "mae": -9.85
+    }
+   }
   },
   "004710": {
    "name": "한솔테크닉스",
@@ -18,8 +32,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 39,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 10040.0,
+    "entry_close": 9890.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 1.52,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.82,
+     "mae": -7.28
+    }
+   }
   },
   "009150": {
    "name": "삼성전기",
@@ -28,8 +56,22 @@
    "verdict_level": "강한 매수신호",
    "ai_prob": 43,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 1989000.0,
+    "entry_close": 1926000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.27,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 3.27,
+     "mae": -9.97
+    }
+   }
   },
   "010690": {
    "name": "화신",
@@ -38,8 +80,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 34,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 9720.0,
+    "entry_close": 9560.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 1.67,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.3,
+     "mae": -4.39
+    }
+   }
   },
   "011070": {
    "name": "LG이노텍",
@@ -48,8 +104,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 36,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 872000.0,
+    "entry_close": 874000.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -0.23,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 3.55,
+     "mae": -6.29
+    }
+   }
   },
   "017670": {
    "name": "SK텔레콤",
@@ -58,8 +128,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 41,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 86400.0,
+    "entry_close": 87400.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -1.14,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": -0.23,
+     "mae": -4.58
+    }
+   }
   },
   "028050": {
    "name": "삼성E&A",
@@ -68,8 +152,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 50,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 48100.0,
+    "entry_close": 49000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -1.84,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 0.71,
+     "mae": -8.16
+    }
+   }
   },
   "028260": {
    "name": "삼성물산",
@@ -78,8 +176,22 @@
    "verdict_level": "중립",
    "ai_prob": 36,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 433500.0,
+    "entry_close": 406500.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 6.64,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 7.01,
+     "mae": -3.69
+    }
+   }
   },
   "034730": {
    "name": "SK",
@@ -88,8 +200,22 @@
    "verdict_level": "강한 매수신호",
    "ai_prob": 32,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 690000.0,
+    "entry_close": 683000.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 1.02,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.61,
+     "mae": -7.61
+    }
+   }
   },
   "037710": {
    "name": "광주신세계",
@@ -98,8 +224,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 41,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 38900.0,
+    "entry_close": 39850.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -2.38,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.01,
+     "mae": -6.15
+    }
+   }
   },
   "043260": {
    "name": "성호전자",
@@ -108,8 +248,22 @@
    "verdict_level": "중립",
    "ai_prob": 37,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 22100.0,
+    "entry_close": 21900.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 0.91,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.51,
+     "mae": -10.96
+    }
+   }
   },
   "043650": {
    "name": "국순당",
@@ -118,8 +272,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 46,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 3795.0,
+    "entry_close": 4005.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -5.24,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 0.0,
+     "mae": -5.24
+    }
+   }
   },
   "058730": {
    "name": "다스코",
@@ -128,8 +296,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 43,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 3465.0,
+    "entry_close": 3755.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -7.72,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.86,
+     "mae": -11.05
+    }
+   }
   },
   "080220": {
    "name": "제주반도체",
@@ -138,8 +320,22 @@
    "verdict_level": "매도 우위",
    "ai_prob": 34,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 91500.0,
+    "entry_close": 89700.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 2.01,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.9,
+     "mae": -7.02
+    }
+   }
   },
   "085620": {
    "name": "미래에셋생명",
@@ -148,8 +344,22 @@
    "verdict_level": "중립",
    "ai_prob": 36,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 20500.0,
+    "entry_close": 20750.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -1.2,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 0.48,
+     "mae": -6.46
+    }
+   }
   },
   "089030": {
    "name": "테크윙",
@@ -158,8 +368,22 @@
    "verdict_level": "중립",
    "ai_prob": 32,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 46600.0,
+    "entry_close": 47450.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -1.79,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.48,
+     "mae": -8.64
+    }
+   }
   },
   "095610": {
    "name": "테스",
@@ -168,8 +392,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 39,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 177300.0,
+    "entry_close": 177800.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -0.28,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.12,
+     "mae": -9.34
+    }
+   }
   },
   "111710": {
    "name": "남화산업",
@@ -178,8 +416,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 34,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 4865.0,
+    "entry_close": 5330.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -8.72,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.13,
+     "mae": -15.29
+    }
+   }
   },
   "122640": {
    "name": "예스티",
@@ -188,8 +440,22 @@
    "verdict_level": "강한 매수신호",
    "ai_prob": 43,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 34300.0,
+    "entry_close": 33000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.94,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 5.61,
+     "mae": -7.73
+    }
+   }
   },
   "153890": {
    "name": "져스텍",
@@ -198,8 +464,22 @@
    "verdict_level": null,
    "ai_prob": 29,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 15790.0,
+    "entry_close": 12150.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.96,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 29.96,
+     "mae": -2.8
+    }
+   }
   },
   "204320": {
    "name": "HL만도",
@@ -208,8 +488,22 @@
    "verdict_level": "중립",
    "ai_prob": 43,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 50400.0,
+    "entry_close": 48400.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.13,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 4.55,
+     "mae": -5.27
+    }
+   }
   },
   "240810": {
    "name": "원익IPS",
@@ -218,8 +512,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 34,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 133100.0,
+    "entry_close": 131600.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 1.14,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.89,
+     "mae": -8.05
+    }
+   }
   },
   "279570": {
    "name": "케이뱅크",
@@ -228,8 +536,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 37,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 5630.0,
+    "entry_close": 5600.0,
+    "hit": true,
+    "high3": false,
+    "return_pct": 0.54,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.79,
+     "mae": -0.89
+    }
+   }
   },
   "319660": {
    "name": "피에스케이",
@@ -238,8 +560,22 @@
    "verdict_level": "매수 우위",
    "ai_prob": 48,
    "ai_dir": "관망",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 182300.0,
+    "entry_close": 183000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -0.38,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 2.35,
+     "mae": -7.87
+    }
+   }
   },
   "356680": {
    "name": "엑스게이트",
@@ -248,8 +584,22 @@
    "verdict_level": "중립",
    "ai_prob": 38,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 13570.0,
+    "entry_close": 13850.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -2.02,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 0.94,
+     "mae": -8.81
+    }
+   }
   },
   "413630": {
    "name": "씨피시스템",
@@ -258,8 +608,22 @@
    "verdict_level": "중립",
    "ai_prob": 36,
    "ai_dir": "하락",
-   "evaluated": false,
-   "result": null
+   "evaluated": true,
+   "result": {
+    "date": "20260703",
+    "next_close": 2460.0,
+    "entry_close": 2555.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -3.72,
+    "fwd": {
+     "n_bars": 1,
+     "d5_return": null,
+     "d10_return": null,
+     "mfe": 1.17,
+     "mae": -9.78
+    }
+   }
   }
  }
 }

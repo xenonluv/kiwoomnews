@@ -17,11 +17,11 @@
     "high3": false,
     "return_pct": -8.55,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -12.51,
      "d10_return": null,
      "mfe": 1.55,
-     "mae": -26.03
+     "mae": -28.75
     }
    }
   },
@@ -41,11 +41,11 @@
     "high3": true,
     "return_pct": -1.31,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 9.75,
      "d10_return": null,
      "mfe": 15.18,
-     "mae": -4.47
+     "mae": -12.86
     }
    }
   },
@@ -65,11 +65,11 @@
     "high3": false,
     "return_pct": 0.83,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -12.92,
      "d10_return": null,
      "mfe": 1.92,
-     "mae": -20.67
+     "mae": -23.83
     }
    }
   },
@@ -89,11 +89,11 @@
     "high3": true,
     "return_pct": -3.43,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -1.01,
      "d10_return": null,
      "mfe": 3.13,
-     "mae": -14.43
+     "mae": -17.36
     }
    }
   },
@@ -113,11 +113,11 @@
     "high3": true,
     "return_pct": 1.22,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -1.67,
      "d10_return": null,
      "mfe": 5.67,
-     "mae": -5.23
+     "mae": -7.23
     }
    }
   },
@@ -137,7 +137,7 @@
     "high3": false,
     "return_pct": -2.01,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 6.13,
      "d10_return": null,
      "mfe": 19.29,
@@ -161,11 +161,11 @@
     "high3": true,
     "return_pct": 5.82,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 2.97,
      "d10_return": null,
      "mfe": 23.74,
-     "mae": -12.75
+     "mae": -13.96
     }
    }
   },
@@ -185,11 +185,11 @@
     "high3": true,
     "return_pct": 0.99,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 18.3,
      "d10_return": null,
      "mfe": 25.25,
-     "mae": -4.96
+     "mae": -10.5
     }
    }
   },
@@ -209,11 +209,11 @@
     "high3": true,
     "return_pct": -4.3,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -5.57,
      "d10_return": null,
      "mfe": 7.64,
-     "mae": -31.69
+     "mae": -37.9
     }
    }
   },
@@ -233,11 +233,11 @@
     "high3": true,
     "return_pct": 1.9,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -6.23,
      "d10_return": null,
      "mfe": 11.46,
-     "mae": -20.13
+     "mae": -24.73
     }
    }
   },
@@ -257,7 +257,7 @@
     "high3": true,
     "return_pct": 1.12,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 7.14,
      "d10_return": null,
      "mfe": 26.02,
@@ -281,11 +281,11 @@
     "high3": false,
     "return_pct": -4.95,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 2.1,
      "d10_return": null,
      "mfe": 19.81,
-     "mae": -10.19
+     "mae": -17.43
     }
    }
   },
@@ -305,7 +305,7 @@
     "high3": true,
     "return_pct": 3.04,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 31.9,
      "d10_return": null,
      "mfe": 49.97,
@@ -329,11 +329,11 @@
     "high3": true,
     "return_pct": -2.6,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -9.61,
      "d10_return": null,
      "mfe": 4.81,
-     "mae": -18.96
+     "mae": -20.91
     }
    }
   },
@@ -353,7 +353,7 @@
     "high3": true,
     "return_pct": 3.14,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -0.71,
      "d10_return": null,
      "mfe": 5.98,
@@ -377,11 +377,11 @@
     "high3": true,
     "return_pct": 0.33,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 11.99,
      "d10_return": null,
      "mfe": 25.12,
-     "mae": -12.59
+     "mae": -19.39
     }
    }
   },
@@ -401,7 +401,7 @@
     "high3": false,
     "return_pct": -2.98,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -6.12,
      "d10_return": null,
      "mfe": 6.12,
@@ -425,7 +425,7 @@
     "high3": true,
     "return_pct": 6.26,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": 22.79,
      "d10_return": null,
      "mfe": 37.45,
@@ -449,11 +449,11 @@
     "high3": true,
     "return_pct": 13.51,
     "fwd": {
-     "n_bars": 7,
+     "n_bars": 8,
      "d5_return": -12.95,
      "d10_return": null,
      "mfe": 20.37,
-     "mae": -29.71
+     "mae": -35.86
     }
    }
   }
