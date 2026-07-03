@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-07-02 20:01:59 KST",
- "market_session": "closed",
+ "generated_at": "2026-07-03 09:02:16 KST",
+ "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
@@ -24,12 +24,12 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 18,
+ "universe_count": 15,
  "events": [
   {
    "id": "2026-07-03_미국 고용보고서 (7월",
    "date": "2026-07-03",
-   "dday": 1,
+   "dday": 0,
    "title": "미국 고용보고서 (7월 발표)",
    "category": [
     "금리",
@@ -42,7 +42,7 @@
   {
    "id": "2026-07-07_삼성전자 2분기 잠정실",
    "date": "2026-07-07",
-   "dday": 5,
+   "dday": 4,
    "title": "삼성전자 2분기 잠정실적",
    "category": [
     "반도체",
@@ -55,7 +55,7 @@
   {
    "id": "2026-07-09_한국은행 금통위 기준금",
    "date": "2026-07-09",
-   "dday": 7,
+   "dday": 6,
    "title": "한국은행 금통위 기준금리 결정",
    "category": [
     "금리"
@@ -67,7 +67,7 @@
   {
    "id": "2026-07-09_한국 옵션·선물 동시만",
    "date": "2026-07-09",
-   "dday": 7,
+   "dday": 6,
    "title": "한국 옵션·선물 동시만기일 (7월)",
    "category": [
     "수급"
@@ -77,278 +77,7 @@
    "estimated": false
   }
  ],
- "explosions": [
-  {
-   "code": "013580",
-   "name": "계룡건설",
-   "sector": "건설",
-   "high_pct": 29.41,
-   "vol_turnover_pct": 92.5,
-   "value_eok": 1401,
-   "price": 25800.0,
-   "change_pct": 8.4,
-   "backfill": false
-  },
-  {
-   "code": "007610",
-   "name": "선도전기",
-   "sector": "전기·전자",
-   "high_pct": 29.94,
-   "vol_turnover_pct": 103.9,
-   "value_eok": 806,
-   "price": 6300.0,
-   "change_pct": 23.29,
-   "backfill": false
-  },
-  {
-   "code": "091590",
-   "name": "남화토건",
-   "sector": "건설",
-   "high_pct": 26.58,
-   "vol_turnover_pct": 107.2,
-   "value_eok": 514,
-   "price": 10360.0,
-   "change_pct": 7.58,
-   "backfill": false
-  },
-  {
-   "code": "419050",
-   "name": "삼기에너지솔루션즈",
-   "sector": "운송장비·부품",
-   "high_pct": 29.95,
-   "vol_turnover_pct": 94.5,
-   "value_eok": 470,
-   "price": 1944.0,
-   "change_pct": 29.95,
-   "backfill": false
-  },
-  {
-   "code": "025950",
-   "name": "동신건설",
-   "sector": "건설",
-   "high_pct": 29.97,
-   "vol_turnover_pct": 97.8,
-   "value_eok": 467,
-   "price": 15800.0,
-   "change_pct": 14.66,
-   "backfill": false
-  },
-  {
-   "code": "001260",
-   "name": "남광토건",
-   "sector": "건설",
-   "high_pct": 29.59,
-   "vol_turnover_pct": 106.0,
-   "value_eok": 467,
-   "price": 10270.0,
-   "change_pct": -0.68,
-   "backfill": true
-  },
-  {
-   "code": "010960",
-   "name": "삼호개발",
-   "sector": "건설",
-   "high_pct": 29.87,
-   "vol_turnover_pct": 185.6,
-   "value_eok": 1334,
-   "price": 4370.0,
-   "change_pct": 3.19,
-   "backfill": true
-  }
- ],
- "youtong": [
-  {
-   "code": "010960",
-   "name": "삼호개발",
-   "sector": "건설",
-   "change_pct": 3.19,
-   "high_pct": 29.87,
-   "vol_turnover_pct": 185.6,
-   "value_eok": 1334,
-   "price": 4370.0,
-   "first_seen": "09:52",
-   "exploded": true
-  },
-  {
-   "code": "091590",
-   "name": "남화토건",
-   "sector": "건설",
-   "change_pct": 7.58,
-   "high_pct": 26.58,
-   "vol_turnover_pct": 107.2,
-   "value_eok": 514,
-   "price": 10360.0,
-   "first_seen": "09:52",
-   "exploded": true
-  },
-  {
-   "code": "001260",
-   "name": "남광토건",
-   "sector": "건설",
-   "change_pct": -0.68,
-   "high_pct": 29.59,
-   "vol_turnover_pct": 106.0,
-   "value_eok": 467,
-   "price": 10270.0,
-   "first_seen": "10:01",
-   "exploded": true
-  },
-  {
-   "code": "007610",
-   "name": "선도전기",
-   "sector": "전기·전자",
-   "change_pct": 23.29,
-   "high_pct": 29.94,
-   "vol_turnover_pct": 103.9,
-   "value_eok": 806,
-   "price": 6300.0,
-   "first_seen": "10:21",
-   "exploded": true
-  },
-  {
-   "code": "037710",
-   "name": "광주신세계",
-   "sector": "유통",
-   "change_pct": -8.39,
-   "high_pct": 15.86,
-   "vol_turnover_pct": 102.2,
-   "value_eok": 1279,
-   "price": 39850.0,
-   "first_seen": "09:52",
-   "exploded": false
-  },
-  {
-   "code": "025950",
-   "name": "동신건설",
-   "sector": "건설",
-   "change_pct": 14.66,
-   "high_pct": 29.97,
-   "vol_turnover_pct": 97.8,
-   "value_eok": 467,
-   "price": 15800.0,
-   "first_seen": "10:21",
-   "exploded": true
-  },
-  {
-   "code": "419050",
-   "name": "삼기에너지솔루션즈",
-   "sector": "운송장비·부품",
-   "change_pct": 29.95,
-   "high_pct": 29.95,
-   "vol_turnover_pct": 94.5,
-   "value_eok": 470,
-   "price": 1944.0,
-   "first_seen": "11:51",
-   "exploded": true
-  },
-  {
-   "code": "013580",
-   "name": "계룡건설",
-   "sector": "건설",
-   "change_pct": 8.4,
-   "high_pct": 29.41,
-   "vol_turnover_pct": 92.5,
-   "value_eok": 1401,
-   "price": 25800.0,
-   "first_seen": "13:51",
-   "exploded": true
-  },
-  {
-   "code": "037440",
-   "name": "희림",
-   "sector": "일반서비스",
-   "change_pct": 7.03,
-   "high_pct": 26.6,
-   "vol_turnover_pct": 85.3,
-   "value_eok": 392,
-   "price": 4185.0,
-   "first_seen": "13:41",
-   "exploded": false
-  },
-  {
-   "code": "046940",
-   "name": "우원개발",
-   "sector": "건설",
-   "change_pct": 15.83,
-   "high_pct": 29.98,
-   "vol_turnover_pct": 74.8,
-   "value_eok": 345,
-   "price": 3805.0,
-   "first_seen": "13:41",
-   "exploded": false
-  },
-  {
-   "code": "101730",
-   "name": "위메이드맥스",
-   "sector": "IT 서비스",
-   "change_pct": 9.94,
-   "high_pct": 29.82,
-   "vol_turnover_pct": 68.8,
-   "value_eok": 781,
-   "price": 4700.0,
-   "first_seen": "15:21",
-   "exploded": false
-  },
-  {
-   "code": "094360",
-   "name": "칩스앤미디어",
-   "sector": "전기·전자",
-   "change_pct": 18.91,
-   "high_pct": 25.82,
-   "vol_turnover_pct": 56.9,
-   "value_eok": 975,
-   "price": 14460.0,
-   "first_seen": "17:51",
-   "exploded": false
-  },
-  {
-   "code": "017000",
-   "name": "신원종합개발",
-   "sector": "건설",
-   "change_pct": 29.94,
-   "high_pct": 29.94,
-   "vol_turnover_pct": 51.8,
-   "value_eok": 145,
-   "price": 3190.0,
-   "first_seen": "11:32",
-   "exploded": false
-  },
-  {
-   "code": "090410",
-   "name": "덕신이피씨",
-   "sector": "금속",
-   "change_pct": 7.88,
-   "high_pct": 26.55,
-   "vol_turnover_pct": 51.7,
-   "value_eok": 187,
-   "price": 1150.0,
-   "first_seen": "15:31",
-   "exploded": false
-  },
-  {
-   "code": "002990",
-   "name": "금호건설",
-   "sector": "건설",
-   "change_pct": -19.33,
-   "high_pct": 29.99,
-   "vol_turnover_pct": 50.8,
-   "value_eok": 1744,
-   "price": 11730.0,
-   "first_seen": "09:52",
-   "exploded": false
-  },
-  {
-   "code": "042940",
-   "name": "상지건설",
-   "sector": "건설",
-   "change_pct": 3.64,
-   "high_pct": 28.36,
-   "vol_turnover_pct": 50.3,
-   "value_eok": 265,
-   "price": 8550.0,
-   "first_seen": "11:41",
-   "exploded": false
-  }
- ],
+ "explosions": [],
+ "youtong": [],
  "suspects": []
 }
