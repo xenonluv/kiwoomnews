@@ -4,7 +4,7 @@
   "002990": {
    "name": "금호건설",
    "sector": "건설",
-   "entry": 9440.0,
+   "entry": 9470.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -22,14 +22,14 @@
     "re_turnover": 4
    },
    "rank": 1,
-   "change_pct": -19.52,
+   "change_pct": -19.27,
    "change_basis": "KRX",
    "high_pct": 14.58,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1656,
-   "turnover_pct": 80.6,
+   "value_eok": 1669,
+   "turnover_pct": 81.3,
    "peak_turnover_pct": 165.1,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -46,8 +46,8 @@
     "peak_turnover_pct": 165.1,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 5979.8,
-    "ma20_margin_pct": 57.87,
+    "ma20": 5981.8,
+    "ma20_margin_pct": 58.31,
     "cause_summary": "[특징주] '호남 반도체' 테마주에 잇단 투자경고…장 초반 혼조",
     "was_theme_leader": false,
     "source": "live"
@@ -125,7 +125,7 @@
   "010960": {
    "name": "삼호개발",
    "sector": "건설",
-   "entry": 3750.0,
+   "entry": 3745.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -143,14 +143,14 @@
     "re_turnover": 2
    },
    "rank": 2,
-   "change_pct": -14.19,
+   "change_pct": -14.3,
    "change_basis": "KRX",
    "high_pct": 5.15,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 295,
-   "turnover_pct": 52.0,
+   "value_eok": 297,
+   "turnover_pct": 52.2,
    "peak_turnover_pct": 185.6,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -167,8 +167,8 @@
     "peak_turnover_pct": 185.6,
     "peak_ibs": 0.18,
     "peak_uppertail": 25.9,
-    "ma20": 3363.0,
-    "ma20_margin_pct": 11.51,
+    "ma20": 3362.8,
+    "ma20_margin_pct": 11.37,
     "cause_summary": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
     "was_theme_leader": false,
     "source": "live"
@@ -237,7 +237,7 @@
   "001210": {
    "name": "금호전기",
    "sector": "전기·전자",
-   "entry": 742.0,
+   "entry": 741.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -255,14 +255,14 @@
     "re_turnover": 3
    },
    "rank": 3,
-   "change_pct": -24.52,
+   "change_pct": -24.62,
    "change_basis": "KRX",
    "high_pct": 9.26,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 215,
-   "turnover_pct": 62.0,
+   "value_eok": 217,
+   "turnover_pct": 62.5,
    "peak_turnover_pct": 159.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -279,8 +279,8 @@
     "peak_turnover_pct": 159.5,
     "peak_ibs": 0.77,
     "peak_uppertail": 7.1,
-    "ma20": 668.4,
-    "ma20_margin_pct": 11.02,
+    "ma20": 668.3,
+    "ma20_margin_pct": 10.88,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -333,7 +333,7 @@
   "228340": {
    "name": "동양파일",
    "sector": "비금속",
-   "entry": 3245.0,
+   "entry": 3240.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -350,15 +350,15 @@
     "peak_turnover": 1,
     "re_turnover": 3
    },
-   "rank": 5,
-   "change_pct": -25.74,
+   "rank": 4,
+   "change_pct": -25.86,
    "change_basis": "KRX",
    "high_pct": -0.69,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 177,
-   "turnover_pct": 62.3,
+   "value_eok": 179,
+   "turnover_pct": 63.0,
    "peak_turnover_pct": 96.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -375,8 +375,8 @@
     "peak_turnover_pct": 96.5,
     "peak_ibs": 0.19,
     "peak_uppertail": 42.9,
-    "ma20": 2560.0,
-    "ma20_margin_pct": 26.76,
+    "ma20": 2559.8,
+    "ma20_margin_pct": 26.57,
     "cause_summary": "동양파일 480억 묶인 사이…한림건설 김상수 골프장 확장에 주주 '부글...",
     "was_theme_leader": false,
     "source": "live"
@@ -445,7 +445,7 @@
   "025950": {
    "name": "동신건설",
    "sector": "건설",
-   "entry": 13940.0,
+   "entry": 13950.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -462,15 +462,15 @@
     "peak_turnover": 1,
     "re_turnover": 1
    },
-   "rank": 6,
-   "change_pct": -11.77,
+   "rank": 5,
+   "change_pct": -11.71,
    "change_basis": "KRX",
    "high_pct": 6.27,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 149,
-   "turnover_pct": 37.2,
+   "value_eok": 150,
+   "turnover_pct": 37.5,
    "peak_turnover_pct": 97.8,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -487,8 +487,8 @@
     "peak_turnover_pct": 97.8,
     "peak_ibs": 0.33,
     "peak_uppertail": 13.4,
-    "ma20": 11986.5,
-    "ma20_margin_pct": 16.3,
+    "ma20": 11987.0,
+    "ma20_margin_pct": 16.38,
     "cause_summary": "반도체 메가 프로젝트 수혜 기대감에…지역 건설주 상한가",
     "was_theme_leader": false,
     "source": "live"
@@ -541,7 +541,7 @@
   "013580": {
    "name": "계룡건설",
    "sector": "건설",
-   "entry": 22950.0,
+   "entry": 22850.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -558,15 +558,15 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 8,
-   "change_pct": -11.05,
+   "rank": 6,
+   "change_pct": -11.43,
    "change_basis": "KRX",
    "high_pct": 12.02,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 433,
-   "turnover_pct": 31.0,
+   "value_eok": 436,
+   "turnover_pct": 31.3,
    "peak_turnover_pct": 92.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -583,8 +583,8 @@
     "peak_turnover_pct": 92.5,
     "peak_ibs": 0.34,
     "peak_uppertail": 19.4,
-    "ma20": 20556.5,
-    "ma20_margin_pct": 11.64,
+    "ma20": 20551.5,
+    "ma20_margin_pct": 11.18,
     "cause_summary": "계룡건설, 국토부 '건설사업자간 상호협력평가' 7년 연속 '최우수'",
     "was_theme_leader": false,
     "source": "live"
@@ -633,7 +633,7 @@
   "017000": {
    "name": "신원종합개발",
    "sector": "건설",
-   "entry": 2625.0,
+   "entry": 2630.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -650,15 +650,15 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 9,
-   "change_pct": -17.71,
+   "rank": 7,
+   "change_pct": -17.55,
    "change_basis": "KRX",
    "high_pct": 6.11,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 89,
-   "turnover_pct": 33.6,
+   "value_eok": 90,
+   "turnover_pct": 33.9,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -675,8 +675,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 2412.8,
-    "ma20_margin_pct": 8.8,
+    "ma20": 2413.0,
+    "ma20_margin_pct": 8.99,
     "cause_summary": "신원종합개발, 2286억 리조트 신축공사 1년 연장",
     "was_theme_leader": false,
     "source": "live"
@@ -725,7 +725,7 @@
   "090410": {
    "name": "덕신이피씨",
    "sector": "금속",
-   "entry": 944.0,
+   "entry": 955.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -742,15 +742,15 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 10,
-   "change_pct": -17.91,
+   "rank": 8,
+   "change_pct": -16.96,
    "change_basis": "KRX",
    "high_pct": -2.61,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
    "value_eok": 31,
-   "turnover_pct": 10.0,
+   "turnover_pct": 10.2,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -767,8 +767,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 0.53,
     "peak_uppertail": 17.3,
-    "ma20": 878.6,
-    "ma20_margin_pct": 7.44,
+    "ma20": 879.1,
+    "ma20_margin_pct": 8.63,
     "cause_summary": "덕신EPC, 美 반도체 공장 본 시공 착수",
     "was_theme_leader": false,
     "source": "live"
@@ -942,7 +942,7 @@
    "first_seen": "2026-07-03 14:33:47 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "001260": {
    "name": "남광토건",
@@ -1042,8 +1042,8 @@
    "first_seen": "2026-07-03 14:43:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   }
  },
- "as_of": "2026-07-03 15:14:06 KST"
+ "as_of": "2026-07-03 15:24:00 KST"
 }
