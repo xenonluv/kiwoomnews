@@ -295,6 +295,25 @@ function MoverCard({ m, rank }: { m: AlphaMover; rank?: number }) {
               {MTYPE_LABEL[m.mover_type] ?? m.mover_type}
             </span>
           )}
+          {/* KRX 시장경보 대형 배지(회장님 지시 2026-07-03) — 점수 무반영 정보 배지. 폭락 시 추가매수 기회 관점 */}
+          {m.alert_now && (
+            <span
+              className={`shrink-0 rounded px-1.5 py-0.5 text-xs font-bold ${
+                m.alert_now === "주의" ? "bg-amber-500/30 text-amber-200" : "bg-down/30 text-down"
+              }`}
+              title="KRX 시장경보 현재 지정 상태 — 익일 급락·변동성 확대 가능(계획된 추가매수 기회 관점)"
+            >
+              {m.alert_now === "주의" ? "⚠️투자주의" : m.alert_now === "경고" ? "🚨투자경고" : "⛔투자위험"}
+            </span>
+          )}
+          {m.alert_forecast && (
+            <span
+              className="shrink-0 rounded bg-down/30 px-1.5 py-0.5 text-xs font-bold text-down"
+              title="장마감 직전 KRX 공식(5일+60%·15일+100%·신고가·지수배수) 계산 예측 — 지정 시 익일 급락·변동 주의(=기회). 보장 아님"
+            >
+              🚨{m.alert_forecast}
+            </span>
+          )}
           {m.date && (
             <span className="text-[10px] font-normal text-muted-foreground tabular-nums">
               {m.date.length === 8 ? `${m.date.slice(4, 6)}/${m.date.slice(6)}` : m.date}

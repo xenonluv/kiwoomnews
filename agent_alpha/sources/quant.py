@@ -27,7 +27,7 @@ def build(mover, fcache, reg):
            "captured_at": config.now_iso(), "labeled": False}
 
     try:
-        d = kis.daily_prices_jmoney_un(code, days=10)  # 가격=J / 거래량·거래대금=UN. 10일 = 과확장·연속하락 맥락 계산용
+        d = kis.daily_prices_jmoney_un(code, days=20)  # 가격=J / 거래량·거래대금=UN. 20일 = 과확장·연속하락 + 시장경보 공식(15일) 계산용
     except Exception:
         d = []
     if len(d) < 2:
@@ -128,6 +128,18 @@ def build(mover, fcache, reg):
     row["hidden_foreign_level"] = hf
     sr = -1 if row.get("spark_source") == "none" else (row.get("spark_1430_count") or 0)  # 미측정 -1
     row["combined_score"] = (sr + hf) if hf is not None else None  # 외인매집 결측(None)이면 종합점수도 None(calibrate 밴드 오염 방지)
+
+    # ── 시장경보 (현재 지정 + 마감 직전 경고예고/지정 공식 예측 — 회장님 지시 2026-07-03. 점수 무반영·정보 배지 전용) ──
+    try:
+        import alert_watch
+        an = alert_watch.alert_now(code)
+        row["alert_now"] = (an or {}).get("level")
+        closes = [b.get("close") for b in d if b.get("close")]
+        row["alert_forecast"] = alert_watch.forecast_warning(
+            closes, alert_watch.index_closes((an or {}).get("sosok")), level=(an or {}).get("level"))
+    except Exception:
+        row["alert_now"] = None
+        row["alert_forecast"] = None
 
     # ── 종가베팅 적합도 점수 (SSOT 산식=fitness.close_bet_fitness). 참고·투명 노출용 저장 —
     #    /alpha 정렬(AlphaList.tsx closeBetFitness)·calibrate 검증(_cbf)은 저장값을 신뢰하지 않고 현행 산식으로 재계산.

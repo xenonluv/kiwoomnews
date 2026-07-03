@@ -78,7 +78,14 @@ def build_message(movers):
         ssc = m.get("spark_strong_count")
         lines.append("")                     # 순위 블록 사이 빈 줄(가독성 — 회장님 지시)
         medal = ["🥇", "🥈", "🥉"][i - 1] if i <= 3 else "▫️"
-        lines.append(f"{medal} {i}위 {m.get('name')} ({m.get('code')}) — {s}점({_tier(s)})")
+        # KRX 시장경보 배지 — 현재 지정 + 마감 직전 공식 예측(회장님 지시 2026-07-03: 알고 들어가 폭락=기회)
+        alerts = []
+        if m.get("alert_now"):
+            alerts.append(f"⚠️투자{m['alert_now']}")
+        if m.get("alert_forecast"):
+            alerts.append(f"🚨{m['alert_forecast']}")
+        badge = (" " + " ".join(alerts)) if alerts else ""
+        lines.append(f"{medal} {i}위 {m.get('name')} ({m.get('code')}) — {s}점({_tier(s)}){badge}")
         lines.append(
             f"   당일 {'' if chg is None else f'{chg:+.1f}%'} · 대금 {val if val is not None else '—'}억"
             f" · 강스파크 {ssc if ssc is not None else '—'}개"

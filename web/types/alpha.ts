@@ -34,6 +34,8 @@ export interface AlphaMover {
   hidden_foreign_level?: number | null; // 키움 속 외인매집 강도 0~3 (quant SSOT), null=결측
   combined_score?: number; // (레거시) 스파크 횟수 + 외인매집 강도 합산, quant SSOT
   close_bet_fitness?: number; // 종가베팅 적합도 0~100 (quant 저장·참고용). /alpha 정렬·calibrate 검증은 저장값 대신 현행 산식으로 재계산 — fitness.py 변경 시 AlphaList.tsx closeBetFitness도 1:1 동기화 필수.
+  alert_now?: string | null; // KRX 시장경보 현재 지정: "주의"/"경고"/"위험" (네이버 marketAlertType)
+  alert_forecast?: string | null; // 경고예고/지정 공식 예측: "경고예고 예상"/"경고지정 요건충족" — 정보 배지 전용(점수 무반영)
   kospi_chg?: number | null;
   kosdaq_chg?: number | null;
   catalyst?: string;

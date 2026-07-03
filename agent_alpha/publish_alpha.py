@@ -19,7 +19,7 @@ _MOVER_FIELDS = ("code", "name", "sector", "mover_type", "date", "file_date", "p
                  "spark_1430_count", "spark_max_body_pct", "spark_strong_count", "spark_bars", "spark_source",
                  "frgn_net", "orgn_net", "prsn_net",
                  "kiwoom_buy_concentration", "kiwoom_is_top_buyer", "glob_net_qty",
-                 "hidden_foreign_level", "combined_score", "close_bet_fitness",
+                 "hidden_foreign_level", "combined_score", "close_bet_fitness", "alert_now", "alert_forecast",
                  "kospi_chg", "kosdaq_chg", "catalyst", "real_likelihood", "sustainability",
                  "manipulation_risk", "prob_up", "confidence", "redteam_flag",
                  "labeled", "hit", "next_return_pct", "next_high_pct", "next_date")
