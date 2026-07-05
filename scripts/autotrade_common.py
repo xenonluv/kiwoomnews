@@ -28,6 +28,7 @@ TP1_PCT = 7.0                # 1차 익절(50%)
 TP1_FRACTION = 0.5
 TP2_PCT = 11.0               # 잔량 익절
 BREAKEVEN_PCT = 0.5          # 1차 익절 후 잔량이 진입가 근처(≤+0.5%)로 재하락하면 본전 매도
+FORCE_EXIT_HHMM = 1450       # 전날 이월 포지션 강제 전량 시장가 청산 시각(HHMM 이후) — 15:18 새 1위 갈아타기 준비
 
 
 def log(msg):
@@ -43,6 +44,25 @@ def log(msg):
 
 def today_str():
     return datetime.now(KST).strftime("%Y%m%d")
+
+
+def past_force_exit(now=None):
+    """현재 KST가 강제청산 시각(FORCE_EXIT_HHMM) 이후인지. 테스트훅 AUTOTRADE_FORCE_EXIT=1이면 시각 무관 True."""
+    if os.environ.get("AUTOTRADE_FORCE_EXIT") == "1":
+        return True
+    now = now or datetime.now(KST)
+    return int(now.strftime("%H%M")) >= FORCE_EXIT_HHMM
+
+
+def notify_trade(text):
+    """자동매매 텔레그램 알림 — telegram_notify 재사용. fail-safe(미설정·실패여도 매매 진행)."""
+    try:
+        import telegram_notify as tn
+        tn.load_env()
+        return tn.send(text)
+    except Exception as e:
+        log(f"[notify] 텔레그램 실패(무시): {e}")
+        return False
 
 
 # ── KV(Upstash REST) 토글 ────────────────────────────────────────────

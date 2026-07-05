@@ -23,13 +23,22 @@ def run(slot, dry=True):
         ac.log(f"[exec:{slot}] 자동매매 OFF(KV autotrade:enabled≠1) — 매수 안 함")
         return
     try:
-        already = ac.bought_today()
+        data = ac.load_positions()
     except Exception as e:
         # 포지션 상태 불명(파일 읽기 실패)이면 중복매수 여부 확인 불가 → fail-closed(매수 중단).
         ac.log(f"[exec:{slot}] 포지션 상태 확인 실패({e}) — fail-closed(매수 중단)")
         return
-    if already:
+    if ac.bought_today(data):
         ac.log(f"[exec:{slot}] 오늘 이미 매수함 — 중복 매수 안 함")
+        return
+    # 전날 이월 미청산 포지션이 남아있으면 = 14:50 강제청산 실패 → 갈아타기 불가. 신규 매수 차단(중복 보유 방지).
+    stale = [p for p in ac.open_positions(data) if p.get("entry_date") != ac.today_str()]
+    if stale:
+        names = ", ".join(f"{p.get('name','')}({p['code']})" for p in stale)
+        ac.log(f"[exec:{slot}] 🚨 전날 미청산 포지션 잔존({names}) — 강제청산 실패 의심. 신규 매수 차단(중복보유 방지)")
+        ac.notify_trade(
+            f"🚨 [자동매매] 전날 포지션 미청산: {names}\n"
+            f"14:50 강제청산이 안 된 상태라 오늘 15:18 신규 매수를 차단했습니다. 수동 확인 필요.")
         return
     top = ac.top_suspect()
     ok, reason = ac.safety_ok(top)
@@ -74,6 +83,9 @@ def run(slot, dry=True):
         })
         ac.save_positions(data)
         ac.log(f"[exec:{slot}] ★매수 체결·포지션 기록: {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} ({res['market']})")
+        ac.notify_trade(
+            f"🟢 [자동매매] 신규 매수 {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} ({res['market']} 시장가)\n"
+            f"오늘 레이더 1위 · pattern={top.get('pattern')} score={top.get('suspicion_score')} · 익일 14:50 강제청산")
     except Exception as e:
         ac.log(f"[exec:{slot}] 🚨 매수는 체결됐으나 포지션 기록 실패: {e} — 수동 확인·기록 필요(중복매수·청산누락 위험)")
 

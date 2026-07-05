@@ -50,6 +50,16 @@ def check_position(pos, dry=True):
     qopen = pos["qty_open"]
     changed = False
 
+    # ── 강제 청산(갈아타기): 전날 이월 포지션은 14:50 이후 손익무관 전량 시장가 정리 ──
+    #    → 15:18 오늘의 새 1위로 갈아타기 전에 계좌를 비운다. 최우선(손절/익절 룰보다 앞).
+    if pos.get("entry_date") != ac.today_str() and ac.past_force_exit():
+        if _sell(pos, qopen, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry):
+            pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"; changed = True
+            ac.notify_trade(
+                f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {qopen}주 시장가\n"
+                f"전날 포지션 정리 {pct:+.1f}% (진입 {entry:,.0f}→현재 {cur:,.0f}) · 15:18 새 1위 갈아타기 준비")
+        return changed
+
     if not pos.get("tp1_done"):
         if pct <= ac.STOP_LOSS_PCT:
             if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry):
