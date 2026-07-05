@@ -29,6 +29,8 @@ TP1_FRACTION = 0.5
 TP2_PCT = 11.0               # 잔량 익절
 BREAKEVEN_PCT = 0.5          # 1차 익절 후 잔량이 진입가 근처(≤+0.5%)로 재하락하면 본전 매도
 FORCE_EXIT_HHMM = 1450       # 전날 이월 포지션 강제 전량 시장가 청산 시각(HHMM 이후) — 15:18 새 1위 갈아타기 준비
+NXT_PREMARKET_START = 800    # NXT 프리마켓 개장(HHMM). 08:00~08:59는 NXT 세션, 09:00부터 KRX 정규장.
+KRX_CLOSE_HHMM = 1530        # KRX 정규장 마감(HHMM). 이후는 감시 무동작(closed).
 
 
 def log(msg):
@@ -52,6 +54,25 @@ def past_force_exit(now=None):
         return True
     now = now or datetime.now(KST)
     return int(now.strftime("%H%M")) >= FORCE_EXIT_HHMM
+
+
+def market_session(now=None):
+    """현재 매매 세션 판정. 테스트훅 AUTOTRADE_SESSION env로 강제 가능(nxt_premarket/krx/closed).
+
+    nxt_premarket : 08:00~08:59 (NXT 프리마켓 — NXT 거래가능 종목만, NXT 가격·NXT 지정가 매도)
+    krx           : 09:00~15:30 (정규장 — KRX 가격·KRX 시장가 매도, 현행)
+    closed        : 그 외 (감시 무동작)
+    """
+    forced = os.environ.get("AUTOTRADE_SESSION")
+    if forced in ("nxt_premarket", "krx", "closed"):
+        return forced
+    now = now or datetime.now(KST)
+    hhmm = int(now.strftime("%H%M"))
+    if NXT_PREMARKET_START <= hhmm < 900:
+        return "nxt_premarket"
+    if 900 <= hhmm <= KRX_CLOSE_HHMM:
+        return "krx"
+    return "closed"
 
 
 def notify_trade(text):

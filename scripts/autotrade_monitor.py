@@ -7,8 +7,13 @@
   · +11%     : 1차 익절 후 잔량 시장가 익절
   · 본전 방어 : 1차 익절 후 잔량이 진입가 근처(≤+0.5%)로 재하락하면 시장가 매도
 
+세션(ac.market_session):
+  · NXT 프리마켓(08:00~08:59) — NXT 거래가능 포지션만, NXT 현재가로 판정·NXT 지정가 매도(다음날 08시 급등락 대응).
+  · KRX 정규장(09:00~15:30) — KRX(J) 현재가로 판정·KRX 시장가 매도(현행). 14:50 이후 전날 이월분 강제청산.
+  · 그 외 — 무동작.
+
 ⚠ 실발주는 kiwoom_trade가 AUTOTRADE_LIVE=1 일 때만. 기본 dry(미발주 로그).
-현재가는 KRX(J) 기준. 매도 실패해도 다음 회차 재시도(포지션 상태는 실체결 시에만 갱신).
+매도 실패해도 다음 회차 재시도(포지션 상태는 실체결 시에만 갱신).
 """
 import os
 import sys
@@ -25,28 +30,44 @@ def _pct(cur, entry):
     return (cur - entry) / entry * 100.0
 
 
-def _sell(pos, qty, reason, dry):
-    """qty주 시장가 매도. 실체결(live) 시 True 반환(호출부가 포지션 갱신)."""
+def _sell(pos, qty, reason, dry, market="KRX"):
+    """qty주 매도(KRX=시장가 / NXT=매수5호가 아래 지정가, sell_market이 자동 분기).
+    실체결(live) 시 True 반환(호출부가 포지션 갱신)."""
     qty = int(qty)
     if qty <= 0:
         return False
-    ac.log(f"[monitor] {pos['name']}({pos['code']}) {reason} → 매도 {qty}주 시도")
-    res = kt.sell_market(pos["code"], qty, market="KRX", dry=dry)
+    ac.log(f"[monitor] {pos['name']}({pos['code']}) [{market}] {reason} → 매도 {qty}주 시도")
+    try:
+        res = kt.sell_market(pos["code"], qty, market=market, dry=dry)
+    except Exception as e:
+        # 호가 부재(NXT 장 밖)·주문 오류 등 — 이번 틱 실패로 두고 다음 틱 재시도(감시기 중단 방지).
+        ac.log(f"[monitor] 매도 실패({market}) — 다음 틱 재시도: {e}")
+        return False
     if res.get("dry"):
         ac.log(f"[monitor] DRY — 발주 안 함({res.get('reason')})")
         return False
     return True
 
 
-def check_position(pos, dry=True, acct_by_code=None):
+def check_position(pos, dry=True, acct_by_code=None, session="krx"):
     """단일 포지션 청산 판정·실행. 상태 변경 여부 반환.
 
     acct_by_code: 강제청산 시 실계좌 대조용 {code: holding}. "ERROR"=조회실패(강제청산 보류).
+    session: "krx"(정규장 — J가격·KRX시장가) / "nxt_premarket"(08:00~ — NXT가격·NXT지정가, NXT거래가능만).
     """
+    # 세션별 가격 기준·매도 경로
+    if session == "nxt_premarket":
+        price_market, sell_mkt = "NX", "NXT"
+    else:
+        price_market, sell_mkt = "J", "KRX"
     try:
-        cur = kw.price_now(pos["code"], market="J").get("price") or 0
+        cur = kw.current_price(pos["code"], market=price_market) or 0
     except Exception as e:
-        ac.log(f"[monitor] {pos['code']} 현재가 조회 실패: {e}")
+        ac.log(f"[monitor] {pos['code']} 현재가 조회 실패({price_market}): {e}")
+        return False
+    # 프리마켓: NXT 현재가 없음(=NXT 거래불가/미개장)이면 스킵 — 09:00 KRX 세션이 처리.
+    if session == "nxt_premarket" and cur <= 0:
+        ac.log(f"[monitor] {pos['code']} NXT 프리마켓 현재가 없음 — 스킵(09:00 KRX 세션에 위임)")
         return False
     entry = pos["entry_price"]
     pct = _pct(cur, entry)
@@ -72,7 +93,7 @@ def check_position(pos, dry=True, acct_by_code=None):
         sell_qty = min(qopen, avail)
         if sell_qty < qopen:
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
-        if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry):
+        if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt):
             pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"; changed = True
             ac.notify_trade(
                 f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {sell_qty}주 시장가\n"
@@ -81,24 +102,24 @@ def check_position(pos, dry=True, acct_by_code=None):
 
     if not pos.get("tp1_done"):
         if pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry):
+            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss"; changed = True
         elif pct >= ac.TP1_PCT:
             sell_qty = int(qopen * ac.TP1_FRACTION)
-            if sell_qty >= 1 and _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry):
+            if sell_qty >= 1 and _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt):
                 pos["qty_open"] = qopen - sell_qty; pos["tp1_done"] = True; changed = True
-            elif sell_qty < 1 and _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry):
+            elif sell_qty < 1 and _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp1_all"; changed = True
     else:
         # 1차 익절 후 잔량
         if pct >= ac.TP2_PCT:
-            if _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry):
+            if _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp2"; changed = True
         elif pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry):
+            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss_after_tp1"; changed = True
         elif pct <= ac.BREAKEVEN_PCT:
-            if _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry):
+            if _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "breakeven"; changed = True
     if not changed:
         ac.log(f"[monitor] {pos['name']}({pos['code']}) 보유 현재 {pct:+.1f}% "
@@ -117,6 +138,11 @@ def run(dry=True):
     if not opens:
         ac.log("[monitor] 오픈 포지션 없음")
         return
+    session = ac.market_session()
+    if session == "closed":
+        ac.log("[monitor] 장 마감 세션(closed) — 감시 무동작")
+        return
+    ac.log(f"[monitor] 세션={session} (오픈 {len(opens)}건)")
     # 강제청산 대상(전날 이월)이 있고 시각이 지났으면 실계좌 잔고 1회 조회(대조용). 실패 시 "ERROR"→강제청산 보류.
     acct_by_code = None
     if ac.past_force_exit() and any(p.get("entry_date") != ac.today_str() for p in opens):
@@ -128,7 +154,7 @@ def run(dry=True):
     for pos in data["positions"]:
         if pos.get("status") != "open":
             continue
-        if check_position(pos, dry=dry, acct_by_code=acct_by_code):
+        if check_position(pos, dry=dry, acct_by_code=acct_by_code, session=session):
             # 발주(실체결) 직후 즉시 개별 저장 — 배치 말미 단일 save의 유실 창을 없애 이중 매도 방지.
             # 저장 실패 시 상태가 디스크에 안 남았으므로 후속 포지션 발주를 즉시 중단(다음 회차가 재판정).
             try:

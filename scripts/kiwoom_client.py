@@ -269,6 +269,15 @@ def price_now(code, market="J"):
             "w52_high": _abs(o.get("250hgst"))}
 
 
+def current_price(code, market="J"):
+    """현재가만 단일 콜(ka10001)로 반환 — 감시기 경량 조회용(price_now는 거래대금 위해 2콜).
+
+    market: J(KRX 공식)·NX(NXT)·UN(통합). 실패/결측 시 0.0.
+    """
+    o = _call("ka10001", "/api/dostk/stkinfo", {"stk_cd": _mkt(code, market)})
+    return _abs(o.get("cur_prc"))
+
+
 def _overlay_money(bar, un_bar):
     """가격은 그대로 두고 거래대금/거래량만 UN 값으로 덮어쓴다(0/결측이면 J 유지, max로 과소 방지)."""
     if un_bar:
