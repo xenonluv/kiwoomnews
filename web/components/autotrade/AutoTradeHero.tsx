@@ -116,9 +116,9 @@ export function AutoTradeHero({ data }: { data: AutoTradePerformance }) {
             <Tile
               icon={<Trophy className="size-3.5" />}
               label="최고 / 최악"
-              value={s.best !== null ? `+${s.best}%` : "—"}
-              sub={s.worst !== null ? `최악 ${s.worst}%` : undefined}
-              accent="up"
+              value={s.best !== null ? `${s.best > 0 ? "+" : ""}${s.best}%` : "—"}
+              sub={s.worst !== null ? `최악 ${s.worst > 0 ? "+" : ""}${s.worst}%` : undefined}
+              accent={(s.best ?? 0) >= 0 ? "up" : "down"}
             />
             <Tile
               icon={<Repeat className="size-3.5" />}

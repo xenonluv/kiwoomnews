@@ -73,25 +73,28 @@ def build_trades(events):
             by_id[e["id"]]["exits"].append(e)
     trades = []
     for tid, t in by_id.items():
-        en, exits = t["entry"], t["exits"]
-        if not en or not exits:
-            continue
-        entry_px = en.get("entry_price") or 0
-        qty0 = en.get("qty") or 0
+        en, exits = t["entry"] or {}, t["exits"]
+        if not exits:
+            continue  # 진입만 있고 청산 없음(미실현) → 통계 제외
+        last = exits[-1]
+        # 진입 이벤트가 유실돼도 exit 레그가 entry_price·entry_date를 실어 재구성 가능(기록 fail-safe 대비).
+        entry_px = en.get("entry_price") or last.get("entry_price") or 0
         sold = sum(x.get("sold_qty") or 0 for x in exits)
         if entry_px <= 0 or sold <= 0:
             continue
+        qty0 = en.get("qty") or sold
         wexit = sum((x.get("sold_qty") or 0) * (x.get("exit_price") or 0) for x in exits) / sold
         gross = (wexit - entry_px) / entry_px * 100.0
         net = gross - FEE_PCT
         pnl = sold * (wexit - entry_px) - sold * entry_px * FEE_PCT / 100.0
-        last = exits[-1]
         edate = last.get("entry_date") or en.get("entry_date")  # exit 레그가 entry_date 보유
+        rem = last.get("remaining_qty")
+        closed = (rem == 0) if rem is not None else (sold >= qty0)
         trades.append({
-            "id": tid, "code": en.get("code"), "name": en.get("name"),
-            "pattern": en.get("pattern"), "market": en.get("market"),
+            "id": tid, "code": en.get("code") or last.get("code"), "name": en.get("name") or last.get("name"),
+            "pattern": en.get("pattern"), "market": en.get("market") or last.get("market"),
             "entry_price": round(entry_px, 1), "exit_price": round(wexit, 1),
-            "qty": qty0, "sold_qty": sold, "closed": sold >= qty0,
+            "qty": qty0, "sold_qty": sold, "closed": closed,
             "gross_pct": round(gross, 2), "net_pct": round(net, 2), "pnl_krw": round(pnl),
             "reason": _classify(last.get("reason")), "reason_text": last.get("reason"),
             "entry_date": edate, "exit_ts": last.get("ts"),
@@ -158,33 +161,57 @@ def git(*a):
     return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True)
 
 
+PERF_REL = "web/data/autotrade_performance.json"
+
+
 def push():
-    """web/data/autotrade_performance.json만 커밋/푸시. 공용 락으로 타 푸셔와 직렬화."""
+    """autotrade_performance.json만 커밋/푸시. 공용 락으로 타 푸셔와 직렬화·rebase 충돌 시 안전 복구."""
     import fcntl
     fh = open("/tmp/stocknews_git.lock", "w")
     fcntl.flock(fh, fcntl.LOCK_EX)
     try:
-        git("add", "web/data/autotrade_performance.json")
-        if git("diff", "--cached", "--quiet").returncode == 0:
+        git("add", PERF_REL)
+        if git("diff", "--cached", "--quiet", "--", PERF_REL).returncode == 0:
             print("[stats] 변경 없음 — push 스킵")
             return
-        git("commit", "-m", "data: 자동매매 성과 갱신")
-        git("pull", "--rebase", "--autostash", "origin", "main")
+        git("commit", "-m", "data: 자동매매 성과 갱신", "--", PERF_REL)  # pathspec: 다른 스테이징 안 딸려감
+        pl = git("pull", "--rebase", "--autostash", "origin", "main")
+        if pl.returncode != 0:
+            git("rebase", "--abort")  # 충돌 시 작업트리를 되돌려 타 푸셔(publish 등) 안 깨짐
+            print(f"[stats] pull 충돌 — rebase abort, push 취소: {pl.stderr.strip()}")
+            return
         r = git("push", "origin", "main")
         print("[stats] push 완료" if r.returncode == 0 else f"[stats] push 실패: {r.stderr.strip()}")
     finally:
         fcntl.flock(fh, fcntl.LOCK_UN)
 
 
+def _stable(d):
+    """as_of(매 회차 변하는 타임스탬프) 제외 — 실질 변경 여부 판정용."""
+    return {k: v for k, v in d.items() if k != "as_of"}
+
+
 def main():
     trades = build_trades(_load_events())
     perf = build_perf(trades)
-    write_out(perf)
+    # 실질 내용(as_of 제외)이 바뀐 경우에만 기록/푸시 — 매 회차 무의미 커밋·Vercel 재빌드 방지.
+    changed = True
+    if os.path.exists(OUT):
+        try:
+            changed = _stable(json.load(open(OUT, encoding="utf-8"))) != _stable(perf)
+        except Exception:
+            changed = True
+    if changed:
+        write_out(perf)
     s = perf["summary"]
     print(f"[stats] 완결 {s['n']}건 (총 {s['total_trades']}) 상태={s['status']} "
-          f"승률={s['win_rate']} 평균net={s['avg_net']} 누적손익={s['total_pnl_krw']:,}원 → {OUT}")
+          f"승률={s['win_rate']} 평균net={s['avg_net']} 누적손익={s['total_pnl_krw']:,}원 "
+          f"{'(변경)' if changed else '(변경없음)'} → {OUT}")
     if "--push" in sys.argv:
-        push()
+        if changed:
+            push()
+        else:
+            print("[stats] 실질 변경 없음 — push 스킵")
 
 
 if __name__ == "__main__":
