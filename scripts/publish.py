@@ -14,6 +14,7 @@ radar.py 인자(--reignition-body-pct --reignition-span-min/min-count --explosio
 import os
 import sys
 import json
+import tempfile
 import subprocess
 from datetime import datetime, timezone, timedelta
 
@@ -285,7 +286,7 @@ def main():
         return
 
     if dry:
-        path = "/tmp/radar_preview.json"
+        path = os.path.join(tempfile.gettempdir(), "radar_preview.json")
         open(path, "w", encoding="utf-8").write(new)
         print(f"[DRY-RUN] 수상종목 {len(out['suspects'])}건, 이벤트 {len(out['events'])}건 → {path}")
         for s in out["suspects"]:
