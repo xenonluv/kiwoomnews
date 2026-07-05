@@ -33,7 +33,10 @@ from team1_collect import resolve_code, fetch_news, is_individual_stock, UA
 from team2_relevance import score_news, make_aliases
 from event_calendar import upcoming_events
 from theme_map import match_events, match_sensitivity, THEMES
-import kis_client as kis
+if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
+    import kis_client as kis
+else:
+    import kiwoom_client as kis  # 키움 드롭인(기본). RADAR_BROKER=kis 로 KIS 복귀.
 import float_ratio
 import alert_release
 
