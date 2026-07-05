@@ -6,6 +6,7 @@ import { Radar } from "lucide-react";
 import { EventStrip } from "./EventStrip";
 import { ThemeStrip } from "./ThemeStrip";
 import { SuspectCard } from "./SuspectCard";
+import { AutoTradeToggle } from "./AutoTradeToggle";
 import { radarClientService } from "@/services/radar.client";
 import type { RadarData } from "@/types/radar";
 
@@ -121,6 +122,7 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
   return (
     <>
       <LiveStatusBar data={data} justUpdated={justUpdated} />
+      <AutoTradeToggle code={data.suspects[0]?.code} name={data.suspects[0]?.name} />
       <EventStrip events={data.events} selected={selectedEvent} onSelect={setSelectedEvent} />
       <ThemeStrip themes={themes} selected={selectedTheme} onSelect={setSelectedTheme} />
 

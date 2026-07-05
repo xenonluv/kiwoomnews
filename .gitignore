@@ -19,6 +19,11 @@ kis_devlp.yaml
 .youtong_notified.json
 setup_mac_radar.sh
 
+# 자동매매 런타임 상태 (실계좌 포지션·로그 — 커밋 금지)
+data/autotrade_positions.json
+data/autotrade_positions.json.tmp
+autotrade.log
+
 # KIS 공식 API 샘플 레포 (벤더 코드, 참고용)
 open_api/
 open-trading-api/
