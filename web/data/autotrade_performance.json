@@ -1,0 +1,22 @@
+{
+ "as_of": "",
+ "summary": {
+  "n": 0,
+  "total_trades": 0,
+  "min_n": 20,
+  "status": "수집 중",
+  "win_rate": null,
+  "avg_gross": null,
+  "avg_net": null,
+  "total_pnl_krw": 0,
+  "best": null,
+  "worst": null,
+  "fee_pct": 0.3
+ },
+ "by_reason": [],
+ "by_pattern": [],
+ "by_market": [],
+ "holding": [],
+ "recent": [],
+ "disclaimer": "실계좌 자동매매 실측 성과. 가격은 근사(진입=참조가·청산=판정시 현재가)·수수료 근사 차감. 표본 부족 시 '수집 중'. 보장 아님."
+}

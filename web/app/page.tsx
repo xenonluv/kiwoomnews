@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { getRadar } from "@/lib/radar/repository";
+import { getAutoTradePerformance } from "@/lib/performance/repository";
 import { LiveRadar } from "@/components/radar/LiveRadar";
+import { AutoTradeHero } from "@/components/autotrade/AutoTradeHero";
 import { SearchBox } from "@/components/stock/SearchBox";
 
 // 정적 생성: 데이터는 radar.json(빌드 시 import)에서 오므로 배포마다 갱신된다.
@@ -11,6 +13,7 @@ import { SearchBox } from "@/components/stock/SearchBox";
 
 export default function Home() {
   const radar = getRadar();
+  const autotrade = getAutoTradePerformance();
 
   return (
     <main className="container py-12">
@@ -22,6 +25,11 @@ export default function Home() {
           <span className="text-warning"> 투자 참고용, 매수 추천 아님</span>
         </p>
       </header>
+
+      {/* 자동매매 실전 성과 — 홈 최상단(맨 위) 강조 배치 */}
+      <section className="mb-8">
+        <AutoTradeHero data={autotrade} />
+      </section>
 
       {/* 종목 검색 — 이름/코드 입력 시 온디맨드 분석 리포트(/stock/[code])로 이동 */}
       <section className="mb-8">

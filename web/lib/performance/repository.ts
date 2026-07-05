@@ -2,8 +2,10 @@ import performanceData from "@/data/performance.json";
 import trackData from "@/data/track_performance.json";
 import aiClickData from "@/data/ai_click_performance.json";
 import phaseData from "@/data/phase_performance.json";
+import autotradeData from "@/data/autotrade_performance.json";
 import type {
   AiClickPerformance,
+  AutoTradePerformance,
   PerformanceData,
   PhasePerformance,
   TrackPerformance,
@@ -30,4 +32,9 @@ export function getAiClickPerformance(): AiClickPerformance {
 /** AI 국면 판정 검증 — scripts/phase_eval.py가 갱신(web/data/phase_performance.json). */
 export function getPhasePerformance(): PhasePerformance {
   return phaseData as unknown as PhasePerformance;
+}
+
+/** 자동매매 실전 성과 — scripts/autotrade_stats.py가 갱신(web/data/autotrade_performance.json). */
+export function getAutoTradePerformance(): AutoTradePerformance {
+  return autotradeData as unknown as AutoTradePerformance;
 }

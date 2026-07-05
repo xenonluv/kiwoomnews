@@ -335,3 +335,53 @@ export interface PerformanceData {
   recent: RecentSample[];
   disclaimer: string;
 }
+
+// ── 자동매매 실전 성과 (scripts/autotrade_stats.py → web/data/autotrade_performance.json) ──
+export interface AutoTradeSummary {
+  n: number;
+  total_trades: number;
+  min_n: number;
+  status: string; // "OK" | "수집 중"
+  win_rate: number | null;
+  avg_gross: number | null;
+  avg_net: number | null;
+  total_pnl_krw: number;
+  best: number | null;
+  worst: number | null;
+  fee_pct: number;
+}
+export interface AutoTradeGroup {
+  reason?: string;
+  pattern?: string;
+  market?: string;
+  n: number;
+  win_rate: number;
+  avg_net: number;
+}
+export interface AutoTradeRecent {
+  id: string;
+  code: string;
+  name: string;
+  pattern: string | null;
+  market: string;
+  entry_price: number;
+  exit_price: number;
+  net_pct: number;
+  pnl_krw: number;
+  reason: string;
+  reason_text?: string;
+  entry_date: string | null;
+  exit_ts: string | null;
+  holding_days: number | null;
+  win: boolean;
+}
+export interface AutoTradePerformance {
+  as_of: string;
+  summary: AutoTradeSummary;
+  by_reason: AutoTradeGroup[];
+  by_pattern: AutoTradeGroup[];
+  by_market: AutoTradeGroup[];
+  holding: { bucket: string; n: number }[];
+  recent: AutoTradeRecent[];
+  disclaimer: string;
+}
