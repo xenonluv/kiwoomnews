@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-04 01:11:38 KST",
+ "generated_at": "2026-07-05 22:59:34 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -30,12 +30,12 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 134,
+ "universe_count": 2,
  "events": [
   {
    "id": "2026-07-07_삼성전자 2분기 잠정실",
    "date": "2026-07-07",
-   "dday": 3,
+   "dday": 2,
    "title": "삼성전자 2분기 잠정실적",
    "category": [
     "반도체",
@@ -48,7 +48,7 @@
   {
    "id": "2026-07-09_한국은행 금통위 기준금",
    "date": "2026-07-09",
-   "dday": 5,
+   "dday": 4,
    "title": "한국은행 금통위 기준금리 결정",
    "category": [
     "금리"
@@ -60,7 +60,7 @@
   {
    "id": "2026-07-09_한국 옵션·선물 동시만",
    "date": "2026-07-09",
-   "dday": 5,
+   "dday": 4,
    "title": "한국 옵션·선물 동시만기일 (7월)",
    "category": [
     "수급"
@@ -72,7 +72,7 @@
   {
    "id": "2026-07-14_미국 CPI 발표 (6",
    "date": "2026-07-14",
-   "dday": 10,
+   "dday": 9,
    "title": "미국 CPI 발표 (6월분)",
    "category": [
     "금리",
@@ -89,7 +89,7 @@
   {
    "code": "419050",
    "name": "삼기에너지솔루션즈",
-   "sector": "운송장비·부품",
+   "sector": "삼기에너지솔루션즈",
    "pattern": "shakeout",
    "shakeout": true,
    "tp_hint": "+13%",
@@ -136,7 +136,7 @@
   {
    "code": "002780",
    "name": "진흥기업",
-   "sector": "건설",
+   "sector": "진흥기업",
    "pattern": "shakeout",
    "shakeout": true,
    "tp_hint": "+7~10% (12% 천장 실측)",
