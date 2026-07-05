@@ -65,9 +65,13 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
     except Exception as e:
         ac.log(f"[monitor] {pos['code']} 현재가 조회 실패({price_market}): {e}")
         return False
-    # 프리마켓: NXT 현재가 없음(=NXT 거래불가/미개장)이면 스킵 — 09:00 KRX 세션이 처리.
-    if session == "nxt_premarket" and cur <= 0:
-        ac.log(f"[monitor] {pos['code']} NXT 프리마켓 현재가 없음 — 스킵(09:00 KRX 세션에 위임)")
+    # 현재가 0/결측은 실제 가격이 아니라 데이터 오류(거래정지·API 결측·NXT 미개장) → 스킵(다음 틱 재시도).
+    # ⚠ 이 가드가 없으면 cur=0 → _pct=-100% → 건강한 포지션을 -5% 손절로 시장가 매도(치명적 오발주).
+    if cur <= 0:
+        if session == "nxt_premarket":
+            ac.log(f"[monitor] {pos['code']} NXT 프리마켓 현재가 없음 — 스킵(09:00 KRX 세션에 위임)")
+        else:
+            ac.log(f"[monitor] {pos['code']} 현재가 0/결측({price_market}) — 데이터 오류로 스킵(다음 틱 재시도)")
         return False
     entry = pos["entry_price"]
     pct = _pct(cur, entry)
@@ -84,12 +88,18 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
         avail = qopen  # 대조 정보 없으면(이론상 없음) 봇 기록대로
         if isinstance(acct_by_code, dict):
             h = acct_by_code.get(pos["code"])
-            avail = h["tradable_qty"] if h else 0
-        if avail <= 0:
-            ac.log(f"[monitor] {pos['name']}({pos['code']}) 강제청산 스킵 — 실계좌 매도가능 0(수동매도/미체결). 종료 처리")
-            pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_not_held"
-            ac.notify_trade(f"⚠️ [자동매매] {pos['name']}({pos['code']}) 강제청산 대상이나 실계좌 잔고 없음 — 종료 처리(수동 확인)")
-            return True
+            held_qty = h["qty"] if h else 0          # rmnd_qty 실보유 수량
+            avail = h["tradable_qty"] if h else 0    # trde_able_qty 매도가능 수량
+            if held_qty <= 0:
+                # 실계좌에 실제로 없음(수동매도/미체결) → 종료 처리(팔 게 없음)
+                ac.log(f"[monitor] {pos['name']}({pos['code']}) 강제청산 스킵 — 실계좌 보유 0(수동매도/미체결). 종료 처리")
+                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_not_held"
+                ac.notify_trade(f"⚠️ [자동매매] {pos['name']}({pos['code']}) 강제청산 대상이나 실계좌 잔고 없음 — 종료 처리(수동 확인)")
+                return True
+            if avail <= 0:
+                # ⚠ 보유(rmnd>0)하나 지금 매도불가(결제락 등) → 종료하지 말고 다음 틱 재시도(실보유 포지션 방치 방지)
+                ac.log(f"[monitor] {pos['name']}({pos['code']}) 보유 {held_qty}주 있으나 매도가능 0(락 등) — 강제청산 보류(다음 틱 재시도)")
+                return False
         sell_qty = min(qopen, avail)
         if sell_qty < qopen:
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
