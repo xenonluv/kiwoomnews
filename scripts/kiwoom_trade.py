@@ -75,6 +75,39 @@ def orderbook(code, market="KRX"):
     return {"asks": asks, "bids": bids}
 
 
+def account_holdings():
+    """실계좌 보유종목 조회(kt00018 계좌평가잔고내역요청, 읽기전용). 계좌번호는 토큰 바인딩(body 불필요).
+
+    반환: {"holdings":[{code,name,qty,tradable_qty,avg_price,cur_price,eval_pl,profit_rate,eval_amt}],
+           "summary":{tot_pur,tot_eval,tot_pl,profit_rate,deposit}}. code는 'A' 접두 제거한 6자리.
+    """
+    res = kw._call("kt00018", "/api/dostk/acnt", {"qry_tp": "1", "dmst_stex_tp": "KRX"})
+    _i = lambda v: int(kw._f(v))  # 제로패딩 문자열 → 정수(부호 유지)
+    holdings = []
+    for r in res.get("acnt_evlt_remn_indv_tot", []) or []:
+        code = (r.get("stk_cd") or "").strip().lstrip("A")  # 'A090410' → '090410'
+        if not code:
+            continue
+        holdings.append({
+            "code": code,
+            "name": (r.get("stk_nm") or "").strip(),
+            "qty": _i(r.get("rmnd_qty")),
+            "tradable_qty": _i(r.get("trde_able_qty")),
+            "avg_price": _i(r.get("pur_pric")),
+            "cur_price": _i(r.get("cur_prc")),
+            "eval_pl": _i(r.get("evltv_prft")),
+            "profit_rate": kw._f(r.get("prft_rt")),
+            "eval_amt": _i(r.get("evlt_amt")),
+        })
+    return {"holdings": holdings, "summary": {
+        "tot_pur": _i(res.get("tot_pur_amt")),
+        "tot_eval": _i(res.get("tot_evlt_amt")),
+        "tot_pl": _i(res.get("tot_evlt_pl")),
+        "profit_rate": kw._f(res.get("tot_prft_rt")),
+        "deposit": _i(res.get("prsm_dpst_aset_amt")),
+    }}
+
+
 def is_nxt_tradable(code):
     """NXT 거래가능 종목인지 프로브 — NXT 현재가가 유효(>0)하면 True."""
     try:

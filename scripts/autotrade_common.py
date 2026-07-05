@@ -162,6 +162,34 @@ def top_suspect():
     return sus[0] if sus else None
 
 
+def reconcile(data=None, acct=None):
+    """봇 오픈 포지션 vs 실계좌 보유 대조(읽기전용).
+
+    acct: 미리 조회한 kiwoom_trade.account_holdings() 결과(없으면 조회).
+    반환: {rows[], manual_holdings[], summary}. rows status:
+      OK                = 실계좌 매도가능 ≥ 봇 기록수량
+      QTY_SHORT         = 실계좌 매도가능 < 봇 기록(수동매도 등으로 부족)
+      MISSING_IN_ACCOUNT= 봇은 보유로 아는데 실계좌에 없음(수동매도/미체결)
+    manual_holdings = 실계좌엔 있으나 봇이 안 산 종목(회장님 수동 보유 — 봇이 절대 안 건드림).
+    """
+    data = data or load_positions()
+    if acct is None:
+        import kiwoom_trade as kt
+        acct = kt.account_holdings()
+    acct_by_code = {h["code"]: h for h in acct["holdings"]}
+    bot = {p["code"]: p for p in open_positions(data)}
+    rows = []
+    for code, p in bot.items():
+        h = acct_by_code.get(code)
+        avail = h["tradable_qty"] if h else 0
+        need = p.get("qty_open", 0)
+        status = "MISSING_IN_ACCOUNT" if avail <= 0 else ("QTY_SHORT" if avail < need else "OK")
+        rows.append({"code": code, "name": p.get("name", ""), "status": status,
+                     "bot_qty": need, "acct_tradable": avail})
+    manual = [h for c, h in acct_by_code.items() if c not in bot]
+    return {"rows": rows, "manual_holdings": manual, "summary": acct["summary"]}
+
+
 def safety_ok(suspect):
     """자동매매 안전 게이트. (ok, reason)."""
     if not suspect:
