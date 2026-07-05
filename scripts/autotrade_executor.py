@@ -22,7 +22,13 @@ def run(slot, dry=True):
     if not ac.autotrade_enabled():
         ac.log(f"[exec:{slot}] 자동매매 OFF(KV autotrade:enabled≠1) — 매수 안 함")
         return
-    if ac.bought_today():
+    try:
+        already = ac.bought_today()
+    except Exception as e:
+        # 포지션 상태 불명(파일 읽기 실패)이면 중복매수 여부 확인 불가 → fail-closed(매수 중단).
+        ac.log(f"[exec:{slot}] 포지션 상태 확인 실패({e}) — fail-closed(매수 중단)")
+        return
+    if already:
         ac.log(f"[exec:{slot}] 오늘 이미 매수함 — 중복 매수 안 함")
         return
     top = ac.top_suspect()
@@ -51,21 +57,25 @@ def run(slot, dry=True):
     if res.get("dry"):
         ac.log(f"[exec:{slot}] DRY — 발주 안 함({res.get('reason')}). 포지션 미기록.")
         return
-    # 실발주 성공 → 포지션 기록(진입가는 참조가 근사 — 시장가 체결가는 이후 체결조회로 정밀화 가능)
-    data = ac.load_positions()
-    data["positions"].append({
-        "id": f"{code}-{ac.today_str()}-{slot}",
-        "code": code, "name": name,
-        "entry_date": ac.today_str(),
-        "entry_price": res["ref_price"],
-        "qty": res["qty"], "qty_open": res["qty"],
-        "market": res["market"],
-        "tp1_done": False, "status": "open",
-        "opened_at": datetime.now(ac.KST).strftime("%Y-%m-%d %H:%M:%S"),
-        "pattern": top.get("pattern"), "suspicion_score": top.get("suspicion_score"),
-    })
-    ac.save_positions(data)
-    ac.log(f"[exec:{slot}] ★매수 체결·포지션 기록: {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} ({res['market']})")
+    # 실발주 성공 → 포지션 기록(진입가는 참조가 근사 — 시장가 체결가는 이후 체결조회로 정밀화 가능).
+    # ⚠ 이미 실매수가 나갔으므로 기록 실패해도 크래시로 묻지 말고 크게 로깅(수동 확인). 재시도는 load/save 내장.
+    try:
+        data = ac.load_positions()
+        data["positions"].append({
+            "id": f"{code}-{ac.today_str()}-{slot}",
+            "code": code, "name": name,
+            "entry_date": ac.today_str(),
+            "entry_price": res["ref_price"],
+            "qty": res["qty"], "qty_open": res["qty"],
+            "market": res["market"],
+            "tp1_done": False, "status": "open",
+            "opened_at": datetime.now(ac.KST).strftime("%Y-%m-%d %H:%M:%S"),
+            "pattern": top.get("pattern"), "suspicion_score": top.get("suspicion_score"),
+        })
+        ac.save_positions(data)
+        ac.log(f"[exec:{slot}] ★매수 체결·포지션 기록: {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} ({res['market']})")
+    except Exception as e:
+        ac.log(f"[exec:{slot}] 🚨 매수는 체결됐으나 포지션 기록 실패: {e} — 수동 확인·기록 필요(중복매수·청산누락 위험)")
 
 
 if __name__ == "__main__":

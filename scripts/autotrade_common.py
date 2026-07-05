@@ -8,6 +8,7 @@ KV 계약(웹 토글 ↔ Windows 실행기 브리지, Upstash REST):
 import os
 import sys
 import json
+import time
 import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -80,19 +81,39 @@ def autotrade_enabled():
 
 # ── 포지션 파일 ──────────────────────────────────────────────────────
 def load_positions():
-    if os.path.exists(POS_PATH):
+    """포지션 로드. 파일 부재=정상 빈 상태. 파일 존재하나 읽기 실패=상태 불명 → 예외 전파(fail-closed).
+
+    ⚠ 빈 상태로 fallback 금지 — bought_today 중복매수 방지·청산 규칙의 유일한 근거라, empty로 열리면
+    (Windows 파일락 등 일시 오류에) 중복 실매수·이중 매도를 부른다. 일시 오류 대비 짧은 재시도만.
+    """
+    if not os.path.exists(POS_PATH):
+        return {"positions": []}
+    last = None
+    for i in range(3):
         try:
             return json.load(open(POS_PATH, encoding="utf-8"))
         except Exception as e:
-            log(f"[pos] 로드 실패({e}) — 빈 상태로")
-    return {"positions": []}
+            last = e
+            time.sleep(0.3 * (i + 1))
+    log(f"[pos] 로드 실패(재시도 후 {last}) — 파일 존재/읽기불가, 상태 불명 → fail-closed(매매 중단)")
+    raise last
 
 
 def save_positions(data):
+    """원자적 저장 + 일시 오류 재시도. 최종 실패 시 예외 전파(호출부가 후속 발주 차단)."""
     os.makedirs(os.path.dirname(POS_PATH), exist_ok=True)
     tmp = POS_PATH + ".tmp"
-    json.dump(data, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    os.replace(tmp, POS_PATH)
+    last = None
+    for i in range(3):
+        try:
+            json.dump(data, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            os.replace(tmp, POS_PATH)
+            return
+        except Exception as e:
+            last = e
+            time.sleep(0.3 * (i + 1))
+    log(f"[pos] 저장 실패(재시도 후): {last}")
+    raise last
 
 
 def open_positions(data=None):

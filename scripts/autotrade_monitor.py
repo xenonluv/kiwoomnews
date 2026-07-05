@@ -78,18 +78,27 @@ def check_position(pos, dry=True):
 
 
 def run(dry=True):
-    data = ac.load_positions()
+    try:
+        data = ac.load_positions()
+    except Exception as e:
+        # 상태 불명이면 잘못된 empty로 청산 규칙이 무력화되므로 이번 회차 중단(fail-closed).
+        ac.log(f"[monitor] 포지션 로드 실패 — 청산 판정 중단(fail-closed): {e}")
+        return
     opens = ac.open_positions(data)
     if not opens:
         ac.log("[monitor] 오픈 포지션 없음")
         return
-    any_changed = False
     for pos in data["positions"]:
-        if pos.get("status") == "open":
-            if check_position(pos, dry=dry):
-                any_changed = True
-    if any_changed:
-        ac.save_positions(data)
+        if pos.get("status") != "open":
+            continue
+        if check_position(pos, dry=dry):
+            # 발주(실체결) 직후 즉시 개별 저장 — 배치 말미 단일 save의 유실 창을 없애 이중 매도 방지.
+            # 저장 실패 시 상태가 디스크에 안 남았으므로 후속 포지션 발주를 즉시 중단(다음 회차가 재판정).
+            try:
+                ac.save_positions(data)
+            except Exception as e:
+                ac.log(f"[monitor] 🚨 save 실패 — 상태 미갱신, 후속 청산 발주 중단: {e}")
+                return
 
 
 if __name__ == "__main__":
