@@ -197,7 +197,8 @@ def buy_limit(code, qty, price, market="KRX", dry=True):
     return out
 
 
-# ── 주문 취소(kt10002) ────────────────────────────────────────────────
+# ── 주문 취소(kt10003) ────────────────────────────────────────────────
+# ⚠ kt10002는 정정(MODIFY), kt10003이 취소(CANCEL). 키움 공식 API 확인(2026-07-06).
 def _extract_ord_no(res):
     """주문 응답에서 원주문번호 추출(키움 필드 편차 대비 다중 키 탐색)."""
     if not isinstance(res, dict):
@@ -210,13 +211,16 @@ def _extract_ord_no(res):
 
 
 def cancel_order(code, orig_ord_no, market="KRX", qty=0, dry=True):
-    """주문 취소(kt10002). qty=0이면 전량 취소. dry/AUTOTRADE_LIVE 게이트 동일 적용."""
+    """주문 취소(kt10003). qty=0이면 전량 취소. dry/AUTOTRADE_LIVE 게이트 동일 적용.
+
+    ⚠ 취소는 kt10003. kt10002는 정정(MODIFY)이라 취소 바디를 보내면 취소가 안 됨(실주문 잔존).
+    """
     orig = str(orig_ord_no).strip()
     if not orig:
         raise RuntimeError(f"{code} 취소 원주문번호 없음")
     body = {"dmst_stex_tp": market, "orig_ord_no": orig, "stk_cd": code,
             "cncl_qty": str(int(qty))}
-    return _send_or_dry("kt10002", body, dry, f"{market}주문취소 {code} 원주문={orig} 취소수량={qty or '전량'}")
+    return _send_or_dry("kt10003", body, dry, f"{market}주문취소 {code} 원주문={orig} 취소수량={qty or '전량'}")
 
 
 # ── 매도 ─────────────────────────────────────────────────────────────
