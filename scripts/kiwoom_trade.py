@@ -124,6 +124,68 @@ def buy_limit_nxt(code, krw, dry=True):
     return out
 
 
+# ── 지정가 매수(스모크·범용) ─────────────────────────────────────────
+def _krx_tick(price):
+    """KRX 호가단위(2023 개편) — 지정가가 유효하려면 tick의 배수여야 함."""
+    if price < 2_000:
+        return 1
+    if price < 5_000:
+        return 5
+    if price < 20_000:
+        return 10
+    if price < 50_000:
+        return 50
+    if price < 200_000:
+        return 100
+    if price < 500_000:
+        return 500
+    return 1_000
+
+
+def _floor_to_tick(price):
+    """price 이하의 가장 가까운 호가단위 배수."""
+    t = _krx_tick(price)
+    return int(price // t * t)
+
+
+def buy_limit(code, qty, price, market="KRX", dry=True):
+    """지정가 매수(qty주 @price). 스모크·범용. trde_tp=0(지정가). price는 호가단위로 정렬해 전달.
+
+    ⚠ 매수 지정가가 시장가보다 낮으면 체결되지 않고 대기 → 스모크(접수 후 취소)에 사용.
+    """
+    qty = int(qty)
+    px = int(price)
+    if qty <= 0 or px <= 0:
+        raise RuntimeError(f"{code} 지정가 매수 파라미터 오류 (qty={qty}, price={px})")
+    body = {"dmst_stex_tp": market, "stk_cd": code, "ord_qty": str(qty),
+            "ord_uv": str(px), "trde_tp": "0"}
+    out = _send_or_dry("kt10000", body, dry, f"{market}지정가매수 {code} {qty}주@{px:,.0f}")
+    out.update({"code": code, "qty": qty, "ref_price": px, "market": market})
+    return out
+
+
+# ── 주문 취소(kt10002) ────────────────────────────────────────────────
+def _extract_ord_no(res):
+    """주문 응답에서 원주문번호 추출(키움 필드 편차 대비 다중 키 탐색)."""
+    if not isinstance(res, dict):
+        return None
+    for k in ("ord_no", "odno", "orig_ord_no", "ord_num"):
+        v = res.get(k)
+        if v:
+            return str(v).strip()
+    return None
+
+
+def cancel_order(code, orig_ord_no, market="KRX", qty=0, dry=True):
+    """주문 취소(kt10002). qty=0이면 전량 취소. dry/AUTOTRADE_LIVE 게이트 동일 적용."""
+    orig = str(orig_ord_no).strip()
+    if not orig:
+        raise RuntimeError(f"{code} 취소 원주문번호 없음")
+    body = {"dmst_stex_tp": market, "orig_ord_no": orig, "stk_cd": code,
+            "cncl_qty": str(int(qty))}
+    return _send_or_dry("kt10002", body, dry, f"{market}주문취소 {code} 원주문={orig} 취소수량={qty or '전량'}")
+
+
 # ── 매도 ─────────────────────────────────────────────────────────────
 def sell_market(code, qty, market="KRX", dry=True):
     """시장가 매도(qty주). 손절·익절 청산용. market NXT면 지정가 불가라 NXT 시간엔 별도 처리 필요."""
