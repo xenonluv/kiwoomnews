@@ -30,9 +30,9 @@ def _pct(cur, entry):
     return (cur - entry) / entry * 100.0
 
 
-def _sell(pos, qty, reason, dry, market="KRX"):
+def _sell(pos, qty, reason, dry, market="KRX", cur=0):
     """qty주 매도(KRX=시장가 / NXT=매수5호가 아래 지정가, sell_market이 자동 분기).
-    실체결(live) 시 True 반환(호출부가 포지션 갱신)."""
+    실체결(live) 시 True 반환(호출부가 포지션 갱신) + 매매 원장에 exit 기록."""
     qty = int(qty)
     if qty <= 0:
         return False
@@ -46,6 +46,14 @@ def _sell(pos, qty, reason, dry, market="KRX"):
     if res.get("dry"):
         ac.log(f"[monitor] DRY — 발주 안 함({res.get('reason')})")
         return False
+    # 실체결 → 통계용 원장 기록(청산가·수익률은 청산판정 시 cur 기준 근사). fail-safe.
+    entry = pos.get("entry_price") or 0
+    ac.append_trade_event({
+        "type": "exit", "id": pos.get("id"), "code": pos["code"], "name": pos.get("name"),
+        "market": market, "reason": reason, "sold_qty": qty, "exit_price": cur, "entry_price": entry,
+        "entry_date": pos.get("entry_date"), "opened_at": pos.get("opened_at"),
+        "realized_return_pct": round((cur - entry) / entry * 100, 2) if entry else None,
+        "remaining_qty": max(0, int(pos.get("qty_open", qty)) - qty), "dry": False})
     return True
 
 
@@ -103,7 +111,7 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
         sell_qty = min(qopen, avail)
         if sell_qty < qopen:
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
-        if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt):
+        if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur):
             pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"; changed = True
             ac.notify_trade(
                 f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {sell_qty}주 시장가\n"
@@ -112,24 +120,24 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
 
     if not pos.get("tp1_done"):
         if pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt):
+            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss"; changed = True
         elif pct >= ac.TP1_PCT:
             sell_qty = int(qopen * ac.TP1_FRACTION)
-            if sell_qty >= 1 and _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt):
+            if sell_qty >= 1 and _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = qopen - sell_qty; pos["tp1_done"] = True; changed = True
-            elif sell_qty < 1 and _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt):
+            elif sell_qty < 1 and _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp1_all"; changed = True
     else:
         # 1차 익절 후 잔량
         if pct >= ac.TP2_PCT:
-            if _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt):
+            if _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp2"; changed = True
         elif pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt):
+            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss_after_tp1"; changed = True
         elif pct <= ac.BREAKEVEN_PCT:
-            if _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt):
+            if _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt, cur=cur):
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "breakeven"; changed = True
     if not changed:
         ac.log(f"[monitor] {pos['name']}({pos['code']}) 보유 현재 {pct:+.1f}% "

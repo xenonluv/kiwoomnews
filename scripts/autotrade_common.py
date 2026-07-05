@@ -86,6 +86,19 @@ def notify_trade(text):
         return False
 
 
+def append_trade_event(ev):
+    """매매 원장(data/autotrade_trades.jsonl)에 이벤트 1줄 append. 통계 분석용.
+    fail-safe — 기록 실패해도 매매 진행. ts는 여기서 단일 주입."""
+    try:
+        path = os.path.join(REPO, "data", "autotrade_trades.jsonl")
+        rec = {"ts": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S"), **ev}
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception as e:
+        log(f"[ledger] 매매기록 실패(무시): {e}")
+
+
 # ── KV(Upstash REST) 토글 ────────────────────────────────────────────
 def _kv_creds():
     kw._load_env()

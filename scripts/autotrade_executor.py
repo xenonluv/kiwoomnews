@@ -86,6 +86,10 @@ def run(slot, dry=True):
         ac.notify_trade(
             f"🟢 [자동매매] 신규 매수 {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} ({res['market']} 시장가)\n"
             f"오늘 레이더 1위 · pattern={top.get('pattern')} score={top.get('suspicion_score')} · 익일 14:50 강제청산")
+        ac.append_trade_event({
+            "type": "entry", "id": f"{code}-{ac.today_str()}-{slot}", "code": code, "name": name,
+            "market": res["market"], "slot": slot, "qty": res["qty"], "entry_price": res["ref_price"],
+            "pattern": top.get("pattern"), "suspicion_score": top.get("suspicion_score"), "dry": False})
     except Exception as e:
         ac.log(f"[exec:{slot}] 🚨 매수는 체결됐으나 포지션 기록 실패: {e} — 수동 확인·기록 필요(중복매수·청산누락 위험)")
 
