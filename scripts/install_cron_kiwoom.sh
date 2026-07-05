@@ -33,6 +33,8 @@ PATH=/usr/local/bin:/usr/bin:/bin
 50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt >> /tmp/kiwoom_autotrade.log 2>&1
 # 자동매매 청산 감시 — 1분 간격(급등주 대응). 08시=NXT프리마켓(NXT거래분 급등락 대응), 09~15:30=정규장(-5%손절/+7%50%익절/+11%익절/본전방어/14:50강제청산). 세션은 스크립트가 시각으로 자동 판정.
 */1 8-15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_monitor.py >> /tmp/kiwoom_autotrade.log 2>&1
+# 자동매매 성과 집계 — 장 마감 후 매매원장 → autotrade_performance.json 갱신·push(통계 전용, 실발주 무관)
+40 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_stats.py --push >> /tmp/kiwoom_autotrade.log 2>&1
 $END"
 
 # 기존 키움 블록만 제거(다른 cron·KIS 라인 보존)

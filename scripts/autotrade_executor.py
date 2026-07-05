@@ -88,6 +88,7 @@ def run(slot, dry=True):
             f"오늘 레이더 1위 · pattern={top.get('pattern')} score={top.get('suspicion_score')} · 익일 14:50 강제청산")
         ac.append_trade_event({
             "type": "entry", "id": f"{code}-{ac.today_str()}-{slot}", "code": code, "name": name,
+            "entry_date": ac.today_str(),
             "market": res["market"], "slot": slot, "qty": res["qty"], "entry_price": res["ref_price"],
             "pattern": top.get("pattern"), "suspicion_score": top.get("suspicion_score"), "dry": False})
     except Exception as e:
