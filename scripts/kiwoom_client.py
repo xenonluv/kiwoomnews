@@ -53,7 +53,9 @@ def _load_env():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+                # 값 양끝 따옴표 제거(예: KV_REST_API_URL="https://…"). 안 벗기면 URL이 '"https…'가 돼
+                # KV(토글) 조회가 'unknown url type'로 항상 실패 → 웹 자동매매 토글이 무력화됨. telegram_notify와 동일 처리.
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
 def _keys():
