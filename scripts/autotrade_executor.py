@@ -102,12 +102,22 @@ def run(slot, dry=True):
         ac.log(f"[exec:{slot}] 매수 자격 종목 없음 (선택 랭크 {ranks})")
         return
 
-    # 당일 총예산(웹 설정 KV, 기본 100만)을 '남은 자격종목 수'로 균등분할(초과·미달 없이 슬롯 간 안전 배분).
-    remaining_budget = ac.read_budget() - ac.deployed_today(data)
+    # 당일 총예산(웹 설정 KV, 기본 100만) − 이미 집행분. 단, 매수 전 실계좌 예수금을 1회 조회해
+    # 그 이하로 캡(설정 예산 초과·자금부족 주문거부 방지 / 예산 설정 타이밍 무관하게 견고).
+    budget = ac.read_budget()
+    try:
+        deposit = kt.account_holdings()["summary"]["deposit"]
+    except Exception as e:
+        deposit = None
+        ac.log(f"[exec:{slot}] 예수금 조회 실패 — 설정 예산으로 진행(fail-safe): {e}")
+    remaining_budget = budget - ac.deployed_today(data)
+    if deposit is not None:
+        remaining_budget = min(remaining_budget, deposit)   # 실제 예수금 초과 매수 금지
     per_stock = remaining_budget // max(1, len(eligible))
     if per_stock <= 0:
-        ac.log(f"[exec:{slot}] 잔여 예산 0 — 매수 안 함")
+        ac.log(f"[exec:{slot}] 잔여 예산 0(설정 {budget:,}·예수금 {deposit}) — 매수 안 함")
         return
+    ac.log(f"[exec:{slot}] 예산 설정 {budget:,}·예수금 {deposit}·잔여 {remaining_budget:,}·종목당 {per_stock:,}")
     ac.log(f"[exec:{slot}] 선택랭크={ranks} 자격={[(r, s['code']) for r, s in eligible]} "
            f"잔여예산={remaining_budget:,} 종목당={per_stock:,}")
 
