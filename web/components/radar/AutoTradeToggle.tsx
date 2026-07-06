@@ -74,11 +74,15 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
       applyState(await autoTradeClientService.set(nextEnabled, nextRanks, nextBudget));
     } catch (e) {
       setErr(e instanceof Error ? e.message : "실패");
-      // 저장 실패 → 낙관적 갱신이 KV와 어긋나므로 서버 실제값으로 재동기화(화면≠실제 방지).
+      // 저장 실패 → 서버 실제값으로 재동기화(화면≠실제 방지). ⚠ 단 KV 읽기까지 실패(configured:false)면
+      // '상태 불명'이므로 화면을 가짜 OFF로 바꾸지 않는다 — 실행기가 아직 enabled=1로 켜져 실계좌가 매수 중일 수 있다.
+      const UNKNOWN = "⚠ 상태 확인 불가 — 자동매매가 아직 켜져 있을 수 있습니다. 잠시 후 새로고침해 확인하세요.";
       try {
-        applyState(await autoTradeClientService.get());
+        const s = await autoTradeClientService.get();
+        if (s.configured) applyState(s);
+        else setErr(UNKNOWN);
       } catch {
-        /* GET도 실패 시 에러 문구만 유지 */
+        setErr(UNKNOWN); // GET도 실패 → 상태 불명. 토글을 확정값으로 바꾸지 않음.
       }
     } finally {
       setBusy(false);

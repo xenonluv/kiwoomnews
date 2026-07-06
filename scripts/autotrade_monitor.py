@@ -30,31 +30,61 @@ def _pct(cur, entry):
     return (cur - entry) / entry * 100.0
 
 
+def _held_qty(code):
+    """실계좌 보유수량(rmnd) 조회 — NXT 지정가 매도 체결확인용. 실패 시 None(확인 불가).
+    ⚠ kt00018 필드 미검증 — 조회실패/미보유는 fail-safe(체결 미확정 → 포지션 유지)로 흡수돼 오발주 위험 없음."""
+    try:
+        h = kt.account_holdings()
+    except Exception as e:
+        ac.log(f"[monitor] {code} 잔고조회 실패(체결확인): {e}")
+        return None
+    for x in h.get("holdings", []) or []:
+        if x.get("code") == code:
+            return int(x.get("qty") or 0)
+    return 0  # 목록에 없음 = 보유 0(전량 체결/미보유)
+
+
 def _sell(pos, qty, reason, dry, market="KRX", cur=0):
-    """qty주 매도(KRX=시장가 / NXT=매수5호가 아래 지정가, sell_market이 자동 분기).
-    실체결(live) 시 True 반환(호출부가 포지션 갱신) + 매매 원장에 exit 기록."""
+    """qty주 매도 시도 → **실체결(확인)된 수량**을 반환(0 = 미체결/미확인/dry). 호출부는 반환 수량만큼만 포지션 갱신.
+
+    KRX=시장가(접수=즉시 체결) / NXT=지정가(접수≠체결 → 실계좌 보유 감소분으로 체결 확인).
+    ⚠ NXT는 지정가라 '접수'만으로 팔린 걸로 처리하면 미체결분이 손절 없이 방치된다(치명적) →
+      보유 감소분만 체결로 인정, 미확정이면 0 반환(포지션 유지 → 다음 틱·09시 KRX 시장가가 정리). fail-safe.
+    """
     qty = int(qty)
     if qty <= 0:
-        return False
+        return 0
     ac.log(f"[monitor] {pos['name']}({pos['code']}) [{market}] {reason} → 매도 {qty}주 시도")
     try:
         res = kt.sell_market(pos["code"], qty, market=market, dry=dry)
     except Exception as e:
         # 호가 부재(NXT 장 밖)·주문 오류 등 — 이번 틱 실패로 두고 다음 틱 재시도(감시기 중단 방지).
         ac.log(f"[monitor] 매도 실패({market}) — 다음 틱 재시도: {e}")
-        return False
+        return 0
     if res.get("dry"):
         ac.log(f"[monitor] DRY — 발주 안 함({res.get('reason')})")
-        return False
+        return 0
+    sold = qty
+    if market == "NXT":
+        # NXT 지정가: 접수≠체결 → 실계좌 보유 감소분으로 실체결 확인. 미확정(조회실패/보유 미감소)이면 0.
+        before = int(pos.get("qty_open", qty))
+        held = _held_qty(pos["code"])
+        if held is None or held >= before:
+            ac.log(f"[monitor] {pos['name']}({pos['code']}) NXT 매도 접수했으나 체결 미확인(보유 {held}/{before}) "
+                   f"— 미체결로 보고 포지션 유지(다음 틱·09시 KRX 시장가 정리)")
+            return 0
+        sold = min(qty, before - held)   # 실제 체결 수량(보유 감소분)
+        if sold <= 0:
+            return 0
     # 실체결 → 통계용 원장 기록(청산가·수익률은 청산판정 시 cur 기준 근사). fail-safe.
     entry = pos.get("entry_price") or 0
     ac.append_trade_event({
         "type": "exit", "id": pos.get("id"), "code": pos["code"], "name": pos.get("name"),
-        "market": market, "reason": reason, "sold_qty": qty, "exit_price": cur, "entry_price": entry,
+        "market": market, "reason": reason, "sold_qty": sold, "exit_price": cur, "entry_price": entry,
         "entry_date": pos.get("entry_date"), "opened_at": pos.get("opened_at"),
         "realized_return_pct": round((cur - entry) / entry * 100, 2) if entry else None,
-        "remaining_qty": max(0, int(pos.get("qty_open", qty)) - qty), "dry": False})
-    return True
+        "remaining_qty": max(0, int(pos.get("qty_open", sold)) - sold), "dry": False})
+    return sold
 
 
 def check_position(pos, dry=True, acct_by_code=None, session="krx"):
@@ -111,41 +141,65 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
         sell_qty = min(qopen, avail)
         if sell_qty < qopen:
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
-        if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur):
-            # ⚠ 부분 매도(매도가능 < 보유)면 잔량을 open으로 유지해야 함 — 통째로 closed 처리하면
-            #    미매도 잔량이 손절/청산 관리에서 영구 이탈(방치). 잔량 0일 때만 종료.
-            pos["qty_open"] = qopen - sell_qty
+        # ⚠ 실체결 수량(sold)만큼만 잔량 차감 — NXT 미체결·부분체결분을 통째로 closed 처리하면
+        #    미매도 잔량이 손절/청산 관리에서 영구 이탈(방치). 잔량 0일 때만 종료.
+        sold = _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur)
+        if sold:
+            pos["qty_open"] = qopen - sold
             if pos["qty_open"] <= 0:
                 pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"
             else:
-                ac.log(f"[monitor] {pos['code']} 부분 강제청산 {sell_qty}/{qopen}주 — 잔량 {pos['qty_open']}주 open 유지(다음 틱 재시도)")
+                ac.log(f"[monitor] {pos['code']} 부분 강제청산 {sold}/{qopen}주 — 잔량 {pos['qty_open']}주 open 유지(다음 틱 재시도)")
             changed = True
             ac.notify_trade(
-                f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {sell_qty}주 시장가\n"
+                f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {sold}주 시장가\n"
                 f"전날 포지션 정리 {pct:+.1f}% (진입 {entry:,.0f}→현재 {cur:,.0f}) · 15:18 새 1위 갈아타기 준비")
         return changed
 
     if not pos.get("tp1_done"):
         if pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss"; changed = True
+            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur)
+            if sold:
+                pos["qty_open"] = qopen - sold
+                if pos["qty_open"] <= 0:
+                    pos["status"] = "closed"; pos["close_reason"] = "stop_loss"
+                changed = True  # NXT 부분체결이면 잔량 open 유지 → 다음 틱 재손절
         elif pct >= ac.TP1_PCT:
             sell_qty = int(qopen * ac.TP1_FRACTION)
-            if sell_qty >= 1 and _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = qopen - sell_qty; pos["tp1_done"] = True; changed = True
-            elif sell_qty < 1 and _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp1_all"; changed = True
+            if sell_qty >= 1:
+                sold = _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt, cur=cur)
+                if sold:
+                    pos["qty_open"] = qopen - sold; pos["tp1_done"] = True; changed = True
+            else:
+                sold = _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt, cur=cur)
+                if sold:
+                    pos["qty_open"] = qopen - sold
+                    if pos["qty_open"] <= 0:
+                        pos["status"] = "closed"; pos["close_reason"] = "tp1_all"
+                    changed = True
     else:
-        # 1차 익절 후 잔량
+        # 1차 익절 후 잔량 (모두 잔량 전량 청산 시도 — NXT 부분체결이면 잔량 open 유지·다음 틱 재시도)
         if pct >= ac.TP2_PCT:
-            if _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "tp2"; changed = True
+            sold = _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur)
+            if sold:
+                pos["qty_open"] = qopen - sold
+                if pos["qty_open"] <= 0:
+                    pos["status"] = "closed"; pos["close_reason"] = "tp2"
+                changed = True
         elif pct <= ac.STOP_LOSS_PCT:
-            if _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "stop_loss_after_tp1"; changed = True
+            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur)
+            if sold:
+                pos["qty_open"] = qopen - sold
+                if pos["qty_open"] <= 0:
+                    pos["status"] = "closed"; pos["close_reason"] = "stop_loss_after_tp1"
+                changed = True
         elif pct <= ac.BREAKEVEN_PCT:
-            if _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt, cur=cur):
-                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "breakeven"; changed = True
+            sold = _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt, cur=cur)
+            if sold:
+                pos["qty_open"] = qopen - sold
+                if pos["qty_open"] <= 0:
+                    pos["status"] = "closed"; pos["close_reason"] = "breakeven"
+                changed = True
     if not changed:
         ac.log(f"[monitor] {pos['name']}({pos['code']}) 보유 현재 {pct:+.1f}% "
                f"(entry {entry:,.0f} → {cur:,.0f}, {qopen}주, tp1={pos.get('tp1_done')})")

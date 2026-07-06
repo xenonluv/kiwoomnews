@@ -48,7 +48,10 @@ export async function GET() {
       configured: true,
     });
   } catch {
-    return NextResponse.json({ enabled: false, ranks: [1], budget: BUDGET_DEFAULT, configured: true });
+    // ⚠ KV 읽기 실패를 '확정 OFF(configured:true)'로 위장하지 않는다 — 클라이언트가 이를 진짜 OFF로 믿으면
+    //   (예: 저장 실패 후 재동기화) 실행기는 여전히 enabled=1로 켜져 있는데 화면만 OFF로 표시돼 실계좌가 계속 매수한다.
+    //   configured:false = '상태 확인 불가'로 신호 → 클라이언트가 가짜 OFF 대신 경고를 띄운다.
+    return NextResponse.json({ enabled: false, ranks: [1], budget: BUDGET_DEFAULT, configured: false });
   }
 }
 
