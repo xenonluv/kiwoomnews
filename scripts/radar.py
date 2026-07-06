@@ -1563,6 +1563,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true",
                     help="폭발 레지스트리를 저장하지 않고 stdout만 생성")
     p = ap.parse_args()
+    kis.enable_run_cache()  # 회차 캐시 ON — reaccum/youtong/흔들기의 동일 종목 일봉·현재가 중복조회 제거(속도)
     p.explosion_window = max(1, int(p.explosion_window))
     p.explosion_scan_n = max(1, int(p.explosion_scan_n))
     p.reignition_span_min = max(1, int(p.reignition_span_min))

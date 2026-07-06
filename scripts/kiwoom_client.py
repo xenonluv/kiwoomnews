@@ -144,11 +144,26 @@ def revoke_token(token):
         return {"_error": str(e)}
 
 
+_RUN_CACHE = None   # 회차 캐시(동일 API 중복호출 제거). None=미사용. enable_run_cache()로 켬(radar 전용).
+
+
+def enable_run_cache():
+    """이번 프로세스(한 스캔 회차) 동안 동일 (api_id·path·body) 응답을 캐시해 중복 조회 제거.
+    ⚠ radar 스캔 전용 — reaccum/youtong/흔들기가 같은 종목 일봉·현재가를 중복 조회하는 것을 없앤다.
+    매매 경로(executor/monitor)는 호출하지 않음 → 실시간성 유지(캐시 없음)."""
+    global _RUN_CACHE
+    _RUN_CACHE = {}
+
+
 def _call(api_id, path, body, retries=3):
     """POST 호출 공통(키움은 POST + api-id 헤더).
 
     재시도: return_code!=0 중 토큰류·레이트류, HTTP 401(토큰 무효화+강제 재발급)·5xx·429.
+    ⚠ _RUN_CACHE 활성 시 성공 응답을 (api_id,path,body)로 캐시(회차 내 중복 API 제거).
     """
+    ckey = (api_id, path, json.dumps(body, sort_keys=True)) if _RUN_CACHE is not None else None
+    if ckey is not None and ckey in _RUN_CACHE:
+        return _RUN_CACHE[ckey]
     app_key, app_secret = _keys()
     url = BASE + path
     data = json.dumps(body).encode()
@@ -173,6 +188,8 @@ def _call(api_id, path, body, retries=3):
                 res = json.load(r)
             rc = res.get("return_code")
             if rc == 0 or rc is None:
+                if ckey is not None:
+                    _RUN_CACHE[ckey] = res
                 return res
             msg = (res.get("return_msg") or "").strip()
             last_err = RuntimeError(f"키움 {rc}: {msg}")
