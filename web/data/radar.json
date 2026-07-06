@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06 17:24:09 KST",
+ "generated_at": "2026-07-06 17:33:54 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -397,8 +397,8 @@
    "sector": "위메이드맥스",
    "change_pct": 20.44,
    "high_pct": 25.2,
-   "vol_turnover_pct": 51.4,
-   "value_eok": 510,
+   "vol_turnover_pct": 51.5,
+   "value_eok": 511,
    "price": 4420.0,
    "first_seen": "16:52",
    "exploded": false
