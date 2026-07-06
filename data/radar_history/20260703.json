@@ -128,7 +128,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 30.0,
-    "next_high_pct": 30.0
+    "next_high_pct": 30.0,
+    "next_open": 9550.0,
+    "next_low": 8650.0,
+    "next_open_pct": 0.53,
+    "next_low_pct": -8.95
    },
    "final": true
   },
@@ -250,7 +254,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 14.25,
-    "next_high_pct": 24.93
+    "next_high_pct": 24.93,
+    "next_open": 3790.0,
+    "next_low": 3665.0,
+    "next_open_pct": 0.0,
+    "next_low_pct": -3.3
    },
    "final": true
   },
@@ -356,7 +364,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 29.96,
-    "next_high_pct": 29.96
+    "next_high_pct": 29.96,
+    "next_open": 743.0,
+    "next_low": 671.0,
+    "next_open_pct": 0.27,
+    "next_low_pct": -9.45
    },
    "final": true
   },
@@ -478,7 +490,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 17.1,
-    "next_high_pct": 21.73
+    "next_high_pct": 21.73,
+    "next_open": 3380.0,
+    "next_low": 3165.0,
+    "next_open_pct": 4.16,
+    "next_low_pct": -2.47
    },
    "final": true
   },
@@ -584,7 +600,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 15.17,
-    "next_high_pct": 21.31
+    "next_high_pct": 21.31,
+    "next_open": 13800.0,
+    "next_low": 13500.0,
+    "next_open_pct": -2.61,
+    "next_low_pct": -4.73
    },
    "final": true
   },
@@ -686,7 +706,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 1.09,
-    "next_high_pct": 8.32
+    "next_high_pct": 8.32,
+    "next_open": 23300.0,
+    "next_low": 22250.0,
+    "next_open_pct": 1.97,
+    "next_low_pct": -2.63
    },
    "final": true
   },
@@ -788,7 +812,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 3.58,
-    "next_high_pct": 17.7
+    "next_high_pct": 17.7,
+    "next_open": 2635.0,
+    "next_low": 2560.0,
+    "next_open_pct": -0.75,
+    "next_low_pct": -3.58
    },
    "final": true
   },
@@ -892,7 +920,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -9.42,
-    "next_high_pct": 2.33
+    "next_high_pct": 2.33,
+    "next_open": 900.0,
+    "next_low": 828.0,
+    "next_open_pct": -4.76,
+    "next_low_pct": -12.38
    },
    "final": true
   },
@@ -1028,7 +1060,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 11.68,
-    "next_high_pct": 25.26
+    "next_high_pct": 25.26,
+    "next_open": 9140.0,
+    "next_low": 7510.0,
+    "next_open_pct": -3.79,
+    "next_low_pct": -20.95
    },
    "final": false
   },
@@ -1136,7 +1172,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 27.47,
-    "next_high_pct": 28.76
+    "next_high_pct": 28.76,
+    "next_open": 9350.0,
+    "next_low": 9220.0,
+    "next_open_pct": 0.32,
+    "next_low_pct": -1.07
    },
    "final": false
   }

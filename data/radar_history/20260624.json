@@ -75,7 +75,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -16.82,
-    "next_high_pct": -6.04
+    "next_high_pct": -6.04,
+    "next_open": 20800.0,
+    "next_low": 18040.0,
+    "next_open_pct": -6.94,
+    "next_low_pct": -19.28
    },
    "final": true,
    "ai_pred": {

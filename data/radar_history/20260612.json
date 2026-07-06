@@ -44,7 +44,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -4.09,
-    "next_high_pct": 2.86
+    "next_high_pct": 2.86,
+    "next_open": 36800.0,
+    "next_low": 32500.0,
+    "next_open_pct": 0.27,
+    "next_low_pct": -11.44
    },
    "final": false
   },
@@ -77,7 +81,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 2.24,
-    "next_high_pct": 5.37
+    "next_high_pct": 5.37,
+    "next_open": 103700.0,
+    "next_low": 99300.0,
+    "next_open_pct": 1.17,
+    "next_low_pct": -3.12
    },
    "final": true,
    "ai_pred": {
@@ -119,7 +127,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 3.98,
-    "next_high_pct": 13.32
+    "next_high_pct": 13.32,
+    "next_open": 67700.0,
+    "next_low": 66300.0,
+    "next_open_pct": 3.68,
+    "next_low_pct": 1.53
    },
    "final": true,
    "ai_pred": {
@@ -161,7 +173,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -2.6,
-    "next_high_pct": 5.63
+    "next_high_pct": 5.63,
+    "next_open": 237500.0,
+    "next_low": 218000.0,
+    "next_open_pct": 2.81,
+    "next_low_pct": -5.63
    },
    "final": true,
    "ai_pred": {
@@ -217,7 +233,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 4.5,
-    "next_high_pct": 6.82
+    "next_high_pct": 6.82,
+    "next_open": 342500.0,
+    "next_low": 334000.0,
+    "next_open_pct": 6.2,
+    "next_low_pct": 3.57
    },
    "final": false
   }

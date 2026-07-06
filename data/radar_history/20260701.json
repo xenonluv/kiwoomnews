@@ -80,7 +80,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -8.39,
-    "next_high_pct": 15.86
+    "next_high_pct": 15.86,
+    "next_open": 45850.0,
+    "next_low": 39200.0,
+    "next_open_pct": 5.4,
+    "next_low_pct": -9.89
    },
    "final": true
   },
@@ -161,7 +165,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -14.12,
-    "next_high_pct": -2.86
+    "next_high_pct": -2.86,
+    "next_open": 2890.0,
+    "next_low": 2550.0,
+    "next_open_pct": -2.86,
+    "next_low_pct": -14.29
    },
    "final": true
   }

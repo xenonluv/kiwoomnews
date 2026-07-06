@@ -86,7 +86,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 7.03,
-    "next_high_pct": 14.73
+    "next_high_pct": 14.73,
+    "next_open": 477000.0,
+    "next_low": 470000.0,
+    "next_open_pct": 4.84,
+    "next_low_pct": 3.3
    },
    "final": false
   },
@@ -173,7 +177,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -3.9,
-    "next_high_pct": 4.81
+    "next_high_pct": 4.81,
+    "next_open": 40300.0,
+    "next_low": 35850.0,
+    "next_open_pct": 4.68,
+    "next_low_pct": -6.88
    },
    "final": false
   },
@@ -262,7 +270,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 2.78,
-    "next_high_pct": 6.94
+    "next_high_pct": 6.94,
+    "next_open": 22450.0,
+    "next_low": 21200.0,
+    "next_open_pct": 3.94,
+    "next_low_pct": -1.85
    },
    "final": false
   }

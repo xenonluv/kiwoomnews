@@ -118,15 +118,23 @@ def evaluate():
                     - datetime.strptime(hist["date"], "%Y%m%d").date()).days
         n_heal = 0
         for code, s in hist.get("suspects", {}).items():
-            # 자가치유: 이미 평가됐지만 고가폭(next_high_pct)이 빈 표본 소급 충전.
-            #   (next_high_pct 필드 추가 이전에 평가된 표본 — 종가·적중은 멀쩡하나 익절 도달폭만 누락됨.)
+            # 자가치유: 이미 평가됐지만 파생 필드가 빈 표본 소급 충전.
+            #   (next_high_pct / next_open·next_low 필드 추가 이전에 평가된 표본 — 종가·적중은
+            #    멀쩡하나 익절 도달폭·저가 낙폭·시가 갭이 누락됨. 필드 추가 시마다 여기서 소급 채운다.)
             r0 = s.get("result")
-            if s.get("evaluated") and r0 and r0.get("next_high_pct") is None and s.get("entry"):
+            if (s.get("evaluated") and r0 and s.get("entry")
+                    and (r0.get("next_high_pct") is None or r0.get("next_low") is None)):
                 sig0, nb0 = next_day_bar(code, hist["date"])
                 if sig0 and nb0:
                     e0 = float(sig0["close"]) if sig0.get("close") else float(s["entry"])
                     if e0:
-                        r0["next_high_pct"] = round((nb0["high"] / e0 - 1) * 100, 2)
+                        if r0.get("next_high_pct") is None:
+                            r0["next_high_pct"] = round((nb0["high"] / e0 - 1) * 100, 2)
+                        if r0.get("next_low") is None:
+                            r0["next_open"] = nb0["open"]
+                            r0["next_low"] = nb0["low"]
+                            r0["next_open_pct"] = round((nb0["open"] / e0 - 1) * 100, 2)
+                            r0["next_low_pct"] = round((nb0["low"] / e0 - 1) * 100, 2)
                         changed = True
                         n_heal += 1
             if s.get("evaluated") or not s.get("entry"):
@@ -147,11 +155,16 @@ def evaluate():
                 "date": nb["date"],
                 "next_close": nb["close"],
                 "next_high": nb["high"],
+                "next_open": nb["open"],
+                "next_low": nb["low"],
                 "hit": nb["close"] > entry,
                 "high3": nb["high"] >= entry * HIGH3_X,
                 "return_pct": round(ret, 2),
                 # 익일 고가 도달폭(entry 대비 %) — 회장님 실제 익절선(+7/+13%) 검증·흔들기 밴드 튜닝 핵심 지표
                 "next_high_pct": round((nb["high"] / entry - 1) * 100, 2),
+                # 익일 시가 갭·저가 도달폭(entry 대비 %) — 손절(-5%) 실발동·최대낙폭·갭 리스크 튜닝용
+                "next_open_pct": round((nb["open"] / entry - 1) * 100, 2),
+                "next_low_pct": round((nb["low"] / entry - 1) * 100, 2),
             }
             s["evaluated"] = True
             changed = True
@@ -160,7 +173,7 @@ def evaluate():
                 f"→ 익일종가 {nb['close']:.0f} ({'적중' if s['result']['hit'] else '미적중'}, "
                 f"{ret:+.1f}%)")
         if n_heal:
-            log(f"  [heal] {hist['date']} 고가폭(next_high_pct) 소급 충전 {n_heal}건")
+            log(f"  [heal] {hist['date']} 파생필드(고가폭·시가·저가) 소급 충전 {n_heal}건")
         if changed:
             json.dump(hist, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     log(f"[backtest] 신규 평가 {n_eval}건")

@@ -53,7 +53,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -2.42,
-    "next_high_pct": 7.06
+    "next_high_pct": 7.06,
+    "next_open": 255000.0,
+    "next_low": 239500.0,
+    "next_open_pct": 2.82,
+    "next_low_pct": -3.43
    },
    "final": true,
    "strategy": {
@@ -113,7 +117,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 0.67,
-    "next_high_pct": 6.67
+    "next_high_pct": 6.67,
+    "next_open": 227500.0,
+    "next_low": 218000.0,
+    "next_open_pct": 1.11,
+    "next_low_pct": -3.11
    },
    "final": false,
    "strategy": {
@@ -172,7 +180,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -6.78,
-    "next_high_pct": 1.69
+    "next_high_pct": 1.69,
+    "next_open": 535000.0,
+    "next_low": 489500.0,
+    "next_open_pct": 0.75,
+    "next_low_pct": -7.82
    },
    "final": false,
    "strategy": {
@@ -232,7 +244,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -5.33,
-    "next_high_pct": 4.61
+    "next_high_pct": 4.61,
+    "next_open": 358500.0,
+    "next_low": 326000.0,
+    "next_open_pct": 3.31,
+    "next_low_pct": -6.05
    },
    "final": true,
    "strategy": {
@@ -281,7 +297,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -11.78,
-    "next_high_pct": 0.88
+    "next_high_pct": 0.88,
+    "next_open": 68300.0,
+    "next_low": 59900.0,
+    "next_open_pct": 0.59,
+    "next_low_pct": -11.78
    },
    "final": true,
    "ai_pred": {
@@ -335,7 +355,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 8.92,
-    "next_high_pct": 10.34
+    "next_high_pct": 10.34,
+    "next_open": 72200.0,
+    "next_low": 69300.0,
+    "next_open_pct": 2.27,
+    "next_low_pct": -1.84
    },
    "final": true,
    "ai_pred": {
@@ -400,7 +424,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -1.57,
-    "next_high_pct": 4.91
+    "next_high_pct": 4.91,
+    "next_open": 51100.0,
+    "next_low": 49100.0,
+    "next_open_pct": 0.39,
+    "next_low_pct": -3.54
    },
    "final": true,
    "strategy": {

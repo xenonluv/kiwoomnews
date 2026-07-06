@@ -66,7 +66,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 4.71,
-    "next_high_pct": 11.24
+    "next_high_pct": 11.24,
+    "next_open": 1819000.0,
+    "next_low": 1724000.0,
+    "next_open_pct": 7.0,
+    "next_low_pct": 1.41
    },
    "final": false,
    "strategy": {
@@ -139,7 +143,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -11.29,
-    "next_high_pct": 4.31
+    "next_high_pct": 4.31,
+    "next_open": 48700.0,
+    "next_low": 42750.0,
+    "next_open_pct": 0.0,
+    "next_low_pct": -12.22
    },
    "final": false,
    "strategy": {
@@ -212,7 +220,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -4.41,
-    "next_high_pct": 2.94
+    "next_high_pct": 2.94,
+    "next_open": 168000.0,
+    "next_low": 148800.0,
+    "next_open_pct": 2.94,
+    "next_low_pct": -8.82
    },
    "final": true,
    "ai_pred": {
@@ -294,7 +306,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -2.89,
-    "next_high_pct": 9.69
+    "next_high_pct": 9.69,
+    "next_open": 122400.0,
+    "next_low": 110900.0,
+    "next_open_pct": 3.99,
+    "next_low_pct": -5.78
    },
    "final": true,
    "ai_pred": {
@@ -376,7 +392,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -9.78,
-    "next_high_pct": 2.0
+    "next_high_pct": 2.0,
+    "next_open": 187000.0,
+    "next_low": 163600.0,
+    "next_open_pct": -1.63,
+    "next_low_pct": -13.94
    },
    "final": false,
    "strategy": {
@@ -449,7 +469,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -5.09,
-    "next_high_pct": 0.44
+    "next_high_pct": 0.44,
+    "next_open": 68300.0,
+    "next_low": 63000.0,
+    "next_open_pct": -0.73,
+    "next_low_pct": -8.43
    },
    "final": false,
    "strategy": {
@@ -522,7 +546,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -10.76,
-    "next_high_pct": 0.94
+    "next_high_pct": 0.94,
+    "next_open": 1293000.0,
+    "next_low": 1122000.0,
+    "next_open_pct": 0.78,
+    "next_low_pct": -12.55
    },
    "final": true,
    "ai_pred": {
@@ -604,7 +632,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -5.45,
-    "next_high_pct": 3.64
+    "next_high_pct": 3.64,
+    "next_open": 96300.0,
+    "next_low": 86700.0,
+    "next_open_pct": 2.99,
+    "next_low_pct": -7.27
    },
    "final": true,
    "ai_pred": {
@@ -686,7 +718,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -5.62,
-    "next_high_pct": 1.99
+    "next_high_pct": 1.99,
+    "next_open": 179000.0,
+    "next_low": 162700.0,
+    "next_open_pct": 1.65,
+    "next_low_pct": -7.61
    },
    "final": true,
    "ai_pred": {
@@ -768,7 +804,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -2.51,
-    "next_high_pct": 4.0
+    "next_high_pct": 4.0,
+    "next_open": 131000.0,
+    "next_low": 121200.0,
+    "next_open_pct": 2.75,
+    "next_low_pct": -4.94
    },
    "final": true,
    "ai_pred": {
@@ -850,7 +890,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -4.07,
-    "next_high_pct": 2.79
+    "next_high_pct": 2.79,
+    "next_open": 176600.0,
+    "next_low": 160300.0,
+    "next_open_pct": 2.67,
+    "next_low_pct": -6.8
    },
    "final": true,
    "ai_pred": {
@@ -932,7 +976,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -10.27,
-    "next_high_pct": 2.32
+    "next_high_pct": 2.32,
+    "next_open": 10050.0,
+    "next_low": 8660.0,
+    "next_open_pct": 1.21,
+    "next_low_pct": -12.79
    },
    "final": false,
    "strategy": {
@@ -1005,7 +1053,11 @@
     "hit": false,
     "high3": true,
     "return_pct": -4.71,
-    "next_high_pct": 6.4
+    "next_high_pct": 6.4,
+    "next_open": 61700.0,
+    "next_low": 54700.0,
+    "next_open_pct": 3.87,
+    "next_low_pct": -7.91
    },
    "final": false,
    "strategy": {
@@ -1078,7 +1130,11 @@
     "hit": true,
     "high3": true,
     "return_pct": 2.68,
-    "next_high_pct": 6.93
+    "next_high_pct": 6.93,
+    "next_open": 106600.0,
+    "next_low": 103200.0,
+    "next_open_pct": -1.57,
+    "next_low_pct": -4.71
    },
    "final": true,
    "ai_pred": {
@@ -1160,7 +1216,11 @@
     "hit": false,
     "high3": false,
     "return_pct": -0.5,
-    "next_high_pct": 2.98
+    "next_high_pct": 2.98,
+    "next_open": 62100.0,
+    "next_low": 56600.0,
+    "next_open_pct": 2.64,
+    "next_low_pct": -6.45
    },
    "final": true,
    "ai_pred": {
