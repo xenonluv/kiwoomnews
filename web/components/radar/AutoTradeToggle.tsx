@@ -6,7 +6,7 @@ import { Bot, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { autoTradeClientService } from "@/services/autotrade.client";
 
-type Suspect = { code?: string; name?: string };
+type Suspect = { code?: string; name?: string; strength?: string | null };
 
 const BUDGET_MIN = 10_000;
 const BUDGET_MAX = 100_000_000;
@@ -265,6 +265,9 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
                 <span className="font-semibold">{r}위</span>{" "}
                 <span className="text-foreground">{s?.name ?? "—"}</span>
                 {s?.code ? <span className="tabular-nums text-muted-foreground"> ({s.code})</span> : null}
+                {s?.strength ? (
+                  <span className="ml-1 text-[10px] text-warning">· {s.strength}</span>
+                ) : null}
               </span>
             </button>
           );

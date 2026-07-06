@@ -73,6 +73,22 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 💥 흔들기
               </Badge>
             )}
+            {s.shakeout && s.strength && (
+              <Badge
+                className={
+                  (s.strength_tier ?? 9) <= 0
+                    ? "bg-up px-2 py-1 font-bold text-white"
+                    : (s.strength_tier ?? 9) === 1
+                      ? "bg-up/70 px-2 py-1 font-semibold text-white"
+                      : (s.strength_tier ?? 9) === 2
+                        ? "border border-warning/60 bg-transparent px-2 py-1 text-warning"
+                        : "border border-white/20 bg-transparent px-2 py-1 text-muted-foreground"
+                }
+                title="흔들기 강도 등급 — 2일 유통회전율 스윗존(90~140%) + 고점 대비 낙폭 스윗존(−30~−45%) 결합. Tier1=둘 다 스윗(최강), Tier4=과회전/과낙 또는 얕음(약체). 종베 선택 보조·보장 아님"
+              >
+                {s.strength}
+              </Badge>
+            )}
             {s.shakeout && s.tp_hint && (
               <Badge
                 variant="outline"

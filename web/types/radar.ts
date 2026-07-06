@@ -176,6 +176,10 @@ export interface Suspect {
    *  실측 n=38: 익일 고가 +13% 터치 68%·평균 +18% — 게시 정렬 최상단. */
   shakeout?: boolean;
   fade_pct?: number | null;
+  /** 💥 흔들기 강도 등급 라벨(예 "Tier1(강)") — 회전 스윗90~140 + 낙폭 스윗−30~−45 결합. 종베 선택 보조 */
+  strength?: string | null;
+  /** 💥 강도 결합 tier(0~4, 낮을수록 강) — 색 판정용 */
+  strength_tier?: number | null;
   /** 💥 회전밴드별 익절선 힌트(실측 60건: 90~120% 회전은 +12%가 천장 → +7~10 익절) — 표시 전용 */
   tp_hint?: string | null;
   /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */

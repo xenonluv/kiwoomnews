@@ -123,6 +123,11 @@ def _shakeout_dd_tier(x):
     if (-55.0 <= dd < SHAKEOUT_DD_SWEET_LO) or (SHAKEOUT_DD_SWEET_HI < dd <= -20.0):
         return 1
     return 2
+
+
+def _shakeout_strength(tier):
+    """흔들기 강도 등급 라벨(결합 tier 0~4 → 사용자 등급). 0=회전·낙폭 둘 다 스윗=최강."""
+    return {0: "Tier1(강)", 1: "Tier2(중강)", 2: "Tier3(중)"}.get(tier, "Tier4(약)")
 NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
                                    # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
@@ -1368,7 +1373,7 @@ def _rank_page(direction, market, page):
     return result
 
 
-def scan_shakeout(p):
+def scan_shakeout(p, extra_codes=None):
     """💥 흔들기(폭발 직후 고회전 페이드) 스캔 — 회장님 지시 2026-07-03.
 
     셀: 당일 고가등락 ≥+20% AND 페이드(고가등락−현재등락) ≥15%p AND 당일 유통회전율 ≥40% AND MA20 위
@@ -1396,6 +1401,12 @@ def scan_shakeout(p):
                     continue
                 seen.add(c)
                 cand.append(row)
+    # 랭킹 사각지대 보완: 이미 추적 중인 youtong/폭발 레지스트리 코드도 후보에 합집합
+    #   — 삼기처럼 급등 후 페이드로 등락률 top50에서 밀린 강한 흔들기를 포착(게이트는 그대로 적용).
+    for c in (extra_codes or []):
+        if c and c not in seen:
+            seen.add(c)
+            cand.append({"code": c, "name": None, "change_pct": 0})
     out = []
     for row in cand:
         code = row["code"]
@@ -1450,8 +1461,10 @@ def scan_shakeout(p):
             tp_hint = "⚠ 약체 밴드(70~90%, 표본소)"
         else:
             tp_hint = "+15% (양극단·표본소)"
+        stier = (_shakeout_turnover_tier({"turnover_2d_pct": turnover_2d})
+                 + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))  # 결합 강도 tier(0~4, 낮을수록 강)
         out.append({
-            "code": code, "name": row.get("name") or code, "sector": now.get("sector", ""),
+            "code": code, "name": row.get("name") or now.get("sector") or code, "sector": now.get("sector", ""),
             "pattern": "shakeout",
             "shakeout": True,
             "tp_hint": tp_hint,                       # 익절선 힌트(회전 밴드 실측) — 표시 전용
@@ -1467,6 +1480,7 @@ def scan_shakeout(p):
             "turnover_band": _shakeout_turnover_tier({"turnover_2d_pct": turnover_2d}),  # 0=스윗90~140 1=허용 2=과회전>180
             "peak_dd_pct": round(peak_dd, 1),           # 💥 고점(60일) 대비 낙폭 — 스윗존 −30~−45%가 최적
             "dd_band": _shakeout_dd_tier({"peak_dd_pct": peak_dd}),  # 0=스윗 1=인접 2=그외
+            "strength_tier": stier, "strength": _shakeout_strength(stier),  # 강도 등급(종베 선택 보조)
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 1),
             "ma10": round(ma10, 1), "ma10_margin_pct": round((now["price"] / ma10 - 1) * 100, 2),
@@ -1593,7 +1607,10 @@ def main():
         sys.exit(3)
     # 💥 흔들기 스캔(별도 그물) — 기존 suspects와 코드 중복 시 기존 레코드에 플래그만 병합(이중 카드 방지)
     try:
-        shakeouts = scan_shakeout(p)
+        # 랭킹 사각지대 보완: 이미 추적 중인 youtong·폭발 레지스트리 코드도 흔들기 후보로 재검사
+        #   (삼기처럼 페이드로 등락률 top50서 밀린 강한 흔들기 포착).
+        extra = list(active_explosions.keys()) + [y.get("code") for y in (today_youtong or [])]
+        shakeouts = scan_shakeout(p, extra_codes=extra)
     except Exception as e:
         log(f"[warn] 흔들기 스캔 실패(무시): {e}")
         shakeouts = []
@@ -1606,6 +1623,7 @@ def main():
                 "shakeout": True, "fade_pct": r["fade_pct"],
                 "turnover_2d_pct": r.get("turnover_2d_pct"), "peak_dd_pct": r.get("peak_dd_pct"),
                 "turnover_band": r.get("turnover_band"), "dd_band": r.get("dd_band"),
+                "strength_tier": r.get("strength_tier"), "strength": r.get("strength"),
                 "tp_hint": r.get("tp_hint"),
             })
         else:
