@@ -120,8 +120,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 12350.0,
+    "next_high": 12350.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 30.0
+   },
    "final": true
   },
   "010960": {
@@ -234,8 +241,15 @@
     "2026-07-09_한국 옵션·선물 동시만"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 4330.0,
+    "next_high": 4735.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 14.25
+   },
    "final": true
   },
   "001210": {
@@ -332,8 +346,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 963.0,
+    "next_high": 963.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.96
+   },
    "final": true
   },
   "228340": {
@@ -446,8 +467,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 3800.0,
+    "next_high": 3950.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 17.1
+   },
    "final": true
   },
   "025950": {
@@ -544,8 +572,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 16320.0,
+    "next_high": 17190.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 15.17
+   },
    "final": true
   },
   "013580": {
@@ -638,8 +673,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 23100.0,
+    "next_high": 24750.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.09
+   },
    "final": true
   },
   "017000": {
@@ -732,8 +774,15 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 2750.0,
+    "next_high": 3125.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 3.58
+   },
    "final": true
   },
   "090410": {
@@ -828,8 +877,15 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-03 14:23:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 856.0,
+    "next_high": 967.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -9.42
+   },
    "final": true
   },
   "091590": {
@@ -956,8 +1012,15 @@
     "2026-07-09_한국은행 금통위 기준금"
    ],
    "first_seen": "2026-07-03 14:33:47 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 10610.0,
+    "next_high": 11900.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 11.68
+   },
    "final": false
   },
   "001260": {
@@ -1056,8 +1119,15 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-03 14:43:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260706",
+    "next_close": 11880.0,
+    "next_high": 12000.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 27.47
+   },
    "final": false
   }
  },

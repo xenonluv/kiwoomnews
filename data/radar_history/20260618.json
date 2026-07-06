@@ -67,7 +67,11 @@
     "high3": true,
     "return_pct": 4.71
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "475150": {
    "name": "SK이터닉스",
@@ -135,7 +139,11 @@
     "high3": true,
     "return_pct": -11.29
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -11.59
+   }
   },
   "240810": {
    "name": "원익IPS",
@@ -212,6 +220,10 @@
     "as_of": "2026-06-18 17:20 KST",
     "verdict_score": 66,
     "verdict_level": "매수 우위"
+   },
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
    }
   },
   "080220": {
@@ -289,6 +301,10 @@
     "as_of": "2026-06-18 17:21 KST",
     "verdict_score": 75,
     "verdict_level": "강한 매수신호"
+   },
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
    }
   },
   "001820": {
@@ -357,7 +373,11 @@
     "high3": false,
     "return_pct": -9.78
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -10.08
+   }
   },
   "204320": {
    "name": "HL만도",
@@ -425,7 +445,11 @@
     "high3": false,
     "return_pct": -5.09
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -5.39
+   }
   },
   "011070": {
    "name": "LG이노텍",
@@ -502,6 +526,10 @@
     "as_of": "2026-06-18 17:22 KST",
     "verdict_score": 61,
     "verdict_level": "중립"
+   },
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -11.06
    }
   },
   "089970": {
@@ -579,6 +607,10 @@
     "as_of": "2026-06-18 17:22 KST",
     "verdict_score": 92,
     "verdict_level": "강한 매수신호"
+   },
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -5.75
    }
   },
   "095610": {
@@ -656,6 +688,10 @@
     "as_of": "2026-06-18 17:23 KST",
     "verdict_score": 87,
     "verdict_level": "강한 매수신호"
+   },
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -5.92
    }
   },
   "222800": {
@@ -733,6 +769,10 @@
     "as_of": "2026-06-18 17:24 KST",
     "verdict_score": 74,
     "verdict_level": "매수 우위"
+   },
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
    }
   },
   "319660": {
@@ -810,6 +850,10 @@
     "as_of": "2026-06-18 17:24 KST",
     "verdict_score": 73,
     "verdict_level": "매수 우위"
+   },
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
    }
   },
   "017900": {
@@ -878,7 +922,11 @@
     "high3": false,
     "return_pct": -10.27
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -10.57
+   }
   },
   "403870": {
    "name": "HPSP",
@@ -946,7 +994,11 @@
     "high3": true,
     "return_pct": -4.71
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "347850": {
    "name": "디앤디파마텍",
@@ -1023,6 +1075,10 @@
     "as_of": "2026-06-18 17:25 KST",
     "verdict_score": 82,
     "verdict_level": "강한 매수신호"
+   },
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -11.17
    }
   },
   "089030": {
@@ -1100,6 +1156,10 @@
     "as_of": "2026-06-18 17:26 KST",
     "verdict_score": 81,
     "verdict_level": "강한 매수신호"
+   },
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -13.26
    }
   }
  },
