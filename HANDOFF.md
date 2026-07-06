@@ -6,12 +6,33 @@
 ## 이 프로젝트가 뭔가
 KIS(한국투자증권) 기반 "이벤트 매집 레이더"를 **키움증권 REST API 버전**으로 컨버전한 것. 저장소 `github.com/xenonluv/kiwoomnews`, 사이트 https://kiwoomnews-five.vercel.app (비번 env `NEXT_PUBLIC_GATE_PASSWORD`, 현재 `3335`). 기존 KIS 시스템(`stocknews`, Mac)과 **완전 분리** — 다른 저장소·키·사이트·머신.
 
-## 현재 상태 (2026-07-06)
+## ⚠️ 최신 세션 인계 (2026-07-06 오후) — 먼저 읽을 것
+**이 Mac이 프로덕션.** 오늘 오후 세션에서 한 일 + 열린 이슈 + 반드시 피할 함정:
+
+### 오늘 완료 (전부 커밋·푸시됨)
+- **stocknews(구 KIS) 은퇴** — crontab에서 stocknews 잡 전부 주석 처리. 이제 **키움만** 텔레그램 발송(두 시스템이 같은 봇/챗 공유해 섞이던 문제 해소). 백업: `~/crontab_backup_*.txt`.
+- **크리티컬 픽스 2건**(적대검증 통과): ① 웹 OFF 가림(route.ts GET catch가 KV 읽기실패를 configured:false로) ② NXT 매도 접수-오인(`_sell`이 실체결 수량 반환·NXT는 보유감소로 확인, KRX 무회귀).
+- **흔들기 튜닝 파이프라인 복구/확장**: `publish.record_history`에 흔들기 변별필드(turnover_2d/peak_dd/tier/band) 추가 · `radar_backtest` 키움 브로커 스위치(전엔 kis_client 하드코딩이라 익일채점 불능) · `next_high_pct`(익일 고가폭) + 자가치유 백필 · `shakeout_bands`(회전2d/낙폭/티어 밴드) + **결합(AND) 코호트**(적정회전 90~140 AND 깊은눌림 -30~-45) · `scripts/shakeout_backfill.py`(과거 흔들기 소급 재구성 → `data/shakeout_backfill.json`).
+- **크론 추가**: 17:20 `radar_backtest --push`, 17:25 `autotrade_stats --push` (RADAR_BROKER=kiwoom).
+
+### Mac 프로덕션 cron 현황 (키움 6잡, 전부 실발주 게이트 `AUTOTRADE_LIVE=1`)
+`publish.py`(9~20시 10분) · `autotrade_executor --slot krx`(15:18) · `--slot nxt`(19:50) · `autotrade_monitor`(8~15시 1분) · `radar_backtest --push`(17:20) · `autotrade_stats --push`(17:25). 실발주는 여전히 **AUTOTRADE_LIVE=1 AND KV `autotrade:enabled`=1** 이중 게이트.
+
+### ⏳ 열린 이슈 (회장님 결정 대기)
+- **폭발(/forecast)·youtong 종목이 `radar_history`에 미기록 → 백테스트가 익일 성과 미추적.** `record_history`는 `suspects`(재매집/흔들기)만 저장. 회장님이 실제 보시는 폭발/youtong 종목(예: 금요일 419050·진흥)의 성과가 통계에 안 잡힘. **이걸 추적에 추가할지 결정 대기.**
+
+### ⚠️ 반드시 피할 함정
+- **종목명 충돌**: `삼기`(122350, 로봇/다이캐스팅) ≠ `삼기에너지솔루션즈`(419050, 2차전지). 회장님이 "삼기"라 하시면 **어느 코드인지 먼저 확인**(내가 오늘 이걸 혼동해 크게 헛다리 짚음).
+- **페이지 구분**: 자동매매 매수 = **`suspects`(메인 레이더)만**. `/forecast`(폭발)·`/youtong`(곧폭발)은 **매수 대상 아님**(표시·감시용). 회장님 질문이 어느 페이지인지 먼저 확인.
+
+---
+
+## 현재 상태 (베이스 — 위 최신 세션이 우선)
 - ✅ **Part A** — `scripts/kiwoom_client.py`가 `kis_client.py`의 **드롭인 대체**(동일 시그니처). `radar.py`는 `RADAR_BROKER` env 토글(기본 kiwoom, `=kis`로 복귀). 실측 검증됨.
 - ✅ **Part B** — 웹 포크·리브랜딩(StockNews→KiwoomNews) → Vercel 라이브. 실 키움 데이터 자동 게시 중.
-- ✅ **Part C** — 자동매매(주문·실행기·모니터·웹토글) 빌드·검증 완료. **아직 실발주 OFF**(이중 안전장치).
-- ✅ 독립 운영 — 현재 **Windows PC** Task Scheduler로 가동. **Mac 이전 준비 완료**(`docs/mac-migration.md`, `scripts/setup_mac.sh`).
-- ⏳ 남음: (1) Mac 이전 실행 (2) 자동매매 실발주 활성화(소액 스모크 후) (3) 선택: agent_alpha 스왑, 자기검증 cron(backtest/track_eval) URL 교체.
+- ✅ **Part C** — 자동매매(주문·실행기·모니터·웹토글) 빌드·검증 완료. Mac cron 실발주 게이트 걸림(위 참조).
+- ✅ 독립 운영 — **Mac 프로덕션 이전 완료**(cron 가동 중). Windows Task Scheduler는 정리 대상.
+- ⏳ 남음: (1) 자동매매 실발주 최종 활성화(소액 스모크 후) (2) 위 '열린 이슈'(폭발/youtong 추적) 결정 (3) 선택: agent_alpha 스왑.
 
 ## 아키텍처 (키움 델타)
 - **파이프라인(Python stdlib)**: `radar.py`(네이버 up 랭킹 스캔 + 키움 검증) → `publish.py` → `web/data/radar.json` 갱신 → 변경 시 git push → Vercel 재빌드. 스캔 소스=네이버(키움 무관).
