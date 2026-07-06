@@ -29,7 +29,8 @@
     "next_high": 6320.0,
     "hit": true,
     "high3": true,
-    "return_pct": 3.15
+    "return_pct": 3.15,
+    "next_high_pct": 4.81
    }
   },
   "095610": {
@@ -60,7 +61,8 @@
     "next_high": 186000.0,
     "hit": false,
     "high3": true,
-    "return_pct": -1.61
+    "return_pct": -1.61,
+    "next_high_pct": 7.27
    }
   }
  },

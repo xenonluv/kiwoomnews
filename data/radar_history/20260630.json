@@ -77,7 +77,8 @@
     "next_high": 5310.0,
     "hit": true,
     "high3": true,
-    "return_pct": 11.72
+    "return_pct": 11.72,
+    "next_high_pct": 24.5
    },
    "final": true
   }
