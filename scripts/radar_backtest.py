@@ -36,6 +36,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
 WEIGHTS_PATH = os.path.join(REPO, "data", "radar_weights.json")
 PERF_PATH = os.path.join(REPO, "web", "data", "performance.json")
+SHAKEOUT_BACKFILL_PATH = os.path.join(REPO, "data", "shakeout_backfill.json")
 
 # 수상함 점수 항목별 기본 최대치 (radar.py suspicion_score와 정합)
 DEFAULT_WEIGHTS = {"spark": 15.0, "fade": 15.0, "flow": 15.0, "event": 15.0, "ma10": 10.0}
@@ -557,13 +558,26 @@ def _shakeout_cells(known, keyfn, bands):
     return cells
 
 
+def load_shakeout_backfill():
+    """💥 과거 흔들기 소급 재구성 표본(shakeout_backfill.py 산출) 로드 — 튜닝 표본 조기 확보.
+    일봉 기반 재현(정의는 라이브와 1:1)·익일결과는 실제 일봉. 유니버스 한계(생존편향)는 파일 note에 명시."""
+    try:
+        d = json.load(open(SHAKEOUT_BACKFILL_PATH, encoding="utf-8"))
+        return d.get("samples", [])
+    except Exception:
+        return []   # 파일 없으면 라이브 표본만
+
+
 def shakeout_band_stats(shakeout_samples):
     """💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·평균수익·고가터치율.
     회장님 20년룰(회전 적정 + 깊은눌림 = 급등, 과회전 = 물량소진) 전진 검증. 흔들기 변수는 신규 history만
     영속(2026-07-06~) → 표본 성숙 전엔 valid=False('관찰중')."""
     known = [s for s in shakeout_samples if s.get("turnover_2d_pct") is not None]
+    backfill_n = sum(1 for s in known if s.get("backfill"))
     return {
         "min_n": FEATURE_MIN_N, "n": len(known),
+        # 표본 출처 구분(정직) — live=오늘부터 라이브 게시분, backfill=일봉 소급 재구성분(생존편향 주의).
+        "live_n": len(known) - backfill_n, "backfill_n": backfill_n,
         "by_turnover_2d": _shakeout_cells(known, lambda s: s.get("turnover_2d_pct"), SHAKEOUT_T2D_BANDS),
         "by_peak_dd": _shakeout_cells(known, lambda s: s.get("peak_dd_pct"), SHAKEOUT_DD_BANDS),
         "by_strength_tier": _shakeout_cells(known, lambda s: s.get("strength_tier"), SHAKEOUT_TIER_BANDS),
@@ -777,7 +791,12 @@ def write_performance(samples, series, bins, weights, dropouts=None,
                             if s.get("pattern") == "reaccum"]
     reaccum_sorted = sorted(reaccum_experimental, key=lambda s: (s.get("date", ""), s.get("code", "")))
     # 💥 흔들기 표본 — 마감카드 잔존/탈락 무관 전량(shakeout 플래그 기준). 강도 밴드 튜닝축 전진검증.
-    shakeout_experimental = [s for s in experimental + experimental_dropouts if s.get("shakeout")]
+    # + 과거 소급 재구성분(shakeout_backfill.json)을 (code,date) 디둡 병합 — 라이브 표본 우선(중복 시 라이브 유지).
+    shakeout_live = [s for s in experimental + experimental_dropouts if s.get("shakeout")]
+    _seen = {(s.get("code"), s.get("date")) for s in shakeout_live}
+    shakeout_backfill = [b for b in load_shakeout_backfill()
+                         if (b.get("code"), b.get("date")) not in _seen]
+    shakeout_experimental = shakeout_live + shakeout_backfill
     dn = len(dropouts)
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),

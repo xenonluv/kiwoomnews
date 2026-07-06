@@ -1,5 +1,5 @@
 {
- "as_of": "2026-07-06 15:35 KST",
+ "as_of": "2026-07-06 15:45 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -573,121 +573,123 @@
  },
  "shakeout_bands": {
   "min_n": 10,
-  "n": 0,
+  "n": 48,
+  "live_n": 0,
+  "backfill_n": 48,
   "by_turnover_2d": [
    {
     "band": "부족 <90",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
+    "n": 5,
+    "hit_rate": 80.0,
+    "avg_return": 6.7,
+    "avg_high": 18.6,
+    "touch7_rate": 100.0,
+    "touch13_rate": 100.0,
     "valid": false
    },
    {
     "band": "스윗 90~140",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 14,
+    "hit_rate": 14.3,
+    "avg_return": -4.96,
+    "avg_high": 10.12,
+    "touch7_rate": 42.9,
+    "touch13_rate": 28.6,
+    "valid": true
    },
    {
     "band": "과열 140~180",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
+    "n": 8,
+    "hit_rate": 37.5,
+    "avg_return": -4.38,
+    "avg_high": 17.49,
+    "touch7_rate": 87.5,
+    "touch13_rate": 62.5,
     "valid": false
    },
    {
     "band": "극과열 ≥180",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 21,
+    "hit_rate": 52.4,
+    "avg_return": 2.78,
+    "avg_high": 18.87,
+    "touch7_rate": 81.0,
+    "touch13_rate": 71.4,
+    "valid": true
    }
   ],
   "by_peak_dd": [
    {
     "band": "깊음 ≤-45",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
+    "n": 1,
+    "hit_rate": 0.0,
+    "avg_return": -23.61,
+    "avg_high": 16.7,
+    "touch7_rate": 100.0,
+    "touch13_rate": 100.0,
     "valid": false
    },
    {
     "band": "스윗 -45~-30",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 10,
+    "hit_rate": 40.0,
+    "avg_return": 3.45,
+    "avg_high": 19.39,
+    "touch7_rate": 70.0,
+    "touch13_rate": 70.0,
+    "valid": true
    },
    {
     "band": "얕음 >-30",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 37,
+    "hit_rate": 43.2,
+    "avg_return": -0.63,
+    "avg_high": 15.14,
+    "touch7_rate": 73.0,
+    "touch13_rate": 56.8,
+    "valid": true
    }
   ],
   "by_strength_tier": [
    {
     "band": "Tier1(강)",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
+    "n": 5,
+    "hit_rate": 20.0,
+    "avg_return": -5.03,
+    "avg_high": 12.86,
+    "touch7_rate": 40.0,
+    "touch13_rate": 40.0,
     "valid": false
    },
    {
     "band": "Tier2(중강)",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
+    "n": 3,
+    "hit_rate": 33.3,
+    "avg_return": 5.24,
+    "avg_high": 20.76,
+    "touch7_rate": 100.0,
+    "touch13_rate": 66.7,
     "valid": false
    },
    {
     "band": "Tier3(중)",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 17,
+    "hit_rate": 41.2,
+    "avg_return": 1.27,
+    "avg_high": 14.48,
+    "touch7_rate": 64.7,
+    "touch13_rate": 52.9,
+    "valid": true
    },
    {
     "band": "Tier4(약)",
-    "n": 0,
-    "hit_rate": null,
-    "avg_return": null,
-    "avg_high": null,
-    "touch7_rate": null,
-    "touch13_rate": null,
-    "valid": false
+    "n": 23,
+    "hit_rate": 47.8,
+    "avg_return": -1.08,
+    "avg_high": 17.31,
+    "touch7_rate": 82.6,
+    "touch13_rate": 69.6,
+    "valid": true
    }
   ]
  },
