@@ -1,11 +1,11 @@
 {
- "as_of": "2026-07-03 17:25 KST",
+ "as_of": "2026-07-06 15:35 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 19,
+  "tracking_days": 22,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -158,6 +158,30 @@
   },
   {
    "date": "20260703",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260704",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260705",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260706",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -417,9 +441,9 @@
   "cells": [
    {
     "band": "≤−5%",
-    "n": 14,
-    "hit_rate": 57.1,
-    "avg_return": 2.18,
+    "n": 24,
+    "hit_rate": 70.8,
+    "avg_return": 7.14,
     "valid": true
    },
    {
@@ -454,27 +478,27 @@
  },
  "peak_turnover_bands": {
   "min_n": 10,
-  "unknown_n": 77,
+  "unknown_n": 79,
   "cells": [
    {
     "band": "90~120%",
-    "n": 10,
-    "hit_rate": 60.0,
-    "avg_return": 4.12,
+    "n": 15,
+    "hit_rate": 73.3,
+    "avg_return": 7.58,
     "valid": true
    },
    {
     "band": "120~160%",
-    "n": 2,
-    "hit_rate": 50.0,
-    "avg_return": -8.29,
+    "n": 3,
+    "hit_rate": 66.7,
+    "avg_return": 4.46,
     "valid": false
    },
    {
     "band": "160~220%",
-    "n": 5,
-    "hit_rate": 60.0,
-    "avg_return": 2.27,
+    "n": 7,
+    "hit_rate": 71.4,
+    "avg_return": 7.95,
     "valid": false
    },
    {
@@ -499,9 +523,9 @@
   "cells": [
    {
     "band": "2회",
-    "n": 5,
-    "hit_rate": 40.0,
-    "avg_return": -3.19,
+    "n": 6,
+    "hit_rate": 50.0,
+    "avg_return": 2.34,
     "valid": false
    },
    {
@@ -526,29 +550,149 @@
   "cells": [
    {
     "band": "약마감 <0.4",
-    "n": 5,
-    "hit_rate": 20.0,
-    "avg_return": -4.6,
-    "valid": false
+    "n": 10,
+    "hit_rate": 60.0,
+    "avg_return": 5.21,
+    "valid": true
    },
    {
     "band": "중간 0.4~0.7",
-    "n": 9,
-    "hit_rate": 77.8,
-    "avg_return": 5.29,
-    "valid": false
+    "n": 11,
+    "hit_rate": 72.7,
+    "avg_return": 4.53,
+    "valid": true
    },
    {
     "band": "강마감 ≥0.7",
-    "n": 8,
-    "hit_rate": 37.5,
-    "avg_return": -1.73,
+    "n": 11,
+    "hit_rate": 54.5,
+    "avg_return": 4.52,
+    "valid": true
+   }
+  ]
+ },
+ "shakeout_bands": {
+  "min_n": 10,
+  "n": 0,
+  "by_turnover_2d": [
+   {
+    "band": "부족 <90",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "스윗 90~140",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "과열 140~180",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "극과열 ≥180",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   }
+  ],
+  "by_peak_dd": [
+   {
+    "band": "깊음 ≤-45",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "스윗 -45~-30",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "얕음 >-30",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   }
+  ],
+  "by_strength_tier": [
+   {
+    "band": "Tier1(강)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "Tier2(중강)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "Tier3(중)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
+    "valid": false
+   },
+   {
+    "band": "Tier4(약)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "avg_high": null,
+    "touch7_rate": null,
+    "touch13_rate": null,
     "valid": false
    }
   ]
  },
  "strategy_sim": {
-  "n": 35,
+  "n": 67,
   "min_n": 30,
   "tp": 7.0,
   "sl": 5.0,
@@ -558,19 +702,19 @@
    0.3,
    0.5
   ],
-  "win_rate": 57.1,
-  "stop_rate": 42.9,
-  "avg_net": 0.198,
-  "profit_rate": 57.1,
+  "win_rate": 47.8,
+  "stop_rate": 52.2,
+  "avg_net": -1.57,
+  "profit_rate": 47.8,
   "worst": -13.77
  },
  "experimental": {
   "reaccum": {
-   "n": 99,
-   "hit_rate": 43.4,
-   "avg_return": -1.04,
-   "high3_rate": 63.6,
-   "tracking_days": 19,
+   "n": 109,
+   "hit_rate": 47.7,
+   "avg_return": 0.35,
+   "high3_rate": 66.1,
+   "tracking_days": 22,
    "series": [
     {
      "date": "20260610",
@@ -718,14 +862,108 @@
     },
     {
      "date": "20260703",
+     "n": 10,
+     "hits": 9,
+     "hit_rate": 90,
+     "cum_n": 109,
+     "cum_hit_rate": 47.7
+    },
+    {
+     "date": "20260704",
      "n": 0,
      "hits": 0,
      "hit_rate": null,
-     "cum_n": 99,
-     "cum_hit_rate": 43.4
+     "cum_n": 109,
+     "cum_hit_rate": 47.7
+    },
+    {
+     "date": "20260705",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 109,
+     "cum_hit_rate": 47.7
+    },
+    {
+     "date": "20260706",
+     "n": 0,
+     "hits": 0,
+     "hit_rate": null,
+     "cum_n": 109,
+     "cum_hit_rate": 47.7
     }
    ],
    "recent": [
+    {
+     "date": "20260703",
+     "name": "동양파일",
+     "score": 67,
+     "hit": true,
+     "return_pct": 17.1
+    },
+    {
+     "date": "20260703",
+     "name": "남화토건",
+     "score": 70,
+     "hit": true,
+     "return_pct": 11.68
+    },
+    {
+     "date": "20260703",
+     "name": "덕신이피씨",
+     "score": 62,
+     "hit": false,
+     "return_pct": -9.42
+    },
+    {
+     "date": "20260703",
+     "name": "동신건설",
+     "score": 64,
+     "hit": true,
+     "return_pct": 15.17
+    },
+    {
+     "date": "20260703",
+     "name": "신원종합개발",
+     "score": 62,
+     "hit": true,
+     "return_pct": 3.58
+    },
+    {
+     "date": "20260703",
+     "name": "계룡건설",
+     "score": 62,
+     "hit": true,
+     "return_pct": 1.09
+    },
+    {
+     "date": "20260703",
+     "name": "삼호개발",
+     "score": 73,
+     "hit": true,
+     "return_pct": 14.25
+    },
+    {
+     "date": "20260703",
+     "name": "금호건설",
+     "score": 78,
+     "hit": true,
+     "return_pct": 30.0
+    },
+    {
+     "date": "20260703",
+     "name": "남광토건",
+     "score": 63,
+     "hit": true,
+     "return_pct": 27.47
+    },
+    {
+     "date": "20260703",
+     "name": "금호전기",
+     "score": 71,
+     "hit": true,
+     "return_pct": 29.96
+    },
     {
      "date": "20260702",
      "name": "남화토건",
@@ -795,76 +1033,6 @@
      "score": 75,
      "hit": false,
      "return_pct": -13.46
-    },
-    {
-     "date": "20260625",
-     "name": "한울반도체",
-     "score": 90,
-     "hit": false,
-     "return_pct": -17.28
-    },
-    {
-     "date": "20260625",
-     "name": "강동씨앤엘",
-     "score": 89,
-     "hit": true,
-     "return_pct": 5.47
-    },
-    {
-     "date": "20260625",
-     "name": "남화토건",
-     "score": 84,
-     "hit": true,
-     "return_pct": 29.96
-    },
-    {
-     "date": "20260625",
-     "name": "서산",
-     "score": 84,
-     "hit": false,
-     "return_pct": -2.11
-    },
-    {
-     "date": "20260625",
-     "name": "JW신약",
-     "score": 77,
-     "hit": true,
-     "return_pct": 5.01
-    },
-    {
-     "date": "20260625",
-     "name": "국순당",
-     "score": 72,
-     "hit": true,
-     "return_pct": 2.09
-    },
-    {
-     "date": "20260625",
-     "name": "광주신세계",
-     "score": 84,
-     "hit": true,
-     "return_pct": 29.98
-    },
-    {
-     "date": "20260625",
-     "name": "조아제약",
-     "score": 86,
-     "hit": true,
-     "return_pct": 4.55
-    },
-    {
-     "date": "20260625",
-     "name": "삼익제약",
-     "score": 94,
-     "hit": false,
-     "return_pct": 0.0
-    },
-    {
-     "date": "20260625",
-     "name": "모헨즈",
-     "score": 76,
-     "hit": true,
-     "return_pct": 0.24
     }
    ]
   },
@@ -879,17 +1047,17 @@
     "valid": false
    },
    "nonleader": {
-    "n": 96,
-    "hit_rate": 43.8,
-    "avg_return": -0.96,
-    "high3_rate": 63.5,
+    "n": 106,
+    "hit_rate": 48.1,
+    "avg_return": 0.46,
+    "high3_rate": 66.0,
     "valid": true
    },
    "all": {
-    "n": 99,
-    "hit_rate": 43.4,
-    "avg_return": -1.04,
-    "high3_rate": 63.6,
+    "n": 109,
+    "hit_rate": 47.7,
+    "avg_return": 0.35,
+    "high3_rate": 66.1,
     "valid": true
    },
    "lift": null

@@ -24,7 +24,12 @@ import subprocess
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
-import kis_client as kis
+# 브로커 스위치 — radar.py와 동일(기본 키움 드롭인, RADAR_BROKER=kis 로 KIS 복귀).
+# 익일봉 조회(kis.daily_prices)를 실제 운영 브로커(키움)로 맞춰야 채점이 동작한다.
+if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
+    import kis_client as kis
+else:
+    import kiwoom_client as kis
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -128,6 +133,8 @@ def evaluate():
                 "hit": nb["close"] > entry,
                 "high3": nb["high"] >= entry * HIGH3_X,
                 "return_pct": round(ret, 2),
+                # 익일 고가 도달폭(entry 대비 %) — 회장님 실제 익절선(+7/+13%) 검증·흔들기 밴드 튜닝 핵심 지표
+                "next_high_pct": round((nb["high"] / entry - 1) * 100, 2),
             }
             s["evaluated"] = True
             changed = True
@@ -239,10 +246,19 @@ def collect_samples():
                                 "peak_turnover_pct": s.get("peak_turnover_pct"),
                                 "turnover_basis": s.get("turnover_basis"),  # float|cap — 당일 회전율 산출 기준
                                 "turnover_metric": s.get("turnover_metric"),  # "vol_float" — 밴드 필터(구 척도 분리)
+                                # 흔들기 강도 튜닝용 변별 변수 (신규 history만 존재 — 구표본 None=unknown)
+                                "shakeout": s.get("shakeout", False),
+                                "turnover_2d_pct": s.get("turnover_2d_pct"),
+                                "peak_dd_pct": s.get("peak_dd_pct"),
+                                "strength_tier": s.get("strength_tier"),
+                                "turnover_band": s.get("turnover_band"),
+                                "dd_band": s.get("dd_band"),
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
-                                "return_pct": r.get("return_pct", 0.0)})
+                                "return_pct": r.get("return_pct", 0.0),
+                                # 익일 고가 도달폭 — 흔들기 밴드별 익절터치율(+7/+13%) 집계용
+                                "next_high_pct": r.get("next_high_pct")})
     samples.sort(key=lambda x: (x["date"], x["code"]))  # 동일 신호일 내 순서 안정화
     return samples
 
@@ -513,6 +529,47 @@ def peak_ibs_band_stats(samples):
             "cells": _hit_band_cells(known, lambda s: s["reaccum"]["peak_ibs"], PEAK_IBS_BANDS)}
 
 
+# 💥 흔들기 강도 튜닝 밴드 — 회장님 20년룰(회전 스윗90~140 + 깊은눌림 -30~-45 = 급등) 전진 검증축.
+SHAKEOUT_T2D_BANDS = [("부족 <90", 0, 90), ("스윗 90~140", 90, 140),
+                      ("과열 140~180", 140, 180), ("극과열 ≥180", 180, 1e12)]
+SHAKEOUT_DD_BANDS = [("깊음 ≤-45", -1e12, -45), ("스윗 -45~-30", -45, -30), ("얕음 >-30", -30, 1e12)]
+SHAKEOUT_TIER_BANDS = [("Tier1(강)", 0, 1), ("Tier2(중강)", 1, 2),
+                       ("Tier3(중)", 2, 3), ("Tier4(약)", 3, 5)]
+
+
+def _shakeout_cells(known, keyfn, bands):
+    """흔들기 밴드 셀 — 적중률·평균수익 + 익일고가 평균·익절터치율(+7/+13%, 회장님 실제 익절선)."""
+    cells = []
+    for label, lo, hi in bands:
+        grp = [s for s in known if keyfn(s) is not None and lo <= keyfn(s) < hi]
+        hits = sum(1 for s in grp if s["hit"])
+        rets = [s["return_pct"] for s in grp]
+        highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
+        cells.append({
+            "band": label, "n": len(grp),
+            "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+            "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+            "avg_high": round(sum(highs) / len(highs), 2) if highs else None,   # 익일 평균 고가 도달폭
+            "touch7_rate": round(sum(1 for h in highs if h >= 7) / len(highs) * 100, 1) if highs else None,
+            "touch13_rate": round(sum(1 for h in highs if h >= 13) / len(highs) * 100, 1) if highs else None,
+            "valid": len(grp) >= FEATURE_MIN_N,
+        })
+    return cells
+
+
+def shakeout_band_stats(shakeout_samples):
+    """💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·평균수익·고가터치율.
+    회장님 20년룰(회전 적정 + 깊은눌림 = 급등, 과회전 = 물량소진) 전진 검증. 흔들기 변수는 신규 history만
+    영속(2026-07-06~) → 표본 성숙 전엔 valid=False('관찰중')."""
+    known = [s for s in shakeout_samples if s.get("turnover_2d_pct") is not None]
+    return {
+        "min_n": FEATURE_MIN_N, "n": len(known),
+        "by_turnover_2d": _shakeout_cells(known, lambda s: s.get("turnover_2d_pct"), SHAKEOUT_T2D_BANDS),
+        "by_peak_dd": _shakeout_cells(known, lambda s: s.get("peak_dd_pct"), SHAKEOUT_DD_BANDS),
+        "by_strength_tier": _shakeout_cells(known, lambda s: s.get("strength_tier"), SHAKEOUT_TIER_BANDS),
+    }
+
+
 def leader_reaccum_stats(reaccum_experimental):
     """'예전 대장' 재매집 엣지 검증 — was_theme_leader 코호트 A/B.
 
@@ -719,6 +776,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
     reaccum_experimental = [s for s in experimental + experimental_dropouts
                             if s.get("pattern") == "reaccum"]
     reaccum_sorted = sorted(reaccum_experimental, key=lambda s: (s.get("date", ""), s.get("code", "")))
+    # 💥 흔들기 표본 — 마감카드 잔존/탈락 무관 전량(shakeout 플래그 기준). 강도 밴드 튜닝축 전진검증.
+    shakeout_experimental = [s for s in experimental + experimental_dropouts if s.get("shakeout")]
     dn = len(dropouts)
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
@@ -752,6 +811,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "reignition_count_bands": reignition_count_band_stats(reaccum_experimental),
         # 폭발일 마감강도(IBS) 구간별 익일 상승확률 — 7일 표본 반직관 가설('약마감↑') 전진 검증(재매집 실험 풀)
         "peak_ibs_bands": peak_ibs_band_stats(reaccum_experimental),
+        # 💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·고가터치율(회장님 20년룰 검증)
+        "shakeout_bands": shakeout_band_stats(shakeout_experimental),
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {

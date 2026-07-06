@@ -135,6 +135,13 @@ def record_history(out):
             "alert_release": s.get("alert_release"),   # 🔓 투자경고 내일 해제 예정 예측 — True면 최상단 승격
             "shakeout": s.get("shakeout", False),      # 💥 흔들기(고가+20%↑·페이드15%p↑·회전40%↑·MA20위) — 전진검증용
             "fade_pct": s.get("fade_pct"),
+            # 흔들기 강도 튜닝용 변별 변수 — 익일결과와 상관분석해 회전/낙폭 스윗존·티어 경계 최적화(회장님 20년룰 검증).
+            "turnover_2d_pct": s.get("turnover_2d_pct"),   # 2일 합산 회전율(핵심 신호: 스윗90~140 vs 과열)
+            "peak_dd_pct": s.get("peak_dd_pct"),           # 고점 대비 낙폭%(깊은 눌림 스윗 -30~-45)
+            "strength_tier": s.get("strength_tier"),       # 결합 티어(0~4, 낮을수록 강) — 정렬 근거
+            "strength": s.get("strength"),                 # 티어 라벨(Tier1~4)
+            "turnover_band": s.get("turnover_band"),        # 회전율 밴드(0=스윗/1/2=과열)
+            "dd_band": s.get("dd_band"),                    # 낙폭 밴드(0=스윗/1=얕음)
             "tp_hint": s.get("tp_hint"),               # 회전밴드별 익절선 힌트(90~120→+7~10 등)
             "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
 
