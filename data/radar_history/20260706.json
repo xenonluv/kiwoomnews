@@ -4,20 +4,20 @@
   "011230": {
    "name": "삼화전자",
    "sector": "삼화전자",
-   "entry": 3780.0,
+   "entry": 3635.0,
    "score": 0,
    "breakdown": {},
-   "suspicion_score": 72,
+   "suspicion_score": 75,
    "score_breakdown_display": {},
    "rank": 1,
-   "change_pct": 5.73,
+   "change_pct": 1.68,
    "change_basis": "KRX",
    "high_pct": 20.84,
    "pattern": "shakeout",
    "prime": false,
    "theme": "",
-   "value_eok": 398,
-   "turnover_pct": 100.9,
+   "value_eok": 456,
+   "turnover_pct": 116.6,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -36,15 +36,15 @@
    "alert_now": null,
    "alert_release": null,
    "shakeout": true,
-   "fade_pct": 15.1,
+   "fade_pct": 19.2,
    "tp_hint": "+7~10% (12% 천장 실측)",
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 11:05:07 KST",
    "evaluated": false,
    "result": null,
-   "final": false
+   "final": true
   }
  },
- "as_of": "2026-07-06 11:54:53 KST"
+ "as_of": "2026-07-06 12:05:00 KST"
 }
