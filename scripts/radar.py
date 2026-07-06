@@ -1600,7 +1600,14 @@ def main():
     existing = {s["code"]: s for s in suspects}
     for r in shakeouts:
         if r["code"] in existing:
-            existing[r["code"]].update({"shakeout": True, "fade_pct": r["fade_pct"]})
+            # ⚠ 순위 필드(turnover_2d_pct·peak_dd_pct)까지 병합해야 흔들기 tier가 올바로 계산됨.
+            #   누락 시 tier가 1일 회전율 폴백/None으로 오작동 → 병합된(더 강한) 흔들기가 강등돼 잘못된 1위(자동매매 오매수).
+            existing[r["code"]].update({
+                "shakeout": True, "fade_pct": r["fade_pct"],
+                "turnover_2d_pct": r.get("turnover_2d_pct"), "peak_dd_pct": r.get("peak_dd_pct"),
+                "turnover_band": r.get("turnover_band"), "dd_band": r.get("dd_band"),
+                "tp_hint": r.get("tp_hint"),
+            })
         else:
             suspects.append(r)
     # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜) — 경고/위험 지정은 무조건 후순위 강등
