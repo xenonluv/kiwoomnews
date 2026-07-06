@@ -215,8 +215,16 @@ def todays_positions(data=None):
 
 
 def deployed_today(data=None):
-    """오늘 이미 집행한 매수 예산 합(alloc_krw). 슬롯 간 예산-안전 배분용."""
-    return sum((p.get("alloc_krw") or 0) for p in todays_positions(data))
+    """오늘 이미 집행한 매수 예산 합. 슬롯 간 예산-안전 배분용.
+    ⚠ alloc_krw 결측(구버전/수동 레코드)은 0 대신 실집행액(수량×진입가)으로, 그마저 없으면 BUY_KRW로 계상
+      — 결측을 0으로 세면 잔여예산이 되살아나 당일 총 100만 초과(2배) 매수 위험."""
+    total = 0
+    for p in todays_positions(data):
+        a = p.get("alloc_krw")
+        if a is None:
+            a = int((p.get("qty") or 0) * (p.get("entry_price") or 0)) or BUY_KRW
+        total += a
+    return total
 
 
 # ── 레이더 1위 + 안전필터 ────────────────────────────────────────────

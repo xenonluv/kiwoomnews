@@ -62,8 +62,29 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
       if (ranks.length >= 2) return; // 최대 2
       next = [...ranks, r].sort();
     }
-    setRanks(next);
-    if (enabled && next.length) void save(true, next); // 켜진 상태면 즉시 반영
+    if (enabled) {
+      // 켜진 상태: 실매수 대상이 바뀌므로 즉시 KV 반영.
+      if (next.length === 0) {
+        // 모든 순위 해제 = 자동매매 중단(마스터 OFF까지 저장 — UI만 비고 실행기는 계속 사는 괴리 방지).
+        setRanks(next);
+        void save(false, next);
+        return;
+      }
+      const per = Math.floor(1_000_000 / next.length);
+      const lines = next
+        .map((x) => `${x}위 ${top[x - 1]?.name ?? "-"}: ${per.toLocaleString()}원`)
+        .join("\n");
+      if (
+        !window.confirm(
+          `자동매매 대상을 변경합니다:\n\n${lines}\n\n실제 매수 종목·금액이 바뀝니다. 계속할까요?`
+        )
+      )
+        return; // 취소 → 로컬 상태도 그대로 유지(변경 안 함)
+      setRanks(next);
+      void save(true, next);
+    } else {
+      setRanks(next); // 꺼진 상태: 로컬만(마스터 켤 때 저장)
+    }
   }
 
   async function toggleMaster() {
