@@ -43,7 +43,7 @@
    "first_seen": "2026-07-06 11:05:07 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "001260": {
    "name": "남광토건",
@@ -87,7 +87,7 @@
    "first_seen": "2026-07-06 12:55:05 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "046940": {
    "name": "우원개발",
@@ -132,7 +132,148 @@
    "evaluated": false,
    "result": null,
    "final": false
+  },
+  "122350": {
+   "name": "삼기",
+   "sector": "삼기",
+   "entry": 1841.0,
+   "score": 0,
+   "breakdown": {},
+   "suspicion_score": 74,
+   "score_breakdown_display": {},
+   "rank": 1,
+   "change_pct": 2.22,
+   "change_basis": "KRX",
+   "high_pct": 22.15,
+   "pattern": "shakeout",
+   "prime": false,
+   "theme": "",
+   "value_eok": 465,
+   "turnover_pct": 94.0,
+   "peak_turnover_pct": null,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": null,
+   "reignition": null,
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "alert_now": "경고",
+   "alert_release": false,
+   "shakeout": true,
+   "fade_pct": 19.9,
+   "tp_hint": "+7~10% (12% 천장 실측)",
+   "forecast": null,
+   "matched_events": [],
+   "first_seen": "2026-07-06 14:45:20 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
+  },
+  "001210": {
+   "name": "금호전기",
+   "sector": "금호전기",
+   "entry": 951.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 81,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 4,
+    "re_body": 6,
+    "peak_turnover": 6,
+    "re_turnover": 3
+   },
+   "rank": 2,
+   "change_pct": 28.34,
+   "change_basis": "KRX",
+   "high_pct": 29.55,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "value_eok": 202,
+   "turnover_pct": 62.3,
+   "peak_turnover_pct": 159.5,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260701",
+    "peak_value_eok": 910,
+    "peak_high_pct": 26.75,
+    "peak_turnover_pct": 159.5,
+    "peak_ibs": 0.77,
+    "peak_uppertail": 7.1,
+    "ma20": 691.3,
+    "ma20_margin_pct": 37.57,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "backfill"
+   },
+   "reignition": {
+    "body_pct": 12.95,
+    "time": "14:30",
+    "value_eok": 32,
+    "count": 3
+   },
+   "geupso": true,
+   "geupso_bars": [
+    {
+     "time": "14:30",
+     "body_pct": 12.95
+    },
+    {
+     "time": "14:35",
+     "body_pct": 2.53
+    },
+    {
+     "time": "14:40",
+     "body_pct": 6.61
+    }
+   ],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "alert_now": "경고",
+   "alert_release": false,
+   "shakeout": false,
+   "fade_pct": null,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-07_삼성전자 2분기 잠정실",
+    "2026-07-09_한국은행 금통위 기준금",
+    "2026-07-14_미국 CPI 발표 (6"
+   ],
+   "first_seen": "2026-07-06 14:45:20 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
   }
  },
- "as_of": "2026-07-06 14:35:24 KST"
+ "as_of": "2026-07-06 14:45:20 KST"
 }
