@@ -77,18 +77,6 @@ export default function Home() {
           </div>
           <ArrowRight className="size-5 shrink-0 text-up" aria-hidden />
         </Link>
-        <Link
-          href="/alpha"
-          className="flex items-center justify-between gap-3 rounded-lg border border-white/15 bg-gradient-to-br from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.02)] px-5 py-4 backdrop-blur-xl transition-shadow hover:shadow-[0_0_28px_2px_rgba(255,255,255,0.18)]"
-        >
-          <div>
-            <p className="text-base font-bold">🧠 알파 (실험)</p>
-            <p className="text-xs text-muted-foreground">
-              유통회전율·14:30 스파크·거래원·재료 판단을 전진검증 — 신호가 통하는지 측정
-            </p>
-          </div>
-          <ArrowRight className="size-5 shrink-0 text-muted-foreground" aria-hidden />
-        </Link>
       </div>
 
       <LiveRadar initial={radar} />
