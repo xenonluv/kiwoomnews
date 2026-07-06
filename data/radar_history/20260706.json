@@ -563,7 +563,7 @@
    "prime": false,
    "theme": "",
    "value_eok": 461,
-   "turnover_pct": 54.6,
+   "turnover_pct": 54.7,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -633,7 +633,7 @@
    "alert_release": null,
    "shakeout": true,
    "fade_pct": 41.6,
-   "turnover_2d_pct": 48.9,
+   "turnover_2d_pct": 49.0,
    "peak_dd_pct": -74.0,
    "strength_tier": 3,
    "strength": "Tier4(약)",
@@ -648,5 +648,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-06 15:53:48 KST"
+ "as_of": "2026-07-06 16:04:12 KST"
 }
