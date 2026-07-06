@@ -228,27 +228,40 @@ def deployed_today(data=None):
 
 
 # ── 레이더 1위 + 안전필터 ────────────────────────────────────────────
+def _radar_fresh(d):
+    """radar.json이 오늘(KST) 게시분인지. 레이더/게시가 오늘 실패하면 어제 suspects가 남아
+    stale 매수(어제 종목 오늘 매수)로 이어지므로, 날짜 불일치면 fail-closed로 매수 보류."""
+    gen = (d.get("generated_at") or "")[:10].replace("-", "")  # "2026-07-06 …" → "20260706"
+    return gen == today_str()
+
+
 def top_suspect():
-    """메인 레이더 1위(suspects[0]). 없으면 None."""
+    """메인 레이더 1위(suspects[0]). 없거나 stale이면 None."""
     if not os.path.exists(RADAR_JSON):
         return None
     try:
         d = json.load(open(RADAR_JSON, encoding="utf-8"))
     except Exception as e:
         log(f"[radar] radar.json 로드 실패: {e}")
+        return None
+    if not _radar_fresh(d):
+        log(f"[radar] radar.json 신선도 실패(generated_at={d.get('generated_at')} ≠ 오늘) — stale 매수 방지, 보류")
         return None
     sus = d.get("suspects") or []
     return sus[0] if sus else None
 
 
 def top_suspects(n=1):
-    """메인 레이더 상위 n종목(suspects[:n]). 없으면 []."""
+    """메인 레이더 상위 n종목(suspects[:n]). 없거나 stale이면 []."""
     if not os.path.exists(RADAR_JSON):
         return []
     try:
         d = json.load(open(RADAR_JSON, encoding="utf-8"))
     except Exception as e:
         log(f"[radar] radar.json 로드 실패: {e}")
+        return []
+    if not _radar_fresh(d):
+        log(f"[radar] radar.json 신선도 실패(generated_at={d.get('generated_at')} ≠ 오늘) — stale 매수 방지, 보류")
         return []
     return (d.get("suspects") or [])[:n]
 

@@ -112,7 +112,14 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
         if sell_qty < qopen:
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
         if _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur):
-            pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"; changed = True
+            # ⚠ 부분 매도(매도가능 < 보유)면 잔량을 open으로 유지해야 함 — 통째로 closed 처리하면
+            #    미매도 잔량이 손절/청산 관리에서 영구 이탈(방치). 잔량 0일 때만 종료.
+            pos["qty_open"] = qopen - sell_qty
+            if pos["qty_open"] <= 0:
+                pos["qty_open"] = 0; pos["status"] = "closed"; pos["close_reason"] = "force_exit_rotation"
+            else:
+                ac.log(f"[monitor] {pos['code']} 부분 강제청산 {sell_qty}/{qopen}주 — 잔량 {pos['qty_open']}주 open 유지(다음 틱 재시도)")
+            changed = True
             ac.notify_trade(
                 f"🔄 [자동매매] 강제청산 {pos['name']}({pos['code']}) {sell_qty}주 시장가\n"
                 f"전날 포지션 정리 {pct:+.1f}% (진입 {entry:,.0f}→현재 {cur:,.0f}) · 15:18 새 1위 갈아타기 준비")
