@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06 19:14:06 KST",
+ "generated_at": "2026-07-06 19:24:08 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -391,6 +391,18 @@
    "exploded": false
   },
   {
+   "code": "101730",
+   "name": "위메이드맥스",
+   "sector": "위메이드맥스",
+   "change_pct": 20.44,
+   "high_pct": 25.2,
+   "vol_turnover_pct": 52.1,
+   "value_eok": 517,
+   "price": 4420.0,
+   "first_seen": "16:52",
+   "exploded": false
+  },
+  {
    "code": "419050",
    "name": "삼기에너지솔루션즈",
    "sector": "삼기에너지솔루션즈",
@@ -400,18 +412,6 @@
    "value_eok": 263,
    "price": 1703.0,
    "first_seen": "13:02",
-   "exploded": false
-  },
-  {
-   "code": "101730",
-   "name": "위메이드맥스",
-   "sector": "위메이드맥스",
-   "change_pct": 20.44,
-   "high_pct": 25.2,
-   "vol_turnover_pct": 52.0,
-   "value_eok": 517,
-   "price": 4420.0,
-   "first_seen": "16:52",
    "exploded": false
   }
  ],
