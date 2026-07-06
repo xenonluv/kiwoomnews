@@ -1437,8 +1437,8 @@ def scan_shakeout(p):
         run6 = (closes[-1] / closes[-7] - 1) * 100 if (len(closes) >= 7 and closes[-7]) else None
         if run6 is not None and run6 >= SHAKEOUT_RUN6D_MAX and change_pct < 0:
             continue                                  # 과확장 붕괴(5연상 붕괴류) — 실측 실패 유형 차단
-        if _alert_level(code) in ("경고", "위험"):
-            continue                                  # 경고 지정 재급등 = 매매정지 코스 — 실측 실패 유형 차단
+        # ⚠ 경고/위험 지정도 제외하지 않음(회장님 지시 2026-07-06): 재료 강하면 경고받고도 급등(삼기 122350 실증).
+        #   배지(alert_now)만 달고 순위·채점·자동매수는 그대로 — 매매 종목 선택은 회장님이 개별로.
         ma10 = sum(closes[-10:]) / 10
         # 밴드별 익절 힌트 — 회전율 밴드별 익일 고가 천장 실측(2026-07-04 전수 60건, 회장님 관찰:
         # 90~120%는 +12%가 천장이라 +13 익절 걸면 EV 역전). 표시 전용.
@@ -1622,9 +1622,10 @@ def main():
             except Exception:
                 s["alert_release"] = None
     suspects.sort(key=lambda x: (
-        (x.get("alert_now") in ("경고", "위험")) and not x.get("alert_release"),  # 경고/위험 지정 → 무조건 최후순위
+        # ⚠ 경고/위험 최후순위 강등 폐지(회장님 지시 2026-07-06): 배지(alert_now)만 달고 순위엔 무영향.
+        #   재료 강하면 경고받고도 급등 — 매매 선택은 회장님이 개별로.
         not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
-        not x.get("alert_release"),                                             # 🔓 경고 해제 예정
+        not x.get("alert_release"),                                             # 🔓 경고 해제 예정(긍정 신호 — 최상단 승격 유지)
         not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
         ((_shakeout_turnover_tier(x) + _shakeout_dd_tier(x)) if x.get("shakeout") else 0),  # 💥 흔들기: 회전 스윗(90~140) + 고점낙폭 스윗(−30~−45) 결합 우선
         (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 동급이면 더 강한 흔들기(fade) 우선(진흥형)
