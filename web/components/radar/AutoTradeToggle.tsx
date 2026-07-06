@@ -55,18 +55,31 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
 
   const perStock = Math.floor(budget / (ranks.length || 1));
 
+  function applyState(s: {
+    enabled: boolean;
+    ranks: number[];
+    budget: number;
+  }) {
+    setEnabled(s.enabled);
+    setRanks(s.ranks?.length ? s.ranks : [1]);
+    const b = s.budget || BUDGET_DEFAULT;
+    setBudget(b);
+    setManInput(String(Math.round(b / 10_000)));
+  }
+
   async function save(nextEnabled: boolean, nextRanks: number[], nextBudget: number) {
     setBusy(true);
     setErr("");
     try {
-      const s = await autoTradeClientService.set(nextEnabled, nextRanks, nextBudget);
-      setEnabled(s.enabled);
-      setRanks(s.ranks?.length ? s.ranks : [1]);
-      const b = s.budget || BUDGET_DEFAULT;
-      setBudget(b);
-      setManInput(String(Math.round(b / 10_000)));
+      applyState(await autoTradeClientService.set(nextEnabled, nextRanks, nextBudget));
     } catch (e) {
       setErr(e instanceof Error ? e.message : "실패");
+      // 저장 실패 → 낙관적 갱신이 KV와 어긋나므로 서버 실제값으로 재동기화(화면≠실제 방지).
+      try {
+        applyState(await autoTradeClientService.get());
+      } catch {
+        /* GET도 실패 시 에러 문구만 유지 */
+      }
     } finally {
       setBusy(false);
     }
@@ -75,9 +88,23 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
   function commitBudget(man: number) {
     if (busy || !configured) return;
     const b = clampBudget(Math.round(man) * 10_000);
+    if (b === budget) return; // 변경 없음
+    if (enabled) {
+      // 켜진 상태: 실매수 금액이 즉시 바뀌므로 확인(랭크 변경 확인창과 일관).
+      const per = Math.floor(b / (ranks.length || 1));
+      if (
+        !window.confirm(
+          `당일 총예산을 ${b.toLocaleString()}원으로 변경합니다.\n` +
+            `선택 ${ranks.length}종목 · 종목당 ${per.toLocaleString()}원으로 매수됩니다. 계속할까요?`
+        )
+      ) {
+        setManInput(String(Math.round(budget / 10_000))); // 취소 → 입력값 원복(저장 안 함)
+        return;
+      }
+    }
     setBudget(b);
     setManInput(String(b / 10_000));
-    void save(enabled, ranks, b); // 설정 저장(매수는 마스터 토글+실행기 게이트가 별도 통제)
+    void save(enabled, ranks, b);
   }
 
   function toggleRank(r: number) {
