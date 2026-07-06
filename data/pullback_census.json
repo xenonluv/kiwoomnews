@@ -1,0 +1,264 @@
+{
+ "test_note": "전수조사 테스트 — 프로덕션 무접촉·표시측정 전용(score 무반영)",
+ "universe_n": 2516,
+ "signal_n": 140615,
+ "query_errors": 0,
+ "min_value_eok": 10.0,
+ "days": 150,
+ "outcome": "익일 고가 +7% 터치(touch7)",
+ "base_rate": {
+  "n": 140615,
+  "touch7_rate": 18.0,
+  "touch13_rate": 6.8,
+  "hit_rate": 44.1,
+  "avg_next_high": 4.03
+ },
+ "by_dd6": [
+  {
+   "band": "≤-45(과낙)",
+   "n": 238,
+   "touch7_rate": 46.6,
+   "touch13_rate": 29.4,
+   "hit_rate": 41.2,
+   "avg_next_high": 8.57
+  },
+  {
+   "band": "-45~-30(스윗?)",
+   "n": 2714,
+   "touch7_rate": 40.6,
+   "touch13_rate": 21.4,
+   "hit_rate": 45.9,
+   "avg_next_high": 7.33
+  },
+  {
+   "band": "-30~-20",
+   "n": 11186,
+   "touch7_rate": 32.8,
+   "touch13_rate": 13.9,
+   "hit_rate": 47.0,
+   "avg_next_high": 5.93
+  },
+  {
+   "band": "-20~-10",
+   "n": 39885,
+   "touch7_rate": 20.1,
+   "touch13_rate": 6.7,
+   "hit_rate": 42.6,
+   "avg_next_high": 4.21
+  },
+  {
+   "band": "-10~-5",
+   "n": 39682,
+   "touch7_rate": 14.2,
+   "touch13_rate": 4.9,
+   "hit_rate": 43.3,
+   "avg_next_high": 3.55
+  },
+  {
+   "band": ">-5(무낙폭)",
+   "n": 46910,
+   "touch7_rate": 14.4,
+   "touch13_rate": 5.9,
+   "hit_rate": 45.4,
+   "avg_next_high": 3.61
+  }
+ ],
+ "by_dd60": [
+  {
+   "band": "≤-45(과낙)",
+   "n": 9847,
+   "touch7_rate": 25.3,
+   "touch13_rate": 10.6,
+   "hit_rate": 41.3,
+   "avg_next_high": 5.07
+  },
+  {
+   "band": "-45~-30(스윗?)",
+   "n": 23543,
+   "touch7_rate": 20.8,
+   "touch13_rate": 7.7,
+   "hit_rate": 42.8,
+   "avg_next_high": 4.33
+  },
+  {
+   "band": "-30~-20",
+   "n": 29596,
+   "touch7_rate": 17.4,
+   "touch13_rate": 5.8,
+   "hit_rate": 44.6,
+   "avg_next_high": 3.87
+  },
+  {
+   "band": "-20~-10",
+   "n": 40372,
+   "touch7_rate": 15.7,
+   "touch13_rate": 5.5,
+   "hit_rate": 44.4,
+   "avg_next_high": 3.69
+  },
+  {
+   "band": "-10~-5",
+   "n": 20826,
+   "touch7_rate": 15.1,
+   "touch13_rate": 5.9,
+   "hit_rate": 44.1,
+   "avg_next_high": 3.69
+  },
+  {
+   "band": ">-5(무낙폭)",
+   "n": 16431,
+   "touch7_rate": 20.0,
+   "touch13_rate": 9.4,
+   "hit_rate": 46.4,
+   "avg_next_high": 4.52
+  }
+ ],
+ "by_vol_surge": [
+  {
+   "band": "<1x",
+   "n": 83356,
+   "touch7_rate": 15.7,
+   "touch13_rate": 5.0,
+   "hit_rate": 43.7,
+   "avg_next_high": 3.63
+  },
+  {
+   "band": "1~2x",
+   "n": 38523,
+   "touch7_rate": 17.5,
+   "touch13_rate": 6.4,
+   "hit_rate": 45.9,
+   "avg_next_high": 3.9
+  },
+  {
+   "band": "2~5x",
+   "n": 13381,
+   "touch7_rate": 25.6,
+   "touch13_rate": 12.2,
+   "hit_rate": 44.0,
+   "avg_next_high": 5.38
+  },
+  {
+   "band": "≥5x",
+   "n": 5355,
+   "touch7_rate": 38.1,
+   "touch13_rate": 23.8,
+   "hit_rate": 38.8,
+   "avg_next_high": 7.85
+  }
+ ],
+ "by_prior_spike": {
+  "prior_spike=False": {
+   "n": 111428,
+   "touch7_rate": 14.4,
+   "touch13_rate": 4.3,
+   "hit_rate": 44.8,
+   "avg_next_high": 3.42
+  },
+  "prior_spike=True": {
+   "n": 29187,
+   "touch7_rate": 31.9,
+   "touch13_rate": 16.3,
+   "hit_rate": 41.5,
+   "avg_next_high": 6.35
+  }
+ },
+ "by_ma20": {
+  "above_ma20=False": {
+   "n": 67726,
+   "touch7_rate": 16.0,
+   "touch13_rate": 5.0,
+   "hit_rate": 44.4,
+   "avg_next_high": 3.59
+  },
+  "above_ma20=True": {
+   "n": 72889,
+   "touch7_rate": 19.8,
+   "touch13_rate": 8.5,
+   "hit_rate": 43.9,
+   "avg_next_high": 4.44
+  }
+ },
+ "top_combos_deep": [
+  {
+   "combo": "≤-45(과낙) | spike=1 | ma20up=0",
+   "n": 117,
+   "touch7_rate": 49.6,
+   "touch13_rate": 25.6,
+   "hit_rate": 41.9,
+   "avg_next_high": 8.34
+  },
+  {
+   "combo": "≤-45(과낙) | spike=0 | ma20up=0",
+   "n": 51,
+   "touch7_rate": 45.1,
+   "touch13_rate": 27.5,
+   "hit_rate": 43.1,
+   "avg_next_high": 8.13
+  },
+  {
+   "combo": "≤-45(과낙) | spike=1 | ma20up=1",
+   "n": 70,
+   "touch7_rate": 42.9,
+   "touch13_rate": 37.1,
+   "hit_rate": 38.6,
+   "avg_next_high": 9.29
+  },
+  {
+   "combo": "-45~-30(스윗?) | spike=0 | ma20up=0",
+   "n": 889,
+   "touch7_rate": 42.5,
+   "touch13_rate": 20.8,
+   "hit_rate": 51.9,
+   "avg_next_high": 7.11
+  },
+  {
+   "combo": "-45~-30(스윗?) | spike=1 | ma20up=1",
+   "n": 759,
+   "touch7_rate": 40.3,
+   "touch13_rate": 23.8,
+   "hit_rate": 40.3,
+   "avg_next_high": 7.93
+  },
+  {
+   "combo": "-45~-30(스윗?) | spike=1 | ma20up=0",
+   "n": 1061,
+   "touch7_rate": 39.2,
+   "touch13_rate": 20.1,
+   "hit_rate": 45.1,
+   "avg_next_high": 7.05
+  },
+  {
+   "combo": "-30~-20 | spike=0 | ma20up=0",
+   "n": 5946,
+   "touch7_rate": 34.5,
+   "touch13_rate": 12.7,
+   "hit_rate": 52.8,
+   "avg_next_high": 5.88
+  },
+  {
+   "combo": "-30~-20 | spike=1 | ma20up=1",
+   "n": 2737,
+   "touch7_rate": 33.6,
+   "touch13_rate": 17.8,
+   "hit_rate": 40.8,
+   "avg_next_high": 6.56
+  },
+  {
+   "combo": "-30~-20 | spike=0 | ma20up=1",
+   "n": 200,
+   "touch7_rate": 29.0,
+   "touch13_rate": 12.0,
+   "hit_rate": 47.5,
+   "avg_next_high": 5.7
+  },
+  {
+   "combo": "-30~-20 | spike=1 | ma20up=0",
+   "n": 2303,
+   "touch7_rate": 27.9,
+   "touch13_rate": 12.4,
+   "hit_rate": 39.3,
+   "avg_next_high": 5.33
+  }
+ ]
+}
