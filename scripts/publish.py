@@ -142,6 +142,8 @@ def record_history(out):
             "strength": s.get("strength"),                 # 티어 라벨(Tier1~4)
             "turnover_band": s.get("turnover_band"),        # 회전율 밴드(0=스윗/1/2=과열)
             "dd_band": s.get("dd_band"),                    # 낙폭 밴드(0=스윗/1=얕음)
+            "dd6_pct": s.get("dd6_pct"),                    # ⭐ 6일 고점 대비 낙폭 — 전진검증용
+            "very_good": s.get("very_good", False),         # ⭐ 매우좋음(흔들기 AND dd6≤-30) — 전진검증용
             "tp_hint": s.get("tp_hint"),               # 회전밴드별 익절선 힌트(90~120→+7~10 등)
             "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
 

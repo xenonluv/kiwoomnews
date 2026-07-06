@@ -45,7 +45,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const trendVal = ma20Margin != null ? ma20Margin : s.ma10_margin_pct;
   const trendMargin = fmtChange(trendVal);
   const trendLabel = `${ma20Margin != null ? "20일선" : "10일선"} ${trendVal >= 0 ? "위" : "아래"}`;
-  const strong = s.suspicion_score >= 75;
+  const strong = s.suspicion_score >= 75 || !!s.very_good;
 
   return (
     <Card
@@ -65,6 +65,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {s.very_good && (
+              <Badge
+                className="bg-[#f59e0b] px-2.5 py-1 text-base font-black text-black"
+                title="⭐ 매우좋음 — 흔들기 AND 6일 고점 대비 낙폭 −30%↑(깊게 빠진 자리에서 오늘 격렬히 흔들림). 전수조사 14만건: 이 조합 익일 고가 +7% 터치 72%(단독 흔들기 44%·깊은눌림 41% 대비 압도). 최상단 승격 — 예측·매수추천 아님, 장중 익절 신호"
+              >
+                ⭐ 매우좋음
+              </Badge>
+            )}
             {s.shakeout && (
               <Badge
                 className="bg-up px-2.5 py-1 text-base font-black text-white"

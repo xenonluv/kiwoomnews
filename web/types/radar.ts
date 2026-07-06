@@ -176,6 +176,10 @@ export interface Suspect {
    *  실측 n=38: 익일 고가 +13% 터치 68%·평균 +18% — 게시 정렬 최상단. */
   shakeout?: boolean;
   fade_pct?: number | null;
+  /** ⭐ 매우좋음 — 흔들기 AND 6일 고점대비 낙폭 dd6≤-30%(전수조사 익일 +7% 터치 72%). rank 1 승격 */
+  very_good?: boolean;
+  /** ⭐ 6일 고점(오늘+직전5일) 대비 낙폭% */
+  dd6_pct?: number | null;
   /** 💥 흔들기 강도 등급 라벨(예 "Tier1(강)") — 회전 스윗90~140 + 낙폭 스윗−30~−45 결합. 종베 선택 보조 */
   strength?: string | null;
   /** 💥 강도 결합 tier(0~4, 낮을수록 강) — 색 판정용 */
