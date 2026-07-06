@@ -73,7 +73,10 @@ REACCUM_CHANGE_MIN = -5.0          # 재매집 현재 등락률 하한(% — 이
 REACCUM_CHANGE_MAX = 7.0           # 재매집 현재 등락률 상한(% — 이보다 높으면 이미 분출로 제외)
 GEUPSO_BODY_PCT = 2.0              # 🎯 매수급소: 14:30↑ 5분 양봉 몸통% 하한(회장님 지시 2026-07-03 —
                                    # 덕신 5.67/3.11% 2개=폭락에도 안심 vs 상지 1.51% 찔끔=받침 없음)
-GEUPSO_MIN_COUNT = 2               # 🎯 매수급소: 2%+ 양봉 최소 개수. 급소는 등락률 밴드 무제한(폭락 중이든 급등 중이든)
+GEUPSO_MIN_COUNT = 2               # 🎯 매수급소: 2%+ 양봉 최소 개수.
+GEUPSO_CHANGE_MAX = 10.0           # 🎯 매수급소 등락률 상한(% — 회장님 지시 2026-07-06: 현재 등락률 이 값 초과면
+                                   # '이미 급등'이라 급소 제외. 하한은 무제한 유지=깊은 식음 반등 허용·폭락은 저점매집 담당.
+                                   # 남광토건 +27.5%가 '재매집'으로 오분류되던 것 차단)
 REACCUM_TRACK_DAYS = 30            # 폭발 후 장기 추적 상한(거래일) — 6일 지나도 '20일선 위인 동안' 계속 추적(급소 감시)
 LOWACCUM_CHANGE_MAX = -10.0        # 🧲 저점매집: 당일 등락 상한(이하 폭락 중일 때만 판정. 회장님 지시 2026-07-03)
 LOWACCUM_BODY_PCT = 2.0            # 🧲 저점매집: 시간 무관 5분 양봉 몸통% 하한
@@ -1092,7 +1095,9 @@ def scan_reaccum_candidate(rec, p, events):
     # 🎯 매수급소 판정 — 14:30↑ 몸통 2%+ 양봉 ≥2회(회장님 15년 신호: '큰손이 아직 받치고 있다'는 지문.
     # 덕신 7/2 5.67/3.11% 2개=익일 폭락에도 안심 vs 상지 1.51% 1개=받침 없음).
     gbars = [b for b in rbars if b["body_pct"] >= p.geupso_body_pct]
-    geupso = len(gbars) >= p.geupso_min_count
+    # 급소 상한(회장님 지시 2026-07-06): 현재 등락률이 상한 초과면 '이미 급등'이라 급소 제외
+    # (하한은 무제한 유지 — 깊은 식음 반등 허용, 폭락은 low_accum 담당).
+    geupso = len(gbars) >= p.geupso_min_count and change_pct <= p.geupso_change_max
     # 통과 조건: ①기존 재매집(14:30↑ 1.5% ≥2회) ②급소 ③저점매집 중 하나. 밴드 밖·장기추적·youtong이력분은
     # 급소/저점매집일 때만(기존 6일 폭발 재매집 의미론 불변 — 순수 확장).
     reignition_ok = len(rbars) >= p.reignition_min_count
@@ -1513,9 +1518,11 @@ def main():
     ap.add_argument("--reaccum-change-max", type=float, default=REACCUM_CHANGE_MAX,
                     help="재매집 현재 등락률 상한(%%, 기본 7)")
     ap.add_argument("--geupso-body-pct", type=float, default=GEUPSO_BODY_PCT,
-                    help="🎯 매수급소 5분 양봉 몸통%% 하한(기본 2.0 — 밴드 무제한 급소 판정)")
+                    help="🎯 매수급소 5분 양봉 몸통%% 하한(기본 2.0)")
     ap.add_argument("--geupso-min-count", type=int, default=GEUPSO_MIN_COUNT,
                     help="🎯 매수급소 최소 양봉 수(기본 2)")
+    ap.add_argument("--geupso-change-max", type=float, default=GEUPSO_CHANGE_MAX,
+                    help="🎯 매수급소 등락률 상한(%%, 기본 10 — 초과 급등 중이면 급소 제외)")
     ap.add_argument("--reaccum-track-days", type=int, default=REACCUM_TRACK_DAYS,
                     help="폭발 후 장기 추적 상한 거래일(기본 30 — 6일 초과분은 20일선 위인 동안만 유지)")
     ap.add_argument("--lowaccum-change-max", type=float, default=LOWACCUM_CHANGE_MAX,
@@ -1576,6 +1583,7 @@ def main():
     p.reaccum_max = max(0, int(p.reaccum_max))
     p.geupso_body_pct = max(0.5, float(p.geupso_body_pct))
     p.geupso_min_count = max(1, int(p.geupso_min_count))
+    p.geupso_change_max = float(p.geupso_change_max)
     p.reaccum_track_days = max(p.explosion_window, int(p.reaccum_track_days))  # 최소 기존 윈도(6) 이상
     p.lowaccum_body_pct = max(0.5, float(p.lowaccum_body_pct))
     p.lowaccum_min_count = max(1, int(p.lowaccum_min_count))
@@ -1675,6 +1683,7 @@ def main():
                    "youtong_spark_min": p.youtong_spark_min,          # /youtong: 시작시각 이후 5분 스파크 최소 수
                    "geupso_body_pct": p.geupso_body_pct,              # 🎯 매수급소: 5분 양봉 몸통% 하한(2.0)
                    "geupso_min_count": p.geupso_min_count,            # 🎯 매수급소: 최소 양봉 수(2)
+                   "geupso_change_max": p.geupso_change_max,          # 🎯 매수급소: 등락률 상한(10 — 초과 급등 제외)
                    "reaccum_track_days": p.reaccum_track_days,        # 폭발 후 장기 추적 상한(거래일)
                    "lowaccum_change_max": p.lowaccum_change_max,      # 🧲 저점매집: 당일 등락 상한(-10)
                    "lowaccum_body_pct": p.lowaccum_body_pct,          # 🧲 저점매집: 양봉 몸통% 하한(2.0)
