@@ -2,8 +2,7 @@
 
 export interface AutoTradeState {
   enabled: boolean;
-  code: string | null;
-  name: string | null;
+  ranks: number[]; // 매수 대상 랭크(1~3, 최대 2)
   configured: boolean;
 }
 
@@ -13,11 +12,11 @@ export const autoTradeClientService = {
     if (!r.ok) throw new Error(`autotrade ${r.status}`);
     return r.json();
   },
-  async set(enabled: boolean, code?: string, name?: string): Promise<AutoTradeState> {
+  async set(enabled: boolean, ranks: number[]): Promise<AutoTradeState> {
     const r = await fetch("/api/autotrade", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ enabled, code, name }),
+      body: JSON.stringify({ enabled, ranks }),
     });
     if (!r.ok) {
       const j = (await r.json().catch(() => ({}))) as { error?: string };
