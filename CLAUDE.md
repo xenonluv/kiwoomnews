@@ -5,6 +5,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 > 최종 갱신: **2026-06-28 /alpha 개선**(스파크 임계 2.0→1.5·세션기반 분봉·강도색/정렬·키움 속 외인 배지) · 2026-06-27 agent_alpha 사이드카 추가 (이전: 2026-06-23 폭발 정의 전면 개편 / `패치0618.md`).
 > ⚠️ 폭발/식음/반등 정의는 "탐지 트랙"·"Architecture"가 현행. **격리 실험모듈 agent_alpha/·`/alpha`는 별도 섹션 참조.**
 
+## ⚠️ 종목군 4종 구분 (답변 전 필독 — 절대 혼동 금지)
+
+이 시스템은 **4개의 완전히 다른 종목군**을 만든다. 회장님이 매수하는 것은 **suspects뿐**이다.
+답변 전 반드시 어느 그룹인지 확정할 것 — forecast/youtong/alpha를 suspects와 섞지 말 것.
+
+| 종목군 | 페이지 | 회장님 매수? | suspects와의 관계 |
+|--------|--------|-------------|------------------|
+| **suspects** (재매집·흔들기) | 메인 레이더 | ✅ **매수 대상**(autotrade) | 본체 |
+| **explosions** (폭발) | /forecast | ❌ 표시용 | 폭발 레지스트리 = 재매집의 씨앗(재료) |
+| **youtong** (곧 폭발) | /youtong | ❌ 표시용 | 레지스트리 이력 → 급소/저점매집 일부 기여 |
+| **alpha** (agent_alpha) | /alpha | ❌ 표시·실험용 | 완전 무관(단방향·core는 alpha 안 읽음) |
+
+- autotrade·record_history·백테스트는 **suspects만** 읽는다. explosions[]/youtong[]/alpha.json은 매수·통계에 안 쓰인다(표시용).
+- 회장님이 "종목/1위/이거/금요일 종목" 물으면 **어느 페이지인지 먼저 확인**하고 답한다. 절대 섞지 마라.
+
 ## Project Status
 
 **"이벤트 매집 레이더"** — 10일 내 자명한 글로벌 증시 이벤트(FOMC·CPI·실적)를 앞두고 **큰돈이
