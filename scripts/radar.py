@@ -105,6 +105,24 @@ def _shakeout_turnover_tier(x):
     if t > SHAKEOUT_T2D_OVERHEAT:
         return 2
     return 1
+
+
+# 💥 흔들기 고점 대비 낙폭(peak drawdown) 스윗존 — 회장님 관찰(2026-07-06 실측):
+#   −30~−45%가 최적(승자 진흥−43·삼호−31·남광−30), −55%↓ 과낙은 재료·수급 소멸로 반등 약함(동양−55·금호−50).
+SHAKEOUT_DD_SWEET_LO = -45.0   # 스윗존 하한(가장 깊음)
+SHAKEOUT_DD_SWEET_HI = -30.0   # 스윗존 상한(가장 얕음)
+
+
+def _shakeout_dd_tier(x):
+    """흔들기 고점 대비 낙폭 tier(낮을수록 우선): 0=스윗 −45~−30% / 1=인접(−55~−45·−30~−20) / 2=그외(얕음>−20·과낙<−55)."""
+    dd = x.get("peak_dd_pct")
+    if dd is None:
+        return 1
+    if SHAKEOUT_DD_SWEET_LO <= dd <= SHAKEOUT_DD_SWEET_HI:
+        return 0
+    if (-55.0 <= dd < SHAKEOUT_DD_SWEET_LO) or (SHAKEOUT_DD_SWEET_HI < dd <= -20.0):
+        return 1
+    return 2
 NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
                                    # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
@@ -1400,7 +1418,7 @@ def scan_shakeout(p):
         if turnover < SHAKEOUT_TURNOVER_MIN:
             continue
         try:
-            daily = kis.daily_prices_jmoney_un(code, days=25)   # 가격=J / 거래량=UN(통합) — 2일 회전율 산출에 사용
+            daily = kis.daily_prices_jmoney_un(code, days=60)   # 가격=J / 거래량=UN(통합) — 2일 회전율·고점낙폭 산출에 사용
         except Exception:
             continue
         closes = [b.get("close") for b in daily if b.get("close")]
@@ -1410,6 +1428,10 @@ def scan_shakeout(p):
         # 2일 합산(신호일+전일) 유통회전율 — 흔들기 순위 스윗스팟 판정용(회장님 20년 룰)
         vols = [b.get("volume") or 0 for b in daily]
         turnover_2d = (vols[-1] + vols[-2]) / fs * 100 if len(vols) >= 2 else turnover
+        # 고점 대비 낙폭(최근 60일 최고가 대비 현재가) — 흔들기 순위 낙폭 스윗존(−30~−45%) 판정용
+        highs = [b.get("high") or 0 for b in daily]
+        peak = max(highs) if highs else 0
+        peak_dd = (now["price"] / peak - 1) * 100 if peak else 0
         if now["price"] < ma20:
             continue                                  # 추세 사수 실패
         run6 = (closes[-1] / closes[-7] - 1) * 100 if (len(closes) >= 7 and closes[-7]) else None
@@ -1443,6 +1465,8 @@ def scan_shakeout(p):
             "turnover_pct": round(turnover, 1), "float_ratio": fr, "turnover_basis": "float",
             "turnover_2d_pct": round(turnover_2d, 1),   # 💥 2일 합산(신호일+전일) — 스윗스팟 순위 판정 기준
             "turnover_band": _shakeout_turnover_tier({"turnover_2d_pct": turnover_2d}),  # 0=스윗90~140 1=허용 2=과회전>180
+            "peak_dd_pct": round(peak_dd, 1),           # 💥 고점(60일) 대비 낙폭 — 스윗존 −30~−45%가 최적
+            "dd_band": _shakeout_dd_tier({"peak_dd_pct": peak_dd}),  # 0=스윗 1=인접 2=그외
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 1),
             "ma10": round(ma10, 1), "ma10_margin_pct": round((now["price"] / ma10 - 1) * 100, 2),
@@ -1595,8 +1619,8 @@ def main():
         not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
         not x.get("alert_release"),                                             # 🔓 경고 해제 예정
         not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
-        (_shakeout_turnover_tier(x) if x.get("shakeout") else 0),               # 💥 흔들기: 회전율 스윗스팟(90~120) 우선·과회전(>150) 강등
-        (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 동급이면 더 깊은 눌림 우선(진흥형)
+        ((_shakeout_turnover_tier(x) + _shakeout_dd_tier(x)) if x.get("shakeout") else 0),  # 💥 흔들기: 회전 스윗(90~140) + 고점낙폭 스윗(−30~−45) 결합 우선
+        (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 동급이면 더 강한 흔들기(fade) 우선(진흥형)
         -x["suspicion_score"]))
         # ⚠ 🧲 저점매집 '우선순위 승격'·'저회전 오름차순' 정렬 철회(2026-07-04 회장님 결정): 익일 기준 미검증
         #   (저회전<15% 폭락 표본 n=2·둘다 익일 +13% 실패, 5분봉 지문 소급 불가). 이번 주 손실의 뿌리 =
