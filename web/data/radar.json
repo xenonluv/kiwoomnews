@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06 11:15:08 KST",
+ "generated_at": "2026-07-06 11:25:03 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -89,10 +89,10 @@
    "name": "파세코",
    "sector": "파세코",
    "high_pct": 29.87,
-   "vol_turnover_pct": 106.1,
-   "value_eok": 504,
-   "price": 8610.0,
-   "change_pct": 26.06,
+   "vol_turnover_pct": 107.2,
+   "value_eok": 509,
+   "price": 8510.0,
+   "change_pct": 24.6,
    "backfill": false
   }
  ],
@@ -101,11 +101,11 @@
    "code": "037070",
    "name": "파세코",
    "sector": "파세코",
-   "change_pct": 26.06,
+   "change_pct": 24.6,
    "high_pct": 29.87,
-   "vol_turnover_pct": 106.1,
-   "value_eok": 504,
-   "price": 8610.0,
+   "vol_turnover_pct": 107.2,
+   "value_eok": 509,
+   "price": 8510.0,
    "first_seen": "09:43",
    "exploded": true
   },
@@ -113,11 +113,11 @@
    "code": "011230",
    "name": "삼화전자",
    "sector": "삼화전자",
-   "change_pct": 2.8,
+   "change_pct": 0.98,
    "high_pct": 20.84,
    "vol_turnover_pct": 74.6,
    "value_eok": 296,
-   "price": 3675.0,
+   "price": 3610.0,
    "first_seen": "09:43",
    "exploded": false
   },
@@ -127,8 +127,8 @@
    "sector": "삼호개발",
    "change_pct": 20.05,
    "high_pct": 24.93,
-   "vol_turnover_pct": 54.6,
-   "value_eok": 347,
+   "vol_turnover_pct": 56.4,
+   "value_eok": 359,
    "price": 4550.0,
    "first_seen": "11:02",
    "exploded": false
@@ -137,11 +137,11 @@
    "code": "025950",
    "name": "동신건설",
    "sector": "동신건설",
-   "change_pct": 16.02,
+   "change_pct": 14.75,
    "high_pct": 21.31,
-   "vol_turnover_pct": 53.2,
-   "value_eok": 235,
-   "price": 16440.0,
+   "vol_turnover_pct": 54.7,
+   "value_eok": 242,
+   "price": 16260.0,
    "first_seen": "11:02",
    "exploded": false
   }
