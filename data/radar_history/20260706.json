@@ -17,7 +17,7 @@
    "prime": false,
    "theme": "",
    "value_eok": 629,
-   "turnover_pct": 162.6,
+   "turnover_pct": 162.7,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -282,7 +282,7 @@
    "prime": false,
    "theme": "반도체",
    "value_eok": 310,
-   "turnover_pct": 89.8,
+   "turnover_pct": 89.9,
    "peak_turnover_pct": 159.5,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -562,7 +562,7 @@
    "pattern": "shakeout",
    "prime": false,
    "theme": "",
-   "value_eok": 460,
+   "value_eok": 461,
    "turnover_pct": 54.6,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
@@ -583,7 +583,7 @@
    "alert_release": null,
    "shakeout": true,
    "fade_pct": 15.6,
-   "turnover_2d_pct": 153.8,
+   "turnover_2d_pct": 153.9,
    "peak_dd_pct": -35.0,
    "strength_tier": 1,
    "strength": "Tier2(중강)",
@@ -613,7 +613,7 @@
    "prime": false,
    "theme": "",
    "value_eok": 70,
-   "turnover_pct": 47.4,
+   "turnover_pct": 47.5,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -648,5 +648,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-06 15:43:52 KST"
+ "as_of": "2026-07-06 15:53:48 KST"
 }
