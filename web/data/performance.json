@@ -1,5 +1,5 @@
 {
- "as_of": "2026-07-06 15:45 KST",
+ "as_of": "2026-07-06 15:53 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -576,6 +576,52 @@
   "n": 48,
   "live_n": 0,
   "backfill_n": 48,
+  "by_rule_cohort": [
+   {
+    "cohort": "룰충족(적정회전+깊은눌림)",
+    "n": 5,
+    "hit_rate": 20.0,
+    "avg_return": -5.03,
+    "avg_high": 12.86,
+    "touch7_rate": 40.0,
+    "touch11_rate": 40.0,
+    "touch13_rate": 40.0,
+    "valid": false
+   },
+   {
+    "cohort": "적정회전만",
+    "n": 9,
+    "hit_rate": 11.1,
+    "avg_return": -4.92,
+    "avg_high": 8.6,
+    "touch7_rate": 44.4,
+    "touch11_rate": 44.4,
+    "touch13_rate": 22.2,
+    "valid": false
+   },
+   {
+    "cohort": "깊은눌림만",
+    "n": 6,
+    "hit_rate": 66.7,
+    "avg_return": 14.93,
+    "avg_high": 26.59,
+    "touch7_rate": 100.0,
+    "touch11_rate": 100.0,
+    "touch13_rate": 100.0,
+    "valid": false
+   },
+   {
+    "cohort": "그외",
+    "n": 28,
+    "hit_rate": 50.0,
+    "avg_return": -1.17,
+    "avg_high": 16.77,
+    "touch7_rate": 82.1,
+    "touch11_rate": 75.0,
+    "touch13_rate": 67.9,
+    "valid": true
+   }
+  ],
   "by_turnover_2d": [
    {
     "band": "부족 <90",
@@ -584,6 +630,7 @@
     "avg_return": 6.7,
     "avg_high": 18.6,
     "touch7_rate": 100.0,
+    "touch11_rate": 100.0,
     "touch13_rate": 100.0,
     "valid": false
    },
@@ -594,6 +641,7 @@
     "avg_return": -4.96,
     "avg_high": 10.12,
     "touch7_rate": 42.9,
+    "touch11_rate": 42.9,
     "touch13_rate": 28.6,
     "valid": true
    },
@@ -604,6 +652,7 @@
     "avg_return": -4.38,
     "avg_high": 17.49,
     "touch7_rate": 87.5,
+    "touch11_rate": 87.5,
     "touch13_rate": 62.5,
     "valid": false
    },
@@ -614,6 +663,7 @@
     "avg_return": 2.78,
     "avg_high": 18.87,
     "touch7_rate": 81.0,
+    "touch11_rate": 71.4,
     "touch13_rate": 71.4,
     "valid": true
    }
@@ -626,6 +676,7 @@
     "avg_return": -23.61,
     "avg_high": 16.7,
     "touch7_rate": 100.0,
+    "touch11_rate": 100.0,
     "touch13_rate": 100.0,
     "valid": false
    },
@@ -636,6 +687,7 @@
     "avg_return": 3.45,
     "avg_high": 19.39,
     "touch7_rate": 70.0,
+    "touch11_rate": 70.0,
     "touch13_rate": 70.0,
     "valid": true
    },
@@ -646,6 +698,7 @@
     "avg_return": -0.63,
     "avg_high": 15.14,
     "touch7_rate": 73.0,
+    "touch11_rate": 67.6,
     "touch13_rate": 56.8,
     "valid": true
    }
@@ -658,6 +711,7 @@
     "avg_return": -5.03,
     "avg_high": 12.86,
     "touch7_rate": 40.0,
+    "touch11_rate": 40.0,
     "touch13_rate": 40.0,
     "valid": false
    },
@@ -668,6 +722,7 @@
     "avg_return": 5.24,
     "avg_high": 20.76,
     "touch7_rate": 100.0,
+    "touch11_rate": 100.0,
     "touch13_rate": 66.7,
     "valid": false
    },
@@ -678,6 +733,7 @@
     "avg_return": 1.27,
     "avg_high": 14.48,
     "touch7_rate": 64.7,
+    "touch11_rate": 64.7,
     "touch13_rate": 52.9,
     "valid": true
    },
@@ -688,6 +744,7 @@
     "avg_return": -1.08,
     "avg_high": 17.31,
     "touch7_rate": 82.6,
+    "touch11_rate": 73.9,
     "touch13_rate": 69.6,
     "valid": true
    }

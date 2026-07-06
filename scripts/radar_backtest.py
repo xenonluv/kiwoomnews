@@ -31,6 +31,10 @@ if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
 else:
     import kiwoom_client as kis
 
+# 흔들기 스윗존 경계는 radar.py를 SSOT로 import(정의 드리프트 차단) — 회장님 룰 결합코호트 판정에 사용.
+from radar import (SHAKEOUT_T2D_SWEET_LO, SHAKEOUT_T2D_SWEET_HI,
+                   SHAKEOUT_DD_SWEET_LO, SHAKEOUT_DD_SWEET_HI)
+
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
@@ -538,24 +542,47 @@ SHAKEOUT_TIER_BANDS = [("Tier1(강)", 0, 1), ("Tier2(중강)", 1, 2),
                        ("Tier3(중)", 2, 3), ("Tier4(약)", 3, 5)]
 
 
+def _shakeout_stat(grp):
+    """흔들기 표본군의 익일 성적 — 적중률·평균수익·평균고가 + 익절터치율(+7 부분·+11 전량·+13 참고).
+    터치선(+7/+11)은 회장님 실제 매도 기준(+7% 50%익절/+11% 잔량익절)에 정렬."""
+    hits = sum(1 for s in grp if s["hit"])
+    rets = [s["return_pct"] for s in grp]
+    highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
+    def touch(x):
+        return round(sum(1 for h in highs if h >= x) / len(highs) * 100, 1) if highs else None
+    return {
+        "n": len(grp),
+        "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+        "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+        "avg_high": round(sum(highs) / len(highs), 2) if highs else None,   # 익일 평균 고가 도달폭
+        "touch7_rate": touch(7), "touch11_rate": touch(11), "touch13_rate": touch(13),
+        "valid": len(grp) >= FEATURE_MIN_N,
+    }
+
+
 def _shakeout_cells(known, keyfn, bands):
-    """흔들기 밴드 셀 — 적중률·평균수익 + 익일고가 평균·익절터치율(+7/+13%, 회장님 실제 익절선)."""
-    cells = []
-    for label, lo, hi in bands:
-        grp = [s for s in known if keyfn(s) is not None and lo <= keyfn(s) < hi]
-        hits = sum(1 for s in grp if s["hit"])
-        rets = [s["return_pct"] for s in grp]
-        highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
-        cells.append({
-            "band": label, "n": len(grp),
-            "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
-            "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
-            "avg_high": round(sum(highs) / len(highs), 2) if highs else None,   # 익일 평균 고가 도달폭
-            "touch7_rate": round(sum(1 for h in highs if h >= 7) / len(highs) * 100, 1) if highs else None,
-            "touch13_rate": round(sum(1 for h in highs if h >= 13) / len(highs) * 100, 1) if highs else None,
-            "valid": len(grp) >= FEATURE_MIN_N,
-        })
-    return cells
+    """흔들기 밴드 셀(단일 축)."""
+    return [{"band": label, **_shakeout_stat([s for s in known
+                                              if keyfn(s) is not None and lo <= keyfn(s) < hi])}
+            for label, lo, hi in bands]
+
+
+def _rule_flags(s):
+    """(적정회전 여부, 깊은눌림 여부) — radar 스윗존 상수 SSOT. 결측이면 None."""
+    t, dd = s.get("turnover_2d_pct"), s.get("peak_dd_pct")
+    if t is None or dd is None:
+        return None
+    return (SHAKEOUT_T2D_SWEET_LO <= t <= SHAKEOUT_T2D_SWEET_HI,
+            SHAKEOUT_DD_SWEET_LO <= dd <= SHAKEOUT_DD_SWEET_HI)
+
+
+def shakeout_rule_cohorts(known):
+    """💥 회장님 20년룰 결합(AND) 코호트 — 축을 쪼개지 않고 '적정회전 AND 깊은눌림'을 있는 그대로 검정.
+    룰충족(둘 다) vs 적정회전만 vs 깊은눌림만 vs 그외 — 4코호트 익일 성적. 매도 기준(+7/+11) 터치율로 판정."""
+    defs = [("룰충족(적정회전+깊은눌림)", (True, True)), ("적정회전만", (True, False)),
+            ("깊은눌림만", (False, True)), ("그외", (False, False))]
+    return [{"cohort": label, **_shakeout_stat([s for s in known if _rule_flags(s) == flags])}
+            for label, flags in defs]
 
 
 def load_shakeout_backfill():
@@ -578,6 +605,8 @@ def shakeout_band_stats(shakeout_samples):
         "min_n": FEATURE_MIN_N, "n": len(known),
         # 표본 출처 구분(정직) — live=오늘부터 라이브 게시분, backfill=일봉 소급 재구성분(생존편향 주의).
         "live_n": len(known) - backfill_n, "backfill_n": backfill_n,
+        # 🎯 회장님 룰 = 결합(AND) 코호트 — 주 판정축(축 분리 밴드는 참고).
+        "by_rule_cohort": shakeout_rule_cohorts(known),
         "by_turnover_2d": _shakeout_cells(known, lambda s: s.get("turnover_2d_pct"), SHAKEOUT_T2D_BANDS),
         "by_peak_dd": _shakeout_cells(known, lambda s: s.get("peak_dd_pct"), SHAKEOUT_DD_BANDS),
         "by_strength_tier": _shakeout_cells(known, lambda s: s.get("strength_tier"), SHAKEOUT_TIER_BANDS),
