@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06 09:45:09 KST",
+ "generated_at": "2026-07-06 10:15:13 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -30,7 +30,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 7,
+ "universe_count": 9,
  "events": [
   {
    "id": "2026-07-07_삼성전자 2분기 잠정실",
@@ -83,29 +83,41 @@
    "estimated": true
   }
  ],
- "explosions": [],
- "youtong": [
-  {
-   "code": "011230",
-   "name": "삼화전자",
-   "sector": "삼화전자",
-   "change_pct": 15.38,
-   "high_pct": 20.84,
-   "vol_turnover_pct": 74.6,
-   "value_eok": 296,
-   "price": 4125.0,
-   "first_seen": "09:43",
-   "exploded": false
-  },
+ "explosions": [
   {
    "code": "037070",
    "name": "파세코",
    "sector": "파세코",
-   "change_pct": 29.87,
    "high_pct": 29.87,
-   "vol_turnover_pct": 70.0,
-   "value_eok": 328,
-   "price": 8870.0,
+   "vol_turnover_pct": 93.2,
+   "value_eok": 441,
+   "price": 8610.0,
+   "change_pct": 26.06,
+   "backfill": false
+  }
+ ],
+ "youtong": [
+  {
+   "code": "037070",
+   "name": "파세코",
+   "sector": "파세코",
+   "change_pct": 26.06,
+   "high_pct": 29.87,
+   "vol_turnover_pct": 93.2,
+   "value_eok": 441,
+   "price": 8610.0,
+   "first_seen": "09:43",
+   "exploded": true
+  },
+  {
+   "code": "011230",
+   "name": "삼화전자",
+   "sector": "삼화전자",
+   "change_pct": 10.49,
+   "high_pct": 20.84,
+   "vol_turnover_pct": 86.8,
+   "value_eok": 345,
+   "price": 3950.0,
    "first_seen": "09:43",
    "exploded": false
   }
