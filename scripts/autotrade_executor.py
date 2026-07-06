@@ -102,8 +102,8 @@ def run(slot, dry=True):
         ac.log(f"[exec:{slot}] 매수 자격 종목 없음 (선택 랭크 {ranks})")
         return
 
-    # 당일 예산 100만원을 '남은 자격종목 수'로 균등분할(초과·미달 없이 슬롯 간 안전 배분).
-    remaining_budget = ac.DAILY_BUDGET - ac.deployed_today(data)
+    # 당일 총예산(웹 설정 KV, 기본 100만)을 '남은 자격종목 수'로 균등분할(초과·미달 없이 슬롯 간 안전 배분).
+    remaining_budget = ac.read_budget() - ac.deployed_today(data)
     per_stock = remaining_budget // max(1, len(eligible))
     if per_stock <= 0:
         ac.log(f"[exec:{slot}] 잔여 예산 0 — 매수 안 함")

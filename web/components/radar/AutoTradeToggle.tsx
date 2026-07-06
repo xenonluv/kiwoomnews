@@ -8,16 +8,28 @@ import { autoTradeClientService } from "@/services/autotrade.client";
 
 type Suspect = { code?: string; name?: string };
 
+const BUDGET_MIN = 10_000;
+const BUDGET_MAX = 100_000_000;
+const BUDGET_DEFAULT = 1_000_000;
+const PRESETS_MAN = [50, 100, 200, 300, 500]; // 만원 빠른버튼
+
+function clampBudget(won: number): number {
+  if (!Number.isFinite(won)) return BUDGET_DEFAULT;
+  return Math.max(BUDGET_MIN, Math.min(BUDGET_MAX, Math.floor(won)));
+}
+
 /**
- * 🤖 자동매매 On/Off + 상위 1~3위 개별 선택(최대 2종목) — 매일 종가(15:18 KRX / NXT 19:50)에
- * 선택 종목을 실계좌로 매수(당일 100만원을 선택 종목수로 균등분할: 2종목=각 50만 / 1종목=100만),
- * -5% 손절 / +7% 50%익절 / +11% 잔량익절 / 본전방어 · 익일 14:50 강제청산으로 청산한다.
- * 웹은 KV(enabled·ranks)만 세팅하고, 실제 주문은 실행기(autotrade_executor.py)가 낸다. ⚠ 실제 손익 발생.
+ * 🤖 자동매매 On/Off + 상위 1~3위 개별 선택(최대 2종목) + 당일 총예산 설정 —
+ * 매일 종가(15:18 KRX / NXT 19:50)에 선택 종목을 실계좌 매수(총예산을 선택 종목수로 균등분할),
+ * -5% 손절 / +7% 50%익절 / +11% 잔량익절 / 본전방어 · 익일 14:50 강제청산으로 청산.
+ * 웹은 KV(enabled·ranks·budget)만 세팅, 실제 주문은 실행기(autotrade_executor.py)가 낸다. ⚠ 실제 손익 발생.
  */
 export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
   const top = suspects.slice(0, 3);
   const [enabled, setEnabled] = useState(false);
   const [ranks, setRanks] = useState<number[]>([1]);
+  const [budget, setBudget] = useState<number>(BUDGET_DEFAULT);
+  const [manInput, setManInput] = useState<string>(String(BUDGET_DEFAULT / 10_000));
   const [configured, setConfigured] = useState(true);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
@@ -30,6 +42,9 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
         if (!alive) return;
         setEnabled(s.enabled);
         setRanks(s.ranks?.length ? s.ranks : [1]);
+        const b = s.budget || BUDGET_DEFAULT;
+        setBudget(b);
+        setManInput(String(Math.round(b / 10_000)));
         setConfigured(s.configured);
       })
       .catch(() => {});
@@ -38,20 +53,31 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
     };
   }, []);
 
-  const perStock = ranks.length ? Math.floor(1_000_000 / ranks.length) : 1_000_000;
+  const perStock = Math.floor(budget / (ranks.length || 1));
 
-  async function save(nextEnabled: boolean, nextRanks: number[]) {
+  async function save(nextEnabled: boolean, nextRanks: number[], nextBudget: number) {
     setBusy(true);
     setErr("");
     try {
-      const s = await autoTradeClientService.set(nextEnabled, nextRanks);
+      const s = await autoTradeClientService.set(nextEnabled, nextRanks, nextBudget);
       setEnabled(s.enabled);
       setRanks(s.ranks?.length ? s.ranks : [1]);
+      const b = s.budget || BUDGET_DEFAULT;
+      setBudget(b);
+      setManInput(String(Math.round(b / 10_000)));
     } catch (e) {
       setErr(e instanceof Error ? e.message : "실패");
     } finally {
       setBusy(false);
     }
+  }
+
+  function commitBudget(man: number) {
+    if (busy || !configured) return;
+    const b = clampBudget(Math.round(man) * 10_000);
+    setBudget(b);
+    setManInput(String(b / 10_000));
+    void save(enabled, ranks, b); // 설정 저장(매수는 마스터 토글+실행기 게이트가 별도 통제)
   }
 
   function toggleRank(r: number) {
@@ -63,14 +89,12 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
       next = [...ranks, r].sort();
     }
     if (enabled) {
-      // 켜진 상태: 실매수 대상이 바뀌므로 즉시 KV 반영.
       if (next.length === 0) {
-        // 모든 순위 해제 = 자동매매 중단(마스터 OFF까지 저장 — UI만 비고 실행기는 계속 사는 괴리 방지).
         setRanks(next);
-        void save(false, next);
+        void save(false, next, budget); // 모든 순위 해제 = 자동매매 중단(마스터 OFF까지 저장)
         return;
       }
-      const per = Math.floor(1_000_000 / next.length);
+      const per = Math.floor(budget / next.length);
       const lines = next
         .map((x) => `${x}위 ${top[x - 1]?.name ?? "-"}: ${per.toLocaleString()}원`)
         .join("\n");
@@ -79,11 +103,11 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
           `자동매매 대상을 변경합니다:\n\n${lines}\n\n실제 매수 종목·금액이 바뀝니다. 계속할까요?`
         )
       )
-        return; // 취소 → 로컬 상태도 그대로 유지(변경 안 함)
+        return; // 취소 → 상태 유지
       setRanks(next);
-      void save(true, next);
+      void save(true, next, budget);
     } else {
-      setRanks(next); // 꺼진 상태: 로컬만(마스터 켤 때 저장)
+      setRanks(next); // 꺼진 상태: 로컬만
     }
   }
 
@@ -95,18 +119,19 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
         setErr("매수할 순위를 최소 1개 선택하세요");
         return;
       }
+      const per = Math.floor(budget / ranks.length);
       const lines = ranks
-        .map((r) => `${r}위 ${top[r - 1]?.name ?? "-"}: ${perStock.toLocaleString()}원`)
+        .map((r) => `${r}위 ${top[r - 1]?.name ?? "-"}: ${per.toLocaleString()}원`)
         .join("\n");
       if (
         !window.confirm(
-          `자동매매를 켭니다.\n\n매일 종가(15:18 / NXT 19:50)에 아래 종목을 실계좌 매수합니다:\n\n${lines}\n\n` +
-            `실제 주문·실제 손익이 발생합니다. 계속할까요?`
+          `자동매매를 켭니다.\n\n매일 종가(15:18 / NXT 19:50)에 아래 종목을 실계좌 매수합니다 ` +
+            `(당일 총예산 ${budget.toLocaleString()}원):\n\n${lines}\n\n실제 주문·실제 손익이 발생합니다. 계속할까요?`
         )
       )
         return;
     }
-    void save(next, ranks);
+    void save(next, ranks, budget);
   }
 
   return (
@@ -143,8 +168,44 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
           {busy ? "…" : enabled ? "ON" : "OFF"}
         </span>
         <span className="text-xs text-muted-foreground">
-          선택 {ranks.length}종목 · 각 {perStock.toLocaleString()}원 (당일 100만 분할)
+          선택 {ranks.length}종목 · 각 {perStock.toLocaleString()}원 (총예산 {budget.toLocaleString()} 분할)
         </span>
+      </div>
+
+      {/* 당일 총예산 설정 (만원) */}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <span className="text-xs text-muted-foreground">당일 총예산</span>
+        <div className="flex items-center gap-1">
+          <input
+            type="number"
+            inputMode="numeric"
+            value={manInput}
+            disabled={busy || !configured}
+            onChange={(e) => setManInput(e.target.value)}
+            onBlur={() => commitBudget(Number(manInput) || 0)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") commitBudget(Number(manInput) || 0);
+            }}
+            className="w-20 rounded-md border border-white/15 bg-white/[0.04] px-2 py-1 text-right text-sm tabular-nums outline-none focus:border-down/60"
+          />
+          <span className="text-xs text-muted-foreground">만원</span>
+        </div>
+        {PRESETS_MAN.map((m) => (
+          <button
+            key={m}
+            type="button"
+            onClick={() => commitBudget(m)}
+            disabled={busy || !configured}
+            className={cn(
+              "rounded-md border px-2 py-1 text-xs tabular-nums transition-colors disabled:opacity-40",
+              budget === m * 10_000
+                ? "border-down/60 bg-down/[0.12] text-down"
+                : "border-white/10 bg-white/[0.02] hover:border-white/25"
+            )}
+          >
+            {m}만
+          </button>
+        ))}
       </div>
 
       {/* 상위 3위 개별 선택 (최대 2) */}
@@ -189,7 +250,7 @@ export function AutoTradeToggle({ suspects = [] }: { suspects?: Suspect[] }) {
           ? "KV 미설정 — 토글 비활성(Upstash 연결 필요)"
           : err
             ? err
-            : "실계좌 종가 자동매수(최대 2종목·100만 분할) · -5% 손절/+7% 50%익절/+11% 익절 · 실제 손익 발생"}
+            : "실계좌 종가 자동매수(최대 2종목·총예산 분할) · -5% 손절/+7% 50%익절/+11% 익절 · 실제 손익 발생"}
       </p>
     </div>
   );

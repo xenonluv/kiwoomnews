@@ -135,6 +135,23 @@ def autotrade_enabled():
     return kv_get("autotrade:enabled") == "1"
 
 
+BUDGET_MIN = 10_000          # 당일 총예산 하한(오타 방지)
+BUDGET_MAX = 100_000_000     # 당일 총예산 상한(1억, 오타 폭주 방지)
+
+
+def read_budget():
+    """당일 총예산(원). KV autotrade:budget → int·clamp(1만~1억), 실패/미설정 시 DAILY_BUDGET(100만).
+    테스트훅 AUTOTRADE_BUDGET(env) 우선."""
+    raw = os.environ.get("AUTOTRADE_BUDGET")
+    if raw is None:
+        raw = kv_get("autotrade:budget")
+    try:
+        v = int(float(str(raw).strip()))
+    except (TypeError, ValueError):
+        return DAILY_BUDGET
+    return max(BUDGET_MIN, min(BUDGET_MAX, v))
+
+
 def read_ranks():
     """매수할 레이더 랭크 리스트(1~3, 최대 2, 기본 [1]). KV autotrade:ranks(CSV "1,2").
     테스트훅 AUTOTRADE_RANKS(env)가 있으면 그것을 우선."""

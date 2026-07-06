@@ -10,6 +10,10 @@ export const dynamic = "force-dynamic";
 
 const K_EN = "autotrade:enabled";
 const K_RANKS = "autotrade:ranks";
+const K_BUDGET = "autotrade:budget";
+const BUDGET_MIN = 10_000;
+const BUDGET_MAX = 100_000_000;
+const BUDGET_DEFAULT = 1_000_000;
 
 function parseRanks(raw: unknown): number[] {
   const out: number[] = [];
@@ -21,23 +25,35 @@ function parseRanks(raw: unknown): number[] {
   return out.slice(0, 2); // 최대 2
 }
 
+function parseBudget(raw: unknown): number {
+  const v = typeof raw === "number" ? raw : parseInt(String(raw ?? "").trim(), 10);
+  if (!Number.isFinite(v)) return BUDGET_DEFAULT;
+  return Math.max(BUDGET_MIN, Math.min(BUDGET_MAX, Math.floor(v)));
+}
+
 export async function GET() {
-  if (!kvConfigured()) return NextResponse.json({ enabled: false, ranks: [1], configured: false });
+  if (!kvConfigured())
+    return NextResponse.json({ enabled: false, ranks: [1], budget: BUDGET_DEFAULT, configured: false });
   try {
-    const [en, ranks] = await Promise.all([kvCommand(["GET", K_EN]), kvCommand(["GET", K_RANKS])]);
+    const [en, ranks, budget] = await Promise.all([
+      kvCommand(["GET", K_EN]),
+      kvCommand(["GET", K_RANKS]),
+      kvCommand(["GET", K_BUDGET]),
+    ]);
     const parsed = parseRanks(ranks as string);
     return NextResponse.json({
       enabled: en === "1",
       ranks: parsed.length ? parsed : [1],
+      budget: budget != null ? parseBudget(budget as string) : BUDGET_DEFAULT,
       configured: true,
     });
   } catch {
-    return NextResponse.json({ enabled: false, ranks: [1], configured: true });
+    return NextResponse.json({ enabled: false, ranks: [1], budget: BUDGET_DEFAULT, configured: true });
   }
 }
 
 export async function POST(req: NextRequest) {
-  let body: { enabled?: unknown; ranks?: unknown };
+  let body: { enabled?: unknown; ranks?: unknown; budget?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -45,13 +61,20 @@ export async function POST(req: NextRequest) {
   }
   const enabled = body.enabled === true;
   const ranks = parseRanks(body.ranks);
+  const budget = body.budget != null ? parseBudget(body.budget) : null;
   if (enabled && ranks.length === 0)
     return NextResponse.json({ error: "매수할 랭크를 최소 1개 선택하세요" }, { status: 400 });
   if (!kvConfigured()) return NextResponse.json({ error: "KV not configured" }, { status: 503 });
   try {
     await kvCommand(["SET", K_EN, enabled ? "1" : "0"]);
     if (ranks.length) await kvCommand(["SET", K_RANKS, ranks.join(",")]);
-    return NextResponse.json({ enabled, ranks: ranks.length ? ranks : [1], configured: true });
+    if (budget != null) await kvCommand(["SET", K_BUDGET, String(budget)]);
+    return NextResponse.json({
+      enabled,
+      ranks: ranks.length ? ranks : [1],
+      budget: budget ?? BUDGET_DEFAULT,
+      configured: true,
+    });
   } catch (e) {
     return NextResponse.json({ error: `저장 실패: ${String(e).slice(0, 80)}` }, { status: 502 });
   }
