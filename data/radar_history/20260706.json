@@ -48,20 +48,20 @@
   "001260": {
    "name": "남광토건",
    "sector": "남광토건",
-   "entry": 10040.0,
+   "entry": 9920.0,
    "score": 0,
    "breakdown": {},
    "suspicion_score": 70,
    "score_breakdown_display": {},
    "rank": 1,
-   "change_pct": 7.73,
+   "change_pct": 6.44,
    "change_basis": "KRX",
    "high_pct": 26.39,
    "pattern": "shakeout",
    "prime": false,
    "theme": "",
-   "value_eok": 192,
-   "turnover_pct": 48.2,
+   "value_eok": 196,
+   "turnover_pct": 49.3,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -80,7 +80,7 @@
    "alert_now": null,
    "alert_release": null,
    "shakeout": true,
-   "fade_pct": 18.7,
+   "fade_pct": 20.0,
    "tp_hint": "+15% (양극단·표본소)",
    "forecast": null,
    "matched_events": [],
@@ -134,5 +134,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-06 13:35:11 KST"
+ "as_of": "2026-07-06 13:55:07 KST"
 }
