@@ -22,7 +22,9 @@ RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 POS_PATH = os.path.join(REPO, "data", "autotrade_positions.json")
 LOG_PATH = os.path.join(REPO, "autotrade.log")
 
-BUY_KRW = 1_000_000          # 고정 매수 금액
+BUY_KRW = 1_000_000          # (하위호환) 단일 매수 금액
+DAILY_BUDGET = 1_000_000     # 당일 총예산 — 최대 2종목 다종베 시 실제 매수 종목수로 균등분할
+MAX_AUTOTRADE_STOCKS = 2     # 하루 최대 매수 종목 수(회장님 지시)
 STOP_LOSS_PCT = -5.0         # 전량 손절
 TP1_PCT = 7.0                # 1차 익절(50%)
 TP1_FRACTION = 0.5
@@ -133,6 +135,23 @@ def autotrade_enabled():
     return kv_get("autotrade:enabled") == "1"
 
 
+def read_ranks():
+    """매수할 레이더 랭크 리스트(1~3, 최대 2, 기본 [1]). KV autotrade:ranks(CSV "1,2").
+    테스트훅 AUTOTRADE_RANKS(env)가 있으면 그것을 우선."""
+    raw = os.environ.get("AUTOTRADE_RANKS")
+    if raw is None:
+        raw = kv_get("autotrade:ranks")
+    ranks = []
+    for tok in (raw or "").split(","):
+        tok = tok.strip()
+        if tok.isdigit():
+            r = int(tok)
+            if 1 <= r <= 3 and r not in ranks:
+                ranks.append(r)
+    ranks = ranks[:MAX_AUTOTRADE_STOCKS]
+    return ranks or [1]
+
+
 # ── 포지션 파일 ──────────────────────────────────────────────────────
 def load_positions():
     """포지션 로드. 파일 부재=정상 빈 상태. 파일 존재하나 읽기 실패=상태 불명 → 예외 전파(fail-closed).
@@ -176,10 +195,28 @@ def open_positions(data=None):
 
 
 def bought_today(data=None):
-    """오늘 이미 진입한 포지션이 있으면 True(일 1회 매수 디둡)."""
+    """오늘 이미 진입한 포지션이 있으면 True(일 1회 매수 디둡). (단일종목 레거시)"""
     data = data or load_positions()
     t = today_str()
     return any(p.get("entry_date") == t for p in data["positions"])
+
+
+def already_bought(code, data=None):
+    """오늘 그 코드를 이미 매수했으면 True(다종목: 코드별 디둡)."""
+    data = data or load_positions()
+    t = today_str()
+    return any(p.get("code") == code and p.get("entry_date") == t for p in data["positions"])
+
+
+def todays_positions(data=None):
+    data = data or load_positions()
+    t = today_str()
+    return [p for p in data["positions"] if p.get("entry_date") == t]
+
+
+def deployed_today(data=None):
+    """오늘 이미 집행한 매수 예산 합(alloc_krw). 슬롯 간 예산-안전 배분용."""
+    return sum((p.get("alloc_krw") or 0) for p in todays_positions(data))
 
 
 # ── 레이더 1위 + 안전필터 ────────────────────────────────────────────
@@ -194,6 +231,18 @@ def top_suspect():
         return None
     sus = d.get("suspects") or []
     return sus[0] if sus else None
+
+
+def top_suspects(n=1):
+    """메인 레이더 상위 n종목(suspects[:n]). 없으면 []."""
+    if not os.path.exists(RADAR_JSON):
+        return []
+    try:
+        d = json.load(open(RADAR_JSON, encoding="utf-8"))
+    except Exception as e:
+        log(f"[radar] radar.json 로드 실패: {e}")
+        return []
+    return (d.get("suspects") or [])[:n]
 
 
 def reconcile(data=None, acct=None):
