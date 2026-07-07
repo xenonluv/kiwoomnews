@@ -638,7 +638,7 @@ def _very_good_tier_of(s):
 def very_good_tier_stats(shakeout_samples):
     """⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리.
 
-    ChangeBandStats 구조로 웹 HitBandTable 재사용. 후보는 표시·검증용이며 자동매매 승격 대상이 아니다.
+    ChangeBandStats 구조로 웹 HitBandTable 재사용. 후보는 일반 흔들기보다 우선 정렬되는 관찰 구간이다.
     """
     known = [s for s in shakeout_samples if _very_good_tier_of(s) is not None]
     defs = [

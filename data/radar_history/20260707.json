@@ -75,7 +75,7 @@
     "peak_turnover": 0,
     "re_turnover": 2
    },
-   "rank": 12,
+   "rank": 13,
    "change_pct": -19.41,
    "change_basis": "KRX",
    "high_pct": -1.32,
@@ -141,6 +141,8 @@
    "dd_band": null,
    "dd6_pct": null,
    "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
    "tp_hint": null,
    "forecast": {
     "horizon": "3일 내 +7%",
@@ -154,7 +156,7 @@
    "first_seen": "2026-07-07 11:03:44 KST",
    "evaluated": false,
    "result": null,
-   "final": false
+   "final": true
   },
   "004830": {
    "name": "덕성",
@@ -284,15 +286,15 @@
     "peak_turnover": 1,
     "re_turnover": 0
    },
-   "rank": 12,
+   "rank": 14,
    "change_pct": -11.78,
    "change_basis": "KRX",
    "high_pct": 0.37,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 162,
-   "turnover_pct": 21.7,
+   "value_eok": 163,
+   "turnover_pct": 21.8,
    "peak_turnover_pct": 99.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -350,6 +352,8 @@
    "dd_band": null,
    "dd6_pct": null,
    "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
    "tp_hint": null,
    "forecast": {
     "horizon": "3일 내 +7%",
@@ -367,7 +371,7 @@
    "first_seen": "2026-07-07 11:53:44 KST",
    "evaluated": false,
    "result": null,
-   "final": false
+   "final": true
   },
   "001210": {
    "name": "금호전기",
@@ -750,7 +754,7 @@
    "peak_turnover_pct": 106.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": true,
+   "theme_leader": false,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -1478,5 +1482,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-07 20:53:50 KST"
+ "as_of": "2026-07-07 20:55:24 KST"
 }

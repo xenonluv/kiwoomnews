@@ -317,8 +317,6 @@ def safety_ok(suspect):
         return False, "레이더 1위 없음(빈 레이더)"
     if suspect.get("change_basis") == "NXT":
         return False, "change_basis=NXT(야간가 기준 — 정규장 실거래 아님)"
-    if suspect.get("very_good_candidate") and not suspect.get("very_good"):
-        return False, "매우좋음 후보(-30<dd6≤-25)는 표시·검증용 — 자동매수 제외"
     # ⚠ 경고/위험 자동매수 차단 폐지(회장님 지시 2026-07-06): 재료 강하면 경고받고도 급등.
     #   배지로 경고 상태는 노출되며, 매매 종목 선택 책임은 회장님(개별 랭크 선택). 거래정지 리스크 감수 결정.
     return True, "ok"

@@ -155,7 +155,7 @@ def _very_good_tier(dd6):
 
 
 def _very_good_sort_rank(x):
-    """매우좋음 내부 정렬: Tier1(적정 깊은눌림) → Tier2(과낙). 후보는 최상단 승격 안 함."""
+    """매우좋음 내부 정렬: Tier1(적정 깊은눌림) → Tier2(과낙)."""
     return {"tier1": 0, "tier2": 1}.get(x.get("very_good_tier"), 9)
 NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
                                    # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
@@ -1518,7 +1518,7 @@ def scan_shakeout(p, extra_codes=None):
             "dd6_pct": round(dd6, 1),                   # ⭐ 6일 고점 대비 낙폭
             "very_good": vg_tier in ("tier1", "tier2"),  # ⭐ 매우좋음(흔들기 AND dd6≤-30) — rank 최상단 승격
             "very_good_tier": vg_tier,                  # tier1/tier2/candidate — dd6 전용 티어
-            "very_good_candidate": vg_tier == "candidate",  # ⭐후보(-30<dd6≤-25) — 표시만, 자동매매 승격 없음
+            "very_good_candidate": vg_tier == "candidate",  # ⭐후보(-30<dd6≤-25) — 일반 흔들기보다 우선
             "strength_tier": stier, "strength": _shakeout_strength(stier),  # 강도 등급(종베 선택 보조)
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 1),
@@ -1668,7 +1668,7 @@ def main():
                 "turnover_band": r.get("turnover_band"), "dd_band": r.get("dd_band"),
                 "strength_tier": r.get("strength_tier"), "strength": r.get("strength"),
                 "tp_hint": r.get("tp_hint"),
-                # ⭐ 매우좋음 플래그 유지(누락 시 rank 승격 실패). 후보는 표시만, 자동매매 승격 없음.
+                # ⭐ 매우좋음 플래그 유지(누락 시 rank 승격 실패). 후보는 일반 흔들기보다 우선.
                 "dd6_pct": r.get("dd6_pct"), "very_good": r.get("very_good"),
                 "very_good_tier": r.get("very_good_tier"),
                 "very_good_candidate": r.get("very_good_candidate"),
@@ -1691,6 +1691,7 @@ def main():
         #   재료 강하면 경고받고도 급등 — 매매 선택은 회장님이 개별로.
         not x.get("very_good"),                                                 # ⭐ 매우좋음(흔들기 AND dd6≤-30) 절대 최상단(rank 1) — 전수조사 72%
         _very_good_sort_rank(x),                                                # 매우좋음 내부: Tier1(−45~-30) → Tier2(≤−45 과낙)
+        not x.get("very_good_candidate"),                                       # ☆ 매우좋음 후보(-30<dd6≤-25) — 일반 흔들기보다 우선
         not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
         not x.get("alert_release"),                                             # 🔓 경고 해제 예정(긍정 신호 — 최상단 승격 유지)
         not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)

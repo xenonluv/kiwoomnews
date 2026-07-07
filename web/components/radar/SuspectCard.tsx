@@ -79,7 +79,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
               <Badge
                 variant="outline"
                 className="border-[#f59e0b]/70 px-2 py-1 font-bold text-[#fbbf24]"
-                title="⭐ 매우좋음 후보 — 흔들기 AND 6일 고점 대비 낙폭 −25~-30%. 가격이 더 눌리면 매우좋음으로 재진입할 수 있지만, 후보는 최상단 승격·자동매매 승격 대상이 아님"
+                title="⭐ 매우좋음 후보 — 흔들기 AND 6일 고점 대비 낙폭 −25~-30%. 가격이 더 눌리면 매우좋음으로 재진입할 수 있으며, 일반 흔들기보다 우선 정렬됩니다. 매수 추천 아님"
               >
                 ☆ 매우좋음 후보
               </Badge>

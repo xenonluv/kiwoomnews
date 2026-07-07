@@ -180,7 +180,7 @@ export interface Suspect {
   very_good?: boolean;
   /** ⭐ 매우좋음 dd6 전용 티어: tier1(-45<dd6≤-30) | tier2(≤-45 과낙) | candidate(-30<dd6≤-25, 표시만) */
   very_good_tier?: "tier1" | "tier2" | "candidate" | null;
-  /** ⭐ 매우좋음 후보 — 흔들기 AND -30<dd6≤-25. 표시·검증용, rank 최상단/자동매매 승격 없음 */
+  /** ⭐ 매우좋음 후보 — 흔들기 AND -30<dd6≤-25. 일반 흔들기보다 우선 정렬되는 관찰 구간 */
   very_good_candidate?: boolean;
   /** ⭐ 6일 고점(오늘+직전5일) 대비 낙폭% */
   dd6_pct?: number | null;
