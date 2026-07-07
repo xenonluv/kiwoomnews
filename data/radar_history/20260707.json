@@ -9,7 +9,7 @@
    "breakdown": {},
    "suspicion_score": 80,
    "score_breakdown_display": {},
-   "rank": 4,
+   "rank": 2,
    "change_pct": 8.61,
    "change_basis": "KRX",
    "high_pct": 30.0,
@@ -164,7 +164,7 @@
    "breakdown": {},
    "suspicion_score": 74,
    "score_breakdown_display": {},
-   "rank": 2,
+   "rank": 3,
    "change_pct": 5.76,
    "change_basis": "KRX",
    "high_pct": 29.99,
@@ -218,7 +218,7 @@
    "breakdown": {},
    "suspicion_score": 77,
    "score_breakdown_display": {},
-   "rank": 3,
+   "rank": 4,
    "change_pct": -3.23,
    "change_basis": "KRX",
    "high_pct": 20.09,
@@ -1478,5 +1478,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-07 20:44:28 KST"
+ "as_of": "2026-07-07 20:53:50 KST"
 }
