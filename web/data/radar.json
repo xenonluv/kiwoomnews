@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 10:53:44 KST",
+ "generated_at": "2026-07-07 11:03:44 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -90,10 +90,10 @@
    "name": "금호건설",
    "sector": "금호건설",
    "high_pct": 24.53,
-   "vol_turnover_pct": 100.3,
-   "value_eok": 2720,
-   "price": 14510.0,
-   "change_pct": 17.49,
+   "vol_turnover_pct": 101.7,
+   "value_eok": 2757,
+   "price": 14440.0,
+   "change_pct": 16.92,
    "backfill": false
   },
   {
@@ -101,10 +101,10 @@
    "name": "CS",
    "sector": "CS",
    "high_pct": 30.0,
-   "vol_turnover_pct": 93.2,
-   "value_eok": 124,
-   "price": 1876.0,
-   "change_pct": 13.7,
+   "vol_turnover_pct": 96.3,
+   "value_eok": 128,
+   "price": 1854.0,
+   "change_pct": 12.36,
    "backfill": false
   }
  ],
@@ -113,11 +113,11 @@
    "code": "002990",
    "name": "금호건설",
    "sector": "금호건설",
-   "change_pct": 17.49,
+   "change_pct": 16.92,
    "high_pct": 24.53,
-   "vol_turnover_pct": 100.3,
-   "value_eok": 2720,
-   "price": 14510.0,
+   "vol_turnover_pct": 101.7,
+   "value_eok": 2757,
+   "price": 14440.0,
    "first_seen": "09:32",
    "exploded": true
   },
@@ -125,47 +125,47 @@
    "code": "065770",
    "name": "CS",
    "sector": "CS",
-   "change_pct": 13.7,
+   "change_pct": 12.36,
    "high_pct": 30.0,
-   "vol_turnover_pct": 93.2,
-   "value_eok": 124,
-   "price": 1876.0,
+   "vol_turnover_pct": 96.3,
+   "value_eok": 128,
+   "price": 1854.0,
    "first_seen": "09:42",
    "exploded": true
-  },
-  {
-   "code": "001210",
-   "name": "금호전기",
-   "sector": "금호전기",
-   "change_pct": 9.45,
-   "high_pct": 20.04,
-   "vol_turnover_pct": 85.6,
-   "value_eok": 372,
-   "price": 1054.0,
-   "first_seen": "09:42",
-   "exploded": false
   },
   {
    "code": "058730",
    "name": "다스코",
    "sector": "다스코",
-   "change_pct": 20.82,
+   "change_pct": 20.11,
    "high_pct": 28.33,
-   "vol_turnover_pct": 85.6,
-   "value_eok": 401,
-   "price": 4265.0,
+   "vol_turnover_pct": 88.5,
+   "value_eok": 415,
+   "price": 4240.0,
    "first_seen": "10:22",
+   "exploded": false
+  },
+  {
+   "code": "001210",
+   "name": "금호전기",
+   "sector": "금호전기",
+   "change_pct": 11.01,
+   "high_pct": 20.04,
+   "vol_turnover_pct": 88.4,
+   "value_eok": 384,
+   "price": 1069.0,
+   "first_seen": "09:42",
    "exploded": false
   },
   {
    "code": "010960",
    "name": "삼호개발",
    "sector": "삼호개발",
-   "change_pct": 13.05,
+   "change_pct": 14.78,
    "high_pct": 20.09,
-   "vol_turnover_pct": 64.7,
-   "value_eok": 450,
-   "price": 4895.0,
+   "vol_turnover_pct": 70.3,
+   "value_eok": 490,
+   "price": 4970.0,
    "first_seen": "10:52",
    "exploded": false
   },
@@ -175,8 +175,8 @@
    "sector": "서산",
    "change_pct": 29.93,
    "high_pct": 29.93,
-   "vol_turnover_pct": 57.6,
-   "value_eok": 154,
+   "vol_turnover_pct": 57.7,
+   "value_eok": 155,
    "price": 4775.0,
    "first_seen": "09:52",
    "exploded": false
@@ -185,11 +185,11 @@
    "code": "198440",
    "name": "강동씨앤엘",
    "sector": "강동씨앤엘",
-   "change_pct": 11.76,
+   "change_pct": 13.46,
    "high_pct": 24.72,
-   "vol_turnover_pct": 51.5,
-   "value_eok": 175,
-   "price": 1777.0,
+   "vol_turnover_pct": 52.9,
+   "value_eok": 180,
+   "price": 1804.0,
    "first_seen": "10:52",
    "exploded": false
   }
@@ -202,8 +202,8 @@
    "pattern": "shakeout",
    "shakeout": true,
    "tp_hint": "+7~10% (12% 천장 실측)",
-   "fade_pct": 16.3,
-   "suspicion_score": 72,
+   "fade_pct": 17.6,
+   "suspicion_score": 73,
    "score_raw": 0,
    "score_breakdown": {},
    "score_breakdown_raw": {},
@@ -211,26 +211,26 @@
    "forecast": null,
    "shake": null,
    "deep_shake": null,
-   "price": 1876.0,
-   "change_pct": 13.7,
+   "price": 1854.0,
+   "change_pct": 12.36,
    "change_basis": "KRX",
    "high_pct": 30.0,
-   "value_eok": 124,
-   "turnover_pct": 93.2,
+   "value_eok": 128,
+   "turnover_pct": 96.3,
    "float_ratio": 0.7012999999999999,
    "turnover_basis": "float",
-   "turnover_2d_pct": 142.1,
+   "turnover_2d_pct": 145.2,
    "turnover_band": 1,
-   "peak_dd_pct": -70.5,
+   "peak_dd_pct": -70.8,
    "dd_band": 2,
-   "dd6_pct": -22.8,
+   "dd6_pct": -23.7,
    "very_good": false,
    "strength_tier": 3,
    "strength": "Tier4(약)",
-   "run_6d_pct": 30.3,
-   "ma20_gap_pct": 18.8,
-   "ma10": 1549.2,
-   "ma10_margin_pct": 21.09,
+   "run_6d_pct": 28.6,
+   "ma20_gap_pct": 17.5,
+   "ma10": 1546.7,
+   "ma10_margin_pct": 19.87,
    "spark": {
     "clusters": []
    },
@@ -248,6 +248,125 @@
    "theme": "",
    "visible_experimental": true,
    "alert_now": null,
+   "theme_leader": false
+  },
+  {
+   "code": "477850",
+   "name": "마키나락스",
+   "sector": "마키나락스",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 26200.0,
+   "change_pct": -13.82,
+   "change_basis": "KRX",
+   "high_pct": -1.32,
+   "value_eok": 901,
+   "turnover_pct": 33.6,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.5490999999999999,
+   "turnover_basis": "float",
+   "ma10": 20174.0,
+   "ma10_margin_pct": 29.87,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 5.9,
+    "time": "09:20",
+    "value_eok": 94,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.59,
+     "value_eok": 52
+    },
+    {
+     "time": "09:20",
+     "body_pct": 5.9,
+     "value_eok": 94
+    },
+    {
+     "time": "10:55",
+     "body_pct": 2.78,
+     "value_eok": 19
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 2.59
+    },
+    {
+     "time": "09:20",
+     "body_pct": 5.9
+    },
+    {
+     "time": "10:55",
+     "body_pct": 2.78
+    }
+   ],
+   "news": [
+    {
+     "title": "마키나락스, AWS와 국방 AI 사업 확장 MOU",
+     "summary": "마키나락스는 국방 인공지능(AI) 사업 확장을 위해 아마존웹서비스(AWS)와 업무협약(MOU)을 맺었다고 30일 밝혔다. 회사 측에 따르면 이번 협력으로 마키나락스는 AWS의 클라우드 인프라와 보안 기술을 활용해 국방 환경에 특화된 AI 기술 개발에.",
+     "office": "뉴시스",
+     "datetime": "202607071059",
+     "url": "https://n.news.naver.com/mnews/article/003/0014050421",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260706",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 19387.5,
+    "ma20_margin_pct": 35.14,
+    "cause_summary": "마키나락스, AWS와 국방 AI 사업 확장 MOU",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "주의",
    "theme_leader": false
   }
  ]
