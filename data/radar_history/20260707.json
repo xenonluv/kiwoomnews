@@ -51,12 +51,12 @@
    "first_seen": "2026-07-07 10:33:36 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "477850": {
    "name": "마키나락스",
    "sector": "마키나락스",
-   "entry": 25450.0,
+   "entry": 25900.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -73,15 +73,15 @@
     "peak_turnover": 0,
     "re_turnover": 1
    },
-   "rank": 5,
-   "change_pct": -16.28,
+   "rank": 2,
+   "change_pct": -14.8,
    "change_basis": "KRX",
    "high_pct": -1.32,
    "pattern": "reaccum",
    "prime": false,
    "theme": "",
-   "value_eok": 982,
-   "turnover_pct": 36.8,
+   "value_eok": 989,
+   "turnover_pct": 37.0,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -98,8 +98,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 19340.0,
-    "ma20_margin_pct": 31.59,
+    "ma20": 19370.0,
+    "ma20_margin_pct": 33.71,
     "cause_summary": "마키나락스, AWS와 손잡고 '국방 AI 사업' 확장 나선다",
     "was_theme_leader": false,
     "source": "live"
@@ -204,7 +204,7 @@
    "first_seen": "2026-07-07 11:53:44 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "010960": {
    "name": "삼호개발",
@@ -256,12 +256,12 @@
    "first_seen": "2026-07-07 11:53:44 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "002780": {
    "name": "진흥기업",
    "sector": "진흥기업",
-   "entry": 954.0,
+   "entry": 956.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -278,15 +278,15 @@
     "peak_turnover": 1,
     "re_turnover": 0
    },
-   "rank": 4,
-   "change_pct": -10.84,
+   "rank": 1,
+   "change_pct": -10.65,
    "change_basis": "KRX",
    "high_pct": 0.37,
    "pattern": "reaccum",
    "prime": false,
    "theme": "금리",
-   "value_eok": 131,
-   "turnover_pct": 17.3,
+   "value_eok": 132,
+   "turnover_pct": 17.5,
    "peak_turnover_pct": 99.3,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -303,8 +303,8 @@
     "peak_turnover_pct": 99.3,
     "peak_ibs": 0.07,
     "peak_uppertail": 54.1,
-    "ma20": 879.5,
-    "ma20_margin_pct": 8.46,
+    "ma20": 879.6,
+    "ma20_margin_pct": 8.68,
     "cause_summary": "진흥기업, 852억 부산 명장동 가로주택정비사업 시공사 선정 [공시pick...",
     "was_theme_leader": false,
     "source": "backfill"
@@ -364,5 +364,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-07 12:03:43 KST"
+ "as_of": "2026-07-07 12:13:53 KST"
 }
