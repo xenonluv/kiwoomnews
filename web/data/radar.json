@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 18:33:55 KST",
+ "generated_at": "2026-07-07 18:43:58 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -231,8 +231,8 @@
    "sector": "가온칩스",
    "change_pct": 17.95,
    "high_pct": 26.39,
-   "vol_turnover_pct": 69.1,
-   "value_eok": 2140,
+   "vol_turnover_pct": 69.2,
+   "value_eok": 2143,
    "price": 48950.0,
    "first_seen": "12:52",
    "exploded": false
@@ -279,8 +279,8 @@
    "sector": "위메이드맥스",
    "change_pct": 13.01,
    "high_pct": 15.84,
-   "vol_turnover_pct": 56.1,
-   "value_eok": 621,
+   "vol_turnover_pct": 56.2,
+   "value_eok": 622,
    "price": 4995.0,
    "first_seen": "15:22",
    "exploded": false
@@ -1246,8 +1246,8 @@
    "change_pct": -10.89,
    "change_basis": "KRX",
    "high_pct": -2.18,
-   "value_eok": 1756,
-   "turnover_pct": 135.9,
+   "value_eok": 1757,
+   "turnover_pct": 136.0,
    "peak_turnover_pct": 106.0,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
