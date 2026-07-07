@@ -1475,17 +1475,17 @@ def scan_shakeout(p, extra_codes=None):
             continue
         signal_bar = daily[-1] if daily else {}
         signal_date = signal_bar.get("date") or now.get("date")
-        signal_open = now.get("open") or signal_bar.get("open")
-        signal_high = now.get("high") or signal_bar.get("high")
-        signal_low = now.get("low") or signal_bar.get("low")
-        signal_close = now.get("price") or signal_bar.get("close")
-        signal_volume = now.get("volume") or signal_bar.get("volume")
-        signal_value = now.get("value") or signal_bar.get("value")
+        snapshot_open = now.get("open") or signal_bar.get("open")
+        snapshot_high = now.get("high") or signal_bar.get("high")
+        snapshot_low = now.get("low") or signal_bar.get("low")
+        snapshot_close = now.get("price") or signal_bar.get("close")
+        snapshot_volume = now.get("volume") or signal_bar.get("volume")
+        snapshot_value = now.get("value") or signal_bar.get("value")
         signal_prev_close = now.get("prev_close")
         try:
-            signal_value_eok = float(signal_value) / 1e8
+            snapshot_value_eok = float(snapshot_value) / 1e8
         except (TypeError, ValueError):
-            signal_value_eok = None
+            snapshot_value_eok = None
         closes = [b.get("close") for b in daily if b.get("close")]
         if len(closes) < 20:
             continue                                  # 신규상장 등 MA20 판정 불가 — 미인정
@@ -1533,20 +1533,30 @@ def scan_shakeout(p, extra_codes=None):
             "price": now["price"], "change_pct": change_pct, "change_basis": "KRX",
             "high_pct": round(high_pct, 2),
             "value_eok": round(float(now.get("value") or 0) / 1e8),
-            # 신호일 원천 스냅샷 — 매우좋음/흔들기 경계 재튜닝을 위해 history에 영구 저장.
+            # 장중 판단값은 snapshot_*, 공식 일봉 원천값은 backtest 자가치유가 signal_*로 확정한다.
+            "snapshot_open": _round_or_none(snapshot_open, 1),
+            "snapshot_high": _round_or_none(snapshot_high, 1),
+            "snapshot_low": _round_or_none(snapshot_low, 1),
+            "snapshot_close": _round_or_none(snapshot_close, 1),
+            "snapshot_volume": _round_or_none(snapshot_volume, 0),
+            "snapshot_value": _round_or_none(snapshot_value, 0),
+            "snapshot_value_eok": _round_or_none(snapshot_value_eok, 1),
+            "snapshot_as_of": signal_date,
+            # signal_*는 이름 그대로 공식 일봉값이어야 하므로, 라이브 스캔에서는 확정 가능한 값만 채운다.
             "signal_date": signal_date,
-            "signal_open": _round_or_none(signal_open, 1),
-            "signal_high": _round_or_none(signal_high, 1),
-            "signal_low": _round_or_none(signal_low, 1),
-            "signal_close": _round_or_none(signal_close, 1),
+            "signal_open": _round_or_none(signal_bar.get("open"), 1),
+            "signal_high": _round_or_none(signal_bar.get("high"), 1),
+            "signal_low": _round_or_none(signal_bar.get("low"), 1),
+            "signal_close": _round_or_none(signal_bar.get("close"), 1),
             "signal_prev_close": _round_or_none(signal_prev_close, 1),
-            "signal_volume": _round_or_none(signal_volume, 0),
-            "signal_value": _round_or_none(signal_value, 0),
-            "signal_value_eok": _round_or_none(signal_value_eok, 1),
+            "signal_volume": _round_or_none(signal_bar.get("volume"), 0),
+            "signal_value": _round_or_none(signal_bar.get("value"), 0),
+            "signal_value_eok": _round_or_none((signal_bar.get("value") or 0) / 1e8, 1),
             "signal_peak6_price": _round_or_none(peak6, 1),
             "signal_peak60_price": _round_or_none(peak, 1),
             "signal_ma20": _round_or_none(ma20, 1),
             "signal_ma10": _round_or_none(ma10, 1),
+            "signal_source": "daily_latest",
             "turnover_pct": round(turnover, 1), "float_ratio": fr, "turnover_basis": "float",
             "turnover_2d_pct": round(turnover_2d, 1),   # 💥 2일 합산(신호일+전일) — 스윗스팟 순위 판정 기준
             "turnover_band": _shakeout_turnover_tier({"turnover_2d_pct": turnover_2d}),  # 0=스윗90~140 1=허용 2=과회전>180

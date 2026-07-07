@@ -123,7 +123,8 @@ def fill_signal_snapshot(code, date, s):
     )
     needs_snapshot = any(s.get(k) is None for k in snapshot_keys)
     needs_dd6 = s.get("dd6_pct") is None
-    if not needs_snapshot and not needs_dd6:
+    needs_finalize = s.get("signal_source") != "daily_final"
+    if not needs_snapshot and not needs_dd6 and not needs_finalize:
         return False
     try:
         bars = kis.daily_prices_jmoney_un(code, days=90)
@@ -150,35 +151,47 @@ def fill_signal_snapshot(code, date, s):
     peak_dd = (close / peak60 - 1) * 100 if peak60 else None
     run6 = (close / closes[-7] - 1) * 100 if len(closes) >= 7 and closes[-7] else None
 
-    def put(k, v):
-        if s.get(k) is None:
+    def put(k, v, overwrite=False):
+        if overwrite or s.get(k) is None:
+            if s.get(k) == v:
+                return False
             s[k] = v
             return True
         return False
 
     changed = False
-    changed |= put("signal_date", date)
-    changed |= put("signal_open", bar.get("open"))
-    changed |= put("signal_high", bar.get("high"))
-    changed |= put("signal_low", bar.get("low"))
-    changed |= put("signal_close", close)
-    changed |= put("signal_prev_close", prev_close)
-    changed |= put("signal_volume", bar.get("volume"))
-    changed |= put("signal_value", bar.get("value"))
-    changed |= put("signal_value_eok", round((bar.get("value") or 0) / 1e8, 1))
-    changed |= put("signal_peak6_price", peak6)
-    changed |= put("signal_peak60_price", peak60)
-    changed |= put("signal_ma20", round(ma20, 1))
-    changed |= put("signal_ma10", round(ma10, 1))
-    changed |= put("run_6d_pct", round(run6, 1) if run6 is not None else None)
-    changed |= put("ma20_gap_pct", round((close / ma20 - 1) * 100, 1) if ma20 else None)
-    changed |= put("ma10_margin_pct", round((close / ma10 - 1) * 100, 2) if ma10 else None)
-    changed |= put("change_pct", round(change_pct, 2) if change_pct is not None else None)
-    changed |= put("high_pct", round(high_pct, 2) if high_pct is not None else None)
+    if needs_finalize:
+        changed |= put("snapshot_open", s.get("snapshot_open") or s.get("signal_open"))
+        changed |= put("snapshot_high", s.get("snapshot_high") or s.get("signal_high"))
+        changed |= put("snapshot_low", s.get("snapshot_low") or s.get("signal_low"))
+        changed |= put("snapshot_close", s.get("snapshot_close") or s.get("signal_close"))
+        changed |= put("snapshot_volume", s.get("snapshot_volume") or s.get("signal_volume"))
+        changed |= put("snapshot_value", s.get("snapshot_value") or s.get("signal_value"))
+        changed |= put("snapshot_value_eok", s.get("snapshot_value_eok") or s.get("signal_value_eok"))
+        changed |= put("snapshot_as_of", s.get("snapshot_as_of") or s.get("signal_date") or date)
+    changed |= put("signal_date", date, needs_finalize)
+    changed |= put("signal_open", bar.get("open"), needs_finalize)
+    changed |= put("signal_high", bar.get("high"), needs_finalize)
+    changed |= put("signal_low", bar.get("low"), needs_finalize)
+    changed |= put("signal_close", close, needs_finalize)
+    changed |= put("signal_prev_close", prev_close, needs_finalize)
+    changed |= put("signal_volume", bar.get("volume"), needs_finalize)
+    changed |= put("signal_value", bar.get("value"), needs_finalize)
+    changed |= put("signal_value_eok", round((bar.get("value") or 0) / 1e8, 1), needs_finalize)
+    changed |= put("signal_peak6_price", peak6, needs_finalize)
+    changed |= put("signal_peak60_price", peak60, needs_finalize)
+    changed |= put("signal_ma20", round(ma20, 1), needs_finalize)
+    changed |= put("signal_ma10", round(ma10, 1), needs_finalize)
+    changed |= put("run_6d_pct", round(run6, 1) if run6 is not None else None, needs_finalize)
+    changed |= put("ma20_gap_pct", round((close / ma20 - 1) * 100, 1) if ma20 else None, needs_finalize)
+    changed |= put("ma10_margin_pct", round((close / ma10 - 1) * 100, 2) if ma10 else None, needs_finalize)
+    changed |= put("change_pct", round(change_pct, 2) if change_pct is not None else None, needs_finalize)
+    changed |= put("high_pct", round(high_pct, 2) if high_pct is not None else None, needs_finalize)
     changed |= put("fade_pct", round(high_pct - change_pct, 1)
-                   if high_pct is not None and change_pct is not None else None)
-    changed |= put("peak_dd_pct", round(peak_dd, 1) if peak_dd is not None else None)
-    if dd6 is not None and s.get("dd6_pct") is None:
+                   if high_pct is not None and change_pct is not None else None, needs_finalize)
+    changed |= put("peak_dd_pct", round(peak_dd, 1) if peak_dd is not None else None, needs_finalize)
+    if dd6 is not None and (s.get("dd6_pct") is None or needs_finalize):
+        old_dd6 = s.get("dd6_pct")
         s["dd6_pct"] = round(dd6, 1)
         if dd6 <= SHAKEOUT_DD6_TIER2_MAX:
             tier = "tier2"
@@ -191,7 +204,8 @@ def fill_signal_snapshot(code, date, s):
         s["very_good_tier"] = tier
         s["very_good"] = tier in ("tier1", "tier2")
         s["very_good_candidate"] = tier == "candidate"
-        changed = True
+        changed = True if old_dd6 != s["dd6_pct"] else changed
+    changed |= put("signal_source", "daily_final", True)
     return changed
 
 

@@ -81,7 +81,8 @@
    "dd6_pct": -21.4,
    "very_good_tier": null,
    "very_good": false,
-   "very_good_candidate": false
+   "very_good_candidate": false,
+   "signal_source": "daily_final"
   },
   "001260": {
    "name": "남광토건",
@@ -278,7 +279,8 @@
    "dd6_pct": -12.7,
    "very_good_tier": null,
    "very_good": false,
-   "very_good_candidate": false
+   "very_good_candidate": false,
+   "signal_source": "daily_final"
   },
   "122350": {
    "name": "삼기",
@@ -360,7 +362,8 @@
    "dd6_pct": -20.4,
    "very_good_tier": null,
    "very_good": false,
-   "very_good_candidate": false
+   "very_good_candidate": false,
+   "signal_source": "daily_final"
   },
   "001210": {
    "name": "금호전기",
@@ -771,7 +774,8 @@
    "dd6_pct": -25.8,
    "very_good_tier": "candidate",
    "very_good": false,
-   "very_good_candidate": true
+   "very_good_candidate": true,
+   "signal_source": "daily_final"
   },
   "065770": {
    "name": "CS",
@@ -853,7 +857,8 @@
    "dd6_pct": -32.1,
    "very_good_tier": "tier1",
    "very_good": true,
-   "very_good_candidate": false
+   "very_good_candidate": false,
+   "signal_source": "daily_final"
   }
  },
  "as_of": "2026-07-06 20:53:49 KST"
