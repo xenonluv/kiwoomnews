@@ -19,7 +19,6 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(REPO, ".telegram_notified.json")  # gitignore
 YOUTONG_STATE_PATH = os.path.join(REPO, ".youtong_notified.json")  # gitignore — youtong 알림 디둡(별도)
 VERY_GOOD_STATE_PATH = os.path.join(REPO, ".very_good_notified.json")  # gitignore — ⭐매우좋음 알림 디둡(별도)
-BASE = "https://stocknews-cyan.vercel.app"
 
 
 def log(m):
@@ -124,7 +123,6 @@ def _format(s, bar):
         title,
         bar_line,
         line3,
-        f"{BASE}/stock/{code}",
     ])
 
 
@@ -174,7 +172,6 @@ def _format_youtong(y):
     lines = [f"⚡ {name} ({code}) 곧 폭발 후보", " · ".join(parts)]
     if y.get("first_seen"):
         lines.append(f"포착 {y['first_seen']}")
-    lines.append(f"{BASE}/stock/{code}")
     return "\n".join(lines)
 
 
@@ -225,7 +222,6 @@ def _format_very_good(s):
         f"⭐ {name} ({code}) 매우좋음 — 흔들기+깊은눌림",
         " · ".join(parts),
         "⚠ 장중 신호(회복 시 해제 가능)·전수조사 익일 +7% 터치 72%·장중 익절 참고, 매수추천 아님",
-        f"{BASE}/stock/{code}",
     ])
 
 
