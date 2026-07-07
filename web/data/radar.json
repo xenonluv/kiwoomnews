@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 09:33:44 KST",
+ "generated_at": "2026-07-07 09:43:43 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -90,12 +90,36 @@
    "code": "002990",
    "name": "금호건설",
    "sector": "금호건설",
-   "change_pct": 15.71,
-   "high_pct": 22.19,
-   "vol_turnover_pct": 57.5,
-   "value_eok": 1506,
-   "price": 14290.0,
+   "change_pct": 21.3,
+   "high_pct": 24.53,
+   "vol_turnover_pct": 72.1,
+   "value_eok": 1925,
+   "price": 14980.0,
    "first_seen": "09:32",
+   "exploded": false
+  },
+  {
+   "code": "001210",
+   "name": "금호전기",
+   "sector": "금호전기",
+   "change_pct": 18.28,
+   "high_pct": 20.04,
+   "vol_turnover_pct": 60.6,
+   "value_eok": 259,
+   "price": 1139.0,
+   "first_seen": "09:42",
+   "exploded": false
+  },
+  {
+   "code": "065770",
+   "name": "CS",
+   "sector": "CS",
+   "change_pct": 25.15,
+   "high_pct": 30.0,
+   "vol_turnover_pct": 54.7,
+   "value_eok": 71,
+   "price": 2065.0,
+   "first_seen": "09:42",
    "exploded": false
   }
  ],
