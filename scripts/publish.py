@@ -263,6 +263,13 @@ def main():
                 print(f"[telegram] ⭐매우좋음 알림 {nvg}건 전송")
         except Exception as e:
             print(f"[warn] 매우좋음 텔레그램 알림 실패(무시): {e}", file=sys.stderr)
+        # 종베 다이제스트 — 15:10대 오늘 suspects 순위 1통(하루 1회·시간게이트는 telegram_notify 내부). 별도 try 격리.
+        try:
+            nd = telegram_notify.notify_suspects_digest(suspects)
+            if nd:
+                print("[telegram] 종베 suspects 다이제스트 전송")
+        except Exception as e:
+            print(f"[warn] 종베 다이제스트 알림 실패(무시): {e}", file=sys.stderr)
     out = {
         "generated_at": radar.get("generated_at"),
         "market_session": market_session(),

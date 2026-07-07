@@ -19,6 +19,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(REPO, ".telegram_notified.json")  # gitignore
 YOUTONG_STATE_PATH = os.path.join(REPO, ".youtong_notified.json")  # gitignore — youtong 알림 디둡(별도)
 VERY_GOOD_STATE_PATH = os.path.join(REPO, ".very_good_notified.json")  # gitignore — ⭐매우좋음 알림 디둡(별도)
+DIGEST_STATE_PATH = os.path.join(REPO, ".suspects_digest_notified.json")  # gitignore — 종베 다이제스트 디둡(하루 1회)
+DIGEST_START_HHMM = 1505   # 종베 다이제스트 발송 창 시작 — 15:11 publish 회차가 이 창에서 발송
+DIGEST_END_HHMM = 1530     # 창 끝 — 스캔 지연·백업 회차(15:21) 여유
 
 
 def log(m):
@@ -252,3 +255,56 @@ def notify_very_good(suspects, state_path=VERY_GOOD_STATE_PATH, now=None):
     if n_sent:
         _save_state(state_path, {today: sorted(sent)})  # 오늘 것만 유지(과거 자동 정리)
     return n_sent
+
+
+def _digest_badge(s):
+    if s.get("very_good"):
+        return "⭐"
+    if s.get("shakeout"):
+        return "💥"
+    if s.get("geupso"):
+        return "🎯"
+    if s.get("low_accum"):
+        return "🧲"
+    return "•"
+
+
+def _format_digest(suspects, now):
+    """종베 다이제스트 — 오늘 suspects를 순위대로(radar.json 배열순) 한 통에."""
+    lines = [f"📋 오늘 종베 후보 — suspects 순위 ({now.strftime('%H:%M')})"]
+    if not suspects:
+        lines.append("· 오늘 후보 없음(레이더 깨끗)")
+    for i, s in enumerate(suspects[:12], 1):
+        code = s.get("code") or ""
+        name = s.get("name") or code
+        info = [f"현재 {s.get('change_pct')}%"]
+        if s.get("high_pct") is not None:
+            info.append(f"고가 {s.get('high_pct')}%")
+        if s.get("turnover_pct") is not None:
+            info.append(f"회전 {s.get('turnover_pct')}%")
+        lines.append(f"{i}. {_digest_badge(s)} {name} ({code}) · " + " · ".join(info))
+    lines.append("⚠ 15:18 종가베팅 참고 · 매수추천 아님")
+    return "\n".join(lines)
+
+
+def notify_suspects_digest(suspects, state_path=DIGEST_STATE_PATH, now=None):
+    """종베 다이제스트 — 15:10대 오늘 suspects 순위 목록 1통(하루 1회). 15:18 매수 전 참고용.
+    시간게이트 15:05~15:30(15:11 publish 회차가 발송·지연/백업 여유)·하루 1회 디둡(.suspects_digest_notified.json).
+    기본 ON(회장님 요청) — TELEGRAM_DIGEST=0으로 끔. 테스트훅 DIGEST_FORCE=1이면 시간게이트 무시.
+    토큰 미설정/실패는 조용히 skip(Mac만 실송·publish 본작업 보호). 발송 1/미발송 0 반환."""
+    load_env()
+    if os.environ.get("TELEGRAM_DIGEST", "1") != "1":
+        return 0
+    if not os.environ.get("TELEGRAM_BOT_TOKEN") or not os.environ.get("TELEGRAM_CHAT_ID"):
+        return 0  # 미설정 → 조용히 skip(Mac만 실송)
+    now = now or datetime.now(KST)
+    hhmm = int(now.strftime("%H%M"))
+    if os.environ.get("DIGEST_FORCE") != "1" and not (DIGEST_START_HHMM <= hhmm < DIGEST_END_HHMM):
+        return 0  # 15:05~15:30 창에서만(15:11 회차)
+    today = now.strftime("%Y%m%d")
+    if _load_state(state_path).get("date") == today:
+        return 0  # 오늘 이미 발송(하루 1회)
+    if send(_format_digest(suspects, now)):
+        _save_state(state_path, {"date": today})
+        return 1
+    return 0

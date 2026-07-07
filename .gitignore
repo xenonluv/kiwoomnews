@@ -18,6 +18,7 @@ kis_devlp.yaml
 .night_alert_notified.json
 .youtong_notified.json
 .very_good_notified.json
+.suspects_digest_notified.json
 setup_mac_radar.sh
 
 # 자동매매 런타임 상태 (실계좌 포지션·로그 — 커밋 금지)
