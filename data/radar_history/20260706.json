@@ -47,8 +47,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 11:05:07 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 3445.0,
+    "next_high": 4060.0,
+    "next_open": 3375.0,
+    "next_low": 3320.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.47,
+    "next_high_pct": 19.59,
+    "next_open_pct": -0.59,
+    "next_low_pct": -2.21
+   },
    "final": true
   },
   "001260": {
@@ -150,8 +162,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-06 12:55:05 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 10970.0,
+    "next_high": 13230.0,
+    "next_open": 11340.0,
+    "next_low": 10630.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -7.66,
+    "next_high_pct": 11.36,
+    "next_open_pct": -4.55,
+    "next_low_pct": -10.52
+   },
    "final": true
   },
   "046940": {
@@ -200,8 +224,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 13:05:04 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 3860.0,
+    "next_high": 4510.0,
+    "next_open": 4190.0,
+    "next_low": 3840.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -8.31,
+    "next_high_pct": 7.13,
+    "next_open_pct": -0.48,
+    "next_low_pct": -8.79
+   },
    "final": true
   },
   "122350": {
@@ -250,8 +286,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 14:45:20 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 1898.0,
+    "next_high": 2215.0,
+    "next_open": 1740.0,
+    "next_low": 1725.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.71,
+    "next_high_pct": 18.7,
+    "next_open_pct": -6.75,
+    "next_low_pct": -7.56
+   },
    "final": true
   },
   "001210": {
@@ -353,8 +401,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-06 14:45:20 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 1002.0,
+    "next_high": 1190.0,
+    "next_open": 915.0,
+    "next_low": 824.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.05,
+    "next_high_pct": 23.57,
+    "next_open_pct": -4.98,
+    "next_low_pct": -14.43
+   },
    "final": false
   },
   "079650": {
@@ -444,8 +504,20 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-06 15:03:18 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 4775.0,
+    "next_high": 4775.0,
+    "next_open": 3455.0,
+    "next_low": 3370.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.93,
+    "next_high_pct": 29.93,
+    "next_open_pct": -5.99,
+    "next_low_pct": -8.3
+   },
    "final": false
   },
   "025950": {
@@ -543,8 +615,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-06 15:03:18 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 15140.0,
+    "next_high": 18890.0,
+    "next_open": 15910.0,
+    "next_low": 14600.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -7.23,
+    "next_high_pct": 15.75,
+    "next_open_pct": -2.51,
+    "next_low_pct": -10.54
+   },
    "final": true
   },
   "002780": {
@@ -593,8 +677,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 15:09:22 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 944.0,
+    "next_high": 1074.0,
+    "next_open": 1072.0,
+    "next_low": 921.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -11.78,
+    "next_high_pct": 0.37,
+    "next_open_pct": 0.19,
+    "next_low_pct": -13.93
+   },
    "final": true
   },
   "065770": {
@@ -643,8 +739,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-06 15:34:01 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260707",
+    "next_close": 1792.0,
+    "next_high": 2145.0,
+    "next_open": 1750.0,
+    "next_low": 1559.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 8.61,
+    "next_high_pct": 30.0,
+    "next_open_pct": 6.06,
+    "next_low_pct": -5.52
+   },
    "final": true
   }
  },

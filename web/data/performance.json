@@ -1,11 +1,11 @@
 {
- "as_of": "2026-07-06 19:22 KST",
+ "as_of": "2026-07-07 17:20 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
   "avg_return": 0.68,
   "high3_rate": 90,
-  "tracking_days": 22,
+  "tracking_days": 23,
   "dropout": {
    "n": 11,
    "hit_rate": 54.5
@@ -182,6 +182,14 @@
   },
   {
    "date": "20260706",
+   "n": 0,
+   "hits": 0,
+   "hit_rate": null,
+   "cum_n": 10,
+   "cum_hit_rate": 60.0
+  },
+  {
+   "date": "20260707",
    "n": 0,
    "hits": 0,
    "hit_rate": null,
@@ -462,16 +470,16 @@
    },
    {
     "band": "+5~+15%",
-    "n": 21,
-    "hit_rate": 28.6,
-    "avg_return": -3.63,
+    "n": 22,
+    "hit_rate": 31.8,
+    "avg_return": -2.11,
     "valid": true
    },
    {
     "band": "+15%+",
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -2.11,
+    "n": 4,
+    "hit_rate": 25.0,
+    "avg_return": -3.24,
     "valid": false
    }
   ]
@@ -482,16 +490,16 @@
   "cells": [
    {
     "band": "90~120%",
-    "n": 15,
-    "hit_rate": 73.3,
-    "avg_return": 7.58,
+    "n": 17,
+    "hit_rate": 64.7,
+    "avg_return": 5.81,
     "valid": true
    },
    {
     "band": "120~160%",
-    "n": 3,
-    "hit_rate": 66.7,
-    "avg_return": 4.46,
+    "n": 4,
+    "hit_rate": 75.0,
+    "avg_return": 4.36,
     "valid": false
    },
    {
@@ -503,9 +511,9 @@
    },
    {
     "band": "220~300%",
-    "n": 2,
-    "hit_rate": 0.0,
-    "avg_return": -8.64,
+    "n": 3,
+    "hit_rate": 33.3,
+    "avg_return": 4.22,
     "valid": false
    },
    {
@@ -523,23 +531,23 @@
   "cells": [
    {
     "band": "2회",
-    "n": 6,
+    "n": 8,
     "hit_rate": 50.0,
-    "avg_return": 2.34,
+    "avg_return": 4.59,
     "valid": false
    },
    {
     "band": "3~4회",
-    "n": 6,
-    "hit_rate": 50.0,
-    "avg_return": -1.22,
+    "n": 7,
+    "hit_rate": 42.9,
+    "avg_return": -2.14,
     "valid": false
    },
    {
     "band": "5회+",
-    "n": 11,
-    "hit_rate": 54.5,
-    "avg_return": 3.1,
+    "n": 12,
+    "hit_rate": 58.3,
+    "avg_return": 3.18,
     "valid": true
    }
   ]
@@ -550,31 +558,31 @@
   "cells": [
    {
     "band": "약마감 <0.4",
-    "n": 10,
-    "hit_rate": 60.0,
-    "avg_return": 5.21,
+    "n": 12,
+    "hit_rate": 50.0,
+    "avg_return": 3.1,
     "valid": true
    },
    {
     "band": "중간 0.4~0.7",
-    "n": 11,
-    "hit_rate": 72.7,
-    "avg_return": 4.53,
+    "n": 12,
+    "hit_rate": 75.0,
+    "avg_return": 6.65,
     "valid": true
    },
    {
     "band": "강마감 ≥0.7",
-    "n": 11,
-    "hit_rate": 54.5,
-    "avg_return": 4.52,
+    "n": 12,
+    "hit_rate": 58.3,
+    "avg_return": 4.48,
     "valid": true
    }
   ]
  },
  "shakeout_bands": {
   "min_n": 10,
-  "n": 48,
-  "live_n": 0,
+  "n": 53,
+  "live_n": 5,
   "backfill_n": 48,
   "by_rule_cohort": [
    {
@@ -601,34 +609,34 @@
    },
    {
     "cohort": "깊은눌림만",
-    "n": 6,
-    "hit_rate": 66.7,
-    "avg_return": 14.93,
-    "avg_high": 26.59,
-    "touch7_rate": 100.0,
-    "touch11_rate": 100.0,
-    "touch13_rate": 100.0,
+    "n": 8,
+    "hit_rate": 50.0,
+    "avg_return": 8.69,
+    "avg_high": 20.88,
+    "touch7_rate": 87.5,
+    "touch11_rate": 75.0,
+    "touch13_rate": 75.0,
     "valid": false
    },
    {
     "cohort": "그외",
-    "n": 28,
-    "hit_rate": 50.0,
-    "avg_return": -1.17,
-    "avg_high": 16.77,
-    "touch7_rate": 82.1,
-    "touch11_rate": 75.0,
-    "touch13_rate": 67.9,
+    "n": 31,
+    "hit_rate": 54.8,
+    "avg_return": -0.67,
+    "avg_high": 17.35,
+    "touch7_rate": 83.9,
+    "touch11_rate": 77.4,
+    "touch13_rate": 71.0,
     "valid": true
    }
   ],
   "by_turnover_2d": [
    {
     "band": "부족 <90",
-    "n": 5,
-    "hit_rate": 80.0,
-    "avg_return": 6.7,
-    "avg_high": 18.6,
+    "n": 6,
+    "hit_rate": 83.3,
+    "avg_return": 7.02,
+    "avg_high": 20.5,
     "touch7_rate": 100.0,
     "touch11_rate": 100.0,
     "touch13_rate": 100.0,
@@ -647,34 +655,34 @@
    },
    {
     "band": "과열 140~180",
-    "n": 8,
-    "hit_rate": 37.5,
-    "avg_return": -4.38,
-    "avg_high": 17.49,
-    "touch7_rate": 87.5,
-    "touch11_rate": 87.5,
-    "touch13_rate": 62.5,
+    "n": 9,
+    "hit_rate": 33.3,
+    "avg_return": -5.2,
+    "avg_high": 15.59,
+    "touch7_rate": 77.8,
+    "touch11_rate": 77.8,
+    "touch13_rate": 55.6,
     "valid": false
    },
    {
     "band": "극과열 ≥180",
-    "n": 21,
-    "hit_rate": 52.4,
-    "avg_return": 2.78,
-    "avg_high": 18.87,
-    "touch7_rate": 81.0,
-    "touch11_rate": 71.4,
-    "touch13_rate": 71.4,
+    "n": 24,
+    "hit_rate": 54.2,
+    "avg_return": 2.22,
+    "avg_high": 18.4,
+    "touch7_rate": 83.3,
+    "touch11_rate": 70.8,
+    "touch13_rate": 70.8,
     "valid": true
    }
   ],
   "by_peak_dd": [
    {
     "band": "깊음 ≤-45",
-    "n": 1,
-    "hit_rate": 0.0,
-    "avg_return": -23.61,
-    "avg_high": 16.7,
+    "n": 2,
+    "hit_rate": 50.0,
+    "avg_return": -7.5,
+    "avg_high": 23.35,
     "touch7_rate": 100.0,
     "touch11_rate": 100.0,
     "touch13_rate": 100.0,
@@ -682,24 +690,24 @@
    },
    {
     "band": "스윗 -45~-30",
-    "n": 10,
-    "hit_rate": 40.0,
-    "avg_return": 3.45,
-    "avg_high": 19.39,
-    "touch7_rate": 70.0,
-    "touch11_rate": 70.0,
-    "touch13_rate": 70.0,
+    "n": 12,
+    "hit_rate": 33.3,
+    "avg_return": 1.2,
+    "avg_high": 16.79,
+    "touch7_rate": 66.7,
+    "touch11_rate": 58.3,
+    "touch13_rate": 58.3,
     "valid": true
    },
    {
     "band": "얕음 >-30",
-    "n": 37,
-    "hit_rate": 43.2,
-    "avg_return": -0.63,
-    "avg_high": 15.14,
-    "touch7_rate": 73.0,
-    "touch11_rate": 67.6,
-    "touch13_rate": 56.8,
+    "n": 39,
+    "hit_rate": 46.2,
+    "avg_return": -0.52,
+    "avg_high": 15.35,
+    "touch7_rate": 74.4,
+    "touch11_rate": 69.2,
+    "touch13_rate": 59.0,
     "valid": true
    }
   ],
@@ -717,35 +725,35 @@
    },
    {
     "band": "Tier2(중강)",
-    "n": 3,
-    "hit_rate": 33.3,
-    "avg_return": 5.24,
-    "avg_high": 20.76,
-    "touch7_rate": 100.0,
-    "touch11_rate": 100.0,
-    "touch13_rate": 66.7,
+    "n": 4,
+    "hit_rate": 25.0,
+    "avg_return": 0.99,
+    "avg_high": 15.66,
+    "touch7_rate": 75.0,
+    "touch11_rate": 75.0,
+    "touch13_rate": 50.0,
     "valid": false
    },
    {
     "band": "Tier3(중)",
-    "n": 17,
-    "hit_rate": 41.2,
-    "avg_return": 1.27,
-    "avg_high": 14.48,
-    "touch7_rate": 64.7,
-    "touch11_rate": 64.7,
-    "touch13_rate": 52.9,
+    "n": 18,
+    "hit_rate": 38.9,
+    "avg_return": 0.74,
+    "avg_high": 14.07,
+    "touch7_rate": 66.7,
+    "touch11_rate": 61.1,
+    "touch13_rate": 50.0,
     "valid": true
    },
    {
     "band": "Tier4(약)",
-    "n": 23,
-    "hit_rate": 47.8,
-    "avg_return": -1.08,
-    "avg_high": 17.31,
-    "touch7_rate": 82.6,
-    "touch11_rate": 73.9,
-    "touch13_rate": 69.6,
+    "n": 26,
+    "hit_rate": 53.8,
+    "avg_return": -0.5,
+    "avg_high": 17.94,
+    "touch7_rate": 84.6,
+    "touch11_rate": 76.9,
+    "touch13_rate": 73.1,
     "valid": true
    }
   ]
@@ -769,11 +777,11 @@
  },
  "experimental": {
   "reaccum": {
-   "n": 109,
-   "hit_rate": 47.7,
-   "avg_return": 0.35,
-   "high3_rate": 66.1,
-   "tracking_days": 22,
+   "n": 113,
+   "hit_rate": 47.8,
+   "avg_return": 0.51,
+   "high3_rate": 67.3,
+   "tracking_days": 23,
    "series": [
     {
      "date": "20260610",
@@ -945,14 +953,50 @@
     },
     {
      "date": "20260706",
+     "n": 4,
+     "hits": 2,
+     "hit_rate": 50,
+     "cum_n": 113,
+     "cum_hit_rate": 47.8
+    },
+    {
+     "date": "20260707",
      "n": 0,
      "hits": 0,
      "hit_rate": null,
-     "cum_n": 109,
-     "cum_hit_rate": 47.7
+     "cum_n": 113,
+     "cum_hit_rate": 47.8
     }
    ],
    "recent": [
+    {
+     "date": "20260706",
+     "name": "서산",
+     "score": 85,
+     "hit": true,
+     "return_pct": 29.93
+    },
+    {
+     "date": "20260706",
+     "name": "동신건설",
+     "score": 74,
+     "hit": false,
+     "return_pct": -7.23
+    },
+    {
+     "date": "20260706",
+     "name": "남광토건",
+     "score": 80,
+     "hit": false,
+     "return_pct": -7.66
+    },
+    {
+     "date": "20260706",
+     "name": "금호전기",
+     "score": 87,
+     "hit": true,
+     "return_pct": 4.05
+    },
     {
      "date": "20260703",
      "name": "동양파일",
@@ -1064,34 +1108,6 @@
      "score": 83,
      "hit": true,
      "return_pct": 11.3
-    },
-    {
-     "date": "20260626",
-     "name": "국순당",
-     "score": 72,
-     "hit": true,
-     "return_pct": 6.03
-    },
-    {
-     "date": "20260625",
-     "name": "헝셩그룹",
-     "score": 82,
-     "hit": false,
-     "return_pct": -2.71
-    },
-    {
-     "date": "20260625",
-     "name": "키스트론",
-     "score": 86,
-     "hit": true,
-     "return_pct": 5.25
-    },
-    {
-     "date": "20260625",
-     "name": "씨피시스템",
-     "score": 75,
-     "hit": false,
-     "return_pct": -13.46
     }
    ]
   },
@@ -1106,17 +1122,17 @@
     "valid": false
    },
    "nonleader": {
-    "n": 106,
-    "hit_rate": 48.1,
-    "avg_return": 0.46,
-    "high3_rate": 66.0,
+    "n": 110,
+    "hit_rate": 48.2,
+    "avg_return": 0.62,
+    "high3_rate": 67.3,
     "valid": true
    },
    "all": {
-    "n": 109,
-    "hit_rate": 47.7,
-    "avg_return": 0.35,
-    "high3_rate": 66.1,
+    "n": 113,
+    "hit_rate": 47.8,
+    "avg_return": 0.51,
+    "high3_rate": 67.3,
     "valid": true
    },
    "lift": null
