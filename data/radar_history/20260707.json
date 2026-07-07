@@ -100,7 +100,7 @@
     "peak_uppertail": 0.0,
     "ma20": 19292.5,
     "ma20_margin_pct": 26.99,
-    "cause_summary": "마키나락스, AWS와 손잡고 '국방 AI 사업' 확장 나선다",
+    "cause_summary": "AWS 손잡은 마키나락스, '국방 AI OS' 승부수",
     "was_theme_leader": false,
     "source": "live"
    },
@@ -731,8 +731,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1722,
-   "turnover_pct": 133.0,
+   "value_eok": 1724,
+   "turnover_pct": 133.1,
    "peak_turnover_pct": 106.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1355,5 +1355,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-07 16:23:58 KST"
+ "as_of": "2026-07-07 16:33:49 KST"
 }
