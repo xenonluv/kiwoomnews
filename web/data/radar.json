@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 15:33:54 KST",
+ "generated_at": "2026-07-07 15:43:51 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -90,7 +90,7 @@
    "name": "강동씨앤엘",
    "sector": "강동씨앤엘",
    "high_pct": 29.56,
-   "vol_turnover_pct": 106.1,
+   "vol_turnover_pct": 106.2,
    "value_eok": 369,
    "price": 1801.0,
    "change_pct": 13.27,
@@ -112,8 +112,8 @@
    "name": "금호전기",
    "sector": "금호전기",
    "high_pct": 23.57,
-   "vol_turnover_pct": 150.0,
-   "value_eok": 659,
+   "vol_turnover_pct": 150.1,
+   "value_eok": 660,
    "price": 1002.0,
    "change_pct": 4.05,
    "backfill": false
@@ -134,8 +134,8 @@
    "name": "금호건설",
    "sector": "금호건설",
    "high_pct": 27.85,
-   "vol_turnover_pct": 178.4,
-   "value_eok": 4885,
+   "vol_turnover_pct": 178.5,
+   "value_eok": 4886,
    "price": 14000.0,
    "change_pct": 13.36,
    "backfill": false
@@ -171,8 +171,8 @@
    "sector": "금호건설",
    "change_pct": 13.36,
    "high_pct": 27.85,
-   "vol_turnover_pct": 178.4,
-   "value_eok": 4885,
+   "vol_turnover_pct": 178.5,
+   "value_eok": 4886,
    "price": 14000.0,
    "first_seen": "09:32",
    "exploded": true
@@ -195,8 +195,8 @@
    "sector": "금호전기",
    "change_pct": 4.05,
    "high_pct": 23.57,
-   "vol_turnover_pct": 150.0,
-   "value_eok": 659,
+   "vol_turnover_pct": 150.1,
+   "value_eok": 660,
    "price": 1002.0,
    "first_seen": "09:42",
    "exploded": true
@@ -219,11 +219,23 @@
    "sector": "강동씨앤엘",
    "change_pct": 13.27,
    "high_pct": 29.56,
-   "vol_turnover_pct": 106.1,
+   "vol_turnover_pct": 106.2,
    "value_eok": 369,
    "price": 1801.0,
    "first_seen": "10:52",
    "exploded": true
+  },
+  {
+   "code": "399720",
+   "name": "가온칩스",
+   "sector": "가온칩스",
+   "change_pct": 17.95,
+   "high_pct": 26.39,
+   "vol_turnover_pct": 64.8,
+   "value_eok": 2004,
+   "price": 48950.0,
+   "first_seen": "12:52",
+   "exploded": false
   },
   {
    "code": "010960",
@@ -235,18 +247,6 @@
    "value_eok": 450,
    "price": 4190.0,
    "first_seen": "10:52",
-   "exploded": false
-  },
-  {
-   "code": "399720",
-   "name": "가온칩스",
-   "sector": "가온칩스",
-   "change_pct": 17.95,
-   "high_pct": 26.39,
-   "vol_turnover_pct": 64.5,
-   "value_eok": 1995,
-   "price": 48950.0,
-   "first_seen": "12:52",
    "exploded": false
   },
   {
@@ -267,8 +267,8 @@
    "sector": "에스와이스틸텍",
    "change_pct": 14.49,
    "high_pct": 26.38,
-   "vol_turnover_pct": 56.7,
-   "value_eok": 384,
+   "vol_turnover_pct": 56.8,
+   "value_eok": 385,
    "price": 2070.0,
    "first_seen": "14:22",
    "exploded": false
@@ -291,8 +291,8 @@
    "sector": "위메이드맥스",
    "change_pct": 13.01,
    "high_pct": 15.84,
-   "vol_turnover_pct": 50.4,
-   "value_eok": 557,
+   "vol_turnover_pct": 50.9,
+   "value_eok": 561,
    "price": 4995.0,
    "first_seen": "15:22",
    "exploded": false
@@ -343,11 +343,11 @@
    "change_pct": 4.05,
    "change_basis": "KRX",
    "high_pct": 23.57,
-   "value_eok": 659,
-   "turnover_pct": 150.0,
+   "value_eok": 660,
+   "turnover_pct": 150.1,
    "float_ratio": 0.6665000000000001,
    "turnover_basis": "float",
-   "turnover_2d_pct": 242.4,
+   "turnover_2d_pct": 242.5,
    "turnover_band": 2,
    "peak_dd_pct": -34.0,
    "dd_band": 0,
@@ -400,7 +400,7 @@
    "change_basis": "KRX",
    "high_pct": 29.56,
    "value_eok": 369,
-   "turnover_pct": 106.1,
+   "turnover_pct": 106.2,
    "float_ratio": 0.306,
    "turnover_basis": "float",
    "turnover_2d_pct": 129.0,
@@ -470,6 +470,61 @@
    "ma20_gap_pct": 3.6,
    "ma10": 3334.0,
    "ma10_margin_pct": 7.38,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": null,
+   "reignition_bars": [],
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [],
+   "matched_events": [],
+   "theme": "",
+   "visible_experimental": true,
+   "alert_now": null,
+   "theme_leader": false
+  },
+  {
+   "code": "012170",
+   "name": "아센디오",
+   "sector": "아센디오",
+   "pattern": "shakeout",
+   "shakeout": true,
+   "tp_hint": "+15% (양극단·표본소)",
+   "fade_pct": 20.2,
+   "suspicion_score": 71,
+   "score_raw": 0,
+   "score_breakdown": {},
+   "score_breakdown_raw": {},
+   "calibrated_prob": null,
+   "forecast": null,
+   "shake": null,
+   "deep_shake": null,
+   "price": 1102.0,
+   "change_pct": 9.76,
+   "change_basis": "KRX",
+   "high_pct": 29.98,
+   "value_eok": 65,
+   "turnover_pct": 49.0,
+   "float_ratio": 0.5205,
+   "turnover_basis": "float",
+   "turnover_2d_pct": 63.5,
+   "turnover_band": 1,
+   "peak_dd_pct": -35.9,
+   "dd_band": 0,
+   "dd6_pct": -15.6,
+   "very_good": false,
+   "strength_tier": 1,
+   "strength": "Tier2(중강)",
+   "run_6d_pct": 72.2,
+   "ma20_gap_pct": 22.8,
+   "ma10": 765.4,
+   "ma10_margin_pct": 43.98,
    "spark": {
     "clusters": []
    },
@@ -1179,8 +1234,8 @@
    "change_pct": -10.89,
    "change_basis": "KRX",
    "high_pct": -2.18,
-   "value_eok": 1702,
-   "turnover_pct": 131.3,
+   "value_eok": 1704,
+   "turnover_pct": 131.5,
    "peak_turnover_pct": 106.0,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
@@ -1390,153 +1445,6 @@
    },
    "leader_cohort_prob": null,
    "alert_now": "주의",
-   "theme_leader": false
-  },
-  {
-   "code": "002780",
-   "name": "진흥기업",
-   "sector": "진흥기업",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 63,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 1,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 944.0,
-   "change_pct": -11.78,
-   "change_basis": "KRX",
-   "high_pct": 0.37,
-   "value_eok": 162,
-   "turnover_pct": 21.7,
-   "peak_turnover_pct": 99.3,
-   "float_ratio": 0.5139,
-   "turnover_basis": "float",
-   "ma10": 876.5,
-   "ma10_margin_pct": 7.7,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.88,
-    "time": "09:55",
-    "value_eok": 7,
-    "count": 0
-   },
-   "reignition_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.19,
-     "value_eok": 11
-    },
-    {
-     "time": "09:10",
-     "body_pct": 2.62,
-     "value_eok": 6
-    },
-    {
-     "time": "09:55",
-     "body_pct": 3.88,
-     "value_eok": 7
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.19
-    },
-    {
-     "time": "09:10",
-     "body_pct": 2.62
-    },
-    {
-     "time": "09:55",
-     "body_pct": 3.88
-    }
-   ],
-   "news": [
-    {
-     "title": "진흥기업, 852억 부산 명장동 가로주택정비사업 시공사 선정 [공시pick...",
-     "summary": "진흥기업이 약 852억원 규모의 부산 명장동 가로주택정비사업 시공사로 선정됐다고 6일 공시했다. 이번 사업의 시행사는 하나자산신탁이다. 공사 예정 금액은 852억원으로 지난해 개별 기준 매출액 5764억원의 14.8%에 해당한다. 공사 기간은...",
-     "office": "조세일보",
-     "datetime": "202607061737",
-     "url": "https://n.news.naver.com/mnews/article/123/0002386020",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-07-07_삼성전자 2분기 잠정실",
-     "title": "삼성전자 2분기 잠정실적",
-     "dday": 0,
-     "categories": [
-      "반도체"
-     ],
-     "score": 8.1
-    },
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 2,
-     "categories": [
-      "금리"
-     ],
-     "score": 5.9
-    },
-    {
-     "id": "2026-07-14_미국 CPI 발표 (6",
-     "title": "미국 CPI 발표 (6월분)",
-     "dday": 7,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.9
-    }
-   ],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260703",
-    "peak_value_eok": 873,
-    "peak_high_pct": 26.27,
-    "peak_turnover_pct": 99.3,
-    "peak_ibs": 0.07,
-    "peak_uppertail": 54.1,
-    "ma20": 879.0,
-    "ma20_margin_pct": 7.39,
-    "cause_summary": "진흥기업, 852억 부산 명장동 가로주택정비사업 시공사 선정 [공시pick...",
-    "was_theme_leader": false,
-    "source": "backfill"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": null,
    "theme_leader": false
   }
  ]
