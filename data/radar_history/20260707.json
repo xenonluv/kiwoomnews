@@ -688,7 +688,7 @@
    "alert_release": null,
    "shakeout": true,
    "fade_pct": 15.0,
-   "turnover_2d_pct": 169.7,
+   "turnover_2d_pct": 169.8,
    "peak_dd_pct": -20.0,
    "strength_tier": 3,
    "strength": "Tier4(약)",
@@ -731,8 +731,8 @@
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 1712,
-   "turnover_pct": 132.1,
+   "value_eok": 1717,
+   "turnover_pct": 132.5,
    "peak_turnover_pct": 106.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1318,7 +1318,7 @@
    "prime": false,
    "theme": "",
    "value_eok": 65,
-   "turnover_pct": 49.0,
+   "turnover_pct": 49.1,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1355,5 +1355,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-07 15:53:49 KST"
+ "as_of": "2026-07-07 16:03:52 KST"
 }
