@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 19:53:54 KST",
+ "generated_at": "2026-07-07 20:03:49 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -231,8 +231,8 @@
    "sector": "가온칩스",
    "change_pct": 17.95,
    "high_pct": 26.39,
-   "vol_turnover_pct": 70.6,
-   "value_eok": 2186,
+   "vol_turnover_pct": 71.0,
+   "value_eok": 2198,
    "price": 48950.0,
    "first_seen": "12:52",
    "exploded": false
@@ -262,6 +262,18 @@
    "exploded": false
   },
   {
+   "code": "101730",
+   "name": "위메이드맥스",
+   "sector": "위메이드맥스",
+   "change_pct": 13.01,
+   "high_pct": 15.84,
+   "vol_turnover_pct": 57.2,
+   "value_eok": 632,
+   "price": 4995.0,
+   "first_seen": "15:22",
+   "exploded": false
+  },
+  {
    "code": "365330",
    "name": "에스와이스틸텍",
    "sector": "에스와이스틸텍",
@@ -271,18 +283,6 @@
    "value_eok": 386,
    "price": 2070.0,
    "first_seen": "14:22",
-   "exploded": false
-  },
-  {
-   "code": "101730",
-   "name": "위메이드맥스",
-   "sector": "위메이드맥스",
-   "change_pct": 13.01,
-   "high_pct": 15.84,
-   "vol_turnover_pct": 56.8,
-   "value_eok": 628,
-   "price": 4995.0,
-   "first_seen": "15:22",
    "exploded": false
   },
   {
@@ -718,6 +718,136 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
+   "alert_now": null,
+   "theme_leader": false
+  },
+  {
+   "code": "101730",
+   "name": "위메이드맥스",
+   "sector": "위메이드맥스",
+   "pattern": "reaccum",
+   "geupso": true,
+   "geupso_bars": [
+    {
+     "time": "14:35",
+     "body_pct": 2.13
+    },
+    {
+     "time": "15:15",
+     "body_pct": 3.01
+    }
+   ],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 72,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 6,
+    "re_body": 2,
+    "peak_turnover": 0,
+    "re_turnover": 2
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 4995.0,
+   "change_pct": 9.95,
+   "change_basis": "NXT",
+   "high_pct": 15.84,
+   "value_eok": 632,
+   "turnover_pct": 57.2,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.2708,
+   "turnover_basis": "float",
+   "ma10": 3678.0,
+   "ma10_margin_pct": 35.81,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.01,
+    "time": "15:15",
+    "value_eok": 9,
+    "count": 4
+   },
+   "reignition_bars": [
+    {
+     "time": "14:35",
+     "body_pct": 2.13,
+     "value_eok": 8
+    },
+    {
+     "time": "14:45",
+     "body_pct": 1.51,
+     "value_eok": 2
+    },
+    {
+     "time": "15:05",
+     "body_pct": 1.7,
+     "value_eok": 4
+    },
+    {
+     "time": "15:15",
+     "body_pct": 3.01,
+     "value_eok": 9
+    }
+   ],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [
+    {
+     "title": "창업주 ‘엑싯’한 위메이드…맥스·플레이 &quot;동요할 필요 없다&quot;",
+     "summary": "위메이드(112040) 창업자이자 최대 주주인 박관호 의장이 지분 전량을 매각하고 '엑싯'했지만 자회사 임직원들에게 &quot;걱정하거나 동요할 필요 없다&quot;고 전했다. 2일 게임업계에 따르면 손면석 위메이드맥스(101730) 대표는 전날 사내",
+     "office": "뉴스1",
+     "datetime": "202607020950",
+     "url": "https://n.news.naver.com/mnews/article/421/0009036478",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-07_삼성전자 2분기 잠정실",
+     "title": "삼성전자 2분기 잠정실적",
+     "dday": 0,
+     "categories": [
+      "반도체"
+     ],
+     "score": 2.7
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260706",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 0.71,
+    "peak_uppertail": 4.0,
+    "ma20": 3507.0,
+    "ma20_margin_pct": 42.43,
+    "cause_summary": "창업주 ‘엑싯’한 위메이드…맥스·플레이 &quot;동요할 필요 없다&quot;",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
    "alert_now": null,
    "theme_leader": false
   },
@@ -1244,10 +1374,10 @@
    },
    "price": 45000.0,
    "change_pct": -10.89,
-   "change_basis": "KRX",
+   "change_basis": "NXT",
    "high_pct": -2.18,
-   "value_eok": 1772,
-   "turnover_pct": 137.2,
+   "value_eok": 1779,
+   "turnover_pct": 137.8,
    "peak_turnover_pct": 106.0,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
@@ -1339,125 +1469,6 @@
    "leader_cohort_prob": null,
    "alert_now": null,
    "theme_leader": true
-  },
-  {
-   "code": "477850",
-   "name": "마키나락스",
-   "sector": "마키나락스",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 69,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 4,
-    "re_body": 1,
-    "peak_turnover": 0,
-    "re_turnover": 2
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 24500.0,
-   "change_pct": -19.41,
-   "change_basis": "KRX",
-   "high_pct": -1.32,
-   "value_eok": 1318,
-   "turnover_pct": 50.9,
-   "peak_turnover_pct": null,
-   "float_ratio": 0.5490999999999999,
-   "turnover_basis": "float",
-   "ma10": 19984.0,
-   "ma10_margin_pct": 22.6,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 1.93,
-    "time": "14:40",
-    "value_eok": 7,
-    "count": 3
-   },
-   "reignition_bars": [
-    {
-     "time": "14:35",
-     "body_pct": 1.52,
-     "value_eok": 6
-    },
-    {
-     "time": "14:40",
-     "body_pct": 1.93,
-     "value_eok": 7
-    },
-    {
-     "time": "14:45",
-     "body_pct": 1.68,
-     "value_eok": 13
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:10",
-     "body_pct": 2.59
-    },
-    {
-     "time": "09:20",
-     "body_pct": 5.9
-    },
-    {
-     "time": "10:55",
-     "body_pct": 2.78
-    }
-   ],
-   "news": [
-    {
-     "title": "AWS 손잡은 마키나락스, '국방 AI OS' 승부수",
-     "summary": "마키나락스가 아마존웹서비스(AWS)와 손잡고 클라우드 인프라·보안 기술을 결합한 국방 특화 인공지능(AI) 개발에 나선다. 마키나락스가 국방 인공지능(AI) 사업 확장을 위해 아마존웹서비스(AWS)와 업무 협력에 합의했다. 마키나락스는 국방 AI 사업",
-     "office": "지디넷코리아",
-     "datetime": "202607071629",
-     "url": "https://n.news.naver.com/mnews/article/092/0002429594",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260706",
-    "peak_value_eok": 0,
-    "peak_high_pct": 0.0,
-    "peak_turnover_pct": null,
-    "peak_ibs": 1.0,
-    "peak_uppertail": 0.0,
-    "ma20": 19292.5,
-    "ma20_margin_pct": 26.99,
-    "cause_summary": "AWS 손잡은 마키나락스, '국방 AI OS' 승부수",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": "주의",
-   "theme_leader": false
   }
  ]
 }
