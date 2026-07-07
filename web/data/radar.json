@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-07 15:53:49 KST",
+ "generated_at": "2026-07-07 16:03:52 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -135,7 +135,7 @@
    "sector": "금호건설",
    "high_pct": 27.85,
    "vol_turnover_pct": 178.6,
-   "value_eok": 4889,
+   "value_eok": 4890,
    "price": 14000.0,
    "change_pct": 13.36,
    "backfill": false
@@ -172,7 +172,7 @@
    "change_pct": 13.36,
    "high_pct": 27.85,
    "vol_turnover_pct": 178.6,
-   "value_eok": 4889,
+   "value_eok": 4890,
    "price": 14000.0,
    "first_seen": "09:32",
    "exploded": true
@@ -231,8 +231,8 @@
    "sector": "가온칩스",
    "change_pct": 17.95,
    "high_pct": 26.39,
-   "vol_turnover_pct": 65.2,
-   "value_eok": 2016,
+   "vol_turnover_pct": 65.5,
+   "value_eok": 2028,
    "price": 48950.0,
    "first_seen": "12:52",
    "exploded": false
@@ -291,8 +291,8 @@
    "sector": "위메이드맥스",
    "change_pct": 13.01,
    "high_pct": 15.84,
-   "vol_turnover_pct": 51.4,
-   "value_eok": 567,
+   "vol_turnover_pct": 51.7,
+   "value_eok": 571,
    "price": 4995.0,
    "first_seen": "15:22",
    "exploded": false
@@ -510,7 +510,7 @@
    "change_basis": "KRX",
    "high_pct": 29.98,
    "value_eok": 65,
-   "turnover_pct": 49.0,
+   "turnover_pct": 49.1,
    "float_ratio": 0.5205,
    "turnover_basis": "float",
    "turnover_2d_pct": 63.6,
@@ -568,7 +568,7 @@
    "turnover_pct": 145.4,
    "float_ratio": 0.5677,
    "turnover_basis": "float",
-   "turnover_2d_pct": 169.7,
+   "turnover_2d_pct": 169.8,
    "turnover_band": 1,
    "peak_dd_pct": -20.0,
    "dd_band": 2,
@@ -1160,7 +1160,7 @@
      "categories": [
       "금리"
      ],
-     "score": 2.0
+     "score": 3.9
     },
     {
      "id": "2026-07-14_미국 CPI 발표 (6",
@@ -1169,7 +1169,7 @@
      "categories": [
       "금리"
      ],
-     "score": 1.0
+     "score": 2.0
     }
    ],
    "theme": "반도체",
@@ -1234,8 +1234,8 @@
    "change_pct": -10.89,
    "change_basis": "KRX",
    "high_pct": -2.18,
-   "value_eok": 1712,
-   "turnover_pct": 132.1,
+   "value_eok": 1717,
+   "turnover_pct": 132.5,
    "peak_turnover_pct": 106.0,
    "float_ratio": 0.3444,
    "turnover_basis": "float",
