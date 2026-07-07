@@ -128,11 +128,30 @@ def scan_code(code, days, float_cache, today):
         stier = (_shakeout_turnover_tier({"turnover_2d_pct": turnover_2d})
                  + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))
         vg_tier = _very_good_tier(dd6)
+        ma10 = sum(closes[i - 9:i + 1]) / 10
         entry = closes[i]
         out.append({
             "date": bars[i]["date"], "code": code, "name": name or code,
             "pattern": "shakeout", "shakeout": True, "backfill": True,
             "high_pct": round(high_pct, 2), "change_pct": change_pct, "fade_pct": round(fade, 1),
+            # 신호일 원천 스냅샷 — 라이브 history와 같은 키로 저장해 조건 재튜닝을 가능하게 한다.
+            "entry": entry,
+            "signal_date": bars[i]["date"],
+            "signal_open": bars[i].get("open"),
+            "signal_high": bars[i].get("high"),
+            "signal_low": bars[i].get("low"),
+            "signal_close": entry,
+            "signal_prev_close": prev_close,
+            "signal_volume": vols[i],
+            "signal_value": bars[i].get("value"),
+            "signal_value_eok": round((bars[i].get("value") or 0) / 1e8, 1),
+            "signal_peak6_price": peak6,
+            "signal_peak60_price": peak,
+            "signal_ma20": round(ma20, 1),
+            "signal_ma10": round(ma10, 1),
+            "ma20_gap_pct": round((entry / ma20 - 1) * 100, 1) if ma20 else None,
+            "ma10_margin_pct": round((entry / ma10 - 1) * 100, 2) if ma10 else None,
+            "float_ratio": fr,
             "turnover_pct": round(turnover, 1),
             "turnover_2d_pct": round(turnover_2d, 1),
             "turnover_band": _shakeout_turnover_tier({"turnover_2d_pct": turnover_2d}),
@@ -146,9 +165,16 @@ def scan_code(code, days, float_cache, today):
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             # 익일 결과(실제 일봉) — radar_backtest evaluate()와 동일 정의
             "eval_date": nb["date"],
+            "next_open": nb["open"],
+            "next_high": nb["high"],
+            "next_low": nb["low"],
+            "next_close": nb["close"],
             "hit": nb["close"] > entry,
+            "high3": nb["high"] >= entry * 1.03,
             "return_pct": round((nb["close"] / entry - 1) * 100, 2),
+            "next_open_pct": round((nb["open"] / entry - 1) * 100, 2),
             "next_high_pct": round((nb["high"] / entry - 1) * 100, 2),
+            "next_low_pct": round((nb["low"] / entry - 1) * 100, 2),
         })
     return out
 

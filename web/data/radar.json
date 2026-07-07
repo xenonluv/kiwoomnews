@@ -1,5 +1,7 @@
 {
- "generated_at": "2026-07-07 20:55:24 KST",
+ "generated_at": "2026-07-07 21:48:30 KST",
+ "market_session": "closed",
+ "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
   "market": "UN",
   "reignition_body_pct": 1.5,
@@ -354,6 +356,19 @@
    "change_basis": "KRX",
    "high_pct": 23.57,
    "value_eok": 663,
+   "signal_date": "20260707",
+   "signal_open": 915.0,
+   "signal_high": 1190.0,
+   "signal_low": 824.0,
+   "signal_close": 1002.0,
+   "signal_prev_close": 963.0,
+   "signal_volume": 62231838.0,
+   "signal_value": 66312000000.0,
+   "signal_value_eok": 663.1,
+   "signal_peak6_price": 1518.0,
+   "signal_peak60_price": 1518.0,
+   "signal_ma20": 717.2,
+   "signal_ma10": 934.5,
    "turnover_pct": 150.9,
    "float_ratio": 0.6665000000000001,
    "turnover_basis": "float",
@@ -388,7 +403,8 @@
    "theme": "",
    "visible_experimental": true,
    "alert_now": "경고",
-   "alert_release": false
+   "alert_release": false,
+   "theme_leader": false
   },
   {
    "code": "065770",
@@ -411,6 +427,19 @@
    "change_basis": "KRX",
    "high_pct": 30.0,
    "value_eok": 212,
+   "signal_date": "20260707",
+   "signal_open": 1750.0,
+   "signal_high": 2145.0,
+   "signal_low": 1559.0,
+   "signal_close": 1792.0,
+   "signal_prev_close": 1650.0,
+   "signal_volume": 11007787.0,
+   "signal_value": 21204000000.0,
+   "signal_value_eok": 212.0,
+   "signal_peak6_price": 2430.0,
+   "signal_peak60_price": 6354.0,
+   "signal_ma20": 1574.5,
+   "signal_ma10": 1540.1,
    "turnover_pct": 161.7,
    "float_ratio": 0.7012999999999999,
    "turnover_basis": "float",
@@ -444,7 +473,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "004830",
@@ -467,6 +497,19 @@
    "change_basis": "KRX",
    "high_pct": 29.99,
    "value_eok": 267,
+   "signal_date": "20260707",
+   "signal_open": 3305.0,
+   "signal_high": 4400.0,
+   "signal_low": 3305.0,
+   "signal_close": 3580.0,
+   "signal_prev_close": 3385.0,
+   "signal_volume": 6649079.0,
+   "signal_value": 26736000000.0,
+   "signal_value_eok": 267.4,
+   "signal_peak6_price": 4400.0,
+   "signal_peak60_price": 5350.0,
+   "signal_ma20": 3456.8,
+   "signal_ma10": 3334.0,
    "turnover_pct": 60.0,
    "float_ratio": 0.7073,
    "turnover_basis": "float",
@@ -500,7 +543,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "010960",
@@ -523,6 +567,19 @@
    "change_basis": "KRX",
    "high_pct": 20.09,
    "value_eok": 695,
+   "signal_date": "20260707",
+   "signal_open": 4210.0,
+   "signal_high": 5200.0,
+   "signal_low": 3955.0,
+   "signal_close": 4190.0,
+   "signal_prev_close": 4330.0,
+   "signal_volume": 14812716.0,
+   "signal_value": 69535000000.0,
+   "signal_value_eok": 695.4,
+   "signal_peak6_price": 5500.0,
+   "signal_peak60_price": 5500.0,
+   "signal_ma20": 3488.2,
+   "signal_ma10": 3792.5,
    "turnover_pct": 101.4,
    "float_ratio": 0.6053999999999999,
    "turnover_basis": "float",
@@ -556,7 +613,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "012170",
@@ -579,6 +637,19 @@
    "change_basis": "KRX",
    "high_pct": 29.98,
    "value_eok": 67,
+   "signal_date": "20260707",
+   "signal_open": 1154.0,
+   "signal_high": 1305.0,
+   "signal_low": 1090.0,
+   "signal_close": 1102.0,
+   "signal_prev_close": 1004.0,
+   "signal_volume": 5329872.0,
+   "signal_value": 6667000000.0,
+   "signal_value_eok": 66.7,
+   "signal_peak6_price": 1305.0,
+   "signal_peak60_price": 1720.0,
+   "signal_ma20": 897.6,
+   "signal_ma10": 765.4,
    "turnover_pct": 50.6,
    "float_ratio": 0.5205,
    "turnover_basis": "float",
@@ -612,7 +683,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "198440",
@@ -635,6 +707,19 @@
    "change_basis": "KRX",
    "high_pct": 29.56,
    "value_eok": 370,
+   "signal_date": "20260707",
+   "signal_open": 1592.0,
+   "signal_high": 2060.0,
+   "signal_low": 1527.0,
+   "signal_close": 1801.0,
+   "signal_prev_close": 1590.0,
+   "signal_volume": 19891384.0,
+   "signal_value": 37039000000.0,
+   "signal_value_eok": 370.4,
+   "signal_peak6_price": 2060.0,
+   "signal_peak60_price": 2930.0,
+   "signal_ma20": 1647.6,
+   "signal_ma10": 1737.7,
    "turnover_pct": 106.7,
    "float_ratio": 0.306,
    "turnover_basis": "float",
@@ -668,7 +753,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "058730",
@@ -691,6 +777,19 @@
    "change_basis": "KRX",
    "high_pct": 28.33,
    "value_eok": 684,
+   "signal_date": "20260707",
+   "signal_open": 3350.0,
+   "signal_high": 4530.0,
+   "signal_low": 3330.0,
+   "signal_close": 4000.0,
+   "signal_prev_close": 3530.0,
+   "signal_volume": 16523059.0,
+   "signal_value": 68433000000.0,
+   "signal_value_eok": 684.3,
+   "signal_peak6_price": 5000.0,
+   "signal_peak60_price": 5000.0,
+   "signal_ma20": 3334.5,
+   "signal_ma10": 3844.0,
    "turnover_pct": 145.9,
    "float_ratio": 0.5677,
    "turnover_basis": "float",
@@ -724,7 +823,8 @@
    "matched_events": [],
    "theme": "",
    "visible_experimental": true,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "101730",
@@ -853,7 +953,8 @@
     "source": "live"
    },
    "leader_cohort_prob": null,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "091590",
@@ -1023,7 +1124,8 @@
    },
    "leader_cohort_prob": null,
    "alert_now": "경고",
-   "alert_release": false
+   "alert_release": false,
+   "theme_leader": false
   },
   {
    "code": "037070",
@@ -1132,7 +1234,8 @@
     "source": "live"
    },
    "leader_cohort_prob": null,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "111710",
@@ -1332,7 +1435,8 @@
     "source": "backfill"
    },
    "leader_cohort_prob": null,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": false
   },
   {
    "code": "037710",
@@ -1468,271 +1572,8 @@
     "source": "live"
    },
    "leader_cohort_prob": null,
-   "alert_now": null
-  },
-  {
-   "code": "477850",
-   "name": "마키나락스",
-   "sector": "마키나락스",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 69,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 4,
-    "re_body": 1,
-    "peak_turnover": 0,
-    "re_turnover": 2
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 24500.0,
-   "change_pct": -19.41,
-   "change_basis": "KRX",
-   "high_pct": -1.32,
-   "value_eok": 1318,
-   "turnover_pct": 50.9,
-   "peak_turnover_pct": null,
-   "float_ratio": 0.5490999999999999,
-   "turnover_basis": "float",
-   "ma10": 19984.0,
-   "ma10_margin_pct": 22.6,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 1.93,
-    "time": "14:40",
-    "value_eok": 7,
-    "count": 3
-   },
-   "reignition_bars": [
-    {
-     "time": "14:35",
-     "body_pct": 1.52,
-     "value_eok": 6
-    },
-    {
-     "time": "14:40",
-     "body_pct": 1.93,
-     "value_eok": 7
-    },
-    {
-     "time": "14:45",
-     "body_pct": 1.68,
-     "value_eok": 13
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:10",
-     "body_pct": 2.59
-    },
-    {
-     "time": "09:20",
-     "body_pct": 5.9
-    },
-    {
-     "time": "10:55",
-     "body_pct": 2.78
-    }
-   ],
-   "news": [
-    {
-     "title": "AWS 손잡은 마키나락스, '국방 AI OS' 승부수",
-     "summary": "마키나락스가 아마존웹서비스(AWS)와 손잡고 클라우드 인프라·보안 기술을 결합한 국방 특화 인공지능(AI) 개발에 나선다. 마키나락스가 국방 인공지능(AI) 사업 확장을 위해 아마존웹서비스(AWS)와 업무 협력에 합의했다. 마키나락스는 국방 AI 사업",
-     "office": "지디넷코리아",
-     "datetime": "202607071629",
-     "url": "https://n.news.naver.com/mnews/article/092/0002429594",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [],
-   "theme": "",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260706",
-    "peak_value_eok": 0,
-    "peak_high_pct": 0.0,
-    "peak_turnover_pct": null,
-    "peak_ibs": 1.0,
-    "peak_uppertail": 0.0,
-    "ma20": 19292.5,
-    "ma20_margin_pct": 26.99,
-    "cause_summary": "AWS 손잡은 마키나락스, '국방 AI OS' 승부수",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": "주의"
-  },
-  {
-   "code": "002780",
-   "name": "진흥기업",
-   "sector": "진흥기업",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 63,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 1,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 46,
-    "base_pct": 46,
-    "strong": false,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 944.0,
-   "change_pct": -11.78,
-   "change_basis": "KRX",
-   "high_pct": 0.37,
-   "value_eok": 163,
-   "turnover_pct": 21.8,
-   "peak_turnover_pct": 99.3,
-   "float_ratio": 0.5139,
-   "turnover_basis": "float",
-   "ma10": 876.5,
-   "ma10_margin_pct": 7.7,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.88,
-    "time": "09:55",
-    "value_eok": 7,
-    "count": 0
-   },
-   "reignition_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.19,
-     "value_eok": 11
-    },
-    {
-     "time": "09:10",
-     "body_pct": 2.62,
-     "value_eok": 6
-    },
-    {
-     "time": "09:55",
-     "body_pct": 3.88,
-     "value_eok": 7
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.19
-    },
-    {
-     "time": "09:10",
-     "body_pct": 2.62
-    },
-    {
-     "time": "09:55",
-     "body_pct": 3.88
-    }
-   ],
-   "news": [
-    {
-     "title": "진흥기업, 852억 부산 명장동 가로주택정비사업 시공사 선정 [공시pick...",
-     "summary": "진흥기업이 약 852억원 규모의 부산 명장동 가로주택정비사업 시공사로 선정됐다고 6일 공시했다. 이번 사업의 시행사는 하나자산신탁이다. 공사 예정 금액은 852억원으로 지난해 개별 기준 매출액 5764억원의 14.8%에 해당한다. 공사 기간은...",
-     "office": "조세일보",
-     "datetime": "202607061737",
-     "url": "https://n.news.naver.com/mnews/article/123/0002386020",
-     "sentiment": "호재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-07-07_삼성전자 2분기 잠정실",
-     "title": "삼성전자 2분기 잠정실적",
-     "dday": 0,
-     "categories": [
-      "반도체"
-     ],
-     "score": 8.1
-    },
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 2,
-     "categories": [
-      "금리"
-     ],
-     "score": 5.9
-    },
-    {
-     "id": "2026-07-14_미국 CPI 발표 (6",
-     "title": "미국 CPI 발표 (6월분)",
-     "dday": 7,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.9
-    }
-   ],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260703",
-    "peak_value_eok": 873,
-    "peak_high_pct": 26.27,
-    "peak_turnover_pct": 99.3,
-    "peak_ibs": 0.07,
-    "peak_uppertail": 54.1,
-    "ma20": 879.0,
-    "ma20_margin_pct": 7.39,
-    "cause_summary": "진흥기업, 852억 부산 명장동 가로주택정비사업 시공사 선정 [공시pick...",
-    "was_theme_leader": false,
-    "source": "backfill"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": null
+   "alert_now": null,
+   "theme_leader": true
   }
  ]
 }

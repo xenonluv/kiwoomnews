@@ -108,6 +108,93 @@ def next_day_bar(code, date):
     return sig, nxt
 
 
+def fill_signal_snapshot(code, date, s):
+    """신호일 OHLC/MA/peak 원천 필드 누락 표본 자가치유.
+
+    패치 이전 같은 날 장중 탈락한 흔들기 표본처럼 history에 핵심 파생값은 있으나
+    signal_* 원천 스냅샷이 없는 경우, 일봉으로 복원 가능한 값만 채운다.
+    """
+    if not s.get("shakeout"):
+        return False
+    snapshot_keys = (
+        "signal_open", "signal_high", "signal_low", "signal_close",
+        "signal_volume", "signal_value", "signal_peak6_price", "signal_peak60_price",
+        "signal_ma20", "signal_ma10", "run_6d_pct", "ma20_gap_pct", "ma10_margin_pct",
+    )
+    needs_snapshot = any(s.get(k) is None for k in snapshot_keys)
+    needs_dd6 = s.get("dd6_pct") is None
+    if not needs_snapshot and not needs_dd6:
+        return False
+    try:
+        bars = kis.daily_prices_jmoney_un(code, days=90)
+    except Exception as e:
+        log(f"  [warn] {code} 신호일 스냅샷 보강 실패: {e}")
+        return False
+    bars = sorted((b for b in bars if b.get("close") and b.get("high")), key=lambda b: b["date"])
+    idx = next((i for i, b in enumerate(bars) if b["date"] == date), None)
+    if idx is None or idx < 19:
+        return False
+    bar = bars[idx]
+    prev = bars[idx - 1] if idx > 0 else {}
+    closes = [b["close"] for b in bars[:idx + 1]]
+    highs = [b["high"] for b in bars[:idx + 1]]
+    ma20 = sum(closes[-20:]) / 20
+    ma10 = sum(closes[-10:]) / 10
+    peak60 = max(highs[max(0, idx - 59):idx + 1])
+    peak6 = max(highs[max(0, idx - 5):idx + 1])
+    close = bar["close"]
+    prev_close = prev.get("close")
+    change_pct = (close / prev_close - 1) * 100 if prev_close else None
+    high_pct = (bar["high"] / prev_close - 1) * 100 if prev_close else None
+    dd6 = (close / peak6 - 1) * 100 if peak6 else None
+    peak_dd = (close / peak60 - 1) * 100 if peak60 else None
+    run6 = (close / closes[-7] - 1) * 100 if len(closes) >= 7 and closes[-7] else None
+
+    def put(k, v):
+        if s.get(k) is None:
+            s[k] = v
+            return True
+        return False
+
+    changed = False
+    changed |= put("signal_date", date)
+    changed |= put("signal_open", bar.get("open"))
+    changed |= put("signal_high", bar.get("high"))
+    changed |= put("signal_low", bar.get("low"))
+    changed |= put("signal_close", close)
+    changed |= put("signal_prev_close", prev_close)
+    changed |= put("signal_volume", bar.get("volume"))
+    changed |= put("signal_value", bar.get("value"))
+    changed |= put("signal_value_eok", round((bar.get("value") or 0) / 1e8, 1))
+    changed |= put("signal_peak6_price", peak6)
+    changed |= put("signal_peak60_price", peak60)
+    changed |= put("signal_ma20", round(ma20, 1))
+    changed |= put("signal_ma10", round(ma10, 1))
+    changed |= put("run_6d_pct", round(run6, 1) if run6 is not None else None)
+    changed |= put("ma20_gap_pct", round((close / ma20 - 1) * 100, 1) if ma20 else None)
+    changed |= put("ma10_margin_pct", round((close / ma10 - 1) * 100, 2) if ma10 else None)
+    changed |= put("change_pct", round(change_pct, 2) if change_pct is not None else None)
+    changed |= put("high_pct", round(high_pct, 2) if high_pct is not None else None)
+    changed |= put("fade_pct", round(high_pct - change_pct, 1)
+                   if high_pct is not None and change_pct is not None else None)
+    changed |= put("peak_dd_pct", round(peak_dd, 1) if peak_dd is not None else None)
+    if dd6 is not None and s.get("dd6_pct") is None:
+        s["dd6_pct"] = round(dd6, 1)
+        if dd6 <= SHAKEOUT_DD6_TIER2_MAX:
+            tier = "tier2"
+        elif dd6 <= SHAKEOUT_DD6_MAX:
+            tier = "tier1"
+        elif dd6 <= SHAKEOUT_DD6_CANDIDATE_MAX:
+            tier = "candidate"
+        else:
+            tier = None
+        s["very_good_tier"] = tier
+        s["very_good"] = tier in ("tier1", "tier2")
+        s["very_good_candidate"] = tier == "candidate"
+        changed = True
+    return changed
+
+
 def evaluate():
     """미평가 종목을 익일 일봉과 대조해 history 파일에 결과 역기록."""
     today = datetime.now(KST).strftime("%Y%m%d")
@@ -118,8 +205,12 @@ def evaluate():
         changed = False
         age_days = (datetime.now(KST).date()
                     - datetime.strptime(hist["date"], "%Y%m%d").date()).days
+        n_signal_heal = 0
         n_heal = 0
         for code, s in hist.get("suspects", {}).items():
+            if fill_signal_snapshot(code, hist["date"], s):
+                changed = True
+                n_signal_heal += 1
             # 자가치유: 이미 평가됐지만 파생 필드가 빈 표본 소급 충전.
             #   (next_high_pct / next_open·next_low 필드 추가 이전에 평가된 표본 — 종가·적중은
             #    멀쩡하나 익절 도달폭·저가 낙폭·시가 갭이 누락됨. 필드 추가 시마다 여기서 소급 채운다.)
@@ -174,6 +265,8 @@ def evaluate():
             log(f"  [eval] {hist['date']} {s['name']} entry={entry:.0f} "
                 f"→ 익일종가 {nb['close']:.0f} ({'적중' if s['result']['hit'] else '미적중'}, "
                 f"{ret:+.1f}%)")
+        if n_signal_heal:
+            log(f"  [heal] {hist['date']} 신호일 스냅샷 소급 충전 {n_signal_heal}건")
         if n_heal:
             log(f"  [heal] {hist['date']} 파생필드(고가폭·시가·저가) 소급 충전 {n_heal}건")
         if changed:
@@ -276,6 +369,25 @@ def collect_samples():
                                 # 신호일 당일 등락률 — 등락률 구간별 익일 상승확률 분석용
                                 "change_pct": s.get("change_pct"),
                                 "change_basis": s.get("change_basis"),  # "NXT"면 야간가 기준 — change_band 필터로 제외(KRX hit과 기준 불일치)
+                                # 신호일 원천 스냅샷 — 매우좋음/흔들기 경계 재튜닝용.
+                                "entry": s.get("entry"),
+                                "signal_date": s.get("signal_date") or hist["date"],
+                                "signal_open": s.get("signal_open"),
+                                "signal_high": s.get("signal_high"),
+                                "signal_low": s.get("signal_low"),
+                                "signal_close": s.get("signal_close") or s.get("entry"),
+                                "signal_prev_close": s.get("signal_prev_close"),
+                                "signal_volume": s.get("signal_volume"),
+                                "signal_value": s.get("signal_value"),
+                                "signal_value_eok": s.get("signal_value_eok"),
+                                "signal_peak6_price": s.get("signal_peak6_price"),
+                                "signal_peak60_price": s.get("signal_peak60_price"),
+                                "signal_ma20": s.get("signal_ma20"),
+                                "signal_ma10": s.get("signal_ma10"),
+                                "run_6d_pct": s.get("run_6d_pct"),
+                                "ma20_gap_pct": s.get("ma20_gap_pct"),
+                                "ma10_margin_pct": s.get("ma10_margin_pct"),
+                                "float_ratio": s.get("float_ratio"),
                                 # 폭발일 회전율(폭발일 거래량/유통주식수 %) — 구간별 익일 상승확률 검증용
                                 "peak_turnover_pct": s.get("peak_turnover_pct"),
                                 "turnover_basis": s.get("turnover_basis"),  # float|cap — 당일 회전율 산출 기준
@@ -292,11 +404,17 @@ def collect_samples():
                                 "very_good_tier": s.get("very_good_tier"),
                                 "very_good_candidate": s.get("very_good_candidate", False),
                                 "eval_date": r.get("date"),
+                                "next_open": r.get("next_open"),
+                                "next_high": r.get("next_high"),
+                                "next_low": r.get("next_low"),
+                                "next_close": r.get("next_close"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
                                 "return_pct": r.get("return_pct", 0.0),
                                 # 익일 고가 도달폭 — 흔들기 밴드별 익절터치율(+7/+13%) 집계용
-                                "next_high_pct": r.get("next_high_pct")})
+                                "next_open_pct": r.get("next_open_pct"),
+                                "next_high_pct": r.get("next_high_pct"),
+                                "next_low_pct": r.get("next_low_pct")})
     samples.sort(key=lambda x: (x["date"], x["code"]))  # 동일 신호일 내 순서 안정화
     return samples
 

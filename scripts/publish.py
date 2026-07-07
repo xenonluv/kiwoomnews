@@ -113,6 +113,24 @@ def record_history(out):
             "prime": s.get("prime", False),  # 핵심 조건 모두 충족(유력) — 향후 적중률 분리 검증용
             "theme": s.get("theme", ""),  # 상위 테마 — by_theme 성과 집계용(표시 전용, 점수 미반영)
             "value_eok": s.get("value_eok"),         # 당일 거래대금(억) — 테마 대장 판별·기록용
+            # 신호일 원천 스냅샷 — 매우좋음/흔들기 튜닝 때 dd6·MA·고점낙폭 경계를 재계산하기 위한 영구 기록.
+            "signal_date": s.get("signal_date"),
+            "signal_open": s.get("signal_open"),
+            "signal_high": s.get("signal_high"),
+            "signal_low": s.get("signal_low"),
+            "signal_close": s.get("signal_close"),
+            "signal_prev_close": s.get("signal_prev_close"),
+            "signal_volume": s.get("signal_volume"),
+            "signal_value": s.get("signal_value"),
+            "signal_value_eok": s.get("signal_value_eok"),
+            "signal_peak6_price": s.get("signal_peak6_price"),
+            "signal_peak60_price": s.get("signal_peak60_price"),
+            "signal_ma20": s.get("signal_ma20"),
+            "signal_ma10": s.get("signal_ma10"),
+            "run_6d_pct": s.get("run_6d_pct"),
+            "ma20_gap_pct": s.get("ma20_gap_pct"),
+            "ma10_margin_pct": s.get("ma10_margin_pct"),
+            "float_ratio": s.get("float_ratio"),
             "turnover_pct": s.get("turnover_pct"),    # 당일 회전율(거래량/유통주식수 %)
             "peak_turnover_pct": s.get("peak_turnover_pct"),  # 폭발일 회전율(거래량/유통주식수 %) — backtest 구간 검증 입력
             "turnover_basis": s.get("turnover_basis"),  # "float"(유통)|"cap"(미상) — 당일 회전율 산출 기준

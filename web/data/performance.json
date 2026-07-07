@@ -1,5 +1,5 @@
 {
- "as_of": "2026-07-07 20:29 KST",
+ "as_of": "2026-07-07 21:54 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -760,14 +760,14 @@
  },
  "very_good_bands": {
   "min_n": 10,
-  "unknown_n": 5,
+  "unknown_n": 0,
   "cells": [
    {
     "band": "매우좋음 Tier1(-45<dd6≤-30)",
-    "n": 9,
-    "hit_rate": 77.8,
-    "avg_return": 17.1,
-    "valid": false
+    "n": 10,
+    "hit_rate": 80.0,
+    "avg_return": 16.25,
+    "valid": true
    },
    {
     "band": "매우좋음 Tier2(≤-45 과낙)",
@@ -778,16 +778,16 @@
    },
    {
     "band": "매우좋음 후보(-30<dd6≤-25)",
-    "n": 3,
-    "hit_rate": 33.3,
-    "avg_return": 1.47,
+    "n": 4,
+    "hit_rate": 25.0,
+    "avg_return": -1.84,
     "valid": false
    },
    {
     "band": "일반 흔들기(dd6>-25)",
-    "n": 40,
-    "hit_rate": 40.0,
-    "avg_return": -2.77,
+    "n": 43,
+    "hit_rate": 41.9,
+    "avg_return": -2.7,
     "valid": true
    }
   ]
