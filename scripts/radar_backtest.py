@@ -33,7 +33,9 @@ else:
 
 # 흔들기 스윗존 경계는 radar.py를 SSOT로 import(정의 드리프트 차단) — 회장님 룰 결합코호트 판정에 사용.
 from radar import (SHAKEOUT_T2D_SWEET_LO, SHAKEOUT_T2D_SWEET_HI,
-                   SHAKEOUT_DD_SWEET_LO, SHAKEOUT_DD_SWEET_HI)
+                   SHAKEOUT_DD_SWEET_LO, SHAKEOUT_DD_SWEET_HI,
+                   SHAKEOUT_DD6_MAX, SHAKEOUT_DD6_TIER2_MAX,
+                   SHAKEOUT_DD6_CANDIDATE_MAX)
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -285,6 +287,10 @@ def collect_samples():
                                 "strength_tier": s.get("strength_tier"),
                                 "turnover_band": s.get("turnover_band"),
                                 "dd_band": s.get("dd_band"),
+                                "dd6_pct": s.get("dd6_pct"),
+                                "very_good": s.get("very_good", False),
+                                "very_good_tier": s.get("very_good_tier"),
+                                "very_good_candidate": s.get("very_good_candidate", False),
                                 "eval_date": r.get("date"),
                                 "hit": r.get("hit", False),
                                 "high3": r.get("high3", False),
@@ -612,6 +618,50 @@ def shakeout_rule_cohorts(known):
             for label, flags in defs]
 
 
+def _very_good_tier_of(s):
+    """history/backfill 호환용 very_good tier 산출."""
+    tier = s.get("very_good_tier")
+    if tier in ("tier1", "tier2", "candidate"):
+        return tier
+    dd6 = s.get("dd6_pct")
+    if dd6 is None:
+        return None
+    if dd6 <= SHAKEOUT_DD6_TIER2_MAX:
+        return "tier2"
+    if dd6 <= SHAKEOUT_DD6_MAX:
+        return "tier1"
+    if dd6 <= SHAKEOUT_DD6_CANDIDATE_MAX:
+        return "candidate"
+    return "other"
+
+
+def very_good_tier_stats(shakeout_samples):
+    """⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리.
+
+    ChangeBandStats 구조로 웹 HitBandTable 재사용. 후보는 표시·검증용이며 자동매매 승격 대상이 아니다.
+    """
+    known = [s for s in shakeout_samples if _very_good_tier_of(s) is not None]
+    defs = [
+        ("매우좋음 Tier1(-45<dd6≤-30)", "tier1"),
+        ("매우좋음 Tier2(≤-45 과낙)", "tier2"),
+        ("매우좋음 후보(-30<dd6≤-25)", "candidate"),
+        ("일반 흔들기(dd6>-25)", "other"),
+    ]
+    cells = []
+    for label, tier in defs:
+        grp = [s for s in known if _very_good_tier_of(s) == tier]
+        hits = sum(1 for s in grp if s["hit"])
+        rets = [s["return_pct"] for s in grp]
+        cells.append({
+            "band": label,
+            "n": len(grp),
+            "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+            "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+            "valid": len(grp) >= FEATURE_MIN_N,
+        })
+    return {"min_n": FEATURE_MIN_N, "unknown_n": len(shakeout_samples) - len(known), "cells": cells}
+
+
 def load_shakeout_backfill():
     """💥 과거 흔들기 소급 재구성 표본(shakeout_backfill.py 산출) 로드 — 튜닝 표본 조기 확보.
     일봉 기반 재현(정의는 라이브와 1:1)·익일결과는 실제 일봉. 유니버스 한계(생존편향)는 파일 note에 명시."""
@@ -888,6 +938,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "peak_ibs_bands": peak_ibs_band_stats(reaccum_experimental),
         # 💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·고가터치율(회장님 20년룰 검증)
         "shakeout_bands": shakeout_band_stats(shakeout_experimental),
+        # ⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리(정렬·배지 검증용)
+        "very_good_bands": very_good_tier_stats(shakeout_experimental),
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {

@@ -35,7 +35,7 @@ import float_ratio
 # 흔들기 산식·상수를 radar에서 그대로 가져와 정의 드리프트 차단(SSOT).
 from radar import (
     SHAKEOUT_HIGH_PCT, SHAKEOUT_FADE_PCT, SHAKEOUT_TURNOVER_MIN, SHAKEOUT_RUN6D_MAX,
-    _shakeout_turnover_tier, _shakeout_dd_tier, _shakeout_strength,
+    _shakeout_turnover_tier, _shakeout_dd_tier, _shakeout_strength, _very_good_tier,
 )
 
 KST = timezone(timedelta(hours=9))
@@ -120,11 +120,14 @@ def scan_code(code, days, float_cache, today):
         win = highs[max(0, i - 59):i + 1]            # 최근 60봉(신호일 포함) 고점 — 라이브 days=60 대응
         peak = max(win) if win else 0
         peak_dd = (closes[i] / peak - 1) * 100 if peak else 0
+        peak6 = max(highs[max(0, i - 5):i + 1])      # 오늘+직전5일 고가 — 라이브 dd6와 동일
+        dd6 = (closes[i] / peak6 - 1) * 100 if peak6 else 0
         run6 = (closes[i] / closes[i - 6] - 1) * 100 if (i >= 6 and closes[i - 6]) else None
         if run6 is not None and run6 >= SHAKEOUT_RUN6D_MAX and change_pct < 0:
             continue                                 # 과확장 붕괴(라이브와 동일)
         stier = (_shakeout_turnover_tier({"turnover_2d_pct": turnover_2d})
                  + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))
+        vg_tier = _very_good_tier(dd6)
         entry = closes[i]
         out.append({
             "date": bars[i]["date"], "code": code, "name": name or code,
@@ -135,6 +138,10 @@ def scan_code(code, days, float_cache, today):
             "turnover_band": _shakeout_turnover_tier({"turnover_2d_pct": turnover_2d}),
             "peak_dd_pct": round(peak_dd, 1),
             "dd_band": _shakeout_dd_tier({"peak_dd_pct": peak_dd}),
+            "dd6_pct": round(dd6, 1),
+            "very_good": vg_tier in ("tier1", "tier2"),
+            "very_good_tier": vg_tier,
+            "very_good_candidate": vg_tier == "candidate",
             "strength_tier": stier, "strength": _shakeout_strength(stier),
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             # 익일 결과(실제 일봉) — radar_backtest evaluate()와 동일 정의

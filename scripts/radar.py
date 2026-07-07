@@ -117,6 +117,8 @@ SHAKEOUT_DD_SWEET_HI = -30.0   # 스윗존 상한(가장 얕음)
 # ⭐ 매우좋음(very_good): 흔들기 AND 6일 고점 대비 낙폭 dd6 ≤ 이 값(회장님 지시 2026-07-07).
 #   전수조사 14만: 흔들기 AND dd6≤-30 = 익일 고가 +7% 터치 72%(단독 44%/41% 압도) → 최상단(rank 1) 승격.
 SHAKEOUT_DD6_MAX = -30.0
+SHAKEOUT_DD6_TIER2_MAX = -45.0       # 과낙 구간 — 고가터치는 강해도 종가 리스크 별도 표시
+SHAKEOUT_DD6_CANDIDATE_MAX = -25.0   # 매우좋음 후보 — 장중 가격 변화로 on/off 가능
 
 
 def _shakeout_dd_tier(x):
@@ -134,6 +136,27 @@ def _shakeout_dd_tier(x):
 def _shakeout_strength(tier):
     """흔들기 강도 등급 라벨(결합 tier 0~4 → 사용자 등급). 0=회전·낙폭 둘 다 스윗=최강."""
     return {0: "Tier1(강)", 1: "Tier2(중강)", 2: "Tier3(중)"}.get(tier, "Tier4(약)")
+
+
+def _very_good_tier(dd6):
+    """dd6 기반 매우좋음 전용 tier.
+
+    strength_tier(2일회전+60일낙폭)는 표시·검증용이고, 정렬 핵심은 dd6만 사용한다.
+    """
+    if dd6 is None:
+        return None
+    if dd6 <= SHAKEOUT_DD6_TIER2_MAX:
+        return "tier2"
+    if dd6 <= SHAKEOUT_DD6_MAX:
+        return "tier1"
+    if dd6 <= SHAKEOUT_DD6_CANDIDATE_MAX:
+        return "candidate"
+    return None
+
+
+def _very_good_sort_rank(x):
+    """매우좋음 내부 정렬: Tier1(적정 깊은눌림) → Tier2(과낙). 후보는 최상단 승격 안 함."""
+    return {"tier1": 0, "tier2": 1}.get(x.get("very_good_tier"), 9)
 NXT_REEVAL_START_HHMM = "1600"     # NXT 시간외가로 '현재 등락률' 재평가 시작(=15:30+신선도상한 30분). 그 전엔
                                    # 정규장 막판 양봉 텔레그램이 신선하게 나가도록 KRX 유지 + NXT 단일가도 ~16:00 체결.
 REACCUM_SCORE = 62                 # 검증중 노출용 고정 표시 점수 base(raw 통계와 분리, score_raw=0)
@@ -1474,6 +1497,7 @@ def scan_shakeout(p, extra_codes=None):
             tp_hint = "+15% (양극단·표본소)"
         stier = (_shakeout_turnover_tier({"turnover_2d_pct": turnover_2d})
                  + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))  # 결합 강도 tier(0~4, 낮을수록 강)
+        vg_tier = _very_good_tier(dd6)
         out.append({
             "code": code, "name": row.get("name") or now.get("sector") or code, "sector": now.get("sector", ""),
             "pattern": "shakeout",
@@ -1492,7 +1516,9 @@ def scan_shakeout(p, extra_codes=None):
             "peak_dd_pct": round(peak_dd, 1),           # 💥 고점(60일) 대비 낙폭 — 스윗존 −30~−45%가 최적
             "dd_band": _shakeout_dd_tier({"peak_dd_pct": peak_dd}),  # 0=스윗 1=인접 2=그외
             "dd6_pct": round(dd6, 1),                   # ⭐ 6일 고점 대비 낙폭
-            "very_good": (dd6 <= SHAKEOUT_DD6_MAX),     # ⭐ 매우좋음(흔들기 AND dd6≤-30) — 전수조사 72%, rank 1 승격
+            "very_good": vg_tier in ("tier1", "tier2"),  # ⭐ 매우좋음(흔들기 AND dd6≤-30) — rank 최상단 승격
+            "very_good_tier": vg_tier,                  # tier1/tier2/candidate — dd6 전용 티어
+            "very_good_candidate": vg_tier == "candidate",  # ⭐후보(-30<dd6≤-25) — 표시만, 자동매매 승격 없음
             "strength_tier": stier, "strength": _shakeout_strength(stier),  # 강도 등급(종베 선택 보조)
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 1),
@@ -1642,7 +1668,10 @@ def main():
                 "turnover_band": r.get("turnover_band"), "dd_band": r.get("dd_band"),
                 "strength_tier": r.get("strength_tier"), "strength": r.get("strength"),
                 "tp_hint": r.get("tp_hint"),
-                "dd6_pct": r.get("dd6_pct"), "very_good": r.get("very_good"),  # ⭐ 매우좋음 플래그 유지(누락 시 rank 승격 실패)
+                # ⭐ 매우좋음 플래그 유지(누락 시 rank 승격 실패). 후보는 표시만, 자동매매 승격 없음.
+                "dd6_pct": r.get("dd6_pct"), "very_good": r.get("very_good"),
+                "very_good_tier": r.get("very_good_tier"),
+                "very_good_candidate": r.get("very_good_candidate"),
             })
         else:
             suspects.append(r)
@@ -1661,11 +1690,13 @@ def main():
         # ⚠ 경고/위험 최후순위 강등 폐지(회장님 지시 2026-07-06): 배지(alert_now)만 달고 순위엔 무영향.
         #   재료 강하면 경고받고도 급등 — 매매 선택은 회장님이 개별로.
         not x.get("very_good"),                                                 # ⭐ 매우좋음(흔들기 AND dd6≤-30) 절대 최상단(rank 1) — 전수조사 72%
+        _very_good_sort_rank(x),                                                # 매우좋음 내부: Tier1(−45~-30) → Tier2(≤−45 과낙)
         not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
         not x.get("alert_release"),                                             # 🔓 경고 해제 예정(긍정 신호 — 최상단 승격 유지)
         not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
-        ((_shakeout_turnover_tier(x) + _shakeout_dd_tier(x)) if x.get("shakeout") else 0),  # 💥 흔들기: 회전 스윗(90~140) + 고점낙폭 스윗(−30~−45) 결합 우선
-        (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 동급이면 더 강한 흔들기(fade) 우선(진흥형)
+        (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 강도 tier 대신 실제 흔든 폭 우선
+        (-(x.get("suspicion_score") or 0) if x.get("shakeout") else 0),
+        ((x.get("dd6_pct") if x.get("dd6_pct") is not None else 999) if x.get("shakeout") else 0),
         -x["suspicion_score"]))
         # ⚠ 🧲 저점매집 '우선순위 승격'·'저회전 오름차순' 정렬 철회(2026-07-04 회장님 결정): 익일 기준 미검증
         #   (저회전<15% 폭락 표본 n=2·둘다 익일 +13% 실패, 5분봉 지문 소급 불가). 이번 주 손실의 뿌리 =

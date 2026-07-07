@@ -46,6 +46,8 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const trendMargin = fmtChange(trendVal);
   const trendLabel = `${ma20Margin != null ? "20일선" : "10일선"} ${trendVal >= 0 ? "위" : "아래"}`;
   const strong = s.suspicion_score >= 75 || !!s.very_good;
+  const veryGoodLabel =
+    s.very_good_tier === "tier2" ? "⭐ 매우좋음 Tier2" : s.very_good_tier === "tier1" ? "⭐ 매우좋음 Tier1" : "⭐ 매우좋음";
 
   return (
     <Card
@@ -68,9 +70,18 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.very_good && (
               <Badge
                 className="bg-[#f59e0b] px-2.5 py-1 text-base font-black text-black"
-                title="⭐ 매우좋음 — 흔들기 AND 6일 고점 대비 낙폭 −30%↑(깊게 빠진 자리에서 오늘 격렬히 흔들림). 전수조사 14만건: 이 조합 익일 고가 +7% 터치 72%(단독 흔들기 44%·깊은눌림 41% 대비 압도). 최상단 승격 — 예측·매수추천 아님, 장중 익절 신호"
+                title="⭐ 매우좋음 — 흔들기 AND 6일 고점 대비 낙폭 −30%↑. Tier1은 −45~-30 적정 깊은눌림, Tier2는 ≤−45 과낙 구간. 최상단 승격 — 예측·매수추천 아님, 장중 익절 신호"
               >
-                ⭐ 매우좋음
+                {veryGoodLabel}
+              </Badge>
+            )}
+            {!s.very_good && s.very_good_candidate && (
+              <Badge
+                variant="outline"
+                className="border-[#f59e0b]/70 px-2 py-1 font-bold text-[#fbbf24]"
+                title="⭐ 매우좋음 후보 — 흔들기 AND 6일 고점 대비 낙폭 −25~-30%. 가격이 더 눌리면 매우좋음으로 재진입할 수 있지만, 후보는 최상단 승격·자동매매 승격 대상이 아님"
+              >
+                ☆ 매우좋음 후보
               </Badge>
             )}
             {s.shakeout && (

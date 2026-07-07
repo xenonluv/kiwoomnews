@@ -178,6 +178,10 @@ export interface Suspect {
   fade_pct?: number | null;
   /** ⭐ 매우좋음 — 흔들기 AND 6일 고점대비 낙폭 dd6≤-30%(전수조사 익일 +7% 터치 72%). rank 1 승격 */
   very_good?: boolean;
+  /** ⭐ 매우좋음 dd6 전용 티어: tier1(-45<dd6≤-30) | tier2(≤-45 과낙) | candidate(-30<dd6≤-25, 표시만) */
+  very_good_tier?: "tier1" | "tier2" | "candidate" | null;
+  /** ⭐ 매우좋음 후보 — 흔들기 AND -30<dd6≤-25. 표시·검증용, rank 최상단/자동매매 승격 없음 */
+  very_good_candidate?: boolean;
   /** ⭐ 6일 고점(오늘+직전5일) 대비 낙폭% */
   dd6_pct?: number | null;
   /** 💥 흔들기 강도 등급 라벨(예 "Tier1(강)") — 회전 스윗90~140 + 낙폭 스윗−30~−45 결합. 종베 선택 보조 */

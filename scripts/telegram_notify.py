@@ -212,6 +212,7 @@ def _format_very_good(s):
     """⭐매우좋음(흔들기 AND 6일낙폭 dd6≤-30) 알림 — 재매집·youtong과 제목·이모지로 구분."""
     code = s.get("code") or ""
     name = s.get("name") or code
+    tier_label = {"tier1": "Tier1", "tier2": "Tier2(과낙)"}.get(s.get("very_good_tier"), "")
     parts = [f"현재 {s.get('change_pct')}%"]
     if s.get("high_pct") is not None:
         parts.append(f"고가 {s.get('high_pct')}%")
@@ -222,7 +223,7 @@ def _format_very_good(s):
     if (s.get("value_eok") or 0) > 0:
         parts.append(f"거래대금 {s.get('value_eok')}억")
     return "\n".join([
-        f"⭐ {name} ({code}) 매우좋음 — 흔들기+깊은눌림",
+        f"⭐ {name} ({code}) 매우좋음{f' {tier_label}' if tier_label else ''} — 흔들기+깊은눌림",
         " · ".join(parts),
         "⚠ 장중 신호(회복 시 해제 가능)·전수조사 익일 +7% 터치 72%·장중 익절 참고, 매수추천 아님",
     ])
@@ -260,6 +261,8 @@ def notify_very_good(suspects, state_path=VERY_GOOD_STATE_PATH, now=None):
 def _digest_badge(s):
     if s.get("very_good"):
         return "⭐"
+    if s.get("very_good_candidate"):
+        return "☆"
     if s.get("shakeout"):
         return "💥"
     if s.get("geupso"):

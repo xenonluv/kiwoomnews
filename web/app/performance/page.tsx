@@ -118,6 +118,16 @@ export default function PerformancePage() {
           />
         )}
 
+        {data.very_good_bands && (
+          <HitBandTable
+            data={data.very_good_bands}
+            title="매우좋음 티어별 익일 상승확률"
+            subtitle="흔들기 종목을 dd6(6일 고점 대비 낙폭) 기준으로 Tier1(-45<dd6≤-30)/Tier2(≤-45)/후보/일반으로 나눠 '익일 종가 상승' 비율과 평균수익을 검증"
+            bandHeader="매우좋음 구분"
+            footnote="후보(-30<dd6≤-25)는 표시·검증용이며 최상단 승격/자동매매 승격 대상이 아닙니다. Tier2(≤-45)는 과낙 리스크를 별도 관찰합니다."
+          />
+        )}
+
         {data.experimental?.leader_reaccum && (
           <LeaderReaccumPanel data={data.experimental.leader_reaccum} />
         )}
