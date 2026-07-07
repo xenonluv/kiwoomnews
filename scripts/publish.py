@@ -256,6 +256,13 @@ def main():
                 print(f"[telegram] 곧 폭발 후보 알림 {ny}건 전송")
         except Exception as e:
             print(f"[warn] youtong 텔레그램 알림 실패(무시): {e}", file=sys.stderr)
+        # ⭐매우좋음(흔들기 AND dd6≤-30) 실시간 알림 — 종목·일자 1회 디둡(.very_good_notified.json). 별도 try 격리.
+        try:
+            nvg = telegram_notify.notify_very_good(suspects)
+            if nvg:
+                print(f"[telegram] ⭐매우좋음 알림 {nvg}건 전송")
+        except Exception as e:
+            print(f"[warn] 매우좋음 텔레그램 알림 실패(무시): {e}", file=sys.stderr)
     out = {
         "generated_at": radar.get("generated_at"),
         "market_session": market_session(),

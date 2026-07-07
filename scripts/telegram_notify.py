@@ -18,6 +18,7 @@ KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(REPO, ".telegram_notified.json")  # gitignore
 YOUTONG_STATE_PATH = os.path.join(REPO, ".youtong_notified.json")  # gitignore — youtong 알림 디둡(별도)
+VERY_GOOD_STATE_PATH = os.path.join(REPO, ".very_good_notified.json")  # gitignore — ⭐매우좋음 알림 디둡(별도)
 BASE = "https://stocknews-cyan.vercel.app"
 
 
@@ -200,6 +201,56 @@ def notify_youtong(youtong, state_path=YOUTONG_STATE_PATH, now=None):
         if y.get("exploded"):
             continue  # 이미 폭발(고가≥22·회전율≥90)한 종목 — '곧 폭발 후보' 알림은 의미 거꾸로. /forecast·🔥배지로 커버, 텔레그램 스킵
         if send(_format_youtong(y)):
+            sent.add(code)
+            n_sent += 1
+    if n_sent:
+        _save_state(state_path, {today: sorted(sent)})  # 오늘 것만 유지(과거 자동 정리)
+    return n_sent
+
+
+def _format_very_good(s):
+    """⭐매우좋음(흔들기 AND 6일낙폭 dd6≤-30) 알림 — 재매집·youtong과 제목·이모지로 구분."""
+    code = s.get("code") or ""
+    name = s.get("name") or code
+    parts = [f"현재 {s.get('change_pct')}%"]
+    if s.get("high_pct") is not None:
+        parts.append(f"고가 {s.get('high_pct')}%")
+    if s.get("dd6_pct") is not None:
+        parts.append(f"6일낙폭 {s.get('dd6_pct')}%")
+    if s.get("fade_pct") is not None:
+        parts.append(f"페이드 {s.get('fade_pct')}%p")
+    if (s.get("value_eok") or 0) > 0:
+        parts.append(f"거래대금 {s.get('value_eok')}억")
+    return "\n".join([
+        f"⭐ {name} ({code}) 매우좋음 — 흔들기+깊은눌림",
+        " · ".join(parts),
+        "⚠ 장중 신호(회복 시 해제 가능)·전수조사 익일 +7% 터치 72%·장중 익절 참고, 매수추천 아님",
+        f"{BASE}/stock/{code}",
+    ])
+
+
+def notify_very_good(suspects, state_path=VERY_GOOD_STATE_PATH, now=None):
+    """⭐매우좋음(흔들기 AND dd6≤-30) 실시간 알림 — 종목·일자당 1회(디둡). 보낸 건수 반환.
+    very_good은 장중 현재가로 재계산돼 깜빡이므로 '첫 포착 1통'(재포착 무시). 재매집/youtong과 상태파일
+    (.very_good_notified.json)·메시지 분리. 기본 ON(회장님 요청) — TELEGRAM_VERY_GOOD=0으로 끔.
+    토큰 미설정/실패는 조용히 skip(Mac만 실송·publish 본작업 보호)."""
+    load_env()
+    if os.environ.get("TELEGRAM_VERY_GOOD", "1") != "1":
+        return 0
+    if not os.environ.get("TELEGRAM_BOT_TOKEN") or not os.environ.get("TELEGRAM_CHAT_ID"):
+        return 0  # 미설정 → 조용히 skip(Mac만 실송)
+    now = now or datetime.now(KST)
+    today = now.strftime("%Y%m%d")
+    state = _load_state(state_path)
+    sent = set(state.get(today, []))  # 오늘 보낸 종목코드 집합(종목·일자 1회)
+    n_sent = 0
+    for s in suspects or []:
+        if not s.get("very_good"):
+            continue
+        code = s.get("code")
+        if not code or code in sent:
+            continue
+        if send(_format_very_good(s)):
             sent.add(code)
             n_sent += 1
     if n_sent:
