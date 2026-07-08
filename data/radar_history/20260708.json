@@ -21,7 +21,7 @@
     "peak_turnover": 8,
     "re_turnover": 0
    },
-   "rank": 2,
+   "rank": 1,
    "change_pct": 0.0,
    "change_basis": "KRX",
    "high_pct": 0.0,
@@ -335,12 +335,12 @@
    "first_seen": "2026-07-08 10:33:55 KST",
    "evaluated": false,
    "result": null,
-   "final": true
+   "final": false
   },
   "012170": {
    "name": "아센디오",
    "sector": "아센디오",
-   "entry": 960.0,
+   "entry": 947.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -357,14 +357,14 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 3,
-   "change_pct": -12.89,
+   "rank": 2,
+   "change_pct": -14.07,
    "change_basis": "KRX",
    "high_pct": 12.25,
    "pattern": "reaccum",
    "prime": false,
    "theme": "반도체",
-   "value_eok": 16,
+   "value_eok": 17,
    "snapshot_open": null,
    "snapshot_high": null,
    "snapshot_low": null,
@@ -389,9 +389,9 @@
    "signal_source": null,
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 22.65,
+   "ma10_margin_pct": 21.19,
    "float_ratio": 0.5205,
-   "turnover_pct": 14.8,
+   "turnover_pct": 15.1,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -408,8 +408,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 0.06,
     "peak_uppertail": 18.4,
-    "ma20": 892.0,
-    "ma20_margin_pct": 7.62,
+    "ma20": 891.4,
+    "ma20_margin_pct": 6.24,
     "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
     "was_theme_leader": false,
     "source": "live"
@@ -570,5 +570,5 @@
    "final": false
   }
  },
- "as_of": "2026-07-08 14:03:34 KST"
+ "as_of": "2026-07-08 14:13:29 KST"
 }
