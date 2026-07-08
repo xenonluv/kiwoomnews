@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-08 20:03:56 KST",
+ "generated_at": "2026-07-09 00:48:44 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -31,12 +31,12 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 33,
+ "universe_count": 37,
  "events": [
   {
    "id": "2026-07-09_한국은행 금통위 기준금",
    "date": "2026-07-09",
-   "dday": 1,
+   "dday": 0,
    "title": "한국은행 금통위 기준금리 결정",
    "category": [
     "금리"
@@ -48,7 +48,7 @@
   {
    "id": "2026-07-09_한국 옵션·선물 동시만",
    "date": "2026-07-09",
-   "dday": 1,
+   "dday": 0,
    "title": "한국 옵션·선물 동시만기일 (7월)",
    "category": [
     "수급"
@@ -60,7 +60,7 @@
   {
    "id": "2026-07-14_미국 CPI 발표 (6",
    "date": "2026-07-14",
-   "dday": 6,
+   "dday": 5,
    "title": "미국 CPI 발표 (6월분)",
    "category": [
     "금리",
@@ -71,234 +71,8 @@
    "estimated": true
   }
  ],
- "explosions": [
-  {
-   "code": "024060",
-   "name": "흥구석유",
-   "sector": "흥구석유",
-   "high_pct": 24.73,
-   "vol_turnover_pct": 110.6,
-   "value_eok": 1184,
-   "price": 10440.0,
-   "change_pct": 14.73,
-   "backfill": false
-  },
-  {
-   "code": "001210",
-   "name": "금호전기",
-   "sector": "금호전기",
-   "high_pct": 29.94,
-   "vol_turnover_pct": 114.9,
-   "value_eok": 571,
-   "price": 1302.0,
-   "change_pct": 29.94,
-   "backfill": false
-  },
-  {
-   "code": "058730",
-   "name": "다스코",
-   "sector": "다스코",
-   "high_pct": 30.0,
-   "vol_turnover_pct": 272.6,
-   "value_eok": 1417,
-   "price": 5200.0,
-   "change_pct": 30.0,
-   "backfill": false
-  },
-  {
-   "code": "079650",
-   "name": "서산",
-   "sector": "서산",
-   "high_pct": 27.54,
-   "vol_turnover_pct": 423.6,
-   "value_eok": 1479,
-   "price": 5380.0,
-   "change_pct": 12.67,
-   "backfill": false
-  }
- ],
- "youtong": [
-  {
-   "code": "079650",
-   "name": "서산",
-   "sector": "서산",
-   "change_pct": 12.67,
-   "high_pct": 27.54,
-   "vol_turnover_pct": 423.6,
-   "value_eok": 1479,
-   "price": 5380.0,
-   "first_seen": "10:22",
-   "exploded": true
-  },
-  {
-   "code": "058730",
-   "name": "다스코",
-   "sector": "다스코",
-   "change_pct": 30.0,
-   "high_pct": 30.0,
-   "vol_turnover_pct": 272.6,
-   "value_eok": 1417,
-   "price": 5200.0,
-   "first_seen": "11:32",
-   "exploded": true
-  },
-  {
-   "code": "439090",
-   "name": "마녀공장",
-   "sector": "마녀공장",
-   "change_pct": 18.44,
-   "high_pct": 21.13,
-   "vol_turnover_pct": 160.9,
-   "value_eok": 1890,
-   "price": 17600.0,
-   "first_seen": "13:12",
-   "exploded": false
-  },
-  {
-   "code": "365660",
-   "name": "레몬헬스케어",
-   "sector": "레몬헬스케어",
-   "change_pct": -16.61,
-   "high_pct": 17.68,
-   "vol_turnover_pct": 138.0,
-   "value_eok": 1683,
-   "price": 10190.0,
-   "first_seen": "10:12",
-   "exploded": false
-  },
-  {
-   "code": "001210",
-   "name": "금호전기",
-   "sector": "금호전기",
-   "change_pct": 29.94,
-   "high_pct": 29.94,
-   "vol_turnover_pct": 114.9,
-   "value_eok": 571,
-   "price": 1302.0,
-   "first_seen": "10:22",
-   "exploded": true
-  },
-  {
-   "code": "024060",
-   "name": "흥구석유",
-   "sector": "흥구석유",
-   "change_pct": 14.73,
-   "high_pct": 24.73,
-   "vol_turnover_pct": 110.6,
-   "value_eok": 1184,
-   "price": 10440.0,
-   "first_seen": "13:22",
-   "exploded": true
-  },
-  {
-   "code": "228340",
-   "name": "동양파일",
-   "sector": "동양파일",
-   "change_pct": 17.96,
-   "high_pct": 21.61,
-   "vol_turnover_pct": 82.0,
-   "value_eok": 251,
-   "price": 4040.0,
-   "first_seen": "12:22",
-   "exploded": false
-  },
-  {
-   "code": "091590",
-   "name": "남화토건",
-   "sector": "남화토건",
-   "change_pct": 7.97,
-   "high_pct": 19.13,
-   "vol_turnover_pct": 81.6,
-   "value_eok": 414,
-   "price": 10160.0,
-   "first_seen": "12:02",
-   "exploded": false
-  },
-  {
-   "code": "406820",
-   "name": "뷰티스킨",
-   "sector": "뷰티스킨",
-   "change_pct": 29.9,
-   "high_pct": 29.9,
-   "vol_turnover_pct": 81.4,
-   "value_eok": 140,
-   "price": 2285.0,
-   "first_seen": "10:52",
-   "exploded": false
-  },
-  {
-   "code": "477850",
-   "name": "마키나락스",
-   "sector": "마키나락스",
-   "change_pct": 10.61,
-   "high_pct": 23.67,
-   "vol_turnover_pct": 81.0,
-   "value_eok": 2184,
-   "price": 27100.0,
-   "first_seen": "11:02",
-   "exploded": false
-  },
-  {
-   "code": "198440",
-   "name": "강동씨앤엘",
-   "sector": "강동씨앤엘",
-   "change_pct": 6.61,
-   "high_pct": 18.27,
-   "vol_turnover_pct": 56.2,
-   "value_eok": 200,
-   "price": 1920.0,
-   "first_seen": "11:52",
-   "exploded": false
-  },
-  {
-   "code": "153890",
-   "name": "져스텍",
-   "sector": "져스텍",
-   "change_pct": -1.65,
-   "high_pct": 17.44,
-   "vol_turnover_pct": 52.4,
-   "value_eok": 387,
-   "price": 13080.0,
-   "first_seen": "11:12",
-   "exploded": false
-  },
-  {
-   "code": "237880",
-   "name": "클리오",
-   "sector": "클리오",
-   "change_pct": 6.86,
-   "high_pct": 13.71,
-   "vol_turnover_pct": 51.5,
-   "value_eok": 403,
-   "price": 12000.0,
-   "first_seen": "15:22",
-   "exploded": false
-  },
-  {
-   "code": "010960",
-   "name": "삼호개발",
-   "sector": "삼호개발",
-   "change_pct": 6.44,
-   "high_pct": 10.14,
-   "vol_turnover_pct": 51.3,
-   "value_eok": 328,
-   "price": 4460.0,
-   "first_seen": "13:12",
-   "exploded": false
-  },
-  {
-   "code": "042040",
-   "name": "케이피엠테크",
-   "sector": "케이피엠테크",
-   "change_pct": -4.17,
-   "high_pct": 30.0,
-   "vol_turnover_pct": 50.0,
-   "value_eok": 58,
-   "price": 5750.0,
-   "first_seen": "12:58",
-   "exploded": false
-  }
- ],
+ "explosions": [],
+ "youtong": [],
  "suspects": [
   {
    "code": "042040",
@@ -372,9 +146,80 @@
    "geupso_bars": [],
    "low_accum": false,
    "low_accum_bars": [],
-   "news": [],
+   "news": [
+    {
+     "title": "뉴온, 190억 규모 제3자배정 유상증자 결정",
+     "summary": "뉴온(123840)은 최대주주인 케이피엠테크(042040)를 대상으로 약 190억원 규모의 제3자배정 유상증자를 결정했다고 6일 공시했다. 발행되는 신주는 보통주 918만7620주다. 신주 발행가액은 1주당 2068원이며 신주 상장 예정일은 오는 28",
+     "office": "이데일리",
+     "datetime": "202607061656",
+     "url": "https://n.news.naver.com/mnews/article/018/0006324024",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "케이피엠테크, 225억원 규모 제3자배정 유상증자 결정",
+     "summary": "케이피엠테크(042040)는 최대주주인 텔콘알에프제약을 대상으로 224억 9999만원 규모의 제3자배정 유상증자를 결정했다고 3일 공시했다. 발행되는 신주는 보통주 620만 55주다. 신주 발행가액은 1주당 3629원이며, 신주의 상장 예정일은 오는.",
+     "office": "이데일리",
+     "datetime": "202607031648",
+     "url": "https://n.news.naver.com/mnews/article/018/0006321880",
+     "sentiment": "혼재"
+    }
+   ],
    "matched_events": [],
    "theme": "",
+   "material": {
+    "grade": "S",
+    "score": 100,
+    "summary": "케이피엠테크, 225억원 규모 제3자배정 유상증자 결정",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.7,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시",
+     "공시/대형이벤트",
+     "구제/수혈",
+     "케이피엠테크"
+    ],
+    "risk_flags": [
+     "감자",
+     "상폐",
+     "유상증자"
+    ],
+    "evidence": [
+     {
+      "title": "케이피엠테크, 225억원 규모 제3자배정 유상증자 결정",
+      "datetime": "202607031648",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006321880",
+      "score": 100
+     },
+     {
+      "title": "뉴온, 190억 규모 제3자배정 유상증자 결정",
+      "datetime": "202607061656",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006324024",
+      "score": 100
+     },
+     {
+      "title": "케이피엠테크, 무상감자 완료…거래재개 첫날 23% '뚝'[특징주]",
+      "datetime": "202606260930",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006315349",
+      "score": 76
+     },
+     {
+      "title": "실소유주 50억원 투입... 텔콘 3형제, 상폐 위기 해소하고 순환출자 풀...",
+      "datetime": "202607080801",
+      "source": "조선비즈",
+      "url": "https://n.news.naver.com/mnews/article/366/0001177480",
+      "score": 74
+     }
+    ],
+    "source_count": 4,
+    "relevant_count": 4
+   },
    "visible_experimental": true,
    "alert_now": null,
    "theme_leader": false
@@ -451,9 +296,78 @@
    "geupso_bars": [],
    "low_accum": false,
    "low_accum_bars": [],
-   "news": [],
+   "news": [
+    {
+     "title": "진영, 해외 재공략 속도…PMMA·ASA로 본업 회복 시동",
+     "summary": "플라스틱시트 제조 기업 진영이 올해 1분기 매출 확대와 수익성 개선을 동시에 기록했다. 주력인 가구용 시트가 매출의 중심을 유지한 가운데 판관비 부담도 낮아지며 본업 수익성이 개선된 것이다. 회사는 미국·호주·유럽 등 해외 시장 재공략과...",
+     "office": "블로터",
+     "datetime": "202606191419",
+     "url": "https://n.news.naver.com/mnews/article/293/0000086508",
+     "sentiment": "호재"
+    },
+    {
+     "title": "[메자닌 투자파일] 진영, CB로 80억 조달…열분해유 확장 드라이브",
+     "summary": "플라스틱시트 제조 기업 진영이 전환사채(CB)를 발행해 외부 자금을 조달한다. 차입 부담을 덜고 자회사의 신사업인 열분해유 사업 확장에 힘을 쏟기 위해서다. 회사는 최근 중동 사태에 따른 원재료 수급 불확실성에 대응하는 동시에 열분해유...",
+     "office": "블로터",
+     "datetime": "202604071728",
+     "url": "https://n.news.naver.com/mnews/article/293/0000082354",
+     "sentiment": "호재"
+    }
+   ],
    "matched_events": [],
-   "theme": "",
+   "theme": "실적",
+   "material": {
+    "grade": "C",
+    "score": 45,
+    "summary": "진영, 5대 1 주식병합 결정",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "오래됨",
+    "freshness_days": 9.36,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "실적",
+     "실적/재무",
+     "테마/수혜"
+    ],
+    "risk_flags": [
+     "CB"
+    ],
+    "evidence": [
+     {
+      "title": "진영, 5대 1 주식병합 결정",
+      "datetime": "202606291614",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006318218",
+      "score": 60
+     },
+     {
+      "title": "[메자닌 투자파일] 진영, CB로 80억 조달…열분해유 확장 드라이브",
+      "datetime": "202604071728",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000082354",
+      "score": 50
+     },
+     {
+      "title": "진영, 해외 재공략 속도…PMMA·ASA로 본업 회복 시동",
+      "datetime": "202606191419",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000086508",
+      "score": 44
+     },
+     {
+      "title": "종전 협상 결렬에…탈플라스틱株 동반 강세[특징주]",
+      "datetime": "202604130914",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006256024",
+      "score": 21
+     }
+    ],
+    "source_count": 4,
+    "relevant_count": 4
+   },
    "visible_experimental": true,
    "alert_now": null,
    "theme_leader": false
@@ -530,554 +444,119 @@
    "geupso_bars": [],
    "low_accum": false,
    "low_accum_bars": [],
-   "news": [],
-   "matched_events": [],
-   "theme": "",
-   "visible_experimental": true,
-   "alert_now": null,
-   "theme_leader": false
-  },
-  {
-   "code": "002990",
-   "name": "금호건설",
-   "sector": "금호건설",
-   "pattern": "reaccum",
-   "geupso": true,
-   "geupso_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 3.14
-    },
-    {
-     "time": "15:05",
-     "body_pct": 4.4
-    }
-   ],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 78,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 4,
-    "re_body": 4,
-    "peak_turnover": 8,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 14000.0,
-   "change_pct": 0.0,
-   "change_basis": "KRX",
-   "high_pct": 0.0,
-   "value_eok": 0,
-   "turnover_pct": null,
-   "peak_turnover_pct": 180.0,
-   "float_ratio": 0.52,
-   "turnover_basis": "cap",
-   "ma10": 10765.0,
-   "ma10_margin_pct": 30.05,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 4.4,
-    "time": "15:05",
-    "value_eok": 102,
-    "count": 3
-   },
-   "reignition_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 3.14,
-     "value_eok": 72
-    },
-    {
-     "time": "15:05",
-     "body_pct": 4.4,
-     "value_eok": 102
-    },
-    {
-     "time": "15:15",
-     "body_pct": 1.82,
-     "value_eok": 55
-    }
-   ],
-   "low_accum": false,
-   "low_accum_bars": [],
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 1,
-     "categories": [
-      "금리"
-     ],
-     "score": 6.5
-    },
-    {
-     "id": "2026-07-14_미국 CPI 발표 (6",
-     "title": "미국 CPI 발표 (6월분)",
-     "dday": 6,
-     "categories": [
-      "금리"
-     ],
-     "score": 3.7
-    }
-   ],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260707",
-    "peak_value_eok": 4929,
-    "peak_high_pct": 27.85,
-    "peak_turnover_pct": 180.0,
-    "peak_ibs": 0.61,
-    "peak_uppertail": 12.8,
-    "ma20": 7450.5,
-    "ma20_margin_pct": 87.91,
-    "cause_summary": "“호남하면 이 그룹이었는데” ‘금호’ 이름으로 30% 급등…모조리 ...",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": "경고",
-   "alert_release": false,
-   "theme_leader": false
-  },
-  {
-   "code": "198440",
-   "name": "강동씨앤엘",
-   "sector": "강동씨앤엘",
-   "pattern": "reaccum",
-   "geupso": true,
-   "geupso_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 2.45
-    },
-    {
-     "time": "14:55",
-     "body_pct": 3.76
-    }
-   ],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 74,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 2,
-    "re_body": 3,
-    "peak_turnover": 2,
-    "re_turnover": 5
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 1920.0,
-   "change_pct": 6.61,
-   "change_basis": "KRX",
-   "high_pct": 18.27,
-   "value_eok": 334,
-   "turnover_pct": 93.3,
-   "peak_turnover_pct": 106.7,
-   "float_ratio": 0.306,
-   "turnover_basis": "float",
-   "ma10": 1713.2,
-   "ma10_margin_pct": 12.07,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.76,
-    "time": "14:55",
-    "value_eok": 6,
-    "count": 2
-   },
-   "reignition_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 2.45,
-     "value_eok": 2
-    },
-    {
-     "time": "14:55",
-     "body_pct": 3.76,
-     "value_eok": 6
-    }
-   ],
-   "low_accum": false,
-   "low_accum_bars": [],
-   "news": [],
-   "matched_events": [],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260707",
-    "peak_value_eok": 370,
-    "peak_high_pct": 29.56,
-    "peak_turnover_pct": 106.7,
-    "peak_ibs": 0.51,
-    "peak_uppertail": 14.4,
-    "ma20": 1692.5,
-    "ma20_margin_pct": 13.44,
-    "cause_summary": "",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": null,
-   "theme_leader": true
-  },
-  {
-   "code": "010960",
-   "name": "삼호개발",
-   "sector": "삼호개발",
-   "pattern": "reaccum",
-   "geupso": true,
-   "geupso_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 2.25
-    },
-    {
-     "time": "15:00",
-     "body_pct": 2.41
-    }
-   ],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 71,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 4,
-    "re_body": 1,
-    "peak_turnover": 1,
-    "re_turnover": 3
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 4460.0,
-   "change_pct": 6.44,
-   "change_basis": "KRX",
-   "high_pct": 10.5,
-   "value_eok": 444,
-   "turnover_pct": 69.2,
-   "peak_turnover_pct": 99.2,
-   "float_ratio": 0.6053999999999999,
-   "turnover_basis": "float",
-   "ma10": 3933.0,
-   "ma10_margin_pct": 13.4,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 2.41,
-    "time": "15:00",
-    "value_eok": 15,
-    "count": 3
-   },
-   "reignition_bars": [
-    {
-     "time": "14:45",
-     "body_pct": 2.25,
-     "value_eok": 2
-    },
-    {
-     "time": "14:55",
-     "body_pct": 1.56,
-     "value_eok": 2
-    },
-    {
-     "time": "15:00",
-     "body_pct": 2.41,
-     "value_eok": 15
-    }
-   ],
-   "low_accum": false,
-   "low_accum_bars": [],
-   "news": [],
-   "matched_events": [
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 1,
-     "categories": [
-      "금리"
-     ],
-     "score": 6.5
-    },
-    {
-     "id": "2026-07-14_미국 CPI 발표 (6",
-     "title": "미국 CPI 발표 (6월분)",
-     "dday": 6,
-     "categories": [
-      "금리"
-     ],
-     "score": 3.7
-    }
-   ],
-   "theme": "금리",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260706",
-    "peak_value_eok": 633,
-    "peak_high_pct": 24.93,
-    "peak_turnover_pct": 99.2,
-    "peak_ibs": 0.62,
-    "peak_uppertail": 9.4,
-    "ma20": 3558.5,
-    "ma20_margin_pct": 25.33,
-    "cause_summary": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": null,
-   "theme_leader": true
-  },
-  {
-   "code": "012170",
-   "name": "아센디오",
-   "sector": "아센디오",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 959.0,
-   "change_pct": -12.98,
-   "change_basis": "KRX",
-   "high_pct": 12.25,
-   "value_eok": 18,
-   "turnover_pct": 16.2,
-   "peak_turnover_pct": null,
-   "float_ratio": 0.5205,
-   "turnover_basis": "float",
-   "ma10": 782.6,
-   "ma10_margin_pct": 22.54,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 6.53,
-    "time": "11:00",
-    "value_eok": 1,
-    "count": 0
-   },
-   "reignition_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.6,
-     "value_eok": 1
-    },
-    {
-     "time": "09:10",
-     "body_pct": 4.52,
-     "value_eok": 2
-    },
-    {
-     "time": "09:55",
-     "body_pct": 2.17,
-     "value_eok": 0
-    },
-    {
-     "time": "10:25",
-     "body_pct": 2.42,
-     "value_eok": 0
-    },
-    {
-     "time": "10:30",
-     "body_pct": 2.27,
-     "value_eok": 0
-    },
-    {
-     "time": "10:45",
-     "body_pct": 3.43,
-     "value_eok": 0
-    },
-    {
-     "time": "11:00",
-     "body_pct": 6.53,
-     "value_eok": 1
-    },
-    {
-     "time": "12:25",
-     "body_pct": 2.04,
-     "value_eok": 0
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:05",
-     "body_pct": 3.6
-    },
-    {
-     "time": "09:10",
-     "body_pct": 4.52
-    },
-    {
-     "time": "09:55",
-     "body_pct": 2.17
-    },
-    {
-     "time": "10:25",
-     "body_pct": 2.42
-    },
-    {
-     "time": "10:30",
-     "body_pct": 2.27
-    },
-    {
-     "time": "10:45",
-     "body_pct": 3.43
-    },
-    {
-     "time": "11:00",
-     "body_pct": 6.53
-    },
-    {
-     "time": "12:25",
-     "body_pct": 2.04
-    }
-   ],
    "news": [
     {
-     "title": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
-     "summary": "경남제약(053950)이 131억 원 규모 부동산 현물출자를 통해 연예기획사 아센디오(012170) 지분 44.5%를 취득한다. 경남제약이 현금이 아닌 토지와 건물을 출자하고 그 대가로 아센디오 신주를 받는 구조다. 8일 금융감독원 전자공시시스템에 따",
-     "office": "뉴스1",
-     "datetime": "202607081129",
-     "url": "https://n.news.naver.com/mnews/article/421/0009047319",
-     "sentiment": "호재"
+     "title": "“크래미는 못 잃어” 장바구니 열고 주식까지 샀다…한성기업에 무슨...",
+     "summary": "“크래미 만드는 회사는 우리가 지켜야 한다.” ‘크래미’로 잘 알려진 한성기업을 살리겠다며 소비자들이 지갑을 열고 있다. 제품 구매에 그치지 않고 일부 개인투자자는 주식 매수까지 나섰다. 상장폐지 기준 강화로 한성기업의 상장 유지에 대한...",
+     "office": "데일리안",
+     "datetime": "202607081907",
+     "url": "https://n.news.naver.com/mnews/article/119/0003109464",
+     "sentiment": "혼재"
     },
     {
-     "title": "아센디오, 경남제약 대상 부동산 현물출자 기반 유증 결정",
-     "summary": "아센디오는 경남제약을 대상으로 현물출자 방식의 제3자배정 유상증자를 결정했다고 7일 공시했다. 이번 유상증자는 경남제약이 보유한 서울 신당동 소재 약 131억원 상당의 부동산을 현물출자하고 아센디오는 그 대가로 보통주 1623만3418주를 주당...",
-     "office": "뉴시스",
-     "datetime": "202607071654",
-     "url": "https://n.news.naver.com/mnews/article/003/0014051867",
+     "title": "애국 개미들이 살린 한성기업의 기적…&quot;주문 폭주에 주가도 쑥&quot; [씬속...",
+     "summary": "정부 &quot;자본시장 건전성 강화…상장폐지 기준 강화&quot; 코스피 상장 유지요건 기준 시가총액 200억 원 → 300억 원으로 상향 증시 퇴출 기로에 선 '한성기업' [한성기업] 1963년 설립 '크래미'로 이름 알려진 수산물 가공 식품 제조",
+     "office": "연합뉴스TV",
+     "datetime": "202607081801",
+     "url": "https://n.news.naver.com/mnews/article/422/0000882936",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "'상장폐지' 내몰렸던 '크래미' 한성기업…누리꾼 '돈쭐' 응원에 기사회...",
+     "summary": "수산물 가공식품 '크래미' 등을 제조하는 한성기업이 주식시장 퇴출 기로에서 누리꾼들의 '돈쭐(돈으로 혼쭐)'에 힘입어 극적으로 기사회생한 사연이 8일 알려졌다. 한성기업은 지난 6일 홈페이지에 올린 '감사의 말씀'에서 &quot;온라인과 SNS에서 좋",
+     "office": "TV조선",
+     "datetime": "202607081608",
+     "url": "https://n.news.naver.com/mnews/article/448/0000625276",
      "sentiment": "악재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-07-09_한국은행 금통위 기준금",
-     "title": "한국은행 금통위 기준금리 결정",
-     "dday": 1,
-     "categories": [
-      "금리"
-     ],
-     "score": 2.2
     },
     {
-     "id": "2026-07-14_미국 CPI 발표 (6",
-     "title": "미국 CPI 발표 (6월분)",
-     "dday": 6,
-     "categories": [
-      "금리"
-     ],
-     "score": 1.2
+     "title": "소비자가 살린 '크래미' 한성기업…&quot;따뜻한 성원에 진심으로 감사&quot;",
+     "summary": "박세은 인턴 기자 = '크래미'로 알려진 한성기업이 강화된 상장폐지 기준으로 위기에 놓이자 해당 기업을 살리자는 소비자들의 구매 운동이 이어진 것에 대해 한성기업이 공식 입장을 통해 고객들에게 감사 메시지를 전했다. 지난 6일 한성기업의...",
+     "office": "뉴시스",
+     "datetime": "202607080931",
+     "url": "https://n.news.naver.com/mnews/article/003/0014052786",
+     "sentiment": "악재"
+    },
+    {
+     "title": "한성기업, 상폐 우려 속 ‘애국기업’ 재조명에 16% 급등[특징주]",
+     "summary": "시가총액 기준 미달에 따른 상장폐지 우려가 제기됐던 한성기업이 장 초반 급등하고 있다. 25년째 한국전쟁 참전용사 후원 행사를 이어왔다는 사실이 온라인상에서 재조명되면서 개인투자자들의 매수세가 몰린 영향으로 풀이된다. 8일 엠피닥터에...",
+     "office": "이데일리",
+     "datetime": "202607080919",
+     "url": "https://n.news.naver.com/mnews/article/018/0006325139",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "[자막뉴스] &quot;다 사주자&quot; 주식까지 20% '폭등'…'돈쭐' 난 미담 회사 &quot;저...",
+     "summary": "국내 수산식품 기업 한성기업이 상장폐지 위기에 놓였다는 소식에 온라인을 중심으로 자발적 응원 움직임이 확산하고 있습니다. 제품 구매 인증에 주식을 직접 매수하는 '응원 투자'까지 이어지며 한때 주가가 11% 넘게 오르기도 했습니다. 업계에...",
+     "office": "SBS",
+     "datetime": "202607071825",
+     "url": "https://n.news.naver.com/mnews/article/055/0001370458",
+     "sentiment": "혼재"
     }
    ],
-   "theme": "반도체",
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260707",
-    "peak_value_eok": 0,
-    "peak_high_pct": 0.0,
-    "peak_turnover_pct": null,
-    "peak_ibs": 0.06,
-    "peak_uppertail": 18.4,
-    "ma20": 892.0,
-    "ma20_margin_pct": 7.51,
-    "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
-    "was_theme_leader": false,
-    "source": "live"
+   "matched_events": [],
+   "theme": "",
+   "material": {
+    "grade": "D",
+    "score": 45,
+    "summary": "한성기업, 상폐 우려 속 ‘애국기업’ 재조명에 16% 급등[특징주]",
+    "sentiment": "악재",
+    "reliability": "뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.24,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시/대형이벤트",
+     "테마/수혜",
+     "한성기업"
+    ],
+    "risk_flags": [
+     "상장폐지",
+     "상폐"
+    ],
+    "evidence": [
+     {
+      "title": "한성기업, 상폐 우려 속 ‘애국기업’ 재조명에 16% 급등[특징주]",
+      "datetime": "202607080919",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006325139",
+      "score": 100
+     },
+     {
+      "title": "상폐 위기인데 주가는 급등…'25년 선행'이 살린 기업",
+      "datetime": "202607071811",
+      "source": "한국경제",
+      "url": "https://n.news.naver.com/mnews/article/015/0005307352",
+      "score": 100
+     },
+     {
+      "title": "“크래미는 못 잃어” 장바구니 열고 주식까지 샀다…한성기업에 무슨...",
+      "datetime": "202607081907",
+      "source": "데일리안",
+      "url": "https://n.news.naver.com/mnews/article/119/0003109464",
+      "score": 100
+     },
+     {
+      "title": "[자막뉴스] &quot;다 사주자&quot; 주식까지 20% '폭등'…'돈쭐' 난 미담 회사 &quot;저...",
+      "datetime": "202607071825",
+      "source": "SBS",
+      "url": "https://n.news.naver.com/mnews/article/055/0001370458",
+      "score": 90
+     },
+     {
+      "title": "애국 개미들이 살린 한성기업의 기적…&quot;주문 폭주에 주가도 쑥&quot; [씬속...",
+      "datetime": "202607081801",
+      "source": "연합뉴스TV",
+      "url": "https://n.news.naver.com/mnews/article/422/0000882936",
+      "score": 80
+     }
+    ],
+    "source_count": 9,
+    "relevant_count": 9
    },
-   "leader_cohort_prob": null,
-   "alert_now": "주의",
+   "visible_experimental": true,
+   "alert_now": null,
    "theme_leader": false
   }
  ]
