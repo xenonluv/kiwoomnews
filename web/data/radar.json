@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-08 17:33:42 KST",
+ "generated_at": "2026-07-08 17:43:38 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -148,8 +148,8 @@
    "sector": "마녀공장",
    "change_pct": 18.44,
    "high_pct": 21.13,
-   "vol_turnover_pct": 146.6,
-   "value_eok": 1729,
+   "vol_turnover_pct": 147.8,
+   "value_eok": 1742,
    "price": 17600.0,
    "first_seen": "13:12",
    "exploded": false
