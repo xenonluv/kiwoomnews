@@ -70,14 +70,30 @@ def acquire_git_lock():
         return None  # fcntl 없는 환경(Windows 등)은 락 생략
 
 
+def history_date_for(out, now=None):
+    """자정~개장 전 재게시분은 벽시계 날짜가 아니라 최신 신호 거래일 history에 병합한다."""
+    now = now or datetime.now(KST)
+    wall_date = now.strftime("%Y%m%d")
+    signal_dates = []
+    for s in out.get("suspects", []):
+        sd = str(s.get("signal_date") or s.get("snapshot_as_of") or "")
+        if len(sd) == 8 and sd.isdigit() and sd <= wall_date:
+            signal_dates.append(sd)
+    # 09:00 전 또는 주말 재게시에는 아직 새 정규장 데이터가 없으므로 전 거래일 이력에 기록한다.
+    if signal_dates and (now.weekday() >= 5 or now.strftime("%H%M") < "0900"):
+        return max(signal_dates)
+    return wall_date
+
+
 def record_history(out):
     """당일 수상 종목을 검증용 이력에 누적 (radar_backtest.py가 익일 평가).
 
     같은 날 여러 회차가 코드별로 merge — 마지막 회차(15:45)의 price가 종가 entry로 남는다.
+    자정~개장 전 재게시분은 최신 신호 거래일에 병합해 익일 평가 기준일 오염을 막는다.
     수상 종목 0건인 날도 기록(표본 일수 카운트). 거래일에만 호출할 것.
     """
     os.makedirs(HISTORY_DIR, exist_ok=True)
-    today = datetime.now(KST).strftime("%Y%m%d")
+    today = history_date_for(out)
     path = os.path.join(HISTORY_DIR, f"{today}.json")
     hist = {"date": today, "suspects": {}}
     if os.path.exists(path):

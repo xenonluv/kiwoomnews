@@ -339,8 +339,23 @@ def _alert_level(code):
 
 # ---------- 재매집: 거래대금 폭발 레지스트리 ----------
 
-def _today_yyyymmdd():
-    return datetime.now(KST).strftime("%Y%m%d")
+def _today_yyyymmdd(now=None):
+    now = now or datetime.now(KST)
+    return now.strftime("%Y%m%d")
+
+
+def _allow_signal_date(signal_date, now=None):
+    """정규장 중에는 당일 데이터만 허용하고, 자정~개장 전/주말에는 최신 거래일을 허용한다."""
+    if not signal_date:
+        return False
+    now = now or datetime.now(KST)
+    today = _today_yyyymmdd(now)
+    if signal_date > today:
+        return False
+    # 09:00 이후 평일에는 stale 전일 데이터가 게시되면 안 된다.
+    if now.weekday() < 5 and now.strftime("%H%M") >= "0900":
+        return signal_date == today
+    return True
 
 
 def _empty_registry():
@@ -1129,9 +1144,21 @@ def scan_reaccum_candidate(rec, p, events):
     closes = [d["close"] for d in daily if d.get("close")]
     if len(closes) < 20:
         return None
-    signal_date = (now.get("date") or (daily[-1].get("date") if daily else "") or "").strip()
-    if signal_date != _today_yyyymmdd() or signal_date <= peak_date:
+    signal_bar = daily[-1] if daily else {}
+    signal_date = (now.get("date") or (signal_bar.get("date") if signal_bar else "") or "").strip()
+    if not _allow_signal_date(signal_date) or signal_date <= peak_date:
         return None
+    snapshot_open = now.get("open") or signal_bar.get("open")
+    snapshot_high = now.get("high") or signal_bar.get("high")
+    snapshot_low = now.get("low") or signal_bar.get("low")
+    snapshot_close = now.get("price") or signal_bar.get("close")
+    snapshot_volume = now.get("volume") or signal_bar.get("volume")
+    snapshot_value = now.get("value") or signal_bar.get("value")
+    try:
+        snapshot_value_eok = float(snapshot_value) / 1e8
+    except (TypeError, ValueError):
+        snapshot_value_eok = None
+    signal_prev_close = now.get("prev_close")
     ma20 = sum(closes[-20:]) / 20
     ma10 = sum(closes[-10:]) / 10
     # 장기 추적(폭발 후 6일 초과) 후보는 '20일선 위인 동안만' 유지 — 깨지면 추적 종료(추세 사망, 회장님 정의).
@@ -1243,6 +1270,24 @@ def scan_reaccum_candidate(rec, p, events):
         "change_basis": change_basis,   # "KRX"(정규장) / "NXT"(마감 후 시간외 야간가로 등락률 재평가)
         "high_pct": round(high_pct, 2),
         "value_eok": round(float(now.get("value") or 0) / 1e8),
+        "snapshot_open": _round_or_none(snapshot_open, 1),
+        "snapshot_high": _round_or_none(snapshot_high, 1),
+        "snapshot_low": _round_or_none(snapshot_low, 1),
+        "snapshot_close": _round_or_none(snapshot_close, 1),
+        "snapshot_volume": _round_or_none(snapshot_volume, 0),
+        "snapshot_value": _round_or_none(snapshot_value, 0),
+        "snapshot_value_eok": _round_or_none(snapshot_value_eok, 1),
+        "snapshot_as_of": signal_date,
+        "signal_date": signal_date,
+        "signal_open": _round_or_none(signal_bar.get("open"), 1),
+        "signal_high": _round_or_none(signal_bar.get("high"), 1),
+        "signal_low": _round_or_none(signal_bar.get("low"), 1),
+        "signal_close": _round_or_none(signal_bar.get("close"), 1),
+        "signal_prev_close": _round_or_none(signal_prev_close, 1),
+        "signal_volume": _round_or_none(signal_bar.get("volume"), 0),
+        "signal_value": _round_or_none(signal_bar.get("value"), 0),
+        "signal_value_eok": _round_or_none((signal_bar.get("value") or 0) / 1e8, 1),
+        "signal_source": "daily_latest",
         "turnover_pct": turnover_pct,   # 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도
         "peak_turnover_pct": peak_turnover_pct,  # 폭발일 회전율(거래량/유통주식수 %) — 폭발의 자명함
         "float_ratio": fr,              # 유동비율(0~1) — None이면 회전율 미산출

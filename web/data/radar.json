@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 00:48:44 KST",
+ "generated_at": "2026-07-09 01:04:20 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -173,7 +173,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.7,
+    "freshness_days": 0.71,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -323,7 +323,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 9.36,
+    "freshness_days": 9.37,
     "directness": "직접",
     "tags": [
      "공시",
@@ -503,7 +503,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.24,
+    "freshness_days": 0.25,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -557,6 +557,731 @@
    },
    "visible_experimental": true,
    "alert_now": null,
+   "theme_leader": false
+  },
+  {
+   "code": "002990",
+   "name": "금호건설",
+   "sector": "금호건설",
+   "pattern": "reaccum",
+   "geupso": true,
+   "geupso_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 3.14
+    },
+    {
+     "time": "15:05",
+     "body_pct": 4.4
+    }
+   ],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 78,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 4,
+    "re_body": 4,
+    "peak_turnover": 8,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 14000.0,
+   "change_pct": 0.0,
+   "change_basis": "KRX",
+   "high_pct": 0.0,
+   "value_eok": 0,
+   "snapshot_open": 14000.0,
+   "snapshot_high": 14000.0,
+   "snapshot_low": 14000.0,
+   "snapshot_close": 14000.0,
+   "snapshot_volume": 0.0,
+   "snapshot_value": 0.0,
+   "snapshot_value_eok": 0.0,
+   "snapshot_as_of": "20260708",
+   "signal_date": "20260708",
+   "signal_open": 14000.0,
+   "signal_high": 14000.0,
+   "signal_low": 14000.0,
+   "signal_close": 14000.0,
+   "signal_prev_close": 14000.0,
+   "signal_volume": 0.0,
+   "signal_value": 0.0,
+   "signal_value_eok": 0.0,
+   "signal_source": "daily_latest",
+   "turnover_pct": null,
+   "peak_turnover_pct": 180.0,
+   "float_ratio": 0.52,
+   "turnover_basis": "cap",
+   "ma10": 10765.0,
+   "ma10_margin_pct": 30.05,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.4,
+    "time": "15:05",
+    "value_eok": 102,
+    "count": 3
+   },
+   "reignition_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 3.14,
+     "value_eok": 72
+    },
+    {
+     "time": "15:05",
+     "body_pct": 4.4,
+     "value_eok": 102
+    },
+    {
+     "time": "15:15",
+     "body_pct": 1.82,
+     "value_eok": 55
+    }
+   ],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 7.2
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 5,
+     "categories": [
+      "금리"
+     ],
+     "score": 4.4
+    }
+   ],
+   "theme": "금리",
+   "material": {
+    "grade": "C",
+    "score": 23,
+    "summary": "금호건설·전기 강세…호남 반도체 기대감 지속[특징주]",
+    "sentiment": "중립",
+    "reliability": "뉴스",
+    "freshness": "미확인",
+    "freshness_days": null,
+    "directness": "간접",
+    "tags": [
+     "금리",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "금호건설·전기 강세…호남 반도체 기대감 지속[특징주]",
+      "datetime": null,
+      "source": "",
+      "url": null,
+      "score": 23
+     }
+    ],
+    "source_count": 0,
+    "relevant_count": 1
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260707",
+    "peak_value_eok": 4929,
+    "peak_high_pct": 27.85,
+    "peak_turnover_pct": 180.0,
+    "peak_ibs": 0.61,
+    "peak_uppertail": 12.8,
+    "ma20": 7450.5,
+    "ma20_margin_pct": 87.91,
+    "cause_summary": "“호남하면 이 그룹이었는데” ‘금호’ 이름으로 30% 급등…모조리 ...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "경고",
+   "alert_release": false,
+   "theme_leader": false
+  },
+  {
+   "code": "198440",
+   "name": "강동씨앤엘",
+   "sector": "강동씨앤엘",
+   "pattern": "reaccum",
+   "geupso": true,
+   "geupso_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 2.45
+    },
+    {
+     "time": "14:55",
+     "body_pct": 3.76
+    }
+   ],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 74,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 2,
+    "re_body": 3,
+    "peak_turnover": 2,
+    "re_turnover": 5
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 1920.0,
+   "change_pct": 6.61,
+   "change_basis": "KRX",
+   "high_pct": 18.27,
+   "value_eok": 334,
+   "snapshot_open": 1764.0,
+   "snapshot_high": 2130.0,
+   "snapshot_low": 1613.0,
+   "snapshot_close": 1920.0,
+   "snapshot_volume": 17400588.0,
+   "snapshot_value": 33380000000.0,
+   "snapshot_value_eok": 333.8,
+   "snapshot_as_of": "20260708",
+   "signal_date": "20260708",
+   "signal_open": 1764.0,
+   "signal_high": 2130.0,
+   "signal_low": 1613.0,
+   "signal_close": 1920.0,
+   "signal_prev_close": 1801.0,
+   "signal_volume": 17400588.0,
+   "signal_value": 33380000000.0,
+   "signal_value_eok": 333.8,
+   "signal_source": "daily_latest",
+   "turnover_pct": 93.3,
+   "peak_turnover_pct": 106.7,
+   "float_ratio": 0.306,
+   "turnover_basis": "float",
+   "ma10": 1713.2,
+   "ma10_margin_pct": 12.07,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.76,
+    "time": "14:55",
+    "value_eok": 6,
+    "count": 2
+   },
+   "reignition_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 2.45,
+     "value_eok": 2
+    },
+    {
+     "time": "14:55",
+     "body_pct": 3.76,
+     "value_eok": 6
+    }
+   ],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [],
+   "matched_events": [],
+   "theme": "반도체",
+   "material": {
+    "grade": "N",
+    "score": 0,
+    "summary": "",
+    "sentiment": "중립",
+    "reliability": "뉴스없음",
+    "freshness": "미확인",
+    "directness": "미확인",
+    "tags": [],
+    "risk_flags": [],
+    "evidence": [],
+    "source_count": 0,
+    "relevant_count": 0
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260707",
+    "peak_value_eok": 370,
+    "peak_high_pct": 29.56,
+    "peak_turnover_pct": 106.7,
+    "peak_ibs": 0.51,
+    "peak_uppertail": 14.4,
+    "ma20": 1692.5,
+    "ma20_margin_pct": 13.44,
+    "cause_summary": "",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": null,
+   "theme_leader": true
+  },
+  {
+   "code": "010960",
+   "name": "삼호개발",
+   "sector": "삼호개발",
+   "pattern": "reaccum",
+   "geupso": true,
+   "geupso_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 2.25
+    },
+    {
+     "time": "15:00",
+     "body_pct": 2.41
+    }
+   ],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 71,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 4,
+    "re_body": 1,
+    "peak_turnover": 1,
+    "re_turnover": 3
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 4460.0,
+   "change_pct": 6.44,
+   "change_basis": "KRX",
+   "high_pct": 10.5,
+   "value_eok": 444,
+   "snapshot_open": 4200.0,
+   "snapshot_high": 4630.0,
+   "snapshot_low": 3915.0,
+   "snapshot_close": 4460.0,
+   "snapshot_volume": 10108647.0,
+   "snapshot_value": 44377000000.0,
+   "snapshot_value_eok": 443.8,
+   "snapshot_as_of": "20260708",
+   "signal_date": "20260708",
+   "signal_open": 4200.0,
+   "signal_high": 4630.0,
+   "signal_low": 3915.0,
+   "signal_close": 4460.0,
+   "signal_prev_close": 4190.0,
+   "signal_volume": 10108647.0,
+   "signal_value": 44377000000.0,
+   "signal_value_eok": 443.8,
+   "signal_source": "daily_latest",
+   "turnover_pct": 69.2,
+   "peak_turnover_pct": 99.2,
+   "float_ratio": 0.6053999999999999,
+   "turnover_basis": "float",
+   "ma10": 3933.0,
+   "ma10_margin_pct": 13.4,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 2.41,
+    "time": "15:00",
+    "value_eok": 15,
+    "count": 3
+   },
+   "reignition_bars": [
+    {
+     "time": "14:45",
+     "body_pct": 2.25,
+     "value_eok": 2
+    },
+    {
+     "time": "14:55",
+     "body_pct": 1.56,
+     "value_eok": 2
+    },
+    {
+     "time": "15:00",
+     "body_pct": 2.41,
+     "value_eok": 15
+    }
+   ],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 7.2
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 5,
+     "categories": [
+      "금리"
+     ],
+     "score": 4.4
+    }
+   ],
+   "theme": "금리",
+   "material": {
+    "grade": "A",
+    "score": 82,
+    "summary": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
+    "sentiment": "호재",
+    "reliability": "공시",
+    "freshness": "미확인",
+    "freshness_days": null,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "금리"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
+      "datetime": null,
+      "source": "",
+      "url": null,
+      "score": 82
+     }
+    ],
+    "source_count": 0,
+    "relevant_count": 1
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260706",
+    "peak_value_eok": 633,
+    "peak_high_pct": 24.93,
+    "peak_turnover_pct": 99.2,
+    "peak_ibs": 0.62,
+    "peak_uppertail": 9.4,
+    "ma20": 3558.5,
+    "ma20_margin_pct": 25.33,
+    "cause_summary": "삼호개발, 276억 충추 드림파크산단 공사 수주 [공시pick]",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": null,
+   "theme_leader": true
+  },
+  {
+   "code": "012170",
+   "name": "아센디오",
+   "sector": "아센디오",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 959.0,
+   "change_pct": -12.98,
+   "change_basis": "KRX",
+   "high_pct": 12.25,
+   "value_eok": 18,
+   "snapshot_open": 1169.0,
+   "snapshot_high": 1237.0,
+   "snapshot_low": 921.0,
+   "snapshot_close": 959.0,
+   "snapshot_volume": 1707941.0,
+   "snapshot_value": 1788000000.0,
+   "snapshot_value_eok": 17.9,
+   "snapshot_as_of": "20260708",
+   "signal_date": "20260708",
+   "signal_open": 1169.0,
+   "signal_high": 1237.0,
+   "signal_low": 921.0,
+   "signal_close": 959.0,
+   "signal_prev_close": 1102.0,
+   "signal_volume": 1707941.0,
+   "signal_value": 1788000000.0,
+   "signal_value_eok": 17.9,
+   "signal_source": "daily_latest",
+   "turnover_pct": 16.2,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.5205,
+   "turnover_basis": "float",
+   "ma10": 782.6,
+   "ma10_margin_pct": 22.54,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 6.53,
+    "time": "11:00",
+    "value_eok": 1,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 3.6,
+     "value_eok": 1
+    },
+    {
+     "time": "09:10",
+     "body_pct": 4.52,
+     "value_eok": 2
+    },
+    {
+     "time": "09:55",
+     "body_pct": 2.17,
+     "value_eok": 0
+    },
+    {
+     "time": "10:25",
+     "body_pct": 2.42,
+     "value_eok": 0
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.27,
+     "value_eok": 0
+    },
+    {
+     "time": "10:45",
+     "body_pct": 3.43,
+     "value_eok": 0
+    },
+    {
+     "time": "11:00",
+     "body_pct": 6.53,
+     "value_eok": 1
+    },
+    {
+     "time": "12:25",
+     "body_pct": 2.04,
+     "value_eok": 0
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 3.6
+    },
+    {
+     "time": "09:10",
+     "body_pct": 4.52
+    },
+    {
+     "time": "09:55",
+     "body_pct": 2.17
+    },
+    {
+     "time": "10:25",
+     "body_pct": 2.42
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.27
+    },
+    {
+     "time": "10:45",
+     "body_pct": 3.43
+    },
+    {
+     "time": "11:00",
+     "body_pct": 6.53
+    },
+    {
+     "time": "12:25",
+     "body_pct": 2.04
+    }
+   ],
+   "news": [
+    {
+     "title": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+     "summary": "경남제약(053950)이 131억 원 규모 부동산 현물출자를 통해 연예기획사 아센디오(012170) 지분 44.5%를 취득한다. 경남제약이 현금이 아닌 토지와 건물을 출자하고 그 대가로 아센디오 신주를 받는 구조다. 8일 금융감독원 전자공시시스템에 따",
+     "office": "뉴스1",
+     "datetime": "202607081129",
+     "url": "https://n.news.naver.com/mnews/article/421/0009047319",
+     "sentiment": "호재"
+    },
+    {
+     "title": "아센디오, 경남제약 대상 부동산 현물출자 기반 유증 결정",
+     "summary": "아센디오는 경남제약을 대상으로 현물출자 방식의 제3자배정 유상증자를 결정했다고 7일 공시했다. 이번 유상증자는 경남제약이 보유한 서울 신당동 소재 약 131억원 상당의 부동산을 현물출자하고 아센디오는 그 대가로 보통주 1623만3418주를 주당...",
+     "office": "뉴시스",
+     "datetime": "202607071654",
+     "url": "https://n.news.naver.com/mnews/article/003/0014051867",
+     "sentiment": "악재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.4
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 5,
+     "categories": [
+      "금리"
+     ],
+     "score": 1.5
+    }
+   ],
+   "theme": "반도체",
+   "material": {
+    "grade": "D",
+    "score": 45,
+    "summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+    "sentiment": "혼재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.57,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "반도체"
+    ],
+    "risk_flags": [
+     "유상증자"
+    ],
+    "evidence": [
+     {
+      "title": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+      "datetime": "202607081129",
+      "source": "뉴스1",
+      "url": "https://n.news.naver.com/mnews/article/421/0009047319",
+      "score": 82
+     },
+     {
+      "title": "아센디오, 주주총회 22일로 연기…'주식병합' 매매 정지 기간도 변경",
+      "datetime": "202607081033",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000087355",
+      "score": 76
+     },
+     {
+      "title": "아센디오, 경남제약 대상 부동산 현물출자 기반 유증 결정",
+      "datetime": "202607071654",
+      "source": "뉴시스",
+      "url": "https://n.news.naver.com/mnews/article/003/0014051867",
+      "score": 56
+     }
+    ],
+    "source_count": 3,
+    "relevant_count": 3
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260707",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 0.06,
+    "peak_uppertail": 18.4,
+    "ma20": 892.0,
+    "ma20_margin_pct": 7.51,
+    "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "주의",
    "theme_leader": false
   }
  ]
