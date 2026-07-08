@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-08 14:13:29 KST",
+ "generated_at": "2026-07-08 14:23:35 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -77,7 +77,7 @@
    "name": "금호전기",
    "sector": "금호전기",
    "high_pct": 29.94,
-   "vol_turnover_pct": 113.8,
+   "vol_turnover_pct": 113.9,
    "value_eok": 565,
    "price": 1302.0,
    "change_pct": 29.94,
@@ -88,10 +88,10 @@
    "name": "서산",
    "sector": "서산",
    "high_pct": 25.86,
-   "vol_turnover_pct": 326.9,
-   "value_eok": 1134,
-   "price": 5790.0,
-   "change_pct": 21.26,
+   "vol_turnover_pct": 334.1,
+   "value_eok": 1160,
+   "price": 5720.0,
+   "change_pct": 19.79,
    "backfill": false
   }
  ],
@@ -100,11 +100,11 @@
    "code": "079650",
    "name": "서산",
    "sector": "서산",
-   "change_pct": 21.26,
+   "change_pct": 19.79,
    "high_pct": 25.86,
-   "vol_turnover_pct": 326.9,
-   "value_eok": 1134,
-   "price": 5790.0,
+   "vol_turnover_pct": 334.1,
+   "value_eok": 1160,
+   "price": 5720.0,
    "first_seen": "10:22",
    "exploded": true
   },
@@ -112,11 +112,11 @@
    "code": "058730",
    "name": "다스코",
    "sector": "다스코",
-   "change_pct": 15.63,
+   "change_pct": 16.0,
    "high_pct": 21.63,
-   "vol_turnover_pct": 189.2,
-   "value_eok": 952,
-   "price": 4625.0,
+   "vol_turnover_pct": 197.9,
+   "value_eok": 998,
+   "price": 4640.0,
    "first_seen": "11:32",
    "exploded": false
   },
@@ -124,11 +124,11 @@
    "code": "365660",
    "name": "레몬헬스케어",
    "sector": "레몬헬스케어",
-   "change_pct": 1.96,
+   "change_pct": -6.71,
    "high_pct": 17.68,
    "vol_turnover_pct": 138.0,
    "value_eok": 1683,
-   "price": 12460.0,
+   "price": 11400.0,
    "first_seen": "10:12",
    "exploded": false
   },
@@ -136,11 +136,11 @@
    "code": "439090",
    "name": "마녀공장",
    "sector": "마녀공장",
-   "change_pct": 12.85,
+   "change_pct": 13.19,
    "high_pct": 21.13,
-   "vol_turnover_pct": 116.0,
-   "value_eok": 1367,
-   "price": 16770.0,
+   "vol_turnover_pct": 118.6,
+   "value_eok": 1398,
+   "price": 16820.0,
    "first_seen": "13:12",
    "exploded": false
   },
@@ -150,7 +150,7 @@
    "sector": "금호전기",
    "change_pct": 29.94,
    "high_pct": 29.94,
-   "vol_turnover_pct": 113.8,
+   "vol_turnover_pct": 113.9,
    "value_eok": 565,
    "price": 1302.0,
    "first_seen": "10:22",
@@ -160,11 +160,11 @@
    "code": "024060",
    "name": "흥구석유",
    "sector": "흥구석유",
-   "change_pct": 17.58,
+   "change_pct": 17.14,
    "high_pct": 24.73,
-   "vol_turnover_pct": 83.3,
-   "value_eok": 887,
-   "price": 10700.0,
+   "vol_turnover_pct": 87.5,
+   "value_eok": 932,
+   "price": 10660.0,
    "first_seen": "13:22",
    "exploded": false
   },
@@ -172,11 +172,11 @@
    "code": "406820",
    "name": "뷰티스킨",
    "sector": "뷰티스킨",
-   "change_pct": 29.33,
+   "change_pct": 29.62,
    "high_pct": 29.9,
-   "vol_turnover_pct": 78.3,
-   "value_eok": 135,
-   "price": 2275.0,
+   "vol_turnover_pct": 79.6,
+   "value_eok": 137,
+   "price": 2280.0,
    "first_seen": "10:52",
    "exploded": false
   },
@@ -184,11 +184,11 @@
    "code": "091590",
    "name": "남화토건",
    "sector": "남화토건",
-   "change_pct": 8.61,
+   "change_pct": 8.93,
    "high_pct": 19.13,
-   "vol_turnover_pct": 72.9,
-   "value_eok": 371,
-   "price": 10220.0,
+   "vol_turnover_pct": 73.9,
+   "value_eok": 376,
+   "price": 10250.0,
    "first_seen": "12:02",
    "exploded": false
   },
@@ -196,11 +196,11 @@
    "code": "477850",
    "name": "마키나락스",
    "sector": "마키나락스",
-   "change_pct": 10.31,
+   "change_pct": 10.82,
    "high_pct": 23.67,
-   "vol_turnover_pct": 71.7,
-   "value_eok": 1935,
-   "price": 27025.0,
+   "vol_turnover_pct": 73.0,
+   "value_eok": 1970,
+   "price": 27150.0,
    "first_seen": "11:02",
    "exploded": false
   },
@@ -208,23 +208,35 @@
    "code": "228340",
    "name": "동양파일",
    "sector": "동양파일",
-   "change_pct": 12.99,
+   "change_pct": 10.51,
    "high_pct": 19.85,
-   "vol_turnover_pct": 67.6,
-   "value_eok": 206,
-   "price": 3870.0,
+   "vol_turnover_pct": 69.0,
+   "value_eok": 210,
+   "price": 3785.0,
    "first_seen": "12:22",
+   "exploded": false
+  },
+  {
+   "code": "042040",
+   "name": "케이피엠테크",
+   "sector": "케이피엠테크",
+   "change_pct": 23.92,
+   "high_pct": 30.0,
+   "vol_turnover_pct": 62.8,
+   "value_eok": 73,
+   "price": 7435.0,
+   "first_seen": "12:58",
    "exploded": false
   },
   {
    "code": "198440",
    "name": "강동씨앤엘",
    "sector": "강동씨앤엘",
-   "change_pct": 6.33,
+   "change_pct": 4.05,
    "high_pct": 18.27,
    "vol_turnover_pct": 56.2,
    "value_eok": 200,
-   "price": 1915.0,
+   "price": 1874.0,
    "first_seen": "11:52",
    "exploded": false
   },
@@ -232,11 +244,11 @@
    "code": "153890",
    "name": "져스텍",
    "sector": "져스텍",
-   "change_pct": 3.53,
+   "change_pct": 0.3,
    "high_pct": 17.44,
    "vol_turnover_pct": 52.4,
    "value_eok": 387,
-   "price": 13770.0,
+   "price": 13340.0,
    "first_seen": "11:12",
    "exploded": false
   },
@@ -244,24 +256,12 @@
    "code": "010960",
    "name": "삼호개발",
    "sector": "삼호개발",
-   "change_pct": 4.3,
+   "change_pct": 3.34,
    "high_pct": 10.14,
    "vol_turnover_pct": 51.3,
    "value_eok": 328,
-   "price": 4370.0,
+   "price": 4330.0,
    "first_seen": "13:12",
-   "exploded": false
-  },
-  {
-   "code": "042040",
-   "name": "케이피엠테크",
-   "sector": "케이피엠테크",
-   "change_pct": 17.17,
-   "high_pct": 30.0,
-   "vol_turnover_pct": 50.0,
-   "value_eok": 58,
-   "price": 7030.0,
-   "first_seen": "12:58",
    "exploded": false
   }
  ],
@@ -393,6 +393,152 @@
    "theme_leader": false
   },
   {
+   "code": "046940",
+   "name": "우원개발",
+   "sector": "우원개발",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 65,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 3,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 3455.0,
+   "change_pct": -10.49,
+   "change_basis": "KRX",
+   "high_pct": 7.12,
+   "value_eok": 66,
+   "turnover_pct": 15.3,
+   "peak_turnover_pct": 128.3,
+   "float_ratio": 0.6502,
+   "turnover_basis": "float",
+   "ma10": 3432.0,
+   "ma10_margin_pct": 0.67,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 3.06,
+    "time": "09:05",
+    "value_eok": 5,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.2,
+     "value_eok": 4
+    },
+    {
+     "time": "09:05",
+     "body_pct": 3.06,
+     "value_eok": 5
+    },
+    {
+     "time": "11:50",
+     "body_pct": 2.22,
+     "value_eok": 2
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.2
+    },
+    {
+     "time": "09:05",
+     "body_pct": 3.06
+    },
+    {
+     "time": "11:50",
+     "body_pct": 2.22
+    }
+   ],
+   "news": [
+    {
+     "title": "우원개발, 598억 농소-강동 도로개설공사 3공구 수주",
+     "summary": "우원개발은 △삼환기업 △양우종합건설 △상원종합건설 △부명엔프로엔지니어링 등과 농소-강동 도로개설공사 3공구 공급 계약을 체결했다고 12일 공시했다. 계약금액은 597억6400만원으로 이는 지난해 매출 대비 15.9%에 해당하는 규모다....",
+     "office": "블로터",
+     "datetime": "202605121347",
+     "url": "https://n.news.naver.com/mnews/article/293/0000084432",
+     "sentiment": "호재"
+    },
+    {
+     "title": "우원개발, 현대건설 등과 683억원 규모 대장-홍대 광역철도 1공구 계약",
+     "summary": "우원개발(046940)은 현대건설(000720) 등 2개사와 683억9500만원 규모의 대장-홍대 광역철도 민간투자사업 1공구 계약을 체결했다고 7일 공시했다. 계약금액은 2024년 매출액 3763억4935만원 대비 18.17%에 해당한다. 계약기간은",
+     "office": "이데일리",
+     "datetime": "202605061420",
+     "url": "https://n.news.naver.com/mnews/article/018/0006274095",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 6.5
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 3.7
+    }
+   ],
+   "theme": "금리",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260703",
+    "peak_value_eok": 643,
+    "peak_high_pct": 22.08,
+    "peak_turnover_pct": 128.3,
+    "peak_ibs": 0.48,
+    "peak_uppertail": 16.9,
+    "ma20": 3346.0,
+    "ma20_margin_pct": 3.26,
+    "cause_summary": "우원개발, 598억 농소-강동 도로개설공사 3공구 수주",
+    "was_theme_leader": false,
+    "source": "backfill"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": null,
+   "theme_leader": true
+  },
+  {
    "code": "012170",
    "name": "아센디오",
    "sector": "아센디오",
@@ -426,17 +572,17 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
-   "price": 947.0,
-   "change_pct": -14.07,
+   "price": 938.0,
+   "change_pct": -14.88,
    "change_basis": "KRX",
    "high_pct": 12.25,
    "value_eok": 17,
-   "turnover_pct": 15.1,
+   "turnover_pct": 15.3,
    "peak_turnover_pct": null,
    "float_ratio": 0.5205,
    "turnover_basis": "float",
-   "ma10": 781.4,
-   "ma10_margin_pct": 21.19,
+   "ma10": 780.5,
+   "ma10_margin_pct": 20.18,
    "spark": {
     "clusters": []
    },
@@ -573,8 +719,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 0.06,
     "peak_uppertail": 18.4,
-    "ma20": 891.4,
-    "ma20_margin_pct": 6.24,
+    "ma20": 891.0,
+    "ma20_margin_pct": 5.28,
     "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
     "was_theme_leader": false,
     "source": "live"
