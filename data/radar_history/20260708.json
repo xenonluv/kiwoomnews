@@ -721,7 +721,7 @@
    "snapshot_high": 5800.0,
    "snapshot_low": 4850.0,
    "snapshot_close": 5010.0,
-   "snapshot_volume": 1606758.0,
+   "snapshot_volume": 1606844.0,
    "snapshot_value": 8510000000.0,
    "snapshot_value_eok": 85.1,
    "snapshot_as_of": "20260708",
@@ -731,7 +731,7 @@
    "signal_low": 4850.0,
    "signal_close": 5010.0,
    "signal_prev_close": 4810.0,
-   "signal_volume": 1606758.0,
+   "signal_volume": 1606844.0,
    "signal_value": 8510000000.0,
    "signal_value_eok": 85.1,
    "signal_peak6_price": 5800.0,
@@ -1258,7 +1258,7 @@
    "snapshot_high": 1070.0,
    "snapshot_low": 829.0,
    "snapshot_close": 921.0,
-   "snapshot_volume": 2979924.0,
+   "snapshot_volume": 2980076.0,
    "snapshot_value": 2981000000.0,
    "snapshot_value_eok": 29.8,
    "snapshot_as_of": "20260708",
@@ -1268,7 +1268,7 @@
    "signal_low": 829.0,
    "signal_close": 921.0,
    "signal_prev_close": 824.0,
-   "signal_volume": 2979924.0,
+   "signal_volume": 2980076.0,
    "signal_value": 2981000000.0,
    "signal_value_eok": 29.8,
    "signal_peak6_price": 1070.0,
@@ -1319,5 +1319,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-08 15:53:44 KST"
+ "as_of": "2026-07-08 16:03:37 KST"
 }
