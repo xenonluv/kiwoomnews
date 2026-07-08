@@ -1,5 +1,5 @@
 {
- "as_of": "2026-07-08 17:20 KST",
+ "as_of": "2026-07-09 00:39 KST",
  "summary": {
   "n": 10,
   "hit_rate": 60.0,
@@ -800,8 +800,104 @@
    }
   ]
  },
+ "material_bands": {
+  "min_n": 10,
+  "unknown_n": 156,
+  "cells": [
+   {
+    "band": "재료 S(정책·상폐·M&A급)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 A(공시·대형이벤트)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 B(실적·재무개선)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 C(테마·간접수혜)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 D(악재·희석우세)",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 없음/미확인",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   }
+  ]
+ },
+ "material_signal_bands": {
+  "min_n": 10,
+  "unknown_n": 156,
+  "cells": [
+   {
+    "band": "매우좋음 Tier1 + 재료 S/A",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "매우좋음 후보 + 재료 S/A",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "흔들기 + 재료 S/A",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "흔들기 + 재료 C/D/N",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재매집 + 재료 S/A",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   },
+   {
+    "band": "재료 없음/미확인",
+    "n": 0,
+    "hit_rate": null,
+    "avg_return": null,
+    "valid": false
+   }
+  ]
+ },
  "strategy_sim": {
-  "n": 74,
+  "n": 77,
   "min_n": 30,
   "tp": 7.0,
   "sl": 5.0,
@@ -811,10 +907,10 @@
    0.3,
    0.5
   ],
-  "win_rate": 44.6,
-  "stop_rate": 55.4,
-  "avg_net": -2.419,
-  "profit_rate": 44.6,
+  "win_rate": 44.2,
+  "stop_rate": 55.8,
+  "avg_net": -2.45,
+  "profit_rate": 44.2,
   "worst": -17.61
  },
  "experimental": {

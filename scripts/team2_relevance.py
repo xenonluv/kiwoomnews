@@ -97,6 +97,38 @@ CAUSE_MATERIAL = re.compile(
     r"유치|제휴|협력|엔비디아|젠슨\s*황|AI|반도체|로봇|데이터센터"
 )
 
+# 레이더 전진검증용 재료 등급. LLM 없이 제목/요약 키워드만으로 보수적으로 분류한다.
+MATERIAL_S = re.compile(
+    r"국가|정부|대통령|메가프로젝트|클러스터|삼성전자|SK하이닉스|대기업|"
+    r"공개매수|상장폐지|상폐|퇴출|시가총액|최대주주.*(유상증자|증자|출자|납입|지원|수혈)|"
+    r"경영권|인수합병|M&A|거래재개|회생"
+)
+MATERIAL_A = re.compile(
+    r"제3자배정|유상증자|무상증자|최대주주|액면병합|감자|납입|"
+    r"공급계약|수주|계약|투자|유치|타법인|지분\s*취득|공시"
+)
+MATERIAL_B = re.compile(
+    r"채무상환|재무구조|운영자금|실적|영업이익|순이익|매출|흑자|"
+    r"목표주가|특허|승인|허가|임상|신제품|출시|수출"
+)
+MATERIAL_C = re.compile(
+    r"관련주|테마|수혜|기대감|부각|강세|급등|상한가|지역|호남|광주|"
+    r"이름|명칭|연고|묶이"
+)
+MATERIAL_DISCLOSURE = re.compile(
+    r"공시|금융감독원|전자공시|DART|한국거래소|KRX|유상증자\s*결정|계약\s*체결|수주"
+)
+MATERIAL_DIRECT_WEAK = re.compile(r"관련주|테마|수혜|기대감|부각|이름|명칭|지역|연고|묶이")
+MATERIAL_RISK = re.compile(
+    r"횡령|배임|불성실|관리종목|상장폐지|상폐|거래정지|감사의견|의견거절|"
+    r"대규모\s*희석|발행주식.*증가|유상증자|감자|전환사채|CB|BW|채무"
+)
+MATERIAL_RESCUE = re.compile(
+    r"상폐.*(회피|해소|탈피|우려.*해소)|시가총액.*(회복|충족|상회|넘어섰|넘겼|초과|달성)|"
+    r"최대주주.*(유상증자|증자|출자|납입|지원|수혈)|"
+    r"제3자배정.*(최대주주|특수관계인)|채무상환|재무구조.*개선|자금\s*수혈"
+)
+
 
 def classify(item, aliases=None):
     title = item.get("title", "")
@@ -171,6 +203,7 @@ def _age_days(dt_text):
         return None
     s = str(dt_text).strip()
     candidates = (
+        "%Y%m%d%H%M",
         "%Y-%m-%d %H:%M:%S KST",
         "%Y-%m-%d %H:%M:%S",
         "%Y.%m.%d %H:%M",
@@ -279,6 +312,209 @@ def score_cause_news(news, aliases=None, max_age_days=2):
         }
     except Exception:
         return {"cause_news": [], "cause_confidence": "낮음", "cause_summary": ""}
+
+
+def _material_source(item):
+    return (item.get("office") or item.get("source") or item.get("press") or "").strip()
+
+
+def _freshness_label(min_age):
+    if min_age is None:
+        return "미확인"
+    if min_age <= 1:
+        return "당일~1일"
+    if min_age <= 3:
+        return "2~3일"
+    if min_age <= 7:
+        return "1주내"
+    return "오래됨"
+
+
+def _material_grade(score, relevant_count, risk_flags, sentiment):
+    if relevant_count <= 0:
+        return "N"
+    if risk_flags and sentiment in ("악재", "혼재", "중립") and score < 55:
+        return "D"
+    if score >= 85:
+        return "S"
+    if score >= 70:
+        return "A"
+    if score >= 55:
+        return "B"
+    if score >= 35:
+        return "C"
+    return "D" if risk_flags else "C"
+
+
+def score_material(news, aliases=None, sector=""):
+    """뉴스/공시 재료를 S/A/B/C/D/N 등급으로 요약한다.
+
+    N은 재료뉴스 없음/미확인을 뜻한다. 결과는 레이더 기록·전진검증용이며 현재 점수/정렬에는 반영하지 않는다.
+    """
+    try:
+        aliases = aliases or set()
+        candidates = []
+        raw_scores = []
+        pos_cnt = neg_cnt = 0
+        min_age = None
+        disclosure = False
+        source_count = 0
+        tags = set()
+        risk_flags = set()
+        direct_hits = 0
+        indirect_hits = 0
+        rescue_catalyst = 0
+
+        for item in news or []:
+            title = item.get("title", "") or ""
+            summary = item.get("summary", "") or ""
+            text = f"{title} {summary}"
+            if not title or HARD.search(title) or not mentions(text, aliases):
+                continue
+
+            c = classify(item, aliases)
+            material_hit = (
+                c["relevant"]
+                or MATERIAL_S.search(text)
+                or MATERIAL_A.search(text)
+                or MATERIAL_B.search(text)
+                or MATERIAL_C.search(text)
+            )
+            if not material_hit:
+                continue
+
+            score = 20
+            if c["strong"]:
+                score += 8
+            rescue = bool(MATERIAL_RESCUE.search(text))
+            if c["sentiment"] == "호재" or rescue:
+                pos_cnt += 1
+                score += 10 if rescue else 6
+                if rescue:
+                    rescue_catalyst += 1
+                    tags.add("구제/수혈")
+            elif c["sentiment"] == "악재":
+                neg_cnt += 1
+                score -= 10
+
+            if MATERIAL_S.search(text):
+                score += 42
+                tags.add("S급재료")
+            if MATERIAL_A.search(text):
+                score += 30
+                tags.add("공시/대형이벤트")
+            if MATERIAL_B.search(text):
+                score += 18
+                tags.add("실적/재무")
+            if MATERIAL_C.search(text):
+                score += 8
+                tags.add("테마/수혜")
+
+            if MATERIAL_DISCLOSURE.search(text):
+                disclosure = True
+                score += 10
+                tags.add("공시")
+
+            if mentions(title, aliases) and not MATERIAL_DIRECT_WEAK.search(title):
+                direct_hits += 1
+                score += 8
+            elif MATERIAL_DIRECT_WEAK.search(text):
+                indirect_hits += 1
+                score -= 5
+
+            risk_match = MATERIAL_RISK.search(text)
+            if risk_match:
+                risk_flags.add(risk_match.group(0)[:20])
+                # 유증/감자는 재료가 될 수 있으나 희석·재무 리스크는 별도 감점으로 남긴다.
+                score -= 6
+
+            age = _age_days(item.get("datetime"))
+            if age is not None:
+                min_age = age if min_age is None else min(min_age, age)
+                if age <= 1:
+                    score += 8
+                elif age <= 3:
+                    score += 4
+                elif age > 7:
+                    score -= 8
+
+            src = _material_source(item)
+            if src:
+                source_count += 1
+
+            item2 = dict(item)
+            item2["material_score"] = score
+            candidates.append(item2)
+            raw_scores.append(score)
+
+        relevant_count = len(candidates)
+        if not candidates:
+            return {
+                "grade": "N",
+                "score": 0,
+                "summary": "",
+                "sentiment": "중립",
+                "reliability": "뉴스없음",
+                "freshness": "미확인",
+                "directness": "미확인",
+                "tags": [],
+                "risk_flags": [],
+                "evidence": [],
+                "source_count": 0,
+                "relevant_count": 0,
+            }
+
+        candidates.sort(key=lambda x: -x.get("material_score", 0))
+        score = max(raw_scores) + min(12, (relevant_count - 1) * 3)
+        if (neg_cnt > pos_cnt or risk_flags) and rescue_catalyst == 0:
+            score = min(score, 45)
+        score = max(0, min(100, round(score)))
+        sentiment = ("호재" if pos_cnt > neg_cnt else "악재" if neg_cnt > pos_cnt
+                     else "혼재" if pos_cnt and neg_cnt else "중립")
+        directness = "직접" if direct_hits else "간접" if indirect_hits else "미확인"
+        reliability = "공시+뉴스" if disclosure and source_count else "공시" if disclosure else "뉴스"
+        if sector:
+            tags.add(sector)
+        grade = _material_grade(score, relevant_count, risk_flags, sentiment)
+        return {
+            "grade": grade,
+            "score": score,
+            "summary": candidates[0].get("title", "")[:90],
+            "sentiment": sentiment,
+            "reliability": reliability,
+            "freshness": _freshness_label(min_age),
+            "freshness_days": round(min_age, 2) if min_age is not None else None,
+            "directness": directness,
+            "tags": sorted(tags)[:8],
+            "risk_flags": sorted(risk_flags)[:5],
+            "evidence": [
+                {
+                    "title": c.get("title", "")[:120],
+                    "datetime": c.get("datetime"),
+                    "source": _material_source(c),
+                    "url": c.get("url"),
+                    "score": max(0, min(100, round(c.get("material_score", 0)))),
+                }
+                for c in candidates[:5]
+            ],
+            "source_count": source_count,
+            "relevant_count": relevant_count,
+        }
+    except Exception:
+        return {
+            "grade": "N",
+            "score": 0,
+            "summary": "",
+            "sentiment": "중립",
+            "reliability": "분석실패",
+            "freshness": "미확인",
+            "directness": "미확인",
+            "tags": [],
+            "risk_flags": ["material_score_error"],
+            "evidence": [],
+            "source_count": 0,
+            "relevant_count": 0,
+        }
 
 
 if __name__ == "__main__":

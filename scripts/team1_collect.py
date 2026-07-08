@@ -54,8 +54,8 @@ def is_individual_stock(name, code, end_type=None):
     return True
 
 
-def _get(url):
-    return json.loads(get_bytes(url, UA))
+def _get(url, timeout=15, retries=3):
+    return json.loads(get_bytes(url, UA, timeout=timeout, retries=retries))
 
 
 def resolve_code(name):
@@ -97,10 +97,10 @@ def top_ranking(sort_key, market, n):
     return out
 
 
-def fetch_news(code, k=5):
+def fetch_news(code, k=5, timeout=15, retries=3):
     try:
         url = f"https://m.stock.naver.com/api/news/stock/{code}?pageSize={k}&page=1"
-        d = _get(url)
+        d = _get(url, timeout=timeout, retries=retries)
         items = []
         groups = d if isinstance(d, list) else [d]
         for g in groups:

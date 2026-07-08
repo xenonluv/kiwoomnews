@@ -26,11 +26,12 @@ import os
 import sys
 import json
 import argparse
+import hashlib
 from datetime import datetime, timezone, timedelta
 
 from net import get_bytes
 from team1_collect import resolve_code, fetch_news, is_individual_stock, UA
-from team2_relevance import score_news, make_aliases
+from team2_relevance import score_news, score_material, make_aliases
 from event_calendar import upcoming_events
 from theme_map import match_events, match_sensitivity, THEMES
 if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
@@ -46,6 +47,21 @@ EXPLOSION_REGISTRY_PATH = os.path.join(REPO, ".explosion_registry.json")
 YOUTONG_REGISTRY_PATH = os.path.join(REPO, ".youtong_registry.json")  # youtong 당일 지속 상태(종일 유지)
 REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
 PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
+MATERIAL_NEWS_CACHE_DIR = os.path.join(REPO, "data", "material_cache")
+MATERIAL_NEWS_CACHE_VERSION = 1
+
+
+def _env_int(name, default):
+    try:
+        return max(0, int(os.environ.get(name, default)))
+    except (TypeError, ValueError):
+        return default
+
+
+MATERIAL_NEWS_ENABLED = os.environ.get("RADAR_MATERIAL_NEWS", "1").lower() not in ("0", "false", "no", "off")
+MATERIAL_NEWS_CACHE_TTL_SEC = _env_int("RADAR_MATERIAL_CACHE_TTL_SEC", 1800)
+MATERIAL_NEWS_TIMEOUT_SEC = _env_int("RADAR_MATERIAL_NEWS_TIMEOUT_SEC", 4)
+MATERIAL_NEWS_RETRIES = _env_int("RADAR_MATERIAL_NEWS_RETRIES", 1)
 
 # ---- 기본 임계값 (2026-06 폭발 정의 전면 개편) ----
 # 가격(OHLC)은 항상 J(KRX 공식), 거래대금·거래량·수급만 UN(KRX+NXT 통합, kis_client.MONEY_MARKET).
@@ -764,9 +780,10 @@ def update_live_explosions(reg, p):
         # match_events 0 API 재계산용. dry-run은 생략(저장 안 하므로 무의미한 fetch 방지).
         key = f"{trade_date}:{row['code']}"
         if not p.dry_run and not (reg["records"].get(key) or {}).get("cause_done"):
-            _, theme, cause_summary, raw_titles = _explain_cause(row["code"], row["name"], now.get("sector", ""))
+            _, theme, cause_summary, raw_titles, material = _explain_cause(row["code"], row["name"], now.get("sector", ""))
             rec_new["theme"] = theme  # 순수 테마 카테고리(없으면 "") — fade와 동일, sector 폴백 안 함
             rec_new["cause_summary"] = cause_summary
+            rec_new["material"] = material
             # 원본 제목 전체(필터 전) — 재매집 match_events가 scan_one(raw_titles)과 동일 매칭하도록
             rec_new["cause_titles"] = raw_titles
             rec_new["cause_done"] = True
@@ -1198,8 +1215,9 @@ def scan_reaccum_candidate(rec, p, events):
     cause_summary = rec.get("cause_summary") or ""
     if rec.get("cause_done"):  # 폭발시점 캡처됨 — 0 API(캐시된 원본 제목으로 이벤트만 재계산)
         news_items, titles = [], (rec.get("cause_titles") or [])
+        material = rec.get("material") or _material_from_titles(titles, name, theme or now.get("sector", ""))
     else:                      # seed/과거폭발 — 재매집 시점 보강 fetch (titles=원본, scan_one과 동일 매칭)
-        news_items, theme, cause_summary, titles = _explain_cause(code, name, now.get("sector", ""))
+        news_items, theme, cause_summary, titles, material = _explain_cause(code, name, now.get("sector", ""))
     try:  # 이벤트 민감도 — 캐시/보강 경로 무관하게 항상 계산(표시 일관). 실패해도 빈값.
         matched_events, _ = match_events(events, titles, now.get("sector", ""))
     except Exception:
@@ -1251,6 +1269,7 @@ def scan_reaccum_candidate(rec, p, events):
         "news": news_items,
         "matched_events": matched_events,
         "theme": theme,
+        "material": material,
         "visible_experimental": True,
         "reaccum": {
             "peak_date": peak_date,
@@ -1377,21 +1396,158 @@ def derive_theme(titles, sector=""):
     return max(hits, key=lambda c: (hits[c], -order.index(c)))
 
 
+_CAUSE_CACHE = {}
+_MATERIAL_NEWS_FILE_CACHE = None
+
+
+def _empty_material():
+    return {
+        "grade": "N",
+        "score": 0,
+        "summary": "",
+        "sentiment": "중립",
+        "reliability": "뉴스없음",
+        "freshness": "미확인",
+        "directness": "미확인",
+        "tags": [],
+        "risk_flags": [],
+        "evidence": [],
+        "source_count": 0,
+        "relevant_count": 0,
+    }
+
+
+def _material_cache_path(day=None):
+    day = day or datetime.now(KST).strftime("%Y%m%d")
+    return os.path.join(MATERIAL_NEWS_CACHE_DIR, f"{day}.json")
+
+
+def _load_material_news_cache():
+    global _MATERIAL_NEWS_FILE_CACHE
+    if _MATERIAL_NEWS_FILE_CACHE is not None:
+        return _MATERIAL_NEWS_FILE_CACHE
+    today = datetime.now(KST).strftime("%Y%m%d")
+    path = _material_cache_path(today)
+    cache = {"version": MATERIAL_NEWS_CACHE_VERSION, "date": today, "items": {}}
+    try:
+        if os.path.exists(path):
+            loaded = json.load(open(path, encoding="utf-8"))
+            if isinstance(loaded, dict) and isinstance(loaded.get("items"), dict):
+                cache = loaded
+                cache.setdefault("version", MATERIAL_NEWS_CACHE_VERSION)
+                cache["date"] = today
+    except Exception as e:
+        log(f"[warn] 재료뉴스 캐시 읽기 실패(무시): {e}")
+    _MATERIAL_NEWS_FILE_CACHE = cache
+    return _MATERIAL_NEWS_FILE_CACHE
+
+
+def _save_material_news_cache(cache):
+    try:
+        os.makedirs(MATERIAL_NEWS_CACHE_DIR, exist_ok=True)
+        path = _material_cache_path(cache.get("date"))
+        tmp = f"{path}.tmp.{os.getpid()}"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, path)
+    except Exception as e:
+        log(f"[warn] 재료뉴스 캐시 저장 실패(무시): {e}")
+
+
+def _news_title_hash(news):
+    titles = [str(n.get("title") or "") for n in news or [] if n.get("title")]
+    payload = "\n".join(titles).encode("utf-8", "ignore")
+    return hashlib.sha1(payload).hexdigest()[:16] if titles else ""
+
+
+def _cache_record_fresh(rec, now_ts):
+    if not isinstance(rec, dict) or not isinstance(rec.get("news"), list):
+        return False
+    try:
+        ts = float(rec.get("ts") or 0)
+    except (TypeError, ValueError):
+        return False
+    return MATERIAL_NEWS_CACHE_TTL_SEC > 0 and now_ts - ts <= MATERIAL_NEWS_CACHE_TTL_SEC
+
+
+def _cached_fetch_material_news(code, k=10):
+    """재료 판정용 원본 뉴스 캐시. 등급 결과가 아니라 raw news만 저장해 로직 변경에 안전하게 재계산한다."""
+    if not MATERIAL_NEWS_ENABLED:
+        return []
+    cache = _load_material_news_cache()
+    items = cache.setdefault("items", {})
+    key = f"{code}:{k}"
+    rec = items.get(key)
+    now = datetime.now(KST)
+    now_ts = now.timestamp()
+    if _cache_record_fresh(rec, now_ts):
+        return rec.get("news") or []
+    try:
+        news = [n for n in fetch_news(code, k, timeout=MATERIAL_NEWS_TIMEOUT_SEC, retries=MATERIAL_NEWS_RETRIES)
+                if n.get("title")]
+    except Exception as e:
+        log(f"[warn] 재료뉴스 조회 실패 {code}(무시): {e}")
+        news = []
+    # 네이버 지연/실패 시 같은 날 stale 캐시라도 있으면 재사용한다. 없으면 빈 재료로 통과.
+    if not news and isinstance(rec, dict) and isinstance(rec.get("news"), list):
+        return rec.get("news") or []
+    if not news:
+        return []
+    items[key] = {
+        "code": code,
+        "k": k,
+        "ts": now_ts,
+        "fetched_at": now.isoformat(),
+        "ttl_sec": MATERIAL_NEWS_CACHE_TTL_SEC,
+        "title_hash": _news_title_hash(news),
+        "news": news,
+    }
+    _save_material_news_cache(cache)
+    return news
+
+
 def _explain_cause(code, name, sector=""):
     """'왜 올랐나' — 종목뉴스 fetch → 재료뉴스(score_news, 표시용) + 테마 + 원인요약 + raw_titles.
-    (news_items, theme, cause_summary, raw_titles) 반환. **어떤 예외든 빈값(graceful)** — 표시 전용
+    (news_items, theme, cause_summary, raw_titles, material) 반환. **어떤 예외든 빈값(graceful)** — 표시 전용
     메타가 코어 파이프라인을 중단시키지 않게 전체 try(scan_one의 try/except:pass와 동일 철학).
     raw_titles = fetch 원본 제목 전체(score_news 필터·6컷 전) — match_events/derive_theme가 scan_one과
     동일하게 원본으로 매칭하도록(재매집 이벤트/테마 과소매칭 방지). 추가 API = fetch_news 1콜."""
+    cache_key = (code, name, sector)
+    if cache_key in _CAUSE_CACHE:
+        return _CAUSE_CACHE[cache_key]
     try:
-        raw = [n for n in fetch_news(code, 10) if n.get("title")]
+        raw = _cached_fetch_material_news(code, 10)
         raw_titles = [n["title"] for n in raw]
-        news_items = score_news(raw, make_aliases(name)).get("relevant", [])[:6]
+        aliases = make_aliases(name)
+        news_items = score_news(raw, aliases).get("relevant", [])[:6]
         theme = derive_theme(raw_titles, sector)
         cause_summary = news_items[0].get("title", "") if news_items else ""
-        return news_items, theme, cause_summary, raw_titles
+        material = score_material(raw, aliases, sector=theme or sector)
+        result = (news_items, theme, cause_summary, raw_titles, material)
     except Exception:
-        return [], "", "", []
+        result = ([], "", "", [], _empty_material())
+    _CAUSE_CACHE[cache_key] = result
+    return result
+
+
+def _material_from_titles(titles, name, sector=""):
+    """레지스트리에 원본 제목만 남은 과거 폭발도 최소한의 재료 등급을 복원한다."""
+    if not titles:
+        return _empty_material()
+    try:
+        raw = [{"title": t, "summary": "", "url": None, "office": None} for t in titles if t]
+        return score_material(raw, make_aliases(name), sector=sector)
+    except Exception:
+        return _empty_material()
+
+
+def _material_score(m):
+    if not isinstance(m, dict):
+        return -1
+    try:
+        return float(m.get("score") or 0)
+    except (TypeError, ValueError):
+        return 0
 
 
 _RANK_CACHE = {}  # per-run 캐시: (direction,market,page)→(rows,total). radar는 1회성 프로세스라 stale 무관.
@@ -1423,7 +1579,7 @@ def _rank_page(direction, market, page):
     return result
 
 
-def scan_shakeout(p, extra_codes=None):
+def scan_shakeout(p, events=None, extra_codes=None):
     """💥 흔들기(폭발 직후 고회전 페이드) 스캔 — 회장님 지시 2026-07-03.
 
     셀: 당일 고가등락 ≥+20% AND 페이드(고가등락−현재등락) ≥15%p AND 당일 유통회전율 ≥40% AND MA20 위
@@ -1530,8 +1686,14 @@ def scan_shakeout(p, extra_codes=None):
         stier = (_shakeout_turnover_tier({"turnover_2d_pct": turnover_2d})
                  + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))  # 결합축(0~4) — 강도 순위 아님
         vg_tier = _very_good_tier(dd6)
+        name = row.get("name") or now.get("sector") or code
+        news_items, theme, cause_summary, raw_titles, material = _explain_cause(code, name, now.get("sector", ""))
+        try:
+            matched_events, _ = match_events(events or [], raw_titles, now.get("sector", ""))
+        except Exception:
+            matched_events = []
         out.append({
-            "code": code, "name": row.get("name") or now.get("sector") or code, "sector": now.get("sector", ""),
+            "code": code, "name": name, "sector": now.get("sector", ""),
             "pattern": "shakeout",
             "shakeout": True,
             "tp_hint": tp_hint,                       # 익절선 힌트(회전 밴드 실측) — 표시 전용
@@ -1582,7 +1744,8 @@ def scan_shakeout(p, extra_codes=None):
             "spark": {"clusters": []}, "spark_max_x": None, "spark_max_pct": None, "mega_flow": False,
             "reignition": None, "reignition_bars": [],
             "geupso": False, "geupso_bars": [], "low_accum": False, "low_accum_bars": [],
-            "news": [], "matched_events": [], "theme": "",
+            "news": news_items, "matched_events": matched_events, "theme": theme,
+            "material": material,
             "visible_experimental": True,
         })
     if out:
@@ -1709,7 +1872,7 @@ def main():
         # 랭킹 사각지대 보완: 이미 추적 중인 youtong·폭발 레지스트리 코드도 흔들기 후보로 재검사
         #   (삼기처럼 페이드로 등락률 top50서 밀린 강한 흔들기 포착).
         extra = list(active_explosions.keys()) + [y.get("code") for y in (today_youtong or [])]
-        shakeouts = scan_shakeout(p, extra_codes=extra)
+        shakeouts = scan_shakeout(p, events=events, extra_codes=extra)
     except Exception as e:
         log(f"[warn] 흔들기 스캔 실패(무시): {e}")
         shakeouts = []
@@ -1729,6 +1892,14 @@ def main():
                 "very_good_tier": r.get("very_good_tier"),
                 "very_good_candidate": r.get("very_good_candidate"),
             })
+            if r.get("material") and _material_score(r.get("material")) > _material_score(existing[r["code"]].get("material")):
+                existing[r["code"]]["material"] = r.get("material")
+            if r.get("news") and not existing[r["code"]].get("news"):
+                existing[r["code"]]["news"] = r.get("news")
+            if r.get("theme") and not existing[r["code"]].get("theme"):
+                existing[r["code"]]["theme"] = r.get("theme")
+            if r.get("matched_events") and not existing[r["code"]].get("matched_events"):
+                existing[r["code"]]["matched_events"] = r.get("matched_events")
         else:
             suspects.append(r)
     # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜) — 경고/위험 지정은 무조건 후순위 강등

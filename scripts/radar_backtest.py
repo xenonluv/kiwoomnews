@@ -56,6 +56,7 @@ HIGH3_X = 1.03          # 보조지표: 익일 고가 +3%
 MEGA_X = 40.0
 SPARK_BUCKETS = [("<10x", 0.0, 10.0), ("10~40x", 10.0, MEGA_X), ("≥40x", MEGA_X, float("inf"))]
 FEATURE_MIN_N = 10      # 피처 셀 유효 최소 표본 (탐색용 — 보정표보다 낮은 임계)
+MATERIAL_GRADES = ("S", "A", "B", "C", "D", "N")
 
 # AI(prob_up) 예측 기록 — 웹과 동일한 프로덕션 엔드포인트 호출 (로직 중복 없음).
 # 방향 파생 임계(상승≥54/하락≤46)와 정합하는 확률 구간으로 보정 검증 — 프로덕션 ai.ts
@@ -359,6 +360,7 @@ def collect_samples():
                                 "sector": s.get("sector") or "unknown",
                                 "theme": s.get("theme") or "unknown",  # 구표본 미영속 → unknown
                                 "theme_leader": s.get("theme_leader", False),  # 그날 테마 거래대금 1위
+                                "material": s.get("material"),
                                 # 마감 시 게시 카드 잔존 여부(= 종가 매수 가능했던 종목).
                                 # 키 없는 과거(장후 실행) 기록은 True
                                 "final": s.get("final", True),
@@ -494,6 +496,67 @@ def group_stats_gated(samples, key, min_n=FEATURE_MIN_N):
     for r in rows:
         r["valid"] = r["n"] >= min_n
     return rows
+
+
+def _material_grade(s):
+    mat = s.get("material")
+    if not isinstance(mat, dict):
+        return "unknown"
+    grade = mat.get("grade")
+    return grade if grade in MATERIAL_GRADES else "unknown"
+
+
+def _material_stat(grp):
+    hits = sum(1 for s in grp if s["hit"])
+    rets = [s["return_pct"] for s in grp]
+    return {
+        "n": len(grp),
+        "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
+        "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+        "valid": len(grp) >= FEATURE_MIN_N,
+    }
+
+
+def material_grade_stats(samples):
+    """뉴스/공시 재료 등급별 전진검증. N=재료뉴스 없음, unknown=구표본/미기록."""
+    labels = [
+        ("재료 S(정책·상폐·M&A급)", "S"),
+        ("재료 A(공시·대형이벤트)", "A"),
+        ("재료 B(실적·재무개선)", "B"),
+        ("재료 C(테마·간접수혜)", "C"),
+        ("재료 D(악재·희석우세)", "D"),
+        ("재료 없음/미확인", "N"),
+    ]
+    known = [s for s in samples if _material_grade(s) != "unknown"]
+    return {
+        "min_n": FEATURE_MIN_N,
+        "unknown_n": len(samples) - len(known),
+        "cells": [{"band": label, **_material_stat([s for s in known if _material_grade(s) == grade])}
+                  for label, grade in labels],
+    }
+
+
+def material_signal_stats(samples):
+    """재료 강도와 매우좋음/흔들기 축을 결합한 전진검증."""
+    known = [s for s in samples if _material_grade(s) != "unknown"]
+
+    def strong_material(s):
+        return _material_grade(s) in ("S", "A")
+
+    defs = [
+        ("매우좋음 Tier1 + 재료 S/A", lambda s: _very_good_tier_of(s) == "tier1" and strong_material(s)),
+        ("매우좋음 후보 + 재료 S/A", lambda s: _very_good_tier_of(s) == "candidate" and strong_material(s)),
+        ("흔들기 + 재료 S/A", lambda s: s.get("shakeout") and strong_material(s)),
+        ("흔들기 + 재료 C/D/N", lambda s: s.get("shakeout") and _material_grade(s) in ("C", "D", "N")),
+        ("재매집 + 재료 S/A", lambda s: s.get("pattern") == "reaccum" and strong_material(s)),
+        ("재료 없음/미확인", lambda s: _material_grade(s) == "N"),
+    ]
+    return {
+        "min_n": FEATURE_MIN_N,
+        "unknown_n": len(samples) - len(known),
+        "cells": [{"band": label, **_material_stat([s for s in known if pred(s)])}
+                  for label, pred in defs],
+    }
 
 
 def fill_theme_leaders(rows, samples):
@@ -1027,6 +1090,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
     dropouts = dropouts or []
     experimental = experimental or []
     experimental_dropouts = experimental_dropouts or []
+    material_all = samples + dropouts + experimental + experimental_dropouts
     reaccum_experimental = [s for s in experimental + experimental_dropouts
                             if s.get("pattern") == "reaccum"]
     reaccum_sorted = sorted(reaccum_experimental, key=lambda s: (s.get("date", ""), s.get("code", "")))
@@ -1074,6 +1138,9 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "shakeout_bands": shakeout_band_stats(shakeout_experimental),
         # ⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리(정렬·배지 검증용)
         "very_good_bands": very_good_tier_stats(shakeout_experimental),
+        # 📰 뉴스/공시 재료 등급 전진검증 — 오늘 이후 material 기록 표본만 known, 정렬·자동매매 미반영.
+        "material_bands": material_grade_stats(material_all),
+        "material_signal_bands": material_signal_stats(material_all),
         # 분할 전략 실측 — 20/30/50 분할+7%익절/-5%손절 실현 net 누적(라이브 보정)
         "strategy_sim": strategy_sim_stats(),
         "experimental": {

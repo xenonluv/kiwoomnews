@@ -10,6 +10,31 @@ export interface NewsItem {
   datetime?: string | null; // "YYYYMMDDHHMM"
 }
 
+export type MaterialGrade = "S" | "A" | "B" | "C" | "D" | "N";
+
+/** 뉴스/공시 재료 등급 — 오늘 이후 전진검증용. 정렬·자동매매에는 아직 미반영 */
+export interface MaterialInfo {
+  grade: MaterialGrade;
+  score: number;
+  summary?: string;
+  sentiment?: string;
+  reliability?: string;
+  freshness?: string;
+  freshness_days?: number | null;
+  directness?: string;
+  tags?: string[];
+  risk_flags?: string[];
+  evidence?: Array<{
+    title?: string;
+    datetime?: string | null;
+    source?: string;
+    url?: string | null;
+    score?: number;
+  }>;
+  source_count?: number;
+  relevant_count?: number;
+}
+
 /** D-10 이내 매크로/실적 이벤트 (조건 1) */
 export interface RadarEvent {
   id: string;
@@ -220,6 +245,8 @@ export interface Suspect {
   mega_flow?: boolean;
   flow?: FlowInfo; // 구버전 JSON 하위호환(현 파이프라인 미출력)
   news: NewsItem[];
+  /** 뉴스/공시 재료 등급 — 구버전 JSON엔 없음. 오늘 이후 history에 누적해 검증 */
+  material?: MaterialInfo | null;
   matched_events: MatchedEvent[];
   /** 상위 테마(금리|반도체|환율|유가|전쟁|실적|수급) — 표시·그룹용, 점수 미반영. 구버전 JSON엔 없음 */
   theme?: string;

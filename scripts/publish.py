@@ -112,6 +112,8 @@ def record_history(out):
             "pattern": s.get("pattern"),
             "prime": s.get("prime", False),  # 핵심 조건 모두 충족(유력) — 향후 적중률 분리 검증용
             "theme": s.get("theme", ""),  # 상위 테마 — by_theme 성과 집계용(표시 전용, 점수 미반영)
+            "material": s.get("material"),  # 뉴스/공시 재료 등급 — 전진검증용(정렬·자동매매 미반영)
+            "news": s.get("news", [])[:6],  # 재료 등급 근거 재검토용. 과거 백필 불가하므로 오늘 이후만 누적.
             "value_eok": s.get("value_eok"),         # 당일 거래대금(억) — 테마 대장 판별·기록용
             # 장중 판단값(snapshot_*)과 공식 일봉 원천값(signal_*)을 분리 저장한다.
             "snapshot_open": s.get("snapshot_open"),

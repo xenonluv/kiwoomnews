@@ -23,6 +23,15 @@ function sentimentDotClass(sentiment?: string | null) {
   return "bg-muted-foreground/50";
 }
 
+function materialBadgeClass(grade?: string) {
+  if (grade === "S") return "border-up/70 bg-up/15 text-up";
+  if (grade === "A") return "border-[#f59e0b]/70 bg-[#f59e0b]/15 text-[#fbbf24]";
+  if (grade === "B") return "border-warning/60 bg-warning/10 text-warning";
+  if (grade === "C") return "border-white/20 bg-transparent text-muted-foreground";
+  if (grade === "D") return "border-down/60 bg-down/10 text-down";
+  return "border-white/10 bg-transparent text-muted-foreground";
+}
+
 function peakDaysAgo(yyyymmdd?: string) {
   if (!yyyymmdd || yyyymmdd.length !== 8) return null;
   const y = Number(yyyymmdd.slice(0, 4));
@@ -48,6 +57,9 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const strong = s.suspicion_score >= 75 || !!s.very_good;
   const veryGoodLabel =
     s.very_good_tier === "tier2" ? "⭐ 매우좋음 Tier2" : s.very_good_tier === "tier1" ? "⭐ 매우좋음 Tier1" : "⭐ 매우좋음";
+  const material = s.material;
+  const materialGrade = material?.grade;
+  const showMaterial = !!materialGrade && materialGrade !== "N";
 
   return (
     <Card
@@ -175,6 +187,15 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.theme && s.theme !== s.sector && (
               <Badge variant="outline" title="원인 테마(뉴스·업종 기반)">#{s.theme}</Badge>
             )}
+            {showMaterial && (
+              <Badge
+                variant="outline"
+                className={cn("font-semibold", materialBadgeClass(materialGrade))}
+                title={`뉴스/공시 재료 전진검증 등급 — 점수·정렬·자동매매 미반영. 신뢰도 ${material?.reliability ?? "-"} · 직접성 ${material?.directness ?? "-"} · 신선도 ${material?.freshness ?? "-"}${material?.risk_flags?.length ? ` · 리스크 ${material.risk_flags.join(", ")}` : ""}`}
+              >
+                재료 {materialGrade}
+              </Badge>
+            )}
             {s.theme_leader && (
               <Badge
                 variant="outline"
@@ -288,6 +309,13 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.reaccum?.cause_summary && (
               <p className="line-clamp-1 text-[11px] text-muted-foreground" title={s.reaccum.cause_summary}>
                 왜 올랐나: {s.reaccum.cause_summary}
+              </p>
+            )}
+            {showMaterial && material.summary && (
+              <p className="line-clamp-1 text-[11px] text-muted-foreground" title={material.summary}>
+                재료: {material.summary}
+                {material.directness && ` · ${material.directness}`}
+                {material.reliability && ` · ${material.reliability}`}
               </p>
             )}
             {s.forecast && (

@@ -92,7 +92,11 @@
     "next_open_pct": 4.84,
     "next_low_pct": 3.3
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "122640": {
    "name": "예스티",
@@ -183,7 +187,11 @@
     "next_open_pct": 4.68,
     "next_low_pct": -6.88
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -5.97
+   }
   },
   "204270": {
    "name": "제이앤티씨",
@@ -276,7 +284,11 @@
     "next_open_pct": 3.94,
     "next_low_pct": -1.85
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -10.39
+   }
   }
  },
  "as_of": "2026-06-23 15:52:48 KST"

@@ -34,6 +34,8 @@ open-trading-api/
 data/nxt_calibration.json
 # 유동비율 캐시 (wisereport 스크랩, 재생성 가능 — float_ratio.py)
 data/float_ratio.json
+# 재료뉴스 원본 캐시 (네이버 조회 지연 완화용, 재생성 가능)
+data/material_cache/
 
 # 의존성
 node_modules/

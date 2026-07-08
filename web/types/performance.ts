@@ -326,6 +326,10 @@ export interface PerformanceData {
   peak_ibs_bands?: ChangeBandStats;
   /** 매우좋음 dd6 티어별 익일 상승확률 — ChangeBandStats 구조 재사용 */
   very_good_bands?: ChangeBandStats;
+  /** 뉴스/공시 재료 등급별 익일 상승확률 — 오늘 이후 material 기록 표본 전진검증 */
+  material_bands?: ChangeBandStats;
+  /** 재료 등급 × 매우좋음/흔들기 조합별 익일 상승확률 — 오늘 이후 전진검증 */
+  material_signal_bands?: ChangeBandStats;
   /** 분할 전략 실측(20/30/50+익절/손절) — 구버전 performance.json에는 없을 수 있음 */
   strategy_sim?: StrategySim;
   /** 테마별 성과 — 구버전 performance.json에는 없을 수 있음 */

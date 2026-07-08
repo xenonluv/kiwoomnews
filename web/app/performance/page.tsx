@@ -128,6 +128,26 @@ export default function PerformancePage() {
           />
         )}
 
+        {data.material_bands && (
+          <HitBandTable
+            data={data.material_bands}
+            title="뉴스·공시 재료등급별 익일 상승확률"
+            subtitle="오늘 이후 레이더 후보에 저장되는 material 등급(S/A/B/C/D/N)별 '익일 종가 상승' 비율과 평균수익"
+            bandHeader="재료등급"
+            footnote="재료등급은 뉴스/공시 키워드 기반 결정론 분류입니다. 현재 정렬·자동매매에는 미반영하고 전진검증만 합니다."
+          />
+        )}
+
+        {data.material_signal_bands && (
+          <HitBandTable
+            data={data.material_signal_bands}
+            title="재료등급 × 매우좋음/흔들기 조합 성과"
+            subtitle="매우좋음·흔들기 축에 재료 S/A 강도를 결합했을 때 익일 상승확률이 개선되는지 검증"
+            bandHeader="조합"
+            footnote="표본이 충분히 쌓인 뒤에만 정렬 반영을 검토합니다. 구표본은 material이 없어 unknown으로 제외됩니다."
+          />
+        )}
+
         {data.experimental?.leader_reaccum && (
           <LeaderReaccumPanel data={data.experimental.leader_reaccum} />
         )}
