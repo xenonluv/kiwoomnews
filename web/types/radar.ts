@@ -184,9 +184,9 @@ export interface Suspect {
   very_good_candidate?: boolean;
   /** ⭐ 6일 고점(오늘+직전5일) 대비 낙폭% */
   dd6_pct?: number | null;
-  /** 💥 흔들기 강도 등급 라벨(예 "Tier1(강)") — 회전 스윗90~140 + 낙폭 스윗−30~−45 결합. 종베 선택 보조 */
+  /** 💥 흔들기 결합축 라벨(예 "조합D(통계상 고가강)") — 회전+낙폭 조합의 통계 해석, 정렬 미사용 */
   strength?: string | null;
-  /** 💥 강도 결합 tier(0~4, 낮을수록 강) — 색 판정용 */
+  /** 💥 회전+낙폭 결합축(0~4) — 과거 호환 키, 강도 순위 아님 */
   strength_tier?: number | null;
   /** 💥 회전밴드별 익절선 힌트(실측 60건: 90~120% 회전은 +12%가 천장 → +7~10 익절) — 표시 전용 */
   tp_hint?: string | null;

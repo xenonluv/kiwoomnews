@@ -77,8 +77,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 10:33:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 1717.0,
+    "next_high": 2075.0,
+    "next_open": 1890.0,
+    "next_low": 1701.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -4.19,
+    "next_high_pct": 15.79,
+    "next_open_pct": 5.47,
+    "next_low_pct": -5.08
+   },
    "final": true
   },
   "477850": {
@@ -180,8 +192,20 @@
    },
    "matched_events": [],
    "first_seen": "2026-07-07 11:03:44 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 27200.0,
+    "next_high": 30300.0,
+    "next_open": 24000.0,
+    "next_low": 23350.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 11.02,
+    "next_high_pct": 23.67,
+    "next_open_pct": -2.04,
+    "next_low_pct": -4.69
+   },
    "final": false
   },
   "004830": {
@@ -260,8 +284,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 11:53:44 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 3420.0,
+    "next_high": 3825.0,
+    "next_open": 3505.0,
+    "next_low": 3375.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -4.47,
+    "next_high_pct": 6.84,
+    "next_open_pct": -2.09,
+    "next_low_pct": -5.73
+   },
    "final": true
   },
   "010960": {
@@ -340,8 +376,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 11:53:44 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 4290.0,
+    "next_high": 4630.0,
+    "next_open": 4200.0,
+    "next_low": 3915.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 2.39,
+    "next_high_pct": 10.5,
+    "next_open_pct": 0.24,
+    "next_low_pct": -6.56
+   },
    "final": true
   },
   "002780": {
@@ -447,8 +495,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-07 11:53:44 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 901.0,
+    "next_high": 1042.0,
+    "next_open": 934.0,
+    "next_low": 870.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -4.56,
+    "next_high_pct": 10.38,
+    "next_open_pct": -1.06,
+    "next_low_pct": -7.84
+   },
    "final": false
   },
   "001210": {
@@ -527,8 +587,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 12:33:41 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 1302.0,
+    "next_high": 1302.0,
+    "next_open": 1101.0,
+    "next_low": 1032.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.94,
+    "next_high_pct": 29.94,
+    "next_open_pct": 9.88,
+    "next_low_pct": 2.99
+   },
    "final": true
   },
   "002990": {
@@ -579,8 +651,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 12:33:41 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 14000.0,
+    "next_high": 14000.0,
+    "next_open": 14000.0,
+    "next_low": 14000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": 0.0,
+    "next_high_pct": 0.0,
+    "next_open_pct": 0.0,
+    "next_low_pct": 0.0
+   },
    "final": false,
    "signal_date": "20260707",
    "signal_open": 11860.0,
@@ -767,8 +851,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-07 12:53:38 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 4330.0,
+    "next_high": 4945.0,
+    "next_open": 4550.0,
+    "next_low": 4265.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -3.99,
+    "next_high_pct": 9.65,
+    "next_open_pct": 0.89,
+    "next_low_pct": -5.43
+   },
    "final": true
   },
   "198440": {
@@ -847,8 +943,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 13:53:38 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 1876.0,
+    "next_high": 2130.0,
+    "next_open": 1764.0,
+    "next_low": 1613.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 4.16,
+    "next_high_pct": 18.27,
+    "next_open_pct": -2.05,
+    "next_low_pct": -10.44
+   },
    "final": true
   },
   "058730": {
@@ -927,8 +1035,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 13:53:38 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 4960.0,
+    "next_high": 5050.0,
+    "next_open": 4000.0,
+    "next_low": 3700.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 24.0,
+    "next_high_pct": 26.25,
+    "next_open_pct": 0.0,
+    "next_low_pct": -7.5
+   },
    "final": true
   },
   "037710": {
@@ -1069,8 +1189,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-07 13:53:38 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 45350.0,
+    "next_high": 47600.0,
+    "next_open": 46450.0,
+    "next_low": 42200.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 0.78,
+    "next_high_pct": 5.78,
+    "next_open_pct": 3.22,
+    "next_low_pct": -6.22
+   },
    "final": true
   },
   "037070": {
@@ -1198,8 +1330,20 @@
    },
    "matched_events": [],
    "first_seen": "2026-07-07 14:03:33 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 6760.0,
+    "next_high": 7890.0,
+    "next_open": 7840.0,
+    "next_low": 6510.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -13.44,
+    "next_high_pct": 1.02,
+    "next_open_pct": 0.38,
+    "next_low_pct": -16.65
+   },
    "final": true
   },
   "011230": {
@@ -1295,8 +1439,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-07 14:53:40 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 3035.0,
+    "next_high": 3425.0,
+    "next_open": 3360.0,
+    "next_low": 3000.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -11.9,
+    "next_high_pct": -0.58,
+    "next_open_pct": -2.47,
+    "next_low_pct": -12.92
+   },
    "final": false
   },
   "091590": {
@@ -1465,8 +1621,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-07 15:13:47 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 10230.0,
+    "next_high": 11210.0,
+    "next_open": 10000.0,
+    "next_low": 9500.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 8.71,
+    "next_high_pct": 19.13,
+    "next_open_pct": 6.27,
+    "next_low_pct": 0.96
+   },
    "final": true
   },
   "228340": {
@@ -1609,8 +1777,20 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-07 15:13:47 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 3735.0,
+    "next_high": 4105.0,
+    "next_open": 3490.0,
+    "next_low": 3360.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 9.05,
+    "next_high_pct": 19.85,
+    "next_open_pct": 1.9,
+    "next_low_pct": -1.9
+   },
    "final": false
   },
   "012170": {
@@ -1689,8 +1869,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-07 15:43:51 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 953.0,
+    "next_high": 1237.0,
+    "next_open": 1169.0,
+    "next_low": 921.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -13.52,
+    "next_high_pct": 12.25,
+    "next_open_pct": 6.08,
+    "next_low_pct": -16.42
+   },
    "final": true
   },
   "101730": {
@@ -1816,8 +2008,20 @@
     "2026-07-07_삼성전자 2분기 잠정실"
    ],
    "first_seen": "2026-07-07 20:03:49 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260708",
+    "next_close": 4515.0,
+    "next_high": 4950.0,
+    "next_open": 4920.0,
+    "next_low": 4335.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -9.61,
+    "next_high_pct": -0.9,
+    "next_open_pct": -1.5,
+    "next_low_pct": -13.21
+   },
    "final": true
   }
  },

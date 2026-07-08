@@ -699,12 +699,14 @@ def peak_ibs_band_stats(samples):
             "cells": _hit_band_cells(known, lambda s: s["reaccum"]["peak_ibs"], PEAK_IBS_BANDS)}
 
 
-# 💥 흔들기 강도 튜닝 밴드 — 회장님 20년룰(회전 스윗90~140 + 깊은눌림 -30~-45 = 급등) 전진 검증축.
+# 💥 흔들기 결합축 튜닝 밴드 — 회장님 20년룰(회전 스윗90~140 + 깊은눌림 -30~-45 = 급등) 전진 검증축.
+# strength_tier 숫자는 과거 호환을 위해 유지한다. 최근 통계상 기존 Tier4가 약하지 않아
+# 강/약 라벨 대신 조합 라벨로 표시한다.
 SHAKEOUT_T2D_BANDS = [("부족 <90", 0, 90), ("스윗 90~140", 90, 140),
                       ("과열 140~180", 140, 180), ("극과열 ≥180", 180, 1e12)]
 SHAKEOUT_DD_BANDS = [("깊음 ≤-45", -1e12, -45), ("스윗 -45~-30", -45, -30), ("얕음 >-30", -30, 1e12)]
-SHAKEOUT_TIER_BANDS = [("Tier1(강)", 0, 1), ("Tier2(중강)", 1, 2),
-                       ("Tier3(중)", 2, 3), ("Tier4(약)", 3, 5)]
+SHAKEOUT_TIER_BANDS = [("조합A(스윗가설·검증중)", 0, 1), ("조합B(인접·검증중)", 1, 2),
+                       ("조합C(중립)", 2, 3), ("조합D(통계상 고가강)", 3, 5)]
 
 
 def _shakeout_stat(grp):
@@ -805,7 +807,7 @@ def load_shakeout_backfill():
 
 
 def shakeout_band_stats(shakeout_samples):
-    """💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·평균수익·고가터치율.
+    """💥 흔들기 결합축 튜닝표 — 2일회전율·고점낙폭·결합축별 익일 상승확률·평균수익·고가터치율.
     회장님 20년룰(회전 적정 + 깊은눌림 = 급등, 과회전 = 물량소진) 전진 검증. 흔들기 변수는 신규 history만
     영속(2026-07-06~) → 표본 성숙 전엔 valid=False('관찰중')."""
     known = [s for s in shakeout_samples if s.get("turnover_2d_pct") is not None]
@@ -1068,7 +1070,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "reignition_count_bands": reignition_count_band_stats(reaccum_experimental),
         # 폭발일 마감강도(IBS) 구간별 익일 상승확률 — 7일 표본 반직관 가설('약마감↑') 전진 검증(재매집 실험 풀)
         "peak_ibs_bands": peak_ibs_band_stats(reaccum_experimental),
-        # 💥 흔들기 강도 튜닝표 — 2일회전율·고점낙폭·결합티어 밴드별 익일 상승확률·고가터치율(회장님 20년룰 검증)
+        # 💥 흔들기 결합축 튜닝표 — 2일회전율·고점낙폭·결합축별 익일 상승확률·고가터치율(회장님 20년룰 검증)
         "shakeout_bands": shakeout_band_stats(shakeout_experimental),
         # ⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리(정렬·배지 검증용)
         "very_good_bands": very_good_tier_stats(shakeout_experimental),
