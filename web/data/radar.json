@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-08 11:43:45 KST",
+ "generated_at": "2026-07-08 11:54:10 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -77,8 +77,8 @@
    "name": "금호전기",
    "sector": "금호전기",
    "high_pct": 29.94,
-   "vol_turnover_pct": 96.6,
-   "value_eok": 473,
+   "vol_turnover_pct": 96.7,
+   "value_eok": 474,
    "price": 1302.0,
    "change_pct": 29.94,
    "backfill": false
@@ -89,11 +89,11 @@
    "code": "365660",
    "name": "레몬헬스케어",
    "sector": "레몬헬스케어",
-   "change_pct": 9.66,
+   "change_pct": 12.44,
    "high_pct": 18.99,
-   "vol_turnover_pct": 216.4,
-   "value_eok": 2664,
-   "price": 13400.0,
+   "vol_turnover_pct": 220.8,
+   "value_eok": 2719,
+   "price": 13740.0,
    "first_seen": "10:12",
    "exploded": false
   },
@@ -101,11 +101,11 @@
    "code": "079650",
    "name": "서산",
    "sector": "서산",
-   "change_pct": 6.39,
+   "change_pct": 7.23,
    "high_pct": 17.7,
-   "vol_turnover_pct": 155.5,
-   "value_eok": 521,
-   "price": 5080.0,
+   "vol_turnover_pct": 191.0,
+   "value_eok": 639,
+   "price": 5120.0,
    "first_seen": "10:22",
    "exploded": false
   },
@@ -115,8 +115,8 @@
    "sector": "금호전기",
    "change_pct": 29.94,
    "high_pct": 29.94,
-   "vol_turnover_pct": 96.6,
-   "value_eok": 473,
+   "vol_turnover_pct": 96.7,
+   "value_eok": 474,
    "price": 1302.0,
    "first_seen": "10:22",
    "exploded": true
@@ -125,11 +125,11 @@
    "code": "058730",
    "name": "다스코",
    "sector": "다스코",
-   "change_pct": 8.5,
-   "high_pct": 11.5,
-   "vol_turnover_pct": 71.8,
-   "value_eok": 343,
-   "price": 4340.0,
+   "change_pct": 5.88,
+   "high_pct": 11.25,
+   "vol_turnover_pct": 64.4,
+   "value_eok": 306,
+   "price": 4235.0,
    "first_seen": "11:32",
    "exploded": false
   },
@@ -137,11 +137,11 @@
    "code": "477850",
    "name": "마키나락스",
    "sector": "마키나락스",
-   "change_pct": 15.1,
+   "change_pct": 13.98,
    "high_pct": 23.67,
-   "vol_turnover_pct": 58.6,
-   "value_eok": 1584,
-   "price": 28200.0,
+   "vol_turnover_pct": 59.4,
+   "value_eok": 1607,
+   "price": 27925.0,
    "first_seen": "11:02",
    "exploded": false
   },
@@ -149,11 +149,11 @@
    "code": "406820",
    "name": "뷰티스킨",
    "sector": "뷰티스킨",
-   "change_pct": 28.48,
+   "change_pct": 27.35,
    "high_pct": 29.9,
-   "vol_turnover_pct": 57.9,
-   "value_eok": 99,
-   "price": 2260.0,
+   "vol_turnover_pct": 58.3,
+   "value_eok": 100,
+   "price": 2240.0,
    "first_seen": "10:52",
    "exploded": false
   },
@@ -161,12 +161,24 @@
    "code": "153890",
    "name": "져스텍",
    "sector": "져스텍",
-   "change_pct": 11.43,
+   "change_pct": 10.83,
    "high_pct": 17.44,
-   "vol_turnover_pct": 55.8,
-   "value_eok": 413,
-   "price": 14820.0,
+   "vol_turnover_pct": 56.9,
+   "value_eok": 421,
+   "price": 14740.0,
    "first_seen": "11:12",
+   "exploded": false
+  },
+  {
+   "code": "198440",
+   "name": "강동씨앤엘",
+   "sector": "강동씨앤엘",
+   "change_pct": 9.55,
+   "high_pct": 18.27,
+   "vol_turnover_pct": 56.2,
+   "value_eok": 200,
+   "price": 1973.0,
+   "first_seen": "11:52",
    "exploded": false
   }
  ],
@@ -178,7 +190,7 @@
    "pattern": "shakeout",
    "shakeout": true,
    "tp_hint": "+15% (양극단·표본소)",
-   "fade_pct": 18.5,
+   "fade_pct": 18.3,
    "suspicion_score": 69,
    "score_raw": 0,
    "score_breakdown": {},
@@ -187,50 +199,50 @@
    "forecast": null,
    "shake": null,
    "deep_shake": null,
-   "price": 6690.0,
-   "change_pct": 11.5,
+   "price": 6700.0,
+   "change_pct": 11.67,
    "change_basis": "KRX",
    "high_pct": 30.0,
    "value_eok": 56,
    "snapshot_open": 5690.0,
    "snapshot_high": 7800.0,
    "snapshot_low": 5560.0,
-   "snapshot_close": 6690.0,
-   "snapshot_volume": 796178.0,
-   "snapshot_value": 5604000000.0,
-   "snapshot_value_eok": 56.0,
+   "snapshot_close": 6700.0,
+   "snapshot_volume": 799821.0,
+   "snapshot_value": 5629000000.0,
+   "snapshot_value_eok": 56.3,
    "snapshot_as_of": "20260708",
    "signal_date": "20260708",
    "signal_open": 5690.0,
    "signal_high": 7800.0,
    "signal_low": 5560.0,
-   "signal_close": 6690.0,
+   "signal_close": 6700.0,
    "signal_prev_close": 6000.0,
-   "signal_volume": 796178.0,
-   "signal_value": 5604000000.0,
-   "signal_value_eok": 56.0,
+   "signal_volume": 799821.0,
+   "signal_value": 5629000000.0,
+   "signal_value_eok": 56.3,
    "signal_peak6_price": 7800.0,
    "signal_peak60_price": 12945.0,
-   "signal_ma20": 5332.0,
-   "signal_ma10": 4664.0,
+   "signal_ma20": 5332.5,
+   "signal_ma10": 4665.0,
    "signal_source": "daily_latest",
-   "turnover_pct": 47.9,
+   "turnover_pct": 48.1,
    "float_ratio": 0.6731,
    "turnover_basis": "float",
-   "turnover_2d_pct": 50.0,
+   "turnover_2d_pct": 50.2,
    "turnover_band": 1,
-   "peak_dd_pct": -48.3,
+   "peak_dd_pct": -48.2,
    "dd_band": 1,
-   "dd6_pct": -14.2,
+   "dd6_pct": -14.1,
    "very_good": false,
    "very_good_tier": null,
    "very_good_candidate": false,
    "strength_tier": 2,
    "strength": "Tier3(중)",
-   "run_6d_pct": 65.0,
-   "ma20_gap_pct": 25.5,
-   "ma10": 4664.0,
-   "ma10_margin_pct": 43.44,
+   "run_6d_pct": 65.2,
+   "ma20_gap_pct": 25.6,
+   "ma10": 4665.0,
+   "ma10_margin_pct": 43.62,
    "spark": {
     "clusters": []
    },
@@ -374,6 +386,188 @@
    "leader_cohort_prob": null,
    "alert_now": "경고",
    "alert_release": false,
+   "theme_leader": false
+  },
+  {
+   "code": "012170",
+   "name": "아센디오",
+   "sector": "아센디오",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 973.0,
+   "change_pct": -11.71,
+   "change_basis": "KRX",
+   "high_pct": 12.25,
+   "value_eok": 14,
+   "turnover_pct": 12.7,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.5205,
+   "turnover_basis": "float",
+   "ma10": 784.0,
+   "ma10_margin_pct": 24.11,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 6.53,
+    "time": "11:00",
+    "value_eok": 1,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 3.6,
+     "value_eok": 1
+    },
+    {
+     "time": "09:10",
+     "body_pct": 4.52,
+     "value_eok": 2
+    },
+    {
+     "time": "09:55",
+     "body_pct": 2.17,
+     "value_eok": 0
+    },
+    {
+     "time": "10:25",
+     "body_pct": 2.42,
+     "value_eok": 0
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.27,
+     "value_eok": 0
+    },
+    {
+     "time": "10:45",
+     "body_pct": 3.43,
+     "value_eok": 0
+    },
+    {
+     "time": "11:00",
+     "body_pct": 6.53,
+     "value_eok": 1
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 3.6
+    },
+    {
+     "time": "09:10",
+     "body_pct": 4.52
+    },
+    {
+     "time": "09:55",
+     "body_pct": 2.17
+    },
+    {
+     "time": "10:25",
+     "body_pct": 2.42
+    },
+    {
+     "time": "10:30",
+     "body_pct": 2.27
+    },
+    {
+     "time": "10:45",
+     "body_pct": 3.43
+    },
+    {
+     "time": "11:00",
+     "body_pct": 6.53
+    }
+   ],
+   "news": [
+    {
+     "title": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+     "summary": "경남제약(053950)이 131억 원 규모 부동산 현물출자를 통해 연예기획사 아센디오(012170) 지분 44.5%를 취득한다. 경남제약이 현금이 아닌 토지와 건물을 출자하고 그 대가로 아센디오 신주를 받는 구조다. 8일 금융감독원 전자공시시스템에 따",
+     "office": "뉴스1",
+     "datetime": "202607081129",
+     "url": "https://n.news.naver.com/mnews/article/421/0009047319",
+     "sentiment": "호재"
+    },
+    {
+     "title": "아센디오, 경남제약 대상 부동산 현물출자 기반 유증 결정",
+     "summary": "아센디오는 경남제약을 대상으로 현물출자 방식의 제3자배정 유상증자를 결정했다고 7일 공시했다. 이번 유상증자는 경남제약이 보유한 서울 신당동 소재 약 131억원 상당의 부동산을 현물출자하고 아센디오는 그 대가로 보통주 1623만3418주를 주당...",
+     "office": "뉴시스",
+     "datetime": "202607071654",
+     "url": "https://n.news.naver.com/mnews/article/003/0014051867",
+     "sentiment": "악재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 1,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.2
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 6,
+     "categories": [
+      "금리"
+     ],
+     "score": 1.2
+    }
+   ],
+   "theme": "반도체",
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260707",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 0.06,
+    "peak_uppertail": 18.4,
+    "ma20": 892.7,
+    "ma20_margin_pct": 9.0,
+    "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "주의",
    "theme_leader": false
   }
  ]
