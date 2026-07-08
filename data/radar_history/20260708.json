@@ -340,7 +340,7 @@
   "012170": {
    "name": "아센디오",
    "sector": "아센디오",
-   "entry": 947.0,
+   "entry": 938.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -357,8 +357,8 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 2,
-   "change_pct": -14.07,
+   "rank": 3,
+   "change_pct": -14.88,
    "change_basis": "KRX",
    "high_pct": 12.25,
    "pattern": "reaccum",
@@ -389,9 +389,9 @@
    "signal_source": null,
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 21.19,
+   "ma10_margin_pct": 20.18,
    "float_ratio": 0.5205,
-   "turnover_pct": 15.1,
+   "turnover_pct": 15.3,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -408,8 +408,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 0.06,
     "peak_uppertail": 18.4,
-    "ma20": 891.4,
-    "ma20_margin_pct": 6.24,
+    "ma20": 891.0,
+    "ma20_margin_pct": 5.28,
     "cause_summary": "경남제약, 현물출자로 연예기획사 '아센디오' 투자 왜?",
     "was_theme_leader": false,
     "source": "live"
@@ -568,7 +568,139 @@
    "evaluated": false,
    "result": null,
    "final": false
+  },
+  "046940": {
+   "name": "우원개발",
+   "sector": "우원개발",
+   "entry": 3455.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 65,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 3,
+    "re_turnover": 0
+   },
+   "rank": 2,
+   "change_pct": -10.49,
+   "change_basis": "KRX",
+   "high_pct": 7.12,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "금리",
+   "value_eok": 66,
+   "snapshot_open": null,
+   "snapshot_high": null,
+   "snapshot_low": null,
+   "snapshot_close": null,
+   "snapshot_volume": null,
+   "snapshot_value": null,
+   "snapshot_value_eok": null,
+   "snapshot_as_of": null,
+   "signal_date": null,
+   "signal_open": null,
+   "signal_high": null,
+   "signal_low": null,
+   "signal_close": null,
+   "signal_prev_close": null,
+   "signal_volume": null,
+   "signal_value": null,
+   "signal_value_eok": null,
+   "signal_peak6_price": null,
+   "signal_peak60_price": null,
+   "signal_ma20": null,
+   "signal_ma10": null,
+   "signal_source": null,
+   "run_6d_pct": null,
+   "ma20_gap_pct": null,
+   "ma10_margin_pct": 0.67,
+   "float_ratio": 0.6502,
+   "turnover_pct": 15.3,
+   "peak_turnover_pct": 128.3,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": true,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260703",
+    "peak_value_eok": 643,
+    "peak_high_pct": 22.08,
+    "peak_turnover_pct": 128.3,
+    "peak_ibs": 0.48,
+    "peak_uppertail": 16.9,
+    "ma20": 3346.0,
+    "ma20_margin_pct": 3.26,
+    "cause_summary": "우원개발, 598억 농소-강동 도로개설공사 3공구 수주",
+    "was_theme_leader": false,
+    "source": "backfill"
+   },
+   "reignition": {
+    "body_pct": 3.06,
+    "time": "09:05",
+    "value_eok": 5,
+    "count": 0
+   },
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.2
+    },
+    {
+     "time": "09:05",
+     "body_pct": 3.06
+    },
+    {
+     "time": "11:50",
+     "body_pct": 2.22
+    }
+   ],
+   "alert_now": null,
+   "alert_release": null,
+   "shakeout": false,
+   "fade_pct": null,
+   "turnover_2d_pct": null,
+   "peak_dd_pct": null,
+   "strength_tier": null,
+   "strength": null,
+   "turnover_band": null,
+   "dd_band": null,
+   "dd6_pct": null,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "matched_events": [
+    "2026-07-09_한국은행 금통위 기준금",
+    "2026-07-14_미국 CPI 발표 (6"
+   ],
+   "first_seen": "2026-07-08 14:23:35 KST",
+   "evaluated": false,
+   "result": null,
+   "final": true
   }
  },
- "as_of": "2026-07-08 14:13:29 KST"
+ "as_of": "2026-07-08 14:23:35 KST"
 }
