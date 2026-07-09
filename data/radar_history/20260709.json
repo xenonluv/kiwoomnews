@@ -607,7 +607,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.43,
+    "freshness_days": 2.44,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -895,7 +895,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.51,
+    "freshness_days": 1.52,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1079,7 +1079,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 28.46,
+    "freshness_days": 28.47,
     "directness": "간접",
     "tags": [
      "유가",
@@ -1598,5 +1598,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-09 20:14:10 KST"
+ "as_of": "2026-07-09 20:24:12 KST"
 }
