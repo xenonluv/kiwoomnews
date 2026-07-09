@@ -9,7 +9,7 @@ set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO"
 
-echo "== stocknews Mac autorun setup =="
+echo "== kiwoomnews Mac autorun setup =="
 echo "repo: $REPO"
 
 if ! command -v git >/dev/null 2>&1; then
@@ -25,7 +25,7 @@ fi
 echo
 echo "== sync main =="
 git fetch origin main
-git pull --ff-only origin main
+git merge --ff-only FETCH_HEAD
 
 echo
 echo "== timezone check =="
@@ -50,11 +50,11 @@ echo "timezone ok: $(date)"
 
 echo
 echo "== install cron =="
-bash scripts/install_cron.sh
+bash scripts/install_cron_kiwoom.sh
 
 echo
 echo "== verify =="
-crontab -l | grep -E "scripts/publish.py|analyzer/run.py|analyzer/backtest.py" || {
+crontab -l | grep -E "scripts/publish.py|scripts/radar_backtest.py|scripts/autotrade_executor.py|scripts/autotrade_monitor.py|scripts/autotrade_stats.py" || {
   echo "ERROR: project cron lines not found" >&2
   exit 1
 }
@@ -62,5 +62,5 @@ crontab -l | grep -E "scripts/publish.py|analyzer/run.py|analyzer/backtest.py" |
 echo
 echo "Mac autorun setup complete."
 echo "Logs:"
-echo "  tail -f /tmp/publish.log"
-echo "  tail -f /tmp/forecast.log"
+echo "  tail -f /tmp/kiwoom_publish.log"
+echo "  tail -f /tmp/kiwoom_autotrade.log"

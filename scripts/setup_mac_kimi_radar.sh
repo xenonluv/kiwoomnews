@@ -16,7 +16,7 @@ WEB_ENV="$REPO/web/.env.local"
 
 cd "$REPO"
 
-echo "== stocknews Mac Kimi radar setup =="
+echo "== kiwoomnews Mac Kimi radar setup =="
 echo "repo: $REPO"
 
 require_cmd() {
@@ -190,7 +190,7 @@ echo
 echo "== sync main =="
 stash_dirty_worktree
 git fetch origin main
-git pull --ff-only origin main
+git merge --ff-only FETCH_HEAD
 
 echo
 echo "== Kimi local env =="
@@ -246,7 +246,7 @@ RADAR_KIMI_VERIFY=0 python3 scripts/publish.py --dry-run --max 3
 
 echo
 echo "== current cron =="
-crontab -l | grep -E "scripts/publish.py|scripts/radar_backtest.py|analyzer/run.py|analyzer/backtest.py" || {
+crontab -l | grep -E "scripts/publish.py|scripts/radar_backtest.py|scripts/autotrade_stats.py" || {
   echo "ERROR: project cron lines not found" >&2
   exit 1
 }
@@ -255,5 +255,5 @@ echo
 echo "Setup complete."
 echo "Kimi radar verification runs only during 14:45~15:30 KST when candidates exist."
 echo "Logs:"
-echo "  tail -f /tmp/publish.log"
-echo "  tail -f /tmp/radar_backtest.log"
+echo "  tail -f /tmp/kiwoom_publish.log"
+echo "  tail -f /tmp/kiwoom_backtest.log"

@@ -62,7 +62,7 @@ MATERIAL_GRADES = ("S", "A", "B", "C", "D", "N")
 # 방향 파생 임계(상승≥54/하락≤46)와 정합하는 확률 구간으로 보정 검증 — 프로덕션 ai.ts
 # PROB_BULL_MIN=54·PROB_BEAR_MAX=46(2026-06-20 58→54 하향)과 일치(track_eval·ai_click_eval도 54).
 AI_ENDPOINT = os.environ.get(
-    "RADAR_AI_ENDPOINT", "https://stocknews-cyan.vercel.app/api/stock/{code}/ai")
+    "RADAR_AI_ENDPOINT", "https://kiwoomnews.vercel.app/api/stock/{code}/ai")
 AI_PROB_BANDS = [(0, 47), (47, 54), (54, 101)]   # 하락(≤46)/관망(47~53)/상승(≥54)
 # 룰베이스 vs AI 괴리 분석: 룰 "매수 우위" 임계(/stock scoring.ts 62점)와
 # AI "상승" 임계(54, 사이트 방향배지와 동일)의 일치/불일치 4분면 — 어느 쪽이 맞는지 데이터로 판별
