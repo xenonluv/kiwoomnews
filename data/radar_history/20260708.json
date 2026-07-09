@@ -152,8 +152,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 09:02:53 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 17310.0,
+    "next_high": 18000.0,
+    "next_open": 15500.0,
+    "next_low": 14060.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 23.64,
+    "next_high_pct": 28.57,
+    "next_open_pct": 10.71,
+    "next_low_pct": 0.43
+   },
    "final": true
   },
   "001210": {
@@ -280,8 +292,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 09:02:53 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 1316.0,
+    "next_high": 1628.0,
+    "next_open": 1410.0,
+    "next_low": 1123.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.08,
+    "next_high_pct": 25.04,
+    "next_open_pct": 8.29,
+    "next_low_pct": -13.75
+   },
    "final": false
   },
   "042040": {
@@ -432,8 +456,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-08 10:33:55 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 5750.0,
+    "next_high": 7430.0,
+    "next_open": 5400.0,
+    "next_low": 5220.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": 0.0,
+    "next_high_pct": 29.22,
+    "next_open_pct": -6.09,
+    "next_low_pct": -9.22
+   },
    "final": true
   },
   "012170": {
@@ -645,8 +681,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 11:54:10 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 854.0,
+    "next_high": 959.0,
+    "next_open": 913.0,
+    "next_low": 820.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -10.95,
+    "next_high_pct": 0.0,
+    "next_open_pct": -4.8,
+    "next_low_pct": -14.49
+   },
    "final": true
   },
   "477850": {
@@ -725,8 +773,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-08 13:33:43 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 29650.0,
+    "next_high": 31400.0,
+    "next_open": 26800.0,
+    "next_low": 26750.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 9.41,
+    "next_high_pct": 15.87,
+    "next_open_pct": -1.11,
+    "next_low_pct": -1.29
+   },
    "final": false
   },
   "046940": {
@@ -857,8 +917,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 14:23:35 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 3535.0,
+    "next_high": 3805.0,
+    "next_open": 3400.0,
+    "next_low": 3350.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 1.73,
+    "next_high_pct": 9.5,
+    "next_open_pct": -2.16,
+    "next_low_pct": -3.6
+   },
    "final": false
   },
   "003680": {
@@ -1046,8 +1118,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-08 14:33:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 6510.0,
+    "next_high": 6510.0,
+    "next_open": 5170.0,
+    "next_low": 5050.0,
+    "hit": true,
+    "high3": true,
+    "return_pct": 29.94,
+    "next_high_pct": 29.94,
+    "next_open_pct": 3.19,
+    "next_low_pct": 0.8
+   },
    "final": true
   },
   "079650": {
@@ -1126,8 +1210,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-08 14:43:36 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 5150.0,
+    "next_high": 5830.0,
+    "next_open": 5250.0,
+    "next_low": 4865.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -4.28,
+    "next_high_pct": 8.36,
+    "next_open_pct": -2.42,
+    "next_low_pct": -9.57
+   },
    "final": false
   },
   "198440": {
@@ -1266,8 +1362,20 @@
    },
    "matched_events": [],
    "first_seen": "2026-07-08 15:03:23 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 1739.0,
+    "next_high": 1981.0,
+    "next_open": 1882.0,
+    "next_low": 1694.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -9.43,
+    "next_high_pct": 3.18,
+    "next_open_pct": -1.98,
+    "next_low_pct": -11.77
+   },
    "final": true
   },
   "010960": {
@@ -1422,8 +1530,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 15:03:23 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 3970.0,
+    "next_high": 4395.0,
+    "next_open": 4350.0,
+    "next_low": 3785.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -10.99,
+    "next_high_pct": -1.46,
+    "next_open_pct": -2.47,
+    "next_low_pct": -15.13
+   },
    "final": true
   },
   "091590": {
@@ -1546,8 +1666,20 @@
     "2026-07-14_미국 CPI 발표 (6"
    ],
    "first_seen": "2026-07-08 15:23:39 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 8870.0,
+    "next_high": 10330.0,
+    "next_open": 9940.0,
+    "next_low": 8230.0,
+    "hit": false,
+    "high3": false,
+    "return_pct": -12.7,
+    "next_high_pct": 1.67,
+    "next_open_pct": -2.17,
+    "next_low_pct": -19.0
+   },
    "final": false
   },
   "285800": {
@@ -1696,8 +1828,20 @@
    "forecast": null,
    "matched_events": [],
    "first_seen": "2026-07-08 15:43:42 KST",
-   "evaluated": false,
-   "result": null,
+   "evaluated": true,
+   "result": {
+    "date": "20260709",
+    "next_close": 824.0,
+    "next_high": 980.0,
+    "next_open": 922.0,
+    "next_low": 805.0,
+    "hit": false,
+    "high3": true,
+    "return_pct": -10.53,
+    "next_high_pct": 6.41,
+    "next_open_pct": 0.11,
+    "next_low_pct": -12.6
+   },
    "final": true
   }
  },
