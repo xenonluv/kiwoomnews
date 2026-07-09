@@ -247,6 +247,9 @@ def notify_very_good(suspects, state_path=VERY_GOOD_STATE_PATH, now=None):
     for s in suspects or []:
         if not s.get("very_good"):
             continue
+        sd = str(s.get("signal_date") or "")
+        if sd and sd != today:
+            continue  # stale 신호(휴장일/주말 재게시분) — 전 거래일 신호 재알림 방지
         code = s.get("code")
         if not code or code in sent:
             continue
@@ -307,7 +310,10 @@ def notify_suspects_digest(suspects, state_path=DIGEST_STATE_PATH, now=None):
     today = now.strftime("%Y%m%d")
     if _load_state(state_path).get("date") == today:
         return 0  # 오늘 이미 발송(하루 1회)
-    if send(_format_digest(suspects, now)):
+    # stale 신호(휴장일/주말 재게시분) 제외 — signal_date 없는 레코드는 종전대로 포함(호환)
+    fresh = [s for s in suspects or []
+             if not s.get("signal_date") or str(s.get("signal_date")) == today]
+    if send(_format_digest(fresh, now)):
         _save_state(state_path, {"date": today})
         return 1
     return 0

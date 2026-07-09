@@ -415,7 +415,9 @@ def _upsert_explosion(reg, rec):
                             key=lambda s: _SRC_RANK.get(s, 0))
         # 원인/테마 메타는 기존 비어있을 때만 신규로 채움 — 폭발 당일 신선 catalyst가
         # 이후 회차의 stale 값으로 덮이지 않게(source와 동일 철학). cause_done이 캡처 동결 마커.
-        for k in ("sector", "theme", "cause_summary", "cause_titles", "cause_done"):
+        # material도 보존 — 빠져 있으면 캡처 후 다음 회차 병합에서 유실돼(실측: 레지스트리 25건 전부
+        # None) 제목만으로 재복원(신선도·요약 손실)되던 기존 버그. 캡처 회차는 rec에 fresh 값이 있어 우선.
+        for k in ("sector", "theme", "cause_summary", "cause_titles", "cause_done", "material"):
             if old.get(k) and not rec.get(k):
                 rec[k] = old[k]
     reg["records"][key] = rec
@@ -801,7 +803,9 @@ def update_live_explosions(reg, p):
             rec_new["material"] = material
             # 원본 제목 전체(필터 전) — 재매집 match_events가 scan_one(raw_titles)과 동일 매칭하도록
             rec_new["cause_titles"] = raw_titles
-            rec_new["cause_done"] = True
+            # 조회 실패(fetch_failed)면 동결 보류 → 다음 회차 재시도. '뉴스 없음'(조회 성공·0건)만 동결
+            # — 일시 네트워크 실패가 추적 기간 내내 N등급으로 굳는 것 방지.
+            rec_new["cause_done"] = not (material or {}).get("fetch_failed")
         _upsert_explosion(reg, rec_new)
         live_dates.add(trade_date)
         today_explosions.append({
@@ -1528,14 +1532,22 @@ def _cached_fetch_material_news(code, k=10):
     if _cache_record_fresh(rec, now_ts):
         return rec.get("news") or []
     try:
-        news = [n for n in fetch_news(code, k, timeout=MATERIAL_NEWS_TIMEOUT_SEC, retries=MATERIAL_NEWS_RETRIES)
-                if n.get("title")]
+        fetched = fetch_news(code, k, timeout=MATERIAL_NEWS_TIMEOUT_SEC, retries=MATERIAL_NEWS_RETRIES)
+        # ⚠ fetch_news는 예외를 삼키고 [{"error": ...}] 센티널을 반환(team1_collect.py:121) —
+        #   센티널을 감지해야 실패가 '뉴스 0건'으로 위장되지 않는다(적대 리뷰 2026-07-09 확정).
+        if fetched and isinstance(fetched[0], dict) and "error" in fetched[0]:
+            log(f"[warn] 재료뉴스 조회 실패 {code}(무시): {fetched[0].get('error')}")
+            news = None  # 조회 실패 — '조회 성공·뉴스 0건'([])과 구분(cause_done 동결 보류용)
+        else:
+            news = [n for n in fetched if n.get("title")]
     except Exception as e:
         log(f"[warn] 재료뉴스 조회 실패 {code}(무시): {e}")
-        news = []
+        news = None  # 방어적 백스톱 — fetch_news 계약 변경 대비
     # 네이버 지연/실패 시 같은 날 stale 캐시라도 있으면 재사용한다. 없으면 빈 재료로 통과.
     if not news and isinstance(rec, dict) and isinstance(rec.get("news"), list):
         return rec.get("news") or []
+    if news is None:
+        return None  # 실패 마커 전파 — _explain_cause가 material에 fetch_failed 표시
     if not news:
         return []
     items[key] = {
@@ -1562,15 +1574,21 @@ def _explain_cause(code, name, sector=""):
         return _CAUSE_CACHE[cache_key]
     try:
         raw = _cached_fetch_material_news(code, 10)
+        fetch_failed = raw is None  # 조회 실패 — '뉴스 없음'과 구분해 material에 마커
+        raw = raw or []
         raw_titles = [n["title"] for n in raw]
         aliases = make_aliases(name)
         news_items = score_news(raw, aliases).get("relevant", [])[:6]
         theme = derive_theme(raw_titles, sector)
         cause_summary = news_items[0].get("title", "") if news_items else ""
         material = score_material(raw, aliases, sector=theme or sector)
+        if fetch_failed:
+            material["fetch_failed"] = True  # 폭발 캡처가 cause_done 동결 보류 → 다음 회차 재시도
         result = (news_items, theme, cause_summary, raw_titles, material)
     except Exception:
-        result = ([], "", "", [], _empty_material())
+        material = _empty_material()
+        material["fetch_failed"] = True
+        result = ([], "", "", [], material)
     _CAUSE_CACHE[cache_key] = result
     return result
 
@@ -1685,6 +1703,11 @@ def scan_shakeout(p, events=None, extra_codes=None):
             continue
         signal_bar = daily[-1] if daily else {}
         signal_date = signal_bar.get("date") or now.get("date")
+        # 휴장일/주말 stale 신호 가드 — scan_one(재매집) 1148행과 동일 게이트(현재가 date 우선).
+        # 평일 09시 이후엔 당일 데이터만 허용해, KRX 휴장일에 네이버/키움이 주는 전 거래일
+        # 데이터로 어제 흔들기가 '라이브'로 재게시·재알림·자동매매 노출되는 것을 차단.
+        if not _allow_signal_date((now.get("date") or signal_date or "").strip()):
+            continue
         snapshot_open = now.get("open") or signal_bar.get("open")
         snapshot_high = now.get("high") or signal_bar.get("high")
         snapshot_low = now.get("low") or signal_bar.get("low")
