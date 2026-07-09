@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 18:54:15 KST",
+ "generated_at": "2026-07-09 19:04:16 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -242,7 +242,7 @@
    "change_pct": 29.91,
    "high_pct": 29.91,
    "vol_turnover_pct": 69.9,
-   "value_eok": 2271,
+   "value_eok": 2272,
    "price": 55600.0,
    "first_seen": "12:02",
    "exploded": false
@@ -434,7 +434,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.45,
+    "freshness_days": 1.46,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -733,7 +733,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.37,
+    "freshness_days": 2.38,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -916,7 +916,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.13,
+    "freshness_days": 1.14,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1061,7 +1061,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 28.4,
+    "freshness_days": 28.41,
     "directness": "간접",
     "tags": [
      "유가",
