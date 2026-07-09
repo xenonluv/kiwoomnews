@@ -607,7 +607,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.41,
+    "freshness_days": 2.42,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -1598,5 +1598,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-09 19:45:16 KST"
+ "as_of": "2026-07-09 19:54:41 KST"
 }
