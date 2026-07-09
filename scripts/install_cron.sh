@@ -15,6 +15,8 @@ PY="$(command -v python3 || echo /usr/bin/python3)"
 # 현재 운영 crontab의 KIWOOMNEWS 블록과 일치시킨다.
 # 레이더 게시 — 평일 9~20시 10분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
 L_PUBLISH="1,11,21,31,41,51 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1"
+# KIS 토큰 — 추적/AI/국면 평가가 KIS 일봉을 쓰므로 매일 아침 만료시각 고정.
+L_KIS_TOKEN="0 7 * * * cd $REPO && PYTHONUTF8=1 $PY scripts/kis_client.py --issue-token >> /tmp/kiwoom_kis_token.log 2>&1"
 # 자동매매 매수 — 15:18 KRX 종가베팅 / 19:50 NXT.
 L_AUTOTRADE_KRX="18 15 * * 1-5 cd $REPO && PYTHONUTF8=1 AUTOTRADE_LIVE=1 $PY scripts/autotrade_executor.py --slot krx >> /tmp/kiwoom_autotrade.log 2>&1"
 L_AUTOTRADE_NXT="50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 AUTOTRADE_LIVE=1 $PY scripts/autotrade_executor.py --slot nxt >> /tmp/kiwoom_autotrade.log 2>&1"
@@ -23,6 +25,10 @@ L_AUTOTRADE_MONITOR="*/1 8-15 * * 1-5 cd $REPO && PYTHONUTF8=1 AUTOTRADE_LIVE=1 
 # 익일 자가검증·통계·튜닝.
 L_RADAR_BT="20 17 * * 1-5 cd $REPO && RADAR_BROKER=kiwoom RADAR_AI_PREDICT=0 PYTHONUTF8=1 $PY scripts/radar_backtest.py --push >> /tmp/kiwoom_backtest.log 2>&1"
 L_AUTOTRADE_STATS="25 17 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/autotrade_stats.py --push >> /tmp/kiwoom_autotrade_stats.log 2>&1"
+L_TRACK_EVAL="30 17 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/track_eval.py --push >> /tmp/kiwoom_track_eval.log 2>&1"
+L_AI_CLICK_EVAL="35 17 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/ai_click_eval.py --push >> /tmp/kiwoom_ai_click_eval.log 2>&1"
+L_PHASE_EVAL="37 17 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/phase_eval.py --push >> /tmp/kiwoom_phase_eval.log 2>&1"
+L_NIGHT_ALERT="5,35 16-20 * * 1-5 cd $REPO && PYTHONUTF8=1 $PY scripts/night_alert.py >> /tmp/kiwoom_night_alert.log 2>&1"
 
 NEW_CRON="$(
   crontab -l 2>/dev/null | awk '
@@ -34,6 +40,8 @@ NEW_CRON="$(
   ' || true
   echo "# KIWOOMNEWS_BEGIN"
   echo "PATH=/usr/local/bin:/usr/bin:/bin"
+  echo "# KIS 토큰 — 추적/AI/국면 평가용 일봉 API 토큰 만료시각 고정."
+  echo "$L_KIS_TOKEN"
   echo "# 레이더 게시 — 평일 9~20시 10분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드."
   echo "$L_PUBLISH"
   echo "# 자동매매 매수 — 15:18 KRX 종가베팅(비-NXT 종목) / 19:50 NXT(NXT 거래가능 종목, 5호가위 지정가)"
@@ -41,9 +49,14 @@ NEW_CRON="$(
   echo "$L_AUTOTRADE_NXT"
   echo "# 자동매매 청산 감시 — 1분 간격. 세션은 스크립트가 시각으로 자동 판정."
   echo "$L_AUTOTRADE_MONITOR"
-  echo "# 익일 자가검증·통계·튜닝 — 17:20 레이더 백테스트 + 17:25 자동매매 실현손익 통계"
+  echo "# 익일 자가검증·통계·튜닝 — 레이더/자동매매/추적/AI 클릭/국면 평가"
   echo "$L_RADAR_BT"
   echo "$L_AUTOTRADE_STATS"
+  echo "$L_TRACK_EVAL"
+  echo "$L_AI_CLICK_EVAL"
+  echo "$L_PHASE_EVAL"
+  echo "# NXT 야간 급락 텔레그램 경고 — 정규장 마감 후 30분 간격"
+  echo "$L_NIGHT_ALERT"
   echo "# KIWOOMNEWS_END"
 )"
 
@@ -62,7 +75,7 @@ echo "$NEW_CRON" | crontab -
 
 echo "✅ cron 설치 완료 (repo=$REPO, python=$PY)"
 echo "── 설치된 프로젝트 cron ──"
-crontab -l | grep -E "publish.py|radar_backtest.py|autotrade_executor.py|autotrade_monitor.py|autotrade_stats.py" || true
+crontab -l | grep -E "kis_client.py|publish.py|radar_backtest.py|autotrade_executor.py|autotrade_monitor.py|autotrade_stats.py|track_eval.py|ai_click_eval.py|phase_eval.py|night_alert.py" || true
 
 echo
 echo "── 점검(중요) ──"
@@ -73,4 +86,4 @@ case "$(date +%Z)" in
   *) echo "  ⚠️  시간대 $(date +%Z) — KST 아님! Mac: sudo systemsetup -settimezone Asia/Seoul (또는 cron 시(hour) 조정)";;
 esac
 echo "  ⚠️  PC가 켜져 있어야 동작 — Mac: sudo pmset -a sleep 0"
-echo "  ℹ️  로그: tail -f /tmp/kiwoom_publish.log /tmp/kiwoom_backtest.log /tmp/kiwoom_autotrade.log"
+echo "  ℹ️  로그: tail -f /tmp/kiwoom_publish.log /tmp/kiwoom_backtest.log /tmp/kiwoom_autotrade.log /tmp/kiwoom_track_eval.log /tmp/kiwoom_ai_click_eval.log /tmp/kiwoom_phase_eval.log /tmp/kiwoom_night_alert.log"

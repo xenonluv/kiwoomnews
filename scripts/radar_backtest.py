@@ -122,9 +122,15 @@ def fill_signal_snapshot(code, date, s):
         "signal_volume", "signal_value", "signal_peak6_price", "signal_peak60_price",
         "signal_ma20", "signal_ma10", "run_6d_pct", "ma20_gap_pct", "ma10_margin_pct",
     )
-    needs_snapshot = any(s.get(k) is None for k in snapshot_keys)
-    needs_dd6 = s.get("dd6_pct") is None
-    needs_finalize = s.get("signal_source") != "daily_final"
+    signal_source = s.get("signal_source")
+    live_source = signal_source not in (None, "", "daily_final")
+    needs_finalize = signal_source != "daily_final" and not s.get("daily_final_filled")
+    # daily_latest 표본은 화면/알림/자동매매가 본 라이브 라벨이 전진검증의 기준이다.
+    # 공식 일봉 값은 daily_final_*로만 보존하고, dd6/very_good/change/fade 본 필드는 건드리지 않는다.
+    needs_snapshot = any(s.get(k) is None for k in snapshot_keys) and not (
+        live_source and s.get("daily_final_filled")
+    )
+    needs_dd6 = s.get("dd6_pct") is None and not live_source
     if not needs_snapshot and not needs_dd6 and not needs_finalize:
         return False
     try:
@@ -161,6 +167,7 @@ def fill_signal_snapshot(code, date, s):
         return False
 
     changed = False
+    overwrite_signal = needs_finalize and not live_source
     if needs_finalize:
         changed |= put("snapshot_open", s.get("snapshot_open") or s.get("signal_open"))
         changed |= put("snapshot_high", s.get("snapshot_high") or s.get("signal_high"))
@@ -170,30 +177,63 @@ def fill_signal_snapshot(code, date, s):
         changed |= put("snapshot_value", s.get("snapshot_value") or s.get("signal_value"))
         changed |= put("snapshot_value_eok", s.get("snapshot_value_eok") or s.get("signal_value_eok"))
         changed |= put("snapshot_as_of", s.get("snapshot_as_of") or s.get("signal_date") or date)
-    changed |= put("signal_date", date, needs_finalize)
-    changed |= put("signal_open", bar.get("open"), needs_finalize)
-    changed |= put("signal_high", bar.get("high"), needs_finalize)
-    changed |= put("signal_low", bar.get("low"), needs_finalize)
-    changed |= put("signal_close", close, needs_finalize)
-    changed |= put("signal_prev_close", prev_close, needs_finalize)
-    changed |= put("signal_volume", bar.get("volume"), needs_finalize)
-    changed |= put("signal_value", bar.get("value"), needs_finalize)
-    changed |= put("signal_value_eok", round((bar.get("value") or 0) / 1e8, 1), needs_finalize)
-    changed |= put("signal_peak6_price", peak6, needs_finalize)
-    changed |= put("signal_peak60_price", peak60, needs_finalize)
-    changed |= put("signal_ma20", round(ma20, 1), needs_finalize)
-    changed |= put("signal_ma10", round(ma10, 1), needs_finalize)
-    changed |= put("run_6d_pct", round(run6, 1) if run6 is not None else None, needs_finalize)
-    changed |= put("ma20_gap_pct", round((close / ma20 - 1) * 100, 1) if ma20 else None, needs_finalize)
-    changed |= put("ma10_margin_pct", round((close / ma10 - 1) * 100, 2) if ma10 else None, needs_finalize)
-    changed |= put("change_pct", round(change_pct, 2) if change_pct is not None else None, needs_finalize)
-    changed |= put("high_pct", round(high_pct, 2) if high_pct is not None else None, needs_finalize)
-    changed |= put("fade_pct", round(high_pct - change_pct, 1)
-                   if high_pct is not None and change_pct is not None else None, needs_finalize)
-    changed |= put("peak_dd_pct", round(peak_dd, 1) if peak_dd is not None else None, needs_finalize)
-    if dd6 is not None and (s.get("dd6_pct") is None or needs_finalize):
-        old_dd6 = s.get("dd6_pct")
-        s["dd6_pct"] = round(dd6, 1)
+        if live_source:
+            for k in ("change_pct", "high_pct", "fade_pct", "peak_dd_pct", "dd6_pct",
+                      "very_good", "very_good_tier", "very_good_candidate"):
+                if s.get(k) is not None:
+                    changed |= put(f"live_{k}", s.get(k))
+            changed |= put("live_signal_source", signal_source)
+
+    final_values = {
+        "date": date,
+        "open": bar.get("open"),
+        "high": bar.get("high"),
+        "low": bar.get("low"),
+        "close": close,
+        "prev_close": prev_close,
+        "volume": bar.get("volume"),
+        "value": bar.get("value"),
+        "value_eok": round((bar.get("value") or 0) / 1e8, 1),
+        "peak6_price": peak6,
+        "peak60_price": peak60,
+        "ma20": round(ma20, 1),
+        "ma10": round(ma10, 1),
+        "run_6d_pct": round(run6, 1) if run6 is not None else None,
+        "ma20_gap_pct": round((close / ma20 - 1) * 100, 1) if ma20 else None,
+        "ma10_margin_pct": round((close / ma10 - 1) * 100, 2) if ma10 else None,
+        "change_pct": round(change_pct, 2) if change_pct is not None else None,
+        "high_pct": round(high_pct, 2) if high_pct is not None else None,
+        "fade_pct": (round(high_pct - change_pct, 1)
+                     if high_pct is not None and change_pct is not None else None),
+        "peak_dd_pct": round(peak_dd, 1) if peak_dd is not None else None,
+    }
+    if needs_finalize and live_source:
+        for k, v in final_values.items():
+            changed |= put(f"daily_final_{k}", v, True)
+
+    if not live_source:
+        changed |= put("signal_date", date, overwrite_signal)
+        changed |= put("signal_open", bar.get("open"), overwrite_signal)
+        changed |= put("signal_high", bar.get("high"), overwrite_signal)
+        changed |= put("signal_low", bar.get("low"), overwrite_signal)
+        changed |= put("signal_close", close, overwrite_signal)
+        changed |= put("signal_prev_close", prev_close, overwrite_signal)
+        changed |= put("signal_volume", bar.get("volume"), overwrite_signal)
+        changed |= put("signal_value", bar.get("value"), overwrite_signal)
+        changed |= put("signal_value_eok", round((bar.get("value") or 0) / 1e8, 1), overwrite_signal)
+        changed |= put("signal_peak6_price", peak6, overwrite_signal)
+        changed |= put("signal_peak60_price", peak60, overwrite_signal)
+        changed |= put("signal_ma20", round(ma20, 1), overwrite_signal)
+        changed |= put("signal_ma10", round(ma10, 1), overwrite_signal)
+        changed |= put("run_6d_pct", round(run6, 1) if run6 is not None else None, overwrite_signal)
+        changed |= put("ma20_gap_pct", round((close / ma20 - 1) * 100, 1) if ma20 else None, overwrite_signal)
+        changed |= put("ma10_margin_pct", round((close / ma10 - 1) * 100, 2) if ma10 else None, overwrite_signal)
+        changed |= put("change_pct", final_values["change_pct"], needs_finalize)
+        changed |= put("high_pct", final_values["high_pct"], needs_finalize)
+        changed |= put("fade_pct", final_values["fade_pct"], needs_finalize)
+        changed |= put("peak_dd_pct", final_values["peak_dd_pct"], needs_finalize)
+    if dd6 is not None:
+        final_dd6 = round(dd6, 1)
         if dd6 <= SHAKEOUT_DD6_TIER2_MAX:
             tier = "tier2"
         elif dd6 <= SHAKEOUT_DD6_MAX:
@@ -202,11 +242,23 @@ def fill_signal_snapshot(code, date, s):
             tier = "candidate"
         else:
             tier = None
-        s["very_good_tier"] = tier
-        s["very_good"] = tier in ("tier1", "tier2")
-        s["very_good_candidate"] = tier == "candidate"
-        changed = True if old_dd6 != s["dd6_pct"] else changed
-    changed |= put("signal_source", "daily_final", True)
+        if needs_finalize and live_source:
+            changed |= put("daily_final_dd6_pct", final_dd6, True)
+            changed |= put("daily_final_very_good_tier", tier, True)
+            changed |= put("daily_final_very_good", tier in ("tier1", "tier2"), True)
+            changed |= put("daily_final_very_good_candidate", tier == "candidate", True)
+        elif s.get("dd6_pct") is None or needs_finalize:
+            old_dd6 = s.get("dd6_pct")
+            s["dd6_pct"] = final_dd6
+            s["very_good_tier"] = tier
+            s["very_good"] = tier in ("tier1", "tier2")
+            s["very_good_candidate"] = tier == "candidate"
+            changed = True if old_dd6 != s["dd6_pct"] else changed
+    if live_source:
+        changed |= put("daily_final_filled", True, True)
+        changed |= put("daily_final_as_of", date, True)
+    else:
+        changed |= put("signal_source", "daily_final", True)
     return changed
 
 
