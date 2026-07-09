@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 09:13:38 KST",
+ "generated_at": "2026-07-09 09:33:37 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -31,7 +31,7 @@
   "telegram_seed": true,
   "telegram_channel": "FastStockNews"
  },
- "universe_count": 37,
+ "universe_count": 38,
  "events": [
   {
    "id": "2026-07-09_한국은행 금통위 기준금",
@@ -71,7 +71,19 @@
    "estimated": true
   }
  ],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "263800",
+   "name": "데이타솔루션",
+   "sector": "데이타솔루션",
+   "high_pct": 29.97,
+   "vol_turnover_pct": 104.5,
+   "value_eok": 412,
+   "price": 7720.0,
+   "change_pct": 29.97,
+   "backfill": false
+  }
+ ],
  "youtong": [],
  "suspects": []
 }
