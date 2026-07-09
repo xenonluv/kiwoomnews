@@ -602,12 +602,12 @@
    "theme": "금리",
    "material": {
     "grade": "S",
-    "score": 96,
+    "score": 92,
     "summary": "“호남하면 이 그룹이었는데” ‘금호’ 이름으로 30% 급등…모조리 ...",
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.32,
+    "freshness_days": 2.33,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -622,7 +622,7 @@
       "datetime": "202607061740",
       "source": "헤럴드경제",
       "url": "https://n.news.naver.com/mnews/article/016/0002666449",
-      "score": 93
+      "score": 89
      },
      {
       "title": "금호건설·전기 강세…호남 반도체 기대감 지속[특징주]",
@@ -1599,5 +1599,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-09 17:34:16 KST"
+ "as_of": "2026-07-09 17:44:16 KST"
 }
