@@ -137,13 +137,13 @@
    "prime": false,
    "theme": "금리",
    "material": {
-    "grade": "S",
-    "score": 100,
+    "grade": "A",
+    "score": 84,
     "summary": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.14,
+    "freshness_days": 1.15,
     "directness": "직접",
     "tags": [
      "공시",
@@ -607,7 +607,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.38,
+    "freshness_days": 2.39,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -895,7 +895,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.46,
+    "freshness_days": 1.47,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1079,7 +1079,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 28.41,
+    "freshness_days": 28.42,
     "directness": "간접",
     "tags": [
      "유가",
@@ -1598,5 +1598,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-09 19:04:16 KST"
+ "as_of": "2026-07-09 19:14:36 KST"
 }
