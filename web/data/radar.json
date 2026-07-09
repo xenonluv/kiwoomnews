@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 17:54:09 KST",
+ "generated_at": "2026-07-09 18:04:26 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -242,7 +242,7 @@
    "change_pct": 29.91,
    "high_pct": 29.91,
    "vol_turnover_pct": 69.8,
-   "value_eok": 2270,
+   "value_eok": 2271,
    "price": 55600.0,
    "first_seen": "12:02",
    "exploded": false
@@ -414,7 +414,7 @@
      "office": "이데일리",
      "datetime": "202607061656",
      "url": "https://n.news.naver.com/mnews/article/018/0006324024",
-     "sentiment": "혼재"
+     "sentiment": "호재"
     },
     {
      "title": "케이피엠테크, 225억원 규모 제3자배정 유상증자 결정",
@@ -422,7 +422,7 @@
      "office": "이데일리",
      "datetime": "202607031648",
      "url": "https://n.news.naver.com/mnews/article/018/0006321880",
-     "sentiment": "혼재"
+     "sentiment": "호재"
     }
    ],
    "matched_events": [],
@@ -434,7 +434,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.41,
+    "freshness_days": 1.42,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -445,8 +445,7 @@
     ],
     "risk_flags": [
      "감자",
-     "상폐",
-     "유상증자"
+     "상폐"
     ],
     "evidence": [
      {
@@ -734,7 +733,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.33,
+    "freshness_days": 2.34,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -917,7 +916,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.09,
+    "freshness_days": 1.1,
     "directness": "직접",
     "tags": [
      "공시",
@@ -933,14 +932,14 @@
       "datetime": "202605291516",
       "source": "지디넷코리아",
       "url": "https://n.news.naver.com/mnews/article/092/0002424683",
-      "score": 92
+      "score": 96
      },
      {
       "title": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
       "datetime": "202607081330",
       "source": "전자신문",
       "url": "https://n.news.naver.com/mnews/article/030/0003445682",
-      "score": 86
+      "score": 90
      },
      {
       "title": "씨이랩, 핵심 사업 성장에 1분기 매출 42% 증가",
@@ -1062,7 +1061,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 28.36,
+    "freshness_days": 28.37,
     "directness": "간접",
     "tags": [
      "유가",
