@@ -24,7 +24,7 @@ KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HIST_DIR = os.path.join(REPO, "data", "track_history")
 PERF_PATH = os.path.join(REPO, "web", "data", "track_performance.json")
-DEFAULT_BASE = "https://kiwoomnews.vercel.app"
+DEFAULT_BASE = "https://kiwoomnews-five.vercel.app"
 KEY = "track:watchlist"
 RULE_BUY_MIN = 62   # 참고용: '매수 우위' 시작 점수 (scoring.ts). 분류는 아래 BUY_LEVELS로 한다.
 # 룰 '매수' 분류는 점수가 아니라 사용자가 실제로 본 판정 level로 한다 — scoring.ts가 점수>=62여도

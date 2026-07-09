@@ -15,7 +15,7 @@ from net import get_bytes  # noqa: E402  (요청간격+백오프)
 from team1_collect import top_ranking  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
-API = os.environ.get("RADAR_API", "https://kiwoomnews.vercel.app/api/radar")
+API = os.environ.get("RADAR_API", "https://kiwoomnews-five.vercel.app/api/radar")
 STATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state")
 SUPPLEMENT_N = int(os.environ.get("FORECAST_SUPPLEMENT_N", "20"))
 
