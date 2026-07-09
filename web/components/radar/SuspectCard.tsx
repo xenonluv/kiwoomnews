@@ -23,12 +23,18 @@ function sentimentDotClass(sentiment?: string | null) {
   return "bg-muted-foreground/50";
 }
 
+// 재료 배지 — 등급별 파스텔 밝은색 + 3D 질감(그라데이션·상단 하이라이트·그림자).
+// 다크 대시보드에서 유일하게 밝은 면 배지라 한눈에 띈다. D는 한국 관례(하락=파랑)상 차가운 톤.
 function materialBadgeClass(grade?: string) {
-  if (grade === "S") return "border-up/70 bg-up/15 text-up";
-  if (grade === "A") return "border-[#f59e0b]/70 bg-[#f59e0b]/15 text-[#fbbf24]";
-  if (grade === "B") return "border-warning/60 bg-warning/10 text-warning";
-  if (grade === "C") return "border-white/20 bg-transparent text-muted-foreground";
-  if (grade === "D") return "border-down/60 bg-down/10 text-down";
+  const base =
+    "border font-bold rounded-md bg-gradient-to-b " +
+    "shadow-[inset_0_1px_0_rgba(255,255,255,0.55),inset_0_-1px_0_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.45)] " +
+    "[text-shadow:0_1px_0_rgba(255,255,255,0.35)]";
+  if (grade === "S") return cn(base, "from-[#ffe9a8] to-[#f3c469] border-[#d9a83f] text-[#6b4400]"); // 파스텔 골드
+  if (grade === "A") return cn(base, "from-[#c9f5dc] to-[#8fdfb2] border-[#6fc496] text-[#0c5232]"); // 파스텔 민트
+  if (grade === "B") return cn(base, "from-[#d3e9ff] to-[#97c8f2] border-[#7fb3e0] text-[#123f66]"); // 파스텔 스카이
+  if (grade === "C") return cn(base, "from-[#ececf2] to-[#c9c9d6] border-[#b3b3c2] text-[#3f3f4e]"); // 파스텔 그레이
+  if (grade === "D") return cn(base, "from-[#ded9f0] to-[#b0a6d8] border-[#9a8ec6] text-[#332a58]"); // 파스텔 라벤더(악재·차가운 톤)
   return "border-white/10 bg-transparent text-muted-foreground";
 }
 
