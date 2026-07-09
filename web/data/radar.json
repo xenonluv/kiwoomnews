@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 11:23:49 KST",
+ "generated_at": "2026-07-09 11:33:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -89,11 +89,11 @@
    "code": "058730",
    "name": "다스코",
    "sector": "다스코",
-   "change_pct": 3.75,
+   "change_pct": 4.23,
    "high_pct": 10.77,
    "vol_turnover_pct": 132.6,
    "value_eok": 808,
-   "price": 5395.0,
+   "price": 5420.0,
    "first_seen": "10:02",
    "exploded": false
   },
@@ -101,11 +101,11 @@
    "code": "024060",
    "name": "흥구석유",
    "sector": "흥구석유",
-   "change_pct": 10.92,
+   "change_pct": 12.74,
    "high_pct": 14.46,
-   "vol_turnover_pct": 79.5,
-   "value_eok": 908,
-   "price": 11580.0,
+   "vol_turnover_pct": 85.2,
+   "value_eok": 976,
+   "price": 11770.0,
    "first_seen": "11:02",
    "exploded": false
   },
@@ -113,11 +113,11 @@
    "code": "189330",
    "name": "씨이랩",
    "sector": "씨이랩",
-   "change_pct": 13.15,
+   "change_pct": 9.9,
    "high_pct": 26.78,
-   "vol_turnover_pct": 70.0,
-   "value_eok": 655,
-   "price": 14280.0,
+   "vol_turnover_pct": 71.7,
+   "value_eok": 671,
+   "price": 13870.0,
    "first_seen": "09:52",
    "exploded": false
   },
@@ -125,11 +125,11 @@
    "code": "003680",
    "name": "한성기업",
    "sector": "한성기업",
-   "change_pct": 23.35,
+   "change_pct": 24.35,
    "high_pct": 29.54,
-   "vol_turnover_pct": 59.4,
-   "value_eok": 112,
-   "price": 6180.0,
+   "vol_turnover_pct": 66.3,
+   "value_eok": 126,
+   "price": 6230.0,
    "first_seen": "11:22",
    "exploded": false
   },
@@ -137,11 +137,11 @@
    "code": "365660",
    "name": "레몬헬스케어",
    "sector": "레몬헬스케어",
-   "change_pct": 3.93,
+   "change_pct": 5.5,
    "high_pct": 15.21,
    "vol_turnover_pct": 55.9,
    "value_eok": 564,
-   "price": 10590.0,
+   "price": 10750.0,
    "first_seen": "10:42",
    "exploded": false
   },
@@ -149,14 +149,219 @@
    "code": "002990",
    "name": "금호건설",
    "sector": "금호건설",
-   "change_pct": 10.71,
+   "change_pct": 11.86,
    "high_pct": 23.57,
-   "vol_turnover_pct": 52.3,
-   "value_eok": 1634,
-   "price": 15500.0,
+   "vol_turnover_pct": 53.2,
+   "value_eok": 1662,
+   "price": 15660.0,
    "first_seen": "11:02",
    "exploded": false
   }
  ],
- "suspects": []
+ "suspects": [
+  {
+   "code": "189330",
+   "name": "씨이랩",
+   "sector": "씨이랩",
+   "pattern": "shakeout",
+   "shakeout": true,
+   "tp_hint": "70~90% 관찰 밴드(표본소)",
+   "fade_pct": 16.9,
+   "suspicion_score": 70,
+   "score_raw": 0,
+   "score_breakdown": {},
+   "score_breakdown_raw": {},
+   "calibrated_prob": null,
+   "forecast": null,
+   "shake": null,
+   "deep_shake": null,
+   "price": 13870.0,
+   "change_pct": 9.9,
+   "change_basis": "KRX",
+   "high_pct": 26.78,
+   "value_eok": 671,
+   "snapshot_open": 14680.0,
+   "snapshot_high": 16000.0,
+   "snapshot_low": 11800.0,
+   "snapshot_close": 13870.0,
+   "snapshot_volume": 4609182.0,
+   "snapshot_value": 67089000000.0,
+   "snapshot_value_eok": 670.9,
+   "snapshot_as_of": "20260709",
+   "signal_date": "20260709",
+   "signal_open": 14680.0,
+   "signal_high": 16000.0,
+   "signal_low": 11800.0,
+   "signal_close": 13870.0,
+   "signal_prev_close": 12620.0,
+   "signal_volume": 4609182.0,
+   "signal_value": 67089000000.0,
+   "signal_value_eok": 670.9,
+   "signal_peak6_price": 16000.0,
+   "signal_peak60_price": 16000.0,
+   "signal_ma20": 9349.0,
+   "signal_ma10": 10040.0,
+   "signal_source": "daily_latest",
+   "turnover_pct": 71.7,
+   "float_ratio": 0.6848000000000001,
+   "turnover_basis": "float",
+   "turnover_2d_pct": 85.2,
+   "turnover_band": 1,
+   "peak_dd_pct": -13.3,
+   "dd_band": 2,
+   "dd6_pct": -13.3,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "strength_tier": 3,
+   "strength": "조합D(통계상 고가강)",
+   "run_6d_pct": 39.7,
+   "ma20_gap_pct": 48.4,
+   "ma10": 10040.0,
+   "ma10_margin_pct": 38.15,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": null,
+   "reignition_bars": [],
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": false,
+   "low_accum_bars": [],
+   "news": [
+    {
+     "title": "[특징주] 데이타솔루션·씨이랩, 대규모 공급 계약에 상한가(종합)",
+     "summary": "데이타솔루션과 씨이랩 주가가 8일 삼성에스디에스와 대규모 공급 계약을 체결했다는 소식에 급락장에도 상한가에서 장을 마쳤다. 이날 코스닥시장에서 데이타솔루션은 전장 대비 29.98% 올라 상한가인 5천940원에 거래를 마쳤다. 주가는 개장...",
+     "office": "연합뉴스",
+     "datetime": "202607081545",
+     "url": "https://n.news.naver.com/mnews/article/001/0016183310",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
+     "summary": "씨이랩이 삼성SDS와 3151억원 규모의 계약을 체결했다는 소식에 상승세다. 씨이랩(189330)은 7월 8일 오후 1시 26분 기준 전 거래일보다 29.97% 상승한 12,620원에 거래되고 있다. 씨이랩은 전날 장 마감 후 삼성에스디에스와 'AI ",
+     "office": "전자신문",
+     "datetime": "202607081330",
+     "url": "https://n.news.naver.com/mnews/article/030/0003445682",
+     "sentiment": "호재"
+    },
+    {
+     "title": "씨이랩·위시켓, 기업 맞춤형 AI 전환 협력…제조·건설·물류 공략",
+     "summary": "피지컬 AI 전문기업 씨이랩이 업 기술 도입 및 운영 파트너 위시켓과 산업 현장 AI 전환 지원을 위한 업무협약(MOU)을 체결했다고 15일 밝혔다. 제조·건설·물류 등 산업 현장의 인공지능(AI) 전환 시장 공략에 나선다는 계획이다. 최근 산업계..",
+     "office": "이데일리",
+     "datetime": "202606151505",
+     "url": "https://n.news.naver.com/mnews/article/018/0006306785",
+     "sentiment": "호재"
+    },
+    {
+     "title": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
+     "summary": "피지컬AI 전문기업 씨이랩(대표 윤세혁·채정환)의 1분기 수주 잔고가 25억 7800만 원으로 전년 동기 대비 약 3배 급증했다. 같은 기간 연결 기준 매출 역시 11억 1200만 원으로 전년 동기 대비 42% 증가하며 뚜렷한 실적 턴어라운드 초석을 ",
+     "office": "지디넷코리아",
+     "datetime": "202605291516",
+     "url": "https://n.news.naver.com/mnews/article/092/0002424683",
+     "sentiment": "호재"
+    },
+    {
+     "title": "씨이랩, 핵심 사업 성장에 1분기 매출 42% 증가",
+     "summary": "씨이랩(189330)이 AI 인프라와 비전AI 사업 성장에 힘입어 올해 1분기 두 자릿수 매출 성장세를 기록했다. 회사는 조직 재편과 AI 네이티브 전환 투자 등을 통해 중장기 성장 기반 강화에도 나섰다. 씨이랩은 올해 1분기 별도 기준 매출액이...",
+     "office": "이데일리",
+     "datetime": "202605140858",
+     "url": "https://n.news.naver.com/mnews/article/018/0006280683",
+     "sentiment": "호재"
+    },
+    {
+     "title": "씨이랩, 1분기 매출 두 자릿수 성장세…'AI 사업' 3대장 견인",
+     "summary": "비전 AI 전문기업 씨이랩의 매출이 두 자릿수 성장세를 보였다. 특히 AI Infra, Vision AI, Digital Twin 등 3대 핵심 사업에서 고른 매출 성장을 기록했다. 씨이랩의 올해 1분기 별도 기준 매출은 11억1000만원으로 전년 동",
+     "office": "블로터",
+     "datetime": "202605131738",
+     "url": "https://n.news.naver.com/mnews/article/293/0000084574",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [
+    {
+     "id": "2026-07-09_한국은행 금통위 기준금",
+     "title": "한국은행 금통위 기준금리 결정",
+     "dday": 0,
+     "categories": [
+      "금리"
+     ],
+     "score": 2.4
+    },
+    {
+     "id": "2026-07-14_미국 CPI 발표 (6",
+     "title": "미국 CPI 발표 (6월분)",
+     "dday": 5,
+     "categories": [
+      "금리"
+     ],
+     "score": 1.5
+    }
+   ],
+   "theme": "금리",
+   "material": {
+    "grade": "S",
+    "score": 100,
+    "summary": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.82,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "금리",
+     "실적/재무",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
+      "datetime": "202605291516",
+      "source": "지디넷코리아",
+      "url": "https://n.news.naver.com/mnews/article/092/0002424683",
+      "score": 92
+     },
+     {
+      "title": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
+      "datetime": "202607081330",
+      "source": "전자신문",
+      "url": "https://n.news.naver.com/mnews/article/030/0003445682",
+      "score": 90
+     },
+     {
+      "title": "[특징주] 데이타솔루션·씨이랩, 대규모 공급 계약에 상한가(종합)",
+      "datetime": "202607081545",
+      "source": "연합뉴스",
+      "url": "https://n.news.naver.com/mnews/article/001/0016183310",
+      "score": 82
+     },
+     {
+      "title": "씨이랩, 핵심 사업 성장에 1분기 매출 42% 증가",
+      "datetime": "202605140858",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006280683",
+      "score": 82
+     },
+     {
+      "title": "씨이랩, 1분기 매출 두 자릿수 성장세…'AI 사업' 3대장 견인",
+      "datetime": "202605131738",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000084574",
+      "score": 52
+     }
+    ],
+    "source_count": 7,
+    "relevant_count": 7
+   },
+   "visible_experimental": true,
+   "alert_now": null,
+   "theme_leader": false
+  }
+ ]
 }
