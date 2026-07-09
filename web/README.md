@@ -1,10 +1,10 @@
-# stocknews-web
+# kiwoomnews-web
 
 게시 웹사이트 + 공개 REST API. **Next.js(App Router) + TS + Tailwind + shadcn/ui** 다크 금융 대시보드.
 
 ## ⚠️ 실행 환경 주의 (중요)
 
-이 프로젝트는 WSL 경로(`/home/xenonluv/stocknews`)에 있습니다. **Windows 측 npm은 WSL의 UNC 경로(`\\wsl.localhost\...`)에서 동작하지 않습니다.** 반드시 **WSL 내부에서 Linux용 Node로 실행**하세요.
+이 프로젝트는 WSL 경로(`/home/xenonluv/kiwoomnews`)에 있습니다. **Windows 측 npm은 WSL의 UNC 경로(`\\wsl.localhost\...`)에서 동작하지 않습니다.** 반드시 **WSL 내부에서 Linux용 Node로 실행**하세요.
 
 ```bash
 # 1) WSL에 Linux Node 설치 (최초 1회) — nvm 권장
@@ -13,7 +13,7 @@ exec $SHELL
 nvm install 20            # Node 20 LTS
 
 # 2) 의존성 설치 & 실행 (WSL 터미널에서)
-cd ~/stocknews/web
+cd ~/kiwoomnews/web
 npm install
 npm run dev               # http://localhost:3000
 ```

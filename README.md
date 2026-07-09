@@ -1,11 +1,32 @@
-# stocknews
+# kiwoomnews
+
+## ACTIVE 운영 저장소
+
+이 저장소(`/Users/jinjin/kiwoomnews`, `xenonluv/kiwoomnews`)가 현재 운영 기준입니다.
+2026-07-06 이후 레이더 게시, suspects 이력, 자동매매, 익일 검증 cron은 이 저장소에서 실행됩니다.
+
+운영 데이터 확인 시 기본 경로:
+
+```bash
+cd /Users/jinjin/kiwoomnews
+```
+
+주요 현재 데이터:
+
+- `data/radar_history/YYYYMMDD.json` — 일자별 suspects 이력
+- `web/data/radar.json` — 현재 웹 게시 데이터
+- `/tmp/kiwoom_publish.log` — 게시 cron 로그
+- `/tmp/kiwoom_backtest.log` — 익일 검증 로그
+- `/tmp/kiwoom_autotrade.log` — 자동매매 로그
+
+`/Users/jinjin/stocknews`는 2026-07-06에 retired 되었으므로 현재 운영 질문에는 사용하지 마세요.
 
 국내 주식 매매 **사전정보 취합 사이트 + REST API**. 다중 AI 에이전트(Claude/Codex)가 실시간 뉴스를 수집·분석·검증하고, CEO 승인된 매매 시그널만 웹사이트와 공개 API로 게시합니다.
 
 ## 구성
 
 ```
-stocknews/
+kiwoomnews/
 ├── prompts/          # 9개 에이전트 시스템 프롬프트 (팀원1~6 + 팀장 + CEO + 디자이너)
 ├── schemas/          # Codex 에이전트 출력 JSON 스키마 (--output-schema 용)
 ├── scripts/          # codex-agent.sh — Codex 팀원 headless 러너

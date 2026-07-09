@@ -2,6 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## CRITICAL: active production repository
+
+`/Users/jinjin/kiwoomnews` is the **active production repository**.
+Since **2026-07-06**, production cron, suspects history, autotrade, and backtests run from this tree.
+
+Use this repository for current operational questions:
+
+- suspects: `data/radar_history/YYYYMMDD.json`
+- current radar payload: `web/data/radar.json`
+- publish log: `/tmp/kiwoom_publish.log`
+- backtest log: `/tmp/kiwoom_backtest.log`
+- autotrade log: `/tmp/kiwoom_autotrade.log`
+
+`/Users/jinjin/stocknews` is retired. Do not use it for current suspects or current trading results.
+
 > 최종 갱신: **2026-07-09 / 뉴스·공시 재료등급 전진검증 추가**(S/A/B/C/D/N, 캐시·history·performance 기록 — 정렬·자동매매 미반영) · 시장 레짐 메모 추가 (이전: 2026-07-06 /alpha(agent_alpha) 전체 삭제, 2026-06-23 폭발 정의 전면 개편 / `패치0618.md`).
 > ⚠️ 폭발/식음/반등 정의는 "탐지 트랙"·"Architecture"가 현행.
 
@@ -66,7 +81,7 @@ suspects 후보마다 뉴스/공시 재료를 `material` 객체로 기록한다.
 **"이벤트 매집 레이더"** — 10일 내 자명한 글로벌 증시 이벤트(FOMC·CPI·실적)를 앞두고 **큰돈이
 들어와 매집·재반등이 의심되는 종목**을 자동 탐지해 웹에 게시하는 시스템. 순수 Python 파이프라인
 (레이더 본체는 LLM 미사용)이 데이터를 만들고, Next.js 사이트가 Vercel에 라이브
-(https://stocknews-cyan.vercel.app, `xenonluv/stocknews` push 시 자동 재배포, Root Directory=`web`).
+(https://stocknews-cyan.vercel.app, `xenonluv/kiwoomnews` push 시 자동 재배포, Root Directory=`web`).
 
 ⚠️ **환경 분리 (필독):**
 - **이 WSL은 백업·코드작업 사본.** 프로덕션 cron(게시·검증·푸시)과 텔레그램 실송은 **Mac에서** 돌아간다.
