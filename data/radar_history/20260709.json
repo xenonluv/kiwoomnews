@@ -137,15 +137,16 @@
    "prime": false,
    "theme": "금리",
    "material": {
-    "grade": "A",
-    "score": 84,
-    "summary": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
+    "grade": "S",
+    "score": 100,
+    "summary": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.21,
+    "freshness_days": 1.29,
     "directness": "직접",
     "tags": [
+     "S급재료",
      "공시",
      "공시/대형이벤트",
      "금리",
@@ -155,18 +156,18 @@
     "risk_flags": [],
     "evidence": [
      {
+      "title": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
+      "datetime": "202607081330",
+      "source": "전자신문",
+      "url": "https://n.news.naver.com/mnews/article/030/0003445682",
+      "score": 100
+     },
+     {
       "title": "씨이랩, 1분기 수주잔고 3배 껑충...매출 11억 42% 늘어",
       "datetime": "202605291516",
       "source": "지디넷코리아",
       "url": "https://n.news.naver.com/mnews/article/092/0002424683",
       "score": 96
-     },
-     {
-      "title": "[ET특징주]씨이랩, 삼성SDS와 3151억원 계약 체결 소식에 상승세",
-      "datetime": "202607081330",
-      "source": "전자신문",
-      "url": "https://n.news.naver.com/mnews/article/030/0003445682",
-      "score": 90
      },
      {
       "title": "씨이랩, 핵심 사업 성장에 1분기 매출 42% 증가",
@@ -607,7 +608,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.46,
+    "freshness_days": 2.53,
     "directness": "간접",
     "tags": [
      "S급재료",
@@ -895,7 +896,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.54,
+    "freshness_days": 1.61,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1079,7 +1080,7 @@
     "sentiment": "악재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 28.49,
+    "freshness_days": 28.56,
     "directness": "간접",
     "tags": [
      "유가",
@@ -1598,5 +1599,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-09 20:54:08 KST"
+ "as_of": "2026-07-09 22:39:38 KST"
 }
