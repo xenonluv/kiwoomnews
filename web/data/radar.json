@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-09 09:43:42 KST",
+ "generated_at": "2026-07-09 09:53:41 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -77,13 +77,26 @@
    "name": "데이타솔루션",
    "sector": "데이타솔루션",
    "high_pct": 29.97,
-   "vol_turnover_pct": 105.6,
-   "value_eok": 416,
+   "vol_turnover_pct": 106.0,
+   "value_eok": 418,
    "price": 7720.0,
    "change_pct": 29.97,
    "backfill": false
   }
  ],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "189330",
+   "name": "씨이랩",
+   "sector": "씨이랩",
+   "change_pct": 20.29,
+   "high_pct": 26.78,
+   "vol_turnover_pct": 50.9,
+   "value_eok": 471,
+   "price": 15180.0,
+   "first_seen": "09:52",
+   "exploded": false
+  }
+ ],
  "suspects": []
 }
