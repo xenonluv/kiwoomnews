@@ -18,6 +18,7 @@ import { ChangeBandTable } from "@/components/performance/ChangeBandTable";
 import { PeakTurnoverBandTable } from "@/components/performance/PeakTurnoverBandTable";
 import { HitBandTable } from "@/components/performance/HitBandTable";
 import { RankBucketStatsPanel } from "@/components/performance/RankBucketStatsPanel";
+import { RankEvalPanel } from "@/components/performance/RankEvalPanel";
 import { LeaderReaccumPanel } from "@/components/performance/LeaderReaccumPanel";
 import { ReaccumPerformancePanel } from "@/components/performance/ReaccumPerformancePanel";
 import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
@@ -129,7 +130,16 @@ export default function PerformancePage() {
           />
         )}
 
-        {data.rank_bucket_stats && <RankBucketStatsPanel data={data.rank_bucket_stats} />}
+        {(data.rank_bucket_stats || data.rank_bucket_stats_retro || data.rank_bucket_stats_forward) && (
+          <RankBucketStatsPanel
+            data={data.rank_bucket_stats}
+            prior={data.rank_prior}
+            retro={data.rank_bucket_stats_retro}
+            forward={data.rank_bucket_stats_forward}
+          />
+        )}
+
+        {data.rank_eval && <RankEvalPanel data={data.rank_eval} />}
 
         {data.material_bands && (
           <HitBandTable

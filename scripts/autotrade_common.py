@@ -25,6 +25,7 @@ LOG_PATH = os.path.join(REPO, "autotrade.log")
 BUY_KRW = 1_000_000          # (하위호환) 단일 매수 금액
 DAILY_BUDGET = 1_000_000     # 당일 총예산 — 최대 2종목 다종베 시 실제 매수 종목수로 균등분할
 MAX_AUTOTRADE_STOCKS = 2     # 하루 최대 매수 종목 수(회장님 지시)
+RADAR_DECISION_MAX_STALE_SECONDS = 30 * 60  # 결정시각 기준 최대 radar age
 STOP_LOSS_PCT = -5.0         # 전량 손절
 TP1_PCT = 7.0                # 1차 익절(50%)
 TP1_FRACTION = 0.5
@@ -245,24 +246,140 @@ def deployed_today(data=None):
 
 
 # ── 레이더 1위 + 안전필터 ────────────────────────────────────────────
-def _radar_fresh(d):
+def _radar_fresh(d, now=None):
     """radar.json이 오늘(KST) 게시분인지. 레이더/게시가 오늘 실패하면 어제 suspects가 남아
     stale 매수(어제 종목 오늘 매수)로 이어지므로, 날짜 불일치면 fail-closed로 매수 보류."""
     gen = (d.get("generated_at") or "")[:10].replace("-", "")  # "2026-07-06 …" → "20260706"
-    return gen == today_str()
+    expected = (now or datetime.now(KST)).strftime("%Y%m%d")
+    return gen == expected
+
+
+def read_radar_snapshot(now=None):
+    """자동매매가 실제 읽은 radar.json root를 반환한다. 실패/stale은 기존처럼 fail-closed."""
+    if not os.path.exists(RADAR_JSON):
+        return None
+    try:
+        with open(RADAR_JSON, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        log(f"[radar] radar.json 로드 실패: {e}")
+        return None
+    if not _radar_fresh(data, now=now):
+        expected = (now or datetime.now(KST)).strftime("%Y%m%d")
+        log(f"[radar] radar.json 신선도 실패(generated_at={data.get('generated_at')} ≠ {expected}) "
+            "— stale 매수 방지, 보류")
+        return None
+    return data
+
+
+def radar_snapshot_meta(snapshot, now=None):
+    """의사결정/체결 원장용 root 메타데이터. 매수 판정에는 사용하지 않는다."""
+    now = now or datetime.now(KST)
+    snapshot = snapshot or {}
+    suspects = snapshot.get("suspects") or []
+    first = suspects[0] if suspects else {}
+    generated_at = snapshot.get("generated_at")
+    generated_dt = None
+    if generated_at:
+        raw = str(generated_at).strip().replace(" KST", "")
+        try:
+            generated_dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+            if generated_dt.tzinfo is None:
+                generated_dt = generated_dt.replace(tzinfo=KST)
+            else:
+                generated_dt = generated_dt.astimezone(KST)
+        except ValueError:
+            generated_dt = None
+    stale_seconds = (max(0, int((now - generated_dt).total_seconds()))
+                     if generated_dt is not None else None)
+    before_decision = generated_dt is not None and generated_dt <= now
+
+    def model_value(key):
+        value = snapshot.get(key)
+        return value if value is not None else first.get(key)
+
+    run = snapshot.get("run")
+    run_id = run.get("run_id") if isinstance(run, dict) else None
+    return {
+        "trade_date": ((str(generated_at)[:10].replace("-", "")) if generated_at else now.strftime("%Y%m%d")),
+        "radar_generated_at": generated_at,
+        "source_run_id": snapshot.get("run_id") or run_id,
+        "rank_policy_name": model_value("rank_policy_name"),
+        "rank_model_version": model_value("rank_model_version"),
+        "rank_model_effective_from": model_value("rank_model_effective_from"),
+        "rank_model_effective_at": model_value("rank_model_effective_at"),
+        "rank_model_source_commit": model_value("rank_model_source_commit"),
+        "stale_seconds": stale_seconds,
+        "valid_for_decision": bool(
+            _radar_fresh(snapshot, now=now)
+            and before_decision
+            and stale_seconds is not None
+            and stale_seconds <= RADAR_DECISION_MAX_STALE_SECONDS
+        ),
+        "top_codes": [s.get("code") for s in suspects[:3] if s.get("code")],
+    }
+
+
+def _ensure_local_manifest(store, trade_date):
+    """publish가 하루 종일 죽은 날(전 회차 radar 행 등)·주말 수동 실행에서 실행기 JSONL이
+    영구 미색인 고아가 되는 것 방지(재검증 반박 2). manifest가 이미 있으면 stat 1회로 끝(no-op —
+    주문 경로 재빌드 금지 원칙(M3) 유지). 없을 때만 1회 재빌드(그날 파일이 극소라 수 ms). 실패 무시."""
+    try:
+        day = store.normalize_trade_date(trade_date)
+        if not (store.local_day_dir(day) / "manifest.json").exists():
+            store.rebuild_manifest(day)
+    except Exception:
+        pass
+
+
+def write_local_decision(slot, payload):
+    """선택적 로컬 decision 기록 — trades/decisions.jsonl **전용**(보조 감사).
+
+    ⚠ decisions/<slot>.json 불변 스냅샷은 Mac publish 파생(derive_due_decision_snapshots)의
+    단독 소유다(문제7 §4.5). 실행기가 같은 파일을 선점하면 first-wins 규칙 때문에 publish
+    파생본(게시 전체 배열)이 영구 차단되고, dry 테스트 실행이 그날 forward 모집단을 오염시킨다
+    (적대 리뷰 2026-07-11 M2). update_manifest=False = 주문 직전 manifest 전체 재빌드
+    (하루 말 실측 ~1.6초/회) 제거 — 색인은 다음 publish 회차 rebuild가 수행(M3).
+    실패는 주문 흐름에 영향을 주지 않는다."""
+    try:
+        import radar_json_store as store
+        event_result = store.append_trade_event(
+            "decisions", payload, trade_date=payload.get("trade_date"),
+            update_manifest=False)
+        if not event_result.ok:
+            log(f"[audit] decision jsonl 저장 실패(무시): {event_result.error}")
+        else:
+            _ensure_local_manifest(store, payload.get("trade_date") or today_str())
+        return bool(event_result.ok)
+    except Exception as e:
+        log(f"[audit] decision 로컬 기록 실패(무시): {e}")
+        return False
+
+
+def append_local_trade_event(event):
+    """선택적 로컬 trade event JSONL. 핵심 포지션 원장과 분리된 fail-safe 기록.
+
+    update_manifest=False — 주문/청산 경로에서 당일 manifest 전체 재빌드 지연 제거(적대 리뷰 M3)."""
+    try:
+        import radar_json_store as store
+        result = store.append_trade_event(
+            "events", event, trade_date=event.get("entry_date") or event.get("trade_date"),
+            update_manifest=False)
+        if not result.ok:
+            log(f"[audit] trade event 저장 실패(무시): {result.error}")
+        else:
+            _ensure_local_manifest(
+                store, event.get("entry_date") or event.get("trade_date") or today_str())
+        return bool(result.ok)
+    except Exception as e:
+        log(f"[audit] trade event 로컬 기록 실패(무시): {e}")
+        return False
 
 
 def top_suspect():
     """메인 레이더 1위(suspects[0]). 없거나 stale이면 None."""
-    if not os.path.exists(RADAR_JSON):
-        return None
-    try:
-        d = json.load(open(RADAR_JSON, encoding="utf-8"))
-    except Exception as e:
-        log(f"[radar] radar.json 로드 실패: {e}")
-        return None
-    if not _radar_fresh(d):
-        log(f"[radar] radar.json 신선도 실패(generated_at={d.get('generated_at')} ≠ 오늘) — stale 매수 방지, 보류")
+    d = read_radar_snapshot()
+    if d is None:
         return None
     sus = d.get("suspects") or []
     return sus[0] if sus else None
@@ -270,15 +387,8 @@ def top_suspect():
 
 def top_suspects(n=1):
     """메인 레이더 상위 n종목(suspects[:n]). 없거나 stale이면 []."""
-    if not os.path.exists(RADAR_JSON):
-        return []
-    try:
-        d = json.load(open(RADAR_JSON, encoding="utf-8"))
-    except Exception as e:
-        log(f"[radar] radar.json 로드 실패: {e}")
-        return []
-    if not _radar_fresh(d):
-        log(f"[radar] radar.json 신선도 실패(generated_at={d.get('generated_at')} ≠ 오늘) — stale 매수 방지, 보류")
+    d = read_radar_snapshot()
+    if d is None:
         return []
     return (d.get("suspects") or [])[:n]
 

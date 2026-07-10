@@ -21,10 +21,14 @@ kis_devlp.yaml
 .suspects_digest_notified.json
 setup_mac_radar.sh
 
-# 자동매매 런타임 상태 (실계좌 포지션·로그 — 커밋 금지)
+# 자동매매 런타임 상태 (실계좌 포지션·원장·로그 — 커밋 금지)
 data/autotrade_positions.json
 data/autotrade_positions.json.tmp
+data/autotrade_trades.jsonl
 autotrade.log
+
+# Mac 로컬 레이더 권위 원본 (수동 백업, Git 추적 금지)
+data/local/
 
 # KIS 공식 API 샘플 레포 (벤더 코드, 참고용)
 open_api/

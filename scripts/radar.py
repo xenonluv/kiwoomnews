@@ -40,6 +40,15 @@ else:
     import kiwoom_client as kis  # 키움 드롭인(기본). RADAR_BROKER=kis 로 KIS 복귀.
 import float_ratio
 import alert_release
+from radar_audit import AuditCollector
+from rank_policy import (
+    RANK_BUCKET_BASELINES,
+    apply_rank_metadata,
+    policy_metadata,
+    rank_bucket_info,
+    rank_shadow_buckets,
+    rank_sort_key as _rank_sort_key,
+)
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +58,35 @@ REACCUM_SEED_PATH = os.path.join(REPO, "data", "reaccum_seed.json")
 PERFORMANCE_PATH = os.path.join(REPO, "web", "data", "performance.json")
 MATERIAL_NEWS_CACHE_DIR = os.path.join(REPO, "data", "material_cache")
 MATERIAL_NEWS_CACHE_VERSION = 1
+
+# 연구용 로컬 JSON 감사는 라이브 판정과 완전히 분리한다. 테스트에서 함수를
+# 직접 호출하거나 저장 모듈이 고장 난 경우에도 아래 래퍼는 항상 no-op/fail-open이다.
+_AUDIT = None
+
+
+def _audit_observe(code, **fields):
+    try:
+        if _AUDIT is not None:
+            return _AUDIT.observe(code, **fields)
+    except Exception as exc:
+        log(f"[warn] audit observe 실패(레이더 판정 유지): {exc}")
+    return None
+
+
+def _audit_gate(code, track, gate, status, **fields):
+    try:
+        if _AUDIT is not None:
+            _AUDIT.gate(code, track, gate, status, **fields)
+    except Exception as exc:
+        log(f"[warn] audit gate 실패(레이더 판정 유지): {exc}")
+
+
+def _audit_error(where, error, code=None):
+    try:
+        if _AUDIT is not None:
+            _AUDIT.error(where, error, code=code)
+    except Exception as exc:
+        log(f"[warn] audit error 기록 실패(레이더 판정 유지): {exc}")
 
 
 def _env_int(name, default):
@@ -179,153 +217,6 @@ def _very_good_tier(dd6):
     return None
 
 
-def _very_good_sort_rank(x):
-    """매우좋음 내부 정렬: Tier1(적정 깊은눌림) → Tier2(과낙)."""
-    return {"tier1": 0, "tier2": 1}.get(x.get("very_good_tier"), 9)
-
-
-RANK_BUCKET_BASELINES = {
-    # 정렬4.md 확정 당시 data/radar_history 평가완료 179건 기준 스냅샷.
-    # expected_high_pct는 실측 익일 고가 평균(%)이다. 보장값이 아니라 화면/전진검증 참고치다.
-    0: {"label": "매우좋음 Tier1", "n": 2, "unique_n": 2, "touch7_rate": 72.0,
-        "expected_high_pct": 29.97, "avg_return": 19.27, "note": "14만 전수 prior touch7=72%, forward 2/2"},
-    1: {"label": "급소+회전150", "n": 5, "unique_n": 3, "touch7_rate": 100.0,
-        "expected_high_pct": 27.42, "avg_return": 17.74},
-    2: {"label": "저점매집+회전90", "n": 15, "unique_n": 13, "touch7_rate": 86.7,
-        "expected_high_pct": 17.00, "avg_return": 9.09},
-    3: {"label": "저점매집 기타", "n": 21, "unique_n": 17, "touch7_rate": 81.0,
-        "expected_high_pct": 15.64, "avg_return": 6.94},
-    4: {"label": "흔들기+조합D+75점", "n": 9, "unique_n": 8, "touch7_rate": 88.9,
-        "expected_high_pct": 17.75, "avg_return": 3.30},
-    5: {"label": "흔들기+75점", "n": 12, "unique_n": 10, "touch7_rate": 83.3,
-        "expected_high_pct": 17.39, "avg_return": 4.12},
-    6: {"label": "흔들기+조합D", "n": 15, "unique_n": 12, "touch7_rate": 80.0,
-        "expected_high_pct": 16.14, "avg_return": 2.92},
-    7: {"label": "75점 기타", "n": 41, "unique_n": 29, "touch7_rate": 78.0,
-        "expected_high_pct": 16.69, "avg_return": 3.09},
-    8: {"label": "흔들기 기타", "n": 26, "unique_n": 21, "touch7_rate": 76.9,
-        "expected_high_pct": 14.59, "avg_return": 1.69},
-    9: {"label": "규제해소", "n": 0, "unique_n": 0, "touch7_rate": None,
-        "expected_high_pct": None, "avg_return": None, "note": "표본 수집 중"},
-    10: {"label": "급소 단독", "n": 12, "unique_n": 10, "touch7_rate": 66.7,
-         "expected_high_pct": 15.35, "avg_return": 3.56},
-    11: {"label": "기타 suspects", "n": 179, "unique_n": 89, "touch7_rate": 48.6,
-         "expected_high_pct": 9.90, "avg_return": 0.69},
-}
-
-
-def _as_float(v, default=None):
-    try:
-        if v is None:
-            return default
-        return float(v)
-    except (TypeError, ValueError):
-        return default
-
-
-def _fmt_pct(v):
-    x = _as_float(v)
-    return "결측" if x is None else f"{x:.0f}%"
-
-
-def _is_combo_d(x):
-    """정렬4 합의: 조합D 판정은 문자열 라벨이 아니라 strength_tier>=3."""
-    return (_as_float(x.get("strength_tier"), -1) or -1) >= 3
-
-
-def rank_shadow_buckets(x):
-    """정렬 무영향 관찰 버킷. history/backtest 전진검증용."""
-    score = _as_float(x.get("suspicion_score"), 0) or 0
-    pt = _as_float(x.get("peak_turnover_pct"))
-    peak_dd = _as_float(x.get("peak_dd_pct"))
-    out = []
-    if x.get("low_accum") and pt is not None and pt >= 150:
-        out.append("S1")
-    if x.get("alert_now") == "경고" and score >= 70:
-        out.append("S2")
-    if x.get("shakeout") and score >= 75 and peak_dd is not None and peak_dd <= -30:
-        out.append("S3")
-    if x.get("shakeout") and _is_combo_d(x) and score >= 80:
-        out.append("S4")
-    if x.get("geupso") and pt is not None and pt >= 90:
-        out.append("S5")
-    return out
-
-
-def rank_bucket_info(x):
-    """suspects 실정렬 버킷(정렬4.md SSOT).
-
-    여러 조건이 동시에 맞으면 가장 낮은 bucket이 적용된다. very_good_candidate는
-    별도 승격키가 없고 자기 흔들기 bucket으로 자연 편입된다.
-    """
-    score = _as_float(x.get("suspicion_score"), 0) or 0
-    pt = _as_float(x.get("peak_turnover_pct"))
-    bucket, reason = 11, "기타 suspects → bucket 11"
-    if x.get("very_good_tier") in ("tier1", "tier2"):
-        # 회장님 결정 2026-07-10(a안): Tier2(과낙 dd6≤-45)도 bucket 0 — 전수조사 근거(dd6≤-30 전체 72%)가
-        # 과낙 구간을 포함하므로 매우좋음 전체를 최상단 유지. 내부 정렬은 Tier1 우선(_rank_sort_key).
-        _vt = x.get("very_good_tier")
-        bucket, reason = 0, f"매우좋음 {'Tier1' if _vt == 'tier1' else 'Tier2(과낙)'}(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 0"
-    elif x.get("geupso") and pt is not None and pt >= 150:
-        bucket, reason = 1, f"급소+폭발회전 {_fmt_pct(pt)} → bucket 1"
-    elif x.get("low_accum") and pt is not None and pt >= 90:
-        bucket, reason = 2, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 2"
-    elif x.get("low_accum"):
-        bucket, reason = 3, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 3"
-    elif x.get("shakeout") and _is_combo_d(x) and score >= 75:
-        bucket, reason = 4, f"흔들기+조합D+{score:.0f}점 → bucket 4"
-    elif x.get("shakeout") and score >= 75:
-        bucket, reason = 5, f"흔들기+{score:.0f}점 → bucket 5"
-    elif x.get("shakeout") and _is_combo_d(x):
-        bucket, reason = 6, "흔들기+조합D → bucket 6"
-    elif score >= 75:
-        bucket, reason = 7, f"{score:.0f}점 기타 → bucket 7"
-    elif x.get("shakeout"):
-        bucket, reason = 8, "흔들기 기타 → bucket 8"
-    elif x.get("alert_release") or x.get("alert_risk_released"):
-        bucket, reason = 9, "규제해소 단독 → bucket 9"
-    elif x.get("geupso"):
-        bucket, reason = 10, f"급소 단독(폭발회전 {_fmt_pct(pt)}) → bucket 10"
-
-    snap = dict(RANK_BUCKET_BASELINES.get(bucket, {}))
-    snap["bucket"] = bucket
-    snap["basis"] = "정렬4.md 2026-07-10 확정 스냅샷"
-    return {
-        "rank_bucket": bucket,
-        "rank_reason": reason,
-        "shadow_bucket": rank_shadow_buckets(x),
-        "expected_touch7_rate": snap.get("touch7_rate"),
-        "expected_high_pct": snap.get("expected_high_pct"),
-        "rank_bucket_stats_snapshot": snap,
-    }
-
-
-def apply_rank_metadata(x):
-    """rank_bucket 계열 필드를 suspect dict에 적재하고 같은 dict를 반환."""
-    x.update(rank_bucket_info(x))
-    return x
-
-
-def _rank_sort_key(x):
-    if x.get("rank_bucket") is None:
-        apply_rank_metadata(x)
-    score = _as_float(x.get("suspicion_score"), 0) or 0
-    fade = _as_float(x.get("fade_pct"), 0) or 0
-    peak_turnover = _as_float(x.get("peak_turnover_pct"))
-    if peak_turnover is None:
-        peak_turnover = _as_float(x.get("turnover_pct"), 0) or 0
-    turnover_2d = _as_float(x.get("turnover_2d_pct"), 0) or 0
-    return (
-        x.get("rank_bucket", 99),
-        _very_good_sort_rank(x),  # bucket 0 내부: Tier1(스윗) → Tier2(과낙). 그 외 종목은 전부 9(무영향)
-        -score,
-        -fade if x.get("shakeout") else 0,
-        -peak_turnover,
-        -turnover_2d,
-        x.get("name") or x.get("code") or "",
-    )
-
-
 def _round_or_none(v, nd=1):
     """JSON 기록용 숫자 반올림. 결측/문자 글리치는 None으로 보존한다."""
     try:
@@ -419,12 +310,28 @@ def _minute_bars_with_fallback(code, label=""):
     거래대금은 정상인데 UN '분봉' 피드만 결측(전부 0)이라(NXT 분봉 미제공·키스트론류 실측) 그대로 두면
     KRX엔 명백한 분출이 있어도 0봉으로 계산돼 누락된다. UN 분봉 있으면 UN 유지(NXT 봉 반영 불변).
     reaccum·youtong 공용. 예외는 호출부로 전파(상위에서 처리)."""
-    bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
-    if kis.MONEY_MARKET != "J" and not _has_live_bars(bars):
-        jbars = kis.minute_bars_today(code, market="J")
-        if _has_live_bars(jbars):
-            log(f"  [info] {label or code}: UN 분봉 결측(전부 0) → J(KRX) 분봉 폴백")
-            bars = jbars
+    market_basis = "KRX" if kis.MONEY_MARKET == "J" else str(kis.MONEY_MARKET)
+    try:
+        bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
+        if kis.MONEY_MARKET != "J" and not _has_live_bars(bars):
+            jbars = kis.minute_bars_today(code, market="J")
+            if _has_live_bars(jbars):
+                log(f"  [info] {label or code}: UN 분봉 결측(전부 0) → J(KRX) 분봉 폴백")
+                bars = jbars
+                market_basis = "KRX"
+    except Exception as exc:
+        try:
+            if _AUDIT is not None:
+                _AUDIT.minute_bars(code, [], market_basis=market_basis,
+                                   fetch_status="error", error=str(exc)[:500])
+        except Exception:
+            pass
+        raise
+    try:
+        if _AUDIT is not None:
+            _AUDIT.minute_bars(code, bars, market_basis=market_basis)
+    except Exception as exc:
+        log(f"[warn] audit 분봉 수집 실패(레이더 판정 유지): {exc}")
     return bars
 
 
@@ -707,12 +614,18 @@ def _scan_code_window(reg, code, name, source, p):
     반환: 완료된 스캔이면 등록 폭발일 수(≥0). **일봉 fetch 실패(KIS 장애)면 None** — 스캔 미완료이므로
     호출부(백필)가 'scanned' 마킹을 건너뛰고 다음 회차 재시도하게 한다(일시 장애가 그날 종일 스킵으로 굳는 것 방지).
     유동비율 스크랩은 윈도에 22% 고가 날이 있을 때만(비용 절감 — 라이브 경로처럼 22% 게이트 후 유동비율 조회)."""
+    audit_source = ("telegram_seed" if source == "telegram" else
+                    "manual_seed" if source == "seed" else "active_explosion")
+    _audit_observe(code, name=name, source=audit_source)
     try:
         daily = kis.daily_prices_jmoney_un(code, days=max(12, p.explosion_window + 6))  # 거래량=UN 통합
     except Exception as e:
         log(f"[warn] {name} 일봉 실패: {e}")
+        _audit_error("explosion_window_daily", e, code)
         return None   # 스캔 미완료(일시 장애) — 재시도 대상
     if len(daily) < 2:
+        _audit_gate(code, "explosion_window", "daily_history", "MISSING_DATA",
+                    actual=len(daily), threshold={"min": 2}, reason_code="DAILY_HISTORY_SHORT")
         return 0
     _merge_trading_days(reg, [d["date"] for d in daily[-p.explosion_window:]])
     recent_dates = {d["date"] for d in daily[-p.explosion_window:]}
@@ -728,9 +641,19 @@ def _scan_code_window(reg, code, name, source, p):
         if high_pct >= p.explosion_high_pct:    # 게이트 ①: 고가등락률 ≥22%
             cand.append((bar, prev_close, high_pct))
     if not cand:
+        _audit_gate(code, "explosion_window", "historical_high", "REJECT_RULE",
+                    actual="no_qualifying_day", threshold={"min": p.explosion_high_pct},
+                    reason_code="HISTORICAL_HIGH_BELOW_MIN")
         return 0   # 22% 날 없음 — 자격 없음(완료된 스캔, 유동비율 불필요)
+    _audit_gate(code, "explosion_window", "historical_high", "PASS",
+                actual=[{"date": b.get("date"), "high_pct": round(h, 2)} for b, _, h in cand],
+                threshold={"min": p.explosion_high_pct})
     fratio, flisted = float_ratio.get_float_and_listed(code)  # 22% 날이 있는 코드만 유동비율 조회
     if not (fratio and fratio > 0 and flisted and flisted > 0):
+        _audit_observe(code, turnover={"float_ratio": fratio, "listed_shares": flisted})
+        _audit_gate(code, "explosion_window", "historical_turnover", "MISSING_DATA",
+                    actual=None, threshold={"min": p.explosion_vol_turnover},
+                    reason_code="FLOAT_RATIO_MISSING")
         return 0  # 유통주식수 미상 → 90% 회전율 확정 불가, 폭발 미인정(fail-safe)
     qualifying = []
     for bar, prev_close, high_pct in cand:
@@ -745,7 +668,17 @@ def _scan_code_window(reg, code, name, source, p):
             "source": source,
         })
     if not qualifying:
+        _audit_gate(code, "explosion_window", "historical_turnover", "REJECT_RULE",
+                    actual=[{"date": b.get("date"),
+                             "turnover_pct": float_ratio.vol_turnover(
+                                 float(b.get("volume") or 0), fratio, flisted)}
+                            for b, _, _ in cand],
+                    threshold={"min": p.explosion_vol_turnover},
+                    reason_code="HISTORICAL_TURNOVER_BELOW_MIN")
         return 0
+    _audit_gate(code, "explosion_window", "historical_turnover", "PASS",
+                actual=[{"date": q["peak_date"], "turnover_pct": q["vol_turnover_pct"]}
+                        for q in qualifying], threshold={"min": p.explosion_vol_turnover})
     # 업종(sector) 백필: '예전 대장' 판정이 권위 업종으로 묶이려면 레코드도 sector 필요.
     # 레지스트리에 이미 있으면 재사용(중복 price_now 회피), 없을 때만 1콜. dry-run은 저장 안 하므로 생략.
     sector = _known_sector(reg, code)
@@ -866,22 +799,52 @@ def update_live_explosions(reg, p):
     youtong_candidates = []   # /youtong 싼 게이트 통과분(스파크·지속은 prepare_youtong에서)
     today = _today_yyyymmdd()
     for row in rows:
+        code = row["code"]
+        _audit_observe(code, name=row.get("name"), source="naver_up",
+                       ranking_snapshot={k: row.get(k) for k in
+                                         ("change_pct", "value_mn") if row.get(k) is not None})
         attempted += 1
         try:
-            now = kis.price_now_jmoney_un(row["code"])  # 가격=J 공식 / 거래량=UN 통합(회전율 게이트)
+            now = kis.price_now_jmoney_un(code)  # 가격=J 공식 / 거래량=UN 통합(회전율 게이트)
         except Exception as e:
             price_errors += 1
             log(f"[warn] 폭발 현재가 조회 실패 {row.get('name')}: {e}")
+            _audit_error("live_explosion_price", e, code)
             continue
-        trade_date = _snapshot_trade_date(row["code"], now)
+        trade_date = _snapshot_trade_date(code, now)
         if trade_date != today:
+            _audit_gate(code, "collection", "trade_date", "NOT_APPLICABLE",
+                        actual=trade_date, threshold=today, reason_code="STALE_TRADE_DATE")
             continue
         if not now.get("high") or not now.get("prev_close"):
+            _audit_observe(code, name=row.get("name"), price_snapshot={
+                "current": now.get("price"), "open": now.get("open"),
+                "high": now.get("high"), "low": now.get("low"),
+                "prev_close": now.get("prev_close"), "change_pct": now.get("change_pct"),
+            })
+            _audit_gate(code, "collection", "price_fields", "MISSING_DATA",
+                        actual={"high": now.get("high"), "prev_close": now.get("prev_close")},
+                        reason_code="PRICE_FIELDS_MISSING")
             continue
         high_pct = (now["high"] / now["prev_close"] - 1) * 100
         change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
+        _audit_observe(code, name=row.get("name"), price_snapshot={
+            "current": now.get("price"), "open": now.get("open"), "high": now.get("high"),
+            "low": now.get("low"), "prev_close": now.get("prev_close"),
+            "change_pct": change_pct, "high_pct": round(high_pct, 2),
+            "trade_date": trade_date,
+        })
         want_explosion = high_pct >= p.explosion_high_pct          # 폭발 후보(고가 게이트 ①: ≥22%)
         want_youtong = change_pct >= p.youtong_change_pct          # /youtong 후보(현재 등락률 ≥7%)
+        _audit_gate(code, "explosion", "high_pct",
+                    "PASS" if want_explosion else "REJECT_RULE",
+                    actual=round(high_pct, 2), threshold={"min": p.explosion_high_pct},
+                    reason_code=None if want_explosion else "EXPLOSION_HIGH_BELOW_MIN",
+                    reason_text=None if want_explosion else "당일 고가등락률이 신규 폭발 하한 미만")
+        _audit_gate(code, "youtong", "change_pct",
+                    "PASS" if want_youtong else "REJECT_RULE",
+                    actual=change_pct, threshold={"min": p.youtong_change_pct},
+                    reason_code=None if want_youtong else "YOUTONG_CHANGE_BELOW_MIN")
         if not (want_explosion or want_youtong):
             continue
         value_won = float(now.get("value") or 0)   # 당일 거래대금(UN, 표시용)
@@ -889,9 +852,28 @@ def update_live_explosions(reg, p):
         # 발행주식수 × 유동비율, 없으면 회전율 확정 불가(fail-safe). 조회 대상이 high≥22 → 'high≥22 OR
         # change≥youtong_change_pct(7)'으로 넓어지나 float_ratio 7일 캐시로 완충(price_now는 이미 전 행 조회 — 추가 KIS 콜 없음).
         volume = float(now.get("volume") or 0)
-        fr, flisted = float_ratio.get_float_and_listed(row["code"])
+        fr, flisted = float_ratio.get_float_and_listed(code)
         vt = float_ratio.vol_turnover(volume, fr, flisted)  # 공유 산식(거래량/유통주식수 %), 결측 시 None
         float_ok = bool(fr and fr > 0 and flisted and flisted > 0)
+        _audit_observe(code, turnover={
+            "volume": volume, "value_won": value_won, "float_ratio": fr,
+            "listed_shares": flisted, "turnover_pct": round(vt, 2) if vt is not None else None,
+        })
+        turnover_status = ("MISSING_DATA" if vt is None else
+                           "PASS" if vt >= p.explosion_vol_turnover else "REJECT_RULE")
+        _audit_gate(code, "explosion", "turnover", turnover_status,
+                    actual=round(vt, 2) if vt is not None else None,
+                    threshold={"min": p.explosion_vol_turnover},
+                    reason_code=("FLOAT_OR_VOLUME_MISSING" if vt is None else
+                                 None if vt >= p.explosion_vol_turnover
+                                 else "EXPLOSION_TURNOVER_BELOW_MIN"))
+        _audit_gate(code, "youtong", "turnover",
+                    ("PASS" if vt is not None and vt >= p.youtong_turnover_min else
+                     "MISSING_DATA" if vt is None else "REJECT_RULE"),
+                    actual=round(vt, 2) if vt is not None else None,
+                    threshold={"min": p.youtong_turnover_min},
+                    reason_code=(None if vt is not None and vt >= p.youtong_turnover_min else
+                                 "FLOAT_OR_VOLUME_MISSING" if vt is None else "YOUTONG_TURNOVER_BELOW_MIN"))
         is_explosion = want_explosion and vt is not None and vt >= p.explosion_vol_turnover
         # /youtong 싼 게이트: 현재 등락률≥7 AND 회전율≥50(상한 없음) AND 아직 폭발 아님. 5분봉 스파크
         # 확정·종일 지속은 prepare_youtong이 처리(분봉은 신규 후보만 1회 조회 — 비용 가드).
@@ -920,7 +902,11 @@ def update_live_explosions(reg, p):
                 float_missing += 1
             continue
         if vt < p.explosion_vol_turnover:
+            _audit_gate(code, "explosion", "turnover", "REJECT_RULE",
+                        actual=round(vt, 2), threshold={"min": p.explosion_vol_turnover},
+                        reason_code="EXPLOSION_TURNOVER_BELOW_MIN")
             continue
+        _audit_gate(code, "explosion", "final", "PASS", actual=True)
         vol_turnover = vt
         # 마감강도(peak_ibs)는 장중 현재가로 산출하면 종가와 달라 오염되므로 여기서 저장하지 않는다.
         # 수상종목(전일 폭발)으로 노출될 때 scan_reaccum_candidate가 '완결된 폭발일 일봉'에서 산출(EOD 정확).
@@ -1075,6 +1061,11 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
     시작시각 전엔 빈 목록. now/registry_path/explosion_codes는 주입용(기본 실시각·기본 경로·빈 집합)."""
     now = now or datetime.now(KST)
     if now.strftime("%H%M") < p.youtong_start:   # 감지 시작 시각(예 0930) 전 — 아무것도 포착 안 함
+        for c in candidates or []:
+            _audit_observe(c.get("code"), name=c.get("name"), source="youtong_current")
+            _audit_gate(c.get("code"), "youtong", "start_time", "NOT_APPLICABLE",
+                        actual=now.strftime("%H%M"), threshold={"min": p.youtong_start},
+                        reason_code="YOUTONG_BEFORE_START")
         return []
     explosion_codes = explosion_codes or set()
     start_colon = p.youtong_start[:2] + ":" + p.youtong_start[2:]  # "0930" → "09:30"(스파크 time 비교용)
@@ -1085,15 +1076,27 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
     # 1) 신규 후보만 5분봉 스파크 확정 → registry 적재(이미 있으면 분봉 재조회 스킵).
     # ⚠ 폭발 승격 종목도 적재(회장님 지시: 폭발해도 youtong에서 삭제 말고 유지). 스파크는 충족해야 적재.
     for code, c in cand_by_code.items():
+        _audit_observe(code, name=c.get("name"), source="youtong_current",
+                       turnover={"turnover_pct": c.get("vol_turnover_pct")},
+                       price_snapshot={"current": c.get("price"),
+                                       "change_pct": c.get("change_pct"),
+                                       "high_pct": c.get("high_pct")})
         if code in codes:
+            _audit_gate(code, "youtong", "registry", "PASS", actual="already_seen")
             continue
         try:
             bars = _minute_bars_with_fallback(code, c.get("name"))
         except Exception as e:
             log(f"  [skip] youtong 분봉 실패 {c.get('name') or code}: {e}")
+            _audit_error("youtong_minute", e, code)
             continue
         sparks = [b for b in reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)
                   if b["time"] >= start_colon]   # 시작시각 이후 양봉 스파크만(위로 올라오는 신호)
+        _audit_observe(code, sparks={"youtong": sparks, "youtong_count": len(sparks)})
+        _audit_gate(code, "youtong", "spark_count",
+                    "PASS" if len(sparks) >= p.youtong_spark_min else "REJECT_RULE",
+                    actual=len(sparks), threshold={"min": p.youtong_spark_min},
+                    reason_code=None if len(sparks) >= p.youtong_spark_min else "YOUTONG_SPARK_BELOW_MIN")
         if len(sparks) >= p.youtong_spark_min:
             codes[code] = {
                 "first_seen": now.strftime("%H:%M"),
@@ -1104,6 +1107,7 @@ def prepare_youtong(candidates, p, explosion_codes=None, now=None, registry_path
     # 2) registry(오늘 적재분) 전체를 youtong[]로 렌더 — 종일 지속. 현재가는 실시간 갱신.
     out = []
     for code, rec in list(codes.items()):
+        _audit_observe(code, name=rec.get("name"), source="youtong_current")
         # (폭발 승격해도 youtong 유지 — 회장님 지시. /forecast와 병행 노출, '🔥 폭발' 배지로 구분)
         # 적재값 회전율·고가·거래대금은 항상 숫자(후보 게이트가 보장) — 손상 레코드(수동편집 등)면 스킵·제거
         # (웹 카드가 toLocaleString을 호출해 None이면 크래시 → 방어).
@@ -1154,12 +1158,14 @@ def prepare_reaccum_registry(p):
         live_count = 0
         live_scan_ok = False  # 폭발 스캔 전면 실패(raise) — KIS/네이버 장애 의심
         log(f"[warn] 라이브 폭발 감시 실패(기존 registry/seed만 사용): {e}")
+        _audit_error("live_explosion_scan", e)
     # 6일 소급 폭발 백필 — 등락률 상위∪레지스트리 재검증으로 prior-day 폭발 후보 풀을 채운다(오늘 수상종목용).
     # 실패해도 본작업 안 깨지게 격리(표시 전용 후보 풀 보강).
     try:
         backfill_window_explosions(reg, p)
     except Exception as e:
         log(f"[warn] 6일 소급 백필 실패(라이브/시드만 사용): {e}")
+        _audit_error("explosion_backfill", e)
     # 라이브 스캔 성공/예외 무관하게 registry 기반 백필 — 예외 경로에서도 /forecast가 비지 않게(try 밖).
     today_explosions = _backfill_today_explosions(today_explosions, reg, _today_yyyymmdd())
     # youtong: 싼 게이트 통과분(candidates)을 5분봉 스파크로 확정 + 종일 지속(별도 registry). try 밖(격리).
@@ -1183,11 +1189,24 @@ def prepare_reaccum_registry(p):
     except Exception as e:
         today_youtong = []
         log(f"[warn] youtong 처리 실패(빈 목록): {e}")
+        _audit_error("youtong_prepare", e)
     if not p.dry_run:
         save_explosion_registry(reg)
     elif seed_count or live_count:
         log("[radar] dry-run: 폭발 레지스트리 저장 생략")
     active = _recent_active_explosions(reg, p.explosion_window, p.reaccum_track_days)
+    for code, rec in active.items():
+        seed_source = str(rec.get("source") or "")
+        source = ("telegram_seed" if seed_source == "telegram" else
+                  "manual_seed" if seed_source == "seed" else "active_explosion")
+        _audit_observe(code, name=rec.get("name"), source=source,
+                       explosion_history={
+                           "peak_date": rec.get("peak_date"),
+                           "peak_high_pct": rec.get("peak_high_pct"),
+                           "peak_turnover_pct": rec.get("vol_turnover_pct"),
+                           "peak_value_eok": rec.get("peak_value_eok"),
+                           "source": rec.get("source"),
+                       })
     # youtong 이력(폭발 미등록·회전율 게이트 탈락 종목) 병합 — 급소/저점매집 전용 추적(_yt_track).
     # 덕신(고가 4일 연속 +22%인데 회전 미달)·가온전선 사각지대 커버(회장님 지시 2026-07-03).
     try:
@@ -1196,8 +1215,11 @@ def prepare_reaccum_registry(p):
             for ycode, yname in yreg["history"][ydate].items():
                 if ycode not in active:
                     active[ycode] = {"code": ycode, "name": yname, "peak_date": ydate, "_yt_track": True}
+                _audit_observe(ycode, name=yname, source="youtong_history",
+                               explosion_history={"peak_date": ydate, "source": "youtong_history"})
     except Exception as e:
         log(f"[warn] youtong 이력 풀 병합 실패(무시): {e}")
+        _audit_error("youtong_history_merge", e)
     n_ext = sum(1 for r in active.values() if r.get("_extended_track") or r.get("_yt_track"))
     log(f"[radar] reaccum registry active={len(active)}(장기추적 {n_ext}) seed={seed_count} live={live_count} "
         f"당일폭발={len(today_explosions)} youtong={len(today_youtong)}")
@@ -1243,22 +1265,50 @@ def scan_reaccum_candidate(rec, p, events):
     2회 이상 스파크(마감 직전 재분출) AND **현재 등락률 −5%~+7%**(깊은 식음/이미 분출 제외)인 '재매집' 후보를
     만든다. 폭발→식음→재반등 흐름으로 노출되는 건 동일하되 두 게이트로 한정(MA20·투신·거래원 게이트는 미사용)."""
     code, name = rec["code"], rec.get("name") or rec["code"]
+    _audit_observe(code, name=name,
+                   source="youtong_history" if rec.get("_yt_track") else "active_explosion",
+                   explosion_history={
+                       "peak_date": rec.get("peak_date"),
+                       "peak_high_pct": rec.get("peak_high_pct"),
+                       "peak_turnover_pct": rec.get("vol_turnover_pct"),
+                       "peak_value_eok": rec.get("peak_value_eok"),
+                   })
     peak_date = rec.get("peak_date")
     if not peak_date:
+        _audit_gate(code, "reaccum", "peak_date", "MISSING_DATA",
+                    actual=None, reason_code="PEAK_DATE_MISSING")
         return None
+    _audit_gate(code, "reaccum", "peak_date", "PASS", actual=peak_date)
     # 새 폭발 정의(고가≥22% AND 거래량/유통주식수≥90%)로 적재된 레코드만 후보로 본다. 개편 전(거래대금
     # 1,500억/13% 게이트) 레코드는 vol_turnover_pct가 없어 — 재검증 없이 식음·반등 후보로 새는 걸 차단
     # (마이그레이션 윈도 ~6일간 정의 불일치 후보 방지. 구 레코드는 윈도 만료로 자가 소거).
     if not _reaccum_eligible(rec, p) and not rec.get("_yt_track"):
+        _audit_gate(code, "reaccum", "explosion_eligibility", "REJECT_RULE",
+                    actual={"peak_high_pct": rec.get("peak_high_pct"),
+                            "peak_turnover_pct": rec.get("vol_turnover_pct")},
+                    threshold={"high_min": p.explosion_high_pct,
+                               "turnover_required": True},
+                    reason_code="REACCUM_EXPLOSION_NOT_ELIGIBLE")
         return None   # youtong 이력 추적분은 폭발 검증 필드가 없어도 급소/저점매집 감시 대상
+    _audit_gate(code, "reaccum", "explosion_eligibility", "PASS",
+                actual="youtong_history" if rec.get("_yt_track") else "validated_explosion")
     try:
         now = kis.price_now_jmoney_un(code)  # 가격=J 공식 / 거래대금·거래량=UN 통합(표시·vsurge)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 현재가 조회 실패 {e}")
+        _audit_error("reaccum_price", e, code)
         return "ERR"
     if not now.get("price") or not now.get("prev_close"):
+        _audit_observe(code, price_snapshot={
+            "current": now.get("price"), "open": now.get("open"), "high": now.get("high"),
+            "low": now.get("low"), "prev_close": now.get("prev_close"),
+        })
+        _audit_gate(code, "collection", "price_fields", "MISSING_DATA",
+                    actual={"price": now.get("price"), "prev_close": now.get("prev_close")},
+                    reason_code="PRICE_FIELDS_MISSING")
         return None
     change_pct = round(float(now.get("change_pct") or 0), 2)  # 현재 등락률(전일 종가 대비)
+    krx_change_pct = change_pct
     change_basis = "KRX"
     # NXT 애프터마켓 야간가로 '현재 등락률' 재평가 — NXT 시간외 회복(정규장 +8%→NXT −5%, −9%→−5%)이면 밴드
     # 진입, 이탈이면 빠짐(스파크는 정규장 것 유지 — NXT 분봉 미제공). **재평가 시작은 16:00(=15:30+신선도상한
@@ -1268,31 +1318,80 @@ def scan_reaccum_candidate(rec, p, events):
         nxt_chg = _nxt_change_pct(code, now.get("prev_close"))
         if nxt_chg is not None:
             change_pct, change_basis = nxt_chg, "NXT"
+    high = now.get("high") or now["price"]
+    high_pct = (high / now["prev_close"] - 1) * 100
+    try:
+        fr, flisted = float_ratio.get_float_and_listed(code)
+        turnover_pct = float_ratio.vol_turnover(float(now.get("volume") or 0), fr, flisted)
+    except Exception as exc:
+        fr = flisted = turnover_pct = None
+        _audit_error("reaccum_float_ratio", exc, code)
+    turnover_basis = "float" if turnover_pct is not None else "cap"
+    _audit_observe(code, market_basis={"price": "KRX", "money": "UN", "change": change_basis},
+                   price_snapshot={
+                       "current": now.get("price"), "open": now.get("open"), "high": high,
+                       "low": now.get("low"), "prev_close": now.get("prev_close"),
+                       "krx_change_pct": krx_change_pct,
+                       "change_pct": change_pct, "change_basis": change_basis,
+                       "high_pct": round(high_pct, 2),
+                       "trade_date": now.get("date"),
+                   },
+                   turnover={
+                       "volume": now.get("volume"), "value_won": now.get("value"),
+                       "float_ratio": fr, "listed_shares": flisted,
+                       "turnover_pct": round(turnover_pct, 2) if turnover_pct is not None else None,
+                       "peak_turnover_pct": rec.get("vol_turnover_pct"),
+                   })
+    current_explosion_high = high_pct >= p.explosion_high_pct
+    _audit_gate(code, "explosion", "high_pct",
+                "PASS" if current_explosion_high else "REJECT_RULE",
+                actual=round(high_pct, 2), threshold={"min": p.explosion_high_pct},
+                reason_code=(None if current_explosion_high
+                             else "EXPLOSION_HIGH_BELOW_MIN"),
+                reason_text=(None if current_explosion_high
+                             else "당일 고가등락률이 신규 폭발 하한 미만"))
     # 현재 등락률 게이트: −5%~+7% 밖이면 원칙 제외(깊은 식음/이미 분출) — 단 🎯 매수급소(14:30↑ 2%+ 양봉
     # ≥2회)는 밴드 무제한(회장님 지시 2026-07-03: 폭락 중이든 급등 중이든 급소가 뜨는 날이 매수 시점).
     # 급소는 14:30 이후에만 발동 가능 → 그 전엔 밴드 밖 후보를 기존처럼 조기 컷(비용 절감 유지).
     in_band = (p.reaccum_change_min <= change_pct <= p.reaccum_change_max)
+    _audit_gate(code, "reaccum", "change_band", "PASS" if in_band else "REJECT_RULE",
+                actual=change_pct,
+                threshold={"min": p.reaccum_change_min, "max": p.reaccum_change_max},
+                reason_code=(None if in_band else
+                             "REACCUM_CHANGE_BELOW_MIN" if change_pct < p.reaccum_change_min
+                             else "REACCUM_CHANGE_ABOVE_MAX"),
+                reason_text=(None if in_band else "현재 등락률이 재매집 허용 밴드 밖"))
     _hhmm = datetime.now(KST).strftime("%H%M")
     if not in_band and _hhmm < p.reignition_start and change_pct > p.lowaccum_change_max:
+        _audit_gate(code, "reaccum", "evaluation_time", "NOT_APPLICABLE",
+                    actual=_hhmm, threshold={"min": p.reignition_start},
+                    reason_code="REACCUM_BEFORE_SPARK_WINDOW")
         return None   # 예외: ≤−10% 폭락 중이면 🧲 저점매집 후보라 오전에도 판정 진행
     # 장기 추적분(폭발 후 6일 초과, _extended_track)은 '🎯 매수급소 전용' — 급소는 14:30 이후에만 발동
     # 가능하므로 그 전엔 스킵(풀 ~100종목 × 일봉·분봉 조회를 오전 내내 하지 않는 비용 가드).
     if ((rec.get("_extended_track") or rec.get("_yt_track")) and _hhmm < p.reignition_start
             and change_pct > p.lowaccum_change_max):
+        _audit_gate(code, "reaccum", "extended_track_time", "NOT_APPLICABLE",
+                    actual=_hhmm, threshold={"min": p.reignition_start},
+                    reason_code="EXTENDED_TRACK_BEFORE_WINDOW")
         return None
-    high = now.get("high") or now["price"]
-    high_pct = (high / now["prev_close"] - 1) * 100
     try:
         daily = kis.daily_prices_jmoney_un(code, days=25)  # MA20·vsurge·forecast 피처용(가격=J / 거래대금=UN)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 일봉 실패 {e}")
+        _audit_error("reaccum_daily", e, code)
         return "ERR"
     closes = [d["close"] for d in daily if d.get("close")]
     if len(closes) < 20:
+        _audit_gate(code, "reaccum", "daily_history", "MISSING_DATA",
+                    actual=len(closes), threshold={"min": 20}, reason_code="DAILY_HISTORY_SHORT")
         return None
     signal_bar = daily[-1] if daily else {}
     signal_date = (now.get("date") or (signal_bar.get("date") if signal_bar else "") or "").strip()
     if not _allow_signal_date(signal_date) or signal_date <= peak_date:
+        _audit_gate(code, "reaccum", "signal_date", "REJECT_RULE",
+                    actual=signal_date, threshold={"after": peak_date, "current_session": True},
+                    reason_code="SIGNAL_DATE_INVALID")
         return None
     snapshot_open = now.get("open") or signal_bar.get("open")
     snapshot_high = now.get("high") or signal_bar.get("high")
@@ -1307,8 +1406,16 @@ def scan_reaccum_candidate(rec, p, events):
     signal_prev_close = now.get("prev_close")
     ma20 = sum(closes[-20:]) / 20
     ma10 = sum(closes[-10:]) / 10
+    _audit_observe(code, technical={
+        "ma10": round(ma10, 2), "ma20": round(ma20, 2),
+        "ma10_gap_pct": round((now["price"] / ma10 - 1) * 100, 2) if ma10 else None,
+        "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 2) if ma20 else None,
+    })
     # 장기 추적(폭발 후 6일 초과) 후보는 '20일선 위인 동안만' 유지 — 깨지면 추적 종료(추세 사망, 회장님 정의).
     if (rec.get("_extended_track") or rec.get("_yt_track")) and now["price"] < ma20:
+        _audit_gate(code, "reaccum", "ma20_extended", "REJECT_RULE",
+                    actual=now["price"], threshold={"min": round(ma20, 2)},
+                    reason_code="EXTENDED_TRACK_BELOW_MA20")
         return None
     # ── 반등 게이트: **14:30~장종료** 5분봉 양봉 몸통%≥1.5% 스파크가 REIGNITION_MIN_COUNT(2)회 이상(마감 직전
     #    재분출). 시작시각(reignition_start) 이전 양봉은 미집계. 스파크는 **그 봉의 절대 등락률과 무관하게** 센다 —
@@ -1318,6 +1425,7 @@ def scan_reaccum_candidate(rec, p, events):
         bars = _minute_bars_with_fallback(code, name)  # UN 우선, 결측 시 J 폴백(공용 헬퍼)
     except Exception as e:
         log(f"  [skip] {name}: reaccum 분봉 실패 {e}")
+        _audit_error("reaccum_minute", e, code)
         return "ERR"
     reign_start_colon = p.reignition_start[:2] + ":" + p.reignition_start[2:]  # "1430" → "14:30"
     all_bars = reignition_bars(bars, p.reignition_body_pct, p.reignition_span_min)  # 전 시간대 1.5%+ 양봉
@@ -1336,12 +1444,46 @@ def scan_reaccum_candidate(rec, p, events):
     # 통과 조건: ①기존 재매집(14:30↑ 1.5% ≥2회) ②급소 ③저점매집 중 하나. 밴드 밖·장기추적·youtong이력분은
     # 급소/저점매집일 때만(기존 6일 폭발 재매집 의미론 불변 — 순수 확장).
     reignition_ok = len(rbars) >= p.reignition_min_count
+    _audit_observe(code, sparks={
+        "all": all_bars,
+        "after_reignition_start": rbars,
+        "after_reignition_start_count": len(rbars),
+        "geupso": gbars,
+        "low_accum": labars,
+    })
+    _audit_gate(code, "reaccum", "spark_count",
+                "PASS" if reignition_ok else "REJECT_RULE",
+                actual=len(rbars), threshold={"min": p.reignition_min_count,
+                                             "start": p.reignition_start,
+                                             "body_pct_min": p.reignition_body_pct},
+                reason_code=None if reignition_ok else "REACCUM_SPARK_BELOW_MIN",
+                reason_text=None if reignition_ok else "재매집 시간대 자격 스파크 횟수 미달")
+    _audit_gate(code, "geupso", "spark_and_change",
+                "PASS" if geupso else "REJECT_RULE",
+                actual={"count": len(gbars), "change_pct": change_pct},
+                threshold={"count_min": p.geupso_min_count,
+                           "change_max": p.geupso_change_max},
+                reason_code=None if geupso else "GEUPSO_RULE_NOT_MET")
+    _audit_gate(code, "low_accum", "spark_change_ma20",
+                "PASS" if low_accum else "REJECT_RULE",
+                actual={"count": len(labars), "change_pct": change_pct,
+                        "above_ma20": now["price"] >= ma20},
+                threshold={"count_min": p.lowaccum_min_count,
+                           "change_max": p.lowaccum_change_max},
+                reason_code=None if low_accum else "LOW_ACCUM_RULE_NOT_MET")
     if not (reignition_ok or geupso or low_accum):
+        _audit_gate(code, "reaccum", "final", "REJECT_RULE", actual=False,
+                    reason_code="NO_REACCUM_VARIANT_PASSED")
         return None
     if not in_band and not (geupso or low_accum):
+        _audit_gate(code, "reaccum", "final", "REJECT_RULE", actual=False,
+                    reason_code="REACCUM_CHANGE_BAND_REJECT")
         return None
     if (rec.get("_extended_track") or rec.get("_yt_track")) and not (geupso or low_accum):
+        _audit_gate(code, "reaccum", "final", "REJECT_RULE", actual=False,
+                    reason_code="EXTENDED_TRACK_VARIANT_REJECT")
         return None
+    _audit_gate(code, "reaccum", "final", "PASS", actual=True)
     # 대표(최대 몸통) 봉 — 표시용. 저점매집 전용(14:30 봉 없음)이면 저점매집 봉에서 선정.
     reignition = max(rbars or labars, key=lambda b: b["body_pct"])
 
@@ -1352,10 +1494,7 @@ def scan_reaccum_candidate(rec, p, events):
     re_body_max = max((b["body_pct"] for b in rbars), default=0.0)
     # 회전율(유통주식수 대비, 거래량 기준) — 폭발일 회전율은 registry 저장값(vol_turnover_pct, 위 게이트로
     # 항상 존재). 당일 회전율 = 당일 거래량 / 유통주식수(float_ratio.vol_turnover 공유 산식).
-    fr, flisted = float_ratio.get_float_and_listed(code)  # 유동비율·발행주식수(보통주만, 캐시)
-    turnover_pct = float_ratio.vol_turnover(float(now.get("volume") or 0), fr, flisted)
     # basis는 '실제 산출된 값'에 맞춘다 — 거래량 0 글리치(turnover_pct=None)면 "cap"(값 없음과 일관).
-    turnover_basis = "float" if turnover_pct is not None else "cap"
     peak_turnover_pct = rec.get("vol_turnover_pct")  # 새 게이트 통과 레코드라 항상 non-None
     # 폭발일 마감강도 — 항상 '완결된 폭발일 일봉'(EOD)에서 산출. peak_date < signal_date(가드)라 그 일봉은
     # 완성된 종가다 → 장중 proxy로 인한 오염 없음(전진검증·표시 전용, 점수 미반영).
@@ -1803,6 +1942,10 @@ def scan_shakeout(p, events=None, extra_codes=None):
                 continue
             for row in rows[:p.explosion_scan_n]:
                 c, r = row.get("code"), row.get("change_pct")
+                if c:
+                    _audit_observe(c, name=row.get("name"), source=f"naver_{direction}",
+                                   ranking_snapshot={"change_pct": r,
+                                                     "value_mn": row.get("value_mn")})
                 if not c or c in seen or r is None:
                     continue
                 # 산술 프리필터(KIS 콜 절감): fade≥15 & 고가≤+30(가격제한) → 현재등락 ≤ 30−15+0.5=15.5.
@@ -1810,12 +1953,19 @@ def scan_shakeout(p, events=None, extra_codes=None):
                 #    종가 +5.5~+15.5%로 마감한 흔들기(고가 상한권 터치 후 소폭 상승 마감, 예: 남화토건 6/19
                 #    고가+28→종가+13→익일고가+12) 승자가 KIS 조회 전 전부 드롭됨(리뷰 2026-07-04 확정 버그).
                 if r > 30.0 - SHAKEOUT_FADE_PCT + 0.5 or r < -26:
+                    _audit_gate(c, "shakeout", "ranking_prefilter", "OUT_OF_UNIVERSE",
+                                actual=r,
+                                threshold={"min": -26, "max": 30.0 - SHAKEOUT_FADE_PCT + 0.5},
+                                reason_code="SHAKEOUT_RANK_PREFILTER")
                     continue
+                _audit_gate(c, "shakeout", "ranking_prefilter", "PASS", actual=r)
                 seen.add(c)
                 cand.append(row)
     # 랭킹 사각지대 보완: 이미 추적 중인 youtong/폭발 레지스트리 코드도 후보에 합집합
     #   — 삼기처럼 급등 후 페이드로 등락률 top50에서 밀린 강한 흔들기를 포착(게이트는 그대로 적용).
     for c in (extra_codes or []):
+        if c:
+            _audit_observe(c, source="shakeout_extra")
         if c and c not in seen:
             seen.add(c)
             cand.append({"code": c, "name": None, "change_pct": 0})
@@ -1824,25 +1974,57 @@ def scan_shakeout(p, events=None, extra_codes=None):
         code = row["code"]
         try:
             now = kis.price_now_jmoney_un(code)   # 가격=J 공식 / 거래량=UN 통합
-        except Exception:
+        except Exception as exc:
+            _audit_error("shakeout_price", exc, code)
             continue
         if not (now.get("high") and now.get("prev_close") and now.get("price")):
+            _audit_gate(code, "shakeout", "price_fields", "MISSING_DATA",
+                        actual={"high": now.get("high"), "prev_close": now.get("prev_close"),
+                                "price": now.get("price")}, reason_code="PRICE_FIELDS_MISSING")
             continue
         high_pct = (now["high"] / now["prev_close"] - 1) * 100
         change_pct = round(float(now.get("change_pct") or 0), 2)
         fade = high_pct - change_pct
+        _audit_observe(code, name=row.get("name"), price_snapshot={
+            "current": now.get("price"), "open": now.get("open"), "high": now.get("high"),
+            "low": now.get("low"), "prev_close": now.get("prev_close"),
+            "change_pct": change_pct, "high_pct": round(high_pct, 2),
+        }, technical={"fade_pct": round(fade, 2)})
+        _audit_gate(code, "shakeout", "high_pct",
+                    "PASS" if high_pct >= SHAKEOUT_HIGH_PCT else "REJECT_RULE",
+                    actual=round(high_pct, 2), threshold={"min": SHAKEOUT_HIGH_PCT},
+                    reason_code=None if high_pct >= SHAKEOUT_HIGH_PCT else "SHAKEOUT_HIGH_BELOW_MIN")
+        _audit_gate(code, "shakeout", "fade_pct",
+                    "PASS" if fade >= SHAKEOUT_FADE_PCT else "REJECT_RULE",
+                    actual=round(fade, 2), threshold={"min": SHAKEOUT_FADE_PCT},
+                    reason_code=None if fade >= SHAKEOUT_FADE_PCT else "SHAKEOUT_FADE_BELOW_MIN")
         if high_pct < SHAKEOUT_HIGH_PCT or fade < SHAKEOUT_FADE_PCT:
             continue
         fr, listed = float_ratio.get_float_and_listed(code)
         fs = (listed * fr) if (fr and listed) else None
         if not fs:
+            _audit_observe(code, turnover={"volume": now.get("volume"),
+                                           "float_ratio": fr, "listed_shares": listed,
+                                           "turnover_pct": None})
+            _audit_gate(code, "shakeout", "turnover", "MISSING_DATA",
+                        actual=None, threshold={"min": SHAKEOUT_TURNOVER_MIN},
+                        reason_code="FLOAT_RATIO_MISSING")
             continue                                  # 유동비율 미상 → 회전율 확정 불가(미인정, fail-safe)
         turnover = float(now.get("volume") or 0) / fs * 100
+        _audit_observe(code, turnover={"volume": now.get("volume"),
+                                       "value_won": now.get("value"),
+                                       "float_ratio": fr, "listed_shares": listed,
+                                       "turnover_pct": round(turnover, 2)})
+        _audit_gate(code, "shakeout", "turnover",
+                    "PASS" if turnover >= SHAKEOUT_TURNOVER_MIN else "REJECT_RULE",
+                    actual=round(turnover, 2), threshold={"min": SHAKEOUT_TURNOVER_MIN},
+                    reason_code=None if turnover >= SHAKEOUT_TURNOVER_MIN else "SHAKEOUT_TURNOVER_BELOW_MIN")
         if turnover < SHAKEOUT_TURNOVER_MIN:
             continue
         try:
             daily = kis.daily_prices_jmoney_un(code, days=60)   # 가격=J / 거래량=UN(통합) — 2일 회전율·고점낙폭 산출에 사용
-        except Exception:
+        except Exception as exc:
+            _audit_error("shakeout_daily", exc, code)
             continue
         signal_bar = daily[-1] if daily else {}
         signal_date = signal_bar.get("date") or now.get("date")
@@ -1850,6 +2032,9 @@ def scan_shakeout(p, events=None, extra_codes=None):
         # 평일 09시 이후엔 당일 데이터만 허용해, KRX 휴장일에 네이버/키움이 주는 전 거래일
         # 데이터로 어제 흔들기가 '라이브'로 재게시·재알림·자동매매 노출되는 것을 차단.
         if not _allow_signal_date((now.get("date") or signal_date or "").strip()):
+            _audit_gate(code, "shakeout", "signal_date", "REJECT_RULE",
+                        actual=now.get("date") or signal_date,
+                        reason_code="SIGNAL_DATE_INVALID")
             continue
         snapshot_open = now.get("open") or signal_bar.get("open")
         snapshot_high = now.get("high") or signal_bar.get("high")
@@ -1864,6 +2049,9 @@ def scan_shakeout(p, events=None, extra_codes=None):
             snapshot_value_eok = None
         closes = [b.get("close") for b in daily if b.get("close")]
         if len(closes) < 20:
+            _audit_gate(code, "shakeout", "daily_history", "MISSING_DATA",
+                        actual=len(closes), threshold={"min": 20},
+                        reason_code="DAILY_HISTORY_SHORT")
             continue                                  # 신규상장 등 MA20 판정 불가 — 미인정
         ma20 = sum(closes[-20:]) / 20
         # 2일 합산(신호일+전일) 유통회전율 — 흔들기 순위 스윗스팟 판정용(회장님 20년 룰)
@@ -1876,9 +2064,35 @@ def scan_shakeout(p, events=None, extra_codes=None):
         # ⭐ 6일 고점 대비 낙폭(오늘+직전5일 고가 대비 현재가) — 매우좋음 판정용(전수조사: 흔들기 AND dd6≤-30 익일급등 72%)
         peak6 = max(highs[-6:]) if highs else 0
         dd6 = (now["price"] / peak6 - 1) * 100 if peak6 else 0
+        _audit_observe(code, technical={
+            "fade_pct": round(fade, 2), "ma20": round(ma20, 2),
+            "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 2) if ma20 else None,
+            "turnover_2d_pct": round(turnover_2d, 2),
+            "peak_dd_pct": round(peak_dd, 2), "dd6_pct": round(dd6, 2),
+        }, turnover={"volume": now.get("volume"), "value_won": now.get("value"),
+                     "float_ratio": fr, "listed_shares": listed,
+                     "turnover_pct": round(turnover, 2),
+                     "turnover_2d_pct": round(turnover_2d, 2)})
+        _audit_gate(code, "shakeout", "ma20",
+                    "PASS" if now["price"] >= ma20 else "REJECT_RULE",
+                    actual=now["price"], threshold={"min": round(ma20, 2)},
+                    reason_code=None if now["price"] >= ma20 else "SHAKEOUT_BELOW_MA20")
         if now["price"] < ma20:
             continue                                  # 추세 사수 실패
         run6 = (closes[-1] / closes[-7] - 1) * 100 if (len(closes) >= 7 and closes[-7]) else None
+        overextended = run6 is not None and run6 >= SHAKEOUT_RUN6D_MAX and change_pct < 0
+        _audit_observe(code, technical={"fade_pct": round(fade, 2),
+                                        "run6_pct": round(run6, 2) if run6 is not None else None,
+                                        "ma20": round(ma20, 2),
+                                        "turnover_2d_pct": round(turnover_2d, 2),
+                                        "peak_dd_pct": round(peak_dd, 2),
+                                        "dd6_pct": round(dd6, 2)})
+        _audit_gate(code, "shakeout", "run6_overextension",
+                    "REJECT_RULE" if overextended else "PASS",
+                    actual={"run6_pct": round(run6, 2) if run6 is not None else None,
+                            "change_pct": change_pct},
+                    threshold={"run6_max": SHAKEOUT_RUN6D_MAX},
+                    reason_code="SHAKEOUT_OVEREXTENDED_BREAKDOWN" if overextended else None)
         if run6 is not None and run6 >= SHAKEOUT_RUN6D_MAX and change_pct < 0:
             continue                                  # 과확장 붕괴(5연상 붕괴류) — 실측 실패 유형 차단
         # ⚠ 경고/위험 지정도 제외하지 않음(회장님 지시 2026-07-06): 재료 강하면 경고받고도 급등(삼기 122350 실증).
@@ -1898,6 +2112,7 @@ def scan_shakeout(p, events=None, extra_codes=None):
                  + _shakeout_dd_tier({"peak_dd_pct": peak_dd}))  # 결합축(0~4) — 강도 순위 아님
         vg_tier = _very_good_tier(dd6)
         name = row.get("name") or now.get("sector") or code
+        _audit_gate(code, "shakeout", "final", "PASS", actual=True)
         news_items, theme, cause_summary, raw_titles, material = _explain_cause(code, name, now.get("sector", ""))
         try:
             matched_events, _ = match_events(events or [], raw_titles, now.get("sector", ""))
@@ -1966,6 +2181,7 @@ def scan_shakeout(p, events=None, extra_codes=None):
 
 
 def main():
+    global _AUDIT
     ap = argparse.ArgumentParser(
         description="이벤트 매집 레이더 — 과거 폭발 → 오늘 5분 양봉 스파크(재매집) 탐지")
     # 반등(재매집) 게이트 = 전일 폭발 종목 + 당일 5분 양봉 스파크 횟수 — 식음·등락률·MA20·투신 게이트 폐지
@@ -2034,6 +2250,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true",
                     help="폭발 레지스트리를 저장하지 않고 stdout만 생성")
     p = ap.parse_args()
+    _AUDIT = AuditCollector(
+        model_meta=policy_metadata(), dry_run=p.dry_run,
+        broker=os.environ.get("RADAR_BROKER", "kiwoom").lower())
     kis.enable_run_cache()  # 회차 캐시 ON — reaccum/youtong/흔들기의 동일 종목 일봉·현재가 중복조회 제거(속도)
     p.explosion_window = max(1, int(p.explosion_window))
     p.explosion_scan_n = max(1, int(p.explosion_scan_n))
@@ -2052,6 +2271,7 @@ def main():
     p.lowaccum_body_pct = max(0.5, float(p.lowaccum_body_pct))
     p.lowaccum_min_count = max(1, int(p.lowaccum_min_count))
     p.lowaccum_change_max = float(p.lowaccum_change_max)
+    _AUDIT.scan_n = p.explosion_scan_n
     active_explosions, live_scan_ok, today_explosions, today_youtong = prepare_reaccum_registry(p)
 
     # 조건 1: D-10 이벤트 캘린더 (재반등 후보의 이벤트 민감도 표시용)
@@ -2077,6 +2297,7 @@ def main():
     high_fail = eligible > 0 and err_count >= max(2, (eligible + 1) // 2)
     if collection_dead or high_fail:
         log(f"[error] 데이터 수집 장애 의심(live_ok={live_scan_ok}, 실패 {err_count}/{eligible}적격, 후보 {reaccum_added}) — 게시 중단")
+        _AUDIT.persist(scan_ok=False)
         sys.exit(3)
     # 💥 흔들기 스캔(별도 그물) — 기존 suspects와 코드 중복 시 기존 레코드에 플래그만 병합(이중 카드 방지)
     try:
@@ -2086,6 +2307,7 @@ def main():
         shakeouts = scan_shakeout(p, events=events, extra_codes=extra)
     except Exception as e:
         log(f"[warn] 흔들기 스캔 실패(무시): {e}")
+        _audit_error("shakeout_scan", e)
         shakeouts = []
     existing = {s["code"]: s for s in suspects}
     for r in shakeouts:
@@ -2147,9 +2369,12 @@ def main():
     for s in suspects:
         apply_rank_metadata(s)
     suspects.sort(key=_rank_sort_key)
+    for rank, s in enumerate(suspects, 1):
+        s["precut_rank"] = rank
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+        **policy_metadata(),
         "params": {"market": kis.MONEY_MARKET,  # 거래대금/수급 시장구분: UN=KRX+NXT 통합 / J=KRX 단독(가격은 항상 J)
                    "reignition_body_pct": p.reignition_body_pct,
                    "reignition_span_min": p.reignition_span_min,
@@ -2184,6 +2409,13 @@ def main():
         "youtong": sorted(today_youtong, key=lambda e: -(e.get("vol_turnover_pct") or 0)),
         "suspects": suspects,
     }
+    # 감사 훅 중 유일하게 무방비였던 호출 — stdout 직전이라 예외 시 게시 회차가 통째로 유실됨.
+    # §7.1 격리계약(감사 실패 ≠ 레이더 출력 변화) 봉합(적대 리뷰 2026-07-11 M2).
+    try:
+        _AUDIT.mark_ranked(suspects)
+    except Exception as exc:
+        _audit_error("mark_ranked", exc)
+    _AUDIT.persist(generated_at=out["generated_at"], scan_ok=live_scan_ok)
     print(json.dumps(out, ensure_ascii=False, indent=1))
 
 

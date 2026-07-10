@@ -12,6 +12,47 @@ export interface NewsItem {
 
 export type MaterialGrade = "S" | "A" | "B" | "C" | "D" | "N";
 
+/** 레이더 정렬 정책 메타. prior와 실측(retro/forward)은 서로 덮어쓰지 않는다. */
+export interface RadarRankPrior {
+  policy_name?: string;
+  model_version?: string;
+  effective_from?: string;
+  source: string;
+  strength: string;
+  summary?: string;
+  auto_reorder?: boolean;
+}
+
+export interface RadarRankBucketSnapshot {
+  bucket?: number;
+  label?: string;
+  basis?: string;
+  population?: string;
+  n?: number;
+  unique_n?: number;
+  touch7_rate?: number | null;
+  wilson7_lower?: number | null;
+  expected_high_pct?: number | null;
+  avg_high_pct?: number | null;
+  median_high_pct?: number | null;
+  min_high_pct?: number | null;
+  avg_return?: number | null;
+}
+
+export interface RadarRankStatsSnapshot {
+  basis: "prior" | "retro" | "forward" | string;
+  population?: string;
+  model_version?: string;
+  n: number;
+  unique_n?: number;
+  touch7_rate?: number | null;
+  wilson7_lower?: number | null;
+  avg_high_pct?: number | null;
+  median_high_pct?: number | null;
+  min_high_pct?: number | null;
+  valid?: boolean;
+}
+
 /** 뉴스/공시 재료 등급 — 오늘 이후 전진검증용. 정렬·자동매매에는 아직 미반영 */
 export interface MaterialInfo {
   grade: MaterialGrade;
@@ -223,6 +264,34 @@ export interface Suspect {
   forecast?: ForecastInfo | null;
   /** 정렬4 실정렬 버킷 — 낮을수록 상단 */
   rank_bucket?: number | null;
+  /** 최초 게시 당시 버킷. forward 검증에서 최신 rank_bucket 대신 사용하는 불변값 */
+  rank_bucket_at_signal?: number | null;
+  rank_reason_at_signal?: string | null;
+  rank_model_version?: string;
+  rank_policy_name?: string;
+  rank_model_effective_from?: string;
+  rank_model_source_commit?: string;
+  /** 게시컷 전·후 및 시점별 순위. null과 필드 없음은 의미가 다르다. */
+  precut_rank?: number | null;
+  published_rank?: number | null;
+  published?: boolean;
+  first_seen_rank?: number | null;
+  latest_published_rank?: number | null;
+  krx_decision_rank?: number | null;
+  nxt_decision_rank?: number | null;
+  eod_rank?: number | null;
+  krx_decision_present?: boolean;
+  nxt_decision_present?: boolean;
+  eod_present?: boolean;
+  rank_path?: Array<{
+    observed_at: string;
+    precut_rank: number | null;
+    published_rank: number | null;
+    published: boolean;
+    rank_bucket: number | null;
+    rank_model_version?: string;
+    change_basis?: string;
+  }>;
   /** 사람이 읽는 정렬 근거 한 줄 */
   rank_reason?: string | null;
   /** 정렬 무영향 관찰 버킷 목록 */
@@ -232,7 +301,12 @@ export interface Suspect {
   /** 해당 rank_bucket의 과거 평균 익일 고가 스냅샷(보장 아님) */
   expected_high_pct?: number | null;
   /** 판정 당시 버킷 통계 스냅샷 */
-  rank_bucket_stats_snapshot?: Record<string, unknown> | null;
+  rank_bucket_stats_snapshot?: RadarRankBucketSnapshot | null;
+  /** 이 버킷을 만든 경험칙/합의 prior. 실측 통계와 별도 */
+  rank_prior?: RadarRankPrior | null;
+  /** 출처가 분리된 카드용 통계. 소표본도 n과 함께 그대로 표시한다. */
+  rank_retro_stats?: RadarRankStatsSnapshot | null;
+  rank_forward_stats?: RadarRankStatsSnapshot | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
   calibrated_prob?: { rate: number | null; n: number } | null;
@@ -278,6 +352,11 @@ export interface RadarData {
   generated_at: string;
   market_session: "open" | "closed";
   disclaimer: string;
+  rank_policy_name?: string;
+  rank_model_version?: string;
+  rank_model_effective_from?: string;
+  rank_model_source_commit?: string;
+  rank_prior?: RadarRankPrior;
   params: {
     /** 반등: 5분 양봉 몸통% 하한 */
     reignition_body_pct?: number;

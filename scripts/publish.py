@@ -14,6 +14,7 @@ radar.py 인자(--reignition-body-pct --reignition-span-min/min-count --explosio
 import os
 import sys
 import json
+import glob
 import tempfile
 import subprocess
 from datetime import datetime, timezone, timedelta
@@ -24,6 +25,7 @@ import telegram_notify  # noqa: E402 — scripts/ 형제 모듈(재반등 봉 �
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
+PERFORMANCE_JSON = os.path.join(REPO, "web", "data", "performance.json")
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
 DISCLAIMER = "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다."
 RADAR_PASSTHRU = ("--reignition-body-pct", "--reignition-span-min", "--reignition-min-count",
@@ -34,6 +36,345 @@ RADAR_BOOL_PASSTHRU = ("--no-reaccum", "--no-reaccum-visible")
 
 
 RADAR_TIMEOUT = 600  # 초 — KIS/Kimi 행 멈춤 시 락 쥔 채 무한 대기 → 사이트 stale 방지
+
+
+RANK_MODEL_FIELDS = (
+    "rank_policy_name",
+    "rank_model_version",
+    "rank_model_effective_from",
+    "rank_model_effective_at",
+    "rank_model_source_commit",
+)
+DECISION_MAX_STALE_SECONDS = 30 * 60
+
+
+def atomic_write_json(path, payload):
+    """JSON을 같은 디렉터리의 임시파일에서 검증한 뒤 원자 교체한다."""
+    directory = os.path.dirname(path) or "."
+    os.makedirs(directory, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=os.path.basename(path) + ".", suffix=".tmp", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=1)
+            f.flush()
+            os.fsync(f.fileno())
+        with open(tmp, encoding="utf-8") as f:
+            json.load(f)
+        os.replace(tmp, path)
+        try:
+            dfd = os.open(directory, os.O_RDONLY)
+            try:
+                os.fsync(dfd)
+            finally:
+                os.close(dfd)
+        except OSError:
+            pass
+    except Exception:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def select_published_suspects(radar, maxn, reaccum_max):
+    """기존 슬롯 수를 유지하면서 radar의 전역 상대순서를 보존한다."""
+    ranked = []
+    for precut_rank, original in enumerate(radar.get("suspects", []), 1):
+        suspect = dict(original)
+        suspect.setdefault("precut_rank", precut_rank)
+        ranked.append(suspect)
+
+    regular_count = sum(not s.get("visible_experimental") for s in ranked)
+    reaccum_count = len(ranked) - regular_count
+    reaccum_slots = min(max(0, reaccum_max), maxn)
+    keep_reaccum = min(reaccum_count, reaccum_slots)
+    keep_regular = maxn - keep_reaccum
+
+    selected = []
+    used_regular = 0
+    used_reaccum = 0
+    for suspect in ranked:
+        if suspect.get("visible_experimental"):
+            if used_reaccum >= keep_reaccum:
+                continue
+            used_reaccum += 1
+        else:
+            if used_regular >= keep_regular:
+                continue
+            used_regular += 1
+        selected.append(suspect)
+
+    for published_rank, suspect in enumerate(selected, 1):
+        suspect["published"] = True
+        suspect["published_rank"] = published_rank
+    return selected
+
+
+def _rank_stats_snapshot(table, bucket):
+    if not isinstance(table, dict):
+        return None
+    cell = next((row for row in table.get("cells", [])
+                 if isinstance(row, dict) and row.get("bucket") == bucket), None)
+    if cell is None:
+        return None
+    return {
+        "basis": table.get("basis"),
+        "population": table.get("population"),
+        "model_version": table.get("model_version"),
+        "n": cell.get("n", 0),
+        "unique_n": cell.get("unique_n", 0),
+        "touch7_rate": cell.get("touch7_rate"),
+        "wilson7_lower": cell.get("wilson7_lower"),
+        "avg_high_pct": cell.get("avg_high"),
+        "median_high_pct": cell.get("median_high"),
+        "min_high_pct": cell.get("min_high"),
+        "valid": cell.get("valid", False),
+    }
+
+
+def attach_rank_performance(suspects, path=PERFORMANCE_JSON):
+    """카드용 retro/forward 통계를 붙인다. 실패와 결측은 순위에 영향을 주지 않는다."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            performance = json.load(f)
+        retro = ((performance.get("rank_bucket_stats_retro") or {}).get("exclusive_all"))
+        forward = ((performance.get("rank_bucket_stats_forward") or {}).get("eod"))
+        for suspect in suspects:
+            bucket = suspect.get("rank_bucket")
+            suspect["rank_retro_stats"] = _rank_stats_snapshot(retro, bucket)
+            suspect["rank_forward_stats"] = _rank_stats_snapshot(forward, bucket)
+    except Exception as e:
+        sys.stderr.write(f"[warn] rank 카드 성과 로드 실패(무시): {e}\n")
+    return suspects
+
+
+def _model_value(out, suspect, key):
+    return suspect.get(key) if suspect.get(key) is not None else out.get(key)
+
+
+def _append_rank_event(events, event):
+    """시각을 제외한 순위 상태가 바뀐 경우에만 이벤트를 추가한다."""
+    compare_keys = (
+        "precut_rank", "published_rank", "published", "rank_bucket",
+        "rank_model_version", "change_basis",
+    )
+    if events and all(events[-1].get(k) == event.get(k) for k in compare_keys):
+        return events
+    events.append(event)
+    return events
+
+
+def _parse_kst_timestamp(value):
+    if not value:
+        return None
+    raw = str(value).strip().replace(" KST", "")
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=KST)
+    return parsed.astimezone(KST)
+
+
+def _local_market_phase(now=None):
+    now = now or datetime.now(KST)
+    hm = now.strftime("%H%M")
+    if hm < "0900":
+        return "preopen"
+    if hm <= "1530":
+        return "krx_open"
+    if hm < "1600":
+        return "krx_close"
+    if hm <= "2000":
+        return "nxt_after"
+    return "operational_eod"
+
+
+def _compact_rank_candidate(suspect, fallback_rank=None):
+    return {
+        "code": suspect.get("code"),
+        "name": suspect.get("name"),
+        "precut_rank": suspect.get("precut_rank"),
+        "published_rank": suspect.get("published_rank") or fallback_rank,
+        "published": bool(suspect.get("published", fallback_rank is not None)),
+        "rank_bucket": suspect.get("rank_bucket"),
+        "rank_reason": suspect.get("rank_reason"),
+        "rank_model_version": suspect.get("rank_model_version"),
+        "price": suspect.get("price"),
+        "change_pct": suspect.get("change_pct"),
+        "change_basis": suspect.get("change_basis"),
+        "pattern": suspect.get("pattern"),
+        "suspicion_score": suspect.get("suspicion_score"),
+    }
+
+
+def record_local_published_run(radar, out):
+    """Mac 로컬에 실제 게시 배열을 회차별 불변 published_run으로 보존한다."""
+    try:
+        import radar_json_store as store
+        generated_at = out.get("generated_at")
+        trade_date = history_date_for(out)
+        published_by_code = {
+            s.get("code"): s.get("published_rank") or rank
+            for rank, s in enumerate(out.get("suspects", []), 1) if s.get("code")
+        }
+        precut = []
+        for rank, original in enumerate(radar.get("suspects", []), 1):
+            row = dict(original)
+            row.setdefault("precut_rank", rank)
+            published_rank = published_by_code.get(row.get("code"))
+            row["published"] = published_rank is not None
+            row["published_rank"] = published_rank
+            precut.append(_compact_rank_candidate(row))
+        run = {
+            "generated_at": generated_at,
+            "completed_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+            "trade_date": trade_date,
+            "market_phase": _local_market_phase(),
+            "price_basis": "KRX",
+            "money_basis": (radar.get("params") or {}).get("market") or "UN",
+            "scan_ok": True,
+            **{key: out.get(key) for key in RANK_MODEL_FIELDS if out.get(key) is not None},
+        }
+        payload = {
+            "schema_version": 1,
+            "record_type": "published_run",
+            "run": run,
+            "precut_candidates": precut,
+            "published_candidates": [
+                _compact_rank_candidate(s, rank)
+                for rank, s in enumerate(out.get("suspects", []), 1)
+            ],
+            "errors": [],
+        }
+        # update_manifest=False: 회차당 재빌드는 derive_due_decision_snapshots 끝의 1회로 통합(적대 리뷰 M3)
+        result = store.write_scan(payload, trade_date=trade_date, observed_at=generated_at,
+                                  update_manifest=False)
+        if not result.ok:
+            sys.stderr.write(f"[warn] local published_run 저장 실패(무시): {result.error}\n")
+        return result
+    except Exception as e:
+        sys.stderr.write(f"[warn] local published_run 기록 실패(무시): {e}\n")
+        return None
+
+
+def _published_runs_for_date(trade_date, root=None):
+    """불변 published_run 중 생성시각이 파싱되는 성공 회차만 읽는다."""
+    try:
+        import radar_json_store as store
+        scan_dir = store.local_day_dir(trade_date, root=root) / "scans"
+    except Exception:
+        return []
+    rows = []
+    for path in glob.glob(os.path.join(str(scan_dir), "scan_*.json")):
+        try:
+            with open(path, encoding="utf-8") as f:
+                payload = json.load(f)
+            if payload.get("record_type") != "published_run":
+                continue
+            run = payload.get("run") or {}
+            generated = run.get("generated_at") or payload.get("generated_at")
+            generated_dt = _parse_kst_timestamp(generated)
+            if generated_dt is None or run.get("scan_ok") is False:
+                continue
+            rows.append((generated_dt, payload))
+        except Exception as e:
+            sys.stderr.write(f"[warn] published_run 로드 실패(무시) {path}: {e}\n")
+    return sorted(rows, key=lambda item: item[0])
+
+
+def derive_due_decision_snapshots(trade_date, now=None, root=None):
+    """기준시각 이전 최신 published_run으로 Mac 의사결정 원본을 첫 1회만 만든다."""
+    try:
+        import radar_json_store as store
+        day = store.normalize_trade_date(trade_date)
+        day_start = datetime.strptime(day, "%Y%m%d").replace(tzinfo=KST)
+        now = now or datetime.now(KST)
+        runs = _published_runs_for_date(day, root=root)
+        if not runs:
+            # 재검증 반박 2: published_run이 0건이어도(레이더 전면 장애일 등) 실행기 JSONL처럼
+            # update_manifest=False로 쌓인 파일이 영구 미색인 고아가 되지 않게, 당일 디렉터리가
+            # 존재하면 재빌드 1회는 수행하고 나간다.
+            day_dir = store.local_day_dir(day, root=root)
+            if day_dir.exists():
+                orphan_manifest = store.rebuild_manifest(day, root)
+                if not orphan_manifest.ok:
+                    sys.stderr.write(f"[warn] manifest 재빌드 실패(무시): {orphan_manifest.error}\n")
+            return {}
+        decisions_dir = store.local_day_dir(day, root=root) / "decisions"
+        definitions = (
+            ("KRX_1518", 15, 18, "bounded"),
+            ("KRX_CLOSE", 15, 30, "bounded"),
+            ("NXT_1950", 19, 50, "bounded"),
+            ("OPERATIONAL_EOD", 20, 51, "after"),
+        )
+        results = {}
+        for slot, hour, minute, mode in definitions:
+            cutoff = day_start.replace(hour=hour, minute=minute)
+            if now < cutoff:
+                continue
+            target = decisions_dir / (slot.lower() + ".json")
+            if target.exists():
+                continue
+            if mode == "bounded":
+                eligible = [item for item in runs if item[0] <= cutoff]
+                decision_at = cutoff
+            else:
+                eligible = [item for item in runs if cutoff <= item[0] <= now]
+                decision_at = eligible[-1][0] if eligible else cutoff
+            if not eligible:
+                continue
+            generated_dt, source = eligible[-1]
+            run = source.get("run") or {}
+            candidates = list(source.get("published_candidates") or [])
+            stale_seconds = max(0, int((decision_at - generated_dt).total_seconds()))
+            valid = bool(stale_seconds <= DECISION_MAX_STALE_SECONDS)
+            ordered = []
+            for rank, candidate in enumerate(candidates, 1):
+                row = dict(candidate)
+                row["published_rank"] = row.get("published_rank") or rank
+                row["rank_model_version"] = (row.get("rank_model_version")
+                                             or run.get("rank_model_version"))
+                row.setdefault("safety_ok", None)
+                row.setdefault("safety_reason", None)
+                ordered.append(row)
+            payload = {
+                "schema_version": 1,
+                "record_type": "decision_snapshot",
+                "trade_date": day,
+                "slot": slot,
+                "decision_at": decision_at.strftime("%Y-%m-%d %H:%M:%S KST"),
+                "decision_source": "mac_publish_derived",
+                "actual_autotrade_execution": False,
+                "source_run_id": run.get("run_id"),
+                "radar_generated_at": run.get("generated_at"),
+                "rank_policy_name": run.get("rank_policy_name"),
+                "rank_model_version": run.get("rank_model_version"),
+                "rank_model_effective_from": run.get("rank_model_effective_from"),
+                "rank_model_effective_at": run.get("rank_model_effective_at"),
+                "rank_model_source_commit": run.get("rank_model_source_commit"),
+                "stale_seconds": stale_seconds,
+                "valid_for_decision": valid,
+                "top_codes": [row.get("code") for row in ordered[:3] if row.get("code")],
+                "ordered_candidates": ordered,
+            }
+            result = store.write_decision_snapshot(
+                slot, payload, trade_date=day, root=root, overwrite=False,
+                update_manifest=False)
+            if not result.ok:
+                sys.stderr.write(f"[warn] {slot} 파생 저장 실패(무시): {result.error}\n")
+            results[slot] = result
+        # 회차당 정확히 1회 재빌드 — 이 회차의 published_run·decision·실행기 JSONL을 한 번에 색인
+        # (published_run/decision/trade 쓰기는 전부 update_manifest=False, 적대 리뷰 M3).
+        manifest = store.rebuild_manifest(day, root)
+        if not manifest.ok:
+            sys.stderr.write(f"[warn] manifest 재빌드 실패(무시): {manifest.error}\n")
+        return results
+    except Exception as e:
+        sys.stderr.write(f"[warn] local decision 파생 실패(무시): {e}\n")
+        return {}
 
 
 def run_radar(extra_args):
@@ -98,7 +439,8 @@ def record_history(out):
     hist = {"date": today, "suspects": {}}
     if os.path.exists(path):
         try:
-            hist = json.load(open(path, encoding="utf-8"))
+            with open(path, encoding="utf-8") as f:
+                hist = json.load(f)
         except Exception as e:
             # 손상 파일은 백업 후 재생성 — 조용한 전손 대신 흔적을 남긴다
             sys.stderr.write(f"[warn] history 손상 {path}: {e} — .corrupt 백업\n")
@@ -108,6 +450,18 @@ def record_history(out):
                 pass
     for rank, s in enumerate(out.get("suspects", []), 1):
         prev = hist["suspects"].get(s["code"], {})
+        published_rank = s.get("published_rank") or rank
+        rank_model_version = _model_value(out, s, "rank_model_version")
+        rank_path = list(prev.get("rank_path") or [])
+        _append_rank_event(rank_path, {
+            "observed_at": out.get("generated_at"),
+            "precut_rank": s.get("precut_rank"),
+            "published_rank": published_rank,
+            "published": True,
+            "rank_bucket": s.get("rank_bucket"),
+            "rank_model_version": rank_model_version,
+            "change_basis": s.get("change_basis"),
+        })
         hist["suspects"][s["code"]] = {
             "name": s["name"],
             "sector": s.get("sector", ""),
@@ -119,10 +473,25 @@ def record_history(out):
             # reaccum은 raw=0이라 위 score/breakdown만으론 순위 재현 불가 → 표시값을 함께 남긴다.
             "suspicion_score": s.get("suspicion_score"),
             "score_breakdown_display": s.get("score_breakdown", {}),
-            "rank": rank,                 # 이번 회차 게시 순위(1=최상단). 매 회차 덮어써 마지막 회차 확정값
+            "rank": published_rank,       # 하위호환: 이번 회차 실제 게시 순위(1=최상단)
+            "precut_rank": s.get("precut_rank"),
+            "published_rank": published_rank,
+            "published": True,
+            "first_seen_rank": prev.get("first_seen_rank") or published_rank,
+            "latest_published_rank": published_rank,
+            "rank_path": rank_path,
             "rank_bucket": s.get("rank_bucket"),      # 정렬4 실정렬 버킷 — 낮을수록 상단
+            "rank_bucket_at_signal": (prev.get("rank_bucket_at_signal")
+                                      if prev.get("rank_bucket_at_signal") is not None
+                                      else s.get("rank_bucket")),
             "rank_reason": s.get("rank_reason"),      # 사람이 읽는 정렬 근거 한 줄
+            "rank_reason_at_signal": (prev.get("rank_reason_at_signal")
+                                      if prev.get("rank_reason_at_signal") is not None
+                                      else s.get("rank_reason")),
             "shadow_bucket": s.get("shadow_bucket"),  # 정렬 무영향 관찰 버킷 목록
+            "shadow_bucket_at_signal": (prev.get("shadow_bucket_at_signal")
+                                        if prev.get("shadow_bucket_at_signal") is not None
+                                        else s.get("shadow_bucket")),
             "expected_touch7_rate": s.get("expected_touch7_rate"),  # 버킷 과거 +7% 터치율 스냅샷(보장 아님)
             "expected_high_pct": s.get("expected_high_pct"),        # 버킷 과거 평균 익일 고가 스냅샷(보장 아님)
             "rank_bucket_stats_snapshot": s.get("rank_bucket_stats_snapshot"),  # 판정 당시 버킷 통계
@@ -207,6 +576,10 @@ def record_history(out):
             "first_seen": prev.get("first_seen") or out.get("generated_at"),
             "evaluated": prev.get("evaluated", False),
             "result": prev.get("result"),
+            **{
+                key: (prev.get(key) if prev.get(key) is not None else _model_value(out, s, key))
+                for key in RANK_MODEL_FIELDS
+            },
         }
     # 최종 카드 마킹: 이번 회차 "게시 카드"(--max 컷 적용 후 = 사이트에 실제 표시된
     # 종목)에 있으면 True, 없으면 False. 매 회차 덮어쓰므로 마지막 회차(15:45)가 확정값.
@@ -214,9 +587,28 @@ def record_history(out):
     # (--max 컷에 밀린 13위 이하도 False — 사용자가 볼 수 없었으므로 의도된 동작)
     current = {s["code"] for s in out.get("suspects", [])}
     for code, rec in hist["suspects"].items():
-        rec["final"] = code in current
+        is_current = code in current
+        if not is_current:
+            rank_path = list(rec.get("rank_path") or [])
+            _append_rank_event(rank_path, {
+                "observed_at": out.get("generated_at"),
+                "precut_rank": None,
+                "published_rank": None,
+                "published": False,
+                "rank_bucket": rec.get("rank_bucket"),
+                "rank_model_version": rec.get("rank_model_version"),
+                "change_basis": rec.get("change_basis"),
+            })
+            rec["rank_path"] = rank_path
+            rec["precut_rank"] = None
+            rec["published_rank"] = None
+            rec["published"] = False
+        rec["final"] = is_current
     hist["as_of"] = out.get("generated_at")
-    json.dump(hist, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    for key in RANK_MODEL_FIELDS:
+        if out.get(key) is not None:
+            hist[key] = out[key]
+    atomic_write_json(path, hist)
     return path
 
 
@@ -274,11 +666,7 @@ def main():
         passthru.append("--dry-run")
 
     radar = run_radar(passthru)
-    regular = [s for s in radar.get("suspects", []) if not s.get("visible_experimental")]
-    reaccum = [s for s in radar.get("suspects", []) if s.get("visible_experimental")]
-    slots = min(max(0, reaccum_max), maxn)
-    keep_reg = maxn - min(len(reaccum), slots)
-    suspects = regular[:keep_reg] + reaccum[:slots]
+    suspects = select_published_suspects(radar, maxn, reaccum_max)
     # 테마 대장: '실제 게시되는 집합' 기준으로 태깅(거래대금 1위) — radar.py는 컷 이전 전체라
     # 컷 후 대장 누락/외톨이(1종목 테마에 🏆)가 생김. 같은 테마 2개+일 때만.
     # 표시 전용(점수·통계 미반영). record_history·radar.json 모두 이 값을 SSOT로 사용.
@@ -293,6 +681,7 @@ def main():
     for grp in theme_groups.values():
         if len(grp) >= 2:
             max(grp, key=lambda x: x.get("value_eok") or 0)["theme_leader"] = True
+    attach_rank_performance(suspects)
     # 텔레그램: 게시 후보의 새(완성된) 재반등 5분 스파크마다 알림. 봉 시각 디둡(도배 방지).
     # git 락 밖에서 먼저 호출 + 실패해도 publish 본작업 안 깨짐. push 여부와 무관히 매 회차 점검.
     # 봉 완성 판정 단위는 radar가 쓴 reignition_span_min(--reignition-span-min)과 정확히 맞춘다.
@@ -337,6 +726,14 @@ def main():
         "youtong": radar.get("youtong", []),         # 곧 폭발할 후보(/youtong 게시용)
         "suspects": suspects,
     }
+    for key in RANK_MODEL_FIELDS:
+        if radar.get(key) is not None:
+            out[key] = radar[key]
+    if not dry:
+        # Git/web 게시 여부와 무관하게 Mac 로컬에는 매 회차 실제 게시 배열을 보존한다.
+        # 기준시각 경과 후 decision은 저장된 과거 회차에서 파생하므로 15:21이 15:18을 오염시키지 않는다.
+        record_local_published_run(radar, out)
+        derive_due_decision_snapshots(history_date_for(out))
     new = json.dumps(out, ensure_ascii=False, indent=1)
 
     if not dry:

@@ -49,6 +49,33 @@ function peakDaysAgo(yyyymmdd?: string) {
   return Math.max(0, Math.floor((today - peak) / 86_400_000));
 }
 
+function signedStat(value?: number | null) {
+  if (value == null) return null;
+  return `${value > 0 ? "+" : ""}${value}%`;
+}
+
+function priorLabel(source: string) {
+  const labels: Record<string, string> = {
+    chairman_40y_rule: "회장님 40년 경험칙",
+    census_140k: "14만건 전수조사",
+    agreed_rule: "합의 규칙",
+    fallback: "기본 규칙",
+  };
+  return labels[source] ?? source;
+}
+
+function rankStatsLine(label: string, stats: NonNullable<Suspect["rank_retro_stats"]>) {
+  const values = [
+    stats.touch7_rate != null ? `+7% ${stats.touch7_rate}%` : null,
+    signedStat(stats.avg_high_pct) ? `평균 ${signedStat(stats.avg_high_pct)}` : null,
+    signedStat(stats.median_high_pct) ? `중앙 ${signedStat(stats.median_high_pct)}` : null,
+    signedStat(stats.min_high_pct) ? `최저 ${signedStat(stats.min_high_pct)}` : null,
+  ].filter(Boolean);
+  return `${label} n=${stats.n}${stats.unique_n != null ? `/${stats.unique_n}` : ""}${
+    values.length ? ` · ${values.join(" · ")}` : ""
+  }${stats.valid === false ? " · 수집 중" : ""}`;
+}
+
 /**
  * 수상 종목 카드 — "큰돈이 들어와 급등 후 식은, 이벤트에 민감한 종목"의 증거를 한 장에.
  * 고가→현재 페이드 바 + 분봉 스파크 타임라인 + 수급 + 점수 해부도.
@@ -66,7 +93,10 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const material = s.material;
   const materialGrade = material?.grade;
   const showMaterial = !!materialGrade && materialGrade !== "N";
-  const sampleCaution = s.rank_bucket === 1 || s.rank_bucket === 4;
+  const priorSnapshot = s.rank_bucket_stats_snapshot;
+  const sampleCaution = priorSnapshot?.n != null
+    ? priorSnapshot.n < 10
+    : s.rank_bucket === 1 || s.rank_bucket === 4;
   const topCut =
     (s.run_6d_pct ?? 0) >= 30 ||
     ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);
@@ -318,22 +348,43 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             (표본 {s.calibrated_prob.n}건)
           </p>
         )}
-        {s.rank_reason && (
-          <p className="text-[11px] text-muted-foreground">
-            정렬근거: <span className="font-medium text-foreground/80">{s.rank_reason}</span>
-            {s.expected_touch7_rate != null && (
-              <span className="tabular-nums">
-                {" · 과거 +7% 터치 "}
-                {s.expected_touch7_rate}%
-              </span>
+        {(s.rank_reason || priorSnapshot || s.rank_retro_stats || s.rank_forward_stats) && (
+          <div className="space-y-0.5 text-[11px] text-muted-foreground">
+            <p>
+              정렬근거: <span className="font-medium text-foreground/80">{s.rank_reason ?? `bucket ${s.rank_bucket ?? "—"}`}</span>
+              {s.rank_prior?.source && <span>{` · ${priorLabel(s.rank_prior.source)} prior`}</span>}
+            </p>
+            {priorSnapshot && (
+              <p className="tabular-nums">
+                참고 스냅샷
+                {priorSnapshot.population ? ` (${priorSnapshot.population})` : ""}
+                {priorSnapshot.n != null ? ` · n=${priorSnapshot.n}/${priorSnapshot.unique_n ?? priorSnapshot.n}` : ""}
+                {priorSnapshot.touch7_rate != null ? ` · +7% ${priorSnapshot.touch7_rate}%` : ""}
+                {(priorSnapshot.avg_high_pct ?? priorSnapshot.expected_high_pct) != null
+                  ? ` · 평균 ${signedStat(priorSnapshot.avg_high_pct ?? priorSnapshot.expected_high_pct)}`
+                  : ""}
+                {priorSnapshot.median_high_pct != null
+                  ? ` · 중앙 ${signedStat(priorSnapshot.median_high_pct)}`
+                  : ""}
+                {priorSnapshot.min_high_pct != null
+                  ? ` · 최저 ${signedStat(priorSnapshot.min_high_pct)}`
+                  : ""}
+              </p>
             )}
-            {s.expected_high_pct != null && (
-              <span className="tabular-nums">
-                {" · 평균고가 +"}
-                {s.expected_high_pct}%
-              </span>
+            {!priorSnapshot && (s.expected_touch7_rate != null || s.expected_high_pct != null) && (
+              <p className="tabular-nums">
+                기존 참고값
+                {s.expected_touch7_rate != null ? ` · +7% ${s.expected_touch7_rate}%` : ""}
+                {s.expected_high_pct != null ? ` · 평균 ${signedStat(s.expected_high_pct)}` : ""}
+              </p>
             )}
-          </p>
+            {s.rank_retro_stats && (
+              <p className="tabular-nums">{rankStatsLine("소급", s.rank_retro_stats)}</p>
+            )}
+            {s.rank_forward_stats && (
+              <p className="tabular-nums">{rankStatsLine("전진", s.rank_forward_stats)}</p>
+            )}
+          </div>
         )}
       </CardHeader>
 

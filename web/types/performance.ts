@@ -138,6 +138,9 @@ export interface RankBucketKillSwitch {
   label: string;
   status: string;
   reasons: string[];
+  n?: number;
+  /** true인 forward EOD 판정만 회장님 상신 대상 */
+  actionable?: boolean;
 }
 
 export interface RankBucketStats {
@@ -145,6 +148,106 @@ export interface RankBucketStats {
   cells: RankBucketStatCell[];
   shadow_cells: RankBucketStatCell[];
   kill_switches: RankBucketKillSwitch[];
+  basis?: "retro" | "forward_saved_signal" | string;
+  population?: string;
+  model_version?: string | null;
+  sample_n?: number;
+  tracking_days?: number;
+  deprecated?: boolean;
+}
+
+export interface RankPrior {
+  policy_name: string;
+  model_version: string;
+  effective_from: string;
+  source: string;
+  strength: string;
+  auto_reorder: boolean;
+  buckets: Array<{
+    bucket: number;
+    label: string;
+    source?: string;
+    strength?: string;
+    summary?: string;
+  }>;
+}
+
+export interface RankBucketStatsRetro {
+  basis: "retro_current_policy" | string;
+  model_version: string;
+  exclusive_all: RankBucketStats;
+  exclusive_final?: RankBucketStats;
+  exclusive_krx_decision: RankBucketStats;
+  exclusive_nxt_decision: RankBucketStats;
+  exclusive_eod: RankBucketStats;
+  dropout: RankBucketStats;
+}
+
+export interface RankBucketStatsForward {
+  basis: "forward_saved_signal" | string;
+  model_version: string;
+  effective_from: string;
+  krx_decision: RankBucketStats;
+  nxt_decision: RankBucketStats;
+  eod: RankBucketStats;
+  final?: RankBucketStats;
+  dropout: RankBucketStats;
+  /** eod forward 표본만 사용한 실제 자동판정·수동상신 목록 */
+  kill_switches: RankBucketKillSwitch[];
+}
+
+export interface RankEvalRankHigh {
+  rank: number;
+  n: number;
+  avg_high_pct: number;
+  median_high_pct: number;
+}
+
+export interface RankEvalPopulation {
+  population: string;
+  candidate_n: number;
+  day_n: number;
+  multi_candidate_days: number;
+  single_candidate: { days: number; avg_high_pct: number | null };
+  top1_hits: number;
+  top1_n: number;
+  top1_hit: number | null;
+  top3_hits: number;
+  top3_n: number;
+  top3_contains_winner: number | null;
+  spearman: number | null;
+  spearman_n: number;
+  ndcg: number | null;
+  ndcg_n: number;
+  rank_avg_high: RankEvalRankHigh[];
+  winner_published_rank: Array<{ rank: number; days: number }>;
+  candidate_counts: Array<{
+    candidate_count: number;
+    days: number;
+    top1_hit: number | null;
+    top3_contains_winner: number | null;
+  }>;
+  valid: boolean;
+}
+
+export interface RankEvalModel {
+  effective_from: string;
+  tie_policy: string;
+  ndcg_relevance: string;
+  populations: Record<string, RankEvalPopulation>;
+}
+
+export interface RankEval {
+  basis: string;
+  by_model_version: Record<string, RankEvalModel>;
+  reference?: {
+    legacy_mixed_models?: {
+      multi_candidate_days: number;
+      top1_hits: number;
+      top3_hits: number;
+      note: string;
+    };
+  };
 }
 
 /** 분할 전략 실측 — 20/30/50 분할+익절/손절 실현 net 누적(radar_backtest.strategy_sim_stats()와 정합) */
@@ -360,6 +463,14 @@ export interface PerformanceData {
   very_good_bands?: ChangeBandStats;
   /** 정렬4 rank_bucket별 익일 고가/종가 성과와 kill switch 판정 */
   rank_bucket_stats?: RankBucketStats;
+  /** 회장님 40년 경험칙 prior. 실측 통계와 혼합하지 않는다. */
+  rank_prior?: RankPrior;
+  /** 현재 정책을 과거 피처에 재적용한 소급 통계 */
+  rank_bucket_stats_retro?: RankBucketStatsRetro;
+  /** 저장된 신호시점 bucket만 사용하는 모델 발효 후 전진 통계 */
+  rank_bucket_stats_forward?: RankBucketStatsForward;
+  /** 모델 버전·KRX/NXT/EOD 모집단별 익일 최고고가 상대순위 평가 */
+  rank_eval?: RankEval;
   /** 뉴스/공시 재료 등급별 익일 상승확률 — 오늘 이후 material 기록 표본 전진검증 */
   material_bands?: ChangeBandStats;
   /** 재료 등급 × 매우좋음/흔들기 조합별 익일 상승확률 — 오늘 이후 전진검증 */

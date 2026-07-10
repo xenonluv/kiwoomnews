@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """정렬4 rank_bucket 최소 회귀 테스트.
 
-네트워크 없이 radar.rank_bucket_info의 핵심 우선순위만 확인한다.
+네트워크 없이 rank_policy SSOT의 핵심 우선순위와 버전을 확인한다.
 """
-from radar import rank_bucket_info, apply_rank_metadata, _rank_sort_key
+from rank_policy import (
+    RANK_MODEL_EFFECTIVE_FROM,
+    RANK_MODEL_VERSION,
+    RANK_POLICY_NAME,
+    apply_rank_metadata,
+    rank_bucket_info,
+    rank_sort_key,
+)
 
 
 CASES = [
@@ -28,6 +35,9 @@ CASES = [
 
 
 def main():
+    if (RANK_POLICY_NAME, RANK_MODEL_VERSION, RANK_MODEL_EFFECTIVE_FROM) != (
+            "rank4", "rank4-v1", "20260713"):
+        raise AssertionError("rank4-v1 정책 버전/발효일 변경 감지")
     for sample, expected in CASES:
         actual = rank_bucket_info(sample)["rank_bucket"]
         if actual != expected:
@@ -38,7 +48,7 @@ def main():
                               "suspicion_score": 60, "name": "T1"})
     t2 = apply_rank_metadata({"very_good_tier": "tier2", "shakeout": True,
                               "suspicion_score": 90, "name": "T2"})
-    ordered = sorted([t2, t1], key=_rank_sort_key)
+    ordered = sorted([t2, t1], key=rank_sort_key)
     if [s["name"] for s in ordered] != ["T1", "T2"]:
         raise AssertionError(f"bucket0 내부 Tier1 우선 실패: {[s['name'] for s in ordered]}")
 
@@ -47,4 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
