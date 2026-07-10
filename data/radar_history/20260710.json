@@ -36,8 +36,8 @@
    "snapshot_high": 6580.0,
    "snapshot_low": 4945.0,
    "snapshot_close": 5580.0,
-   "snapshot_volume": 16102637.0,
-   "snapshot_value": 93997000000.0,
+   "snapshot_volume": 16102840.0,
+   "snapshot_value": 93998000000.0,
    "snapshot_value_eok": 940.0,
    "snapshot_as_of": "20260710",
    "signal_date": "20260710",
@@ -46,8 +46,8 @@
    "signal_low": 4945.0,
    "signal_close": 5580.0,
    "signal_prev_close": 5150.0,
-   "signal_volume": 16102637.0,
-   "signal_value": 93997000000.0,
+   "signal_volume": 16102840.0,
+   "signal_value": 93998000000.0,
    "signal_value_eok": 940.0,
    "signal_peak6_price": 6580.0,
    "signal_peak60_price": 10300.0,
@@ -99,5 +99,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-10 15:53:52 KST"
+ "as_of": "2026-07-10 16:03:52 KST"
 }
