@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 10:53:40 KST",
+ "generated_at": "2026-07-10 11:03:37 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,11 +53,11 @@
    "code": "001210",
    "name": "금호전기",
    "sector": "금호전기",
-   "change_pct": 11.02,
+   "change_pct": 12.16,
    "high_pct": 16.64,
-   "vol_turnover_pct": 91.2,
-   "value_eok": 539,
-   "price": 1461.0,
+   "vol_turnover_pct": 94.0,
+   "value_eok": 556,
+   "price": 1476.0,
    "first_seen": "10:12",
    "exploded": false
   },
@@ -67,8 +67,8 @@
    "sector": "금호타이어",
    "change_pct": 30.0,
    "high_pct": 30.0,
-   "vol_turnover_pct": 51.7,
-   "value_eok": 4011,
+   "vol_turnover_pct": 51.8,
+   "value_eok": 4017,
    "price": 7800.0,
    "first_seen": "10:22",
    "exploded": false
