@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 11:43:44 KST",
+ "generated_at": "2026-07-10 11:53:44 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -54,9 +54,9 @@
    "name": "금호전기",
    "sector": "금호전기",
    "change_pct": 9.73,
-   "high_pct": 16.64,
-   "vol_turnover_pct": 101.2,
-   "value_eok": 599,
+   "high_pct": 14.29,
+   "vol_turnover_pct": 58.3,
+   "value_eok": 338,
    "price": 1444.0,
    "first_seen": "10:12",
    "exploded": false
@@ -68,7 +68,7 @@
    "change_pct": 30.0,
    "high_pct": 30.0,
    "vol_turnover_pct": 52.0,
-   "value_eok": 4036,
+   "value_eok": 4038,
    "price": 7800.0,
    "first_seen": "10:22",
    "exploded": false
@@ -77,11 +77,11 @@
    "code": "037710",
    "name": "광주신세계",
    "sector": "광주신세계",
-   "change_pct": 9.25,
+   "change_pct": 9.5,
    "high_pct": 15.02,
-   "vol_turnover_pct": 51.9,
-   "value_eok": 615,
-   "price": 45450.0,
+   "vol_turnover_pct": 50.9,
+   "value_eok": 602,
+   "price": 45550.0,
    "first_seen": "11:22",
    "exploded": false
   }
