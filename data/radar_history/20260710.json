@@ -36,9 +36,9 @@
    "snapshot_high": 6580.0,
    "snapshot_low": 4945.0,
    "snapshot_close": 5580.0,
-   "snapshot_volume": 16100973.0,
-   "snapshot_value": 93988000000.0,
-   "snapshot_value_eok": 939.9,
+   "snapshot_volume": 16102637.0,
+   "snapshot_value": 93997000000.0,
+   "snapshot_value_eok": 940.0,
    "snapshot_as_of": "20260710",
    "signal_date": "20260710",
    "signal_open": 5200.0,
@@ -46,9 +46,9 @@
    "signal_low": 4945.0,
    "signal_close": 5580.0,
    "signal_prev_close": 5150.0,
-   "signal_volume": 16100973.0,
-   "signal_value": 93988000000.0,
-   "signal_value_eok": 939.9,
+   "signal_volume": 16102637.0,
+   "signal_value": 93997000000.0,
+   "signal_value_eok": 940.0,
    "signal_peak6_price": 6580.0,
    "signal_peak60_price": 10300.0,
    "signal_ma20": 4839.2,
@@ -76,9 +76,11 @@
    "low_accum_bars": [],
    "alert_now": "경고",
    "alert_release": false,
+   "alert_risk_released": true,
+   "alert_elapsed_days": 1,
    "shakeout": true,
    "fade_pct": 19.4,
-   "turnover_2d_pct": 423.5,
+   "turnover_2d_pct": 423.6,
    "peak_dd_pct": -45.8,
    "strength_tier": 3,
    "strength": "조합D(통계상 고가강)",
@@ -97,5 +99,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-10 15:43:57 KST"
+ "as_of": "2026-07-10 15:53:52 KST"
 }
