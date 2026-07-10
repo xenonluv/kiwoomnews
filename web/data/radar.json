@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 09:03:27 KST",
+ "generated_at": "2026-07-10 10:13:45 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -48,6 +48,19 @@
   }
  ],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "001210",
+   "name": "금호전기",
+   "sector": "금호전기",
+   "change_pct": 11.32,
+   "high_pct": 14.29,
+   "vol_turnover_pct": 58.3,
+   "value_eok": 338,
+   "price": 1465.0,
+   "first_seen": "10:12",
+   "exploded": false
+  }
+ ],
  "suspects": []
 }
