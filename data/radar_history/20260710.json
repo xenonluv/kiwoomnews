@@ -36,9 +36,9 @@
    "snapshot_high": 6580.0,
    "snapshot_low": 4945.0,
    "snapshot_close": 5580.0,
-   "snapshot_volume": 16096846.0,
-   "snapshot_value": 93965000000.0,
-   "snapshot_value_eok": 939.6,
+   "snapshot_volume": 16100973.0,
+   "snapshot_value": 93988000000.0,
+   "snapshot_value_eok": 939.9,
    "snapshot_as_of": "20260710",
    "signal_date": "20260710",
    "signal_open": 5200.0,
@@ -46,9 +46,9 @@
    "signal_low": 4945.0,
    "signal_close": 5580.0,
    "signal_prev_close": 5150.0,
-   "signal_volume": 16096846.0,
-   "signal_value": 93965000000.0,
-   "signal_value_eok": 939.6,
+   "signal_volume": 16100973.0,
+   "signal_value": 93988000000.0,
+   "signal_value_eok": 939.9,
    "signal_peak6_price": 6580.0,
    "signal_peak60_price": 10300.0,
    "signal_ma20": 4839.2,
@@ -58,7 +58,7 @@
    "ma20_gap_pct": 15.3,
    "ma10_margin_pct": 24.96,
    "float_ratio": 0.32130000000000003,
-   "turnover_pct": 250.5,
+   "turnover_pct": 250.6,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -97,5 +97,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-10 15:34:04 KST"
+ "as_of": "2026-07-10 15:43:57 KST"
 }
