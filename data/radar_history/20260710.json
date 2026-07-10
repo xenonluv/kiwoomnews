@@ -31,14 +31,14 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 940,
+   "value_eok": 946,
    "snapshot_open": 5200.0,
    "snapshot_high": 6580.0,
    "snapshot_low": 4945.0,
    "snapshot_close": 5580.0,
-   "snapshot_volume": 16102840.0,
-   "snapshot_value": 93998000000.0,
-   "snapshot_value_eok": 940.0,
+   "snapshot_volume": 16217189.0,
+   "snapshot_value": 94623000000.0,
+   "snapshot_value_eok": 946.2,
    "snapshot_as_of": "20260710",
    "signal_date": "20260710",
    "signal_open": 5200.0,
@@ -46,9 +46,9 @@
    "signal_low": 4945.0,
    "signal_close": 5580.0,
    "signal_prev_close": 5150.0,
-   "signal_volume": 16102840.0,
-   "signal_value": 93998000000.0,
-   "signal_value_eok": 940.0,
+   "signal_volume": 16217189.0,
+   "signal_value": 94623000000.0,
+   "signal_value_eok": 946.2,
    "signal_peak6_price": 6580.0,
    "signal_peak60_price": 10300.0,
    "signal_ma20": 4839.2,
@@ -58,7 +58,7 @@
    "ma20_gap_pct": 15.3,
    "ma10_margin_pct": 24.96,
    "float_ratio": 0.32130000000000003,
-   "turnover_pct": 250.6,
+   "turnover_pct": 252.4,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -80,7 +80,7 @@
    "alert_elapsed_days": 1,
    "shakeout": true,
    "fade_pct": 19.4,
-   "turnover_2d_pct": 423.6,
+   "turnover_2d_pct": 425.3,
    "peak_dd_pct": -45.8,
    "strength_tier": 3,
    "strength": "조합D(통계상 고가강)",
@@ -99,5 +99,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-10 18:06:47 KST"
+ "as_of": "2026-07-10 18:18:06 KST"
 }
