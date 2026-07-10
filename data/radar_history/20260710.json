@@ -10,6 +10,25 @@
    "suspicion_score": 82,
    "score_breakdown_display": {},
    "rank": 1,
+   "rank_bucket": 4,
+   "rank_reason": "흔들기+조합D+82점 → bucket 4",
+   "shadow_bucket": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "expected_touch7_rate": 88.9,
+   "expected_high_pct": 17.75,
+   "rank_bucket_stats_snapshot": {
+    "label": "흔들기+조합D+75점",
+    "n": 9,
+    "unique_n": 8,
+    "touch7_rate": 88.9,
+    "expected_high_pct": 17.75,
+    "avg_return": 3.3,
+    "bucket": 4,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷"
+   },
    "change_pct": 8.35,
    "change_basis": "KRX",
    "high_pct": 27.77,
@@ -99,5 +118,5 @@
    "final": true
   }
  },
- "as_of": "2026-07-10 19:36:16 KST"
+ "as_of": "2026-07-10 19:45:41 KST"
 }
