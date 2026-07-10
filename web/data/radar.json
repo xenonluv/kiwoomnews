@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 19:56:50 KST",
+ "generated_at": "2026-07-10 20:06:46 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,8 +53,8 @@
    "name": "광주신세계",
    "sector": "광주신세계",
    "high_pct": 23.56,
-   "vol_turnover_pct": 154.0,
-   "value_eok": 1927,
+   "vol_turnover_pct": 155.3,
+   "value_eok": 1943,
    "price": 49800.0,
    "change_pct": 19.71,
    "backfill": false
@@ -90,8 +90,8 @@
    "sector": "광주신세계",
    "change_pct": 19.71,
    "high_pct": 23.56,
-   "vol_turnover_pct": 154.0,
-   "value_eok": 1927,
+   "vol_turnover_pct": 155.3,
+   "value_eok": 1943,
    "price": 49800.0,
    "first_seen": "11:22",
    "exploded": true
@@ -127,7 +127,7 @@
    "change_pct": 30.0,
    "high_pct": 30.0,
    "vol_turnover_pct": 54.8,
-   "value_eok": 4274,
+   "value_eok": 4275,
    "price": 7800.0,
    "first_seen": "10:22",
    "exploded": false
