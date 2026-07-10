@@ -29,7 +29,13 @@ RELEASE_5D_X = 1.45        # ① 5일 상승 배수 상한
 RELEASE_15D_X = 1.75       # ② 15일 상승 배수 상한
 RELEASE_MAX_WIN = 15       # ③ 최고가 판정 창
 
+# 위험→경고 강등(투자위험 지정해제) 직후 판정 창 — 공시일부터 캘린더 3일.
+# KRX는 해제 전일 공시하므로 효력 첫 거래일은 공시+1(평일) 또는 공시+3(금요 공시→월요일)에 걸림.
+# 서산 원형(2026-07-09 해제공시 → 07-10 회전 245% 폭발) 실측으로 도입(회장님 승인 2026-07-10).
+RISK_RELEASE_WINDOW_CDAYS = 3
+
 _ROW_RE = re.compile(r'<a[^>]*class="tit"[^>]*>([^<]+)</a>.*?(\d{4})\.(\d{2})\.(\d{2})', re.S)
+_RISK_CACHE = {}   # code -> "YYYYMMDD"(위험 해제공시일) | None — 실행당 캐시
 
 
 def designation_notice_date(code, max_pages=8):
@@ -110,3 +116,73 @@ def forecast_release_for(code, daily, current_price):
         return forecast_release(daily, current_price, designation_notice_date(code))
     except Exception:
         return None
+
+
+def risk_release_date(code, max_pages=2):
+    """최근 '투자위험종목 지정해제' 공시일 "YYYYMMDD" | None(해제 아님/재지정/실패).
+
+    designation_notice_date와 같은 공시목록(최신순)에서 '투자위험종목' 이벤트만 본다.
+    최신 위험 이벤트가 '지정해제'면 그 공시일, '지정/재지정'이면 None(현재 위험이거나 재지정됨).
+    예고·매매거래(정지/재개) 파생 공시는 제외. 해제는 최근 며칠 내만 의미 있어 2페이지면 충분."""
+    if code in _RISK_CACHE:
+        return _RISK_CACHE[code]
+    found = None
+    try:
+        for page in range(1, max_pages + 1):
+            raw = get_bytes(
+                f"https://finance.naver.com/item/news_notice.naver?code={code}&page={page}",
+                UA_PC).decode("euc-kr", "ignore")
+            rows = _ROW_RE.findall(raw)
+            if not rows:
+                break                               # 파싱 실패/공시 소진 — None 유지(fail-safe)
+            hit = False
+            for title, y, m, d in rows:
+                if ("투자위험종목" not in title or "지정예고" in title or "매매거래" in title):
+                    continue
+                if "지정해제" in title:
+                    found, hit = f"{y}{m}{d}", True
+                else:                               # 지정/재지정이 더 최신 — 해제 상태 아님
+                    found, hit = None, True
+                break
+            if hit:
+                break
+    except Exception:
+        found = None                                # 네트워크/파싱 실패 — 판정 포기(fail-safe)
+    _RISK_CACHE[code] = found
+    return found
+
+
+def recent_risk_release(code, today_yyyymmdd, window_days=RISK_RELEASE_WINDOW_CDAYS):
+    """위험→경고 강등(투자위험 지정해제) 직후인지 — 해제공시일부터 캘린더 window_days 내면 True.
+
+    True = '최고 단계 규제가 방금 풀린 종목'(억눌림 해소 재료) — radar 정렬에서 alert_release와
+    동급으로 승격. 판정불가·실패는 False(승격은 확실할 때만, 오폭 방지)."""
+    d = risk_release_date(code)
+    if not d or not today_yyyymmdd:
+        return False
+    try:
+        from datetime import date
+        t = date(int(today_yyyymmdd[:4]), int(today_yyyymmdd[4:6]), int(today_yyyymmdd[6:8]))
+        r = date(int(d[:4]), int(d[4:6]), int(d[6:8]))
+        return 0 <= (t - r).days <= window_days
+    except Exception:
+        return False
+
+
+def elapsed_trading_days(daily, notice_date):
+    """경고 지정일(공시 다음 매매거래일) 기산 경과 매매일수 — history 전진검증용(정렬 미사용).
+
+    반환: 1=지정 첫날, 2=이튿날 … / 0=지정일이 아직 미래(공시 당일 저녁) /
+    999='오래된 지정'(OLD — 공시 스캔 밖) / None=판정불가(공시 조회 실패·일봉 없음).
+    daily 창(기본 25일)보다 오래된 지정은 창 길이로 하한 집계됨(≥25면 충분 경과로 해석)."""
+    if notice_date is None:
+        return None
+    if notice_date == "OLD":
+        return 999
+    dates = [b.get("date") for b in (daily or []) if b.get("close") and b.get("date")]
+    if not dates:
+        return None
+    desig_idx = next((i for i, d in enumerate(dates) if d > notice_date), None)
+    if desig_idx is None:
+        return 0
+    return len(dates) - desig_idx

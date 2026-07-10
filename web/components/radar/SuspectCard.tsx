@@ -141,6 +141,14 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 🔓 투자경고 해제 예정
               </Badge>
             )}
+            {s.alert_risk_released && (
+              <Badge
+                className="bg-up px-2.5 py-1 text-base font-black text-white"
+                title="투자위험종목 지정해제 공시 3일 내(위험→경고 강등 직후) — 최고 단계 규제가 방금 풀린 종목. 억눌림 해소 재료로 게시 순위 승격(서산 7/9 해제→7/10 회전 245% 폭발 원형). 매수 추천 아님"
+              >
+                🔓 투자위험 해제 직후
+              </Badge>
+            )}
             {s.geupso && (
               <Badge
                 className="bg-up px-2 py-0.5 text-sm font-bold text-white"

@@ -179,6 +179,8 @@ def record_history(out):
             "low_accum_bars": s.get("low_accum_bars"),
             "alert_now": s.get("alert_now"),           # KRX 시장경보 지정(주의/경고/위험) — 경고/위험 후순위 강등
             "alert_release": s.get("alert_release"),   # 🔓 투자경고 내일 해제 예정 예측 — True면 최상단 승격
+            "alert_risk_released": s.get("alert_risk_released"),  # 🔓 위험→경고 강등 직후(해제공시 3일 내) — 승격 신호·전진검증용(서산 원형 2026-07-10)
+            "alert_elapsed_days": s.get("alert_elapsed_days"),    # 경고 지정 경과 매매일수(1=첫날·999=오래된 지정·None=판정불가) — 경과일별 성과 전진검증용
             "shakeout": s.get("shakeout", False),      # 💥 흔들기(고가+20%↑·페이드15%p↑·회전40%↑·MA20위) — 전진검증용
             "fade_pct": s.get("fade_pct"),
             # 흔들기 강도 튜닝용 변별 변수 — 익일결과와 상관분석해 회전/낙폭 스윗존·티어 경계 최적화(회장님 20년룰 검증).

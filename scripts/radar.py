@@ -1973,14 +1973,31 @@ def main():
     # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜) — 경고/위험 지정은 무조건 후순위 강등
     # (회장님 지시 2026-07-03: 투자경고 종목이 상위 추천됨. 경고 후 재상승=매매정지 지정 리스크). fail-safe(None=무경보 취급).
     # 단 경고 종목이 '내일 해제 예정'(KRX 해제공식 충족 예측, alert_release.py)이면 반대로 최상단 승격(해제=재료).
+    # 위험→경고 강등 직후(alert_risk_released, 해제공시 3일 내)도 동급 승격 — 최고 단계 규제 해소 재료
+    # (서산 원형: 7/9 위험해제 → 7/10 회전 245% 폭발. 회장님 승인 2026-07-10).
+    # alert_elapsed_days(경고 지정 경과 매매일수)는 history 전진검증용 기록 전용 — 정렬 미사용.
+    _today_ymd = datetime.now(KST).strftime("%Y%m%d")
     for s in suspects:
         s["alert_now"] = _alert_level(s["code"])
         if s["alert_now"] == "경고":
             try:
+                _al_daily = kis.daily_prices(s["code"], days=25)
+            except Exception:
+                _al_daily = None
+            try:
                 s["alert_release"] = alert_release.forecast_release_for(
-                    s["code"], kis.daily_prices(s["code"], days=25), s.get("price"))
+                    s["code"], _al_daily, s.get("price"))
             except Exception:
                 s["alert_release"] = None
+            try:
+                s["alert_elapsed_days"] = alert_release.elapsed_trading_days(
+                    _al_daily, alert_release.designation_notice_date(s["code"]))
+            except Exception:
+                s["alert_elapsed_days"] = None
+            try:
+                s["alert_risk_released"] = alert_release.recent_risk_release(s["code"], _today_ymd)
+            except Exception:
+                s["alert_risk_released"] = False
     suspects.sort(key=lambda x: (
         # ⚠ 경고/위험 최후순위 강등 폐지(회장님 지시 2026-07-06): 배지(alert_now)만 달고 순위엔 무영향.
         #   재료 강하면 경고받고도 급등 — 매매 선택은 회장님이 개별로.
@@ -1988,7 +2005,7 @@ def main():
         _very_good_sort_rank(x),                                                # 매우좋음 내부: Tier1(−45~-30) → Tier2(≤−45 과낙)
         not x.get("very_good_candidate"),                                       # ☆ 매우좋음 후보(-30<dd6≤-25) — 일반 흔들기보다 우선
         not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
-        not x.get("alert_release"),                                             # 🔓 경고 해제 예정(긍정 신호 — 최상단 승격 유지)
+        not (x.get("alert_release") or x.get("alert_risk_released")),           # 🔓 경고 해제 예정 OR 위험→경고 강등 직후(둘 다 규제 해소 재료 — 승격)
         not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
         (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 강도 tier 대신 실제 흔든 폭 우선
         (-(x.get("suspicion_score") or 0) if x.get("shakeout") else 0),

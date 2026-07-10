@@ -197,6 +197,10 @@ export interface Suspect {
   alert_now?: string | null;
   /** 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — True면 최후순위 강등 대신 최상단 승격 */
   alert_release?: boolean | null;
+  /** 🔓 투자위험→경고 강등 직후(해제공시 3일 내) — 최고 단계 규제 해소 재료, alert_release와 동급 승격(서산 원형 2026-07-10) */
+  alert_risk_released?: boolean | null;
+  /** 경고 지정 경과 매매일수(1=첫날·999=오래된 지정) — history 전진검증용 기록 전용 */
+  alert_elapsed_days?: number | null;
   /** 💥 흔들기 — 당일 고가 +20%↑ 터치 후 페이드 15%p↑ & 회전 40%↑ & MA20 위(금호건설·동양파일 6/25 원형).
    *  실측 n=38: 익일 고가 +13% 터치 68%·평균 +18% — 게시 정렬 최상단. */
   shakeout?: boolean;
