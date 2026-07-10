@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 19:36:16 KST",
+ "generated_at": "2026-07-10 19:45:41 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,8 +53,8 @@
    "name": "광주신세계",
    "sector": "광주신세계",
    "high_pct": 23.56,
-   "vol_turnover_pct": 152.5,
-   "value_eok": 1908,
+   "vol_turnover_pct": 153.2,
+   "value_eok": 1917,
    "price": 49800.0,
    "change_pct": 19.71,
    "backfill": false
@@ -90,8 +90,8 @@
    "sector": "광주신세계",
    "change_pct": 19.71,
    "high_pct": 23.56,
-   "vol_turnover_pct": 152.5,
-   "value_eok": 1908,
+   "vol_turnover_pct": 153.2,
+   "value_eok": 1917,
    "price": 49800.0,
    "first_seen": "11:22",
    "exploded": true
@@ -240,6 +240,25 @@
    "alert_release": false,
    "alert_elapsed_days": 1,
    "alert_risk_released": true,
+   "rank_bucket": 4,
+   "rank_reason": "흔들기+조합D+82점 → bucket 4",
+   "shadow_bucket": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "expected_touch7_rate": 88.9,
+   "expected_high_pct": 17.75,
+   "rank_bucket_stats_snapshot": {
+    "label": "흔들기+조합D+75점",
+    "n": 9,
+    "unique_n": 8,
+    "touch7_rate": 88.9,
+    "expected_high_pct": 17.75,
+    "avg_return": 3.3,
+    "bucket": 4,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷"
+   },
    "theme_leader": false
   }
  ]
