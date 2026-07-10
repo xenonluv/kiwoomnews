@@ -17,6 +17,7 @@ import { SparkFlowMatrix } from "@/components/performance/SparkFlowMatrix";
 import { ChangeBandTable } from "@/components/performance/ChangeBandTable";
 import { PeakTurnoverBandTable } from "@/components/performance/PeakTurnoverBandTable";
 import { HitBandTable } from "@/components/performance/HitBandTable";
+import { RankBucketStatsPanel } from "@/components/performance/RankBucketStatsPanel";
 import { LeaderReaccumPanel } from "@/components/performance/LeaderReaccumPanel";
 import { ReaccumPerformancePanel } from "@/components/performance/ReaccumPerformancePanel";
 import { StrategySimPanel } from "@/components/performance/StrategySimPanel";
@@ -124,9 +125,11 @@ export default function PerformancePage() {
             title="매우좋음 티어별 익일 상승확률"
             subtitle="흔들기 종목을 dd6(6일 고점 대비 낙폭) 기준으로 Tier1(-45<dd6≤-30)/Tier2(≤-45)/후보/일반으로 나눠 '익일 종가 상승' 비율과 평균수익을 검증"
             bandHeader="매우좋음 구분"
-            footnote="후보(-30<dd6≤-25)는 일반 흔들기보다 우선 정렬되는 관찰 구간입니다. Tier2(≤-45)는 과낙 리스크를 별도 관찰합니다."
+            footnote="후보(-30<dd6≤-25)는 승격키를 제거했고 배지·전진검증만 유지합니다. Tier2(≤-45)는 과낙 리스크를 별도 관찰합니다."
           />
         )}
+
+        {data.rank_bucket_stats && <RankBucketStatsPanel data={data.rank_bucket_stats} />}
 
         {data.material_bands && (
           <HitBandTable

@@ -17,7 +17,7 @@ Use this repository for current operational questions:
 
 `/Users/jinjin/stocknews` is retired. Do not use it for current suspects or current trading results.
 
-> 최종 갱신: **2026-07-09 / 뉴스·공시 재료등급 전진검증 추가**(S/A/B/C/D/N, 캐시·history·performance 기록 — 정렬·자동매매 미반영) · 시장 레짐 메모 추가 (이전: 2026-07-06 /alpha(agent_alpha) 전체 삭제, 2026-06-23 폭발 정의 전면 개편 / `패치0618.md`).
+> 최종 갱신: **2026-07-10 / suspects 정렬4 rank_bucket SSOT 반영**(급소+회전150·저점매집 승격, 매우좋음후보 승격키 제거, rank_bucket 전진검증·kill switch) · 2026-07-09 뉴스·공시 재료등급 전진검증 추가.
 > ⚠️ 폭발/식음/반등 정의는 "탐지 트랙"·"Architecture"가 현행.
 
 ## 커뮤니케이션 규칙 (필독)
@@ -39,6 +39,42 @@ Use this repository for current operational questions:
 
 - autotrade·record_history·백테스트는 **suspects만** 읽는다. explosions[]/youtong[]은 매수·통계에 안 쓰인다(표시용).
 - 회장님이 "종목/1위/이거/금요일 종목" 물으면 **어느 페이지인지 먼저 확인**하고 답한다. 절대 섞지 마라.
+
+## suspects 정렬 SSOT (2026-07-10 정렬4 확정)
+
+아래 표가 현재 suspects 화면·자동매매 순위의 단일 기준이다. 탐지 트랙 설명에 남아 있는 예전 "급소 최상단", "저점매집 관찰축", "매우좋음후보 우선" 문구보다 이 표가 우선한다.
+
+| bucket | 조건 | 운영 판단 |
+|--------|------|-----------|
+| 0 | 매우좋음 Tier1·Tier2 (`very_good_tier in (tier1, tier2)`, 내부 정렬 Tier1 우선) | 최상위. Tier2(과낙) 포함은 회장님 결정 2026-07-10 a안 — 전수조사 dd6≤−30 근거가 과낙 구간 포함 |
+| 1 | `geupso` AND `peak_turnover_pct >= 150` | 급소+회전150. 표본주의·폭발형 배지, kill switch 필수 |
+| 2 | `low_accum` AND `peak_turnover_pct >= 90` | 저점매집 상위 복귀 |
+| 3 | `low_accum` 기타 | 저점매집 실전 상위 |
+| 4 | `shakeout` AND `strength_tier >= 3` AND `suspicion_score >= 75` | 흔들기 최상위. 조합D는 문자열이 아니라 숫자 tier 판정 |
+| 5 | `shakeout` AND `suspicion_score >= 75` | 흔들기 우선 |
+| 6 | `shakeout` AND `strength_tier >= 3` | 조합D 흔들기 |
+| 7 | `suspicion_score >= 75` 기타 | 중상위 |
+| 8 | `shakeout` 기타 | 중위 |
+| 9 | `alert_release` OR `alert_risk_released` 단독 | 규제해소 재료 관찰 |
+| 10 | `geupso` 단독 | 약승격 |
+| 11 | 기타 suspects | 기본 |
+
+정렬 내부 tie-breaker: `suspicion_score` 내림차순 → 흔들기 `fade_pct` 내림차순 → `peak_turnover_pct` 내림차순 → `turnover_2d_pct` 내림차순 → 기존 안정 tie-breaker.
+
+정렬4 구현 원칙:
+
+- `very_good_candidate`는 승격키가 없다. 배지·history·전진검증만 유지하고 자기 흔들기 bucket으로 자연 편입한다.
+- `strength_tier >= 3`을 조합D로 본다. 과거 history에는 `Tier4(약)` 라벨이 섞여 있으므로 문자열 판정 금지.
+- `alert_now` 경고/위험은 정렬을 직접 바꾸지 않고 `고위험 고탄력` 배지로만 격리한다.
+- `상단컷`, `표본주의`, `폭발형`은 배지다. bucket 자체를 바꾸지 않는다.
+- suspect와 history에는 `rank_bucket`, `rank_reason`, `shadow_bucket`, `expected_touch7_rate`, `expected_high_pct`, `rank_bucket_stats_snapshot`을 저장한다.
+- `/performance`는 `rank_bucket_stats`로 bucket별 n·고유종목·+7/+13 터치·Wilson 하단·평균/중앙값 고가·최저 고가·평균 종가수익·상승마감률과 kill switch 상태를 보여준다.
+
+Kill switch:
+
+- bucket 1은 신규 표본에서 익일 고가 +7% 미달이 1건이라도 나오면 bucket 4 아래로 하향 상신한다. n=10에서 Wilson 하단 <60%, 종가평균 <+3%, 최저 익일고가 <+7% 중 하나라도 걸리면 bucket 1 자격 상실.
+- bucket 2·3은 신규 10표본마다 Wilson 하단 <55%, 종가평균 <+3%, 상승마감률 <55% 중 2개 이상이면 관찰축 하향 상신한다.
+- 매우좋음후보는 n>=15, Wilson 하단>=60%, 종가평균>+3%, 상승마감률>=55%를 모두 만족할 때만 재승격 논의한다.
 
 ## 시장 레짐 메모 (2026-07-09 회장님 관찰)
 

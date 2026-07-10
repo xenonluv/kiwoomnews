@@ -193,34 +193,46 @@ export interface Suspect {
   /** 🧲 저점매집 의심 — 당일 ≤−10% 폭락 중 MA20 사수 + 시간무관 몸통 2%+ 양봉 ≥3(덕신 7/3: −16%에 11시부터 4방). */
   low_accum?: boolean;
   low_accum_bars?: { time: string; body_pct: number }[];
-  /** KRX 시장경보 현재 지정: "주의"/"경고"/"위험" — 경고/위험은 게시 정렬 최후순위(회장님 지시 2026-07-03) */
+  /** KRX 시장경보 현재 지정: "주의"/"경고"/"위험" — 정렬은 바꾸지 않고 고위험 고탄력 배지로만 표시 */
   alert_now?: string | null;
-  /** 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — True면 최후순위 강등 대신 최상단 승격 */
+  /** 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — 단독이면 규제해소 bucket, 강한 조건과 중복되면 강한 조건 우선 */
   alert_release?: boolean | null;
   /** 🔓 투자위험→경고 강등 직후(해제공시 3일 내) — 최고 단계 규제 해소 재료, alert_release와 동급 승격(서산 원형 2026-07-10) */
   alert_risk_released?: boolean | null;
   /** 경고 지정 경과 매매일수(1=첫날·999=오래된 지정) — history 전진검증용 기록 전용 */
   alert_elapsed_days?: number | null;
   /** 💥 흔들기 — 당일 고가 +20%↑ 터치 후 페이드 15%p↑ & 회전 40%↑ & MA20 위(금호건설·동양파일 6/25 원형).
-   *  실측 n=38: 익일 고가 +13% 터치 68%·평균 +18% — 게시 정렬 최상단. */
+   *  rank_bucket 4~8에서 조합D·점수 조건으로 세분화. */
   shakeout?: boolean;
   fade_pct?: number | null;
   /** ⭐ 매우좋음 — 흔들기 AND 6일 고점대비 낙폭 dd6≤-30%(전수조사 익일 +7% 터치 72%). rank 1 승격 */
   very_good?: boolean;
   /** ⭐ 매우좋음 dd6 전용 티어: tier1(-45<dd6≤-30) | tier2(≤-45 과낙) | candidate(-30<dd6≤-25, 표시만) */
   very_good_tier?: "tier1" | "tier2" | "candidate" | null;
-  /** ⭐ 매우좋음 후보 — 흔들기 AND -30<dd6≤-25. 일반 흔들기보다 우선 정렬되는 관찰 구간 */
+  /** ⭐ 매우좋음 후보 — 흔들기 AND -30<dd6≤-25. 승격키는 제거했고 배지·전진검증만 유지 */
   very_good_candidate?: boolean;
   /** ⭐ 6일 고점(오늘+직전5일) 대비 낙폭% */
   dd6_pct?: number | null;
-  /** 💥 흔들기 결합축 라벨(예 "조합D(통계상 고가강)") — 회전+낙폭 조합의 통계 해석, 정렬 미사용 */
+  /** 💥 흔들기 결합축 라벨(예 "조합D(통계상 고가강)") — 회전+낙폭 조합의 통계 해석 */
   strength?: string | null;
-  /** 💥 회전+낙폭 결합축(0~4) — 과거 호환 키, 강도 순위 아님 */
+  /** 💥 회전+낙폭 결합축(0~4) — rank_bucket의 조합D 판정은 strength_tier>=3 */
   strength_tier?: number | null;
   /** 💥 회전밴드별 익절선 힌트(실측 60건: 90~120% 회전은 +12%가 천장 → +7~10 익절) — 표시 전용 */
   tp_hint?: string | null;
   /** 3일내 +7% 과거 실측 확률 라벨 — 표시 전용·보장 아님. 구버전 JSON엔 없음 */
   forecast?: ForecastInfo | null;
+  /** 정렬4 실정렬 버킷 — 낮을수록 상단 */
+  rank_bucket?: number | null;
+  /** 사람이 읽는 정렬 근거 한 줄 */
+  rank_reason?: string | null;
+  /** 정렬 무영향 관찰 버킷 목록 */
+  shadow_bucket?: string[] | null;
+  /** 해당 rank_bucket의 과거 +7% 터치율 스냅샷(보장 아님) */
+  expected_touch7_rate?: number | null;
+  /** 해당 rank_bucket의 과거 평균 익일 고가 스냅샷(보장 아님) */
+  expected_high_pct?: number | null;
+  /** 판정 당시 버킷 통계 스냅샷 */
+  rank_bucket_stats_snapshot?: Record<string, unknown> | null;
   suspicion_score: number; // 0~100
   /** 백테스트 실측 적중률 (점수대 표본 n>=20 구간만, 없으면 null) */
   calibrated_prob?: { rate: number | null; n: number } | null;
@@ -235,7 +247,10 @@ export interface Suspect {
   high_pct: number; // 당일 고가 등락률
   value_eok: number; // 당일 거래대금(억)
   turnover_pct?: number | null; // 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도
+  turnover_2d_pct?: number | null; // 흔들기 2일 합산 회전율
   peak_turnover_pct?: number | null; // 폭발일 회전율(거래량/유통주식수 %)
+  peak_dd_pct?: number | null; // 60일 고점 대비 낙폭
+  run_6d_pct?: number | null; // 6거래일 누적 상승률
   float_ratio?: number | null; // 유동비율(0~1)
   turnover_basis?: "float" | "cap"; // 회전율 기준
   ma10: number;

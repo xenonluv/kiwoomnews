@@ -120,6 +120,12 @@ def record_history(out):
             "suspicion_score": s.get("suspicion_score"),
             "score_breakdown_display": s.get("score_breakdown", {}),
             "rank": rank,                 # 이번 회차 게시 순위(1=최상단). 매 회차 덮어써 마지막 회차 확정값
+            "rank_bucket": s.get("rank_bucket"),      # 정렬4 실정렬 버킷 — 낮을수록 상단
+            "rank_reason": s.get("rank_reason"),      # 사람이 읽는 정렬 근거 한 줄
+            "shadow_bucket": s.get("shadow_bucket"),  # 정렬 무영향 관찰 버킷 목록
+            "expected_touch7_rate": s.get("expected_touch7_rate"),  # 버킷 과거 +7% 터치율 스냅샷(보장 아님)
+            "expected_high_pct": s.get("expected_high_pct"),        # 버킷 과거 평균 익일 고가 스냅샷(보장 아님)
+            "rank_bucket_stats_snapshot": s.get("rank_bucket_stats_snapshot"),  # 판정 당시 버킷 통계
             "change_pct": s.get("change_pct"),
             # 마감 후 NXT 시간외가로 재평가된 등락률이면 "NXT"(없거나 "KRX"=정규장). change_band_stats가
             # KRX 종가 기준 hit과 기준이 어긋나는 NXT 표본을 거르도록 기록(없으면 KRX로 간주 — 구표본 호환).
@@ -186,7 +192,7 @@ def record_history(out):
             # 흔들기 강도 튜닝용 변별 변수 — 익일결과와 상관분석해 회전/낙폭 스윗존·티어 경계 최적화(회장님 20년룰 검증).
             "turnover_2d_pct": s.get("turnover_2d_pct"),   # 2일 합산 회전율(핵심 신호: 스윗90~140 vs 과열)
             "peak_dd_pct": s.get("peak_dd_pct"),           # 고점 대비 낙폭%(깊은 눌림 스윗 -30~-45)
-            "strength_tier": s.get("strength_tier"),       # 결합 축(0~4) — 과거 호환 키, 강도 순위 아님(정렬 미사용)
+            "strength_tier": s.get("strength_tier"),       # 결합 축(0~4) — 조합D(tier>=3) rank_bucket 판정 입력
             "strength": s.get("strength"),                 # 통계 해석 라벨(조합A~D)
             "turnover_band": s.get("turnover_band"),        # 회전율 밴드(0=스윗/1/2=과열)
             "dd_band": s.get("dd_band"),                    # 낙폭 밴드(0=스윗/1=얕음)

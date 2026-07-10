@@ -35,7 +35,8 @@ else:
 from radar import (SHAKEOUT_T2D_SWEET_LO, SHAKEOUT_T2D_SWEET_HI,
                    SHAKEOUT_DD_SWEET_LO, SHAKEOUT_DD_SWEET_HI,
                    SHAKEOUT_DD6_MAX, SHAKEOUT_DD6_TIER2_MAX,
-                   SHAKEOUT_DD6_CANDIDATE_MAX)
+                   SHAKEOUT_DD6_CANDIDATE_MAX,
+                   RANK_BUCKET_BASELINES, rank_bucket_info)
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -416,10 +417,21 @@ def collect_samples():
                                 # 마감 시 게시 카드 잔존 여부(= 종가 매수 가능했던 종목).
                                 # 키 없는 과거(장후 실행) 기록은 True
                                 "final": s.get("final", True),
+                                "rank_bucket": s.get("rank_bucket"),
+                                "rank_reason": s.get("rank_reason"),
+                                "shadow_bucket": s.get("shadow_bucket") or [],
+                                "expected_touch7_rate": s.get("expected_touch7_rate"),
+                                "expected_high_pct": s.get("expected_high_pct"),
+                                "rank_bucket_stats_snapshot": s.get("rank_bucket_stats_snapshot"),
                                 # 화면에는 노출하지만 기존 성과·튜닝 기준선에서는 제외할 실험 표본.
                                 "visible_experimental": s.get("visible_experimental", False),
                                 "reaccum": s.get("reaccum"),  # peak_ibs·peak_uppertail 포함(마감강도 밴드용)
                                 "reignition": s.get("reignition"),  # 5분 스파크 count(스파크 횟수 밴드용)
+                                "geupso": s.get("geupso", False),
+                                "low_accum": s.get("low_accum", False),
+                                "alert_now": s.get("alert_now"),
+                                "alert_release": s.get("alert_release"),
+                                "alert_risk_released": s.get("alert_risk_released"),
                                 # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
                                 "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
                                 "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
@@ -887,7 +899,7 @@ def _very_good_tier_of(s):
 def very_good_tier_stats(shakeout_samples):
     """⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리.
 
-    ChangeBandStats 구조로 웹 HitBandTable 재사용. 후보는 일반 흔들기보다 우선 정렬되는 관찰 구간이다.
+    ChangeBandStats 구조로 웹 HitBandTable 재사용. 후보는 승격키 없이 배지·전진검증만 유지한다.
     """
     known = [s for s in shakeout_samples if _very_good_tier_of(s) is not None]
     defs = [
@@ -1011,6 +1023,128 @@ def sample_stats(samples):
         "hit_rate": round(hits / n * 100, 1) if n else None,
         "avg_return": round(sum(rets) / n, 2) if n else None,
         "high3_rate": round(sum(1 for s in samples if s["high3"]) / n * 100, 1) if n else None,
+    }
+
+
+def _median(xs):
+    if not xs:
+        return None
+    vals = sorted(xs)
+    mid = len(vals) // 2
+    if len(vals) % 2:
+        return vals[mid]
+    return (vals[mid - 1] + vals[mid]) / 2
+
+
+def _wilson_lower(successes, n, z=1.96):
+    if n <= 0:
+        return None
+    p = successes / n
+    denom = 1 + z * z / n
+    centre = p + z * z / (2 * n)
+    margin = z * ((p * (1 - p) + z * z / (4 * n)) / n) ** 0.5
+    return max(0.0, (centre - margin) / denom * 100)
+
+
+def _ranked_copy(s):
+    out = dict(s)
+    info = rank_bucket_info(out)
+    out.update(info)
+    return out
+
+
+def _rank_group_stat(grp):
+    n = len(grp)
+    highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
+    rets = [s["return_pct"] for s in grp if s.get("return_pct") is not None]
+    touch7 = sum(1 for h in highs if h >= 7)
+    touch13 = sum(1 for h in highs if h >= 13)
+    return {
+        "n": n,
+        "unique_n": len({s.get("code") for s in grp if s.get("code")}),
+        "touch7_rate": round(touch7 / len(highs) * 100, 1) if highs else None,
+        "touch13_rate": round(touch13 / len(highs) * 100, 1) if highs else None,
+        "wilson7_lower": round(_wilson_lower(touch7, len(highs)), 1) if highs else None,
+        "avg_high": round(sum(highs) / len(highs), 2) if highs else None,
+        "median_high": round(_median(highs), 2) if highs else None,
+        "min_high": round(min(highs), 2) if highs else None,
+        "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
+        "up_close_rate": round(sum(1 for r in rets if r > 0) / len(rets) * 100, 1) if rets else None,
+        "valid": n >= FEATURE_MIN_N,
+    }
+
+
+SHADOW_BUCKET_LABELS = {
+    "S1": "저점매집+회전150",
+    "S2": "경고지정+70점",
+    "S3": "흔들기+75점+peakDD≤-30",
+    "S4": "흔들기+조합D+80점",
+    "S5": "급소+회전90",
+}
+
+
+def _kill_switch_rows(ranked):
+    rows = []
+
+    def add(key, label, status, reasons):
+        rows.append({"key": key, "label": label, "status": status, "reasons": reasons})
+
+    b1 = [s for s in ranked if s.get("rank_bucket") == 1]
+    b1_stat = _rank_group_stat(b1)
+    b1_reasons = []
+    if b1_stat["min_high"] is not None and b1_stat["min_high"] < 7:
+        b1_reasons.append("최저 익일고가 +7% 미달")
+    if b1_stat["n"] >= 10:
+        if b1_stat["wilson7_lower"] is not None and b1_stat["wilson7_lower"] < 60:
+            b1_reasons.append("n=10 재판정 Wilson 하단 60% 미만")
+        if b1_stat["avg_return"] is not None and b1_stat["avg_return"] < 3:
+            b1_reasons.append("n=10 재판정 종가평균 +3% 미만")
+    add("bucket1", "급소+회전150", "하향상신" if b1_reasons else "정상", b1_reasons)
+
+    low = [s for s in ranked if s.get("rank_bucket") in (2, 3)]
+    low_stat = _rank_group_stat(low)
+    low_reasons = []
+    if low_stat["wilson7_lower"] is not None and low_stat["wilson7_lower"] < 55:
+        low_reasons.append("Wilson 하단 55% 미만")
+    if low_stat["avg_return"] is not None and low_stat["avg_return"] < 3:
+        low_reasons.append("종가평균 +3% 미만")
+    if low_stat["up_close_rate"] is not None and low_stat["up_close_rate"] < 55:
+        low_reasons.append("상승마감률 55% 미만")
+    add("bucket2_3", "저점매집", "하향상신" if len(low_reasons) >= 2 else "정상", low_reasons)
+
+    cand = [s for s in ranked if s.get("very_good_candidate")]
+    cand_stat = _rank_group_stat(cand)
+    restore = (
+        cand_stat["n"] >= 15
+        and (cand_stat["wilson7_lower"] or 0) >= 60
+        and (cand_stat["avg_return"] or -999) > 3
+        and (cand_stat["up_close_rate"] or 0) >= 55
+    )
+    add("very_good_candidate", "매우좋음후보", "재승격검토" if restore else "관찰", [])
+    return rows
+
+
+def rank_bucket_stats(samples):
+    """정렬4 rank_bucket 전진검증표. core/experimental/dropout 전체 suspects 표본으로 본다."""
+    ranked = [_ranked_copy(s) for s in samples]
+    cells = []
+    for bucket in sorted(RANK_BUCKET_BASELINES):
+        grp = [s for s in ranked if s.get("rank_bucket") == bucket]
+        base = RANK_BUCKET_BASELINES[bucket]
+        cells.append({
+            "bucket": bucket,
+            "band": base.get("label") or f"bucket {bucket}",
+            **_rank_group_stat(grp),
+        })
+    shadow_cells = []
+    for key, label in SHADOW_BUCKET_LABELS.items():
+        grp = [s for s in ranked if key in (s.get("shadow_bucket") or [])]
+        shadow_cells.append({"shadow": key, "band": label, **_rank_group_stat(grp)})
+    return {
+        "min_n": FEATURE_MIN_N,
+        "cells": cells,
+        "shadow_cells": shadow_cells,
+        "kill_switches": _kill_switch_rows(ranked),
     }
 
 
@@ -1143,6 +1277,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
     experimental = experimental or []
     experimental_dropouts = experimental_dropouts or []
     material_all = samples + dropouts + experimental + experimental_dropouts
+    rank_all = material_all
     reaccum_experimental = [s for s in experimental + experimental_dropouts
                             if s.get("pattern") == "reaccum"]
     reaccum_sorted = sorted(reaccum_experimental, key=lambda s: (s.get("date", ""), s.get("code", "")))
@@ -1190,6 +1325,8 @@ def write_performance(samples, series, bins, weights, dropouts=None,
         "shakeout_bands": shakeout_band_stats(shakeout_experimental),
         # ⭐ 매우좋음 전용 성과표 — dd6 기준 Tier1/Tier2/후보/일반 흔들기 분리(정렬·배지 검증용)
         "very_good_bands": very_good_tier_stats(shakeout_experimental),
+        # 정렬4 rank_bucket 성과표 + kill switch 자동 판정. core/실험/탈락 전체 suspects 표본으로 검증한다.
+        "rank_bucket_stats": rank_bucket_stats(rank_all),
         # 📰 뉴스/공시 재료 등급 전진검증 — 오늘 이후 material 기록 표본만 known, 정렬·자동매매 미반영.
         "material_bands": material_grade_stats(material_all),
         "material_signal_bands": material_signal_stats(material_all),

@@ -66,6 +66,11 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
   const material = s.material;
   const materialGrade = material?.grade;
   const showMaterial = !!materialGrade && materialGrade !== "N";
+  const sampleCaution = s.rank_bucket === 1 || s.rank_bucket === 4;
+  const topCut =
+    (s.run_6d_pct ?? 0) >= 30 ||
+    ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);
+  const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
 
   return (
     <Card
@@ -97,7 +102,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
               <Badge
                 variant="outline"
                 className="border-[#f59e0b]/70 px-2 py-1 font-bold text-[#fbbf24]"
-                title="⭐ 매우좋음 후보 — 흔들기 AND 6일 고점 대비 낙폭 −25~-30%. 가격이 더 눌리면 매우좋음으로 재진입할 수 있으며, 일반 흔들기보다 우선 정렬됩니다. 매수 추천 아님"
+                title="⭐ 매우좋음 후보 — 흔들기 AND 6일 고점 대비 낙폭 −25~-30%. 승격키는 제거했고 배지·전진검증만 유지합니다. 매수 추천 아님"
               >
                 ☆ 매우좋음 후보
               </Badge>
@@ -172,9 +177,53 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                     ? "bg-amber-500/30 px-2 py-0.5 text-sm font-bold text-amber-200"
                     : "bg-[rgba(41,98,255,0.25)] px-2 py-0.5 text-sm font-bold text-[color:var(--down,#2962FF)]"
                 }
-                title="KRX 시장경보 현재 지정 — 경고/위험 지정은 재상승 시 매매정지 지정 리스크가 있어 게시 순위 최후순위로 강등(회장님 지시). 주의는 표시만"
+                title="KRX 시장경보 현재 지정 — 정렬은 직접 바꾸지 않고 고위험 고탄력 배지로 격리합니다. 경고/위험은 재상승 시 매매정지 지정 리스크가 있습니다"
               >
                 {s.alert_now === "주의" ? "⚠️투자주의" : s.alert_now === "경고" ? "🚨투자경고" : "⛔투자위험"}
+              </Badge>
+            )}
+            {s.rank_bucket != null && (
+              <Badge
+                variant="outline"
+                className="border-white/25 text-muted-foreground"
+                title={s.rank_reason ?? "정렬4 rank_bucket"}
+              >
+                B{s.rank_bucket}
+              </Badge>
+            )}
+            {s.rank_bucket === 1 && (
+              <Badge
+                className="bg-up px-2 py-0.5 text-sm font-bold text-white"
+                title="급소+폭발일 회전율 150% 이상 — 소표본 전승 조합. kill switch 적용 대상"
+              >
+                폭발형
+              </Badge>
+            )}
+            {sampleCaution && (
+              <Badge
+                variant="outline"
+                className="border-warning/70 text-warning"
+                title="근거 표본 n<10인 상위 버킷입니다. 정렬에는 반영하지만 전진검증과 kill switch를 같이 봅니다"
+              >
+                표본주의
+              </Badge>
+            )}
+            {topCut && (
+              <Badge
+                variant="outline"
+                className="border-warning/60 text-warning"
+                title="최근 단기 급등 또는 재료 대비 고회전으로 상단 여지가 제한될 수 있는 관찰 배지입니다. 정렬 bucket은 바꾸지 않습니다"
+              >
+                상단컷
+              </Badge>
+            )}
+            {highRiskMomentum && (
+              <Badge
+                variant="outline"
+                className="border-[color:var(--down,#2962FF)]/60 text-[color:var(--down,#2962FF)]"
+                title="투자경고/위험 지정 상태의 고탄력 종목입니다. 통계 승격 조건이 아니라 리스크 배지입니다"
+              >
+                고위험 고탄력
               </Badge>
             )}
             {/* 재매집 게이트 설명 배지 — 흔들기 레코드는 그 게이트를 통과한 게 아니므로 미표시(리뷰 2026-07-04) */}
@@ -267,6 +316,23 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
               {s.calibrated_prob.rate}%
             </span>{" "}
             (표본 {s.calibrated_prob.n}건)
+          </p>
+        )}
+        {s.rank_reason && (
+          <p className="text-[11px] text-muted-foreground">
+            정렬근거: <span className="font-medium text-foreground/80">{s.rank_reason}</span>
+            {s.expected_touch7_rate != null && (
+              <span className="tabular-nums">
+                {" · 과거 +7% 터치 "}
+                {s.expected_touch7_rate}%
+              </span>
+            )}
+            {s.expected_high_pct != null && (
+              <span className="tabular-nums">
+                {" · 평균고가 +"}
+                {s.expected_high_pct}%
+              </span>
+            )}
           </p>
         )}
       </CardHeader>

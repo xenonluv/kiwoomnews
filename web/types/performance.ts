@@ -115,6 +115,38 @@ export interface ChangeBandStats {
   cells: ChangeBandCell[];
 }
 
+/** 정렬4 rank_bucket별 성과표 — radar_backtest.rank_bucket_stats()와 정합. */
+export interface RankBucketStatCell {
+  bucket?: number;
+  shadow?: string;
+  band: string;
+  n: number;
+  unique_n: number;
+  touch7_rate: number | null;
+  touch13_rate: number | null;
+  wilson7_lower: number | null;
+  avg_high: number | null;
+  median_high: number | null;
+  min_high: number | null;
+  avg_return: number | null;
+  up_close_rate: number | null;
+  valid: boolean;
+}
+
+export interface RankBucketKillSwitch {
+  key: string;
+  label: string;
+  status: string;
+  reasons: string[];
+}
+
+export interface RankBucketStats {
+  min_n: number;
+  cells: RankBucketStatCell[];
+  shadow_cells: RankBucketStatCell[];
+  kill_switches: RankBucketKillSwitch[];
+}
+
 /** 분할 전략 실측 — 20/30/50 분할+익절/손절 실현 net 누적(radar_backtest.strategy_sim_stats()와 정합) */
 export interface StrategySim {
   n: number;
@@ -326,6 +358,8 @@ export interface PerformanceData {
   peak_ibs_bands?: ChangeBandStats;
   /** 매우좋음 dd6 티어별 익일 상승확률 — ChangeBandStats 구조 재사용 */
   very_good_bands?: ChangeBandStats;
+  /** 정렬4 rank_bucket별 익일 고가/종가 성과와 kill switch 판정 */
+  rank_bucket_stats?: RankBucketStats;
   /** 뉴스/공시 재료 등급별 익일 상승확률 — 오늘 이후 material 기록 표본 전진검증 */
   material_bands?: ChangeBandStats;
   /** 재료 등급 × 매우좋음/흔들기 조합별 익일 상승확률 — 오늘 이후 전진검증 */

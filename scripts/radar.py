@@ -184,6 +184,148 @@ def _very_good_sort_rank(x):
     return {"tier1": 0, "tier2": 1}.get(x.get("very_good_tier"), 9)
 
 
+RANK_BUCKET_BASELINES = {
+    # 정렬4.md 확정 당시 data/radar_history 평가완료 179건 기준 스냅샷.
+    # expected_high_pct는 실측 익일 고가 평균(%)이다. 보장값이 아니라 화면/전진검증 참고치다.
+    0: {"label": "매우좋음 Tier1", "n": 2, "unique_n": 2, "touch7_rate": 72.0,
+        "expected_high_pct": 29.97, "avg_return": 19.27, "note": "14만 전수 prior touch7=72%, forward 2/2"},
+    1: {"label": "급소+회전150", "n": 5, "unique_n": 3, "touch7_rate": 100.0,
+        "expected_high_pct": 27.42, "avg_return": 17.74},
+    2: {"label": "저점매집+회전90", "n": 15, "unique_n": 13, "touch7_rate": 86.7,
+        "expected_high_pct": 17.00, "avg_return": 9.09},
+    3: {"label": "저점매집 기타", "n": 21, "unique_n": 17, "touch7_rate": 81.0,
+        "expected_high_pct": 15.64, "avg_return": 6.94},
+    4: {"label": "흔들기+조합D+75점", "n": 9, "unique_n": 8, "touch7_rate": 88.9,
+        "expected_high_pct": 17.75, "avg_return": 3.30},
+    5: {"label": "흔들기+75점", "n": 12, "unique_n": 10, "touch7_rate": 83.3,
+        "expected_high_pct": 17.39, "avg_return": 4.12},
+    6: {"label": "흔들기+조합D", "n": 15, "unique_n": 12, "touch7_rate": 80.0,
+        "expected_high_pct": 16.14, "avg_return": 2.92},
+    7: {"label": "75점 기타", "n": 41, "unique_n": 29, "touch7_rate": 78.0,
+        "expected_high_pct": 16.69, "avg_return": 3.09},
+    8: {"label": "흔들기 기타", "n": 26, "unique_n": 21, "touch7_rate": 76.9,
+        "expected_high_pct": 14.59, "avg_return": 1.69},
+    9: {"label": "규제해소", "n": 0, "unique_n": 0, "touch7_rate": None,
+        "expected_high_pct": None, "avg_return": None, "note": "표본 수집 중"},
+    10: {"label": "급소 단독", "n": 12, "unique_n": 10, "touch7_rate": 66.7,
+         "expected_high_pct": 15.35, "avg_return": 3.56},
+    11: {"label": "기타 suspects", "n": 179, "unique_n": 89, "touch7_rate": 48.6,
+         "expected_high_pct": 9.90, "avg_return": 0.69},
+}
+
+
+def _as_float(v, default=None):
+    try:
+        if v is None:
+            return default
+        return float(v)
+    except (TypeError, ValueError):
+        return default
+
+
+def _fmt_pct(v):
+    x = _as_float(v)
+    return "결측" if x is None else f"{x:.0f}%"
+
+
+def _is_combo_d(x):
+    """정렬4 합의: 조합D 판정은 문자열 라벨이 아니라 strength_tier>=3."""
+    return (_as_float(x.get("strength_tier"), -1) or -1) >= 3
+
+
+def rank_shadow_buckets(x):
+    """정렬 무영향 관찰 버킷. history/backtest 전진검증용."""
+    score = _as_float(x.get("suspicion_score"), 0) or 0
+    pt = _as_float(x.get("peak_turnover_pct"))
+    peak_dd = _as_float(x.get("peak_dd_pct"))
+    out = []
+    if x.get("low_accum") and pt is not None and pt >= 150:
+        out.append("S1")
+    if x.get("alert_now") == "경고" and score >= 70:
+        out.append("S2")
+    if x.get("shakeout") and score >= 75 and peak_dd is not None and peak_dd <= -30:
+        out.append("S3")
+    if x.get("shakeout") and _is_combo_d(x) and score >= 80:
+        out.append("S4")
+    if x.get("geupso") and pt is not None and pt >= 90:
+        out.append("S5")
+    return out
+
+
+def rank_bucket_info(x):
+    """suspects 실정렬 버킷(정렬4.md SSOT).
+
+    여러 조건이 동시에 맞으면 가장 낮은 bucket이 적용된다. very_good_candidate는
+    별도 승격키가 없고 자기 흔들기 bucket으로 자연 편입된다.
+    """
+    score = _as_float(x.get("suspicion_score"), 0) or 0
+    pt = _as_float(x.get("peak_turnover_pct"))
+    bucket, reason = 11, "기타 suspects → bucket 11"
+    if x.get("very_good_tier") in ("tier1", "tier2"):
+        # 회장님 결정 2026-07-10(a안): Tier2(과낙 dd6≤-45)도 bucket 0 — 전수조사 근거(dd6≤-30 전체 72%)가
+        # 과낙 구간을 포함하므로 매우좋음 전체를 최상단 유지. 내부 정렬은 Tier1 우선(_rank_sort_key).
+        _vt = x.get("very_good_tier")
+        bucket, reason = 0, f"매우좋음 {'Tier1' if _vt == 'tier1' else 'Tier2(과낙)'}(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 0"
+    elif x.get("geupso") and pt is not None and pt >= 150:
+        bucket, reason = 1, f"급소+폭발회전 {_fmt_pct(pt)} → bucket 1"
+    elif x.get("low_accum") and pt is not None and pt >= 90:
+        bucket, reason = 2, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 2"
+    elif x.get("low_accum"):
+        bucket, reason = 3, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 3"
+    elif x.get("shakeout") and _is_combo_d(x) and score >= 75:
+        bucket, reason = 4, f"흔들기+조합D+{score:.0f}점 → bucket 4"
+    elif x.get("shakeout") and score >= 75:
+        bucket, reason = 5, f"흔들기+{score:.0f}점 → bucket 5"
+    elif x.get("shakeout") and _is_combo_d(x):
+        bucket, reason = 6, "흔들기+조합D → bucket 6"
+    elif score >= 75:
+        bucket, reason = 7, f"{score:.0f}점 기타 → bucket 7"
+    elif x.get("shakeout"):
+        bucket, reason = 8, "흔들기 기타 → bucket 8"
+    elif x.get("alert_release") or x.get("alert_risk_released"):
+        bucket, reason = 9, "규제해소 단독 → bucket 9"
+    elif x.get("geupso"):
+        bucket, reason = 10, f"급소 단독(폭발회전 {_fmt_pct(pt)}) → bucket 10"
+
+    snap = dict(RANK_BUCKET_BASELINES.get(bucket, {}))
+    snap["bucket"] = bucket
+    snap["basis"] = "정렬4.md 2026-07-10 확정 스냅샷"
+    return {
+        "rank_bucket": bucket,
+        "rank_reason": reason,
+        "shadow_bucket": rank_shadow_buckets(x),
+        "expected_touch7_rate": snap.get("touch7_rate"),
+        "expected_high_pct": snap.get("expected_high_pct"),
+        "rank_bucket_stats_snapshot": snap,
+    }
+
+
+def apply_rank_metadata(x):
+    """rank_bucket 계열 필드를 suspect dict에 적재하고 같은 dict를 반환."""
+    x.update(rank_bucket_info(x))
+    return x
+
+
+def _rank_sort_key(x):
+    if x.get("rank_bucket") is None:
+        apply_rank_metadata(x)
+    score = _as_float(x.get("suspicion_score"), 0) or 0
+    fade = _as_float(x.get("fade_pct"), 0) or 0
+    peak_turnover = _as_float(x.get("peak_turnover_pct"))
+    if peak_turnover is None:
+        peak_turnover = _as_float(x.get("turnover_pct"), 0) or 0
+    turnover_2d = _as_float(x.get("turnover_2d_pct"), 0) or 0
+    return (
+        x.get("rank_bucket", 99),
+        _very_good_sort_rank(x),  # bucket 0 내부: Tier1(스윗) → Tier2(과낙). 그 외 종목은 전부 9(무영향)
+        -score,
+        -fade if x.get("shakeout") else 0,
+        -peak_turnover,
+        -turnover_2d,
+        x.get("name") or x.get("code") or "",
+    )
+
+
 def _round_or_none(v, nd=1):
     """JSON 기록용 숫자 반올림. 결측/문자 글리치는 None으로 보존한다."""
     try:
@@ -322,8 +464,8 @@ _ALERT_CACHE = {}   # 실행당 종목별 시장경보 캐시(수상종목 ≤re
 
 def _alert_level(code):
     """KRX 시장경보 현재 지정 — 네이버 basic marketAlertType(01/02/03) → "주의"/"경고"/"위험"/None.
-    경고/위험 지정 수상종목은 게시 정렬 최후순위(회장님 지시 2026-07-03 — 경고 후 재상승=매매정지 지정 리스크).
-    네이버 공개 API(시크릿 불필요)·실패 None(fail-safe=무경보 취급, 정렬만 영향이라 안전)."""
+    경고/위험 지정은 정렬 직접 강등 없이 고위험 고탄력 배지와 history 전진검증으로 격리한다.
+    네이버 공개 API(시크릿 불필요)·실패 None(fail-safe=무경보 취급)."""
     if code in _ALERT_CACHE:
         return _ALERT_CACHE[code]
     level = None
@@ -1646,7 +1788,8 @@ def scan_shakeout(p, events=None, extra_codes=None):
     """💥 흔들기(폭발 직후 고회전 페이드) 스캔 — 회장님 지시 2026-07-03.
 
     셀: 당일 고가등락 ≥+20% AND 페이드(고가등락−현재등락) ≥15%p AND 당일 유통회전율 ≥40% AND MA20 위
-        AND 경고/위험 미지정 AND 과확장 붕괴 아님. 원형 = 금호건설·동양파일 6/25(익일 상한 + 연상).
+        AND 과확장 붕괴 아님. 경고/위험은 제외하지 않고 배지로만 격리한다.
+        원형 = 금호건설·동양파일 6/25(익일 상한 + 연상).
     소스 = up ∪ down 랭킹(음봉 마감 흔들기는 up에 없음 — 동양파일 6/25 −9.1%가 사각지대였음).
     기존 폭발·youtong 게이트는 불변 — 둘 사이로 빠지는 종목(금호 6/25 회전 66%<90·종가 +5.3%<7%)의 전용 그물.
     표시·전진검증 전용(score_raw=0 통계 격리). 실패는 종목 단위 skip(fail-safe)."""
@@ -1804,8 +1947,8 @@ def scan_shakeout(p, events=None, extra_codes=None):
             "dd6_pct": round(dd6, 1),                   # ⭐ 6일 고점 대비 낙폭
             "very_good": vg_tier in ("tier1", "tier2"),  # ⭐ 매우좋음(흔들기 AND dd6≤-30) — rank 최상단 승격
             "very_good_tier": vg_tier,                  # tier1/tier2/candidate — dd6 전용 티어
-            "very_good_candidate": vg_tier == "candidate",  # ⭐후보(-30<dd6≤-25) — 일반 흔들기보다 우선
-            "strength_tier": stier, "strength": _shakeout_strength(stier),  # 회전+낙폭 결합축 라벨(정렬 미사용)
+            "very_good_candidate": vg_tier == "candidate",  # ⭐후보(-30<dd6≤-25) — 승격키 제거, 배지·검증만
+            "strength_tier": stier, "strength": _shakeout_strength(stier),  # 회전+낙폭 결합축. rank_bucket의 조합D(tier>=3) 판정 입력
             "run_6d_pct": round(run6, 1) if run6 is not None else None,
             "ma20_gap_pct": round((now["price"] / ma20 - 1) * 100, 1),
             "ma10": round(ma10, 1), "ma10_margin_pct": round((now["price"] / ma10 - 1) * 100, 2),
@@ -1998,22 +2141,12 @@ def main():
                 s["alert_risk_released"] = alert_release.recent_risk_release(s["code"], _today_ymd)
             except Exception:
                 s["alert_risk_released"] = False
-    suspects.sort(key=lambda x: (
-        # ⚠ 경고/위험 최후순위 강등 폐지(회장님 지시 2026-07-06): 배지(alert_now)만 달고 순위엔 무영향.
-        #   재료 강하면 경고받고도 급등 — 매매 선택은 회장님이 개별로.
-        not x.get("very_good"),                                                 # ⭐ 매우좋음(흔들기 AND dd6≤-30) 절대 최상단(rank 1) — 전수조사 72%
-        _very_good_sort_rank(x),                                                # 매우좋음 내부: Tier1(−45~-30) → Tier2(≤−45 과낙)
-        not x.get("very_good_candidate"),                                       # ☆ 매우좋음 후보(-30<dd6≤-25) — 일반 흔들기보다 우선
-        not x.get("shakeout"),                                                  # 💥 흔들기 최상단(검증됨 — 7/2제외 익일고가+13% 75%)
-        not (x.get("alert_release") or x.get("alert_risk_released")),           # 🔓 경고 해제 예정 OR 위험→경고 강등 직후(둘 다 규제 해소 재료 — 승격)
-        not x.get("geupso"),                                                    # 🎯 급소(14:30↑ 스파크 — 전진검증 중)
-        (-(x.get("fade_pct") or 0) if x.get("shakeout") else 0),                # 💥 흔들기: 강도 tier 대신 실제 흔든 폭 우선
-        (-(x.get("suspicion_score") or 0) if x.get("shakeout") else 0),
-        ((x.get("dd6_pct") if x.get("dd6_pct") is not None else 999) if x.get("shakeout") else 0),
-        -x["suspicion_score"]))
-        # ⚠ 🧲 저점매집 '우선순위 승격'·'저회전 오름차순' 정렬 철회(2026-07-04 회장님 결정): 익일 기준 미검증
-        #   (저회전<15% 폭락 표본 n=2·둘다 익일 +13% 실패, 5분봉 지문 소급 불가). 이번 주 손실의 뿌리 =
-        #   미검증 신호를 1위로 올린 것. low_accum은 배지·by_low_accum 관찰축으로만 유지(표본 성숙 후 재도입 판단).
+    # 정렬4.md 최종 합의: very_good_candidate 별도 승격키 제거, 저점매집·급소고회전 실정렬 승격,
+    # 조합D는 strength_tier>=3 숫자 판정. rank_* 필드는 화면·history·전진검증이 같은 근거를 보도록
+    # 정렬 직전에 모든 suspect에 고정한다.
+    for s in suspects:
+        apply_rank_metadata(s)
+    suspects.sort(key=_rank_sort_key)
 
     out = {
         "generated_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
