@@ -47,13 +47,28 @@ def _held_qty(code):
 def _sell(pos, qty, reason, dry, market="KRX", cur=0):
     """qty주 매도 시도 → **실체결(확인)된 수량**을 반환(0 = 미체결/미확인/dry). 호출부는 반환 수량만큼만 포지션 갱신.
 
-    KRX=시장가(접수=즉시 체결) / NXT=지정가(접수≠체결 → 실계좌 보유 감소분으로 체결 확인).
-    ⚠ NXT는 지정가라 '접수'만으로 팔린 걸로 처리하면 미체결분이 손절 없이 방치된다(치명적) →
-      보유 감소분만 체결로 인정, 미확정이면 0 반환(포지션 유지 → 다음 틱·09시 KRX 시장가가 정리). fail-safe.
+    KRX=시장가(접수=즉시 체결) / NXT=지정가(접수≠체결 → 체결 확인 필요).
+    ⚠ NXT 체결 확인은 **주문 직전 계좌 스냅샷 대비 감소분(델타)**으로만 판정한다.
+      (크리티컬 감사 2026-07-11: 기준선을 봇 기록 qty_open으로 잡으면 계좌에 같은 종목
+      수동 보유분이 있을 때(M≥q) 완전 체결도 '미체결'로 오판 → 매분 재주문 루프가
+      회장님 수동 보유분까지 청산. 계좌 전체 수량은 수동분 포함이므로 봇 기록과 비교 불가.)
+    ⚠ 미체결/부분체결 잔여 주문은 즉시 취소를 시도해 다음 틱 재주문과의 스택(이중 매도) 차단.
     """
     qty = int(qty)
     if qty <= 0:
         return 0
+    held_before = None
+    if market == "NXT":
+        # 주문 '직전' 계좌 스냅샷 — 이것이 체결 판정의 유일한 기준선.
+        held_before = _held_qty(pos["code"])
+        if held_before is None:
+            # 기준선 없이 지정가를 내면 체결 확인이 불가능해 재주문 루프 위험 → 블라인드 발주 금지.
+            ac.log(f"[monitor] {pos['name']}({pos['code']}) 주문 전 잔고조회 실패 — NXT 매도 보류(다음 틱 재시도)")
+            return 0
+        if held_before <= 0:
+            ac.log(f"[monitor] {pos['name']}({pos['code']}) 실계좌 보유 0 — NXT 매도 불가(강제청산 로직이 종료 판단)")
+            return 0
+        qty = min(qty, held_before)   # 계좌 보유 초과 주문 방지
     ac.log(f"[monitor] {pos['name']}({pos['code']}) [{market}] {reason} → 매도 {qty}주 시도")
     try:
         res = kt.sell_market(pos["code"], qty, market=market, dry=dry)
@@ -66,16 +81,37 @@ def _sell(pos, qty, reason, dry, market="KRX", cur=0):
         return 0
     sold = qty
     if market == "NXT":
-        # NXT 지정가: 접수≠체결 → 실계좌 보유 감소분으로 실체결 확인. 미확정(조회실패/보유 미감소)이면 0.
-        before = int(pos.get("qty_open", qty))
-        held = _held_qty(pos["code"])
-        if held is None or held >= before:
-            ac.log(f"[monitor] {pos['name']}({pos['code']}) NXT 매도 접수했으나 체결 미확인(보유 {held}/{before}) "
-                   f"— 미체결로 보고 포지션 유지(다음 틱·09시 KRX 시장가 정리)")
+        ord_no = kt._extract_ord_no((res.get("result") or {}) if isinstance(res.get("result"), dict) else res)
+        held_after = _held_qty(pos["code"])
+        filled = (held_before - held_after) if held_after is not None else None
+        if filled is None or filled < qty:
+            # 미체결/부분체결/확인불가 — 잔여 지정가 주문을 취소해 다음 틱 신규 주문과의 스택 방지.
+            # (취소 실패는 fail-safe: 이미 전량 체결됐으면 취소할 게 없어 실패하는 게 정상.)
+            if ord_no:
+                try:
+                    kt.cancel_order(pos["code"], ord_no, market="NXT", qty=0, dry=dry)
+                except Exception as e:
+                    # 이미 전량 체결이면 취소 실패가 정상. 단 네트워크 타임아웃이면 미체결 주문이
+                    # 살아있을 수 있어 즉시 경고(다음 틱 신규 주문과 스택 가능 — 수동 확인 필요).
+                    ac.log(f"[monitor] {pos['code']} NXT 잔여주문 취소 실패(무시): {e}")
+                    ac.notify_trade(
+                        f"⚠️ [자동매매] {pos.get('name','')}({pos['code']}) NXT 잔여주문 취소 실패\n"
+                        f"원주문 {ord_no} — 미체결 주문이 남아있을 수 있습니다. HTS에서 수동 확인 요망.")
+            else:
+                ac.log(f"[monitor] {pos['code']} NXT 주문번호 추출 실패 — 잔여주문 취소 불가(수동 확인 권장)")
+                ac.notify_trade(
+                    f"⚠️ [자동매매] {pos.get('name','')}({pos['code']}) NXT 주문번호 추출 실패\n"
+                    f"미체결 잔여주문을 취소하지 못했습니다. HTS에서 미체결 주문 수동 확인 요망.")
+            # 취소 후 최종 재확인 1회 — 취소 직전 체결·잔고 반영 지연을 여기서 포착.
+            held_final = _held_qty(pos["code"])
+            if held_final is not None:
+                filled = held_before - held_final
+        if filled is None or filled <= 0:
+            ac.log(f"[monitor] {pos['name']}({pos['code']}) NXT 매도 접수했으나 체결 미확인"
+                   f"(주문전 {held_before} → 주문후 {held_after}) — 미체결로 보고 포지션 유지"
+                   f"(잔여주문 취소 시도됨 · 다음 틱/09시 KRX 시장가 정리)")
             return 0
-        sold = min(qty, before - held)   # 실제 체결 수량(보유 감소분)
-        if sold <= 0:
-            return 0
+        sold = min(qty, filled)   # 실제 체결 수량(주문 전 스냅샷 대비 감소분 — 수동 보유분과 무관)
     # 실체결 → 통계용 원장 기록(청산가·수익률은 청산판정 시 cur 기준 근사). fail-safe.
     entry = pos.get("entry_price") or 0
     ac.append_trade_event({
