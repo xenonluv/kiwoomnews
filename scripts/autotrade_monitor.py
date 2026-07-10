@@ -17,6 +17,7 @@
 """
 import os
 import sys
+from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import autotrade_common as ac
@@ -31,8 +32,8 @@ def _pct(cur, entry):
 
 
 def _held_qty(code):
-    """실계좌 보유수량(rmnd) 조회 — NXT 지정가 매도 체결확인용. 실패 시 None(확인 불가).
-    ⚠ kt00018 필드 미검증 — 조회실패/미보유는 fail-safe(체결 미확정 → 포지션 유지)로 흡수돼 오발주 위험 없음."""
+    """실계좌 보유수량(rmnd) 조회 — NXT 주문수량 상한·즉시 취소 판단용. 실패 시 None.
+    조회 실패 시 주문을 내지 않고, 미보유면 0을 반환한다."""
     try:
         h = kt.account_holdings()
     except Exception as e:
@@ -44,37 +45,173 @@ def _held_qty(code):
     return 0  # 목록에 없음 = 보유 0(전량 체결/미보유)
 
 
-def _sell(pos, qty, reason, dry, market="KRX", cur=0):
+def _persist_pending(pos, persist, context):
+    """NXT 주문 잠금을 핵심 포지션 원장에 저장한다. 실패하면 신규 주문을 금지한다."""
+    if persist is None:
+        ac.log(f"[monitor] {pos['code']} {context} 저장 콜백 없음 — NXT 발주 차단")
+        return False
+    try:
+        persist()
+        return True
+    except Exception as e:
+        ac.log(f"[monitor] 🚨 {pos['code']} {context} 저장 실패 — NXT 발주 차단: {e}")
+        ac.notify_trade(
+            f"🚨 [자동매매] {pos.get('name','')}({pos['code']}) NXT 주문 잠금 저장 실패\n"
+            "중복 매도 방지를 위해 발주하지 않았습니다. 포지션 원장을 확인해야 합니다.")
+        return False
+
+
+def _append_exit_event(pos, sold, market, reason, cur):
+    entry = pos.get("entry_price") or 0
+    ac.append_trade_event({
+        "type": "exit", "id": pos.get("id"), "code": pos["code"], "name": pos.get("name"),
+        "market": market, "reason": reason, "sold_qty": sold, "exit_price": cur,
+        "entry_price": entry, "entry_date": pos.get("entry_date"),
+        "opened_at": pos.get("opened_at"),
+        "realized_return_pct": round((cur - entry) / entry * 100, 2) if entry else None,
+        "remaining_qty": max(0, int(pos.get("qty_open", sold)) - sold), "dry": False})
+
+
+def _reconcile_pending_exit(pos, persist):
+    """기존 NXT 주문을 주문번호로 재조정한다. 미종결이면 새 주문을 절대 내지 않는다."""
+    pending = pos.get("pending_exit")
+    if not isinstance(pending, dict):
+        return False
+    ord_no = pending.get("ord_no")
+    if not ord_no:
+        ac.log(f"[monitor] {pos['code']} NXT pending 주문번호 없음 — 신규 청산 발주 차단 유지(수동 확인 필요)")
+        return False
+
+    try:
+        status = kt.order_status(
+            pos["code"], ord_no, market="NXT", order_date=pending.get("order_date") or "")
+    except Exception as e:
+        ac.log(f"[monitor] {pos['code']} NXT 주문상태 조회 실패 — 신규 청산 발주 차단 유지: {e}")
+        return False
+    if status is None:
+        ac.log(f"[monitor] {pos['code']} NXT 주문 {ord_no} 조회 미반영 — 신규 청산 발주 차단 유지")
+        return False
+
+    requested = max(0, int(pending.get("requested_qty") or 0))
+    ordered = max(0, int(status.get("ordered_qty") or 0))
+    if requested <= 0 or ordered != requested:
+        ac.log(f"[monitor] {pos['code']} NXT 주문 {ord_no} 수량 불일치 "
+               f"(pending {requested}, 주문조회 {ordered}) — 신규 청산 발주 차단 유지")
+        return False
+    accounted = max(0, int(pending.get("accounted_filled") or 0))
+    total_filled = max(0, int(status.get("filled_qty") or 0))
+    remaining = max(0, int(status.get("remaining_qty") or 0))
+    if total_filled > ordered or remaining > ordered or total_filled < accounted:
+        ac.log(f"[monitor] {pos['code']} NXT 주문 {ord_no} 상태 불일치 "
+               f"(주문 {ordered}, 체결 {total_filled}, 잔량 {remaining}, 반영 {accounted}) "
+               "— 신규 청산 발주 차단 유지")
+        return False
+    newly_filled = max(0, total_filled - accounted)
+    changed = False
+    if newly_filled:
+        qopen = max(0, int(pos.get("qty_open") or 0) - newly_filled)
+        _append_exit_event(
+            pos, newly_filled, "NXT", pending.get("reason") or "NXT pending 체결",
+            pending.get("price") or 0)
+        pos["qty_open"] = qopen
+        if pending.get("mark_tp1"):
+            pos["tp1_done"] = True
+        if qopen <= 0:
+            pos["status"] = "closed"
+            pos["close_reason"] = pending.get("close_reason") or "nxt_pending_filled"
+        pending["accounted_filled"] = total_filled
+        changed = True
+
+    pending["last_status"] = status
+    pending["last_checked_at"] = datetime.now(ac.KST).strftime("%Y-%m-%d %H:%M:%S KST")
+    # kt00007 원주문 행의 주문잔량 0은 체결·취소·거부를 모두 포함하는 종결 조건이다.
+    terminal = remaining == 0
+    if terminal:
+        pos.pop("pending_exit", None)
+        changed = True
+        ac.log(f"[monitor] {pos['code']} NXT 주문 {ord_no} 종결 확정 "
+               f"(체결 {total_filled}/{requested}, 잔량 0) — 주문 잠금 해제")
+    else:
+        if not pending.get("cancel_confirmed"):
+            try:
+                cancel_result = kt.cancel_order(
+                    pos["code"], ord_no, market="NXT", qty=0, dry=False)
+                pending["cancel_confirmed"] = not cancel_result.get("dry")
+                pending["state"] = "cancel_requested"
+            except Exception as e:
+                pending["state"] = "cancel_retry_failed"
+                pending["cancel_error"] = str(e)[:500]
+            changed = True
+        pos["pending_exit"] = pending
+        ac.log(f"[monitor] {pos['code']} NXT 주문 {ord_no} 미종결 "
+               f"(체결 {total_filled}/{requested}, 주문잔량 {remaining}) — 신규 주문 차단 유지")
+
+    if changed and not _persist_pending(pos, persist, "pending 재조정"):
+        return False
+    return changed
+
+
+def _sell(pos, qty, reason, dry, market="KRX", cur=0, persist=None,
+          close_reason=None, mark_tp1=False, full_position_exit=False):
     """qty주 매도 시도 → **실체결(확인)된 수량**을 반환(0 = 미체결/미확인/dry). 호출부는 반환 수량만큼만 포지션 갱신.
 
     KRX=시장가(접수=즉시 체결) / NXT=지정가(접수≠체결 → 체결 확인 필요).
-    ⚠ NXT 체결 확인은 **주문 직전 계좌 스냅샷 대비 감소분(델타)**으로만 판정한다.
-      (크리티컬 감사 2026-07-11: 기준선을 봇 기록 qty_open으로 잡으면 계좌에 같은 종목
-      수동 보유분이 있을 때(M≥q) 완전 체결도 '미체결'로 오판 → 매분 재주문 루프가
-      회장님 수동 보유분까지 청산. 계좌 전체 수량은 수동분 포함이므로 봇 기록과 비교 불가.)
+    ⚠ NXT 실체결은 원주문번호의 kt00007 누적체결·주문잔량으로만 원장에 반영한다.
+      계좌 잔고는 수동 보유·수동 매매와 봇 체결을 구분할 수 없고 반영도 지연될 수 있으므로
+      주문수량 상한과 잔여주문 즉시 취소 판단에만 사용한다.
     ⚠ 미체결/부분체결 잔여 주문은 즉시 취소를 시도해 다음 틱 재주문과의 스택(이중 매도) 차단.
     """
     qty = int(qty)
     if qty <= 0:
         return 0
     held_before = None
+    live_nxt = market == "NXT" and not dry and os.environ.get("AUTOTRADE_LIVE") == "1"
     if market == "NXT":
-        # 주문 '직전' 계좌 스냅샷 — 이것이 체결 판정의 유일한 기준선.
+        # 주문 직전 계좌 스냅샷 — 봇 기록보다 실계좌를 많이 파는 주문을 차단한다.
         held_before = _held_qty(pos["code"])
         if held_before is None:
-            # 기준선 없이 지정가를 내면 체결 확인이 불가능해 재주문 루프 위험 → 블라인드 발주 금지.
+            # 실계좌 상한 없이 봇 원장만 믿으면 유령 잔량으로 과매도할 수 있어 블라인드 발주 금지.
             ac.log(f"[monitor] {pos['name']}({pos['code']}) 주문 전 잔고조회 실패 — NXT 매도 보류(다음 틱 재시도)")
             return 0
         if held_before <= 0:
             ac.log(f"[monitor] {pos['name']}({pos['code']}) 실계좌 보유 0 — NXT 매도 불가(강제청산 로직이 종료 판단)")
             return 0
         qty = min(qty, held_before)   # 계좌 보유 초과 주문 방지
+        if live_nxt:
+            pos["pending_exit"] = {
+                "state": "prepared",
+                "market": "NXT",
+                "held_before": held_before,
+                "requested_qty": qty,
+                "accounted_filled": 0,
+                "qopen_before": int(pos.get("qty_open") or 0),
+                "reason": reason,
+                "close_reason": close_reason,
+                "mark_tp1": bool(mark_tp1),
+                "full_position_exit": bool(full_position_exit),
+                "price": cur,
+                "order_date": ac.today_str(),
+                "created_at": datetime.now(ac.KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+                "ord_no": None,
+                "cancel_confirmed": False,
+            }
+            if not _persist_pending(pos, persist, "주문 전 pending_exit"):
+                pos.pop("pending_exit", None)
+                return 0
     ac.log(f"[monitor] {pos['name']}({pos['code']}) [{market}] {reason} → 매도 {qty}주 시도")
     try:
         res = kt.sell_market(pos["code"], qty, market=market, dry=dry)
     except Exception as e:
-        # 호가 부재(NXT 장 밖)·주문 오류 등 — 이번 틱 실패로 두고 다음 틱 재시도(감시기 중단 방지).
-        ac.log(f"[monitor] 매도 실패({market}) — 다음 틱 재시도: {e}")
+        if live_nxt:
+            pending = pos.get("pending_exit") or {}
+            pending.update({"state": "submit_unknown", "submit_error": str(e)[:500]})
+            pos["pending_exit"] = pending
+            _persist_pending(pos, persist, "NXT 주문결과 불명")
+            ac.notify_trade(
+                f"🚨 [자동매매] {pos.get('name','')}({pos['code']}) NXT 주문결과 불명\n"
+                "pending 잠금으로 후속 매도를 차단했습니다. HTS 주문내역을 수동 확인해야 합니다.")
+        else:
+            ac.log(f"[monitor] 매도 실패({market}) — 다음 틱 재시도: {e}")
         return 0
     if res.get("dry"):
         ac.log(f"[monitor] DRY — 발주 안 함({res.get('reason')})")
@@ -82,6 +219,11 @@ def _sell(pos, qty, reason, dry, market="KRX", cur=0):
     sold = qty
     if market == "NXT":
         ord_no = kt._extract_ord_no((res.get("result") or {}) if isinstance(res.get("result"), dict) else res)
+        if live_nxt:
+            pending = pos.get("pending_exit") or {}
+            pending.update({"state": "accepted", "ord_no": ord_no})
+            pos["pending_exit"] = pending
+            _persist_pending(pos, persist, "NXT 주문번호")
         held_after = _held_qty(pos["code"])
         filled = (held_before - held_after) if held_after is not None else None
         if filled is None or filled < qty:
@@ -89,15 +231,18 @@ def _sell(pos, qty, reason, dry, market="KRX", cur=0):
             # (취소 실패는 fail-safe: 이미 전량 체결됐으면 취소할 게 없어 실패하는 게 정상.)
             if ord_no:
                 try:
-                    kt.cancel_order(pos["code"], ord_no, market="NXT", qty=0, dry=dry)
+                    cancel_result = kt.cancel_order(pos["code"], ord_no, market="NXT", qty=0, dry=dry)
+                    cancel_confirmed = not cancel_result.get("dry")
                 except Exception as e:
-                    # 이미 전량 체결이면 취소 실패가 정상. 단 네트워크 타임아웃이면 미체결 주문이
-                    # 살아있을 수 있어 즉시 경고(다음 틱 신규 주문과 스택 가능 — 수동 확인 필요).
+                    cancel_confirmed = False
+                    # 이미 전량 체결이면 취소 실패가 정상. 네트워크 타임아웃이면 원주문이
+                    # 살아있을 수 있으므로 pending 잠금을 유지하고 즉시 경고한다.
                     ac.log(f"[monitor] {pos['code']} NXT 잔여주문 취소 실패(무시): {e}")
                     ac.notify_trade(
                         f"⚠️ [자동매매] {pos.get('name','')}({pos['code']}) NXT 잔여주문 취소 실패\n"
                         f"원주문 {ord_no} — 미체결 주문이 남아있을 수 있습니다. HTS에서 수동 확인 요망.")
             else:
+                cancel_confirmed = False
                 ac.log(f"[monitor] {pos['code']} NXT 주문번호 추출 실패 — 잔여주문 취소 불가(수동 확인 권장)")
                 ac.notify_trade(
                     f"⚠️ [자동매매] {pos.get('name','')}({pos['code']}) NXT 주문번호 추출 실패\n"
@@ -106,29 +251,52 @@ def _sell(pos, qty, reason, dry, market="KRX", cur=0):
             held_final = _held_qty(pos["code"])
             if held_final is not None:
                 filled = held_before - held_final
+            filled = min(qty, max(0, int(filled or 0)))
+            if live_nxt:
+                pending = pos.get("pending_exit") or {}
+                pending.update({
+                    "state": "reconcile_required",
+                    "cancel_confirmed": bool(cancel_confirmed),
+                    "held_after": held_after,
+                    "held_final": held_final,
+                    "observed_filled": filled,
+                })
+                pos["pending_exit"] = pending
+                _persist_pending(pos, persist, "NXT 미확정 잠금")
+                ac.notify_trade(
+                    f"⚠️ [자동매매] {pos.get('name','')}({pos['code']}) NXT 체결 재조정 필요\n"
+                    f"주문 {qty}주·관측잔고감소 {filled}주·취소접수 {bool(cancel_confirmed)}. "
+                    "pending 잠금으로 추가 매도를 차단했습니다.")
+        if live_nxt:
+            # 잔고 델타는 수동 매도와 구분할 수 없고 반영도 지연될 수 있다. 실체결 수량은
+            # 다음 회차에 원주문번호의 kt00007 누적체결/주문잔량으로만 원장에 반영한다.
+            pending = pos.get("pending_exit") or {}
+            pending.update({"state": pending.get("state") or "awaiting_status",
+                            "observed_filled": min(qty, max(0, int(filled or 0)))})
+            pos["pending_exit"] = pending
+            _persist_pending(pos, persist, "NXT 주문상태 대기")
+            return 0
         if filled is None or filled <= 0:
             ac.log(f"[monitor] {pos['name']}({pos['code']}) NXT 매도 접수했으나 체결 미확인"
                    f"(주문전 {held_before} → 주문후 {held_after}) — 미체결로 보고 포지션 유지"
-                   f"(잔여주문 취소 시도됨 · 다음 틱/09시 KRX 시장가 정리)")
+                   f"(잔여주문 취소 시도됨 · 다음 회차 주문번호 재조정)")
             return 0
         sold = min(qty, filled)   # 실제 체결 수량(주문 전 스냅샷 대비 감소분 — 수동 보유분과 무관)
     # 실체결 → 통계용 원장 기록(청산가·수익률은 청산판정 시 cur 기준 근사). fail-safe.
-    entry = pos.get("entry_price") or 0
-    ac.append_trade_event({
-        "type": "exit", "id": pos.get("id"), "code": pos["code"], "name": pos.get("name"),
-        "market": market, "reason": reason, "sold_qty": sold, "exit_price": cur, "entry_price": entry,
-        "entry_date": pos.get("entry_date"), "opened_at": pos.get("opened_at"),
-        "realized_return_pct": round((cur - entry) / entry * 100, 2) if entry else None,
-        "remaining_qty": max(0, int(pos.get("qty_open", sold)) - sold), "dry": False})
+    _append_exit_event(pos, sold, market, reason, cur)
     return sold
 
 
-def check_position(pos, dry=True, acct_by_code=None, session="krx"):
+def check_position(pos, dry=True, acct_by_code=None, session="krx", persist=None):
     """단일 포지션 청산 판정·실행. 상태 변경 여부 반환.
 
     acct_by_code: 강제청산 시 실계좌 대조용 {code: holding}. "ERROR"=조회실패(강제청산 보류).
     session: "krx"(정규장 — J가격·KRX시장가) / "nxt_premarket"(08:00~ — NXT가격·NXT지정가, NXT거래가능만).
     """
+    # 이전 NXT 주문이 미확정이면 신규 NXT/KRX 주문보다 재조정이 항상 우선한다.
+    if pos.get("pending_exit"):
+        return _reconcile_pending_exit(pos, persist)
+
     # 세션별 가격 기준·매도 경로
     if session == "nxt_premarket":
         price_market, sell_mkt = "NX", "NXT"
@@ -179,7 +347,9 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
             ac.log(f"[monitor] {pos['code']} 실계좌 매도가능 {avail} < 봇기록 {qopen} — 매도가능분만 청산")
         # ⚠ 실체결 수량(sold)만큼만 잔량 차감 — NXT 미체결·부분체결분을 통째로 closed 처리하면
         #    미매도 잔량이 손절/청산 관리에서 영구 이탈(방치). 잔량 0일 때만 종료.
-        sold = _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur)
+        sold = _sell(pos, sell_qty, f"강제청산·갈아타기(전날포지션, 현재 {pct:+.1f}%)", dry,
+                     market=sell_mkt, cur=cur, persist=persist,
+                     close_reason="force_exit_rotation", full_position_exit=True)
         if sold:
             pos["qty_open"] = qopen - sold
             if pos["qty_open"] <= 0:
@@ -194,7 +364,9 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
 
     if not pos.get("tp1_done"):
         if pct <= ac.STOP_LOSS_PCT:
-            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt, cur=cur)
+            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%)", dry, market=sell_mkt,
+                         cur=cur, persist=persist, close_reason="stop_loss",
+                         full_position_exit=True)
             if sold:
                 pos["qty_open"] = qopen - sold
                 if pos["qty_open"] <= 0:
@@ -203,11 +375,14 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
         elif pct >= ac.TP1_PCT:
             sell_qty = int(qopen * ac.TP1_FRACTION)
             if sell_qty >= 1:
-                sold = _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry, market=sell_mkt, cur=cur)
+                sold = _sell(pos, sell_qty, f"1차 익절(+7%, 현재 {pct:+.1f}%) 50%", dry,
+                             market=sell_mkt, cur=cur, persist=persist, mark_tp1=True)
                 if sold:
                     pos["qty_open"] = qopen - sold; pos["tp1_done"] = True; changed = True
             else:
-                sold = _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt, cur=cur)
+                sold = _sell(pos, qopen, f"1차 익절(+7%) 잔량 1주 전량", dry, market=sell_mkt,
+                             cur=cur, persist=persist, close_reason="tp1_all",
+                             full_position_exit=True)
                 if sold:
                     pos["qty_open"] = qopen - sold
                     if pos["qty_open"] <= 0:
@@ -216,21 +391,27 @@ def check_position(pos, dry=True, acct_by_code=None, session="krx"):
     else:
         # 1차 익절 후 잔량 (모두 잔량 전량 청산 시도 — NXT 부분체결이면 잔량 open 유지·다음 틱 재시도)
         if pct >= ac.TP2_PCT:
-            sold = _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur)
+            sold = _sell(pos, qopen, f"2차 익절(+11%, 현재 {pct:+.1f}%) 잔량", dry,
+                         market=sell_mkt, cur=cur, persist=persist, close_reason="tp2",
+                         full_position_exit=True)
             if sold:
                 pos["qty_open"] = qopen - sold
                 if pos["qty_open"] <= 0:
                     pos["status"] = "closed"; pos["close_reason"] = "tp2"
                 changed = True
         elif pct <= ac.STOP_LOSS_PCT:
-            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry, market=sell_mkt, cur=cur)
+            sold = _sell(pos, qopen, f"손절(-5%, 현재 {pct:+.1f}%) 잔량", dry,
+                         market=sell_mkt, cur=cur, persist=persist,
+                         close_reason="stop_loss_after_tp1", full_position_exit=True)
             if sold:
                 pos["qty_open"] = qopen - sold
                 if pos["qty_open"] <= 0:
                     pos["status"] = "closed"; pos["close_reason"] = "stop_loss_after_tp1"
                 changed = True
         elif pct <= ac.BREAKEVEN_PCT:
-            sold = _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry, market=sell_mkt, cur=cur)
+            sold = _sell(pos, qopen, f"본전 방어(1차 익절 후 재하락 {pct:+.1f}%≤+0.5%) 잔량", dry,
+                         market=sell_mkt, cur=cur, persist=persist,
+                         close_reason="breakeven", full_position_exit=True)
             if sold:
                 pos["qty_open"] = qopen - sold
                 if pos["qty_open"] <= 0:
@@ -266,10 +447,14 @@ def run(dry=True):
         except Exception as e:
             ac.log(f"[monitor] 실계좌 잔고 조회 실패 — 강제청산 정합성 체크 불가, 이번 회차 보류: {e}")
             acct_by_code = "ERROR"
+    def persist_positions():
+        ac.save_positions(data)
+
     for pos in data["positions"]:
         if pos.get("status") != "open":
             continue
-        if check_position(pos, dry=dry, acct_by_code=acct_by_code, session=session):
+        if check_position(pos, dry=dry, acct_by_code=acct_by_code, session=session,
+                          persist=persist_positions):
             # 발주(실체결) 직후 즉시 개별 저장 — 배치 말미 단일 save의 유실 창을 없애 이중 매도 방지.
             # 저장 실패 시 상태가 디스크에 안 남았으므로 후속 포지션 발주를 즉시 중단(다음 회차가 재판정).
             try:

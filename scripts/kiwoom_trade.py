@@ -108,6 +108,62 @@ def account_holdings():
     }}
 
 
+def order_status(code, ord_no, market="NXT", order_date=""):
+    """주문번호별 누적 체결수량·주문잔량 조회(kt00007, 읽기전용).
+
+    주문잔량 0만 종결 상태로 취급할 수 있도록 원주문 행을 그대로 정규화한다.
+    조회 결과에 아직 주문이 반영되지 않았으면 None을 반환한다.
+    """
+    target = str(ord_no or "").strip()
+    if not target:
+        raise RuntimeError(f"{code} 주문상태 조회 주문번호 없음")
+    res = kw._call("kt00007", "/api/dostk/acnt", {
+        "ord_dt": str(order_date or ""),
+        "qry_tp": "1",
+        "stk_bond_tp": "1",
+        "sell_tp": "1",
+        "stk_cd": str(code),
+        "fr_ord_no": "",
+        "dmst_stex_tp": market,
+    })
+
+    def normalized(value):
+        value = str(value or "").strip()
+        return value.lstrip("0") or "0"
+
+    rows = res.get("acnt_ord_cntr_prps_dtl", []) or []
+    original = None
+    cancel_confirmed = False
+    for row in rows:
+        row_code = str(row.get("stk_cd") or "").strip().lstrip("AJQ")
+        if row_code and row_code != str(code):
+            continue
+        if normalized(row.get("ord_no")) == normalized(target):
+            original = row
+        if (normalized(row.get("ori_ord")) == normalized(target)
+                and "취소확인" in str(row.get("mdfy_cncl") or "")):
+            cancel_confirmed = True
+    if original is not None:
+        row = original
+
+        def qty(key):
+            raw = row.get(key)
+            if raw is None or not str(raw).strip():
+                raise RuntimeError(f"{code} 주문 {target} 상태 필드 누락: {key}")
+            return abs(int(kw._f(raw)))
+
+        return {
+            "ord_no": str(row.get("ord_no") or target).strip(),
+            "ordered_qty": qty("ord_qty"),
+            "filled_qty": qty("cntr_qty"),
+            "remaining_qty": qty("ord_remnq"),
+            "accept_type": str(row.get("acpt_tp") or "").strip(),
+            "modify_cancel": str(row.get("mdfy_cncl") or "").strip(),
+            "cancel_confirmed": cancel_confirmed,
+        }
+    return None
+
+
 def is_nxt_tradable(code):
     """NXT 거래가능 종목인지 프로브 — NXT 현재가가 유효(>0)하면 True."""
     try:
