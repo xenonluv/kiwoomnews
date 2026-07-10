@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-10 15:43:57 KST",
+ "generated_at": "2026-07-10 15:53:52 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,8 +53,8 @@
    "name": "광주신세계",
    "sector": "광주신세계",
    "high_pct": 23.56,
-   "vol_turnover_pct": 138.0,
-   "value_eok": 1721,
+   "vol_turnover_pct": 139.8,
+   "value_eok": 1744,
    "price": 49800.0,
    "change_pct": 19.71,
    "backfill": false
@@ -90,8 +90,8 @@
    "sector": "광주신세계",
    "change_pct": 19.71,
    "high_pct": 23.56,
-   "vol_turnover_pct": 138.0,
-   "value_eok": 1721,
+   "vol_turnover_pct": 139.8,
+   "value_eok": 1744,
    "price": 49800.0,
    "first_seen": "11:22",
    "exploded": true
@@ -171,9 +171,9 @@
    "snapshot_high": 6580.0,
    "snapshot_low": 4945.0,
    "snapshot_close": 5580.0,
-   "snapshot_volume": 16100973.0,
-   "snapshot_value": 93988000000.0,
-   "snapshot_value_eok": 939.9,
+   "snapshot_volume": 16102637.0,
+   "snapshot_value": 93997000000.0,
+   "snapshot_value_eok": 940.0,
    "snapshot_as_of": "20260710",
    "signal_date": "20260710",
    "signal_open": 5200.0,
@@ -181,9 +181,9 @@
    "signal_low": 4945.0,
    "signal_close": 5580.0,
    "signal_prev_close": 5150.0,
-   "signal_volume": 16100973.0,
-   "signal_value": 93988000000.0,
-   "signal_value_eok": 939.9,
+   "signal_volume": 16102637.0,
+   "signal_value": 93997000000.0,
+   "signal_value_eok": 940.0,
    "signal_peak6_price": 6580.0,
    "signal_peak60_price": 10300.0,
    "signal_ma20": 4839.2,
@@ -192,7 +192,7 @@
    "turnover_pct": 250.6,
    "float_ratio": 0.32130000000000003,
    "turnover_basis": "float",
-   "turnover_2d_pct": 423.5,
+   "turnover_2d_pct": 423.6,
    "turnover_band": 2,
    "peak_dd_pct": -45.8,
    "dd_band": 1,
@@ -238,6 +238,8 @@
    "visible_experimental": true,
    "alert_now": "경고",
    "alert_release": false,
+   "alert_elapsed_days": 1,
+   "alert_risk_released": true,
    "theme_leader": false
   }
  ]
