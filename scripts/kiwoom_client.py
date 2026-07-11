@@ -374,6 +374,34 @@ def minute_bars_today(code, until="153000", market="J"):
     return [bars[t] for t in sorted(bars.keys())]
 
 
+def minute_bars_today_with_meta(code, until="153000", market="J"):
+    """분봉과 실제 응답 거래일을 함께 반환한다. 라이브 기준일 검증용."""
+    res = _call("ka10080", "/api/dostk/chart",
+                {"stk_cd": _mkt(code, market), "tic_scope": "1", "upd_stkpc_tp": "1"})
+    rows = res.get("stk_min_pole_chart_qry", []) or []
+    days_seen = [(r.get("cntr_tm") or "")[:8] for r in rows
+                 if len(r.get("cntr_tm") or "") >= 14]
+    latest_day = max(days_seen) if days_seen else None
+    bars = {}
+    for row in rows:
+        ct = row.get("cntr_tm") or ""
+        if len(ct) < 14 or ct[:8] != latest_day:
+            continue
+        t = ct[8:14]
+        if not (SESSION_OPEN <= t <= SESSION_CLOSE) or t > until:
+            continue
+        if t not in bars:
+            bars[t] = {"time": t,
+                       "open": _abs(row.get("open_pric")),
+                       "high": _abs(row.get("high_pric")),
+                       "low": _abs(row.get("low_pric")),
+                       "close": _abs(row.get("cur_prc")),
+                       "vol": _f(row.get("trde_qty"))}
+    values = [bars[t] for t in sorted(bars)]
+    return {"trade_date": latest_day, "bars": values,
+            "fetch_status": "ok" if values else ("stale" if latest_day else "empty")}
+
+
 def investor_daily(code):
     """종목별 투자자 일별 순매수량(오름차순). 외국인/기관/개인. ka10059(수량).
 

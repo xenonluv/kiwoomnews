@@ -395,6 +395,8 @@ class AutotradeInvariantTest(unittest.TestCase):
                                   side_effect=lambda slot, payload: decisions.append(payload) or True),
                 mock.patch.object(ac, "append_local_trade_event", return_value=True),
                 mock.patch.object(ac, "log"),
+                mock.patch.object(executor.market_state, "require_trading_day",
+                                  return_value=(True, {"is_trading_day": True})),
                 mock.patch.object(executor.kt, "account_holdings",
                                   return_value={"summary": {"deposit": 1_000_000}}),
                 mock.patch.object(executor.kt, "is_nxt_tradable", return_value=False),

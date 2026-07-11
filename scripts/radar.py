@@ -40,6 +40,7 @@ else:
     import kiwoom_client as kis  # 키움 드롭인(기본). RADAR_BROKER=kis 로 KIS 복귀.
 import float_ratio
 import alert_release
+import market_state
 from radar_audit import AuditCollector
 from rank_policy import (
     RANK_BUCKET_BASELINES,
@@ -311,10 +312,23 @@ def _minute_bars_with_fallback(code, label=""):
     KRX엔 명백한 분출이 있어도 0봉으로 계산돼 누락된다. UN 분봉 있으면 UN 유지(NXT 봉 반영 불변).
     reaccum·youtong 공용. 예외는 호출부로 전파(상위에서 처리)."""
     market_basis = "KRX" if kis.MONEY_MARKET == "J" else str(kis.MONEY_MARKET)
+    expected_date = datetime.now(KST).strftime("%Y%m%d")
+
+    def fetch_checked(market):
+        meta = kis.minute_bars_today_with_meta(code, market=market)
+        trade_date = meta.get("trade_date")
+        bars = meta.get("bars") or []
+        if trade_date is not None and str(trade_date) != expected_date:
+            raise RuntimeError(
+                f"STALE_TRADE_DATE {code} market={market} expected={expected_date} got={trade_date}")
+        if bars and trade_date is None:
+            raise RuntimeError(f"MISSING_TRADE_DATE {code} market={market} bars={len(bars)}")
+        return bars
+
     try:
-        bars = kis.minute_bars_today(code, market=kis.MONEY_MARKET)
+        bars = fetch_checked(kis.MONEY_MARKET)
         if kis.MONEY_MARKET != "J" and not _has_live_bars(bars):
-            jbars = kis.minute_bars_today(code, market="J")
+            jbars = fetch_checked("J")
             if _has_live_bars(jbars):
                 log(f"  [info] {label or code}: UN 분봉 결측(전부 0) → J(KRX) 분봉 폴백")
                 bars = jbars
@@ -2272,6 +2286,13 @@ def main():
     p.lowaccum_min_count = max(1, int(p.lowaccum_min_count))
     p.lowaccum_change_max = float(p.lowaccum_change_max)
     _AUDIT.scan_n = p.explosion_scan_n
+    trading_ok, trading_state = market_state.require_trading_day(kis)
+    if not trading_ok:
+        _AUDIT.error("market_state", trading_state.get("reason") or "거래일 확인 실패")
+        _AUDIT.persist(generated_at=datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+                       scan_ok=False, market_phase="closed")
+        log(f"[radar] 거래일 확인 실패 — 게시 중단: {trading_state}")
+        sys.exit(3)
     active_explosions, live_scan_ok, today_explosions, today_youtong = prepare_reaccum_registry(p)
 
     # 조건 1: D-10 이벤트 캘린더 (재반등 후보의 이벤트 민감도 표시용)

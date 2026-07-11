@@ -378,6 +378,14 @@ def minute_bars_today(code, until="153000", market="J"):
     return [bars[t] for t in sorted(bars.keys())]
 
 
+def minute_bars_today_with_meta(code, until="153000", market="J"):
+    """KIS 당일 필터 결과에 기준일 메타를 붙인다."""
+    bars = minute_bars_today(code, until=until, market=market)
+    today = datetime.now().strftime("%Y%m%d")
+    return {"trade_date": today if bars else None, "bars": bars,
+            "fetch_status": "ok" if bars else "empty"}
+
+
 def investor_daily(code):
     """종목별 투자자 일별 순매수량 (최근 영업일들, 오름차순). 외국인/기관/개인.
 

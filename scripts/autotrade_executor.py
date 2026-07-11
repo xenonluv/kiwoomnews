@@ -16,6 +16,8 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import autotrade_common as ac
 import kiwoom_trade as kt
+import market_state
+import autotrade_orders
 
 
 def _entry_audit_fields(slot, top, rank, decision):
@@ -96,7 +98,6 @@ def _record(slot, top, res, rank, alloc_krw, decision):
         ac.append_trade_event(failed_event)
         ac.append_local_trade_event(failed_event)
         return
-
     ac.log(f"[exec:{slot}] ★매수 체결·기록: {rank}위 {name}({code}) {res['qty']}주 @~{res['ref_price']:,.0f} "
            f"({res['market']}, 배정 {alloc_krw:,}원)")
     ac.notify_trade(
@@ -115,16 +116,59 @@ def _record(slot, top, res, rank, alloc_krw, decision):
     ac.append_local_trade_event(entry_event)
 
 
-def run(slot, dry=True):
-    if not ac.autotrade_enabled():
-        ac.log(f"[exec:{slot}] 자동매매 OFF(KV autotrade:enabled≠1) — 매수 안 함")
-        return
+def _persist_post_submit(data, pending, warning=None):
+    """브로커 제출 뒤 상태를 저장한다. 불명 경고는 저장보다 먼저 보장한다."""
+    if warning:
+        sent = ac.notify_trade(
+            f"🚨 [자동매매] {pending.get('name','')}({pending.get('code')}) {warning}\n"
+            "자동 재주문을 차단했습니다. HTS 주문·체결·잔고를 즉시 확인하세요.")
+        pending["last_alert_attempt_at"] = datetime.now(ac.KST).strftime(
+            "%Y-%m-%d %H:%M:%S KST")
+        if sent:
+            pending["last_alert_success_at"] = pending["last_alert_attempt_at"]
+            pending["last_alert_success_date"] = ac.today_str()
+            pending["alert_count"] = int(pending.get("alert_count") or 0) + 1
+    try:
+        ac.save_positions(data)
+        return True
+    except Exception as exc:
+        ord_no = pending.get("ord_no") or "없음/불명"
+        ac.log(f"[exec] 🚨 제출 후 pending 저장 실패(ord_no={ord_no}): {exc}")
+        ac.notify_trade(
+            f"🚨 [자동매매] 제출 후 원장 저장 실패 — {pending.get('name','')}({pending.get('code')})\n"
+            f"market={pending.get('market')} qty={pending.get('requested_qty')} "
+            f"ord_no={ord_no} · 오류={str(exc)[:200]}\n"
+            "추가 발주를 중단했습니다. HTS와 원장을 수동 대조하세요.")
+        return False
+
+
+def _run_unlocked(slot, dry=True):
     try:
         data = ac.load_positions()
     except Exception as e:
         # 포지션 상태 불명(파일 읽기 실패)이면 중복매수 여부 확인 불가 → fail-closed(매수 중단).
         ac.log(f"[exec:{slot}] 포지션 상태 확인 실패({e}) — fail-closed(매수 중단)")
         return
+    data.setdefault("pending_entries", [])
+    if data.get("pending_entries"):
+        # 웹 OFF여도 미해소 주문의 가시성은 유지한다. 이 검사는 주문/취소를 호출하지 않는다.
+        try:
+            autotrade_orders.review_pending_attention(
+                data, persist=lambda: ac.save_positions(data))
+        except Exception as e:
+            ac.log(f"[exec:{slot}] pending 가시성 검사 실패(신규매수는 보수적으로 차단): {e}")
+    if not ac.autotrade_enabled():
+        ac.log(f"[exec:{slot}] 자동매매 OFF(KV autotrade:enabled≠1) — 매수 안 함")
+        return
+    if data.get("pending_entries"):
+        try:
+            unresolved = autotrade_orders.reconcile_pending_entries(data, dry=dry)
+        except Exception as e:
+            ac.log(f"[exec:{slot}] 매수 pending 재조정 실패 — 신규 매수 차단: {e}")
+            return
+        if unresolved:
+            ac.log(f"[exec:{slot}] 미확정 매수 주문 존재 — 신규 매수 차단")
+            return
     # 전날 이월 미청산 포지션이 남아있으면 = 14:50 강제청산 실패 → 갈아타기 불가. 신규 매수 차단(중복 보유 방지).
     stale = [p for p in ac.open_positions(data) if p.get("entry_date") != ac.today_str()]
     if stale:
@@ -136,7 +180,7 @@ def run(slot, dry=True):
         return
 
     # 하루 최대 2종목. 이미 오늘 매수한 만큼 슬롯 차감.
-    slots_left = ac.MAX_AUTOTRADE_STOCKS - len(ac.todays_positions(data))
+    slots_left = ac.MAX_AUTOTRADE_STOCKS - len(ac.todays_positions(data)) - len(ac.todays_pending_entries(data))
     if slots_left <= 0:
         ac.log(f"[exec:{slot}] 오늘 최대 매수 종목수({ac.MAX_AUTOTRADE_STOCKS}) 도달 — 추가 매수 안 함")
         return
@@ -146,6 +190,11 @@ def run(slot, dry=True):
     # 실발주 여부는 kiwoom_trade._send_or_dry와 동일 게이트(dry=False AND AUTOTRADE_LIVE=1).
     # --dry 플래그만 보면 AUTOTRADE_LIVE 미설정 dry 실행이 '실발주 결정'으로 위장 기록됨(재검증 반박 1).
     live_execution = (not dry) and os.environ.get("AUTOTRADE_LIVE") == "1"
+    if live_execution:
+        trading_ok, trading_state = market_state.require_trading_day(kt.kw)
+        if not trading_ok:
+            ac.log(f"[exec:{slot}] 거래일 확인 실패 — 매수 중단: {trading_state}")
+            return
     radar_snapshot = ac.read_radar_snapshot(now=decision_at)
     top = ((radar_snapshot or {}).get("suspects") or [])[:3]
     try:
@@ -288,23 +337,101 @@ def run(slot, dry=True):
                 result="not_routable_in_nxt", order_reason="nxt_not_tradable",
                 dry=not live_execution)
             continue
+        if not live_execution:
+            try:
+                res = (kt.buy_market_krx(code, per_stock, dry=dry) if slot == "krx"
+                       else kt.buy_limit_nxt(code, per_stock, dry=dry))
+            except Exception as e:
+                ac.log(f"[exec:{slot}] {rank}위 {code} 매수 실패(스킵): {e}")
+                _record_order_outcome(slot, top_s, rank, decision, attempted=True,
+                                      result="order_failed", order_reason="broker_order_error",
+                                      error=e, dry=True)
+                continue
+            if res.get("dry"):
+                ac.log(f"[exec:{slot}] {rank}위 {code} DRY — 발주 안 함({res.get('reason')}). 미기록.")
+                _record_order_outcome(slot, top_s, rank, decision, attempted=False,
+                                      result="dry_no_order", order_reason=res.get("reason"), dry=True)
+            else:
+                # 테스트/비LIVE 가짜 응답 호환. 실제 브로커는 AUTOTRADE_LIVE 없이는 항상 dry다.
+                _record(slot, top_s, res, rank, per_stock, decision)
+            continue
+        if os.environ.get("AUTOTRADE_ORDER_FIELDS_VERIFIED") != "1":
+            ac.log(f"[exec:{slot}] 주문조회 필드 실계좌 미검증 — LIVE 매수 차단")
+            _record_order_outcome(slot, top_s, rank, decision, attempted=False,
+                                  result="blocked_order_fields_unverified",
+                                  order_reason="AUTOTRADE_ORDER_FIELDS_VERIFIED!=1", dry=False)
+            continue
         try:
-            res = (kt.buy_market_krx(code, per_stock, dry=dry) if slot == "krx"
-                   else kt.buy_limit_nxt(code, per_stock, dry=dry))
+            holding = next((h for h in kt.account_holdings().get("holdings", [])
+                            if h.get("code") == code), None)
+            manual_baseline_qty = int((holding or {}).get("qty") or 0)
         except Exception as e:
-            ac.log(f"[exec:{slot}] {rank}위 {code} 매수 실패(스킵): {e}")
-            _record_order_outcome(
-                slot, top_s, rank, decision, attempted=True,
-                result="order_failed", order_reason="broker_order_error", error=e,
-                dry=not live_execution)
+            ac.log(f"[exec:{slot}] {code} 매수 전 계좌 기준선 조회 실패 — LIVE 매수 차단: {e}")
+            _record_order_outcome(slot, top_s, rank, decision, attempted=False,
+                                  result="blocked_holdings_unavailable",
+                                  order_reason="manual_baseline_query_failed", error=e, dry=False)
             continue
-        if res.get("dry"):
-            ac.log(f"[exec:{slot}] {rank}위 {code} DRY — 발주 안 함({res.get('reason')}). 미기록.")
-            _record_order_outcome(
-                slot, top_s, rank, decision, attempted=False,
-                result="dry_no_order", order_reason=res.get("reason"), dry=True)
+        try:
+            plan = (kt.prepare_buy_market_krx(code, per_stock) if slot == "krx"
+                    else kt.prepare_buy_limit_nxt(code, per_stock))
+        except Exception as e:
+            ac.log(f"[exec:{slot}] {rank}위 {code} 매수 계획 실패(스킵): {e}")
+            _record_order_outcome(slot, top_s, rank, decision, attempted=False,
+                                  result="order_failed", order_reason="buy_plan_error",
+                                  error=e, dry=False)
             continue
-        _record(slot, top_s, res, rank, per_stock, decision)
+        audit = _entry_audit_fields(slot, top_s, rank, decision)
+        pending = {
+            "intent_id": f"{code}-{ac.today_str()}-{slot}-{rank}",
+            "state": "PREPARED", "code": code, "name": name,
+            "entry_date": ac.today_str(), "order_date": ac.today_str(),
+            "market": plan["market"], "requested_qty": plan["qty"],
+            "accounted_filled": 0, "ref_price": plan["ref_price"],
+            "manual_baseline_qty": manual_baseline_qty,
+            "alloc_krw": per_stock, "rank": rank, "pattern": top_s.get("pattern"),
+            "suspicion_score": top_s.get("suspicion_score"), "audit": audit,
+            "ord_no": None, "created_at": datetime.now(ac.KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+        }
+        data["pending_entries"].append(pending)
+        try:
+            ac.save_positions(data)
+        except Exception as e:
+            data["pending_entries"].remove(pending)
+            ac.log(f"[exec:{slot}] pending 저장 실패 — 브로커 주문 차단: {e}")
+            continue
+        try:
+            res = kt.submit_prepared_buy(plan, dry=False)
+        except Exception as e:
+            pending["state"] = "SUBMIT_UNKNOWN"
+            pending["submit_error"] = str(e)[:500]
+            if not _persist_post_submit(
+                    data, pending, warning=f"매수 제출 결과 불명: {str(e)[:160]}"):
+                return
+            continue
+        ord_no = kt._extract_ord_no((res.get("result") or {}) if isinstance(res.get("result"), dict) else res)
+        pending["ord_no"] = ord_no
+        pending["state"] = "ACCEPTED" if ord_no else "SUBMIT_UNKNOWN"
+        warning = None if ord_no else "매수 응답에 주문번호 없음"
+        if not _persist_post_submit(data, pending, warning=warning):
+            return
+        if not ord_no:
+            continue
+        try:
+            autotrade_orders.reconcile_pending_entries(data, dry=False)
+        except Exception as e:
+            ac.log(f"[exec:{slot}] 주문 접수 후 재조정 보류: {e}")
+        _record_order_outcome(slot, top_s, rank, decision, attempted=True,
+                              result="submitted_pending_confirmation",
+                              order_reason="awaiting_order_status", dry=False)
+
+
+def run(slot, dry=True):
+    # 15:18에는 1분 모니터와 정상 경합할 수 있다. 하루 1회 실행기가 짧게 기다려
+    # 모니터가 잠금을 놓친 직후 진입하되, 무한 대기는 하지 않는다.
+    with ac.acquire_execution_lock(f"executor:{slot}", timeout_seconds=50) as acquired:
+        if not acquired:
+            return
+        return _run_unlocked(slot, dry=dry)
 
 
 if __name__ == "__main__":

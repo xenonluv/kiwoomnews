@@ -19,6 +19,11 @@ cd /Users/jinjin/kiwoomnews
 - `/tmp/kiwoom_backtest.log` — 익일 검증 로그
 - `/tmp/kiwoom_autotrade.log` — 자동매매 로그
 
+cron 설치는 `bash scripts/install_cron.sh`를 사용하며 자동매매는 기본 DRY입니다. 실제 주문은 검증 후
+`--live`를 명시해야 합니다. 웹 OFF는 신규 매수만 중단하고 기존 포지션 자동청산은 유지합니다.
+미해소 매수 pending은 자동 삭제하지 않으며, HTS 대조 후 `scripts/autotrade_pending_admin.py`로만
+해소합니다. 명령과 LIVE 선행조건은 `HANDOFF.md`를 따릅니다.
+
 `/Users/jinjin/stocknews`는 2026-07-06에 retired 되었으므로 현재 운영 질문에는 사용하지 마세요.
 
 국내 주식 매매 **사전정보 취합 사이트 + REST API**. 다중 AI 에이전트(Claude/Codex)가 실시간 뉴스를 수집·분석·검증하고, CEO 승인된 매매 시그널만 웹사이트와 공개 API로 게시합니다.

@@ -284,7 +284,8 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 
 ## 게시 자동화 (cron — **Mac 프로덕션**)
 
-`bash scripts/install_cron.sh`로 일괄 설치(idempotent). 핵심 잡:
+`bash scripts/install_cron.sh`로 일괄 설치(idempotent, **기본 DRY**). 실발주는 테스트·계좌 대조 후
+`bash scripts/install_cron.sh --live`를 명시해야 한다. 웹 OFF는 신규 매수만 중단하고 기존 포지션 청산은 유지한다. 핵심 잡:
 
 ```
 1,11,21,31,41,51 9-20 * * 1-5  publish.py                 # 10분 간격, :01 오프셋(당일 폭발+재매집 게시). 9~20시=정규장+NXT 애프터마켓(마감 후 reaccum 현재 등락률을 NXT 야간가로 재평가)
@@ -297,7 +298,7 @@ python3 scripts/event_calendar.py 10           # D-10 이벤트 확인
 > ⚠️ analyzer 종가베팅 잡(`analyzer/run.py`·`analyzer/backtest.py`)은 폐지됨(2026-06-23 개편).
 
 - "변경 시에만 push"로 Vercel 무료 한도 내 안정. **PC가 켜져 있어야 함.**
-- ⚠️ **cron(특히 publish 10분 간격)을 바꾸면 Mac에서 `install_cron.sh` 재실행 필요.**
+- ⚠️ **cron(특히 publish 10분 간격)을 바꾸면 Mac에서 `install_cron.sh` 재실행 필요.** 인자 없는 재설치는 DRY다.
 - 재매집 스파크는 5분봉이라 텔레그램 알림은 봉 완성(:05/:10/…/:00) 후 다음 publish 회차에 전송(지연 ≤~10분).
 - KRX 공휴일: 분봉 날짜 필터 덕에 양봉 0 → 수상종목 0으로 안전(stale 게시 없음).
 

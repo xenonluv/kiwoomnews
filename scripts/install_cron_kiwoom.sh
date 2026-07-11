@@ -13,10 +13,10 @@ BEGIN="# KIWOOMNEWS_BEGIN"
 END="# KIWOOMNEWS_END"
 
 # 플래그는 순서 무관·조합 가능(예: --live --dry-run 으로 실발주 블록 미리보기).
-LIVE_ENV=""; DRYRUN=0; UNINSTALL=0
+LIVE_ENV=""; DRY_ARG="--dry"; DRYRUN=0; UNINSTALL=0
 for a in "$@"; do
   case "$a" in
-    --live) LIVE_ENV="AUTOTRADE_LIVE=1 ";;
+    --live) LIVE_ENV="AUTOTRADE_LIVE=1 "; DRY_ARG="";;
     --dry-run) DRYRUN=1;;
     --uninstall) UNINSTALL=1;;
     *) echo "알 수 없는 옵션: $a (사용: [--live] [--dry-run] | --uninstall)"; exit 1;;
@@ -31,16 +31,21 @@ PATH=/usr/local/bin:/usr/bin:/bin
 # 레이더 게시 — 평일 9~20시 10분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
 1,11,21,31,41,51 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1
 # 자동매매 매수 — 15:18 KRX 종가베팅(비-NXT 종목) / 19:50 NXT(NXT 거래가능 종목, 5호가위 지정가)
-18 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot krx >> /tmp/kiwoom_autotrade.log 2>&1
-50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt >> /tmp/kiwoom_autotrade.log 2>&1
+18 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot krx ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
+50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
 # 자동매매 청산 감시 — 1분 간격(급등주 대응). 08시=NXT프리마켓(NXT거래분 급등락 대응), 09~15:30=정규장(-5%손절/+7%50%익절/+11%익절/본전방어/14:50강제청산). 세션은 스크립트가 시각으로 자동 판정.
-*/1 8-15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_monitor.py >> /tmp/kiwoom_autotrade.log 2>&1
+*/1 8-15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_monitor.py ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
+# 제출 불명 경고 실패 재시도 — 각 매수 슬롯 약 1시간 뒤, 주문/취소 없는 로컬 pending 가시성 전용.
+20 16 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
+55 20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
 # 익일 자가검증·통계·튜닝 — 레이더/자동매매/추적/AI 클릭/국면 평가
 20 17 * * 1-5 cd $REPO && RADAR_BROKER=kiwoom RADAR_AI_PREDICT=0 PYTHONUTF8=1 ${PY} scripts/radar_backtest.py --push >> /tmp/kiwoom_backtest.log 2>&1
 25 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_stats.py --push >> /tmp/kiwoom_autotrade_stats.log 2>&1
 30 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/track_eval.py --push >> /tmp/kiwoom_track_eval.log 2>&1
 35 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/ai_click_eval.py --push >> /tmp/kiwoom_ai_click_eval.log 2>&1
 37 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/phase_eval.py --push >> /tmp/kiwoom_phase_eval.log 2>&1
+# 비게시 포함 관찰군 forward 연구 — 운영 backtest/git push와 분리.
+10 21 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/radar_observed_forward.py >> /tmp/kiwoom_observed_forward.log 2>&1
 # NXT 야간 급락 텔레그램 경고 — 정규장 마감 후 30분 간격
 5,35 16-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/night_alert.py >> /tmp/kiwoom_night_alert.log 2>&1
 $END"

@@ -36,12 +36,13 @@
 ```bash
 cd ~/stocknews
 git pull                      # 최신 코드 받기(analyzer 포함). 사이트 개선은 Vercel이 자동 배포.
-bash scripts/install_cron.sh  # publish + analyzer + backtest cron 일괄 설치(idempotent)
+bash scripts/install_cron.sh  # cron 일괄 설치(idempotent, 자동매매 기본 DRY)
 ```
 - `git pull`: 새 코드(`analyzer/`, publish 보강 등)를 받습니다. **딱 한 번만 하면**, 이후엔 cron의 publish/run이 알아서 최신화합니다.
 - `install_cron.sh`: 자동 실행 스케줄 3개를 설치합니다(아래 3번). 재실행해도 안전(중복 정리 후 재설치).
 
-> 미리 보고 싶으면: `bash scripts/install_cron.sh --dry-run` (설치 안 하고 어떤 cron이 들어갈지만 출력)
+> 미리 보고 싶으면: `bash scripts/install_cron.sh --dry-run` (설치 안 하고 어떤 cron이 들어갈지만 출력).
+> 실발주는 테스트·계좌 대조 뒤 `--live`를 명시해야 한다. 웹 OFF는 신규 매수만 중단하고 기존 포지션 청산은 유지한다.
 
 ---
 
@@ -130,7 +131,7 @@ tail -f /tmp/publish.log /tmp/forecast.log /tmp/backtest.log
 ```bash
 cd ~/stocknews
 git pull                              # 최신 코드(analyzer 포함)
-bash scripts/install_cron.sh          # cron 일괄 설치
+bash scripts/install_cron.sh          # cron 일괄 설치(자동매매 기본 DRY)
 sudo systemsetup -settimezone Asia/Seoul   # (필요시) 시간대
 sudo pmset -a sleep 0                  # (필요시) 잠자기 끄기
 crontab -l | grep analyzer            # 설치 확인

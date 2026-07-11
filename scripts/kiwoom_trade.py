@@ -108,7 +108,7 @@ def account_holdings():
     }}
 
 
-def order_status(code, ord_no, market="NXT", order_date=""):
+def order_status(code, ord_no, market="NXT", order_date="", side="sell"):
     """주문번호별 누적 체결수량·주문잔량 조회(kt00007, 읽기전용).
 
     주문잔량 0만 종결 상태로 취급할 수 있도록 원주문 행을 그대로 정규화한다.
@@ -117,11 +117,16 @@ def order_status(code, ord_no, market="NXT", order_date=""):
     target = str(ord_no or "").strip()
     if not target:
         raise RuntimeError(f"{code} 주문상태 조회 주문번호 없음")
+    side = str(side or "").lower()
+    if side not in ("buy", "sell"):
+        raise ValueError("side must be buy or sell")
     res = kw._call("kt00007", "/api/dostk/acnt", {
         "ord_dt": str(order_date or ""),
         "qry_tp": "1",
         "stk_bond_tp": "1",
-        "sell_tp": "1",
+        # 키움 계약상 1=매도, 2=매수. 실계좌 검증 완료 전 LIVE 매수는
+        # AUTOTRADE_ORDER_FIELDS_VERIFIED 게이트가 별도로 차단한다.
+        "sell_tp": "1" if side == "sell" else "2",
         "stk_cd": str(code),
         "fr_ord_no": "",
         "dmst_stex_tp": market,
@@ -157,11 +162,48 @@ def order_status(code, ord_no, market="NXT", order_date=""):
             "ordered_qty": qty("ord_qty"),
             "filled_qty": qty("cntr_qty"),
             "remaining_qty": qty("ord_remnq"),
+            "side": side,
+            "avg_fill_price": next((abs(kw._f(row.get(k))) for k in
+                                    ("avg_cntr_pric", "cntr_avg_pric", "cntr_pric")
+                                    if row.get(k) not in (None, "")), None),
             "accept_type": str(row.get("acpt_tp") or "").strip(),
             "modify_cancel": str(row.get("mdfy_cncl") or "").strip(),
             "cancel_confirmed": cancel_confirmed,
         }
     return None
+
+
+def prepare_buy_market_krx(code, krw):
+    p = kw.price_now(code, market="J")
+    price = p.get("price") or 0
+    qty = _qty_for_krw(price, krw)
+    if qty <= 0:
+        raise RuntimeError(f"{code} 매수수량 0 (price={price}, krw={krw})")
+    return {"api_id": "kt10000", "code": code, "qty": qty, "ref_price": price,
+            "market": "KRX", "body": {"dmst_stex_tp": "KRX", "stk_cd": code,
+            "ord_qty": str(qty), "ord_uv": "0", "trde_tp": "3"},
+            "label": f"KRX시장가매수 {code} {qty}주(~{price:,.0f}원)"}
+
+
+def prepare_buy_limit_nxt(code, krw):
+    ob = orderbook(code, market="NX")
+    asks = [a for a in ob["asks"] if a > 0]
+    if not asks:
+        raise RuntimeError(f"{code} NXT 매도호가 없음 — 지정가 산출 불가")
+    px = asks[4] if len(asks) >= 5 else asks[-1]
+    qty = _qty_for_krw(px, krw)
+    if qty <= 0:
+        raise RuntimeError(f"{code} NXT 매수수량 0 (px={px}, krw={krw})")
+    return {"api_id": "kt10000", "code": code, "qty": qty, "ref_price": px,
+            "market": "NXT", "body": {"dmst_stex_tp": "NXT", "stk_cd": code,
+            "ord_qty": str(qty), "ord_uv": str(int(px)), "trde_tp": "0"},
+            "label": f"NXT지정가매수 {code} {qty}주@{px:,.0f}(매도5호가)"}
+
+
+def submit_prepared_buy(plan, dry=True):
+    out = _send_or_dry(plan["api_id"], plan["body"], dry, plan["label"])
+    out.update({k: plan[k] for k in ("code", "qty", "ref_price", "market")})
+    return out
 
 
 def is_nxt_tradable(code):
@@ -183,34 +225,12 @@ def _qty_for_krw(price, krw):
 # ── 매수 ─────────────────────────────────────────────────────────────
 def buy_market_krx(code, krw, dry=True):
     """KRX 시장가 매수(고정 krw). 15:18 종가베팅용. trde_tp=3(시장가)."""
-    p = kw.price_now(code, market="J")
-    price = p.get("price") or 0
-    qty = _qty_for_krw(price, krw)
-    if qty <= 0:
-        raise RuntimeError(f"{code} 매수수량 0 (price={price}, krw={krw})")
-    body = {"dmst_stex_tp": "KRX", "stk_cd": code, "ord_qty": str(qty),
-            "ord_uv": "0", "trde_tp": "3"}
-    out = _send_or_dry("kt10000", body, dry, f"KRX시장가매수 {code} {qty}주(~{price:,.0f}원)")
-    out.update({"code": code, "qty": qty, "ref_price": price, "market": "KRX"})
-    return out
+    return submit_prepared_buy(prepare_buy_market_krx(code, krw), dry=dry)
 
 
 def buy_limit_nxt(code, krw, dry=True):
     """NXT 지정가 매수 — 매도 5호가 위 가격으로(시장가 효과). 19:50 종가베팅용. trde_tp=0(지정가)."""
-    ob = orderbook(code, market="NX")
-    asks = [a for a in ob["asks"] if a > 0]
-    if not asks:
-        raise RuntimeError(f"{code} NXT 매도호가 없음 — 지정가 산출 불가")
-    # 매도 5호가(없으면 가장 높은 호가) — 5단계 위를 쳐서 즉시 체결 유도
-    px = asks[4] if len(asks) >= 5 else asks[-1]
-    qty = _qty_for_krw(px, krw)
-    if qty <= 0:
-        raise RuntimeError(f"{code} NXT 매수수량 0 (px={px}, krw={krw})")
-    body = {"dmst_stex_tp": "NXT", "stk_cd": code, "ord_qty": str(qty),
-            "ord_uv": str(int(px)), "trde_tp": "0"}
-    out = _send_or_dry("kt10000", body, dry, f"NXT지정가매수 {code} {qty}주@{px:,.0f}(매도5호가)")
-    out.update({"code": code, "qty": qty, "ref_price": px, "market": "NXT"})
-    return out
+    return submit_prepared_buy(prepare_buy_limit_nxt(code, krw), dry=dry)
 
 
 # ── 지정가 매수(스모크·범용) ─────────────────────────────────────────

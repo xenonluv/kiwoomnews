@@ -50,6 +50,7 @@ KIS(한국투자증권) 기반 "이벤트 매집 레이더"를 **키움증권 RE
 ## 실발주 이중 안전장치 (둘 다여야 실제 주문)
 1. **웹 토글** KV `autotrade:enabled=1` (사이트에서 ON).
 2. **env `AUTOTRADE_LIVE=1`** (Windows: `win_autotrade.ps1` 주석 / Mac: `install_cron_kiwoom.sh --live`).
+   인자 없는 설치는 DRY다. 웹 OFF는 신규 매수만 막고 기존 포지션 자동청산은 유지한다.
 - 테스트훅 `AUTOTRADE_FORCE_ON=1`(KV 없이 ON 취급, 실발주는 여전히 LIVE 필요). 기본은 **DRY(미발주 로그만)**.
 
 ## 핵심 파일
@@ -78,10 +79,33 @@ KIS(한국투자증권) 기반 "이벤트 매집 레이더"를 **키움증권 RE
 
 ## 실발주 켜기 체크리스트 (실계좌 — 회장님 결정)
 1. Mac 이전 완료·정상 게시 확인.
-2. 소액 스모크(체결 안 되는 1주 지정가 후 취소)로 주문 배관 검증.
-3. `bash scripts/install_cron_kiwoom.sh --live` (Mac) — `AUTOTRADE_LIVE=1` cron 반영.
-4. 사이트에서 자동매매 토글 **ON**.
-5. Windows 자동매매 작업 해제 확인(이중매매 0).
+2. `버그1.md` A군 회귀 테스트 전건 통과와 최소 1거래일 DRY 관찰 완료.
+3. 승인된 소액 1주로 `버그1.md` B군(kt00007 매수·KRX매도·평균가·조회지연, 08시 NX 날짜) fixture 확정.
+4. 소액 스모크(체결 안 되는 1주 지정가 후 취소)로 주문 배관 검증.
+5. `bash scripts/install_cron_kiwoom.sh --live` (Mac) — `AUTOTRADE_LIVE=1` cron 반영.
+6. 사이트에서 자동매매 토글 **ON**.
+7. Windows 자동매매 작업 해제 확인(이중매매 0).
+
+## 미해소 매수 pending 수동 처리
+
+pending은 날짜가 지났어도 자동 삭제하지 않는다. 먼저 웹 신규매수를 **OFF**로 두고 HTS의 주문·체결·잔고를 대조한다.
+
+```bash
+# 읽기 전용 확인
+python3 scripts/autotrade_pending_admin.py list
+
+# HTS에서 주문번호를 찾은 경우: 정상 reconcile 경로에 연결
+python3 scripts/autotrade_pending_admin.py attach-order \
+  --intent-id '<INTENT>' --code '<CODE>' --order-date '<YYYYMMDD>' \
+  --requested-qty '<QTY>' --order-no '<ORDER_NO>' --confirm-hts-checked
+
+# HTS에서 주문도 체결도 전혀 없음을 확인한 경우에만 해소
+python3 scripts/autotrade_pending_admin.py resolve-no-order \
+  --intent-id '<INTENT>' --code '<CODE>' --order-date '<YYYYMMDD>' \
+  --requested-qty '<QTY>' --confirm-hts-no-order-no-fill
+```
+
+관리 명령은 웹 OFF, 전역 잠금, intent fingerprint를 확인하고 원장 백업·tombstone·감사 이벤트를 남긴다. JSON을 직접 편집하지 않는다.
 
 ## 최근 코드리뷰(적대적) 반영
 - `load_positions` fail-open → **fail-closed+재시도**(파일 읽기 실패 시 매수 중단, 중복 실매수 차단).

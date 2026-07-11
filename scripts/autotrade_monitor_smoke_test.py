@@ -14,13 +14,14 @@ from unittest import mock
 import autotrade_monitor as am
 
 
-def _pos(qty_open=10, entry=10000):
+def _pos(qty_open=10, entry=10000, manual_baseline_qty=50):
     return {
         "id": "012345-20260713-krx", "code": "012345", "name": "테스트종목",
-        "entry_date": "20260713", "entry_price": entry,
+        "entry_date": am.ac.today_str(), "entry_price": entry,
         "qty": qty_open, "qty_open": qty_open, "market": "KRX",
         "alloc_krw": 1_000_000, "rank": 1, "tp1_done": False, "status": "open",
         "opened_at": "2026-07-13 15:18:30",
+        "manual_baseline_qty": manual_baseline_qty,
     }
 
 
@@ -61,7 +62,7 @@ class FakeBroker:
             self.status["remaining_qty"] = 0
         return {"dry": False}
 
-    def order_status(self, code, ord_no, market="NXT", order_date=""):
+    def order_status(self, code, ord_no, market="NXT", order_date="", side="sell"):
         return copy.deepcopy(self.status)
 
 
@@ -139,7 +140,7 @@ class NxtSellConfirmTest(unittest.TestCase):
             return {"dry": False, "result": {"ord_no": "77002"}}
 
         with mock.patch.object(broker, "sell_market", partial_sell):
-            pos = self._run_ticks(broker, _pos(qty_open=10), n=2)
+            pos = self._run_ticks(broker, _pos(qty_open=10), n=3)
         self.assertEqual(pos["qty_open"], 6)
         self.assertEqual(pos["status"], "open")
         self.assertEqual(len(broker.cancels), 1)
@@ -150,7 +151,7 @@ class NxtSellConfirmTest(unittest.TestCase):
     def test_no_fill_cancels_and_keeps_position(self):
         """미체결(계좌 무변화) → sold 0·포지션 유지·잔여주문 취소(스택 차단)."""
         broker = FakeBroker(account_qty=60, fill=False)
-        pos = self._run_ticks(broker, _pos(qty_open=10), n=2)
+        pos = self._run_ticks(broker, _pos(qty_open=10), n=3)
         self.assertEqual(pos["qty_open"], 10)
         self.assertEqual(pos["status"], "open")
         self.assertEqual(len(broker.sell_orders), 1)
@@ -158,20 +159,19 @@ class NxtSellConfirmTest(unittest.TestCase):
         self.assertEqual(self.events, [])
         self.assertNotIn("pending_exit", pos)
 
-    def test_post_order_query_failure_recovered_by_final_recheck(self):
-        """주문 후 1차 조회 실패·최종 재확인에서 체결 포착 → 정상 sold 인식."""
-        # 호출 순서: ①주문 전(성공 60) ②주문 후(실패) ③취소 후 최종(성공 50)
+    def test_holdings_lag_does_not_override_order_status_fill(self):
+        """접수 뒤 잔고 재조회 대신 원주문 체결조회만으로 정상 반영한다."""
         broker = FakeBroker(account_qty=60, holdings_errors=[None, "raise", None])
         pos = self._run_ticks(broker, _pos(qty_open=10), n=2)
         self.assertEqual(pos["qty_open"], 0)
         self.assertEqual(pos["status"], "closed")
-        self.assertEqual(len(broker.cancels), 1, "확인불가 시 취소를 시도해야 한다")
+        self.assertEqual(len(broker.cancels), 0, "전량 체결 원주문은 취소하지 않는다")
 
-    def test_order_qty_capped_at_account_quantity(self):
-        """봇 기록 10주 > 실계좌 7주면 주문은 7주로 캡(주문거부·과매도 방지)."""
+    def test_account_shortfall_blocks_order(self):
+        """기준선+봇 기록보다 실계좌가 적으면 수동매도 가능성이 있어 발주를 차단한다."""
         broker = FakeBroker(account_qty=7)
         self._run_ticks(broker, _pos(qty_open=10), n=1)
-        self.assertEqual(broker.sell_orders[0][1], 7)
+        self.assertEqual(broker.sell_orders, [])
 
     def test_delayed_holdings_update_never_reorders_or_sells_manual_shares(self):
         """체결 후 잔고가 두 번 stale이어도 다음 틱은 재주문 없이 pending만 재조정한다."""
@@ -274,6 +274,239 @@ class NxtSellConfirmTest(unittest.TestCase):
                 persist=lambda: (_ for _ in ()).throw(OSError("disk full")))
         self.assertFalse(changed)
         self.assertEqual(broker.sell_orders, [])
+
+    def test_krx_receipt_is_not_recorded_as_fill(self):
+        """KRX 시장가도 접수 직후에는 원장을 줄이지 않고 원주문 체결조회까지 기다린다."""
+        broker = FakeBroker(account_qty=60)
+        pos = _pos(qty_open=10)
+        from contextlib import ExitStack
+        with ExitStack() as stack:
+            for patcher in self._patched(broker, price=9400):
+                stack.enter_context(patcher)
+            am.check_position(pos, dry=False, session="krx",
+                              persist=lambda: self.persisted.append(copy.deepcopy(pos)))
+            self.assertEqual(pos["qty_open"], 10)
+            self.assertIn("pending_exit", pos)
+            self.assertEqual(pos["pending_exit"]["market"], "KRX")
+            am.check_position(pos, dry=False, session="krx",
+                              persist=lambda: self.persisted.append(copy.deepcopy(pos)))
+        self.assertEqual(pos["qty_open"], 0)
+        self.assertEqual(pos["status"], "closed")
+
+    def test_dry_pending_reconcile_does_not_live_cancel(self):
+        broker = FakeBroker(account_qty=60, fill=False)
+        broker.status = {"ord_no": "77001", "ordered_qty": 10,
+                         "filled_qty": 0, "remaining_qty": 10}
+        pos = _pos()
+        pos["pending_exit"] = {
+            "market": "NXT", "ord_no": "77001", "order_date": "20260711",
+            "requested_qty": 10, "accounted_filled": 0,
+        }
+        with mock.patch.object(am.kt, "order_status", broker.order_status), \
+                mock.patch.object(am.kt, "cancel_order", return_value={"dry": True}) as cancel:
+            am.check_position(pos, dry=True, persist=lambda: None)
+        self.assertTrue(cancel.call_args.kwargs["dry"])
+
+    def test_unrelated_pending_entry_does_not_block_other_position(self):
+        a = _pos()
+        a["entry_intent_id"] = "A-intent"
+        pending_b = [{"intent_id": "B-intent", "code": "999999"}]
+        self.assertFalse(am._blocked_by_pending_entry(a, pending_b))
+        self.assertTrue(am._blocked_by_pending_entry(
+            a, [{"intent_id": "A-intent", "code": "012345"}]))
+
+    def test_run_keeps_monitoring_unrelated_open_when_another_entry_is_unknown(self):
+        a = _pos()
+        a["entry_intent_id"] = "A-intent"
+        data = {"positions": [a], "pending_entries": [
+            {"intent_id": "B-intent", "code": "999999", "state": "SUBMIT_UNKNOWN"}
+        ]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="krx"), \
+                mock.patch.object(am.ac, "open_positions", return_value=[a]), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=False), \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries",
+                                  return_value=True), \
+                mock.patch.object(am.autotrade_orders, "review_pending_attention"), \
+                mock.patch.object(am, "check_position", return_value=False) as check, \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=True)
+        check.assert_called_once()
+
+    def test_linked_pending_reaches_force_exit_instead_of_being_skipped(self):
+        pos = _pos()
+        pos.update({"entry_intent_id": "A-intent", "entry_date": "20260710"})
+        data = {"positions": [pos], "pending_entries": [
+            {"intent_id": "A-intent", "code": pos["code"],
+             "state": "CANCEL_UNKNOWN", "order_date": "20260710"}
+        ]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="krx"), \
+                mock.patch.object(am.ac, "open_positions", return_value=[pos]), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=True), \
+                mock.patch.object(am.kt, "account_holdings", return_value={"holdings": []}), \
+                mock.patch.object(am.autotrade_orders, "review_pending_attention"), \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries",
+                                  return_value=True), \
+                mock.patch.object(am, "check_position", return_value=False) as check, \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=True)
+        self.assertTrue(check.called)
+        self.assertTrue(check.call_args.kwargs["entry_pending"])
+
+    def test_outer_reconcile_failure_does_not_stop_unrelated_position(self):
+        pos = _pos()
+        data = {"positions": [pos], "pending_entries": [
+            {"intent_id": "bad", "code": "999999", "state": "STATUS_INCONSISTENT"}
+        ]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="krx"), \
+                mock.patch.object(am.ac, "open_positions", return_value=[pos]), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=False), \
+                mock.patch.object(am.autotrade_orders, "review_pending_attention"), \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries",
+                                  side_effect=ValueError("bad row")), \
+                mock.patch.object(am, "check_position", return_value=False) as check, \
+                mock.patch.object(am.ac, "notify_trade"), \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=True)
+        check.assert_called_once()
+
+    def test_non_dict_pending_does_not_kill_unrelated_position_check(self):
+        pos = _pos()
+        data = {"positions": [pos], "pending_entries": [None]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="krx"), \
+                mock.patch.object(am.ac, "open_positions", return_value=[pos]), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=False), \
+                mock.patch.object(am.autotrade_orders, "review_pending_attention"), \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries",
+                                  return_value=True), \
+                mock.patch.object(am, "check_position", return_value=False) as check, \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=True)
+        check.assert_called_once()
+
+    def test_closed_session_still_runs_pending_visibility_without_broker_action(self):
+        data = {"positions": [], "pending_entries": [
+            {"intent_id": "A", "code": "012345", "state": "SUBMIT_UNKNOWN"}
+        ]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="closed"), \
+                mock.patch.object(am.autotrade_orders, "review_pending_attention") as review, \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries") as reconcile, \
+                mock.patch.object(am.kt, "cancel_order") as cancel, \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=False)
+        review.assert_called_once()
+        reconcile.assert_not_called()
+        cancel.assert_not_called()
+
+    def test_linked_pending_allows_stop_loss_but_defers_profit_exit(self):
+        pos = _pos()
+        with mock.patch.object(am.kw, "current_price", return_value=9400), \
+                mock.patch.object(am, "_sell", return_value=0) as sell:
+            am.check_position(pos, dry=True, session="krx", entry_pending=True)
+        sell.assert_called_once()
+        with mock.patch.object(am.kw, "current_price", return_value=10800), \
+                mock.patch.object(am, "_sell", return_value=0) as sell:
+            am.check_position(pos, dry=True, session="krx", entry_pending=True)
+        sell.assert_not_called()
+
+    def test_time_force_exit_continues_when_current_price_is_unavailable(self):
+        pos = _pos(qty_open=4)
+        pos["entry_date"] = "20260710"
+        holdings = {pos["code"]: {"qty": 4, "tradable_qty": 4}}
+        with mock.patch.object(am.kw, "current_price", side_effect=RuntimeError("quote down")), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=True), \
+                mock.patch.object(am, "_sell", return_value=0) as sell:
+            am.check_position(pos, dry=True, acct_by_code=holdings, session="krx")
+        sell.assert_called_once()
+        self.assertEqual(sell.call_args.args[1], 4)
+        self.assertEqual(sell.call_args.kwargs["cur"], 0)
+
+        normal = _pos(qty_open=4)
+        with mock.patch.object(am.kw, "current_price", return_value=0), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=False), \
+                mock.patch.object(am, "_sell", return_value=0) as normal_sell:
+            am.check_position(normal, dry=True, session="krx")
+        normal_sell.assert_not_called()
+
+    def test_force_exit_to_zero_waits_for_entry_terminal_and_late_fill_is_managed(self):
+        pos = _pos(qty_open=4)
+        pos["entry_intent_id"] = "A-intent"
+        pos["entry_date"] = "20260710"
+        pos["entry_pending_unresolved"] = True
+        pos["pending_exit"] = {
+            "market": "KRX", "ord_no": "9001", "order_date": "20260711",
+            "requested_qty": 4, "accounted_filled": 0,
+            "reason": "강제청산", "close_reason": "force_exit_rotation",
+        }
+        exit_status = {"ordered_qty": 4, "filled_qty": 4, "remaining_qty": 0,
+                       "ord_no": "9001"}
+        with mock.patch.object(am.kt, "order_status", return_value=exit_status), \
+                mock.patch.object(am.ac, "append_trade_event"):
+            am._reconcile_pending_exit(pos, persist=lambda: None)
+        self.assertEqual(pos["qty_open"], 0)
+        self.assertEqual(pos["status"], "open")
+        self.assertTrue(pos["awaiting_entry_terminal"])
+
+        with mock.patch.object(am.kw, "current_price", return_value=9000), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=True):
+            am.check_position(pos, dry=True, acct_by_code={}, session="krx",
+                              entry_pending=True)
+        self.assertEqual(pos["status"], "open", "보유 0이어도 pending 종결 전 조기 close 금지")
+
+        entry = {"intent_id": "A-intent", "state": "PARTIAL", "code": pos["code"],
+                 "name": pos["name"], "entry_date": "20260710", "order_date": "20260710",
+                 "market": "KRX", "requested_qty": 10, "accounted_filled": 4,
+                 "ref_price": 10000, "ord_no": "77", "audit": {}}
+        entry_status = {"ordered_qty": 10, "filled_qty": 6, "remaining_qty": 4,
+                        "avg_fill_price": 10000, "ord_no": "77"}
+        data = {"positions": [pos], "pending_entries": [entry]}
+        with mock.patch.object(am.autotrade_orders.ac, "append_trade_event"), \
+                mock.patch.object(am.autotrade_orders.ac, "notify_trade"):
+            am.autotrade_orders._apply_fill(data, entry, entry_status, newly_filled=2)
+        self.assertEqual(pos["qty_open"], 2)
+        self.assertEqual(pos["status"], "open")
+        with mock.patch.object(am.kw, "current_price", return_value=9000), \
+                mock.patch.object(am.ac, "past_force_exit", return_value=True), \
+                mock.patch.object(am, "_sell", return_value=0) as sell:
+            am.check_position(
+                pos, dry=True,
+                acct_by_code={pos["code"]: {"qty": 2, "tradable_qty": 2}},
+                session="krx", entry_pending=True)
+        self.assertEqual(sell.call_args.args[1], 2, "늦은 체결 2주를 다시 강제청산해야 한다")
+
+    def test_tp1_partial_fill_enables_breakeven_and_zero_fill_does_not(self):
+        pos = _pos(qty_open=10)
+        pos["pending_exit"] = {
+            "market": "NXT", "ord_no": "tp1", "order_date": "20260711",
+            "requested_qty": 5, "accounted_filled": 0, "mark_tp1": True,
+        }
+        partial = {"ordered_qty": 5, "filled_qty": 2, "remaining_qty": 0,
+                   "ord_no": "tp1", "cancel_confirmed": True}
+        with mock.patch.object(am.kt, "order_status", return_value=partial), \
+                mock.patch.object(am.ac, "append_trade_event"):
+            am._reconcile_pending_exit(pos, persist=lambda: None)
+        self.assertTrue(pos["tp1_done"])
+        self.assertNotIn("tp1_remaining_qty", pos)
+
+        with mock.patch.object(am.kw, "current_price", return_value=10050), \
+                mock.patch.object(am, "_sell", return_value=0) as sell:
+            am.check_position(pos, dry=True, session="krx")
+        self.assertIn("본전 방어", sell.call_args.args[2])
+
+        zero = _pos(qty_open=10)
+        zero["pending_exit"] = {
+            "market": "NXT", "ord_no": "tp0", "order_date": "20260711",
+            "requested_qty": 5, "accounted_filled": 0, "mark_tp1": True,
+        }
+        no_fill = {"ordered_qty": 5, "filled_qty": 0, "remaining_qty": 0,
+                   "ord_no": "tp0", "cancel_confirmed": True}
+        with mock.patch.object(am.kt, "order_status", return_value=no_fill):
+            am._reconcile_pending_exit(zero, persist=lambda: None)
+        self.assertFalse(zero["tp1_done"])
 
 
 class OrderStatusTest(unittest.TestCase):

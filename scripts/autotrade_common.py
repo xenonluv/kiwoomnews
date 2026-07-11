@@ -9,8 +9,10 @@ import os
 import sys
 import json
 import time
+import uuid
 import urllib.request
 import urllib.parse
+from contextlib import contextmanager
 from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +23,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 POS_PATH = os.path.join(REPO, "data", "autotrade_positions.json")
 LOG_PATH = os.path.join(REPO, "autotrade.log")
+EXECUTION_LOCK_PATH = "/tmp/kiwoomnews-autotrade.lock"
 
 BUY_KRW = 1_000_000          # (하위호환) 단일 매수 금액
 DAILY_BUDGET = 1_000_000     # 당일 총예산 — 최대 2종목 다종베 시 실제 매수 종목수로 균등분할
@@ -49,6 +52,57 @@ def log(msg):
 
 def today_str():
     return datetime.now(KST).strftime("%Y%m%d")
+
+
+@contextmanager
+def acquire_execution_lock(kind="autotrade", nonblocking=True, timeout_seconds=0):
+    """계좌 주문 프로세스를 직렬화한다. 획득 실패 시 yield False.
+
+    운영 Mac은 fcntl을 사용한다. 지원되지 않는 플랫폼에서는 안전하게 실패해
+    잠금 없이 주문 경로가 실행되지 않게 한다.
+    """
+    try:
+        import fcntl
+    except ImportError:
+        log(f"[lock] {kind} fcntl 미지원 — 잠금 없이 주문할 수 없어 skip")
+        yield False
+        return
+    fh = None
+    acquired = False
+    try:
+        fh = open(EXECUTION_LOCK_PATH, "a+", encoding="utf-8")
+        if nonblocking:
+            deadline = time.monotonic() + max(0, float(timeout_seconds or 0))
+            while True:
+                try:
+                    fcntl.flock(fh.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    acquired = True
+                    break
+                except BlockingIOError:
+                    if time.monotonic() >= deadline:
+                        log(f"[lock] 다른 자동매매 프로세스 실행 중 — {kind} 이번 회차 skip")
+                        yield False
+                        return
+                    time.sleep(0.25)
+        else:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+            acquired = True
+        fh.seek(0)
+        fh.truncate()
+        fh.write(json.dumps({
+            "pid": os.getpid(), "kind": kind,
+            "started_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+        }, ensure_ascii=False))
+        fh.flush()
+        yield True
+    finally:
+        if fh is not None:
+            if acquired:
+                try:
+                    fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
+                except OSError:
+                    pass
+            fh.close()
 
 
 def past_force_exit(now=None):
@@ -178,11 +232,19 @@ def load_positions():
     (Windows 파일락 등 일시 오류에) 중복 실매수·이중 매도를 부른다. 일시 오류 대비 짧은 재시도만.
     """
     if not os.path.exists(POS_PATH):
-        return {"positions": []}
+        return {"schema_version": 2, "positions": [], "pending_entries": []}
     last = None
     for i in range(3):
         try:
-            return json.load(open(POS_PATH, encoding="utf-8"))
+            with open(POS_PATH, encoding="utf-8") as f:
+                data = json.load(f)
+            if not isinstance(data, dict) or not isinstance(data.get("positions"), list):
+                raise ValueError("포지션 원장 스키마 오류")
+            data.setdefault("schema_version", 2)
+            data.setdefault("pending_entries", [])
+            if not isinstance(data["pending_entries"], list):
+                raise ValueError("pending_entries 스키마 오류")
+            return data
         except Exception as e:
             last = e
             time.sleep(0.3 * (i + 1))
@@ -191,17 +253,65 @@ def load_positions():
 
 
 def save_positions(data):
-    """원자적 저장 + 일시 오류 재시도. 최종 실패 시 예외 전파(호출부가 후속 발주 차단)."""
+    """검증된 원장을 fsync 후 원자 교체한다. 최종 실패는 상위로 전파한다."""
+    if not isinstance(data, dict) or not isinstance(data.get("positions"), list):
+        raise ValueError("포지션 원장 스키마 오류")
+    data.setdefault("schema_version", 2)
+    data.setdefault("pending_entries", [])
+    if not isinstance(data["pending_entries"], list):
+        raise ValueError("pending_entries 스키마 오류")
+    order_numbers = set()
+    for p in data["positions"]:
+        qty = int(p.get("qty_open") or 0)
+        if qty < 0:
+            raise ValueError(f"{p.get('code')} qty_open 음수")
+        if p.get("status") == "closed" and qty != 0:
+            raise ValueError(f"{p.get('code')} closed 포지션 qty_open 비0")
+        pending = p.get("pending_exit")
+        if isinstance(pending, dict) and pending.get("ord_no"):
+            key = ("exit", str(pending["ord_no"]))
+            if key in order_numbers:
+                raise ValueError("pending 주문번호 중복")
+            order_numbers.add(key)
+            if int(pending.get("accounted_filled") or 0) > int(pending.get("requested_qty") or 0):
+                raise ValueError("pending_exit 체결수량 불변조건 위반")
+    for pending in data["pending_entries"]:
+        if not isinstance(pending, dict):
+            raise ValueError("pending_entries 항목 스키마 오류")
+        if pending.get("ord_no"):
+            key = ("entry", str(pending["ord_no"]))
+            if key in order_numbers:
+                raise ValueError("pending 주문번호 중복")
+            order_numbers.add(key)
+        if int(pending.get("accounted_filled") or 0) > int(pending.get("requested_qty") or 0):
+            raise ValueError("pending_entry 체결수량 불변조건 위반")
     os.makedirs(os.path.dirname(POS_PATH), exist_ok=True)
-    tmp = POS_PATH + ".tmp"
     last = None
     for i in range(3):
+        tmp = f"{POS_PATH}.tmp.{os.getpid()}.{uuid.uuid4().hex}"
         try:
-            json.dump(data, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=1, allow_nan=False)
+                f.flush()
+                os.fsync(f.fileno())
+            with open(tmp, encoding="utf-8") as f:
+                json.load(f)
             os.replace(tmp, POS_PATH)
+            try:
+                dfd = os.open(os.path.dirname(POS_PATH), os.O_RDONLY)
+                try:
+                    os.fsync(dfd)
+                finally:
+                    os.close(dfd)
+            except OSError:
+                pass
             return
         except Exception as e:
             last = e
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
             time.sleep(0.3 * (i + 1))
     log(f"[pos] 저장 실패(재시도 후): {last}")
     raise last
@@ -216,20 +326,32 @@ def bought_today(data=None):
     """오늘 이미 진입한 포지션이 있으면 True(일 1회 매수 디둡). (단일종목 레거시)"""
     data = data or load_positions()
     t = today_str()
-    return any(p.get("entry_date") == t for p in data["positions"])
+    return (any(p.get("entry_date") == t for p in data["positions"])
+            or any(p.get("entry_date") == t and p.get("state") not in ("CANCELLED", "REJECTED")
+                   for p in data.get("pending_entries", [])))
 
 
 def already_bought(code, data=None):
     """오늘 그 코드를 이미 매수했으면 True(다종목: 코드별 디둡)."""
     data = data or load_positions()
     t = today_str()
-    return any(p.get("code") == code and p.get("entry_date") == t for p in data["positions"])
+    return (any(p.get("code") == code and p.get("entry_date") == t for p in data["positions"])
+            or any(p.get("code") == code and p.get("entry_date") == t
+                   and p.get("state") not in ("CANCELLED", "REJECTED")
+                   for p in data.get("pending_entries", [])))
 
 
 def todays_positions(data=None):
     data = data or load_positions()
     t = today_str()
     return [p for p in data["positions"] if p.get("entry_date") == t]
+
+
+def todays_pending_entries(data=None):
+    data = data or load_positions()
+    t = today_str()
+    return [p for p in data.get("pending_entries", [])
+            if p.get("entry_date") == t and p.get("state") not in ("CANCELLED", "REJECTED")]
 
 
 def deployed_today(data=None):
@@ -242,6 +364,9 @@ def deployed_today(data=None):
         if a is None:
             a = int((p.get("qty") or 0) * (p.get("entry_price") or 0)) or BUY_KRW
         total += a
+    for pending in todays_pending_entries(data):
+        # 주문이 미확정인 동안에는 예약예산 전액을 잠가 이중 집행을 막는다.
+        total += int(pending.get("alloc_krw") or 0)
     return total
 
 
