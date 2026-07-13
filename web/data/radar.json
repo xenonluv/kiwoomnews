@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13 10:13:41 KST",
+ "generated_at": "2026-07-13 10:23:40 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,10 +53,10 @@
    "name": "파세코",
    "sector": "파세코",
    "high_pct": 27.9,
-   "vol_turnover_pct": 113.8,
-   "value_eok": 540,
-   "price": 8580.0,
-   "change_pct": 22.75,
+   "vol_turnover_pct": 117.2,
+   "value_eok": 557,
+   "price": 8590.0,
+   "change_pct": 22.89,
    "backfill": false
   },
   {
@@ -64,10 +64,10 @@
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 29.91,
-   "vol_turnover_pct": 129.1,
-   "value_eok": 413,
-   "price": 9780.0,
-   "change_pct": 15.6,
+   "vol_turnover_pct": 148.9,
+   "value_eok": 478,
+   "price": 10610.0,
+   "change_pct": 25.41,
    "backfill": false
   }
  ],
@@ -76,11 +76,11 @@
    "code": "003680",
    "name": "한성기업",
    "sector": "한성기업",
-   "change_pct": 15.6,
+   "change_pct": 25.41,
    "high_pct": 29.91,
-   "vol_turnover_pct": 129.1,
-   "value_eok": 413,
-   "price": 9780.0,
+   "vol_turnover_pct": 148.9,
+   "value_eok": 478,
+   "price": 10610.0,
    "first_seen": "09:52",
    "exploded": true
   },
@@ -88,11 +88,11 @@
    "code": "037070",
    "name": "파세코",
    "sector": "파세코",
-   "change_pct": 22.75,
+   "change_pct": 22.89,
    "high_pct": 27.9,
-   "vol_turnover_pct": 113.8,
-   "value_eok": 540,
-   "price": 8580.0,
+   "vol_turnover_pct": 117.2,
+   "value_eok": 557,
+   "price": 8590.0,
    "first_seen": "09:42",
    "exploded": true
   }
