@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13 09:33:48 KST",
+ "generated_at": "2026-07-13 09:43:52 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,14 +53,27 @@
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 29.91,
-   "vol_turnover_pct": 96.9,
-   "value_eok": 314,
-   "price": 9900.0,
-   "change_pct": 17.02,
+   "vol_turnover_pct": 103.3,
+   "value_eok": 334,
+   "price": 9800.0,
+   "change_pct": 15.84,
    "backfill": false
   }
  ],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "037070",
+   "name": "파세코",
+   "sector": "파세코",
+   "change_pct": 23.89,
+   "high_pct": 24.32,
+   "vol_turnover_pct": 79.0,
+   "value_eok": 367,
+   "price": 8660.0,
+   "first_seen": "09:42",
+   "exploded": false
+  }
+ ],
  "suspects": [],
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
