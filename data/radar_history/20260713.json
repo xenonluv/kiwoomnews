@@ -543,7 +543,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904863&code=002990&page_notice=2",
     "raw_text_hash": "e5deeb13f58a95f8c805",
-    "fetched_at": "2026-07-13 18:33:38 KST",
+    "fetched_at": "2026-07-13 18:43:47 KST",
     "notice_no": "49904863"
    },
    "alert_release_checks": {
@@ -1046,7 +1046,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443410&code=001210&page_notice=1",
     "raw_text_hash": "9c922ea27b4b7e4e1d2a",
-    "fetched_at": "2026-07-13 18:33:40 KST",
+    "fetched_at": "2026-07-13 18:43:48 KST",
     "notice_no": "48443410"
    },
    "alert_release_checks": {
@@ -1556,7 +1556,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443425&code=091590&page_notice=1",
     "raw_text_hash": "62eb0a2971174abb7e03",
-    "fetched_at": "2026-07-13 18:33:41 KST",
+    "fetched_at": "2026-07-13 18:43:49 KST",
     "notice_no": "48443425"
    },
    "alert_release_checks": {
@@ -1793,7 +1793,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-13 18:33:43 KST",
+    "fetched_at": "2026-07-13 18:43:51 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -1915,7 +1915,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 38.12,
+    "freshness_days": 38.13,
     "directness": "직접",
     "tags": [
      "공시",
@@ -2105,7 +2105,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.09,
+    "freshness_days": 0.1,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -2349,7 +2349,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "1주내",
-    "freshness_days": 4.05,
+    "freshness_days": 4.06,
     "directness": "직접",
     "tags": [
      "반도체",
@@ -2510,7 +2510,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 109.02,
+    "freshness_days": 109.03,
     "directness": "직접",
     "tags": [
      "공시",
@@ -2649,7 +2649,7 @@
    "final": true
   }
  },
- "as_of": "2026-07-13 18:33:45 KST",
+ "as_of": "2026-07-13 18:43:53 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
