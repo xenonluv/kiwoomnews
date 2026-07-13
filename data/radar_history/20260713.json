@@ -87,7 +87,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.19,
+    "freshness_days": 0.2,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -544,7 +544,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904863&code=002990&page_notice=2",
     "raw_text_hash": "e5deeb13f58a95f8c805",
-    "fetched_at": "2026-07-13 20:33:36 KST",
+    "fetched_at": "2026-07-13 20:43:34 KST",
     "notice_no": "49904863"
    },
    "alert_release_checks": {
@@ -1047,7 +1047,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443410&code=001210&page_notice=1",
     "raw_text_hash": "9c922ea27b4b7e4e1d2a",
-    "fetched_at": "2026-07-13 20:33:37 KST",
+    "fetched_at": "2026-07-13 20:43:35 KST",
     "notice_no": "48443410"
    },
    "alert_release_checks": {
@@ -1774,7 +1774,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-13 20:33:40 KST",
+    "fetched_at": "2026-07-13 20:43:38 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -2086,7 +2086,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.17,
+    "freshness_days": 0.18,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -2330,7 +2330,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "1주내",
-    "freshness_days": 4.14,
+    "freshness_days": 4.15,
     "directness": "직접",
     "tags": [
      "반도체",
@@ -2630,7 +2630,7 @@
    "final": true
   }
  },
- "as_of": "2026-07-13 20:33:41 KST",
+ "as_of": "2026-07-13 20:43:40 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
