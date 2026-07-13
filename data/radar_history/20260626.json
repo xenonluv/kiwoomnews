@@ -82,7 +82,11 @@
     "next_open_pct": -2.18,
     "next_low_pct": -2.18
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "198440": {
    "name": "강동씨앤엘",
@@ -165,7 +169,11 @@
     "next_open_pct": -3.64,
     "next_low_pct": -3.64
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   }
  },
  "as_of": "2026-06-26 20:52:48 KST"
