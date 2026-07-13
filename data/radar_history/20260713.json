@@ -509,9 +509,9 @@
    "suspicion_score": 71,
    "score_breakdown_display": {},
    "rank": 3,
-   "precut_rank": null,
-   "published_rank": null,
-   "published": false,
+   "precut_rank": 3,
+   "published_rank": 3,
+   "published": true,
    "first_seen_rank": 2,
    "latest_published_rank": 3,
    "rank_path": [
@@ -586,6 +586,15 @@
      "rank_bucket": 6,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 13:43:50 KST",
+     "precut_rank": 3,
+     "published_rank": 3,
+     "published": true,
+     "rank_bucket": 6,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 6,
@@ -628,14 +637,14 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 1014,
+   "value_eok": 1042,
    "snapshot_open": 2370.0,
    "snapshot_high": 2870.0,
    "snapshot_low": 2320.0,
    "snapshot_close": 2425.0,
-   "snapshot_volume": 39404229.0,
-   "snapshot_value": 101422000000.0,
-   "snapshot_value_eok": 1014.2,
+   "snapshot_volume": 40557150.0,
+   "snapshot_value": 104194000000.0,
+   "snapshot_value_eok": 1041.9,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 2370.0,
@@ -643,9 +652,9 @@
    "signal_low": 2320.0,
    "signal_close": 2425.0,
    "signal_prev_close": 2325.0,
-   "signal_volume": 39404229.0,
-   "signal_value": 101422000000.0,
-   "signal_value_eok": 1014.2,
+   "signal_volume": 40557150.0,
+   "signal_value": 104194000000.0,
+   "signal_value_eok": 1041.9,
    "signal_peak6_price": 2870.0,
    "signal_peak60_price": 8100.0,
    "signal_ma20": 2419.2,
@@ -655,7 +664,7 @@
    "ma20_gap_pct": 0.2,
    "ma10_margin_pct": 18.3,
    "float_ratio": 0.573,
-   "turnover_pct": 61.0,
+   "turnover_pct": 62.8,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -677,7 +686,7 @@
    "alert_elapsed_days": null,
    "shakeout": true,
    "fade_pct": 19.1,
-   "turnover_2d_pct": 72.0,
+   "turnover_2d_pct": 73.8,
    "peak_dd_pct": -70.1,
    "strength_tier": 3,
    "strength": "조합D(통계상 고가강)",
@@ -698,7 +707,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": false
+   "final": true
   },
   "001210": {
    "name": "금호전기",
@@ -1112,7 +1121,7 @@
    "final": false
   }
  },
- "as_of": "2026-07-13 13:33:39 KST",
+ "as_of": "2026-07-13 13:43:50 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
