@@ -553,9 +553,12 @@ def record_history(out):
             "low_accum": s.get("low_accum", False),    # 🧲 저점매집 — 전진검증용
             "low_accum_bars": s.get("low_accum_bars"),
             "alert_now": s.get("alert_now"),           # KRX 시장경보 지정(주의/경고/위험) — 경고/위험 후순위 강등
-            "alert_release": s.get("alert_release"),   # 🔓 투자경고 내일 해제 예정 예측 — True면 최상단 승격
-            "alert_risk_released": s.get("alert_risk_released"),  # 🔓 위험→경고 강등 직후(해제공시 3일 내) — 승격 신호·전진검증용(서산 원형 2026-07-10)
-            "alert_elapsed_days": s.get("alert_elapsed_days"),    # 경고 지정 경과 매매일수(1=첫날·999=오래된 지정·None=판정불가) — 경과일별 성과 전진검증용
+            "alert_release": s.get("alert_release"),   # 🔓 투자경고 내일 해제 예정 예측(표시·검증; rank4는 별도 정책)
+            "alert_release_rule": s.get("alert_release_rule"),  # 신호시점 KRX/KOSCOM 종목별 해제규칙 스냅샷
+            "alert_release_checks": s.get("alert_release_checks"),  # 실제 매매일 경과·T-5/T-15 판정 근거
+            "alert_release_error": s.get("alert_release_error"),  # 파싱/거래일 판정불가 사유(None=정상 판정)
+            "alert_risk_released": s.get("alert_risk_released"),  # 🔓 위험→경고 강등 직후(해제공시 3일 내) — 전진검증용(서산 원형 2026-07-10)
+            "alert_elapsed_days": s.get("alert_elapsed_days"),    # 실제 매매일 기준 경과일수(거래정지 제외)
             "shakeout": s.get("shakeout", False),      # 💥 흔들기(고가+20%↑·페이드15%p↑·회전40%↑·MA20위) — 전진검증용
             "fade_pct": s.get("fade_pct"),
             # 흔들기 강도 튜닝용 변별 변수 — 익일결과와 상관분석해 회전/낙폭 스윗존·티어 경계 최적화(회장님 20년룰 검증).

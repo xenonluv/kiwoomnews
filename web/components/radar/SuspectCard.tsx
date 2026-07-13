@@ -64,6 +64,27 @@ function priorLabel(source: string) {
   return labels[source] ?? source;
 }
 
+function alertReleaseTitle(s: Suspect) {
+  const rule = s.alert_release_rule;
+  const checks = s.alert_release_checks;
+  if (!rule || rule.parse_status !== "ok") {
+    return "KRX 투자경고 해제요건을 오늘 현재가에 적용한 내일 해제 예상입니다. 예측이며 KRX 최종 공시가 우선합니다.";
+  }
+  const elapsed = rule.min_elapsed_days ?? 10;
+  const five = rule.threshold_5d_pct;
+  const fifteen = rule.threshold_15d_pct;
+  const highWindow = rule.recent_high_window ?? 15;
+  const haltCount = checks?.halt_days_excluded?.length ?? 0;
+  return [
+    `KRX/KOSCOM 종목별 공시 기준: 실제 매매일 ${elapsed}일 경과`,
+    five != null ? `T-5 대비 +${five}% 이상 상승하지 않음` : null,
+    fifteen != null ? `T-15 대비 +${fifteen}% 이상 상승하지 않음` : null,
+    `최근 ${highWindow}매매일 최고 종가가 아님`,
+    haltCount ? `거래정지 ${haltCount}일 제외` : null,
+    "오늘 현재가를 가상 종가로 계산한 내일 해제 예상이며 KRX 최종 공시가 우선합니다.",
+  ].filter(Boolean).join(" · ");
+}
+
 function rankStatsLine(label: string, stats: NonNullable<Suspect["rank_retro_stats"]>) {
   const values = [
     stats.touch7_rate != null ? `+7% ${stats.touch7_rate}%` : null,
@@ -171,7 +192,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.alert_release && (
               <Badge
                 className="bg-up px-2.5 py-1 text-base font-black text-white"
-                title="KRX 투자경고 지정해제 공식(지정 후 10매매일 경과 + 5일 +45%↓ + 15일 +75%↓ + 15일 최고가 아님) 오늘 종가 기준 충족 예측 — 내일부터 해제 예상(=억눌림 해소 재료). 예측이며 KRX 최종 판단·보장 아님"
+                title={alertReleaseTitle(s)}
               >
                 🔓 투자경고 해제 예정
               </Badge>
@@ -179,7 +200,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
             {s.alert_risk_released && (
               <Badge
                 className="bg-up px-2.5 py-1 text-base font-black text-white"
-                title="투자위험종목 지정해제 공시 3일 내(위험→경고 강등 직후) — 최고 단계 규제가 방금 풀린 종목. 억눌림 해소 재료로 게시 순위 승격(서산 7/9 해제→7/10 회전 245% 폭발 원형). 매수 추천 아님"
+                title="투자위험종목 지정해제 공시 3일 내(위험→경고 강등 직후) — 최고 단계 규제가 방금 풀린 종목. rank4 순위는 별도 정책이며 배지·전진검증용입니다. 매수 추천 아님"
               >
                 🔓 투자위험 해제 직후
               </Badge>

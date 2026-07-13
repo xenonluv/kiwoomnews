@@ -2356,12 +2356,10 @@ def main():
                 existing[r["code"]]["matched_events"] = r.get("matched_events")
         else:
             suspects.append(r)
-    # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜) — 경고/위험 지정은 무조건 후순위 강등
-    # (회장님 지시 2026-07-03: 투자경고 종목이 상위 추천됨. 경고 후 재상승=매매정지 지정 리스크). fail-safe(None=무경보 취급).
-    # 단 경고 종목이 '내일 해제 예정'(KRX 해제공식 충족 예측, alert_release.py)이면 반대로 최상단 승격(해제=재료).
-    # 위험→경고 강등 직후(alert_risk_released, 해제공시 3일 내)도 동급 승격 — 최고 단계 규제 해소 재료
-    # (서산 원형: 7/9 위험해제 → 7/10 회전 245% 폭발. 회장님 승인 2026-07-10).
-    # alert_elapsed_days(경고 지정 경과 매매일수)는 history 전진검증용 기록 전용 — 정렬 미사용.
+    # KRX 시장경보 지정 조회(최종 수상종목만 ≤reaccum_max·회당 1콜). 투자경고 해제예정은
+    # 종목별 KRX/KOSCOM 지정공시 본문과 실제 매매일(volume>0)로 판정한다. 파싱/거래일 불명은
+    # None으로 배지를 숨기는 fail-safe다. rank4 순위는 별도 정책이며 여기서 바꾸지 않는다.
+    # alert_elapsed_days·rule·checks는 신호시점 근거를 history에 남기는 전진검증용 필드다.
     _today_ymd = datetime.now(KST).strftime("%Y%m%d")
     for s in suspects:
         s["alert_now"] = _alert_level(s["code"])
@@ -2371,14 +2369,22 @@ def main():
             except Exception:
                 _al_daily = None
             try:
-                s["alert_release"] = alert_release.forecast_release_for(
-                    s["code"], _al_daily, s.get("price"))
-            except Exception:
+                _al_eval = alert_release.evaluate_release_for(
+                    s["code"], _al_daily, s.get("price"), as_of_date=_today_ymd)
+                s["alert_release"] = _al_eval.get("value")
+                s["alert_release_rule"] = _al_eval.get("rule")
+                s["alert_release_checks"] = _al_eval.get("checks")
+                s["alert_release_error"] = (
+                    None if _al_eval.get("reason") in (
+                        "all_release_conditions_met", "conditions_not_met", "elapsed_not_met")
+                    else _al_eval.get("reason"))
+                _al_checks = _al_eval.get("checks") or {}
+                s["alert_elapsed_days"] = _al_checks.get("elapsed_days")
+            except Exception as exc:
                 s["alert_release"] = None
-            try:
-                s["alert_elapsed_days"] = alert_release.elapsed_trading_days(
-                    _al_daily, alert_release.designation_notice_date(s["code"]))
-            except Exception:
+                s["alert_release_rule"] = None
+                s["alert_release_checks"] = None
+                s["alert_release_error"] = type(exc).__name__
                 s["alert_elapsed_days"] = None
             try:
                 s["alert_risk_released"] = alert_release.recent_risk_release(s["code"], _today_ymd)

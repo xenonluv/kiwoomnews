@@ -51,7 +51,13 @@ class PublishRankTest(unittest.TestCase):
                 "rank_model_version": "rank4-v1",
                 "rank_model_effective_from": "20260713",
                 "suspects": [
-                    {**suspect("A", bucket=2), "precut_rank": 1, "published_rank": 1},
+                    {**suspect("A", bucket=2), "precut_rank": 1, "published_rank": 1,
+                     "alert_release": False,
+                     "alert_release_rule": {"parse_status": "ok", "threshold_5d_pct": 60.0},
+                     "alert_release_checks": {"elapsed_days": 8,
+                                              "halt_days_excluded": ["20260708"]},
+                     "alert_release_error": None,
+                     "alert_elapsed_days": 8},
                     {**suspect("B", bucket=4), "precut_rank": 2, "published_rank": 2},
                 ],
             }
@@ -70,6 +76,9 @@ class PublishRankTest(unittest.TestCase):
             b = data["suspects"]["B"]
             self.assertEqual(a["first_seen_rank"], 1)
             self.assertEqual(a["latest_published_rank"], 1)
+            self.assertEqual(a["alert_release_rule"]["threshold_5d_pct"], 60.0)
+            self.assertEqual(a["alert_release_checks"]["halt_days_excluded"], ["20260708"])
+            self.assertEqual(a["alert_elapsed_days"], 8)
             self.assertFalse(a["final"])
             self.assertFalse(a["published"])
             self.assertEqual(len(a["rank_path"]), 2)

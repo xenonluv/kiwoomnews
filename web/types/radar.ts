@@ -211,6 +211,39 @@ export interface ForecastInfo {
   note: string;
 }
 
+export interface AlertReleaseRule {
+  source?: string;
+  retrieved_via?: string;
+  notice_date?: string | null;
+  designation_date?: string | null;
+  first_review_date_notice?: string | null;
+  first_review_date_adjusted?: string | null;
+  threshold_5d_pct?: number | null;
+  threshold_15d_pct?: number | null;
+  recent_high_window?: number | null;
+  min_elapsed_days?: number | null;
+  logic_version?: string;
+  parse_status?: string;
+  parse_error?: string | null;
+  source_url?: string | null;
+  notice_no?: string | null;
+  raw_text_hash?: string | null;
+  fetched_at?: string | null;
+}
+
+export interface AlertReleaseChecks {
+  as_of_date?: string | null;
+  elapsed_days?: number | null;
+  elapsed_ok?: boolean | null;
+  five_day_ok?: boolean | null;
+  fifteen_day_ok?: boolean | null;
+  not_recent_high_ok?: boolean | null;
+  halt_days_excluded?: string[];
+  current_price?: number | null;
+  t_minus_5_close?: number | null;
+  t_minus_15_close?: number | null;
+}
+
 /** 수상 종목 (전 조건 통과) */
 export interface Suspect {
   code: string;
@@ -238,7 +271,11 @@ export interface Suspect {
   alert_now?: string | null;
   /** 🔓 투자경고 '내일 해제 예정' 예측(KRX 해제공식) — 단독이면 규제해소 bucket, 강한 조건과 중복되면 강한 조건 우선 */
   alert_release?: boolean | null;
-  /** 🔓 투자위험→경고 강등 직후(해제공시 3일 내) — 최고 단계 규제 해소 재료, alert_release와 동급 승격(서산 원형 2026-07-10) */
+  /** 신호시점에 사용한 종목별 KRX/KOSCOM 해제규칙과 실제 매매일 판정근거 */
+  alert_release_rule?: AlertReleaseRule | null;
+  alert_release_checks?: AlertReleaseChecks | null;
+  alert_release_error?: string | null;
+  /** 🔓 투자위험→경고 강등 직후(해제공시 3일 내) — alert_release와 같은 규제해소 관찰 bucket */
   alert_risk_released?: boolean | null;
   /** 경고 지정 경과 매매일수(1=첫날·999=오래된 지정) — history 전진검증용 기록 전용 */
   alert_elapsed_days?: number | null;
