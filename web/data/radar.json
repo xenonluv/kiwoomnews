@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13 16:03:45 KST",
+ "generated_at": "2026-07-13 16:13:44 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -397,7 +397,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443410&code=001210&page_notice=1",
     "raw_text_hash": "9c922ea27b4b7e4e1d2a",
-    "fetched_at": "2026-07-13 16:03:41 KST",
+    "fetched_at": "2026-07-13 16:13:39 KST",
     "notice_no": "48443410"
    },
    "alert_release_checks": {
@@ -690,7 +690,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904863&code=002990&page_notice=2",
     "raw_text_hash": "e5deeb13f58a95f8c805",
-    "fetched_at": "2026-07-13 16:03:39 KST",
+    "fetched_at": "2026-07-13 16:13:38 KST",
     "notice_no": "49904863"
    },
    "alert_release_checks": {
@@ -945,7 +945,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443425&code=091590&page_notice=1",
     "raw_text_hash": "62eb0a2971174abb7e03",
-    "fetched_at": "2026-07-13 16:03:42 KST",
+    "fetched_at": "2026-07-13 16:13:41 KST",
     "notice_no": "48443425"
    },
    "alert_release_checks": {
@@ -1168,7 +1168,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-13 16:03:43 KST",
+    "fetched_at": "2026-07-13 16:13:42 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -1806,7 +1806,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 38.02,
+    "freshness_days": 38.03,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1985,7 +1985,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "1주내",
-    "freshness_days": 3.95,
+    "freshness_days": 3.96,
     "directness": "직접",
     "tags": [
      "반도체",
@@ -2180,7 +2180,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 108.92,
+    "freshness_days": 108.93,
     "directness": "직접",
     "tags": [
      "공시",
