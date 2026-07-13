@@ -255,7 +255,7 @@
   "002990": {
    "name": "금호건설",
    "sector": "금호건설",
-   "entry": 12970.0,
+   "entry": 13130.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -264,13 +264,13 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 66,
+   "suspicion_score": 67,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 0,
     "re_body": 0,
     "peak_turnover": 4,
-    "re_turnover": 0
+    "re_turnover": 1
    },
    "rank": 2,
    "precut_rank": 2,
@@ -335,7 +335,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -22.89,
+   "change_pct": -21.94,
    "change_basis": "KRX",
    "high_pct": 1.13,
    "pattern": "reaccum",
@@ -369,24 +369,24 @@
     "relevant_count": 1
    },
    "news": [],
-   "value_eok": 1026,
+   "value_eok": 1061,
    "snapshot_open": 16030.0,
    "snapshot_high": 17010.0,
-   "snapshot_low": 12970.0,
-   "snapshot_close": 12970.0,
-   "snapshot_volume": 6777723.0,
-   "snapshot_value": 102566000000.0,
-   "snapshot_value_eok": 1025.7,
+   "snapshot_low": 12600.0,
+   "snapshot_close": 13130.0,
+   "snapshot_volume": 7054493.0,
+   "snapshot_value": 106149000000.0,
+   "snapshot_value_eok": 1061.5,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 16030.0,
    "signal_high": 17010.0,
-   "signal_low": 12970.0,
-   "signal_close": 12970.0,
+   "signal_low": 12600.0,
+   "signal_close": 13130.0,
    "signal_prev_close": 16820.0,
-   "signal_volume": 6777723.0,
-   "signal_value": 102566000000.0,
-   "signal_value_eok": 1025.7,
+   "signal_volume": 7054493.0,
+   "signal_value": 106149000000.0,
+   "signal_value_eok": 1061.5,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -394,9 +394,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": -3.5,
+   "ma10_margin_pct": -2.43,
    "float_ratio": 0.52,
-   "turnover_pct": 35.0,
+   "turnover_pct": 36.4,
    "peak_turnover_pct": 131.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -413,8 +413,8 @@
     "peak_turnover_pct": 131.9,
     "peak_ibs": 0.82,
     "peak_uppertail": 4.0,
-    "ma20": 9227.2,
-    "ma20_margin_pct": 40.56,
+    "ma20": 9235.2,
+    "ma20_margin_pct": 42.17,
     "cause_summary": "'반도체클러스터' 테마 여전히 뜨겁네…금호건설, 거래재개 후 13%↑",
     "was_theme_leader": false,
     "source": "live"
@@ -456,6 +456,10 @@
     {
      "time": "12:35",
      "body_pct": 2.27
+    },
+    {
+     "time": "13:25",
+     "body_pct": 3.96
     }
    ],
    "alert_now": "경고",
@@ -505,9 +509,9 @@
    "suspicion_score": 71,
    "score_breakdown_display": {},
    "rank": 3,
-   "precut_rank": 3,
-   "published_rank": 3,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 2,
    "latest_published_rank": 3,
    "rank_path": [
@@ -570,6 +574,15 @@
      "precut_rank": 3,
      "published_rank": 3,
      "published": true,
+     "rank_bucket": 6,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 13:33:39 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 6,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -685,12 +698,12 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   },
   "001210": {
    "name": "금호전기",
    "sector": "금호전기",
-   "entry": 1013.0,
+   "entry": 1038.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -749,7 +762,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -23.89,
+   "change_pct": -22.01,
    "change_basis": "KRX",
    "high_pct": 3.61,
    "pattern": "reaccum",
@@ -770,24 +783,24 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 210,
+   "value_eok": 216,
    "snapshot_open": 1300.0,
    "snapshot_high": 1379.0,
    "snapshot_low": 984.0,
-   "snapshot_close": 1013.0,
-   "snapshot_volume": 17611057.0,
-   "snapshot_value": 20954000000.0,
-   "snapshot_value_eok": 209.5,
+   "snapshot_close": 1038.0,
+   "snapshot_volume": 18264266.0,
+   "snapshot_value": 21630000000.0,
+   "snapshot_value_eok": 216.3,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 1300.0,
    "signal_high": 1379.0,
    "signal_low": 984.0,
-   "signal_close": 1013.0,
+   "signal_close": 1038.0,
    "signal_prev_close": 1331.0,
-   "signal_volume": 17611057.0,
-   "signal_value": 20954000000.0,
-   "signal_value_eok": 209.5,
+   "signal_volume": 18264266.0,
+   "signal_value": 21630000000.0,
+   "signal_value_eok": 216.3,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -795,9 +808,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": -9.67,
+   "ma10_margin_pct": -7.64,
    "float_ratio": 0.66,
-   "turnover_pct": 43.1,
+   "turnover_pct": 44.7,
    "peak_turnover_pct": 329.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -814,8 +827,8 @@
     "peak_turnover_pct": 329.9,
     "peak_ibs": 0.38,
     "peak_uppertail": 23.7,
-    "ma20": 865.5,
-    "ma20_margin_pct": 17.04,
+    "ma20": 866.8,
+    "ma20_margin_pct": 19.76,
     "cause_summary": "“호남하면 이 그룹이었는데” ‘금호’ 이름으로 30% 급등…모조리 ...",
     "was_theme_leader": false,
     "source": "live"
@@ -847,8 +860,8 @@
      "body_pct": 3.29
     },
     {
-     "time": "13:20",
-     "body_pct": 2.74
+     "time": "13:25",
+     "body_pct": 3.9
     }
    ],
    "alert_now": "경고",
@@ -1099,7 +1112,7 @@
    "final": false
   }
  },
- "as_of": "2026-07-13 13:23:39 KST",
+ "as_of": "2026-07-13 13:33:39 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
