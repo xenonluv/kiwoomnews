@@ -255,7 +255,7 @@
   "002990": {
    "name": "금호건설",
    "sector": "금호건설",
-   "entry": 14010.0,
+   "entry": 15000.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -264,18 +264,18 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 67,
+   "suspicion_score": 68,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 0,
     "re_body": 0,
     "peak_turnover": 4,
-    "re_turnover": 1
+    "re_turnover": 2
    },
    "rank": 2,
-   "precut_rank": null,
-   "published_rank": null,
-   "published": false,
+   "precut_rank": 2,
+   "published_rank": 2,
+   "published": true,
    "first_seen_rank": 1,
    "latest_published_rank": 2,
    "rank_path": [
@@ -323,6 +323,15 @@
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 14:33:39 KST",
+     "precut_rank": 2,
+     "published_rank": 2,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 2,
@@ -344,7 +353,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -16.71,
+   "change_pct": -10.82,
    "change_basis": "KRX",
    "high_pct": 1.13,
    "pattern": "reaccum",
@@ -378,24 +387,24 @@
     "relevant_count": 1
    },
    "news": [],
-   "value_eok": 1143,
+   "value_eok": 1434,
    "snapshot_open": 16030.0,
    "snapshot_high": 17010.0,
    "snapshot_low": 12600.0,
-   "snapshot_close": 14010.0,
-   "snapshot_volume": 7658011.0,
-   "snapshot_value": 114318000000.0,
-   "snapshot_value_eok": 1143.2,
+   "snapshot_close": 15000.0,
+   "snapshot_volume": 9571961.0,
+   "snapshot_value": 143392000000.0,
+   "snapshot_value_eok": 1433.9,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 16030.0,
    "signal_high": 17010.0,
    "signal_low": 12600.0,
-   "signal_close": 14030.0,
+   "signal_close": 15000.0,
    "signal_prev_close": 16820.0,
-   "signal_volume": 7658011.0,
-   "signal_value": 114318000000.0,
-   "signal_value_eok": 1143.2,
+   "signal_volume": 9571961.0,
+   "signal_value": 143392000000.0,
+   "signal_value_eok": 1433.9,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -403,13 +412,13 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 3.42,
+   "ma10_margin_pct": 9.94,
    "float_ratio": 0.52,
-   "turnover_pct": 39.5,
+   "turnover_pct": 49.4,
    "peak_turnover_pct": 131.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": false,
+   "theme_leader": true,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -422,16 +431,16 @@
     "peak_turnover_pct": 131.9,
     "peak_ibs": 0.82,
     "peak_uppertail": 4.0,
-    "ma20": 9280.2,
-    "ma20_margin_pct": 50.97,
+    "ma20": 9328.8,
+    "ma20_margin_pct": 60.79,
     "cause_summary": "'반도체클러스터' 테마 여전히 뜨겁네…금호건설, 거래재개 후 13%↑",
     "was_theme_leader": false,
     "source": "live"
    },
    "reignition": {
-    "body_pct": 4.68,
-    "time": "09:00",
-    "value_eok": 102,
+    "body_pct": 9.21,
+    "time": "14:20",
+    "value_eok": 83,
     "count": 0
    },
    "geupso": false,
@@ -476,7 +485,11 @@
     },
     {
      "time": "14:10",
-     "body_pct": 3.61
+     "body_pct": 7.67
+    },
+    {
+     "time": "14:20",
+     "body_pct": 9.21
     }
    ],
    "alert_now": "경고",
@@ -515,7 +528,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": false
+   "final": true
   },
   "069540": {
    "name": "빛과전자",
@@ -756,7 +769,7 @@
   "001210": {
    "name": "금호전기",
    "sector": "금호전기",
-   "entry": 1079.0,
+   "entry": 1145.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -765,18 +778,18 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 73,
+   "suspicion_score": 76,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 0,
-    "re_body": 0,
+    "re_body": 1,
     "peak_turnover": 10,
-    "re_turnover": 1
+    "re_turnover": 3
    },
    "rank": 1,
-   "precut_rank": null,
-   "published_rank": null,
-   "published": false,
+   "precut_rank": 1,
+   "published_rank": 1,
+   "published": true,
    "first_seen_rank": 1,
    "latest_published_rank": 1,
    "rank_path": [
@@ -794,6 +807,15 @@
      "precut_rank": null,
      "published_rank": null,
      "published": false,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 14:33:39 KST",
+     "precut_rank": 1,
+     "published_rank": 1,
+     "published": true,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -824,7 +846,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -18.93,
+   "change_pct": -13.97,
    "change_basis": "KRX",
    "high_pct": 3.61,
    "pattern": "reaccum",
@@ -845,24 +867,24 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 227,
+   "value_eok": 297,
    "snapshot_open": 1300.0,
    "snapshot_high": 1379.0,
    "snapshot_low": 984.0,
-   "snapshot_close": 1079.0,
-   "snapshot_volume": 19328910.0,
-   "snapshot_value": 22744000000.0,
-   "snapshot_value_eok": 227.4,
+   "snapshot_close": 1145.0,
+   "snapshot_volume": 25286714.0,
+   "snapshot_value": 29665000000.0,
+   "snapshot_value_eok": 296.6,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 1300.0,
    "signal_high": 1379.0,
    "signal_low": 984.0,
-   "signal_close": 1079.0,
+   "signal_close": 1145.0,
    "signal_prev_close": 1331.0,
-   "signal_volume": 19328910.0,
-   "signal_value": 22744000000.0,
-   "signal_value_eok": 227.4,
+   "signal_volume": 25286714.0,
+   "signal_value": 29665000000.0,
+   "signal_value_eok": 296.6,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -870,13 +892,13 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": -4.34,
+   "ma10_margin_pct": 0.92,
    "float_ratio": 0.66,
-   "turnover_pct": 47.3,
+   "turnover_pct": 61.9,
    "peak_turnover_pct": 329.9,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": false,
+   "theme_leader": true,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -889,20 +911,25 @@
     "peak_turnover_pct": 329.9,
     "peak_ibs": 0.38,
     "peak_uppertail": 23.7,
-    "ma20": 868.8,
-    "ma20_margin_pct": 24.19,
+    "ma20": 872.1,
+    "ma20_margin_pct": 31.29,
     "cause_summary": "“호남하면 이 그룹이었는데” ‘금호’ 이름으로 30% 급등…모조리 ...",
     "was_theme_leader": false,
     "source": "live"
    },
    "reignition": {
-    "body_pct": 4.38,
-    "time": "09:00",
-    "value_eok": 19,
-    "count": 0
+    "body_pct": 2.14,
+    "time": "14:30",
+    "value_eok": 5,
+    "count": 1
    },
    "geupso": false,
-   "geupso_bars": [],
+   "geupso_bars": [
+    {
+     "time": "14:30",
+     "body_pct": 2.14
+    }
+   ],
    "low_accum": true,
    "low_accum_bars": [
     {
@@ -927,7 +954,15 @@
     },
     {
      "time": "14:10",
-     "body_pct": 2.17
+     "body_pct": 6.24
+    },
+    {
+     "time": "14:20",
+     "body_pct": 6.77
+    },
+    {
+     "time": "14:30",
+     "body_pct": 2.14
     }
    ],
    "alert_now": "경고",
@@ -949,9 +984,9 @@
    "tp_hint": null,
    "forecast": {
     "horizon": "3일 내 +7%",
-    "prob_pct": 46,
+    "prob_pct": 52,
     "base_pct": 46,
-    "strong": false,
+    "strong": true,
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
@@ -966,12 +1001,12 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": false
+   "final": true
   },
   "214330": {
    "name": "금호에이치티",
    "sector": "금호에이치티",
-   "entry": 7590.0,
+   "entry": 7290.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -980,20 +1015,20 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 66,
+   "suspicion_score": 67,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 0,
-    "re_body": 0,
+    "re_body": 1,
     "peak_turnover": 4,
     "re_turnover": 0
    },
-   "rank": 2,
-   "precut_rank": 2,
-   "published_rank": 2,
+   "rank": 4,
+   "precut_rank": 4,
+   "published_rank": 4,
    "published": true,
    "first_seen_rank": 2,
-   "latest_published_rank": 2,
+   "latest_published_rank": 4,
    "rank_path": [
     {
      "observed_at": "2026-07-13 12:43:39 KST",
@@ -1021,6 +1056,15 @@
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 14:33:39 KST",
+     "precut_rank": 4,
+     "published_rank": 4,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 2,
@@ -1042,7 +1086,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -12.05,
+   "change_pct": -15.53,
    "change_basis": "KRX",
    "high_pct": 5.91,
    "pattern": "reaccum",
@@ -1063,24 +1107,24 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 71,
+   "value_eok": 75,
    "snapshot_open": 8310.0,
    "snapshot_high": 9140.0,
    "snapshot_low": 6680.0,
-   "snapshot_close": 7590.0,
-   "snapshot_volume": 862070.0,
-   "snapshot_value": 7095000000.0,
-   "snapshot_value_eok": 71.0,
+   "snapshot_close": 7290.0,
+   "snapshot_volume": 920869.0,
+   "snapshot_value": 7537000000.0,
+   "snapshot_value_eok": 75.4,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 8310.0,
    "signal_high": 9140.0,
    "signal_low": 6680.0,
-   "signal_close": 7590.0,
+   "signal_close": 7290.0,
    "signal_prev_close": 8630.0,
-   "signal_volume": 862070.0,
-   "signal_value": 7095000000.0,
-   "signal_value_eok": 71.0,
+   "signal_volume": 920869.0,
+   "signal_value": 7537000000.0,
+   "signal_value_eok": 75.4,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -1088,9 +1132,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 0.03,
+   "ma10_margin_pct": -3.55,
    "float_ratio": 0.5355,
-   "turnover_pct": 15.4,
+   "turnover_pct": 16.4,
    "peak_turnover_pct": 133.8,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1107,20 +1151,25 @@
     "peak_turnover_pct": 133.8,
     "peak_ibs": 0.3,
     "peak_uppertail": 29.1,
-    "ma20": 7269.0,
-    "ma20_margin_pct": 4.42,
+    "ma20": 7254.0,
+    "ma20_margin_pct": 0.5,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
    },
    "reignition": {
-    "body_pct": 4.85,
-    "time": "09:05",
-    "value_eok": 8,
-    "count": 0
+    "body_pct": 2.1,
+    "time": "14:30",
+    "value_eok": 0,
+    "count": 1
    },
    "geupso": false,
-   "geupso_bars": [],
+   "geupso_bars": [
+    {
+     "time": "14:30",
+     "body_pct": 2.1
+    }
+   ],
    "low_accum": true,
    "low_accum_bars": [
     {
@@ -1149,7 +1198,11 @@
     },
     {
      "time": "14:20",
-     "body_pct": 4.55
+     "body_pct": 4.13
+    },
+    {
+     "time": "14:30",
+     "body_pct": 2.1
     }
    ],
    "alert_now": null,
@@ -1193,7 +1246,7 @@
   "091590": {
    "name": "남화토건",
    "sector": "남화토건",
-   "entry": 7840.0,
+   "entry": 7710.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -1202,25 +1255,34 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "suspicion_score": 66,
+   "suspicion_score": 67,
    "score_breakdown_display": {
     "base": 62,
     "re_count": 0,
-    "re_body": 0,
+    "re_body": 1,
     "peak_turnover": 4,
     "re_turnover": 0
    },
-   "rank": 1,
-   "precut_rank": 1,
-   "published_rank": 1,
+   "rank": 3,
+   "precut_rank": 3,
+   "published_rank": 3,
    "published": true,
    "first_seen_rank": 1,
-   "latest_published_rank": 1,
+   "latest_published_rank": 3,
    "rank_path": [
     {
      "observed_at": "2026-07-13 14:23:41 KST",
      "precut_rank": 1,
      "published_rank": 1,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 14:33:39 KST",
+     "precut_rank": 3,
+     "published_rank": 3,
      "published": true,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
@@ -1246,7 +1308,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -12.01,
+   "change_pct": -13.47,
    "change_basis": "KRX",
    "high_pct": 0.11,
    "pattern": "reaccum",
@@ -1267,24 +1329,24 @@
     "relevant_count": 0
    },
    "news": [],
-   "value_eok": 53,
+   "value_eok": 55,
    "snapshot_open": 8670.0,
    "snapshot_high": 8920.0,
    "snapshot_low": 7200.0,
-   "snapshot_close": 7840.0,
-   "snapshot_volume": 649899.0,
-   "snapshot_value": 5270000000.0,
-   "snapshot_value_eok": 52.7,
+   "snapshot_close": 7710.0,
+   "snapshot_volume": 680256.0,
+   "snapshot_value": 5507000000.0,
+   "snapshot_value_eok": 55.1,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 8670.0,
    "signal_high": 8920.0,
    "signal_low": 7200.0,
-   "signal_close": 7840.0,
+   "signal_close": 7710.0,
    "signal_prev_close": 8910.0,
-   "signal_volume": 649899.0,
-   "signal_value": 5270000000.0,
-   "signal_value_eok": 52.7,
+   "signal_volume": 680256.0,
+   "signal_value": 5507000000.0,
+   "signal_value_eok": 55.1,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -1292,13 +1354,13 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": -15.43,
+   "ma10_margin_pct": -16.71,
    "float_ratio": 0.4113,
-   "turnover_pct": 13.5,
+   "turnover_pct": 14.1,
    "peak_turnover_pct": 137.2,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": true,
+   "theme_leader": false,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -1311,20 +1373,25 @@
     "peak_turnover_pct": 137.2,
     "peak_ibs": 0.71,
     "peak_uppertail": 12.2,
-    "ma20": 7261.5,
-    "ma20_margin_pct": 7.97,
+    "ma20": 7255.0,
+    "ma20_margin_pct": 6.27,
     "cause_summary": "과열 경고에도 '호남 반도체' 테마주 상한가 행렬…변동성 주의보[핫...",
     "was_theme_leader": false,
     "source": "live"
    },
    "reignition": {
-    "body_pct": 3.25,
-    "time": "09:20",
-    "value_eok": 1,
-    "count": 0
+    "body_pct": 2.31,
+    "time": "14:30",
+    "value_eok": 0,
+    "count": 1
    },
    "geupso": false,
-   "geupso_bars": [],
+   "geupso_bars": [
+    {
+     "time": "14:30",
+     "body_pct": 2.31
+    }
+   ],
    "low_accum": true,
    "low_accum_bars": [
     {
@@ -1338,6 +1405,14 @@
     {
      "time": "14:10",
      "body_pct": 3.06
+    },
+    {
+     "time": "14:20",
+     "body_pct": 2.43
+    },
+    {
+     "time": "14:30",
+     "body_pct": 2.31
     }
    ],
    "alert_now": "경고",
@@ -1381,7 +1456,7 @@
   "228340": {
    "name": "동양파일",
    "sector": "동양파일",
-   "entry": 3450.0,
+   "entry": 3425.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -1398,17 +1473,26 @@
     "peak_turnover": 0,
     "re_turnover": 0
    },
-   "rank": 3,
-   "precut_rank": 3,
-   "published_rank": 3,
+   "rank": 5,
+   "precut_rank": 5,
+   "published_rank": 5,
    "published": true,
    "first_seen_rank": 3,
-   "latest_published_rank": 3,
+   "latest_published_rank": 5,
    "rank_path": [
     {
      "observed_at": "2026-07-13 14:23:41 KST",
      "precut_rank": 3,
      "published_rank": 3,
+     "published": true,
+     "rank_bucket": 3,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-13 14:33:39 KST",
+     "precut_rank": 5,
+     "published_rank": 5,
      "published": true,
      "rank_bucket": 3,
      "rank_model_version": "rank4-v1",
@@ -1434,7 +1518,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -13.64,
+   "change_pct": -14.27,
    "change_basis": "KRX",
    "high_pct": -3.0,
    "pattern": "reaccum",
@@ -1459,20 +1543,20 @@
    "snapshot_open": 3870.0,
    "snapshot_high": 3875.0,
    "snapshot_low": 3250.0,
-   "snapshot_close": 3450.0,
-   "snapshot_volume": 966328.0,
-   "snapshot_value": 3493000000.0,
-   "snapshot_value_eok": 34.9,
+   "snapshot_close": 3425.0,
+   "snapshot_volume": 980821.0,
+   "snapshot_value": 3543000000.0,
+   "snapshot_value_eok": 35.4,
    "snapshot_as_of": "20260713",
    "signal_date": "20260713",
    "signal_open": 3870.0,
    "signal_high": 3875.0,
    "signal_low": 3250.0,
-   "signal_close": 3450.0,
+   "signal_close": 3425.0,
    "signal_prev_close": 3995.0,
-   "signal_volume": 966328.0,
-   "signal_value": 3493000000.0,
-   "signal_value_eok": 34.9,
+   "signal_volume": 980821.0,
+   "signal_value": 3543000000.0,
+   "signal_value_eok": 35.4,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -1480,9 +1564,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": -16.13,
+   "ma10_margin_pct": -16.69,
    "float_ratio": 0.4,
-   "turnover_pct": 12.1,
+   "turnover_pct": 12.3,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -1499,8 +1583,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 0.81,
     "peak_uppertail": 3.9,
-    "ma20": 3166.6,
-    "ma20_margin_pct": 8.95,
+    "ma20": 3165.3,
+    "ma20_margin_pct": 8.2,
     "cause_summary": "",
     "was_theme_leader": false,
     "source": "live"
@@ -1565,7 +1649,7 @@
    "final": true
   }
  },
- "as_of": "2026-07-13 14:23:41 KST",
+ "as_of": "2026-07-13 14:33:39 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
