@@ -561,8 +561,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:37:12+09:00",
-    "expires_at": "2026-07-14T20:47:12+09:00",
+    "checked_at": "2026-07-14T20:47:05+09:00",
+    "expires_at": "2026-07-14T20:57:05+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -848,8 +848,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:37:07+09:00",
-    "expires_at": "2026-07-14T20:47:07+09:00",
+    "checked_at": "2026-07-14T20:47:02+09:00",
+    "expires_at": "2026-07-14T20:57:02+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1098,8 +1098,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:37:12+09:00",
-    "expires_at": "2026-07-14T20:47:12+09:00",
+    "checked_at": "2026-07-14T20:47:04+09:00",
+    "expires_at": "2026-07-14T20:57:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1231,7 +1231,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 39.21,
+    "freshness_days": 39.22,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1355,8 +1355,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:37:09+09:00",
-    "expires_at": "2026-07-14T20:47:09+09:00",
+    "checked_at": "2026-07-14T20:47:04+09:00",
+    "expires_at": "2026-07-14T20:57:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2053,7 +2053,7 @@
    "final": false
   }
  },
- "as_of": "2026-07-14 20:37:05 KST",
+ "as_of": "2026-07-14 20:46:59 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
@@ -2080,8 +2080,8 @@
     "restriction_start": "20260715",
     "restriction_end": "20260730",
     "relisting_expected": "20260731",
-    "checked_at": "2026-07-14T20:37:08+09:00",
-    "expires_at": "2026-07-14T20:47:08+09:00",
+    "checked_at": "2026-07-14T20:47:02+09:00",
+    "expires_at": "2026-07-14T20:57:02+09:00",
     "evidence": {
      "notice_id": "60886298",
      "title": "금호전기(주) 매매거래정지및정지해제(주식병합)",
@@ -2101,7 +2101,7 @@
    "rank_bucket": 2,
    "suspicion_score": 76,
    "first_blocked": "2026-07-14 16:04:07 KST",
-   "last_blocked": "2026-07-14 20:37:05 KST"
+   "last_blocked": "2026-07-14 20:46:59 KST"
   }
  }
 }
