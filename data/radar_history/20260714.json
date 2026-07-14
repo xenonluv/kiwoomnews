@@ -328,12 +328,12 @@
    "breakdown": {},
    "suspicion_score": 69,
    "score_breakdown_display": {},
-   "rank": 5,
+   "rank": 4,
    "precut_rank": 5,
-   "published_rank": 5,
+   "published_rank": 4,
    "published": true,
    "first_seen_rank": 1,
-   "latest_published_rank": 5,
+   "latest_published_rank": 4,
    "rank_path": [
     {
      "observed_at": "2026-07-14 11:43:46 KST",
@@ -433,6 +433,15 @@
      "rank_bucket": 8,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-14 16:04:07 KST",
+     "precut_rank": 5,
+     "published_rank": 4,
+     "published": true,
+     "rank_bucket": 8,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 8,
@@ -480,7 +489,7 @@
    "snapshot_high": 3000.0,
    "snapshot_low": 2490.0,
    "snapshot_close": 2580.0,
-   "snapshot_volume": 12441856.0,
+   "snapshot_volume": 12441859.0,
    "snapshot_value": 34774000000.0,
    "snapshot_value_eok": 347.7,
    "snapshot_as_of": "20260714",
@@ -490,7 +499,7 @@
    "signal_low": 2490.0,
    "signal_close": 2580.0,
    "signal_prev_close": 2480.0,
-   "signal_volume": 12441856.0,
+   "signal_volume": 12441859.0,
    "signal_value": 34774000000.0,
    "signal_value_eok": 347.7,
    "signal_peak6_price": 3000.0,
@@ -539,6 +548,28 @@
    "very_good_candidate": false,
    "tp_hint": "+15% (양극단·표본소)",
    "forecast": null,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260714",
+    "target_trade_date": "20260715",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-14T16:04:12+09:00",
+    "expires_at": "2026-07-14T16:14:12+09:00",
+    "evidence": null,
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
    "matched_events": [],
    "first_seen": "2026-07-14 11:43:46 KST",
    "evaluated": false,
@@ -696,9 +727,9 @@
    "snapshot_high": 9680.0,
    "snapshot_low": 7320.0,
    "snapshot_close": 7370.0,
-   "snapshot_volume": 15628795.0,
-   "snapshot_value": 135454000000.0,
-   "snapshot_value_eok": 1354.5,
+   "snapshot_volume": 15630179.0,
+   "snapshot_value": 135464000000.0,
+   "snapshot_value_eok": 1354.6,
    "snapshot_as_of": "20260714",
    "signal_date": "20260714",
    "signal_open": 9110.0,
@@ -706,9 +737,9 @@
    "signal_low": 7320.0,
    "signal_close": 7370.0,
    "signal_prev_close": 8760.0,
-   "signal_volume": 15628795.0,
-   "signal_value": 135454000000.0,
-   "signal_value_eok": 1354.5,
+   "signal_volume": 15630179.0,
+   "signal_value": 135464000000.0,
+   "signal_value_eok": 1354.6,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -722,7 +753,7 @@
    "peak_turnover_pct": 207.4,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
-   "theme_leader": true,
+   "theme_leader": false,
    "spark_max_x": null,
    "mega_flow": false,
    "flow_today_buy": false,
@@ -804,6 +835,28 @@
     "next_day_7_pct": 25,
     "note": "과거 실측 확률·보장 아님"
    },
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260714",
+    "target_trade_date": "20260715",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-14T16:04:09+09:00",
+    "expires_at": "2026-07-14T16:14:09+09:00",
+    "evidence": null,
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
    "matched_events": [],
    "first_seen": "2026-07-14 13:23:48 KST",
    "evaluated": false,
@@ -823,12 +876,12 @@
    "breakdown": {},
    "suspicion_score": 77,
    "score_breakdown_display": {},
-   "rank": 4,
+   "rank": 3,
    "precut_rank": 4,
-   "published_rank": 4,
+   "published_rank": 3,
    "published": true,
    "first_seen_rank": 2,
-   "latest_published_rank": 4,
+   "latest_published_rank": 3,
    "rank_path": [
     {
      "observed_at": "2026-07-14 13:23:48 KST",
@@ -874,6 +927,15 @@
      "rank_bucket": 5,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-14 16:04:07 KST",
+     "precut_rank": 4,
+     "published_rank": 3,
+     "published": true,
+     "rank_bucket": 5,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 5,
@@ -908,7 +970,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.2,
+    "freshness_days": 0.21,
     "directness": "직접",
     "tags": [
      "공시",
@@ -964,9 +1026,9 @@
    "snapshot_high": 5750.0,
    "snapshot_low": 4340.0,
    "snapshot_close": 4670.0,
-   "snapshot_volume": 7314427.0,
-   "snapshot_value": 37953000000.0,
-   "snapshot_value_eok": 379.5,
+   "snapshot_volume": 7314858.0,
+   "snapshot_value": 37955000000.0,
+   "snapshot_value_eok": 379.6,
    "snapshot_as_of": "20260714",
    "signal_date": "20260714",
    "signal_open": 5110.0,
@@ -974,9 +1036,9 @@
    "signal_low": 4340.0,
    "signal_close": 4670.0,
    "signal_prev_close": 4445.0,
-   "signal_volume": 7314427.0,
-   "signal_value": 37953000000.0,
-   "signal_value_eok": 379.5,
+   "signal_volume": 7314858.0,
+   "signal_value": 37955000000.0,
+   "signal_value_eok": 379.6,
    "signal_peak6_price": 5750.0,
    "signal_peak60_price": 5750.0,
    "signal_ma20": 3645.5,
@@ -1023,6 +1085,28 @@
    "very_good_candidate": false,
    "tp_hint": "+7~10% (12% 천장 실측)",
    "forecast": null,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260714",
+    "target_trade_date": "20260715",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-14T16:04:11+09:00",
+    "expires_at": "2026-07-14T16:14:11+09:00",
+    "evidence": null,
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
    "matched_events": [],
    "first_seen": "2026-07-14 13:23:48 KST",
    "evaluated": false,
@@ -1042,12 +1126,12 @@
    "breakdown": {},
    "suspicion_score": 76,
    "score_breakdown_display": {},
-   "rank": 3,
+   "rank": 2,
    "precut_rank": 3,
-   "published_rank": 3,
+   "published_rank": 2,
    "published": true,
    "first_seen_rank": 4,
-   "latest_published_rank": 3,
+   "latest_published_rank": 2,
    "rank_path": [
     {
      "observed_at": "2026-07-14 13:43:53 KST",
@@ -1102,6 +1186,15 @@
      "rank_bucket": 4,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-14 16:04:07 KST",
+     "precut_rank": 3,
+     "published_rank": 2,
+     "published": true,
+     "rank_bucket": 4,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 4,
@@ -1138,7 +1231,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 39.01,
+    "freshness_days": 39.02,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1190,8 +1283,8 @@
    "snapshot_high": 12770.0,
    "snapshot_low": 9710.0,
    "snapshot_close": 10980.0,
-   "snapshot_volume": 5242616.0,
-   "snapshot_value": 60552000000.0,
+   "snapshot_volume": 5242690.0,
+   "snapshot_value": 60553000000.0,
    "snapshot_value_eok": 605.5,
    "snapshot_as_of": "20260714",
    "signal_date": "20260714",
@@ -1200,8 +1293,8 @@
    "signal_low": 9710.0,
    "signal_close": 10980.0,
    "signal_prev_close": 10080.0,
-   "signal_volume": 5242616.0,
-   "signal_value": 60552000000.0,
+   "signal_volume": 5242690.0,
+   "signal_value": 60553000000.0,
    "signal_value_eok": 605.5,
    "signal_peak6_price": 12770.0,
    "signal_peak60_price": 20000.0,
@@ -1249,6 +1342,28 @@
    "very_good_candidate": false,
    "tp_hint": "+13%",
    "forecast": null,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260714",
+    "target_trade_date": "20260715",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-14T16:04:11+09:00",
+    "expires_at": "2026-07-14T16:14:11+09:00",
+    "evidence": null,
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
    "matched_events": [],
    "first_seen": "2026-07-14 13:43:53 KST",
    "evaluated": false,
@@ -1486,9 +1601,9 @@
     "re_turnover": 3
    },
    "rank": 2,
-   "precut_rank": 2,
-   "published_rank": 2,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 2,
    "latest_published_rank": 2,
    "rank_path": [
@@ -1497,6 +1612,15 @@
      "precut_rank": 2,
      "published_rank": 2,
      "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-14 16:04:07 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -1704,7 +1828,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   },
   "228340": {
    "name": "동양파일",
@@ -1929,10 +2053,55 @@
    "final": false
   }
  },
- "as_of": "2026-07-14 15:54:02 KST",
+ "as_of": "2026-07-14 16:04:07 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
  "rank_model_effective_at": "2026-07-13 09:00:00 KST",
- "rank_model_source_commit": "7f3acab"
+ "rank_model_source_commit": "7f3acab",
+ "blocked_suspects": {
+  "001210": {
+   "name": "금호전기",
+   "precut_rank": 2,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "다음 거래일이 확정 매매정지기간(20260715~20260730)에 포함됩니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260714",
+    "target_trade_date": "20260715",
+    "status": "HALT_CONFIRMED",
+    "tradable_next_session": false,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "SHARE_CONSOLIDATION_HALT",
+    "reason": "다음 거래일이 확정 매매정지기간(20260715~20260730)에 포함됩니다.",
+    "restriction_start": "20260715",
+    "restriction_end": "20260730",
+    "relisting_expected": "20260731",
+    "checked_at": "2026-07-14T16:04:09+09:00",
+    "expires_at": "2026-07-14T16:14:09+09:00",
+    "evidence": {
+     "notice_id": "60886298",
+     "title": "금호전기(주) 매매거래정지및정지해제(주식병합)",
+     "published_at": "20260708",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=60886298&code=001210&page_notice=1",
+     "source_hash": "4a1a5bded1f74f9ef755"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260714",
+   "price": 894.0,
+   "pattern": "reaccum",
+   "rank_bucket": 2,
+   "suspicion_score": 76,
+   "first_blocked": "2026-07-14 16:04:07 KST",
+   "last_blocked": "2026-07-14 16:04:07 KST"
+  }
+ }
 }
