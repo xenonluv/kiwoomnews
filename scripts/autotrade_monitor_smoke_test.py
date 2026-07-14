@@ -8,8 +8,11 @@
   잔고 반영 지연·수동 매도와 무관하게 미종결 주문이 있으면 후속 매도를 차단한다.
 """
 import copy
+import os
 import unittest
 from unittest import mock
+
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
 
 import autotrade_monitor as am
 

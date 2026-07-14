@@ -4,6 +4,8 @@ import os
 import tempfile
 import unittest
 
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
+
 import autotrade_common as ac
 
 

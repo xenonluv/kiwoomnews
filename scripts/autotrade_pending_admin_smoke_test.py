@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+import os
 import unittest
 from contextlib import contextmanager
 from unittest import mock
+
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
 
 import autotrade_pending_admin as admin
 

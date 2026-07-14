@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
+import os
+import sys
 import unittest
 from datetime import datetime, timedelta
 from unittest import mock
+
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
 
 import autotrade_orders as orders
 
@@ -82,9 +86,22 @@ class EntryReconcileTest(unittest.TestCase):
         with mock.patch.object(orders.kt, "order_status", return_value=status), \
                 mock.patch.object(orders.kt, "cancel_order", return_value={"dry": True}) as cancel:
             self.assertTrue(orders.reconcile_pending_entries(
-                data, persist=lambda: None, dry=True))
+                data, persist=lambda: None, dry=True, alert_pending=False))
         self.assertTrue(cancel.call_args.kwargs["dry"])
         self.assertEqual(data["pending_entries"][0]["state"], "CANCEL_DRY_BLOCKED")
+
+    def test_unmocked_test_notification_is_blocked_before_transport(self):
+        with self.assertRaisesRegex(RuntimeError, "실제 텔레그램 호출 차단"):
+            orders.ac.notify_trade("절대 발송되면 안 되는 테스트 메시지")
+
+    def test_non_test_mode_still_delegates_to_notification_transport(self):
+        transport = mock.Mock()
+        transport.send.return_value = True
+        with mock.patch.dict(os.environ, {"AUTOTRADE_TEST_MODE": "0"}), \
+                mock.patch.dict(sys.modules, {"telegram_notify": transport}):
+            self.assertTrue(orders.ac.notify_trade("mock transport only"))
+        transport.load_env.assert_called_once_with()
+        transport.send.assert_called_once_with("mock transport only")
 
     def test_fill_cannot_resurrect_closed_position(self):
         row = pending()

@@ -8,6 +8,8 @@ from contextlib import ExitStack
 from datetime import datetime
 from unittest import mock
 
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
+
 import publish
 import autotrade_common as ac
 import autotrade_executor as executor

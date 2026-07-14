@@ -5,6 +5,8 @@ import unittest
 from contextlib import contextmanager
 from unittest import mock
 
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
+
 import autotrade_pending_attention as attention
 
 

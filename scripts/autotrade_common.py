@@ -134,6 +134,10 @@ def market_session(now=None):
 
 def notify_trade(text):
     """자동매매 텔레그램 알림 — telegram_notify 재사용. fail-safe(미설정·실패여도 매매 진행)."""
+    # 회귀 테스트가 실환경 .env를 읽어 실제 텔레그램을 발송하면 안 된다.
+    # 테스트는 의도한 알림을 반드시 mock으로 검증하며, 누락 시 조용히 삼키지 않고 실패시킨다.
+    if os.environ.get("AUTOTRADE_TEST_MODE") == "1":
+        raise RuntimeError("AUTOTRADE_TEST_MODE에서 실제 텔레그램 호출 차단")
     try:
         import telegram_notify as tn
         tn.load_env()

@@ -5,6 +5,8 @@ from datetime import datetime
 from contextlib import ExitStack
 from unittest import mock
 
+os.environ["AUTOTRADE_TEST_MODE"] = "1"
+
 import autotrade_executor as executor
 
 
