@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14 20:04:11 KST",
+ "generated_at": "2026-07-14 20:14:40 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -468,8 +468,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:04:13+09:00",
-    "expires_at": "2026-07-14T20:14:13+09:00",
+    "checked_at": "2026-07-14T20:14:43+09:00",
+    "expires_at": "2026-07-14T20:24:43+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -679,8 +679,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:04:15+09:00",
-    "expires_at": "2026-07-14T20:14:15+09:00",
+    "checked_at": "2026-07-14T20:14:45+09:00",
+    "expires_at": "2026-07-14T20:24:45+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -809,7 +809,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.37,
+    "freshness_days": 0.38,
     "directness": "직접",
     "tags": [
      "공시",
@@ -892,8 +892,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:04:16+09:00",
-    "expires_at": "2026-07-14T20:14:16+09:00",
+    "checked_at": "2026-07-14T20:14:45+09:00",
+    "expires_at": "2026-07-14T20:24:45+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1062,8 +1062,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T20:04:16+09:00",
-    "expires_at": "2026-07-14T20:14:16+09:00",
+    "checked_at": "2026-07-14T20:14:46+09:00",
+    "expires_at": "2026-07-14T20:24:46+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1316,8 +1316,8 @@
     "restriction_start": "20260715",
     "restriction_end": "20260730",
     "relisting_expected": "20260731",
-    "checked_at": "2026-07-14T20:04:13+09:00",
-    "expires_at": "2026-07-14T20:14:13+09:00",
+    "checked_at": "2026-07-14T20:14:43+09:00",
+    "expires_at": "2026-07-14T20:24:43+09:00",
     "evidence": {
      "notice_id": "60886298",
      "title": "금호전기(주) 매매거래정지및정지해제(주식병합)",
