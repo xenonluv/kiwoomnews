@@ -1,0 +1,10 @@
+{
+ "date": "20260714",
+ "suspects": {},
+ "as_of": "2026-07-14 09:03:30 KST",
+ "rank_policy_name": "rank4",
+ "rank_model_version": "rank4-v1",
+ "rank_model_effective_from": "20260713",
+ "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+ "rank_model_source_commit": "7f3acab"
+}
