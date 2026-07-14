@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14 09:33:38 KST",
+ "generated_at": "2026-07-14 09:43:39 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -53,10 +53,10 @@
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 29.03,
-   "vol_turnover_pct": 112.5,
-   "value_eok": 400,
-   "price": 11330.0,
-   "change_pct": 21.83,
+   "vol_turnover_pct": 124.0,
+   "value_eok": 441,
+   "price": 11190.0,
+   "change_pct": 20.32,
    "backfill": false
   }
  ],
