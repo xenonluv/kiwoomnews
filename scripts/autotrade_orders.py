@@ -258,7 +258,7 @@ def _reconcile_one(data, pending, checkpoint, dry, now):
     return False, True
 
 
-def reconcile_pending_entries(data, persist=None, dry=False):
+def reconcile_pending_entries(data, persist=None, dry=False, alert_pending=True):
     """매수 pending을 행별 트랜잭션으로 재조정한다.
 
     한 행의 변환·저장 오류는 해당 행만 원복·격리하며 다른 pending과 포지션의
@@ -310,5 +310,8 @@ def reconcile_pending_entries(data, persist=None, dry=False):
             unresolved = True
             index += 1
 
-    review_pending_attention(data, persist=persist, now=now)
+    # 웹 신규매수 OFF에서는 청산 안전을 위한 체결 재조정은 계속하되,
+    # 사용자가 중단한 자동매매의 generic pending 재알림은 보내지 않는다.
+    if alert_pending:
+        review_pending_attention(data, persist=persist, now=now)
     return unresolved or bool(data.get("pending_entries"))

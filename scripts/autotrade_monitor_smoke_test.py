@@ -387,7 +387,7 @@ class NxtSellConfirmTest(unittest.TestCase):
             am._run_unlocked(dry=True)
         check.assert_called_once()
 
-    def test_closed_session_still_runs_pending_visibility_without_broker_action(self):
+    def test_closed_session_does_not_alert_unverified_local_pending(self):
         data = {"positions": [], "pending_entries": [
             {"intent_id": "A", "code": "012345", "state": "SUBMIT_UNKNOWN"}
         ]}
@@ -398,9 +398,23 @@ class NxtSellConfirmTest(unittest.TestCase):
                 mock.patch.object(am.kt, "cancel_order") as cancel, \
                 mock.patch.object(am.ac, "log"):
             am._run_unlocked(dry=False)
-        review.assert_called_once()
+        review.assert_not_called()
         reconcile.assert_not_called()
         cancel.assert_not_called()
+
+    def test_web_off_reconciles_pending_without_generic_buy_alert(self):
+        data = {"positions": [], "pending_entries": [
+            {"intent_id": "A", "code": "012345", "state": "ACCEPTED"}
+        ]}
+        with mock.patch.object(am.ac, "load_positions", return_value=data), \
+                mock.patch.object(am.ac, "market_session", return_value="krx"), \
+                mock.patch.object(am.ac, "autotrade_enabled", return_value=False), \
+                mock.patch.object(am.autotrade_orders, "reconcile_pending_entries",
+                                  return_value=False) as reconcile, \
+                mock.patch.object(am.ac, "open_positions", return_value=[]), \
+                mock.patch.object(am.ac, "log"):
+            am._run_unlocked(dry=True)
+        reconcile.assert_called_once_with(data, dry=True, alert_pending=False)
 
     def test_linked_pending_allows_stop_loss_but_defers_profit_exit(self):
         pos = _pos()

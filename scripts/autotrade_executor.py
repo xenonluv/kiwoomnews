@@ -150,18 +150,13 @@ def _run_unlocked(slot, dry=True):
         ac.log(f"[exec:{slot}] 포지션 상태 확인 실패({e}) — fail-closed(매수 중단)")
         return
     data.setdefault("pending_entries", [])
-    if data.get("pending_entries"):
-        # 웹 OFF여도 미해소 주문의 가시성은 유지한다. 이 검사는 주문/취소를 호출하지 않는다.
-        try:
-            autotrade_orders.review_pending_attention(
-                data, persist=lambda: ac.save_positions(data))
-        except Exception as e:
-            ac.log(f"[exec:{slot}] pending 가시성 검사 실패(신규매수는 보수적으로 차단): {e}")
     if not ac.autotrade_enabled():
         ac.log(f"[exec:{slot}] 자동매매 OFF(KV autotrade:enabled≠1) — 매수 안 함")
         return
     if data.get("pending_entries"):
         try:
+            # 증권사 주문상태를 먼저 대조한다. 이미 체결·취소 완료된 로컬 pending을
+            # 재조정 전에 경고하면 false positive가 되므로 경고는 이 함수 끝에서만 보낸다.
             unresolved = autotrade_orders.reconcile_pending_entries(data, dry=dry)
         except Exception as e:
             ac.log(f"[exec:{slot}] 매수 pending 재조정 실패 — 신규 매수 차단: {e}")

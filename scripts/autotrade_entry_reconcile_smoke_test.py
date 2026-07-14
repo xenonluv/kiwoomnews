@@ -52,6 +52,29 @@ class EntryReconcileTest(unittest.TestCase):
             self.assertTrue(orders.reconcile_pending_entries(data, persist=lambda: None))
         self.assertEqual(len(data["pending_entries"]), 1)
 
+    def test_web_off_keeps_unknown_pending_without_generic_notification(self):
+        row = pending(); row["ord_no"] = None; row["state"] = "SUBMIT_UNKNOWN"
+        data = {"positions": [], "pending_entries": [row]}
+        with mock.patch.object(orders.ac, "notify_trade") as notify:
+            self.assertTrue(orders.reconcile_pending_entries(
+                data, persist=lambda: None, alert_pending=False))
+        notify.assert_not_called()
+        self.assertEqual(data["pending_entries"], [row])
+
+    def test_broker_terminal_fill_is_resolved_before_attention(self):
+        row = pending()
+        data = {"positions": [], "pending_entries": [row]}
+        status = {"ordered_qty": 10, "filled_qty": 10, "remaining_qty": 0,
+                  "avg_fill_price": 1000, "ord_no": "77"}
+        with mock.patch.object(orders.kt, "order_status", return_value=status), \
+                mock.patch.object(orders.ac, "append_trade_event"), \
+                mock.patch.object(orders.ac, "notify_trade") as notify:
+            self.assertFalse(orders.reconcile_pending_entries(
+                data, persist=lambda: None))
+        self.assertEqual(data["pending_entries"], [])
+        self.assertEqual(data["positions"][0]["qty_open"], 10)
+        notify.assert_not_called()
+
     def test_explicit_dry_never_sends_live_cancel(self):
         data = {"positions": [], "pending_entries": [pending()]}
         status = {"ordered_qty": 10, "filled_qty": 0, "remaining_qty": 10,

@@ -35,7 +35,7 @@ PATH=/usr/local/bin:/usr/bin:/bin
 50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
 # 자동매매 청산 감시 — 1분 간격(급등주 대응). 08시=NXT프리마켓(NXT거래분 급등락 대응), 09~15:30=정규장(-5%손절/+7%50%익절/+11%익절/본전방어/14:50강제청산). 세션은 스크립트가 시각으로 자동 판정.
 */1 8-15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_monitor.py ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
-# 제출 불명 경고 실패 재시도 — 각 매수 슬롯 약 1시간 뒤, 주문/취소 없는 로컬 pending 가시성 전용.
+# AUTO ON 제출 불명 경고 실패 재시도 — OFF에서는 무알림, 주문/취소 없는 로컬 pending 가시성 전용.
 20 16 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
 55 20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
 # 익일 자가검증·통계·튜닝 — 레이더/자동매매/추적/AI 클릭/국면 평가

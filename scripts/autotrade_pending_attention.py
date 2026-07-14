@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""장 세션 밖 미해소 매수 pending 재알림 전용 잡. 주문·조회·취소 API를 호출하지 않는다."""
+"""AUTO ON일 때만 장외 미해소 매수 pending 알림 실패를 재시도한다.
+
+주문·조회·취소 API를 호출하지 않으며 웹 신규매수가 OFF이면 조용히 종료한다.
+"""
 import os
 import sys
 
@@ -12,6 +15,9 @@ def run():
     with ac.acquire_execution_lock("pending-attention", timeout_seconds=10) as acquired:
         if not acquired:
             return False
+        if not ac.autotrade_enabled():
+            ac.log("[entry-attention] 자동매매 OFF — pending 재알림 생략")
+            return True
         try:
             data = ac.load_positions()
         except Exception as exc:

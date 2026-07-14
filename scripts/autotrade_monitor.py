@@ -437,13 +437,6 @@ def _run_unlocked(dry=True):
         # 상태 불명이면 잘못된 empty로 청산 규칙이 무력화되므로 이번 회차 중단(fail-closed).
         ac.log(f"[monitor] 포지션 로드 실패 — 청산 판정 중단(fail-closed): {e}")
         return
-    if data.get("pending_entries"):
-        # 가시성 검사는 주문/취소를 호출하지 않으므로 장 세션·거래일과 무관하게 수행한다.
-        try:
-            autotrade_orders.review_pending_attention(
-                data, persist=lambda: ac.save_positions(data))
-        except Exception as e:
-            ac.log(f"[monitor] pending 가시성 검사 오류 격리 — 청산 계속: {e}")
     session = ac.market_session()
     if session == "closed":
         ac.log("[monitor] 장 마감 세션(closed) — 감시 무동작")
@@ -455,7 +448,11 @@ def _run_unlocked(dry=True):
             return
     if data.get("pending_entries"):
         try:
-            unresolved = autotrade_orders.reconcile_pending_entries(data, dry=dry)
+            # 실제 주문·체결 상태를 먼저 대조한 뒤에만 미해소 경고를 판단한다.
+            # 웹 OFF여도 체결 재조정과 기존 포지션 청산은 계속하지만 generic 매수
+            # pending 알림은 중단한다.
+            unresolved = autotrade_orders.reconcile_pending_entries(
+                data, dry=dry, alert_pending=ac.autotrade_enabled())
         except Exception as e:
             # 방어 최종선: 행별 격리를 빠져나온 예외가 있어도 무관 포지션 위험청산은 진행한다.
             ac.log(f"[monitor] 매수 pending 재조정 전체 오류 — 해당 pending 격리 후 청산 계속: {e}")

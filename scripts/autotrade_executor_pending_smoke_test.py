@@ -53,7 +53,7 @@ class PostSubmitPersistenceTest(unittest.TestCase):
                 warning="매수 주문번호 없음"))
         self.assertEqual(pending["last_alert_success_date"], "20260711")
 
-    def test_web_off_still_runs_pending_visibility_check_without_reconcile(self):
+    def test_web_off_skips_pending_notification_and_reconcile(self):
         payload = {"positions": [], "pending_entries": [self._pending()]}
         with mock.patch.object(executor.ac, "load_positions", return_value=payload), \
                 mock.patch.object(executor.ac, "autotrade_enabled", return_value=False), \
@@ -61,7 +61,7 @@ class PostSubmitPersistenceTest(unittest.TestCase):
                 mock.patch.object(executor.autotrade_orders, "reconcile_pending_entries") as reconcile, \
                 mock.patch.object(executor.ac, "log"):
             executor._run_unlocked("krx", dry=True)
-        review.assert_called_once()
+        review.assert_not_called()
         reconcile.assert_not_called()
 
     def test_post_submit_save_failure_stops_second_candidate_end_to_end(self):

@@ -17,10 +17,25 @@ class PendingAttentionJobTest(unittest.TestCase):
             yield True
 
         with mock.patch.object(attention.ac, "acquire_execution_lock", return_value=acquired()), \
+                mock.patch.object(attention.ac, "autotrade_enabled", return_value=True), \
                 mock.patch.object(attention.ac, "load_positions", return_value=data), \
                 mock.patch.object(attention.autotrade_orders, "review_pending_attention") as review:
             self.assertTrue(attention.run())
         review.assert_called_once()
+
+    def test_web_off_skips_pending_load_and_notification(self):
+        @contextmanager
+        def acquired():
+            yield True
+
+        with mock.patch.object(attention.ac, "acquire_execution_lock", return_value=acquired()), \
+                mock.patch.object(attention.ac, "autotrade_enabled", return_value=False), \
+                mock.patch.object(attention.ac, "load_positions") as load, \
+                mock.patch.object(attention.autotrade_orders, "review_pending_attention") as review, \
+                mock.patch.object(attention.ac, "log"):
+            self.assertTrue(attention.run())
+        load.assert_not_called()
+        review.assert_not_called()
 
     def test_installer_has_after_slot_retry_schedules(self):
         repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
