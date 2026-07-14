@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14 09:03:30 KST",
+ "generated_at": "2026-07-14 09:33:38 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -47,7 +47,19 @@
    "estimated": true
   }
  ],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "003680",
+   "name": "한성기업",
+   "sector": "한성기업",
+   "high_pct": 29.03,
+   "vol_turnover_pct": 112.5,
+   "value_eok": 400,
+   "price": 11330.0,
+   "change_pct": 21.83,
+   "backfill": false
+  }
+ ],
  "youtong": [],
  "suspects": [],
  "rank_policy_name": "rank4",
