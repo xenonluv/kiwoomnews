@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14 17:34:08 KST",
+ "generated_at": "2026-07-14 17:44:30 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -468,8 +468,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T17:34:10+09:00",
-    "expires_at": "2026-07-14T17:44:10+09:00",
+    "checked_at": "2026-07-14T17:44:32+09:00",
+    "expires_at": "2026-07-14T17:54:32+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -606,7 +606,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 39.08,
+    "freshness_days": 39.09,
     "directness": "직접",
     "tags": [
      "공시",
@@ -679,8 +679,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T17:34:12+09:00",
-    "expires_at": "2026-07-14T17:44:12+09:00",
+    "checked_at": "2026-07-14T17:44:34+09:00",
+    "expires_at": "2026-07-14T17:54:34+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -809,7 +809,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.27,
+    "freshness_days": 0.28,
     "directness": "직접",
     "tags": [
      "공시",
@@ -892,8 +892,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T17:34:12+09:00",
-    "expires_at": "2026-07-14T17:44:12+09:00",
+    "checked_at": "2026-07-14T17:44:35+09:00",
+    "expires_at": "2026-07-14T17:54:35+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1062,8 +1062,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-14T17:34:13+09:00",
-    "expires_at": "2026-07-14T17:44:13+09:00",
+    "checked_at": "2026-07-14T17:44:35+09:00",
+    "expires_at": "2026-07-14T17:54:35+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1275,7 +1275,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=48443410&code=001210&page_notice=1",
     "raw_text_hash": "9c922ea27b4b7e4e1d2a",
-    "fetched_at": "2026-07-14 17:34:06 KST",
+    "fetched_at": "2026-07-14 17:44:28 KST",
     "notice_no": "48443410"
    },
    "alert_release_checks": {
@@ -1336,8 +1336,8 @@
     "restriction_start": "20260715",
     "restriction_end": "20260730",
     "relisting_expected": "20260731",
-    "checked_at": "2026-07-14T17:34:10+09:00",
-    "expires_at": "2026-07-14T17:44:10+09:00",
+    "checked_at": "2026-07-14T17:44:32+09:00",
+    "expires_at": "2026-07-14T17:54:32+09:00",
     "evidence": {
      "notice_id": "60886298",
      "title": "금호전기(주) 매매거래정지및정지해제(주식병합)",
