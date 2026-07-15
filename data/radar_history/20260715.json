@@ -96,7 +96,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.03,
+    "freshness_days": 1.04,
     "directness": "간접",
     "tags": [
      "공시",
@@ -218,8 +218,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T15:34:09+09:00",
-    "expires_at": "2026-07-15T15:44:09+09:00",
+    "checked_at": "2026-07-15T15:39:10+09:00",
+    "expires_at": "2026-07-15T15:49:10+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -514,8 +514,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T15:34:11+09:00",
-    "expires_at": "2026-07-15T15:44:11+09:00",
+    "checked_at": "2026-07-15T15:39:11+09:00",
+    "expires_at": "2026-07-15T15:49:11+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -868,8 +868,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T15:34:10+09:00",
-    "expires_at": "2026-07-15T15:44:10+09:00",
+    "checked_at": "2026-07-15T15:39:11+09:00",
+    "expires_at": "2026-07-15T15:49:11+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1290,7 +1290,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-15 15:34:04 KST",
+    "fetched_at": "2026-07-15 15:39:05 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -1342,8 +1342,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T15:34:12+09:00",
-    "expires_at": "2026-07-15T15:44:12+09:00",
+    "checked_at": "2026-07-15T15:39:12+09:00",
+    "expires_at": "2026-07-15T15:49:12+09:00",
     "evidence": {
      "notice_id": "52165404",
      "title": "동양파일(주) 매매거래정지 예고",
@@ -1414,7 +1414,7 @@
    "last_blocked": "2026-07-15 12:43:45 KST"
   }
  },
- "as_of": "2026-07-15 15:34:05 KST",
+ "as_of": "2026-07-15 15:39:06 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
