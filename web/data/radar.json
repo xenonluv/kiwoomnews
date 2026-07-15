@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15 09:03:38 KST",
+ "generated_at": "2026-07-15 09:43:40 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -34,7 +34,20 @@
  "universe_count": 53,
  "events": [],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "465770",
+   "name": "STX그린로지스",
+   "sector": "STX그린로지스",
+   "change_pct": 16.97,
+   "high_pct": 30.0,
+   "vol_turnover_pct": 79.6,
+   "value_eok": 138,
+   "price": 3860.0,
+   "first_seen": "09:42",
+   "exploded": false
+  }
+ ],
  "suspects": [],
  "blocked_suspects": [],
  "rank_policy_name": "rank4",
