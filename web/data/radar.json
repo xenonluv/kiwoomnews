@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15 10:13:49 KST",
+ "generated_at": "2026-07-15 10:23:56 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -39,10 +39,10 @@
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 27.22,
-   "vol_turnover_pct": 99.7,
-   "value_eok": 428,
-   "price": 13010.0,
-   "change_pct": 16.47,
+   "vol_turnover_pct": 104.6,
+   "value_eok": 449,
+   "price": 13250.0,
+   "change_pct": 18.62,
    "backfill": false
   },
   {
@@ -50,37 +50,37 @@
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
    "high_pct": 30.0,
-   "vol_turnover_pct": 91.4,
-   "value_eok": 158,
-   "price": 3865.0,
-   "change_pct": 17.12,
+   "vol_turnover_pct": 92.8,
+   "value_eok": 161,
+   "price": 3830.0,
+   "change_pct": 16.06,
    "backfill": false
   }
  ],
  "youtong": [
   {
-   "code": "465770",
-   "name": "STX그린로지스",
-   "sector": "STX그린로지스",
-   "change_pct": 17.12,
-   "high_pct": 30.0,
-   "vol_turnover_pct": 91.4,
-   "value_eok": 158,
-   "price": 3865.0,
-   "first_seen": "09:42",
+   "code": "003680",
+   "name": "한성기업",
+   "sector": "한성기업",
+   "change_pct": 18.62,
+   "high_pct": 27.22,
+   "vol_turnover_pct": 104.6,
+   "value_eok": 449,
+   "price": 13250.0,
+   "first_seen": "10:22",
    "exploded": true
   },
   {
-   "code": "054940",
-   "name": "엑사이엔씨",
-   "sector": "엑사이엔씨",
-   "change_pct": 12.28,
-   "high_pct": 20.47,
-   "vol_turnover_pct": 54.0,
-   "value_eok": 136,
-   "price": 960.0,
-   "first_seen": "09:52",
-   "exploded": false
+   "code": "465770",
+   "name": "STX그린로지스",
+   "sector": "STX그린로지스",
+   "change_pct": 16.06,
+   "high_pct": 30.0,
+   "vol_turnover_pct": 92.8,
+   "value_eok": 161,
+   "price": 3830.0,
+   "first_seen": "09:42",
+   "exploded": true
   },
   {
    "code": "002070",
@@ -88,10 +88,22 @@
    "sector": "비비안",
    "change_pct": 29.99,
    "high_pct": 29.99,
-   "vol_turnover_pct": 52.8,
+   "vol_turnover_pct": 53.1,
    "value_eok": 71,
    "price": 10620.0,
    "first_seen": "10:12",
+   "exploded": false
+  },
+  {
+   "code": "054940",
+   "name": "엑사이엔씨",
+   "sector": "엑사이엔씨",
+   "change_pct": 9.59,
+   "high_pct": 20.47,
+   "vol_turnover_pct": 50.1,
+   "value_eok": 126,
+   "price": 937.0,
+   "first_seen": "09:52",
    "exploded": false
   }
  ],
