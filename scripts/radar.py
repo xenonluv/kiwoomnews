@@ -757,7 +757,7 @@ def backfill_window_explosions(reg, p):
     소급 보강 → 전일 폭발 종목이 오늘 14:30↑ 5분 양봉 2회+ AND 현재 등락률 −5~+7%면 수상종목으로 노출. 등록한 폭발일 수 반환.
 
     비용 가드: ① 이미 검증된(활성 vol_turnover_pct 있는) code 스킵 ② reg['window_scanned'][code]==오늘이면
-    재스캔 안 함(10분 cron 매 회차 전체 재스캔 방지 — 첫 회차만 풀, 이후 신규 진입분만)."""
+    재스캔 안 함(5분 cron 매 회차 전체 재스캔 방지 — 첫 회차만 풀, 이후 신규 진입분만)."""
     today = _today_yyyymmdd()
     scanned = reg.setdefault("window_scanned", {})
     if not isinstance(scanned, dict):

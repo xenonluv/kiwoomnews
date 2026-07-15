@@ -10,7 +10,7 @@ import { AutoTradeToggle } from "./AutoTradeToggle";
 import { radarClientService } from "@/services/radar.client";
 import type { RadarData } from "@/types/radar";
 
-/** 자동 갱신 주기(ms). 데이터는 publish cron 10분 주기로 바뀌므로 60초면 충분. */
+/** 자동 확인 주기(ms). publish cron이 5분 주기이므로 새 결과를 1분 이내 반영. */
 const POLL_MS = 60_000;
 
 function LiveStatusBar({ data, justUpdated }: { data: RadarData; justUpdated: boolean }) {
@@ -31,7 +31,7 @@ function LiveStatusBar({ data, justUpdated }: { data: RadarData; justUpdated: bo
           />
         </span>
         {open ? (
-          <span className="text-up">장중 스캔 중 · 자동 갱신(약 10분 주기)</span>
+          <span className="text-up">장중 스캔 중 · 자동 갱신(약 5분 주기)</span>
         ) : (
           <span className="text-muted-foreground">장 마감 · 마지막 스캔 결과</span>
         )}

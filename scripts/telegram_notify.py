@@ -78,7 +78,7 @@ def _save_state(path, state):
         log(f"[telegram] 상태 저장 실패: {e}")
 
 
-REIGNITION_MAX_AGE_MIN = 30  # 완성 후 이만큼 지난 봉은 알림 안 함(뒷북 방지). publish 10분 주기라 1~2회차 여유.
+REIGNITION_MAX_AGE_MIN = 30  # 완성 후 이만큼 지난 봉은 알림 안 함(뒷북 방지). publish 5분 주기에서 일시 실패 재시도 여유.
 
 
 def _bar_complete(bar_time_hhmm, now=None, span_min=5, max_age_min=REIGNITION_MAX_AGE_MIN):

@@ -115,7 +115,7 @@ export function ExplosionList({
         /* 조용히 무시 */
       }
     }
-    refresh(); // 마운트 즉시 1회 — SSG 빌드 스냅샷(최대 ~10분 stale)을 첫 폴링(60초) 전에 갱신
+    refresh(); // 마운트 즉시 1회 — SSG 빌드 스냅샷(최대 ~5분 stale)을 첫 폴링(60초) 전에 갱신
     const id = setInterval(refresh, POLL_MS);
     return () => {
       alive = false;

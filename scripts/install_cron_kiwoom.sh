@@ -28,8 +28,8 @@ BLOCK="$BEGIN
 PATH=/usr/local/bin:/usr/bin:/bin
 # KIS 토큰 — 추적/AI/국면 평가용 일봉 API 토큰 만료시각 고정.
 0 7 * * * cd $REPO && PYTHONUTF8=1 ${PY} scripts/kis_client.py --issue-token >> /tmp/kiwoom_kis_token.log 2>&1
-# 레이더 게시 — 평일 9~20시 10분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
-1,11,21,31,41,51 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1
+# 레이더 게시 — 평일 9~20시 5분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
+1,6,11,16,21,26,31,36,41,46,51,56 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1
 # 자동매매 매수 — 15:18 KRX 종가베팅(비-NXT 종목) / 19:50 NXT(NXT 거래가능 종목, 5호가위 지정가)
 18 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot krx ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
 50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
