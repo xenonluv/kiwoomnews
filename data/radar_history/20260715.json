@@ -10,9 +10,9 @@
    "suspicion_score": 71,
    "score_breakdown_display": {},
    "rank": 1,
-   "precut_rank": 1,
-   "published_rank": 1,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 1,
    "latest_published_rank": 1,
    "rank_path": [
@@ -21,6 +21,15 @@
      "precut_rank": 1,
      "published_rank": 1,
      "published": true,
+     "rank_bucket": 8,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-15 10:13:49 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 8,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -213,11 +222,11 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   }
  },
  "blocked_suspects": {},
- "as_of": "2026-07-15 10:03:40 KST",
+ "as_of": "2026-07-15 10:13:49 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
