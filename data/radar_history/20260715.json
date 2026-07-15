@@ -218,8 +218,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T20:53:59+09:00",
-    "expires_at": "2026-07-15T21:03:59+09:00",
+    "checked_at": "2026-07-15T20:59:03+09:00",
+    "expires_at": "2026-07-15T21:09:03+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -515,8 +515,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T20:54:00+09:00",
-    "expires_at": "2026-07-15T21:04:00+09:00",
+    "checked_at": "2026-07-15T20:59:04+09:00",
+    "expires_at": "2026-07-15T21:09:04+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -724,7 +724,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.48,
+    "freshness_days": 1.49,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -869,8 +869,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T20:53:59+09:00",
-    "expires_at": "2026-07-15T21:03:59+09:00",
+    "checked_at": "2026-07-15T20:59:03+09:00",
+    "expires_at": "2026-07-15T21:09:03+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1331,8 +1331,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T20:54:01+09:00",
-    "expires_at": "2026-07-15T21:04:01+09:00",
+    "checked_at": "2026-07-15T20:59:05+09:00",
+    "expires_at": "2026-07-15T21:09:05+09:00",
     "evidence": {
      "notice_id": "52165404",
      "title": "동양파일(주) 매매거래정지 예고",
@@ -1403,7 +1403,7 @@
    "last_blocked": "2026-07-15 12:43:45 KST"
   }
  },
- "as_of": "2026-07-15 20:53:51 KST",
+ "as_of": "2026-07-15 20:58:54 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
