@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15 10:23:56 KST",
+ "generated_at": "2026-07-15 10:33:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -39,10 +39,10 @@
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 27.22,
-   "vol_turnover_pct": 104.6,
-   "value_eok": 449,
-   "price": 13250.0,
-   "change_pct": 18.62,
+   "vol_turnover_pct": 106.8,
+   "value_eok": 458,
+   "price": 13050.0,
+   "change_pct": 16.83,
    "backfill": false
   },
   {
@@ -50,10 +50,10 @@
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
    "high_pct": 30.0,
-   "vol_turnover_pct": 92.8,
-   "value_eok": 161,
-   "price": 3830.0,
-   "change_pct": 16.06,
+   "vol_turnover_pct": 94.1,
+   "value_eok": 163,
+   "price": 3815.0,
+   "change_pct": 15.61,
    "backfill": false
   }
  ],
@@ -62,11 +62,11 @@
    "code": "003680",
    "name": "한성기업",
    "sector": "한성기업",
-   "change_pct": 18.62,
+   "change_pct": 16.83,
    "high_pct": 27.22,
-   "vol_turnover_pct": 104.6,
-   "value_eok": 449,
-   "price": 13250.0,
+   "vol_turnover_pct": 106.8,
+   "value_eok": 458,
+   "price": 13050.0,
    "first_seen": "10:22",
    "exploded": true
   },
@@ -74,11 +74,11 @@
    "code": "465770",
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
-   "change_pct": 16.06,
+   "change_pct": 15.61,
    "high_pct": 30.0,
-   "vol_turnover_pct": 92.8,
-   "value_eok": 161,
-   "price": 3830.0,
+   "vol_turnover_pct": 94.1,
+   "value_eok": 163,
+   "price": 3815.0,
    "first_seen": "09:42",
    "exploded": true
   },
@@ -98,11 +98,11 @@
    "code": "054940",
    "name": "엑사이엔씨",
    "sector": "엑사이엔씨",
-   "change_pct": 9.59,
+   "change_pct": 12.05,
    "high_pct": 20.47,
    "vol_turnover_pct": 50.1,
    "value_eok": 126,
-   "price": 937.0,
+   "price": 958.0,
    "first_seen": "09:52",
    "exploded": false
   }
