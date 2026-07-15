@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15 16:49:04 KST",
+ "generated_at": "2026-07-15 16:54:06 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -408,8 +408,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:49:09+09:00",
-    "expires_at": "2026-07-15T16:59:09+09:00",
+    "checked_at": "2026-07-15T16:54:11+09:00",
+    "expires_at": "2026-07-15T17:04:11+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -554,7 +554,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.31,
+    "freshness_days": 1.32,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -638,8 +638,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:49:10+09:00",
-    "expires_at": "2026-07-15T16:59:10+09:00",
+    "checked_at": "2026-07-15T16:54:11+09:00",
+    "expires_at": "2026-07-15T17:04:11+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -862,8 +862,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:49:11+09:00",
-    "expires_at": "2026-07-15T16:59:11+09:00",
+    "checked_at": "2026-07-15T16:54:12+09:00",
+    "expires_at": "2026-07-15T17:04:12+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -1059,7 +1059,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-15 16:49:03 KST",
+    "fetched_at": "2026-07-15 16:54:04 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -1118,8 +1118,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:49:11+09:00",
-    "expires_at": "2026-07-15T16:59:11+09:00",
+    "checked_at": "2026-07-15T16:54:13+09:00",
+    "expires_at": "2026-07-15T17:04:13+09:00",
     "evidence": {
      "notice_id": "52165404",
      "title": "동양파일(주) 매매거래정지 예고",
