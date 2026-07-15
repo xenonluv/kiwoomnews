@@ -218,8 +218,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:09:05+09:00",
-    "expires_at": "2026-07-15T16:19:05+09:00",
+    "checked_at": "2026-07-15T16:14:05+09:00",
+    "expires_at": "2026-07-15T16:24:05+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -372,20 +372,28 @@
    "material": {
     "grade": "S",
     "score": 100,
-    "summary": "현대약품, 이재명 대통령 '미프진 허용' 발언에 이틀째 급등",
+    "summary": "대통령 한마디에 이틀째 상승한 현대약품…'탈모약 데자뷔' 우려 나와",
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.24,
+    "freshness_days": 0.0,
     "directness": "직접",
     "tags": [
      "S급재료",
      "공시",
+     "공시/대형이벤트",
      "반도체",
      "테마/수혜"
     ],
     "risk_flags": [],
     "evidence": [
+     {
+      "title": "대통령 한마디에 이틀째 상승한 현대약품…'탈모약 데자뷔' 우려 나와",
+      "datetime": "202607151609",
+      "source": "한국경제",
+      "url": "https://n.news.naver.com/mnews/article/015/0005310335",
+      "score": 100
+     },
      {
       "title": "현대약품, 이재명 대통령 '미프진 허용' 발언에 이틀째 급등",
       "datetime": "202607151024",
@@ -399,19 +407,20 @@
       "source": "뉴시스",
       "url": "https://n.news.naver.com/mnews/article/003/0014067524",
       "score": 100
-     },
-     {
-      "title": "임신중절약 '미프진' 도입 검토에…'상한가' 터진 종목",
-      "datetime": "202607142235",
-      "source": "한국경제TV",
-      "url": "https://n.news.naver.com/mnews/article/215/0001258736",
-      "score": 92
      }
     ],
     "source_count": 3,
     "relevant_count": 3
    },
    "news": [
+    {
+     "title": "대통령 한마디에 이틀째 상승한 현대약품…'탈모약 데자뷔' 우려 나와",
+     "summary": "이재명 대통령이 경구용 임신중절 의약품의 정식 도입을 지시하면서 관련 판권을 갖고 있는 현대약품이 이틀째 상승세를 기록했다. 다만 실제 도입까지 시간이 걸릴 전망이라 투자에 유의해야 한다는 의견도 나온다. 15일 한국거래소에 따르면 전날...",
+     "office": "한국경제",
+     "datetime": "202607151609",
+     "url": "https://n.news.naver.com/mnews/article/015/0005310335",
+     "sentiment": "호재"
+    },
     {
      "title": "현대약품, 이재명 대통령 '미프진 허용' 발언에 이틀째 급등",
      "summary": "이재명 대통령이 임신 중절 약물의 국내 도입을 검토해야 한다고 밝힌 가운데 해당 의약품의 국내 판권을 보유한 현대약품 주가가 이틀째 급등하고 있다. 15일 한국거래소에 따르면 이날 오전 10시10분 현재 현대약품 주가는 전 거래일 대비 15.32...",
@@ -426,14 +435,6 @@
      "office": "뉴시스",
      "datetime": "202607150949",
      "url": "https://n.news.naver.com/mnews/article/003/0014067524",
-     "sentiment": "호재"
-    },
-    {
-     "title": "임신중절약 '미프진' 도입 검토에…'상한가' 터진 종목",
-     "summary": "이재명 대통령이 임신 중지 약물 '미프진'에 대해 &quot;정부에 조금 어려움이 있더라도 적정하게 투약할 수 있게 해 줘야 한다&quot;고 밝히면서 국내 판권을 가진 현대약품 주가가 상한가를 기록했다. 현대약품은 14일 코스닥시장에서 거래 제한폭(",
-     "office": "한국경제TV",
-     "datetime": "202607142235",
-     "url": "https://n.news.naver.com/mnews/article/215/0001258736",
      "sentiment": "호재"
     }
    ],
@@ -514,8 +515,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:09:06+09:00",
-    "expires_at": "2026-07-15T16:19:06+09:00",
+    "checked_at": "2026-07-15T16:14:07+09:00",
+    "expires_at": "2026-07-15T16:24:07+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -723,7 +724,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.28,
+    "freshness_days": 1.29,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -868,8 +869,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:09:05+09:00",
-    "expires_at": "2026-07-15T16:19:05+09:00",
+    "checked_at": "2026-07-15T16:14:06+09:00",
+    "expires_at": "2026-07-15T16:24:06+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1290,7 +1291,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904838&code=228340&page_notice=1",
     "raw_text_hash": "553f6936b147c6e09b42",
-    "fetched_at": "2026-07-15 16:08:58 KST",
+    "fetched_at": "2026-07-15 16:14:00 KST",
     "notice_no": "49904838"
    },
    "alert_release_checks": {
@@ -1342,8 +1343,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-15T16:09:07+09:00",
-    "expires_at": "2026-07-15T16:19:07+09:00",
+    "checked_at": "2026-07-15T16:14:07+09:00",
+    "expires_at": "2026-07-15T16:24:07+09:00",
     "evidence": {
      "notice_id": "52165404",
      "title": "동양파일(주) 매매거래정지 예고",
@@ -1414,7 +1415,7 @@
    "last_blocked": "2026-07-15 12:43:45 KST"
   }
  },
- "as_of": "2026-07-15 16:09:00 KST",
+ "as_of": "2026-07-15 16:14:01 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
