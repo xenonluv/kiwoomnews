@@ -97,6 +97,56 @@ function rankStatsLine(label: string, stats: NonNullable<Suspect["rank_retro_sta
   }${stats.valid === false ? " · 수집 중" : ""}`;
 }
 
+type ShakeoutBadgeMeta = {
+  label: string;
+  title: string;
+  variant: "outline" | "warning" | undefined;
+  className: string;
+};
+
+/**
+ * 흔들기 강·약 표시의 단일 판정점.
+ * rank_policy.py의 강한 prior(매우좋음 또는 조합D)를 그대로 사용하고,
+ * 구버전/결측 데이터는 약한흔들기로 오분류하지 않는다.
+ */
+function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very_good">): ShakeoutBadgeMeta | null {
+  if (!s.shakeout) return null;
+  if (s.very_good) {
+    return {
+      label: "💥 강한흔들기",
+      title:
+        "강한흔들기 — 기존 rank4의 매우좋음 기준(dd6 ≤ -30%, rank 0)입니다. 조합D와는 별도의 강한 prior이며, 수익·체결을 보장하거나 자동매수를 지시하지 않습니다.",
+      variant: undefined,
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+    };
+  }
+  if (s.strength_tier == null) {
+    return {
+      label: "💥 흔들기 · 강도 미확인",
+      title:
+        "흔들기 조건은 충족했지만 강도 결합축이 저장되지 않은 데이터입니다. 강한흔들기나 약한흔들기로 추정하지 않습니다.",
+      variant: "outline",
+      className: "border-white/30 px-2.5 py-1 text-base font-bold text-muted-foreground",
+    };
+  }
+  if (s.strength_tier >= 3) {
+    return {
+      label: "💥 강한흔들기",
+      title:
+        "강한흔들기 — 기존 rank4 조합D 기준(strength_tier ≥ 3)입니다. 2일 유통회전율과 60일 고점 대비 낙폭의 결합축에서 익일 고가가 강했던 구간이며, 수익·체결을 보장하거나 자동매수를 지시하지 않습니다.",
+      variant: undefined,
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+    };
+  }
+  return {
+    label: "〰️ 약한흔들기",
+    title:
+      "약한흔들기 — 기본 흔들기 조건은 충족했지만 기존 rank4 조합D 기준(strength_tier ≥ 3)에는 들지 않은 조합A~C입니다. 상대 구분이며 익일 상승이 불가능하다는 뜻은 아닙니다.",
+    variant: "warning",
+    className: "border border-warning/60 px-2.5 py-1 text-base font-bold",
+  };
+}
+
 /**
  * 수상 종목 카드 — "큰돈이 들어와 급등 후 식은, 이벤트에 민감한 종목"의 증거를 한 장에.
  * 고가→현재 페이드 바 + 분봉 스파크 타임라인 + 수급 + 점수 해부도.
@@ -122,6 +172,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
     (s.run_6d_pct ?? 0) >= 30 ||
     ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);
   const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
+  const shakeoutBadge = shakeoutBadgeMeta(s);
 
   return (
     <Card
@@ -158,12 +209,13 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
                 ☆ 매우좋음 후보
               </Badge>
             )}
-            {s.shakeout && (
+            {shakeoutBadge && (
               <Badge
-                className="bg-up px-2.5 py-1 text-base font-black text-white"
-                title="💥 흔들기 — 당일 상한권(고가 +20%↑) 터치 후 크게 밀리며(페이드 15%p↑) 유통물량 40%↑ 손바뀜, MA20 사수(경고 지정·과확장 붕괴 제외). 금호건설·동양파일 6/25 원형 — 실측 38건 익일 고가 +13% 터치 68%·평균 +18%. 예측·매수추천 아님"
+                variant={shakeoutBadge.variant}
+                className={shakeoutBadge.className}
+                title={shakeoutBadge.title}
               >
-                💥 흔들기
+                {shakeoutBadge.label}
               </Badge>
             )}
             {s.shakeout && s.strength && (
