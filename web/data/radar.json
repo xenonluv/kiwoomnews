@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15 11:13:50 KST",
+ "generated_at": "2026-07-15 11:23:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -35,14 +35,25 @@
  "events": [],
  "explosions": [
   {
+   "code": "058730",
+   "name": "다스코",
+   "sector": "다스코",
+   "high_pct": 24.6,
+   "vol_turnover_pct": 91.9,
+   "value_eok": 540,
+   "price": 5280.0,
+   "change_pct": 20.27,
+   "backfill": false
+  },
+  {
    "code": "003680",
    "name": "한성기업",
    "sector": "한성기업",
    "high_pct": 27.22,
-   "vol_turnover_pct": 112.8,
-   "value_eok": 483,
-   "price": 13120.0,
-   "change_pct": 17.46,
+   "vol_turnover_pct": 113.9,
+   "value_eok": 488,
+   "price": 13100.0,
+   "change_pct": 17.28,
    "backfill": false
   },
   {
@@ -50,10 +61,10 @@
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
    "high_pct": 30.0,
-   "vol_turnover_pct": 129.8,
-   "value_eok": 229,
-   "price": 4130.0,
-   "change_pct": 25.15,
+   "vol_turnover_pct": 134.2,
+   "value_eok": 237,
+   "price": 4110.0,
+   "change_pct": 24.55,
    "backfill": false
   }
  ],
@@ -62,11 +73,11 @@
    "code": "465770",
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
-   "change_pct": 25.15,
+   "change_pct": 24.55,
    "high_pct": 30.0,
-   "vol_turnover_pct": 129.8,
-   "value_eok": 229,
-   "price": 4130.0,
+   "vol_turnover_pct": 134.2,
+   "value_eok": 237,
+   "price": 4110.0,
    "first_seen": "09:42",
    "exploded": true
   },
@@ -74,11 +85,11 @@
    "code": "003680",
    "name": "한성기업",
    "sector": "한성기업",
-   "change_pct": 17.46,
+   "change_pct": 17.28,
    "high_pct": 27.22,
-   "vol_turnover_pct": 112.8,
-   "value_eok": 483,
-   "price": 13120.0,
+   "vol_turnover_pct": 113.9,
+   "value_eok": 488,
+   "price": 13100.0,
    "first_seen": "10:22",
    "exploded": true
   },
@@ -86,13 +97,13 @@
    "code": "058730",
    "name": "다스코",
    "sector": "다스코",
-   "change_pct": 19.82,
+   "change_pct": 20.27,
    "high_pct": 24.6,
-   "vol_turnover_pct": 88.7,
-   "value_eok": 520,
-   "price": 5260.0,
+   "vol_turnover_pct": 91.9,
+   "value_eok": 540,
+   "price": 5280.0,
    "first_seen": "10:42",
-   "exploded": false
+   "exploded": true
   },
   {
    "code": "002070",
@@ -110,12 +121,24 @@
    "code": "054940",
    "name": "엑사이엔씨",
    "sector": "엑사이엔씨",
-   "change_pct": 9.01,
+   "change_pct": 9.12,
    "high_pct": 20.47,
    "vol_turnover_pct": 50.1,
    "value_eok": 126,
-   "price": 932.0,
+   "price": 933.0,
    "first_seen": "09:52",
+   "exploded": false
+  },
+  {
+   "code": "067290",
+   "name": "JW신약",
+   "sector": "JW신약",
+   "change_pct": 22.1,
+   "high_pct": 23.84,
+   "vol_turnover_pct": 50.1,
+   "value_eok": 324,
+   "price": 1757.0,
+   "first_seen": "11:22",
    "exploded": false
   }
  ],
