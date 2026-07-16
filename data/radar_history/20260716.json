@@ -327,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:33+09:00",
-    "expires_at": "2026-07-16T20:29:33+09:00",
+    "checked_at": "2026-07-16T20:25:02+09:00",
+    "expires_at": "2026-07-16T20:35:02+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -968,8 +968,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:27+09:00",
-    "expires_at": "2026-07-16T20:29:27+09:00",
+    "checked_at": "2026-07-16T20:24:56+09:00",
+    "expires_at": "2026-07-16T20:34:56+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1228,8 +1228,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:32+09:00",
-    "expires_at": "2026-07-16T20:29:32+09:00",
+    "checked_at": "2026-07-16T20:25:01+09:00",
+    "expires_at": "2026-07-16T20:35:01+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1457,8 +1457,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:33+09:00",
-    "expires_at": "2026-07-16T20:29:33+09:00",
+    "checked_at": "2026-07-16T20:25:02+09:00",
+    "expires_at": "2026-07-16T20:35:02+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1694,7 +1694,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
     "raw_text_hash": "045078fa0292aa18bcb1",
-    "fetched_at": "2026-07-16 20:19:16 KST",
+    "fetched_at": "2026-07-16 20:24:44 KST",
     "notice_no": "67040344"
    },
    "alert_release_checks": {
@@ -1736,8 +1736,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:31+09:00",
-    "expires_at": "2026-07-16T20:29:31+09:00",
+    "checked_at": "2026-07-16T20:25:00+09:00",
+    "expires_at": "2026-07-16T20:35:00+09:00",
     "evidence": {
      "notice_id": "68428917",
      "title": "(주)모나미 매매거래정지 예고",
@@ -1837,7 +1837,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 9.14,
+    "freshness_days": 9.15,
     "directness": "직접",
     "tags": [
      "조아제약"
@@ -1942,8 +1942,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:35+09:00",
-    "expires_at": "2026-07-16T20:29:35+09:00",
+    "checked_at": "2026-07-16T20:25:04+09:00",
+    "expires_at": "2026-07-16T20:35:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2179,8 +2179,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:28+09:00",
-    "expires_at": "2026-07-16T20:29:28+09:00",
+    "checked_at": "2026-07-16T20:24:57+09:00",
+    "expires_at": "2026-07-16T20:34:57+09:00",
     "evidence": {
      "notice_id": "63060423",
      "title": "금호건설(주) 매매거래정지 예고",
@@ -2227,8 +2227,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:19:34+09:00",
-    "expires_at": "2026-07-16T20:29:34+09:00",
+    "checked_at": "2026-07-16T20:25:03+09:00",
+    "expires_at": "2026-07-16T20:35:03+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2248,7 +2248,7 @@
    "rank_bucket": 8,
    "suspicion_score": 70,
    "first_blocked": "2026-07-16 14:23:55 KST",
-   "last_blocked": "2026-07-16 20:19:17 KST"
+   "last_blocked": "2026-07-16 20:24:46 KST"
   },
   "049080": {
    "name": "기가레인",
@@ -2294,7 +2294,7 @@
    "last_blocked": "2026-07-16 15:09:04 KST"
   }
  },
- "as_of": "2026-07-16 20:19:17 KST",
+ "as_of": "2026-07-16 20:24:46 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
