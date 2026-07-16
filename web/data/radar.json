@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16 09:03:42 KST",
+ "generated_at": "2026-07-16 09:38:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -34,7 +34,20 @@
  "universe_count": 58,
  "events": [],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "005360",
+   "name": "모나미",
+   "sector": "모나미",
+   "change_pct": 23.8,
+   "high_pct": 29.9,
+   "vol_turnover_pct": 75.7,
+   "value_eok": 444,
+   "price": 4265.0,
+   "first_seen": "09:37",
+   "exploded": false
+  }
+ ],
  "suspects": [],
  "blocked_suspects": [],
  "rank_policy_name": "rank4",
