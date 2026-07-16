@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16 20:44:40 KST",
+ "generated_at": "2026-07-16 20:49:17 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -553,8 +553,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:51+09:00",
-    "expires_at": "2026-07-16T20:54:51+09:00",
+    "checked_at": "2026-07-16T20:49:28+09:00",
+    "expires_at": "2026-07-16T20:59:28+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -794,8 +794,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:51+09:00",
-    "expires_at": "2026-07-16T20:54:51+09:00",
+    "checked_at": "2026-07-16T20:49:28+09:00",
+    "expires_at": "2026-07-16T20:59:28+09:00",
     "evidence": {
      "notice_id": "63060423",
      "title": "금호건설(주) 매매거래정지 예고",
@@ -1033,7 +1033,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
     "raw_text_hash": "045078fa0292aa18bcb1",
-    "fetched_at": "2026-07-16 20:44:38 KST",
+    "fetched_at": "2026-07-16 20:49:15 KST",
     "notice_no": "67040344"
    },
    "alert_release_checks": {
@@ -1091,8 +1091,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:54+09:00",
-    "expires_at": "2026-07-16T20:54:54+09:00",
+    "checked_at": "2026-07-16T20:49:30+09:00",
+    "expires_at": "2026-07-16T20:59:30+09:00",
     "evidence": {
      "notice_id": "68428917",
      "title": "(주)모나미 매매거래정지 예고",
@@ -1243,7 +1243,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 27.38,
+    "freshness_days": 27.39,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1338,8 +1338,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:56+09:00",
-    "expires_at": "2026-07-16T20:54:56+09:00",
+    "checked_at": "2026-07-16T20:49:32+09:00",
+    "expires_at": "2026-07-16T20:59:32+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1575,8 +1575,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:56+09:00",
-    "expires_at": "2026-07-16T20:54:56+09:00",
+    "checked_at": "2026-07-16T20:49:32+09:00",
+    "expires_at": "2026-07-16T20:59:32+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1767,8 +1767,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:57+09:00",
-    "expires_at": "2026-07-16T20:54:57+09:00",
+    "checked_at": "2026-07-16T20:49:33+09:00",
+    "expires_at": "2026-07-16T20:59:33+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1957,8 +1957,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:59+09:00",
-    "expires_at": "2026-07-16T20:54:59+09:00",
+    "checked_at": "2026-07-16T20:49:35+09:00",
+    "expires_at": "2026-07-16T20:59:35+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2172,8 +2172,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:44:58+09:00",
-    "expires_at": "2026-07-16T20:54:58+09:00",
+    "checked_at": "2026-07-16T20:49:33+09:00",
+    "expires_at": "2026-07-16T20:59:33+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
