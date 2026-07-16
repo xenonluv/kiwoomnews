@@ -327,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:28+09:00",
-    "expires_at": "2026-07-16T19:54:28+09:00",
+    "checked_at": "2026-07-16T19:49:40+09:00",
+    "expires_at": "2026-07-16T19:59:40+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -968,8 +968,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:24+09:00",
-    "expires_at": "2026-07-16T19:54:24+09:00",
+    "checked_at": "2026-07-16T19:49:36+09:00",
+    "expires_at": "2026-07-16T19:59:36+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1074,7 +1074,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 27.34,
+    "freshness_days": 27.35,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1228,8 +1228,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:27+09:00",
-    "expires_at": "2026-07-16T19:54:27+09:00",
+    "checked_at": "2026-07-16T19:49:40+09:00",
+    "expires_at": "2026-07-16T19:59:40+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1457,8 +1457,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:28+09:00",
-    "expires_at": "2026-07-16T19:54:28+09:00",
+    "checked_at": "2026-07-16T19:49:41+09:00",
+    "expires_at": "2026-07-16T19:59:41+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1694,7 +1694,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
     "raw_text_hash": "045078fa0292aa18bcb1",
-    "fetched_at": "2026-07-16 19:44:12 KST",
+    "fetched_at": "2026-07-16 19:49:24 KST",
     "notice_no": "67040344"
    },
    "alert_release_checks": {
@@ -1736,8 +1736,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:26+09:00",
-    "expires_at": "2026-07-16T19:54:26+09:00",
+    "checked_at": "2026-07-16T19:49:38+09:00",
+    "expires_at": "2026-07-16T19:59:38+09:00",
     "evidence": {
      "notice_id": "68428917",
      "title": "(주)모나미 매매거래정지 예고",
@@ -1942,8 +1942,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:31+09:00",
-    "expires_at": "2026-07-16T19:54:31+09:00",
+    "checked_at": "2026-07-16T19:49:43+09:00",
+    "expires_at": "2026-07-16T19:59:43+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2147,7 +2147,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904863&code=002990&page_notice=2",
     "raw_text_hash": "e5deeb13f58a95f8c805",
-    "fetched_at": "2026-07-16 19:44:10 KST",
+    "fetched_at": "2026-07-16 19:49:23 KST",
     "notice_no": "49904863"
    },
    "alert_release_checks": {
@@ -2201,8 +2201,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:24+09:00",
-    "expires_at": "2026-07-16T19:54:24+09:00",
+    "checked_at": "2026-07-16T19:49:36+09:00",
+    "expires_at": "2026-07-16T19:59:36+09:00",
     "evidence": {
      "notice_id": "63060423",
      "title": "금호건설(주) 매매거래정지 예고",
@@ -2249,8 +2249,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T19:44:29+09:00",
-    "expires_at": "2026-07-16T19:54:29+09:00",
+    "checked_at": "2026-07-16T19:49:41+09:00",
+    "expires_at": "2026-07-16T19:59:41+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2270,7 +2270,7 @@
    "rank_bucket": 8,
    "suspicion_score": 70,
    "first_blocked": "2026-07-16 14:23:55 KST",
-   "last_blocked": "2026-07-16 19:44:14 KST"
+   "last_blocked": "2026-07-16 19:49:26 KST"
   },
   "049080": {
    "name": "기가레인",
@@ -2316,7 +2316,7 @@
    "last_blocked": "2026-07-16 15:09:04 KST"
   }
  },
- "as_of": "2026-07-16 19:44:14 KST",
+ "as_of": "2026-07-16 19:49:26 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
