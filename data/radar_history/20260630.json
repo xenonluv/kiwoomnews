@@ -84,7 +84,11 @@
     "next_open_pct": 1.99,
     "next_low_pct": -2.93
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   }
  },
  "as_of": "2026-06-30 20:52:29 KST"
