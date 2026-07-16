@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16 09:48:55 KST",
+ "generated_at": "2026-07-16 09:53:52 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -39,12 +39,36 @@
    "code": "005360",
    "name": "모나미",
    "sector": "모나미",
-   "change_pct": 27.43,
+   "change_pct": 26.76,
    "high_pct": 29.9,
-   "vol_turnover_pct": 86.5,
-   "value_eok": 506,
-   "price": 4390.0,
+   "vol_turnover_pct": 88.0,
+   "value_eok": 516,
+   "price": 4367.0,
    "first_seen": "09:37",
+   "exploded": false
+  },
+  {
+   "code": "037070",
+   "name": "파세코",
+   "sector": "파세코",
+   "change_pct": 12.23,
+   "high_pct": 13.23,
+   "vol_turnover_pct": 60.3,
+   "value_eok": 294,
+   "price": 8990.0,
+   "first_seen": "09:52",
+   "exploded": false
+  },
+  {
+   "code": "465770",
+   "name": "STX그린로지스",
+   "sector": "STX그린로지스",
+   "change_pct": 15.11,
+   "high_pct": 18.45,
+   "vol_turnover_pct": 51.7,
+   "value_eok": 96,
+   "price": 4305.0,
+   "first_seen": "09:52",
    "exploded": false
   }
  ],
