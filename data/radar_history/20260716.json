@@ -169,20 +169,28 @@
    "prime": false,
    "theme": "반도체",
    "material": {
-    "grade": "B",
-    "score": 66,
-    "summary": "엔제리너스, 동화약품 협업 건강음료 ‘배러’ 4종 출시",
+    "grade": "A",
+    "score": 81,
+    "summary": "'부채표' 상표권 매각 놓고 갑론을박…동화약품 지배구조 도마 위에",
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.37,
+    "freshness_days": 0.01,
     "directness": "직접",
     "tags": [
+     "공시/대형이벤트",
      "반도체",
      "실적/재무"
     ],
     "risk_flags": [],
     "evidence": [
+     {
+      "title": "'부채표' 상표권 매각 놓고 갑론을박…동화약품 지배구조 도마 위에",
+      "datetime": "202607161727",
+      "source": "한국경제",
+      "url": "https://n.news.naver.com/mnews/article/015/0005310852",
+      "score": 72
+     },
      {
       "title": "엔제리너스, 동화약품 협업 건강음료 ‘배러’ 4종 출시",
       "datetime": "202607160853",
@@ -205,10 +213,18 @@
       "score": 26
      }
     ],
-    "source_count": 3,
-    "relevant_count": 3
+    "source_count": 4,
+    "relevant_count": 4
    },
    "news": [
+    {
+     "title": "'부채표' 상표권 매각 놓고 갑론을박…동화약품 지배구조 도마 위에",
+     "summary": "이 기사는 07월 15일 09:27 마켓인사이트에 게재된 기사입니다. 코스피 상장사 동화약품은 지난해 3월 '부채표'를 포함한 상표·디자인권 270여 건을 최대주주 개인회사에 팔았다. 매각가는 91억8000만원. 상대는 디더블유피홀딩스(DWP홀딩스)였",
+     "office": "한국경제",
+     "datetime": "202607161727",
+     "url": "https://n.news.naver.com/mnews/article/015/0005310852",
+     "sentiment": "호재"
+    },
     {
      "title": "엔제리너스, 동화약품 협업 건강음료 ‘배러’ 4종 출시",
      "summary": "롯데GRS가 운영하는 커피 프랜차이즈 브랜드 엔제리너스가 ‘부채표 까스활명수’로 유명한 동화약품과 협업을 통해 ‘BETTER(배러)’ 저당 음료 4종을 선보이며 엔제린 밸런스 라인업을 확장한다고 16일 밝혔다. 이번 협업은 건강과 맛을 동시에...",
@@ -311,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:24+09:00",
-    "expires_at": "2026-07-16T17:49:24+09:00",
+    "checked_at": "2026-07-16T17:44:26+09:00",
+    "expires_at": "2026-07-16T17:54:26+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -952,8 +968,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:20+09:00",
-    "expires_at": "2026-07-16T17:49:20+09:00",
+    "checked_at": "2026-07-16T17:44:22+09:00",
+    "expires_at": "2026-07-16T17:54:22+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1212,8 +1228,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:24+09:00",
-    "expires_at": "2026-07-16T17:49:24+09:00",
+    "checked_at": "2026-07-16T17:44:25+09:00",
+    "expires_at": "2026-07-16T17:54:25+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1441,8 +1457,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:25+09:00",
-    "expires_at": "2026-07-16T17:49:25+09:00",
+    "checked_at": "2026-07-16T17:44:26+09:00",
+    "expires_at": "2026-07-16T17:54:26+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1686,7 +1702,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
     "raw_text_hash": "045078fa0292aa18bcb1",
-    "fetched_at": "2026-07-16 17:39:10 KST",
+    "fetched_at": "2026-07-16 17:44:12 KST",
     "notice_no": "67040344"
    },
    "alert_release_checks": {
@@ -1728,8 +1744,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:22+09:00",
-    "expires_at": "2026-07-16T17:49:22+09:00",
+    "checked_at": "2026-07-16T17:44:24+09:00",
+    "expires_at": "2026-07-16T17:54:24+09:00",
     "evidence": {
      "notice_id": "68428917",
      "title": "(주)모나미 매매거래정지 예고",
@@ -1829,7 +1845,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 9.03,
+    "freshness_days": 9.04,
     "directness": "직접",
     "tags": [
      "조아제약"
@@ -1934,8 +1950,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:27+09:00",
-    "expires_at": "2026-07-16T17:49:27+09:00",
+    "checked_at": "2026-07-16T17:44:28+09:00",
+    "expires_at": "2026-07-16T17:54:28+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2139,7 +2155,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=49904863&code=002990&page_notice=2",
     "raw_text_hash": "e5deeb13f58a95f8c805",
-    "fetched_at": "2026-07-16 17:39:08 KST",
+    "fetched_at": "2026-07-16 17:44:10 KST",
     "notice_no": "49904863"
    },
    "alert_release_checks": {
@@ -2193,8 +2209,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:20+09:00",
-    "expires_at": "2026-07-16T17:49:20+09:00",
+    "checked_at": "2026-07-16T17:44:22+09:00",
+    "expires_at": "2026-07-16T17:54:22+09:00",
     "evidence": {
      "notice_id": "63060423",
      "title": "금호건설(주) 매매거래정지 예고",
@@ -2241,8 +2257,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T17:39:25+09:00",
-    "expires_at": "2026-07-16T17:49:25+09:00",
+    "checked_at": "2026-07-16T17:44:27+09:00",
+    "expires_at": "2026-07-16T17:54:27+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2262,7 +2278,7 @@
    "rank_bucket": 8,
    "suspicion_score": 70,
    "first_blocked": "2026-07-16 14:23:55 KST",
-   "last_blocked": "2026-07-16 17:39:12 KST"
+   "last_blocked": "2026-07-16 17:44:14 KST"
   },
   "049080": {
    "name": "기가레인",
@@ -2308,7 +2324,7 @@
    "last_blocked": "2026-07-16 15:09:04 KST"
   }
  },
- "as_of": "2026-07-16 17:39:12 KST",
+ "as_of": "2026-07-16 17:44:14 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
