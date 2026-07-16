@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16 20:14:11 KST",
+ "generated_at": "2026-07-16 20:19:17 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -553,8 +553,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:21+09:00",
-    "expires_at": "2026-07-16T20:24:21+09:00",
+    "checked_at": "2026-07-16T20:19:27+09:00",
+    "expires_at": "2026-07-16T20:29:27+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -794,8 +794,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:21+09:00",
-    "expires_at": "2026-07-16T20:24:21+09:00",
+    "checked_at": "2026-07-16T20:19:28+09:00",
+    "expires_at": "2026-07-16T20:29:28+09:00",
     "evidence": {
      "notice_id": "63060423",
      "title": "금호건설(주) 매매거래정지 예고",
@@ -1033,7 +1033,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
     "raw_text_hash": "045078fa0292aa18bcb1",
-    "fetched_at": "2026-07-16 20:14:09 KST",
+    "fetched_at": "2026-07-16 20:19:16 KST",
     "notice_no": "67040344"
    },
    "alert_release_checks": {
@@ -1091,8 +1091,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:23+09:00",
-    "expires_at": "2026-07-16T20:24:23+09:00",
+    "checked_at": "2026-07-16T20:19:31+09:00",
+    "expires_at": "2026-07-16T20:29:31+09:00",
     "evidence": {
      "notice_id": "68428917",
      "title": "(주)모나미 매매거래정지 예고",
@@ -1243,7 +1243,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 27.36,
+    "freshness_days": 27.37,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -1338,8 +1338,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:24+09:00",
-    "expires_at": "2026-07-16T20:24:24+09:00",
+    "checked_at": "2026-07-16T20:19:32+09:00",
+    "expires_at": "2026-07-16T20:29:32+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1575,8 +1575,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:25+09:00",
-    "expires_at": "2026-07-16T20:24:25+09:00",
+    "checked_at": "2026-07-16T20:19:33+09:00",
+    "expires_at": "2026-07-16T20:29:33+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1767,8 +1767,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:25+09:00",
-    "expires_at": "2026-07-16T20:24:25+09:00",
+    "checked_at": "2026-07-16T20:19:33+09:00",
+    "expires_at": "2026-07-16T20:29:33+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1957,8 +1957,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:27+09:00",
-    "expires_at": "2026-07-16T20:24:27+09:00",
+    "checked_at": "2026-07-16T20:19:35+09:00",
+    "expires_at": "2026-07-16T20:29:35+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2089,7 +2089,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 7.47,
+    "freshness_days": 7.48,
     "directness": "직접",
     "tags": [
      "공시",
@@ -2172,8 +2172,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-16T20:14:26+09:00",
-    "expires_at": "2026-07-16T20:24:26+09:00",
+    "checked_at": "2026-07-16T20:19:34+09:00",
+    "expires_at": "2026-07-16T20:29:34+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
