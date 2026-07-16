@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16 09:53:52 KST",
+ "generated_at": "2026-07-16 09:58:49 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -33,29 +33,41 @@
  },
  "universe_count": 58,
  "events": [],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "005360",
+   "name": "모나미",
+   "sector": "모나미",
+   "high_pct": 29.9,
+   "vol_turnover_pct": 94.6,
+   "value_eok": 553,
+   "price": 4322.0,
+   "change_pct": 25.46,
+   "backfill": false
+  }
+ ],
  "youtong": [
   {
    "code": "005360",
    "name": "모나미",
    "sector": "모나미",
-   "change_pct": 26.76,
+   "change_pct": 25.46,
    "high_pct": 29.9,
-   "vol_turnover_pct": 88.0,
-   "value_eok": 516,
-   "price": 4367.0,
+   "vol_turnover_pct": 94.6,
+   "value_eok": 553,
+   "price": 4322.0,
    "first_seen": "09:37",
-   "exploded": false
+   "exploded": true
   },
   {
    "code": "037070",
    "name": "파세코",
    "sector": "파세코",
-   "change_pct": 12.23,
-   "high_pct": 13.23,
-   "vol_turnover_pct": 60.3,
-   "value_eok": 294,
-   "price": 8990.0,
+   "change_pct": 13.23,
+   "high_pct": 13.86,
+   "vol_turnover_pct": 73.0,
+   "value_eok": 359,
+   "price": 9070.0,
    "first_seen": "09:52",
    "exploded": false
   },
@@ -63,11 +75,11 @@
    "code": "465770",
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
-   "change_pct": 15.11,
+   "change_pct": 8.56,
    "high_pct": 18.45,
-   "vol_turnover_pct": 51.7,
-   "value_eok": 96,
-   "price": 4305.0,
+   "vol_turnover_pct": 55.4,
+   "value_eok": 103,
+   "price": 4060.0,
    "first_seen": "09:52",
    "exploded": false
   }
