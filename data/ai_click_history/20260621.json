@@ -5,21 +5,21 @@
    "ai_prob": 45,
    "ai_dir": "하락",
    "verdict_score": 64,
-   "evaluated": false,
+   "evaluated": true,
    "result": null
   },
   "010690": {
    "ai_prob": 47,
    "ai_dir": "관망",
    "verdict_score": 82,
-   "evaluated": false,
+   "evaluated": true,
    "result": null
   },
   "080220": {
    "ai_prob": 41,
    "ai_dir": "하락",
    "verdict_score": 55,
-   "evaluated": false,
+   "evaluated": true,
    "result": null
   }
  }
