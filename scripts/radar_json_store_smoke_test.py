@@ -288,6 +288,126 @@ class RadarJsonStoreTest(unittest.TestCase):
         self.assertIn("MINUTE_FETCH_EMPTY", codes)
         self.assertIn("MINUTE_FETCH_ERROR", codes)
 
+    def test_minute_strict_conflict_is_atomic_and_default_merge_is_unchanged(self):
+        initial = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100, "high": 110, "low": 95,
+              "close": 105, "volume": 10}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+        )
+        self.assertTrue(initial.ok, initial.error)
+        original = Path(initial.path).read_bytes()
+
+        refused = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100.0, "high": 111, "low": 95,
+              "close": 105, "vol": 10.0},
+             {"time": "090100", "open": 105, "high": 106, "low": 104,
+              "close": 106, "vol": 20}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+            conflict_policy="error",
+        )
+        self.assertFalse(refused.ok)
+        self.assertIn("minute bar conflict at 090000 fields=high", refused.error)
+        self.assertEqual(Path(initial.path).read_bytes(), original)
+
+        # The default remains the historical later-wins behavior.
+        merged = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "high": 111}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+        )
+        self.assertTrue(merged.ok, merged.error)
+        self.assertEqual(self.read_json(merged.path)["bars"][0]["high"], 111)
+
+    def test_minute_strict_allows_equal_alias_and_new_bars(self):
+        initial = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100, "high": 110, "low": 95,
+              "close": 105, "volume": 10}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+        )
+        self.assertTrue(initial.ok, initial.error)
+        merged = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100.0, "high": 110.0, "low": 95.0,
+              "close": 105.0, "vol": 10.0},
+             {"time": "090100", "open": 105, "high": 108, "low": 104,
+              "close": 107, "vol": 20}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+            conflict_policy="error",
+        )
+        self.assertTrue(merged.ok, merged.error)
+        saved = self.read_json(merged.path)
+        self.assertEqual([bar["time"] for bar in saved["bars"]], ["090000", "090100"])
+        self.assertTrue(all("vol" in bar and "volume" not in bar for bar in saved["bars"]))
+
+    def test_minute_strict_rejects_conflicting_duplicate_in_one_response(self):
+        refused = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100, "high": 110, "low": 95,
+              "close": 105, "vol": 10},
+             {"time": "090000", "open": 100, "high": 110, "low": 95,
+              "close": 104, "vol": 10}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+            conflict_policy="error",
+        )
+        self.assertFalse(refused.ok)
+        self.assertIn("minute bar conflict at 090000 fields=close", refused.error)
+        expected = store.local_day_dir(DAY, self.root) / "minute" / "263800_J.json"
+        self.assertFalse(expected.exists())
+
+    def test_minute_strict_concurrent_conflicts_are_serialized(self):
+        initial = store.merge_minute_bars(
+            DAY,
+            "263800",
+            [{"time": "090000", "open": 100, "high": 100, "low": 100,
+              "close": 100, "vol": 10}],
+            market_basis="J",
+            root=self.root,
+            update_manifest=False,
+            conflict_policy="error",
+        )
+        self.assertTrue(initial.ok, initial.error)
+
+        def writer(close):
+            return store.merge_minute_bars(
+                DAY,
+                "263800",
+                [{"time": "090100", "open": 100, "high": 110, "low": 99,
+                  "close": close, "vol": 20}],
+                market_basis="J",
+                root=self.root,
+                update_manifest=False,
+                conflict_policy="error",
+            )
+
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(writer, (105, 106)))
+        self.assertEqual(sum(result.ok for result in results), 1)
+        self.assertEqual(sum("minute bar conflict" in str(result.error) for result in results), 1)
+        saved = self.read_json(initial.path)
+        self.assertTrue(store.verify_payload_integrity(saved))
+        self.assertIn(saved["bars"][1]["close"], (105, 106))
+
     def test_decision_first_success_is_immutable(self):
         first = store.write_decision_snapshot(
             "KRX_1518", {"trade_date": DAY, "source_run_id": "before-cutoff"}, root=self.root

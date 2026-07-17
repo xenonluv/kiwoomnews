@@ -46,6 +46,8 @@ PATH=/usr/local/bin:/usr/bin:/bin
 37 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/phase_eval.py --push >> /tmp/kiwoom_phase_eval.log 2>&1
 # 비게시 포함 관찰군 forward 연구 — 운영 backtest/git push와 분리.
 10 21 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/radar_observed_forward.py >> /tmp/kiwoom_observed_forward.log 2>&1
+# 당일 전체 흔들기 신호일 분봉 — 15:45 KRX J 원본 forward 수집(순위·자동매매 무관).
+45 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/shakeout_signal_minute_capture.py >> /tmp/kiwoom_shakeout_signal_minute.log 2>&1
 # NXT 야간 급락 텔레그램 경고 — 정규장 마감 후 30분 간격
 5,35 16-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/night_alert.py >> /tmp/kiwoom_night_alert.log 2>&1
 $END"

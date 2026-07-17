@@ -612,6 +612,34 @@ def _merge_one_bar(previous: Optional[Mapping[str, Any]], later: Mapping[str, An
     return merged
 
 
+def _minute_conflict_fields(
+    previous: Mapping[str, Any], later: Mapping[str, Any]
+) -> List[str]:
+    """Return canonical OHLCV fields that disagree when both sides provide them.
+
+    ``vol`` is the canonical minute-volume key, while old audit files may use
+    ``volume``.  Missing fields are fillable and therefore are not conflicts.
+    Python numeric equality intentionally treats ``1000`` and ``1000.0`` as
+    equal.
+    """
+
+    conflicts: List[str] = []
+    for key in ("open", "high", "low", "close"):
+        left, right = previous.get(key), later.get(key)
+        if left is not None and right is not None and left != right:
+            conflicts.append(key)
+
+    left_vol = previous.get("vol")
+    if left_vol is None:
+        left_vol = previous.get("volume")
+    right_vol = later.get("vol")
+    if right_vol is None:
+        right_vol = later.get("volume")
+    if left_vol is not None and right_vol is not None and left_vol != right_vol:
+        conflicts.append("vol")
+    return conflicts
+
+
 def merge_minute_bars(
     trade_date: Any,
     code: str,
@@ -624,11 +652,20 @@ def merge_minute_bars(
     error: Optional[str] = None,
     root: Optional[Union[str, os.PathLike]] = None,
     update_manifest: bool = True,
+    conflict_policy: str = "merge",
 ) -> StoreResult:
-    """Atomically merge one symbol/day minute series, deduplicated by time."""
+    """Atomically merge one symbol/day minute series, deduplicated by time.
+
+    ``conflict_policy="merge"`` preserves the historical fieldwise-later-wins
+    behavior. ``"error"`` compares canonical OHLCV under the same per-file
+    merge lock and refuses the entire write when a common timestamp differs.
+    """
 
     target: Optional[Path] = None
     try:
+        policy = str(conflict_policy or "merge").lower()
+        if policy not in {"merge", "error"}:
+            raise ValueError("conflict_policy must be merge or error")
         day = normalize_trade_date(trade_date)
         safe_code = _safe_component(code, "code")
         market = _safe_component(str(market_basis).upper(), "market_basis")
@@ -664,12 +701,32 @@ def merge_minute_bars(
             indexed: Dict[str, Dict[str, Any]] = {}
             for bar in existing.get("bars") or []:
                 if isinstance(bar, Mapping):
-                    indexed[_bar_time(bar)] = _merge_one_bar(None, bar)
+                    normalized = _merge_one_bar(None, bar)
+                    if policy == "error":
+                        if normalized.get("vol") is None and normalized.get("volume") is not None:
+                            normalized["vol"] = normalized["volume"]
+                        normalized.pop("volume", None)
+                    indexed[_bar_time(bar)] = normalized
             for bar in incoming:
                 if not isinstance(bar, Mapping):
                     raise TypeError("each minute bar must be an object")
                 key = _bar_time(bar)
-                indexed[key] = _merge_one_bar(indexed.get(key), bar)
+                previous = indexed.get(key)
+                if policy == "error" and previous is not None:
+                    conflicts = _minute_conflict_fields(previous, bar)
+                    if conflicts:
+                        raise ValueError(
+                            "minute bar conflict at "
+                            + key
+                            + " fields="
+                            + ",".join(conflicts)
+                        )
+                normalized = _merge_one_bar(indexed.get(key), bar)
+                if policy == "error":
+                    if normalized.get("vol") is None and normalized.get("volume") is not None:
+                        normalized["vol"] = normalized["volume"]
+                    normalized.pop("volume", None)
+                indexed[key] = normalized
 
             events = list(existing.get("fetch_events") or [])
             events.append(
