@@ -86,7 +86,11 @@
     "next_open_pct": 5.4,
     "next_low_pct": -9.89
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "413630": {
    "name": "씨피시스템",
@@ -171,7 +175,11 @@
     "next_open_pct": -2.86,
     "next_low_pct": -14.29
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -14.42
+   }
   }
  },
  "as_of": "2026-07-01 20:52:29 KST"
