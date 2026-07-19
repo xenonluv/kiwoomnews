@@ -33,11 +33,12 @@ def load_env():
         p = os.path.join(REPO, name)
         if not os.path.exists(p):
             continue
-        for line in open(p, encoding="utf-8"):
-            line = line.strip()
-            if "=" in line and not line.startswith("#"):
-                k, _, v = line.partition("=")
-                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+        with open(p, encoding="utf-8") as env_file:
+            for line in env_file:
+                line = line.strip()
+                if "=" in line and not line.startswith("#"):
+                    k, _, v = line.partition("=")
+                    os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
 def send(text):
@@ -52,7 +53,8 @@ def send(text):
         }).encode()
         req = urllib.request.Request(
             f"https://api.telegram.org/bot{token}/sendMessage", data=data)
-        r = json.load(urllib.request.urlopen(req, timeout=10))
+        with urllib.request.urlopen(req, timeout=10) as response:
+            r = json.load(response)
         return bool(r.get("ok"))
     except Exception as e:
         log(f"[telegram] 전송 실패: {e}")
@@ -275,11 +277,12 @@ def _digest_badge(s):
     return "•"
 
 
-def _format_digest(suspects, now):
+def _format_digest(suspects, now, blocked=None):
     """종베 다이제스트 — 오늘 suspects를 순위대로(radar.json 배열순) 한 통에."""
     lines = [f"📋 오늘 종베 후보 — suspects 순위 ({now.strftime('%H:%M')})"]
     if not suspects:
-        lines.append("· 오늘 후보 없음(레이더 깨끗)")
+        lines.append("· 오늘 거래가능 검증 통과 후보 없음" if blocked
+                     else "· 오늘 후보 없음(레이더 깨끗)")
     for i, s in enumerate(suspects[:12], 1):
         code = s.get("code") or ""
         name = s.get("name") or code
@@ -289,11 +292,15 @@ def _format_digest(suspects, now):
         if s.get("turnover_pct") is not None:
             info.append(f"회전 {s.get('turnover_pct')}%")
         lines.append(f"{i}. {_digest_badge(s)} {name} ({code}) · " + " · ".join(info))
+    for s in (blocked or [])[:6]:
+        eligibility = s.get("next_session_eligibility") or {}
+        reason = eligibility.get("reason") or s.get("blocked_reason") or "추천 부적격"
+        lines.append(f"⛔ {s.get('name') or s.get('code')} ({s.get('code') or ''}) · {reason}")
     lines.append("⚠ 15:18 종가베팅 참고 · 매수추천 아님")
     return "\n".join(lines)
 
 
-def notify_suspects_digest(suspects, state_path=DIGEST_STATE_PATH, now=None):
+def notify_suspects_digest(suspects, state_path=DIGEST_STATE_PATH, now=None, blocked=None):
     """종베 다이제스트 — 15:10대 오늘 suspects 순위 목록 1통(하루 1회). 15:18 매수 전 참고용.
     시간게이트 15:05~15:30(15:11 publish 회차가 발송·지연/백업 여유)·하루 1회 디둡(.suspects_digest_notified.json).
     기본 ON(회장님 요청) — TELEGRAM_DIGEST=0으로 끔. 테스트훅 DIGEST_FORCE=1이면 시간게이트 무시.
@@ -313,7 +320,9 @@ def notify_suspects_digest(suspects, state_path=DIGEST_STATE_PATH, now=None):
     # stale 신호(휴장일/주말 재게시분) 제외 — signal_date 없는 레코드는 종전대로 포함(호환)
     fresh = [s for s in suspects or []
              if not s.get("signal_date") or str(s.get("signal_date")) == today]
-    if send(_format_digest(fresh, now)):
+    fresh_blocked = [s for s in blocked or []
+                     if not s.get("signal_date") or str(s.get("signal_date")) == today]
+    if send(_format_digest(fresh, now, blocked=fresh_blocked)):
         _save_state(state_path, {"date": today})
         return 1
     return 0

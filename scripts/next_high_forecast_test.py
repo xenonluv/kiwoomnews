@@ -73,6 +73,27 @@ class ForecastTest(unittest.TestCase):
     def test_forecast_price_uses_valid_krx_tick(self):
         self.assertEqual(nhf._price_at(5580, 16.21), 6480)
 
+    def test_current_blocked_signal_is_not_replaced_by_old_forecast(self):
+        path = os.path.join(self.repo, "web/data/radar.json")
+        write(path, {
+            "generated_at": "2026-01-01 20:00 KST",
+            "suspects": [],
+            "blocked_suspects": [{
+                "code": "123456", "name": "테스트", "signal_date": "20260101",
+                "blocked_reason": "다음 거래일 거래정지",
+                "next_session_eligibility": {
+                    "status": "HALT_CONFIRMED", "target_trade_date": "20260102",
+                    "tradable_next_session": False, "recommendable": False,
+                    "auto_buy_allowed": False, "reason": "다음 거래일 거래정지",
+                },
+            }],
+        })
+        report = nhf.analyze("테스트", repo=self.repo, allow_network=False)
+        self.assertFalse(report["forecast_valid"])
+        self.assertEqual(report["status"], "next_session_ineligible")
+        self.assertEqual(report["target_trade_date"], "20260102")
+        self.assertIn("거래정지", report["message"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

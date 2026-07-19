@@ -7,11 +7,39 @@ import { EventStrip } from "./EventStrip";
 import { ThemeStrip } from "./ThemeStrip";
 import { SuspectCard } from "./SuspectCard";
 import { AutoTradeToggle } from "./AutoTradeToggle";
-import { radarClientService } from "@/services/radar.client";
-import type { RadarData } from "@/types/radar";
+import { alertPreviewClientService, radarClientService } from "@/services/radar.client";
+import type { NextMarketAlertPreviewPayload, RadarData } from "@/types/radar";
 
 /** 자동 확인 주기(ms). publish cron이 5분 주기이므로 새 결과를 1분 이내 반영. */
 const POLL_MS = 60_000;
+const PREVIEW_FAST_POLL_MS = 30_000;
+const PREVIEW_SLOW_POLL_MS = 5 * 60_000;
+
+function previewPollDelay(now = new Date()) {
+  const kst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+  const weekday = kst.getUTCDay();
+  const minute = kst.getUTCHours() * 60 + kst.getUTCMinutes();
+  if (weekday >= 1 && weekday <= 5) {
+    if (minute >= 14 * 60 + 55 && minute <= 15 * 60 + 36) return PREVIEW_FAST_POLL_MS;
+    if (minute > 15 * 60 + 36 && minute <= 20 * 60 + 50) return PREVIEW_SLOW_POLL_MS;
+  }
+
+  // 비활성 시간에는 네트워크 폴링 없이 다음 평일 14:55에 깨울 타이머만 둔다.
+  for (let addDays = 0; addDays <= 7; addDays += 1) {
+    const candidate = Date.UTC(
+      kst.getUTCFullYear(),
+      kst.getUTCMonth(),
+      kst.getUTCDate() + addDays,
+      14,
+      55
+    );
+    const candidateDay = new Date(candidate).getUTCDay();
+    if (candidateDay >= 1 && candidateDay <= 5 && candidate > kst.getTime()) {
+      return candidate - kst.getTime();
+    }
+  }
+  return 24 * 60 * 60_000;
+}
 
 function LiveStatusBar({ data, justUpdated }: { data: RadarData; justUpdated: boolean }) {
   const open = data.market_session === "open";
@@ -53,6 +81,7 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [justUpdated, setJustUpdated] = useState(false);
+  const [alertPreview, setAlertPreview] = useState<NextMarketAlertPreviewPayload | null>(null);
   const lastJson = useRef<string>(JSON.stringify(initial));
 
   useEffect(() => {
@@ -85,6 +114,72 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, []);
+
+  useEffect(() => {
+    let alive = true;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    async function refreshPreview() {
+      try {
+        const next = await alertPreviewClientService.get();
+        if (alive) setAlertPreview(next);
+      } catch {
+        // 표시 전용 경고 조회 실패는 레이더 본문을 막지 않는다.
+      }
+    }
+
+    function schedule() {
+      if (!alive) return;
+      const delay = previewPollDelay();
+      if (delay > 0) {
+        timer = setTimeout(async () => {
+          await refreshPreview();
+          schedule();
+        }, delay);
+      }
+    }
+
+    void refreshPreview();
+    schedule();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") void refreshPreview();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      alive = false;
+      if (timer) clearTimeout(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!alertPreview) return;
+    const now = Date.now();
+    const expiries = Object.values(alertPreview.codes)
+      .map((record) => Date.parse(record.expires_at))
+      .filter((expiry) => Number.isFinite(expiry) && expiry > now);
+    if (expiries.length === 0) {
+      if (Object.keys(alertPreview.codes).length > 0) {
+        setAlertPreview((current) => current ? { ...current, codes: {} } : current);
+      }
+      return;
+    }
+    const nearest = Math.min(...expiries);
+    const timer = setTimeout(() => {
+      const cutoff = Date.now();
+      setAlertPreview((current) => {
+        if (!current) return current;
+        const codes = Object.fromEntries(
+          Object.entries(current.codes).filter(([, record]) => {
+            const expiry = Date.parse(record.expires_at);
+            return Number.isFinite(expiry) && expiry > cutoff;
+          })
+        );
+        return { ...current, codes };
+      });
+    }, Math.max(50, nearest - now + 50));
+    return () => clearTimeout(timer);
+  }, [alertPreview]);
 
   // 폴링으로 데이터가 교체된 뒤 선택한 칩의 대상이 사라지면(테마 소멸/이벤트 만료) 필터 자동 해제.
   // — 칩이 더는 렌더되지 않아 다시 클릭해 해제할 수 없는 '빈 화면에 갇힘'을 방지.
@@ -157,11 +252,34 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {suspects.map((s) => (
-              <SuspectCard key={s.code} s={s} disclaimer={data.disclaimer} />
+              <SuspectCard
+                key={s.code}
+                s={s}
+                disclaimer={data.disclaimer}
+                alertPreview={alertPreview?.codes?.[s.code]}
+              />
             ))}
           </div>
         )}
       </section>
+
+      {(data.blocked_suspects?.length ?? 0) > 0 && (
+        <section className="mt-6 rounded-lg border border-up/30 bg-up/5 px-4 py-3">
+          <h2 className="text-sm font-semibold text-up">⛔ 다음 거래일 추천 제외</h2>
+          <div className="mt-2 space-y-1 text-xs text-muted-foreground">
+            {data.blocked_suspects!.map((s) => (
+              <p key={s.code}>
+                <span className="font-medium text-foreground">{s.name} ({s.code})</span>
+                {" · "}
+                {s.next_session_eligibility?.reason ?? s.blocked_reason ?? "공시 확인 불완전"}
+                {s.next_session_eligibility?.checked_at && (
+                  <span className="ml-1 tabular-nums">({s.next_session_eligibility.checked_at})</span>
+                )}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }

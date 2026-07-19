@@ -21,12 +21,14 @@ from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import telegram_notify  # noqa: E402 — scripts/ 형제 모듈(재반등 봉 텔레그램 알림)
+import next_session_eligibility as session_eligibility  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 PERFORMANCE_JSON = os.path.join(REPO, "web", "data", "performance.json")
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
+ALERT_PREVIEW_LOCAL_DIR = os.path.join(REPO, "data", "local", "market_alert_preview")
 DISCLAIMER = "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다."
 RADAR_PASSTHRU = ("--reignition-body-pct", "--reignition-span-min", "--reignition-min-count",
                   "--reignition-start", "--reaccum-change-min", "--reaccum-change-max",
@@ -109,6 +111,43 @@ def select_published_suspects(radar, maxn, reaccum_max):
         suspect["published"] = True
         suspect["published_rank"] = published_rank
     return selected
+
+
+def annotate_next_session_eligibility(radar, evaluator=None, now=None):
+    """게시 슬롯 배정 전에 공시 적격성을 붙이고 추천 제외 후보를 분리한다."""
+    evaluator = evaluator or session_eligibility.evaluate_for_suspect
+    annotated = dict(radar)
+    all_rows = []
+    eligible = []
+    blocked = []
+    generated_at = radar.get("generated_at")
+    for precut_rank, original in enumerate(radar.get("suspects", []), 1):
+        row = dict(original)
+        row.setdefault("precut_rank", precut_rank)
+        try:
+            check = evaluator(row, radar_generated_at=generated_at, now=now)
+        except Exception as exc:
+            check = {
+                "schema_version": 1,
+                "status": "UNVERIFIED",
+                "tradable_next_session": None,
+                "recommendable": False,
+                "auto_buy_allowed": False,
+                "reason_code": "ELIGIBILITY_EVALUATOR_FAILED",
+                "reason": f"적격성 판정 실패: {type(exc).__name__}",
+            }
+        row["next_session_eligibility"] = check
+        all_rows.append(row)
+        if check.get("recommendable") is True:
+            eligible.append(row)
+            continue
+        blocked_row = dict(row)
+        blocked_row["published"] = False
+        blocked_row["published_rank"] = None
+        blocked_row["blocked_reason"] = check.get("reason") or "다음 거래일 추천 부적격"
+        blocked.append(blocked_row)
+    annotated["suspects"] = all_rows
+    return annotated, eligible, blocked
 
 
 def _rank_stats_snapshot(table, bucket):
@@ -207,6 +246,8 @@ def _compact_rank_candidate(suspect, fallback_rank=None):
         "change_basis": suspect.get("change_basis"),
         "pattern": suspect.get("pattern"),
         "suspicion_score": suspect.get("suspicion_score"),
+        "next_session_eligibility": suspect.get("next_session_eligibility"),
+        "blocked_reason": suspect.get("blocked_reason"),
     }
 
 
@@ -416,7 +457,7 @@ def history_date_for(out, now=None):
     now = now or datetime.now(KST)
     wall_date = now.strftime("%Y%m%d")
     signal_dates = []
-    for s in out.get("suspects", []):
+    for s in list(out.get("suspects", [])) + list(out.get("blocked_suspects", [])):
         sd = str(s.get("signal_date") or s.get("snapshot_as_of") or "")
         if len(sd) == 8 and sd.isdigit() and sd <= wall_date:
             signal_dates.append(sd)
@@ -424,6 +465,23 @@ def history_date_for(out, now=None):
     if signal_dates and (now.weekday() >= 5 or now.strftime("%H%M") < "0900"):
         return max(signal_dates)
     return wall_date
+
+
+def load_alert_preview_history(signal_date):
+    """별도 미리보기 실행기의 불변 상태를 publish 이력에 단방향 병합한다."""
+    path = os.path.join(
+        ALERT_PREVIEW_LOCAL_DIR,
+        signal_date[:4], signal_date[4:6], signal_date[6:8],
+        "history.json",
+    )
+    try:
+        with open(path, encoding="utf-8") as f:
+            payload = json.load(f)
+        if payload.get("date") != signal_date or not isinstance(payload.get("codes"), dict):
+            return {}
+        return payload["codes"]
+    except (OSError, ValueError, TypeError):
+        return {}
 
 
 def record_history(out):
@@ -448,6 +506,7 @@ def record_history(out):
                 os.replace(path, path + ".corrupt")
             except OSError:
                 pass
+    alert_preview_history = load_alert_preview_history(today)
     for rank, s in enumerate(out.get("suspects", []), 1):
         prev = hist["suspects"].get(s["code"], {})
         published_rank = s.get("published_rank") or rank
@@ -574,6 +633,12 @@ def record_history(out):
             "very_good_candidate": s.get("very_good_candidate", False),  # ⭐후보(-30<dd6≤-25) — 표시·검증용
             "tp_hint": s.get("tp_hint"),               # 회전밴드별 익절선 힌트(90~120→+7~10 등)
             "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
+            "next_session_eligibility": s.get("next_session_eligibility"),
+            # 장중 최초 충족·종가 충족·공시 확인은 서로 덮어쓰지 않는 별도 미리보기 이력.
+            "next_session_alert_preview_history": (
+                alert_preview_history.get(s["code"])
+                or prev.get("next_session_alert_preview_history")
+            ),
 
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],
             "first_seen": prev.get("first_seen") or out.get("generated_at"),
@@ -584,6 +649,34 @@ def record_history(out):
                 for key in RANK_MODEL_FIELDS
             },
         }
+    # 추천 제외 후보는 raw 감사자료로만 보존하고 final suspects 통계 모집단에는 넣지 않는다.
+    blocked_hist = hist.setdefault("blocked_suspects", {})
+    current_blocked = set()
+    for s in out.get("blocked_suspects", []):
+        code = str(s.get("code") or "")
+        if not code:
+            continue
+        current_blocked.add(code)
+        previous = blocked_hist.get(code) or {}
+        blocked_hist[code] = {
+            "name": s.get("name") or code,
+            "precut_rank": s.get("precut_rank"),
+            "published": False,
+            "published_rank": None,
+            "final": True,
+            "blocked_reason": s.get("blocked_reason"),
+            "next_session_eligibility": s.get("next_session_eligibility"),
+            "signal_date": s.get("signal_date"),
+            "price": s.get("price"),
+            "pattern": s.get("pattern"),
+            "rank_bucket": s.get("rank_bucket"),
+            "suspicion_score": s.get("suspicion_score"),
+            "first_blocked": previous.get("first_blocked") or out.get("generated_at"),
+            "last_blocked": out.get("generated_at"),
+        }
+    for code, record in blocked_hist.items():
+        if code not in current_blocked:
+            record["final"] = False
     # 최종 카드 마킹: 이번 회차 "게시 카드"(--max 컷 적용 후 = 사이트에 실제 표시된
     # 종목)에 있으면 True, 없으면 False. 매 회차 덮어쓰므로 마지막 회차(15:45)가 확정값.
     # 정의: final = 마감 시 사용자가 카드에서 보고 종가 매수할 수 있었던 종목.
@@ -669,7 +762,10 @@ def main():
         passthru.append("--dry-run")
 
     radar = run_radar(passthru)
-    suspects = select_published_suspects(radar, maxn, reaccum_max)
+    annotated_radar, eligible_rows, blocked_suspects = annotate_next_session_eligibility(radar)
+    selection_radar = dict(radar)
+    selection_radar["suspects"] = eligible_rows
+    suspects = select_published_suspects(selection_radar, maxn, reaccum_max)
     # 테마 대장: '실제 게시되는 집합' 기준으로 태깅(거래대금 1위) — radar.py는 컷 이전 전체라
     # 컷 후 대장 누락/외톨이(1종목 테마에 🏆)가 생김. 같은 테마 2개+일 때만.
     # 표시 전용(점수·통계 미반영). record_history·radar.json 모두 이 값을 SSOT로 사용.
@@ -713,7 +809,7 @@ def main():
             print(f"[warn] 매우좋음 텔레그램 알림 실패(무시): {e}", file=sys.stderr)
         # 종베 다이제스트 — 15:10대 오늘 suspects 순위 1통(하루 1회·시간게이트는 telegram_notify 내부). 별도 try 격리.
         try:
-            nd = telegram_notify.notify_suspects_digest(suspects)
+            nd = telegram_notify.notify_suspects_digest(suspects, blocked=blocked_suspects)
             if nd:
                 print("[telegram] 종베 suspects 다이제스트 전송")
         except Exception as e:
@@ -728,6 +824,7 @@ def main():
         "explosions": radar.get("explosions", []),  # 당일 폭발 종목(/forecast 게시용)
         "youtong": radar.get("youtong", []),         # 곧 폭발할 후보(/youtong 게시용)
         "suspects": suspects,
+        "blocked_suspects": blocked_suspects,
     }
     for key in RANK_MODEL_FIELDS:
         if radar.get(key) is not None:
@@ -735,7 +832,7 @@ def main():
     if not dry:
         # Git/web 게시 여부와 무관하게 Mac 로컬에는 매 회차 실제 게시 배열을 보존한다.
         # 기준시각 경과 후 decision은 저장된 과거 회차에서 파생하므로 15:21이 15:18을 오염시키지 않는다.
-        record_local_published_run(radar, out)
+        record_local_published_run(annotated_radar, out)
         derive_due_decision_snapshots(history_date_for(out))
     new = json.dumps(out, ensure_ascii=False, indent=1)
 

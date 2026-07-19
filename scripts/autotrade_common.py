@@ -556,6 +556,17 @@ def safety_ok(suspect):
         return False, "레이더 1위 없음(빈 레이더)"
     if suspect.get("change_basis") == "NXT":
         return False, "change_basis=NXT(야간가 기준 — 정규장 실거래 아님)"
-    # ⚠ 경고/위험 자동매수 차단 폐지(회장님 지시 2026-07-06): 재료 강하면 경고받고도 급등.
-    #   배지로 경고 상태는 노출되며, 매매 종목 선택 책임은 회장님(개별 랭크 선택). 거래정지 리스크 감수 결정.
+    try:
+        import next_session_eligibility as session_eligibility
+        eligibility = suspect.get("next_session_eligibility")
+        if not session_eligibility.is_fresh(eligibility):
+            return False, "다음 거래일 공시 판정 누락 또는 유효시간 만료"
+        ok, reason = session_eligibility.safety_allowed(
+            eligibility)
+    except Exception as exc:
+        return False, f"다음 거래일 적격성 검사 오류({type(exc).__name__})"
+    if not ok:
+        return False, reason
+    # ⚠ 경고/위험 등 시장경보 정책은 종전대로다. 다만 확정 거래정지·추천 부적격·공시 미확인은
+    #   시장경보와 별개의 신규매수 하드 게이트로 항상 차단한다.
     return True, "ok"

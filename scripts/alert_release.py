@@ -9,15 +9,15 @@
 이 모듈은 배지 원천값만 정확하게 만들며 rank4 순위·자동매매 정책은 변경하지 않는다.
 """
 import hashlib
-import html
 import math
 import re
 from datetime import datetime, timedelta, timezone
-from urllib.parse import parse_qs, urljoin, urlparse
+from urllib.parse import parse_qs, urlparse
 
 from net import get_bytes
+import disclosure_client
 
-UA_PC = {"User-Agent": "Mozilla/5.0", "Referer": "https://finance.naver.com/"}
+UA_PC = disclosure_client.UA_PC
 KST = timezone(timedelta(hours=9))
 RULE_LOGIC_VERSION = "krx-release-v2"
 RELEASE_LOOKBACK_5 = 5
@@ -32,28 +32,11 @@ _RULE_CACHE = {}     # code -> parsed rule dict
 RISK_RELEASE_WINDOW_CDAYS = 3
 
 _ROW_RE = re.compile(r'<a[^>]*class="tit"[^>]*>([^<]+)</a>.*?(\d{4})\.(\d{2})\.(\d{2})', re.S)
-_NOTICE_ROW_RE = re.compile(
-    r'<a(?=[^>]*class=["\']tit["\'])(?=[^>]*href=["\']([^"\']+)["\'])[^>]*>'
-    r'(.*?)</a>.*?<td[^>]*class=["\']date["\'][^>]*>\s*'
-    r'(\d{4})\.(\d{2})\.(\d{2})',
-    re.S | re.I,
-)
 _RISK_CACHE = {}   # code -> "YYYYMMDD"(위험 해제공시일) | None — 실행당 캐시
 
 
-def _clean_title(value):
-    return html.unescape(re.sub(r"<[^>]+>", "", value or "")).strip()
-
-
 def _notice_rows(raw):
-    return [
-        {
-            "href": urljoin("https://finance.naver.com", href),
-            "title": _clean_title(title),
-            "date": f"{y}{m}{d}",
-        }
-        for href, title, y, m, d in _NOTICE_ROW_RE.findall(raw or "")
-    ]
+    return disclosure_client.parse_notice_rows(raw)
 
 
 def _latest_warning_notice(code, max_pages=8):
@@ -109,14 +92,7 @@ def designation_notice_date(code, max_pages=8):
 
 
 def _html_to_text(raw):
-    text = re.sub(r"(?is)<style.*?</style>|<script.*?</script>", " ", raw or "")
-    text = re.sub(r"(?i)<br\s*/?>", "\n", text)
-    text = re.sub(r"(?s)<[^>]+>", " ", text)
-    text = html.unescape(text).replace("\xa0", " ")
-    return "\n".join(
-        re.sub(r"[ \t]+", " ", line).strip()
-        for line in text.splitlines() if line.strip()
-    )
+    return disclosure_client.html_to_text(raw)
 
 
 def _date_with_inferred_year(month, day, designation_date):

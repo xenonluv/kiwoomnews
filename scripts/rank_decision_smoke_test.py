@@ -26,10 +26,39 @@ def suspect(code, *, experimental=False, bucket=4):
         "rank_reason": f"bucket {bucket}",
         "change_basis": "KRX",
         "visible_experimental": experimental,
+        "next_session_eligibility": {
+            "status": "CLEAR_AS_CHECKED",
+            "tradable_next_session": True,
+            "recommendable": True,
+            "auto_buy_allowed": True,
+            "expires_at": "2099-12-31T23:59:59+09:00",
+            "reason": "test clear",
+        },
     }
 
 
 class PublishRankTest(unittest.TestCase):
+    def test_eligibility_filter_blocks_before_slot_and_keeps_raw(self):
+        rows = [suspect("BLOCK"), suspect("OK2"), suspect("OK3")]
+
+        def evaluator(row, **_kwargs):
+            if row["code"] == "BLOCK":
+                return {
+                    "status": "HALT_CONFIRMED", "tradable_next_session": False,
+                    "recommendable": False, "auto_buy_allowed": False,
+                    "reason": "내일 거래정지",
+                }
+            return row["next_session_eligibility"]
+
+        annotated, eligible, blocked = publish.annotate_next_session_eligibility(
+            {"generated_at": "2026-07-14 15:11:00 KST", "suspects": rows}, evaluator=evaluator)
+        selected = publish.select_published_suspects({"suspects": eligible}, 2, 2)
+        self.assertEqual([row["code"] for row in selected], ["OK2", "OK3"])
+        self.assertEqual([row["published_rank"] for row in selected], [1, 2])
+        self.assertEqual([row["code"] for row in annotated["suspects"]], ["BLOCK", "OK2", "OK3"])
+        self.assertEqual(blocked[0]["precut_rank"], 1)
+        self.assertFalse(blocked[0]["published"])
+
     def test_cut_preserves_global_order_and_radar_fields(self):
         rows = [
             suspect("R1"), suspect("E1", experimental=True),
@@ -99,6 +128,32 @@ class PublishRankTest(unittest.TestCase):
             with open(path, "rb") as f:
                 self.assertEqual(f.read(), before)
             self.assertFalse(any(name.endswith(".tmp") for name in os.listdir(td)))
+
+    def test_blocked_history_is_auditable_but_not_in_final_population(self):
+        blocked = {
+            **suspect("HALT"), "precut_rank": 1, "published": False,
+            "published_rank": None, "blocked_reason": "내일 거래정지",
+            "next_session_eligibility": {
+                "status": "HALT_CONFIRMED", "tradable_next_session": False,
+                "recommendable": False, "auto_buy_allowed": False,
+                "target_trade_date": "20260715", "reason": "내일 거래정지",
+            },
+        }
+        out = {
+            "generated_at": "2026-07-14 15:11:00 KST",
+            "suspects": [{**suspect("OK"), "precut_rank": 2, "published_rank": 1}],
+            "blocked_suspects": [blocked],
+        }
+        with tempfile.TemporaryDirectory() as td, \
+                mock.patch.object(publish, "HISTORY_DIR", td), \
+                mock.patch.object(publish, "history_date_for", return_value="20260714"):
+            path = publish.record_history(out)
+            with open(path, encoding="utf-8") as f:
+                saved = json.load(f)
+        self.assertEqual(set(saved["suspects"]), {"OK"})
+        self.assertTrue(saved["suspects"]["OK"]["final"])
+        self.assertTrue(saved["blocked_suspects"]["HALT"]["final"])
+        self.assertFalse(saved["blocked_suspects"]["HALT"]["published"])
 
     def test_card_rank_stats_are_attached_without_reordering(self):
         rows = [suspect("A", bucket=2), suspect("B", bucket=4)]
@@ -339,6 +394,21 @@ class LocalDecisionStoreTest(unittest.TestCase):
 
 
 class AutotradeInvariantTest(unittest.TestCase):
+    def test_common_safety_gate_rejects_expired_and_confirmed_halt(self):
+        expired = suspect("A")
+        expired["next_session_eligibility"]["expires_at"] = "2020-01-01T00:00:00+09:00"
+        self.assertFalse(ac.safety_ok(expired)[0])
+
+        halted = suspect("B")
+        halted["next_session_eligibility"].update({
+            "status": "HALT_CONFIRMED", "tradable_next_session": False,
+            "recommendable": False, "auto_buy_allowed": False,
+            "reason": "내일 거래정지",
+        })
+        ok, reason = ac.safety_ok(halted)
+        self.assertFalse(ok)
+        self.assertIn("거래정지", reason)
+
     def _run_branch(self, *, nxt=False, buy_result=None, buy_error=None,
                     account_error=None):
         radar = {

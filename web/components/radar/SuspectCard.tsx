@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { SuspicionGauge } from "./SuspicionGauge";
 import { ScoreBreakdownBars } from "./ScoreBreakdownBars";
 import { DisclaimerNote } from "./DisclaimerNote";
-import type { Suspect } from "@/types/radar";
+import type { NextMarketAlertPreview, Suspect } from "@/types/radar";
 
 const CARD_NEWS_LIMIT = 2;
 
@@ -147,11 +147,81 @@ function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very
   };
 }
 
+function alertPreviewMeta(preview?: NextMarketAlertPreview) {
+  if (!preview) return null;
+  const commonTitle = `${preview.reason} · 기준가 ${preview.price?.toLocaleString("ko-KR") ?? "미확인"}원 · ${preview.generated_at} · KRX 최종 공시가 우선합니다.`;
+  if (preview.status === "OFFICIAL_CONFIRMED") {
+    return {
+      label: "✅ 익일 투자주의 공시확인",
+      sublabel: "KOSCOM 전달 공시 확인",
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "CONDITION_MET_CLOSE") {
+    return {
+      label: "🚨 익일 투자주의확정",
+      sublabel: "종가조건 충족·공시대기",
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "CONDITION_MET_INTRADAY") {
+    return {
+      label: "🚨 익일 투자주의확정",
+      sublabel: "공시 전 계산·현재가 기준",
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "WATCH") {
+    return {
+      label: "⚠️ 익일 투자주의 임박",
+      sublabel: `최근접 조건까지 ${preview.nearest_margin_pct?.toFixed(2) ?? "?"}%`,
+      className: "border border-warning/70 bg-warning/20 px-2.5 py-1 text-base font-black text-warning",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "PARTIAL_PUBLIC_CONDITION") {
+    return {
+      label: "⚠️ 투자주의 일부조건",
+      sublabel: "계좌조건 외부확인 불가",
+      className: "border border-warning/70 bg-warning/20 px-2 py-1 font-bold text-warning",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "AUCTION_PRICE_UNVERIFIED") {
+    return {
+      label: "⚠️ 동시호가 확인중",
+      sublabel: "검증 전 확정 배지 보류",
+      className: "border border-white/30 bg-white/5 px-2 py-1 font-bold text-muted-foreground",
+      title: commonTitle,
+    };
+  }
+  if (preview.status === "UNVERIFIED") {
+    return {
+      label: "⚪ 시장경보 계산 미확인",
+      sublabel: "데이터·규칙 확인 필요",
+      className: "border border-white/25 bg-white/5 px-2 py-1 font-bold text-muted-foreground",
+      title: commonTitle,
+    };
+  }
+  return null;
+}
+
 /**
  * 수상 종목 카드 — "큰돈이 들어와 급등 후 식은, 이벤트에 민감한 종목"의 증거를 한 장에.
  * 고가→현재 페이드 바 + 분봉 스파크 타임라인 + 수급 + 점수 해부도.
  */
-export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string }) {
+export function SuspectCard({
+  s,
+  disclaimer,
+  alertPreview,
+}: {
+  s: Suspect;
+  disclaimer?: string;
+  alertPreview?: NextMarketAlertPreview;
+}) {
   const change = fmtChange(s.change_pct);
   // MA20 생존 게이트가 폐지돼 ma20_margin_pct는 음수일 수 있다 → 라벨에 위/아래를 부호로 반영.
   const ma20Margin = s.pattern === "reaccum" ? s.reaccum?.ma20_margin_pct ?? null : null;
@@ -173,6 +243,7 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
     ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);
   const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
   const shakeoutBadge = shakeoutBadgeMeta(s);
+  const previewBadge = alertPreviewMeta(alertPreview);
 
   return (
     <Card
@@ -192,6 +263,16 @@ export function SuspectCard({ s, disclaimer }: { s: Suspect; disclaimer?: string
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {previewBadge && (
+              <span className="inline-flex flex-col items-start gap-0.5">
+                <Badge className={previewBadge.className} title={previewBadge.title}>
+                  {previewBadge.label}
+                </Badge>
+                <span className="pl-1 text-[10px] font-medium text-muted-foreground">
+                  {previewBadge.sublabel}
+                </span>
+              </span>
+            )}
             {s.very_good && (
               <Badge
                 className="bg-[#f59e0b] px-2.5 py-1 text-base font-black text-black"

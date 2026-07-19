@@ -101,9 +101,17 @@ def _history_rows(repo):
 def _current_rows(radar):
     suspects = radar.get("suspects") or []
     if isinstance(suspects, dict):
-        return [{"code": str(code), **row} for code, row in suspects.items()
+        rows = [{"code": str(code), **row} for code, row in suspects.items()
                 if isinstance(row, dict)]
-    return [row for row in suspects if isinstance(row, dict)]
+    else:
+        rows = [row for row in suspects if isinstance(row, dict)]
+    blocked = radar.get("blocked_suspects") or []
+    if isinstance(blocked, dict):
+        blocked_rows = [{"code": str(code), **row} for code, row in blocked.items()
+                        if isinstance(row, dict)]
+    else:
+        blocked_rows = [row for row in blocked if isinstance(row, dict)]
+    return rows + [{**row, "_current_blocked": True} for row in blocked_rows]
 
 
 def _resolve(query, current, histories, backfill, allow_network=True):
@@ -246,6 +254,22 @@ def analyze(query, repo=REPO, allow_network=True):
                                 "evaluated": bool(latest_record.get("evaluated")),
                                 "result": latest_record.get("result")} if latest else None),
             "message": "현재 radar.json에 유효한 신호가 없어 익일 예측을 만들지 않습니다.",
+        }
+
+    eligibility = signal.get("next_session_eligibility") or {}
+    if signal.get("_current_blocked") or eligibility.get("recommendable") is False:
+        return {
+            "status": "next_session_ineligible",
+            "forecast_valid": False,
+            "query": query,
+            "code": code,
+            "name": signal.get("name") or name,
+            "data_as_of": radar.get("generated_at") or performance.get("as_of"),
+            "target_trade_date": eligibility.get("target_trade_date"),
+            "next_session_eligibility": eligibility,
+            "message": (eligibility.get("reason")
+                        or signal.get("blocked_reason")
+                        or "현재 신호는 다음 거래일 추천 부적격으로 제외됐습니다."),
         }
 
     signal_date = str(signal.get("signal_date") or radar.get("date") or "").replace("-", "")

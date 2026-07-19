@@ -4,8 +4,8 @@
   python3 scripts/autotrade_executor.py --slot krx   # 15:18 — NXT 불가 종목 KRX 시장가 매수
   python3 scripts/autotrade_executor.py --slot nxt   # 19:50 — NXT 가능 종목 NXT 지정가(5호가위) 매수
 
-흐름: KV 토글 ON? → 오늘 미매수? → 레이더 1위(suspects[0]) 안전필터 통과? →
-      NXT 거래가능 여부로 슬롯 분기 → 100만원 매수 → 포지션 기록.
+흐름: KV 토글 ON? → 선택 순위별 오늘 미매수? → 주문 직전 공시 재확인·안전필터 통과? →
+      NXT 거래가능 여부로 슬롯 분기 → 설정 예산 매수 → 포지션 기록.
 ⚠ 실발주는 kiwoom_trade가 AUTOTRADE_LIVE=1 일 때만(아니면 dry 로그). 기본은 안전(미발주).
 """
 import os
@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import autotrade_common as ac
 import kiwoom_trade as kt
 import market_state
+import next_session_eligibility as session_eligibility
 import autotrade_orders
 
 
@@ -220,6 +221,7 @@ def _run_unlocked(slot, dry=True):
             "change_basis": suspect.get("change_basis"),
             "pattern": suspect.get("pattern"),
             "suspicion_score": suspect.get("suspicion_score"),
+            "next_session_eligibility": suspect.get("next_session_eligibility"),
             "requested": published_rank in ranks,
             "selected": False,
             "safety_ok": None,
@@ -255,6 +257,25 @@ def _run_unlocked(slot, dry=True):
         code = s.get("code")
         if not code or code in seen:
             continue
+        stored_check = s.get("next_session_eligibility")
+        try:
+            # 실발주에서는 게시 직후라도 반드시 새 공시를 다시 읽는다. dry/shadow는 아직 유효한
+            # 게시 판정을 재사용하고, 누락·만료 상태에서만 조회해 구형 snapshot을 정상으로 통과시키지 않는다.
+            if live_execution or not session_eligibility.is_fresh(stored_check, now=decision_at):
+                stored_check = session_eligibility.evaluate_for_suspect(
+                    s, radar_generated_at=radar_snapshot.get("generated_at"),
+                    now=decision_at, force_refresh=live_execution)
+                s["next_session_eligibility"] = stored_check
+            candidate_rows[r - 1]["next_session_eligibility"] = stored_check
+        except Exception as exc:
+            stored_check = {
+                "status": "UNVERIFIED", "tradable_next_session": None,
+                "recommendable": False, "auto_buy_allowed": False,
+                "reason_code": "ORDER_RECHECK_FAILED",
+                "reason": f"주문 직전 공시 재확인 실패: {type(exc).__name__}",
+            }
+            s["next_session_eligibility"] = stored_check
+            candidate_rows[r - 1]["next_session_eligibility"] = stored_check
         ok, reason = ac.safety_ok(s)
         candidate_rows[r - 1]["safety_ok"] = ok
         candidate_rows[r - 1]["safety_reason"] = reason

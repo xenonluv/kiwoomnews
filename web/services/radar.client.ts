@@ -1,6 +1,6 @@
 "use client";
 
-import type { RadarData } from "@/types/radar";
+import type { NextMarketAlertPreviewPayload, RadarData } from "@/types/radar";
 
 /**
  * 레이더 클라이언트 서비스 — 컴포넌트는 fetch를 직접 호출하지 않고
@@ -11,6 +11,16 @@ export const radarClientService = {
     const res = await fetch("/api/radar", { cache: "no-store" });
     if (!res.ok) {
       throw new Error(`레이더 조회 실패 (HTTP ${res.status})`);
+    }
+    return res.json();
+  },
+};
+
+export const alertPreviewClientService = {
+  async get(): Promise<NextMarketAlertPreviewPayload> {
+    const res = await fetch("/api/radar/alert-preview", { cache: "no-store" });
+    if (!res.ok) {
+      throw new Error(`익일 투자주의 미리보기 조회 실패 (HTTP ${res.status})`);
     }
     return res.json();
   },

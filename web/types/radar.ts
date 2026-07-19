@@ -76,6 +76,122 @@ export interface MaterialInfo {
   relevant_count?: number;
 }
 
+export interface NextSessionEligibility {
+  schema_version: number;
+  as_of_date?: string | null;
+  target_trade_date?: string | null;
+  status:
+    | "CLEAR_AS_CHECKED"
+    | "HALT_CONFIRMED"
+    | "CURRENTLY_HALTED"
+    | "NOTICE_ONLY"
+    | "RECOMMENDATION_BLOCKED"
+    | "UNVERIFIED"
+    | string;
+  tradable_next_session?: boolean | null;
+  recommendable?: boolean;
+  auto_buy_allowed?: boolean;
+  reason_code?: string;
+  reason?: string;
+  restriction_start?: string | null;
+  restriction_end?: string | null;
+  relisting_expected?: string | null;
+  checked_at?: string;
+  expires_at?: string;
+  evidence?: {
+    notice_id?: string | null;
+    title?: string | null;
+    published_at?: string | null;
+    source_url?: string | null;
+    source_hash?: string | null;
+  } | null;
+}
+
+export interface BlockedSuspect {
+  code: string;
+  name: string;
+  precut_rank?: number | null;
+  published?: false;
+  published_rank?: null;
+  blocked_reason?: string;
+  next_session_eligibility?: NextSessionEligibility | null;
+}
+
+export type NextMarketAlertPreviewStatus =
+  | "WATCH"
+  | "CONDITION_MET_INTRADAY"
+  | "AUCTION_PRICE_UNVERIFIED"
+  | "CONDITION_MET_CLOSE"
+  | "OFFICIAL_CONFIRMED"
+  | "PARTIAL_PUBLIC_CONDITION"
+  | "NOT_MET"
+  | "NOT_APPLICABLE"
+  | "UNVERIFIED";
+
+export interface NextMarketAlertCheck {
+  rule_id: string;
+  label: string;
+  offset: number;
+  available: boolean;
+  base_date?: string;
+  base_close?: number;
+  required_pct?: number;
+  theoretical_price?: number;
+  threshold_price?: number;
+  current_rate_pct?: number | null;
+  margin_price?: number | null;
+  margin_pct?: number | null;
+  distance_to_threshold_pct?: number | null;
+  met?: boolean | null;
+}
+
+/** 장마감 직전 공개 가격조건 미리보기. 랭킹·자동매매와 분리된 표시 전용 상태. */
+export interface NextMarketAlertPreview {
+  schema_version: number;
+  /** 식별자는 payload.codes의 map key가 SSOT이며 구버전 값에만 중복 존재할 수 있다. */
+  code?: string;
+  name: string;
+  signal_date: string;
+  target_trade_date?: string | null;
+  status: NextMarketAlertPreviewStatus;
+  verified: boolean;
+  price?: number | null;
+  price_basis?: string | null;
+  reason: string;
+  checks: NextMarketAlertCheck[];
+  triggered_rule_ids: string[];
+  nearest_margin_pct?: number | null;
+  generated_at: string;
+  expires_at: string;
+  official_evidence?: {
+    notice_id?: string;
+    title?: string;
+    published_at?: string;
+    source_url?: string;
+    content_url?: string;
+    source_hash?: string;
+    source_kind?: string;
+  };
+  rule_metadata?: {
+    version?: string;
+    source?: string;
+    verified_on?: string;
+    scope?: string;
+  };
+}
+
+export interface NextMarketAlertPreviewPayload {
+  schema_version: number;
+  date: string;
+  generated_at: string;
+  expires_at: string;
+  verified: boolean;
+  duration_ms?: number;
+  codes: Record<string, NextMarketAlertPreview>;
+  configured?: boolean;
+  reason?: string;
+}
+
 /** D-10 이내 매크로/실적 이벤트 (조건 1) */
 export interface RadarEvent {
   id: string;
@@ -382,6 +498,8 @@ export interface Suspect {
   theme?: string;
   /** 같은 테마 내 당일 거래대금 1위(테마 대장) 여부 — 표시 전용. 구버전 JSON엔 없음 */
   theme_leader?: boolean;
+  /** 다음 KRX 거래일 공시 적격성. 추천과 신규 자동매수의 하드 안전 게이트. */
+  next_session_eligibility?: NextSessionEligibility | null;
 }
 
 /** radar.json 루트 */
@@ -455,4 +573,6 @@ export interface RadarData {
   /** 곧 폭발할 후보 (/youtong 게시용) */
   youtong?: Youtong[];
   suspects: Suspect[];
+  /** raw에서는 탐지됐지만 공시·거래일 검증으로 추천에서 제외된 후보 */
+  blocked_suspects?: BlockedSuspect[];
 }

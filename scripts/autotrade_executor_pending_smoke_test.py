@@ -90,6 +90,11 @@ class PostSubmitPersistenceTest(unittest.TestCase):
                     "market": "KRX", "code": code, "qty": 10, "ref_price": 1000,
                     "api_id": "kt10000", "body": {}, "label": code,
                 })
+                recheck = mock.Mock(side_effect=lambda suspect, **_kwargs: {
+                    "status": "CLEAR_AS_CHECKED", "tradable_next_session": True,
+                    "recommendable": True, "auto_buy_allowed": True,
+                    "expires_at": "2099-12-31T23:59:59+09:00", "reason": "test clear",
+                })
                 env = dict(os.environ, AUTOTRADE_LIVE="1",
                            AUTOTRADE_ORDER_FIELDS_VERIFIED="1")
                 patches = (
@@ -115,6 +120,8 @@ class PostSubmitPersistenceTest(unittest.TestCase):
                     mock.patch.object(executor.ac, "log"),
                     mock.patch.object(executor.market_state, "require_trading_day",
                                       return_value=(True, {})),
+                    mock.patch.object(executor.session_eligibility, "evaluate_for_suspect",
+                                      recheck),
                     mock.patch.object(executor.kt, "account_holdings", return_value={
                         "summary": {"deposit": 1_000_000}, "holdings": []}),
                     mock.patch.object(executor.kt, "is_nxt_tradable", return_value=False),
@@ -127,6 +134,8 @@ class PostSubmitPersistenceTest(unittest.TestCase):
                     executor._run_unlocked("krx", dry=False)
                 self.assertEqual(submit.call_count, 1)
                 self.assertEqual(prepare.call_count, 1)
+                self.assertEqual(
+                    [call.args[0]["code"] for call in recheck.call_args_list], ["A", "B"])
 
 
 if __name__ == "__main__":

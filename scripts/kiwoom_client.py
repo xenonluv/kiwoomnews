@@ -49,13 +49,14 @@ def _mkt(code, market):
 def _load_env():
     path = os.path.join(ROOT, ".env")
     if os.path.exists(path):
-        for line in open(path, encoding="utf-8"):
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                # 값 양끝 따옴표 제거(예: KV_REST_API_URL="https://…"). 안 벗기면 URL이 '"https…'가 돼
-                # KV(토글) 조회가 'unknown url type'로 항상 실패 → 웹 자동매매 토글이 무력화됨. telegram_notify와 동일 처리.
-                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+        with open(path, encoding="utf-8") as env_file:
+            for line in env_file:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    # 값 양끝 따옴표 제거(예: KV_REST_API_URL="https://…"). 안 벗기면 URL이 '"https…'가 돼
+                    # KV(토글) 조회가 'unknown url type'로 항상 실패 → 웹 자동매매 토글이 무력화됨. telegram_notify와 동일 처리.
+                    os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
 def _keys():
@@ -295,6 +296,24 @@ def current_price(code, market="J"):
     """
     o = _call("ka10001", "/api/dostk/stkinfo", {"stk_cd": _mkt(code, market)})
     return _abs(o.get("cur_prc"))
+
+
+def market_alert_quote(code, market="J"):
+    """익일 시장경보 미리보기용 경량 KRX 호가.
+
+    ka10001 한 번만 호출하며 기존 ``price_now`` 소비자 계약은 바꾸지 않는다.
+    예상체결가는 API 필드 존재만으로 신뢰하지 않고, 호출자가 수량·운영 검증 플래그까지
+    확인한 뒤에만 종가 예상값으로 사용할 수 있도록 원자료를 그대로 분리한다.
+    """
+    o = _call("ka10001", "/api/dostk/stkinfo", {"stk_cd": _mkt(code, market)})
+    return {
+        "code": code,
+        "market": market,
+        "price": _abs(o.get("cur_prc")),
+        "expected_close_price": _abs(o.get("exp_cntr_pric")),
+        "expected_close_qty": _f(o.get("exp_cntr_qty")),
+        "volume": _f(o.get("trde_qty")),
+    }
 
 
 def _overlay_money(bar, un_bar):
