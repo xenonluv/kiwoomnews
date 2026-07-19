@@ -18,11 +18,6 @@ npm install
 npm run dev               # http://localhost:3000
 ```
 
-장막판 익일 투자주의 미리보기는 자동매매 KV와 분리된 저장소를 사용한다.
-Mac 실행기에는 `RADAR_PREVIEW_KV_REST_API_URL`과 쓰기
-`RADAR_PREVIEW_KV_REST_API_TOKEN`, Vercel에는 같은 URL과
-`RADAR_PREVIEW_KV_REST_API_READ_ONLY_TOKEN`만 설정한다.
-
 > 확인: `which node` 가 `/home/.../.nvm/...` 같은 Linux 경로여야 합니다.
 > `/mnt/c/Program Files/nodejs/...` 가 나오면 Windows Node이므로 위 nvm 설치가 필요합니다.
 

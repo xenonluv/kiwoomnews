@@ -298,24 +298,6 @@ def current_price(code, market="J"):
     return _abs(o.get("cur_prc"))
 
 
-def market_alert_quote(code, market="J"):
-    """익일 시장경보 미리보기용 경량 KRX 호가.
-
-    ka10001 한 번만 호출하며 기존 ``price_now`` 소비자 계약은 바꾸지 않는다.
-    예상체결가는 API 필드 존재만으로 신뢰하지 않고, 호출자가 수량·운영 검증 플래그까지
-    확인한 뒤에만 종가 예상값으로 사용할 수 있도록 원자료를 그대로 분리한다.
-    """
-    o = _call("ka10001", "/api/dostk/stkinfo", {"stk_cd": _mkt(code, market)})
-    return {
-        "code": code,
-        "market": market,
-        "price": _abs(o.get("cur_prc")),
-        "expected_close_price": _abs(o.get("exp_cntr_pric")),
-        "expected_close_qty": _f(o.get("exp_cntr_qty")),
-        "volume": _f(o.get("trde_qty")),
-    }
-
-
 def _overlay_money(bar, un_bar):
     """가격은 그대로 두고 거래대금/거래량만 UN 값으로 덮어쓴다(0/결측이면 J 유지, max로 과소 방지)."""
     if un_bar:

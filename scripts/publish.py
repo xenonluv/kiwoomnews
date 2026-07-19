@@ -22,13 +22,14 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import telegram_notify  # noqa: E402 — scripts/ 형제 모듈(재반등 봉 텔레그램 알림)
 import next_session_eligibility as session_eligibility  # noqa: E402
+import kiwoom_client as kw  # noqa: E402
+from next_market_alert_rules import evaluate_alert_preview  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RADAR_JSON = os.path.join(REPO, "web", "data", "radar.json")
 PERFORMANCE_JSON = os.path.join(REPO, "web", "data", "performance.json")
 HISTORY_DIR = os.path.join(REPO, "data", "radar_history")
-ALERT_PREVIEW_LOCAL_DIR = os.path.join(REPO, "data", "local", "market_alert_preview")
 DISCLAIMER = "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다."
 RADAR_PASSTHRU = ("--reignition-body-pct", "--reignition-span-min", "--reignition-min-count",
                   "--reignition-start", "--reaccum-change-min", "--reaccum-change-max",
@@ -148,6 +149,75 @@ def annotate_next_session_eligibility(radar, evaluator=None, now=None):
         blocked.append(blocked_row)
     annotated["suspects"] = all_rows
     return annotated, eligible, blocked
+
+
+def attach_market_alert_badges(
+    suspects, *, radar_generated_at=None, now=None, daily_fetcher=None
+):
+    """기존 5분 게시 회차에서 투자경고 예정 배지 값만 붙인다.
+
+    별도 KV·API·순위 변경 없이 final suspects에 표시용 스냅샷만 추가한다.
+    """
+    now = (now or datetime.now(KST)).astimezone(KST)
+    hm = now.strftime("%H%M")
+    for suspect in suspects:
+        suspect["next_market_alert_preview"] = None
+    if now.weekday() >= 5 or not ("1455" <= hm <= "2059"):
+        return suspects
+
+    daily_fetcher = daily_fetcher or kw.daily_prices
+    for suspect in suspects:
+        code = str(suspect.get("code") or "").lstrip("A").zfill(6)
+        signal_date = session_eligibility.signal_date_for(suspect, radar_generated_at)
+        target = session_eligibility.resolve_next_trade_date(signal_date)
+        if not signal_date or not target:
+            continue
+        try:
+            daily = list(daily_fetcher(code, days=35, market="J"))
+            if hm >= "1531":
+                today_rows = [
+                    row for row in daily
+                    if str(row.get("date") or "").replace("-", "") == signal_date
+                    and float(row.get("volume") or 0) > 0
+                    and float(row.get("close") or 0) > 0
+                ]
+                if not today_rows:
+                    continue
+                price = abs(float(today_rows[-1]["close"]))
+                price_basis = "KRX_OFFICIAL_CLOSE"
+            else:
+                if suspect.get("change_basis") == "NXT":
+                    continue
+                price = abs(float(suspect.get("price") or 0))
+                price_basis = "KRX_CURRENT"
+            result = evaluate_alert_preview(
+                code=code,
+                name=str(suspect.get("name") or code),
+                signal_date=signal_date,
+                target_trade_date=target,
+                daily=daily,
+                price=price,
+                price_basis=price_basis,
+                current_alert=suspect.get("alert_now"),
+            )
+        except Exception as exc:
+            sys.stderr.write(
+                f"[warn] {code} 투자경고 예정 배지 계산 실패: {type(exc).__name__}\n"
+            )
+            continue
+        if result.get("status") not in ("CONDITION_MET_INTRADAY", "CONDITION_MET_CLOSE"):
+            continue
+        result.pop("code", None)
+        result["generated_at"] = now.isoformat(timespec="seconds")
+        if result["status"] == "CONDITION_MET_CLOSE":
+            expires = datetime.strptime(
+                target + "090000", "%Y%m%d%H%M%S"
+            ).replace(tzinfo=KST)
+        else:
+            expires = now + timedelta(minutes=12)
+        result["expires_at"] = expires.isoformat(timespec="seconds")
+        suspect["next_market_alert_preview"] = result
+    return suspects
 
 
 def _rank_stats_snapshot(table, bucket):
@@ -467,23 +537,6 @@ def history_date_for(out, now=None):
     return wall_date
 
 
-def load_alert_preview_history(signal_date):
-    """별도 미리보기 실행기의 불변 상태를 publish 이력에 단방향 병합한다."""
-    path = os.path.join(
-        ALERT_PREVIEW_LOCAL_DIR,
-        signal_date[:4], signal_date[4:6], signal_date[6:8],
-        "history.json",
-    )
-    try:
-        with open(path, encoding="utf-8") as f:
-            payload = json.load(f)
-        if payload.get("date") != signal_date or not isinstance(payload.get("codes"), dict):
-            return {}
-        return payload["codes"]
-    except (OSError, ValueError, TypeError):
-        return {}
-
-
 def record_history(out):
     """당일 수상 종목을 검증용 이력에 누적 (radar_backtest.py가 익일 평가).
 
@@ -506,7 +559,6 @@ def record_history(out):
                 os.replace(path, path + ".corrupt")
             except OSError:
                 pass
-    alert_preview_history = load_alert_preview_history(today)
     for rank, s in enumerate(out.get("suspects", []), 1):
         prev = hist["suspects"].get(s["code"], {})
         published_rank = s.get("published_rank") or rank
@@ -634,11 +686,7 @@ def record_history(out):
             "tp_hint": s.get("tp_hint"),               # 회전밴드별 익절선 힌트(90~120→+7~10 등)
             "forecast": s.get("forecast"),  # 3일내+7% 확률 라벨 — 라이브 calibration 누적용
             "next_session_eligibility": s.get("next_session_eligibility"),
-            # 장중 최초 충족·종가 충족·공시 확인은 서로 덮어쓰지 않는 별도 미리보기 이력.
-            "next_session_alert_preview_history": (
-                alert_preview_history.get(s["code"])
-                or prev.get("next_session_alert_preview_history")
-            ),
+            "next_market_alert_preview": s.get("next_market_alert_preview"),
 
             "matched_events": [m.get("id") for m in s.get("matched_events", [])],
             "first_seen": prev.get("first_seen") or out.get("generated_at"),
@@ -781,6 +829,9 @@ def main():
         if len(grp) >= 2:
             max(grp, key=lambda x: x.get("value_eok") or 0)["theme_leader"] = True
     attach_rank_performance(suspects)
+    attach_market_alert_badges(
+        suspects, radar_generated_at=radar.get("generated_at")
+    )
     # 텔레그램: 게시 후보의 새(완성된) 재반등 5분 스파크마다 알림. 봉 시각 디둡(도배 방지).
     # git 락 밖에서 먼저 호출 + 실패해도 publish 본작업 안 깨짐. push 여부와 무관히 매 회차 점검.
     # 봉 완성 판정 단위는 radar가 쓴 reignition_span_min(--reignition-span-min)과 정확히 맞춘다.

@@ -180,18 +180,6 @@ export interface NextMarketAlertPreview {
   };
 }
 
-export interface NextMarketAlertPreviewPayload {
-  schema_version: number;
-  date: string;
-  generated_at: string;
-  expires_at: string;
-  verified: boolean;
-  duration_ms?: number;
-  codes: Record<string, NextMarketAlertPreview>;
-  configured?: boolean;
-  reason?: string;
-}
-
 /** D-10 이내 매크로/실적 이벤트 (조건 1) */
 export interface RadarEvent {
   id: string;
@@ -500,6 +488,8 @@ export interface Suspect {
   theme_leader?: boolean;
   /** 다음 KRX 거래일 공시 적격성. 추천과 신규 자동매수의 하드 안전 게이트. */
   next_session_eligibility?: NextSessionEligibility | null;
+  /** 기존 5분 게시 회차에서 계산한 표시 전용 투자경고 예정 배지. */
+  next_market_alert_preview?: NextMarketAlertPreview | null;
 }
 
 /** radar.json 루트 */

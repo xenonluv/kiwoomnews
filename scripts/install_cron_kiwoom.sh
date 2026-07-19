@@ -30,11 +30,6 @@ PATH=/usr/local/bin:/usr/bin:/bin
 0 7 * * * cd $REPO && PYTHONUTF8=1 ${PY} scripts/kis_client.py --issue-token >> /tmp/kiwoom_kis_token.log 2>&1
 # 레이더 게시 — 평일 9~20시 5분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
 1,6,11,16,21,26,31,36,41,46,51,56 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1
-# 익일 투자주의 공개 가격조건 미리보기 — 표시 전용 별도 KV, 랭킹·자동주문 무관.
-55-59 14 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/next_market_alert_preview.py --once >> /tmp/kiwoom_alert_preview.log 2>&1
-0-35 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/next_market_alert_preview.py --once >> /tmp/kiwoom_alert_preview.log 2>&1
-# 공식 종가/투자주의 공시 후속 확인. 충족 종가·공시는 목표 거래일 개장 전까지 보존한다.
-40 15-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/next_market_alert_preview.py --post-close >> /tmp/kiwoom_alert_preview.log 2>&1
 # 자동매매 매수 — 15:18 KRX 종가베팅(비-NXT 종목) / 19:50 NXT(NXT 거래가능 종목, 5호가위 지정가)
 18 15 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot krx ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
 50 19 * * 1-5 cd $REPO && PYTHONUTF8=1 ${LIVE_ENV}${PY} scripts/autotrade_executor.py --slot nxt ${DRY_ARG} >> /tmp/kiwoom_autotrade.log 2>&1
@@ -93,5 +88,5 @@ case "$(date +%Z)" in
   *) echo "  ⚠️  시간대 $(date +%Z) — KST 아님! sudo systemsetup -settimezone Asia/Seoul";;
 esac
 echo "  ⚠️  노트북 잠자기 차단: sudo pmset -c disablesleep 1 (안 하면 뚜껑 닫을 때 cron 멈춤)"
-echo "  ℹ️  로그: tail -f /tmp/kiwoom_publish.log /tmp/kiwoom_alert_preview.log /tmp/kiwoom_backtest.log /tmp/kiwoom_autotrade.log /tmp/kiwoom_track_eval.log /tmp/kiwoom_ai_click_eval.log /tmp/kiwoom_phase_eval.log /tmp/kiwoom_night_alert.log"
+echo "  ℹ️  로그: tail -f /tmp/kiwoom_publish.log /tmp/kiwoom_backtest.log /tmp/kiwoom_autotrade.log /tmp/kiwoom_track_eval.log /tmp/kiwoom_ai_click_eval.log /tmp/kiwoom_phase_eval.log /tmp/kiwoom_night_alert.log"
 echo "  ⚠️  Windows Task Scheduler의 키움 작업 4개를 반드시 해제(이중 실매수 방지)."
