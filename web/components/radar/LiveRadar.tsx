@@ -53,7 +53,23 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [justUpdated, setJustUpdated] = useState(false);
+  const [previewExpiryTick, setPreviewExpiryTick] = useState(0);
   const lastJson = useRef<string>(JSON.stringify(initial));
+
+  useEffect(() => {
+    const now = Date.now();
+    const futureExpiries = data.suspects
+      .map((suspect) => Date.parse(suspect.next_market_alert_preview?.expires_at ?? ""))
+      .filter((expiresAt) => Number.isFinite(expiresAt) && expiresAt > now);
+    if (futureExpiries.length === 0) return;
+
+    const nearestExpiry = Math.min(...futureExpiries);
+    const id = window.setTimeout(
+      () => setPreviewExpiryTick((tick) => tick + 1),
+      Math.max(0, nearestExpiry - now + 50),
+    );
+    return () => window.clearTimeout(id);
+  }, [data, previewExpiryTick]);
 
   useEffect(() => {
     let alive = true;

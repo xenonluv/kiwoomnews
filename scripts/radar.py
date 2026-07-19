@@ -381,6 +381,7 @@ def _nxt_change_pct(code, prev_close):
 
 
 _ALERT_CACHE = {}   # 실행당 종목별 시장경보 캐시(수상종목 ≤reaccum_max이라 회당 소수 콜)
+_LISTING_MARKET_CACHE = {}  # 같은 응답의 stockExchangeType(KOSPI/KOSDAQ) — 호가단위 판정용
 
 
 def _alert_level(code):
@@ -394,10 +395,23 @@ def _alert_level(code):
         b = json.loads(get_bytes(f"https://m.stock.naver.com/api/stock/{code}/basic", UA))
         m = b.get("marketAlertType") if isinstance(b, dict) else None
         level = {"01": "주의", "02": "경고", "03": "위험"}.get((m or {}).get("code") if isinstance(m, dict) else None)
+        exchange = b.get("stockExchangeType") if isinstance(b, dict) else None
+        exchange_code = (exchange or {}).get("code") if isinstance(exchange, dict) else None
+        _LISTING_MARKET_CACHE[code] = {
+            "KS": "KOSPI", "KQ": "KOSDAQ",
+        }.get(exchange_code)
     except Exception:
         level = None
+        _LISTING_MARKET_CACHE[code] = None
     _ALERT_CACHE[code] = level
     return level
+
+
+def _listing_market(code):
+    """시장경보와 같은 공개 응답에서 확인한 KRX 상장시장."""
+    if code not in _ALERT_CACHE:
+        _alert_level(code)
+    return _LISTING_MARKET_CACHE.get(code)
 
 
 # ---------- 재매집: 거래대금 폭발 레지스트리 ----------
@@ -2363,6 +2377,7 @@ def main():
     _today_ymd = datetime.now(KST).strftime("%Y%m%d")
     for s in suspects:
         s["alert_now"] = _alert_level(s["code"])
+        s["listing_market"] = _listing_market(s["code"])
         if s["alert_now"] == "경고":
             try:
                 _al_daily = kis.daily_prices(s["code"], days=25)

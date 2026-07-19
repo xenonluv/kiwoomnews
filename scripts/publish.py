@@ -195,6 +195,7 @@ def attach_market_alert_badges(
                 name=str(suspect.get("name") or code),
                 signal_date=signal_date,
                 target_trade_date=target,
+                listing_market=suspect.get("listing_market"),
                 daily=daily,
                 price=price,
                 price_basis=price_basis,

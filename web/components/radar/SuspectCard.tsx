@@ -149,7 +149,8 @@ function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very
 
 function alertPreviewMeta(preview?: NextMarketAlertPreview) {
   if (!preview) return null;
-  if (Date.parse(preview.expires_at) <= Date.now()) return null;
+  const expiresAt = Date.parse(preview.expires_at);
+  if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) return null;
   const commonTitle = `${preview.reason} · 기준가 ${preview.price?.toLocaleString("ko-KR") ?? "미확인"}원 · ${preview.generated_at} · KRX 최종 공시가 우선합니다.`;
   if (preview.status === "CONDITION_MET_CLOSE" || preview.status === "CONDITION_MET_INTRADAY") {
     return {

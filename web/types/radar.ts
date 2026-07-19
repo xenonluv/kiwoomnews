@@ -153,6 +153,7 @@ export interface NextMarketAlertPreview {
   name: string;
   signal_date: string;
   target_trade_date?: string | null;
+  listing_market?: "KOSPI" | "KOSDAQ" | null;
   status: NextMarketAlertPreviewStatus;
   verified: boolean;
   price?: number | null;
@@ -459,6 +460,7 @@ export interface Suspect {
   price: number;
   change_pct: number; // 현재 등락률
   change_basis?: string; // "KRX"(정규장) / "NXT"(마감 후 시간외 야간가로 등락률 재평가)
+  listing_market?: "KOSPI" | "KOSDAQ" | null; // KRX 호가단위 판정용 상장시장
   high_pct: number; // 당일 고가 등락률
   value_eok: number; // 당일 거래대금(억)
   turnover_pct?: number | null; // 당일 회전율(거래량/유통주식수 %) — 손바뀜 강도

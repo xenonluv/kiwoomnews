@@ -23,6 +23,7 @@ class PublishMarketAlertBadgeTest(unittest.TestCase):
         suspects = [{
             "code": "413630", "name": "씨피시스템", "signal_date": "20260716",
             "price": 3_355, "change_basis": "KRX", "alert_now": None,
+            "listing_market": "KOSDAQ",
         }]
         publish.attach_market_alert_badges(
             suspects,
@@ -39,6 +40,7 @@ class PublishMarketAlertBadgeTest(unittest.TestCase):
         suspects = [{
             "code": "413630", "name": "씨피시스템", "signal_date": "20260716",
             "price": 3_185, "change_basis": "KRX", "alert_now": None,
+            "listing_market": "KOSDAQ",
         }]
         publish.attach_market_alert_badges(
             suspects,

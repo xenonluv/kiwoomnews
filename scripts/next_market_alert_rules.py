@@ -10,7 +10,7 @@ import math
 from typing import Any, Dict, Iterable, Optional
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 PUBLIC_PRICE_RULES = (
     ("SHORT_3D_100", 3, 100.0, "최근 3매매일 종가 대비 100% 이상 상승"),
@@ -24,33 +24,48 @@ ACTIVE_HIGHER_ALERTS = {
 }
 
 
-def krx_tick(price: float) -> int:
-    """현재 KRX 호가단위. 시장 구분 없이 적용되는 2023년 이후 단위."""
+def normalize_listing_market(value: Any) -> Optional[str]:
+    raw = str(value or "").strip().upper()
+    if raw in {"KOSPI", "KS", "유가증권", "코스피"}:
+        return "KOSPI"
+    if raw in {"KOSDAQ", "KQ", "코스닥"}:
+        return "KOSDAQ"
+    return None
+
+
+def krx_tick(price: float, listing_market: str) -> int:
+    """현재 KRX 주식 호가단위. 10만원 이상은 KOSPI/KOSDAQ을 구분한다."""
+    market = normalize_listing_market(listing_market)
+    if market is None:
+        raise ValueError("listing_market must be KOSPI or KOSDAQ")
     value = max(0.0, float(price or 0))
-    if value < 2_000:
+    if value < 1_000:
         return 1
     if value < 5_000:
         return 5
-    if value < 20_000:
+    if value < 10_000:
         return 10
     if value < 50_000:
         return 50
-    if value < 200_000:
+    if value < 100_000 or market == "KOSDAQ":
         return 100
     if value < 500_000:
         return 500
     return 1_000
 
 
-def minimum_valid_price(raw_price: float) -> int:
+def minimum_valid_price(raw_price: float, listing_market: str) -> int:
     """이론 임계가격 이상인 가장 작은 유효 KRX 호가를 반환한다."""
+    market = normalize_listing_market(listing_market)
+    if market is None:
+        raise ValueError("listing_market must be KOSPI or KOSDAQ")
     raw = max(0.0, float(raw_price or 0))
     candidate = int(math.floor(raw))
     if candidate < raw:
         candidate += 1
-    # 경계(2천/5천 등)를 넘을 때 호가단위가 달라지므로 후보 가격에서 반복 보정한다.
+    # 경계(1천/5천 등)를 넘을 때 호가단위가 달라지므로 후보 가격에서 반복 보정한다.
     for _ in range(4):
-        tick = krx_tick(candidate)
+        tick = krx_tick(candidate, market)
         rounded = int(math.ceil(raw / tick) * tick)
         if rounded == candidate:
             return rounded
@@ -96,6 +111,7 @@ def _check(
     label: str,
     reference: Optional[Dict[str, Any]],
     price: float,
+    listing_market: str,
 ) -> Dict[str, Any]:
     if not reference:
         return {
@@ -107,7 +123,7 @@ def _check(
         }
     base = float(reference["close"])
     theoretical = base * (1.0 + required_pct / 100.0)
-    threshold = minimum_valid_price(theoretical)
+    threshold = minimum_valid_price(theoretical, listing_market)
     rate = (price / base - 1.0) * 100.0 if price > 0 else None
     margin_price = price - threshold if price > 0 else None
     margin_pct = (
@@ -144,6 +160,7 @@ def evaluate_alert_preview(
     name: str,
     signal_date: str,
     target_trade_date: Optional[str],
+    listing_market: Optional[str],
     daily: Iterable[Dict[str, Any]],
     price: float,
     price_basis: str,
@@ -155,12 +172,14 @@ def evaluate_alert_preview(
     ``price_basis``는 KRX_CURRENT, KRX_EXPECTED_CLOSE_VERIFIED,
     KRX_EXPECTED_CLOSE_UNVERIFIED, KRX_OFFICIAL_CLOSE 중 하나다.
     """
+    market = normalize_listing_market(listing_market)
     result: Dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
         "code": str(code).zfill(6),
         "name": name,
         "signal_date": signal_date,
         "target_trade_date": target_trade_date,
+        "listing_market": market,
         "status": "UNVERIFIED",
         "verified": False,
         "price": round(_number(price), 4) or None,
@@ -181,6 +200,9 @@ def evaluate_alert_preview(
     if not target_trade_date:
         result["reason"] = "다음 KRX 거래일을 확정하지 못했습니다."
         return result
+    if market is None:
+        result["reason"] = "KOSPI/KOSDAQ 시장 구분을 확인하지 못했습니다."
+        return result
     if str(current_alert or "").strip() in ACTIVE_HIGHER_ALERTS:
         result.update({
             "status": "NOT_APPLICABLE",
@@ -195,7 +217,10 @@ def evaluate_alert_preview(
 
     references = trading_references(daily, signal_date)
     checks = [
-        _check(rule_id, offset, pct, label, references.get(offset), result["price"])
+        _check(
+            rule_id, offset, pct, label, references.get(offset),
+            result["price"], market,
+        )
         for rule_id, offset, pct, label in PUBLIC_PRICE_RULES
     ]
     result["checks"] = checks
@@ -233,7 +258,9 @@ def evaluate_alert_preview(
         return result
 
     t5 = next(check for check in checks if check["rule_id"] == "SHORT_5D_60")
-    t5_partial_threshold = minimum_valid_price(t5["base_close"] * 1.45)
+    t5_partial_threshold = minimum_valid_price(
+        t5["base_close"] * 1.45, market
+    )
     if result["price"] >= t5_partial_threshold:
         result.update({
             "status": "PARTIAL_PUBLIC_CONDITION",
