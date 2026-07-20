@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-20 09:03:46 KST",
+ "generated_at": "2026-07-20 09:38:50 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -47,9 +47,348 @@
   }
  ],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "014950",
+   "name": "삼익제약",
+   "sector": "삼익제약",
+   "change_pct": 9.87,
+   "high_pct": 18.31,
+   "vol_turnover_pct": 70.7,
+   "value_eok": 177,
+   "price": 6120.0,
+   "first_seen": "09:37",
+   "exploded": false
+  },
+  {
+   "code": "012690",
+   "name": "모나리자",
+   "sector": "모나리자",
+   "change_pct": 7.37,
+   "high_pct": 13.36,
+   "vol_turnover_pct": 58.7,
+   "value_eok": 242,
+   "price": 2330.0,
+   "first_seen": "09:37",
+   "exploded": false
+  }
+ ],
  "suspects": [],
- "blocked_suspects": [],
+ "blocked_suspects": [
+  {
+   "code": "002070",
+   "name": "비비안",
+   "sector": "비비안",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 63,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 1
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 12110.0,
+   "change_pct": -12.25,
+   "change_basis": "KRX",
+   "high_pct": 5.07,
+   "value_eok": 64,
+   "snapshot_open": 12740.0,
+   "snapshot_high": 14500.0,
+   "snapshot_low": 11470.0,
+   "snapshot_close": 12110.0,
+   "snapshot_volume": 497157.0,
+   "snapshot_value": 6449000000.0,
+   "snapshot_value_eok": 64.5,
+   "snapshot_as_of": "20260720",
+   "signal_date": "20260720",
+   "signal_open": 12740.0,
+   "signal_high": 14500.0,
+   "signal_low": 11470.0,
+   "signal_close": 12110.0,
+   "signal_prev_close": 13800.0,
+   "signal_volume": 497157.0,
+   "signal_value": 6449000000.0,
+   "signal_value_eok": 64.5,
+   "signal_source": "daily_latest",
+   "turnover_pct": 37.4,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.5524,
+   "turnover_basis": "float",
+   "ma10": 8170.0,
+   "ma10_margin_pct": 48.23,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 13.8,
+    "time": "09:15",
+    "value_eok": 5,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.59,
+     "value_eok": 25
+    },
+    {
+     "time": "09:10",
+     "body_pct": 2.56,
+     "value_eok": 3
+    },
+    {
+     "time": "09:15",
+     "body_pct": 13.8,
+     "value_eok": 5
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 2.59
+    },
+    {
+     "time": "09:10",
+     "body_pct": 2.56
+    },
+    {
+     "time": "09:15",
+     "body_pct": 13.8
+    }
+   ],
+   "news": [
+    {
+     "title": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+     "summary": "한성기업, 모나미, 에넥스 등 상폐 위기 기업에 매수세 몰려 최근 국내 증시에서 상장폐지 우려가 불거진 장수 기업을 응원하려는 개인 투자자들의 매수세가 잇따르고 있다. 한성기업과 모나미에서 시작된 매수세가 에넥스·모나리자·비비안 등...",
+     "office": "조선일보",
+     "datetime": "202607200846",
+     "url": "https://n.news.naver.com/mnews/article/023/0003988497",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "“상폐 안돼” 국민이 고른 ‘이 기업’ 200% 안팎 급등…투자 경고등...",
+     "summary": "이름만 들으면 누구나 알만한 ‘국산 브랜드’들의 주가가 급등하고 있다. 볼펜 기업 모나미는 보름 만에 187%, ‘크래미’로 알려진 한성기업은 245% 폭등했다. 속옷 브랜드 비비안, 홈인테리어 기업 에넥스 등도 급등 열차에 올라탔다. 이달부터...",
+     "office": "헤럴드경제",
+     "datetime": "202607170801",
+     "url": "https://n.news.naver.com/mnews/article/016/0002671496",
+     "sentiment": "호재"
+    },
+    {
+     "title": "[특징주]'애국기업 상장폐지 막자'…모나미·에넥스·비비안 상한가",
+     "summary": "14일 상장폐지 위기에 놓였던 '애국 테마주' 기업들이 일제히 상한가를 찍었다. 한국거래소에 따르면 이날 모나미는 전 거래일 대비 29.90% 상승한 2650원에 장을 마쳤다. 에넥스는 29.96% 상승한 1631원에 거래를 마감했고 비비안은 29.8",
+     "office": "동행미디어 시대",
+     "datetime": "202607141627",
+     "url": "https://n.news.naver.com/mnews/article/417/0001151618",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "[ET특징주]비비안, 재무구조 개선·사업 확대 기대감에 상승세",
+     "summary": "비비안이 재무구조 개선·사업 확대 기대감에 상승세다. 비비안(002070)은 6월 22일 오후 1시 46분 기준 전 거래일보다 30% 상승한 8450원에 거래되고 있다. 비비안은 지난 19일 이사회 결의를 통해 보통주 80만5152주를 발행하는 제3자",
+     "office": "전자신문",
+     "datetime": "202606221352",
+     "url": "https://n.news.naver.com/mnews/article/030/0003439920",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "실적",
+   "material": {
+    "grade": "S",
+    "score": 100,
+    "summary": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.04,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시",
+     "공시/대형이벤트",
+     "구제/수혈",
+     "실적",
+     "실적/재무",
+     "테마/수혜"
+    ],
+    "risk_flags": [
+     "상장폐지",
+     "상폐",
+     "채무"
+    ],
+    "evidence": [
+     {
+      "title": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+      "datetime": "202607200846",
+      "source": "조선일보",
+      "url": "https://n.news.naver.com/mnews/article/023/0003988497",
+      "score": 100
+     },
+     {
+      "title": "“상폐 안돼” 국민이 고른 ‘이 기업’ 200% 안팎 급등…투자 경고등...",
+      "datetime": "202607170801",
+      "source": "헤럴드경제",
+      "url": "https://n.news.naver.com/mnews/article/016/0002671496",
+      "score": 100
+     },
+     {
+      "title": "[특징주]'애국기업 상장폐지 막자'…모나미·에넥스·비비안 상한가",
+      "datetime": "202607141627",
+      "source": "동행미디어 시대",
+      "url": "https://n.news.naver.com/mnews/article/417/0001151618",
+      "score": 90
+     },
+     {
+      "title": "비비안, 250억 유상증자…채무상환·운영자금 목적",
+      "datetime": "202606221712",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000086621",
+      "score": 86
+     },
+     {
+      "title": "[ET특징주]비비안, 250억 유상증자에 상승세",
+      "datetime": "202606231303",
+      "source": "전자신문",
+      "url": "https://n.news.naver.com/mnews/article/030/0003440343",
+      "score": 50
+     }
+    ],
+    "source_count": 6,
+    "relevant_count": 6
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260715",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 8048.5,
+    "ma20_margin_pct": 50.46,
+    "cause_summary": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "경고",
+   "listing_market": "KOSPI",
+   "alert_release": false,
+   "alert_release_rule": {
+    "source": "KRX_KOSCOM",
+    "retrieved_via": "NAVER_FINANCE_NOTICE",
+    "notice_date": "20260716",
+    "designation_date": "20260720",
+    "first_review_date_notice": "20260731",
+    "first_review_date_adjusted": null,
+    "threshold_5d_pct": 60.0,
+    "threshold_15d_pct": 100.0,
+    "recent_high_window": 15,
+    "min_elapsed_days": 10,
+    "logic_version": "krx-release-v2",
+    "parse_status": "ok",
+    "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458866&code=002070&page_notice=1",
+    "raw_text_hash": "23c5b7f25ce0b035ced0",
+    "fetched_at": "2026-07-20 09:38:49 KST",
+    "notice_no": "70458866"
+   },
+   "alert_release_checks": {
+    "as_of_date": "20260720",
+    "elapsed_days": 1,
+    "elapsed_ok": false,
+    "five_day_ok": null,
+    "fifteen_day_ok": null,
+    "not_recent_high_ok": null,
+    "halt_days_excluded": []
+   },
+   "alert_release_error": null,
+   "alert_elapsed_days": 1,
+   "alert_risk_released": false,
+   "rank_bucket": 3,
+   "rank_reason": "저점매집+폭발회전 결측 → bucket 3",
+   "shadow_bucket": [],
+   "expected_touch7_rate": 81.0,
+   "expected_high_pct": 15.64,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집 기타",
+    "n": 21,
+    "unique_n": 17,
+    "touch7_rate": 81.0,
+    "expected_high_pct": 15.64,
+    "avg_return": 6.94,
+    "bucket": 3,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "rank_prior": {
+    "source": "chairman_40y_rule",
+    "strength": "strong",
+    "summary": "저점매집 지문"
+   },
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_source_commit": "7f3acab",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "precut_rank": 1,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260720",
+    "target_trade_date": "20260721",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-20T09:38:50+09:00",
+    "expires_at": "2026-07-20T09:48:50+09:00",
+    "evidence": {
+     "notice_id": "68135393",
+     "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
+     "published_at": "20260715",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=68135393&code=002070&page_notice=1",
+     "source_hash": "01d86c3b93368bc98207"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "published": false,
+   "published_rank": null,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다."
+  }
+ ],
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
