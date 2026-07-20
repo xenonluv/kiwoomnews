@@ -90,6 +90,25 @@ def _first_date_after(label, text):
     return _date_from_match(match)
 
 
+def _short_halt_date(text):
+    """KRX 투자경고 정지 공시의 좁은 ``정지일`` 표 항목만 읽는다.
+
+    ``정지예고일``·``정지해제일``·설명문 속 날짜를 시작일로 오인하지 않도록 줄 경계와
+    선택적 항목 번호 뒤에서만 찾는다. 반환 tail은 같은 항목의 ``(1일간)`` 확인용이다.
+    """
+    match = re.search(
+        r"(?:^|\n)\s*\|?\s*(?:\d+\s*[.)]\s*)?(?:매매거래\s*)?정지일"
+        r"\s*(?:\|\s*|[:：]\s*|\s+)"
+        + _DATE
+        + r"(?P<tail>[^\n]{0,30})",
+        text or "",
+        re.S,
+    )
+    if not match:
+        return None, ""
+    return _date_from_match(match), match.group("tail") or ""
+
+
 def parse_notice_event(row, text):
     """공시 한 건을 판정 가능한 사건으로 정규화한다."""
     title = str((row or {}).get("title") or "")
@@ -123,8 +142,13 @@ def parse_notice_event(row, text):
     schedule = text[schedule_at:schedule_at + 300] if schedule_at >= 0 else ""
     start = (_first_date_after(r"매매거래정지(?:일|일시)", text)
              or _first_date_after(r"시작일", schedule))
+    short_start, short_tail = _short_halt_date(text)
+    start = start or short_start
     end = (_first_date_after(r"종료일", schedule)
            or _first_date_after(r"매매거래정지해제일", text))
+    if not end and start and short_start == start and re.match(
+            r"\s*\(\s*1일간\s*\)", short_tail):
+        end = start
     relisting = _first_date_after(r"신주권?상장예정일|변경상장예정일", text)
     if end and start and end < start:
         end = None
@@ -332,7 +356,12 @@ def evaluate_for_code(code, signal_date, *, now=None, max_pages=2, force_refresh
     fetch_body = fetch_body or disclosure.fetch_notice_body
     try:
         rows = fetch_rows(normalized_code, max_pages=max_pages)
-        relevant_rows = [row for row in rows if _RELEVANT_TITLE.search(str(row.get("title") or ""))]
+        relevant_rows = [
+            row for row in rows
+            if _RELEVANT_TITLE.search(
+                re.sub(r"\s+", "", str(row.get("title") or ""))
+            )
+        ]
         events = []
         for row in relevant_rows:
             body = fetch_body(row)

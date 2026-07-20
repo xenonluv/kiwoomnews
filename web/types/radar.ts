@@ -107,15 +107,14 @@ export interface NextSessionEligibility {
   } | null;
 }
 
-export interface BlockedSuspect {
-  code: string;
-  name: string;
+export type BlockedSuspect = Pick<Suspect, "code" | "name"> &
+  Partial<Omit<Suspect, "code" | "name">> & {
   precut_rank?: number | null;
   published?: false;
   published_rank?: null;
   blocked_reason?: string;
   next_session_eligibility?: NextSessionEligibility | null;
-}
+};
 
 export type NextMarketAlertPreviewStatus =
   | "WATCH"

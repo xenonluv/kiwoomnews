@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { SuspicionGauge } from "./SuspicionGauge";
 import { ScoreBreakdownBars } from "./ScoreBreakdownBars";
 import { DisclaimerNote } from "./DisclaimerNote";
-import type { NextMarketAlertPreview, Suspect } from "@/types/radar";
+import type { NextMarketAlertPreview, NextSessionEligibility, Suspect } from "@/types/radar";
 
 const CARD_NEWS_LIMIT = 2;
 
@@ -163,6 +163,52 @@ function alertPreviewMeta(preview?: NextMarketAlertPreview) {
   return null;
 }
 
+function eligibilityBadgeMeta(eligibility?: NextSessionEligibility | null) {
+  if (!eligibility) return null;
+  const dateLabel = (value?: string | null) =>
+    value && /^\d{8}$/.test(value)
+      ? `${value.slice(0, 4)}.${value.slice(4, 6)}.${value.slice(6, 8)}`
+      : value;
+  const restriction =
+    eligibility.restriction_start &&
+    eligibility.restriction_end &&
+    eligibility.restriction_start !== eligibility.restriction_end
+      ? `${dateLabel(eligibility.restriction_start)}~${dateLabel(eligibility.restriction_end)}`
+      : dateLabel(eligibility.restriction_start);
+  const title = [
+    eligibility.target_trade_date
+      ? `목표 거래일 ${dateLabel(eligibility.target_trade_date)}`
+      : null,
+    restriction ? `정지기간 ${restriction}` : null,
+    eligibility.evidence?.title ? `공시 ${eligibility.evidence.title}` : null,
+    eligibility.checked_at ? `확인 ${eligibility.checked_at}` : null,
+    "KRX/KOSCOM 확정 공시가 최우선입니다.",
+  ].filter(Boolean).join(" · ");
+
+  if (eligibility.status === "HALT_CONFIRMED") {
+    return {
+      label: "⛔ 다음 거래일 거래정지 예정 · 확정공시",
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+      title,
+    };
+  }
+  if (eligibility.status === "CURRENTLY_HALTED") {
+    return {
+      label: "⛔ 현재 거래정지",
+      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+      title,
+    };
+  }
+  if (eligibility.status === "NOTICE_ONLY") {
+    return {
+      label: "⚠ 거래정지 예고 · 미확정",
+      className: "bg-warning px-2.5 py-1 text-base font-black text-black",
+      title,
+    };
+  }
+  return null;
+}
+
 /**
  * 수상 종목 카드 — "큰돈이 들어와 급등 후 식은, 이벤트에 민감한 종목"의 증거를 한 장에.
  * 고가→현재 페이드 바 + 분봉 스파크 타임라인 + 수급 + 점수 해부도.
@@ -196,6 +242,7 @@ export function SuspectCard({
   const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
   const shakeoutBadge = shakeoutBadgeMeta(s);
   const previewBadge = alertPreviewMeta(s.next_market_alert_preview ?? undefined);
+  const eligibilityBadge = eligibilityBadgeMeta(s.next_session_eligibility);
 
   return (
     <Card
@@ -215,6 +262,11 @@ export function SuspectCard({
       <CardHeader className="gap-3 pb-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
+            {eligibilityBadge && (
+              <Badge className={eligibilityBadge.className} title={eligibilityBadge.title}>
+                {eligibilityBadge.label}
+              </Badge>
+            )}
             {previewBadge && (
               <span className="inline-flex flex-col items-start gap-0.5">
                 <Badge className={previewBadge.className} title={previewBadge.title}>

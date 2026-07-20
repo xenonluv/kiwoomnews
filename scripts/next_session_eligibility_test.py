@@ -35,6 +35,27 @@ GOLD_MERGER = """
 2026-07-31
 """
 
+MONAMI_HALT = """
+매매거래 정지 및 재개(투자경고종목 지정중)
+다음 종목은 현재 투자경고종목으로서 지정이후 주가 상승으로 1일간 매매거래가 정지되니,
+투자에 주의하시기 바랍니다.
+1. 대상종목
+모나미 보통주
+2. 정지사유
+투자경고종목 지정이후 주가가 2일간 40%이상 급등
+| 3. 정지일 | 2026년 07월 20일(1일간) |
+4. 근거규정
+시장감시규정
+"""
+
+MONAMI_NOTICE = """
+매매거래정지 예고
+2. 정지예고일
+2026년 07월 16일(D)
+3. 매매거래정지 여부
+2026년 07월 16일 종가 조건을 충족하면 2026년 07월 20일(1일간) 매매거래가 정지됨
+"""
+
 
 def row(no, title, day="20260708"):
     return {
@@ -108,6 +129,18 @@ class NoticeParserTest(unittest.TestCase):
         self.assertTrue(result["recommendable"])
         self.assertFalse(result["auto_buy_allowed"])
 
+    def test_short_halt_date_does_not_confuse_notice_or_release_labels(self):
+        confirmed = nse.parse_notice_event(
+            row(4, "테스트(주) 매매거래 정지 및 재개"),
+            "3. 정지일\n2026년 07월 20일(1일간)\n4. 정지해제일\n2026년 07월 21일")
+        notice = nse.parse_notice_event(
+            row(5, "테스트(주) 매매거래 정지 예고"),
+            "2. 정지예고일\n2026년 07월 16일")
+        self.assertEqual(confirmed["start"], "20260720")
+        self.assertEqual(confirmed["end"], "20260720")
+        self.assertEqual(notice["kind"], "NOTICE_ONLY")
+        self.assertIsNone(notice["start"])
+
     def test_liquidation_is_recommendation_block_not_false_halt(self):
         event = nse.parse_notice_event(
             row(2, "테스트(주) 상장폐지에 따른 정리매매 개시"), "정리매매기간 2026-07-15")
@@ -178,6 +211,27 @@ class EndToEndFixtureTest(unittest.TestCase):
         self.assertEqual(result["target_trade_date"], "20260715")
         self.assertEqual(result["status"], "HALT_CONFIRMED")
         self.assertFalse(result["auto_buy_allowed"])
+
+    def test_monami_spaced_title_confirmed_halt_beats_older_notice(self):
+        confirmed_title = "(주)모나미 매매거래 정지 및 재개(투자경고종목 지정중)"
+        rows = [
+            row(70458882, confirmed_title, "20260716"),
+            row(68428917, "(주)모나미 매매거래정지 예고", "20260715"),
+        ]
+        bodies = {"70458882": MONAMI_HALT, "68428917": MONAMI_NOTICE}
+        result = nse.evaluate_for_code(
+            "005360", "20260716", force_refresh=True,
+            fetch_rows=lambda *_args, **_kwargs: rows,
+            fetch_body=lambda item: {"text": bodies[item["notice_id"]]},
+        )
+        self.assertEqual(result["target_trade_date"], "20260720")
+        self.assertEqual(result["status"], "HALT_CONFIRMED")
+        self.assertEqual(result["restriction_start"], "20260720")
+        self.assertEqual(result["restriction_end"], "20260720")
+        self.assertFalse(result["tradable_next_session"])
+        self.assertFalse(result["recommendable"])
+        self.assertFalse(result["auto_buy_allowed"])
+        self.assertEqual(result["evidence"]["title"], confirmed_title)
 
 
 if __name__ == "__main__":

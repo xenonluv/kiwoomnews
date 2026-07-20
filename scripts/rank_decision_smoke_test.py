@@ -40,6 +40,12 @@ def suspect(code, *, experimental=False, bucket=4):
 class PublishRankTest(unittest.TestCase):
     def test_eligibility_filter_blocks_before_slot_and_keeps_raw(self):
         rows = [suspect("BLOCK"), suspect("OK2"), suspect("OK3")]
+        rows[0].update({
+            "shakeout": True,
+            "very_good": True,
+            "strength_tier": 4,
+            "material": {"grade": "A", "directness": "직접"},
+        })
 
         def evaluator(row, **_kwargs):
             if row["code"] == "BLOCK":
@@ -58,6 +64,10 @@ class PublishRankTest(unittest.TestCase):
         self.assertEqual([row["code"] for row in annotated["suspects"]], ["BLOCK", "OK2", "OK3"])
         self.assertEqual(blocked[0]["precut_rank"], 1)
         self.assertFalse(blocked[0]["published"])
+        self.assertTrue(blocked[0]["shakeout"])
+        self.assertTrue(blocked[0]["very_good"])
+        self.assertEqual(blocked[0]["strength_tier"], 4)
+        self.assertEqual(blocked[0]["material"]["grade"], "A")
 
     def test_cut_preserves_global_order_and_radar_fields(self):
         rows = [

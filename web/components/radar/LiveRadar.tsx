@@ -8,10 +8,30 @@ import { ThemeStrip } from "./ThemeStrip";
 import { SuspectCard } from "./SuspectCard";
 import { AutoTradeToggle } from "./AutoTradeToggle";
 import { radarClientService } from "@/services/radar.client";
-import type { RadarData } from "@/types/radar";
+import type { BlockedSuspect, RadarData, Suspect } from "@/types/radar";
 
 /** 자동 확인 주기(ms). publish cron이 5분 주기이므로 새 결과를 1분 이내 반영. */
 const POLL_MS = 60_000;
+
+function isRenderableSuspect(s: BlockedSuspect): s is BlockedSuspect & Suspect {
+  return (
+    typeof s.sector === "string" &&
+    typeof s.suspicion_score === "number" &&
+    typeof s.score_breakdown === "object" &&
+    s.score_breakdown !== null &&
+    typeof s.price === "number" &&
+    typeof s.change_pct === "number" &&
+    typeof s.high_pct === "number" &&
+    typeof s.value_eok === "number" &&
+    typeof s.ma10 === "number" &&
+    typeof s.ma10_margin_pct === "number" &&
+    typeof s.spark === "object" &&
+    s.spark !== null &&
+    Array.isArray(s.spark.clusters) &&
+    Array.isArray(s.news) &&
+    Array.isArray(s.matched_events)
+  );
+}
 
 function LiveStatusBar({ data, justUpdated }: { data: RadarData; justUpdated: boolean }) {
   const open = data.market_session === "open";
@@ -184,18 +204,36 @@ export function LiveRadar({ initial }: { initial: RadarData }) {
       </section>
 
       {(data.blocked_suspects?.length ?? 0) > 0 && (
-        <section className="mt-6 rounded-lg border border-up/30 bg-up/5 px-4 py-3">
-          <h2 className="text-sm font-semibold text-up">⛔ 다음 거래일 추천 제외</h2>
-          <div className="mt-2 space-y-1 text-xs text-muted-foreground">
+        <section className="mt-6">
+          <div className="mb-4 rounded-lg border border-up/30 bg-up/5 px-4 py-3">
+            <h2 className="text-sm font-semibold text-up">⛔ 거래정지·공시 확인 필요 — 매매 참고</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              추천순위·신규 자동매수 대상이 아니며, 보유자의 매도 판단과 수동 확인용입니다.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {data.blocked_suspects!.map((s) => (
-              <p key={s.code}>
-                <span className="font-medium text-foreground">{s.name} ({s.code})</span>
-                {" · "}
-                {s.next_session_eligibility?.reason ?? s.blocked_reason ?? "공시 확인 불완전"}
-                {s.next_session_eligibility?.checked_at && (
-                  <span className="ml-1 tabular-nums">({s.next_session_eligibility.checked_at})</span>
-                )}
-              </p>
+              isRenderableSuspect(s) ? (
+                <SuspectCard
+                  key={s.code}
+                  s={s}
+                  disclaimer="추천순위·신규 자동매수 대상이 아닙니다. KRX/KOSCOM 공시를 직접 확인하십시오."
+                />
+              ) : (
+                <div
+                  key={s.code}
+                  className="rounded-lg border border-up/30 bg-up/5 px-4 py-3 text-xs text-muted-foreground"
+                >
+                  <p>
+                    <span className="font-medium text-foreground">{s.name} ({s.code})</span>
+                    {" · "}
+                    {s.next_session_eligibility?.reason ?? s.blocked_reason ?? "공시 확인 불완전"}
+                    {s.next_session_eligibility?.checked_at && (
+                      <span className="ml-1 tabular-nums">({s.next_session_eligibility.checked_at})</span>
+                    )}
+                  </p>
+                </div>
+              )
             ))}
           </div>
         </section>
