@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-20 18:38:56 KST",
+ "generated_at": "2026-07-20 18:43:53 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -537,7 +537,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=66111440&code=003680&page_notice=1",
     "raw_text_hash": "55e051bc957b74d0e20b",
-    "fetched_at": "2026-07-20 18:38:53 KST",
+    "fetched_at": "2026-07-20 18:43:50 KST",
     "notice_no": "66111440"
    },
    "alert_release_checks": {
@@ -597,8 +597,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:05+09:00",
-    "expires_at": "2026-07-20T18:49:05+09:00",
+    "checked_at": "2026-07-20T18:44:02+09:00",
+    "expires_at": "2026-07-20T18:54:02+09:00",
     "evidence": {
      "notice_id": "67040342",
      "title": "한성기업(주) 매매거래정지 예고",
@@ -868,8 +868,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:06+09:00",
-    "expires_at": "2026-07-20T18:49:06+09:00",
+    "checked_at": "2026-07-20T18:44:03+09:00",
+    "expires_at": "2026-07-20T18:54:03+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1125,8 +1125,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:06+09:00",
-    "expires_at": "2026-07-20T18:49:06+09:00",
+    "checked_at": "2026-07-20T18:44:03+09:00",
+    "expires_at": "2026-07-20T18:54:03+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -1396,8 +1396,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:07+09:00",
-    "expires_at": "2026-07-20T18:49:07+09:00",
+    "checked_at": "2026-07-20T18:44:04+09:00",
+    "expires_at": "2026-07-20T18:54:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1568,8 +1568,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:10+09:00",
-    "expires_at": "2026-07-20T18:49:10+09:00",
+    "checked_at": "2026-07-20T18:44:07+09:00",
+    "expires_at": "2026-07-20T18:54:07+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1798,8 +1798,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:11+09:00",
-    "expires_at": "2026-07-20T18:49:11+09:00",
+    "checked_at": "2026-07-20T18:44:08+09:00",
+    "expires_at": "2026-07-20T18:54:08+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2097,7 +2097,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458866&code=002070&page_notice=1",
     "raw_text_hash": "23c5b7f25ce0b035ced0",
-    "fetched_at": "2026-07-20 18:38:55 KST",
+    "fetched_at": "2026-07-20 18:43:52 KST",
     "notice_no": "70458866"
    },
    "alert_release_checks": {
@@ -2152,8 +2152,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:08+09:00",
-    "expires_at": "2026-07-20T18:49:08+09:00",
+    "checked_at": "2026-07-20T18:44:04+09:00",
+    "expires_at": "2026-07-20T18:54:04+09:00",
     "evidence": {
      "notice_id": "68135393",
      "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
@@ -2344,8 +2344,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T18:39:09+09:00",
-    "expires_at": "2026-07-20T18:49:09+09:00",
+    "checked_at": "2026-07-20T18:44:05+09:00",
+    "expires_at": "2026-07-20T18:54:05+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
