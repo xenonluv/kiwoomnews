@@ -134,7 +134,11 @@
     "next_open_pct": 0.53,
     "next_low_pct": -8.95
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "010960": {
    "name": "삼호개발",
@@ -260,7 +264,11 @@
     "next_open_pct": 0.0,
     "next_low_pct": -3.3
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "001210": {
    "name": "금호전기",
@@ -370,7 +378,11 @@
     "next_open_pct": 0.27,
     "next_low_pct": -9.45
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "228340": {
    "name": "동양파일",
@@ -496,7 +508,11 @@
     "next_open_pct": 4.16,
     "next_low_pct": -2.47
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "025950": {
    "name": "동신건설",
@@ -606,7 +622,11 @@
     "next_open_pct": -2.61,
     "next_low_pct": -4.73
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "013580": {
    "name": "계룡건설",
@@ -712,7 +732,11 @@
     "next_open_pct": 1.97,
     "next_low_pct": -2.63
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "017000": {
    "name": "신원종합개발",
@@ -818,7 +842,11 @@
     "next_open_pct": -0.75,
     "next_low_pct": -3.58
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "090410": {
    "name": "덕신이피씨",
@@ -926,7 +954,11 @@
     "next_open_pct": -4.76,
     "next_low_pct": -12.38
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -9.72
+   }
   },
   "091590": {
    "name": "남화토건",
@@ -1066,7 +1098,11 @@
     "next_open_pct": -3.79,
     "next_low_pct": -20.95
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "001260": {
    "name": "남광토건",
@@ -1178,7 +1214,11 @@
     "next_open_pct": 0.32,
     "next_low_pct": -1.07
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   }
  },
  "as_of": "2026-07-03 20:54:35 KST"
