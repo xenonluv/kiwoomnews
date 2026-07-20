@@ -244,7 +244,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=66111440&code=003680&page_notice=1",
     "raw_text_hash": "55e051bc957b74d0e20b",
-    "fetched_at": "2026-07-20 15:33:41 KST",
+    "fetched_at": "2026-07-20 15:38:45 KST",
     "notice_no": "66111440"
    },
    "alert_release_checks": {
@@ -295,8 +295,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:49+09:00",
-    "expires_at": "2026-07-20T15:43:49+09:00",
+    "checked_at": "2026-07-20T15:38:54+09:00",
+    "expires_at": "2026-07-20T15:48:54+09:00",
     "evidence": {
      "notice_id": "67040342",
      "title": "한성기업(주) 매매거래정지 예고",
@@ -490,7 +490,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.28,
+    "freshness_days": 0.29,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -666,8 +666,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:51+09:00",
-    "expires_at": "2026-07-20T15:43:51+09:00",
+    "checked_at": "2026-07-20T15:38:56+09:00",
+    "expires_at": "2026-07-20T15:48:56+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -995,8 +995,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:51+09:00",
-    "expires_at": "2026-07-20T15:43:51+09:00",
+    "checked_at": "2026-07-20T15:38:55+09:00",
+    "expires_at": "2026-07-20T15:48:55+09:00",
     "evidence": {
      "notice_id": "1588316",
      "title": "현대약품(주) 매매거래정지 예고",
@@ -1281,8 +1281,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:54+09:00",
-    "expires_at": "2026-07-20T15:43:54+09:00",
+    "checked_at": "2026-07-20T15:38:59+09:00",
+    "expires_at": "2026-07-20T15:48:59+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1539,8 +1539,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:50+09:00",
-    "expires_at": "2026-07-20T15:43:50+09:00",
+    "checked_at": "2026-07-20T15:38:55+09:00",
+    "expires_at": "2026-07-20T15:48:55+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2317,8 +2317,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:55+09:00",
-    "expires_at": "2026-07-20T15:43:55+09:00",
+    "checked_at": "2026-07-20T15:39:00+09:00",
+    "expires_at": "2026-07-20T15:49:00+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2360,8 +2360,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:52+09:00",
-    "expires_at": "2026-07-20T15:43:52+09:00",
+    "checked_at": "2026-07-20T15:38:57+09:00",
+    "expires_at": "2026-07-20T15:48:57+09:00",
     "evidence": {
      "notice_id": "68135393",
      "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
@@ -2381,7 +2381,7 @@
    "rank_bucket": 3,
    "suspicion_score": 65,
    "first_blocked": "2026-07-20 09:38:50 KST",
-   "last_blocked": "2026-07-20 15:33:44 KST"
+   "last_blocked": "2026-07-20 15:38:48 KST"
   },
   "023790": {
    "name": "동일스틸럭스",
@@ -2403,8 +2403,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T15:33:53+09:00",
-    "expires_at": "2026-07-20T15:43:53+09:00",
+    "checked_at": "2026-07-20T15:38:58+09:00",
+    "expires_at": "2026-07-20T15:48:58+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2424,7 +2424,7 @@
    "rank_bucket": 5,
    "suspicion_score": 76,
    "first_blocked": "2026-07-20 10:28:51 KST",
-   "last_blocked": "2026-07-20 15:33:44 KST"
+   "last_blocked": "2026-07-20 15:38:48 KST"
   },
   "003680": {
    "name": "한성기업",
@@ -2474,7 +2474,7 @@
    "precut_rank": 9,
    "published": false,
    "published_rank": null,
-   "final": true,
+   "final": false,
    "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
    "next_session_eligibility": {
     "schema_version": 1,
@@ -2556,7 +2556,7 @@
    "last_blocked": "2026-07-20 15:08:52 KST"
   }
  },
- "as_of": "2026-07-20 15:33:44 KST",
+ "as_of": "2026-07-20 15:38:48 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
