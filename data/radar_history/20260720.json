@@ -4,7 +4,7 @@
   "003680": {
    "name": "한성기업",
    "sector": "한성기업",
-   "entry": 11360.0,
+   "entry": 11780.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -81,7 +81,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -21.76,
+   "change_pct": -18.87,
    "change_basis": "KRX",
    "high_pct": 19.42,
    "pattern": "reaccum",
@@ -126,24 +126,24 @@
     "relevant_count": 2
    },
    "news": [],
-   "value_eok": 988,
+   "value_eok": 999,
    "snapshot_open": 14900.0,
    "snapshot_high": 17340.0,
    "snapshot_low": 11130.0,
-   "snapshot_close": 11360.0,
-   "snapshot_volume": 7050762.0,
-   "snapshot_value": 98809000000.0,
-   "snapshot_value_eok": 988.1,
+   "snapshot_close": 11780.0,
+   "snapshot_volume": 7141183.0,
+   "snapshot_value": 99855000000.0,
+   "snapshot_value_eok": 998.5,
    "snapshot_as_of": "20260720",
    "signal_date": "20260720",
    "signal_open": 14900.0,
    "signal_high": 17340.0,
    "signal_low": 11130.0,
-   "signal_close": 11350.0,
+   "signal_close": 11780.0,
    "signal_prev_close": 14520.0,
-   "signal_volume": 7050762.0,
-   "signal_value": 98809000000.0,
-   "signal_value_eok": 988.1,
+   "signal_volume": 7141183.0,
+   "signal_value": 99855000000.0,
+   "signal_value_eok": 998.5,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -151,9 +151,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 25.82,
+   "ma10_margin_pct": 29.86,
    "float_ratio": 0.5181,
-   "turnover_pct": 219.2,
+   "turnover_pct": 222.0,
    "peak_turnover_pct": 179.2,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -170,8 +170,8 @@
     "peak_turnover_pct": 179.2,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 6630.0,
-    "ma20_margin_pct": 71.34,
+    "ma20": 6651.5,
+    "ma20_margin_pct": 77.1,
     "cause_summary": "주가 다 떨어졌는데 그 와중에 연일 급등…2배 오른 기업",
     "was_theme_leader": false,
     "source": "live"
@@ -201,6 +201,10 @@
     {
      "time": "10:30",
      "body_pct": 2.09
+    },
+    {
+     "time": "11:30",
+     "body_pct": 3.97
     }
    ],
    "alert_now": "경고",
@@ -220,7 +224,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=66111440&code=003680&page_notice=1",
     "raw_text_hash": "55e051bc957b74d0e20b",
-    "fetched_at": "2026-07-20 11:28:37 KST",
+    "fetched_at": "2026-07-20 11:33:41 KST",
     "notice_no": "66111440"
    },
    "alert_release_checks": {
@@ -271,8 +275,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T11:28:42+09:00",
-    "expires_at": "2026-07-20T11:38:42+09:00",
+    "checked_at": "2026-07-20T11:33:46+09:00",
+    "expires_at": "2026-07-20T11:43:46+09:00",
     "evidence": {
      "notice_id": "67040342",
      "title": "한성기업(주) 매매거래정지 예고",
@@ -301,7 +305,7 @@
   "012690": {
    "name": "모나리자",
    "sector": "모나리자",
-   "entry": 1808.0,
+   "entry": 1805.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -381,7 +385,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -16.68,
+   "change_pct": -16.82,
    "change_basis": "KRX",
    "high_pct": 13.36,
    "pattern": "reaccum",
@@ -394,7 +398,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.11,
+    "freshness_days": 0.12,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -458,24 +462,24 @@
      "sentiment": "호재"
     }
    ],
-   "value_eok": 375,
+   "value_eok": 377,
    "snapshot_open": 2310.0,
    "snapshot_high": 2460.0,
    "snapshot_low": 1802.0,
-   "snapshot_close": 1808.0,
-   "snapshot_volume": 16931483.0,
-   "snapshot_value": 37517000000.0,
-   "snapshot_value_eok": 375.2,
+   "snapshot_close": 1805.0,
+   "snapshot_volume": 17006254.0,
+   "snapshot_value": 37652000000.0,
+   "snapshot_value_eok": 376.5,
    "snapshot_as_of": "20260720",
    "signal_date": "20260720",
    "signal_open": 2310.0,
    "signal_high": 2460.0,
    "signal_low": 1802.0,
-   "signal_close": 1808.0,
+   "signal_close": 1805.0,
    "signal_prev_close": 2170.0,
-   "signal_volume": 16931483.0,
-   "signal_value": 37517000000.0,
-   "signal_value_eok": 375.2,
+   "signal_volume": 17006254.0,
+   "signal_value": 37652000000.0,
+   "signal_value_eok": 376.5,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -483,9 +487,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 16.54,
+   "ma10_margin_pct": 16.37,
    "float_ratio": 0.4893,
-   "turnover_pct": 94.6,
+   "turnover_pct": 95.0,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -502,8 +506,8 @@
     "peak_turnover_pct": null,
     "peak_ibs": 1.0,
     "peak_uppertail": 0.0,
-    "ma20": 1506.8,
-    "ma20_margin_pct": 19.99,
+    "ma20": 1506.7,
+    "ma20_margin_pct": 19.8,
     "cause_summary": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
     "was_theme_leader": false,
     "source": "live"
@@ -576,8 +580,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T11:28:43+09:00",
-    "expires_at": "2026-07-20T11:38:43+09:00",
+    "checked_at": "2026-07-20T11:33:47+09:00",
+    "expires_at": "2026-07-20T11:43:47+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1054,8 +1058,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T11:28:43+09:00",
-    "expires_at": "2026-07-20T11:38:43+09:00",
+    "checked_at": "2026-07-20T11:33:47+09:00",
+    "expires_at": "2026-07-20T11:43:47+09:00",
     "evidence": {
      "notice_id": "68135393",
      "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
@@ -1075,7 +1079,7 @@
    "rank_bucket": 3,
    "suspicion_score": 64,
    "first_blocked": "2026-07-20 09:38:50 KST",
-   "last_blocked": "2026-07-20 11:28:40 KST"
+   "last_blocked": "2026-07-20 11:33:44 KST"
   },
   "023790": {
    "name": "동일스틸럭스",
@@ -1097,8 +1101,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T11:28:44+09:00",
-    "expires_at": "2026-07-20T11:38:44+09:00",
+    "checked_at": "2026-07-20T11:33:48+09:00",
+    "expires_at": "2026-07-20T11:43:48+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1113,12 +1117,12 @@
     }
    },
    "signal_date": "20260720",
-   "price": 1703.0,
+   "price": 1664.0,
    "pattern": "shakeout",
    "rank_bucket": 8,
-   "suspicion_score": 71,
+   "suspicion_score": 73,
    "first_blocked": "2026-07-20 10:28:51 KST",
-   "last_blocked": "2026-07-20 11:28:40 KST"
+   "last_blocked": "2026-07-20 11:33:44 KST"
   },
   "003680": {
    "name": "한성기업",
@@ -1164,7 +1168,7 @@
    "last_blocked": "2026-07-20 10:33:53 KST"
   }
  },
- "as_of": "2026-07-20 11:28:40 KST",
+ "as_of": "2026-07-20 11:33:44 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
