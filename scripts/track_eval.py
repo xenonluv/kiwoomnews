@@ -5,7 +5,7 @@
   1) Upstash KV(track:watchlist) SMEMBERS로 추적 종목 코드 읽기(READ_ONLY 토큰)
   2) 각 종목: /api/stock/{code}(종합판정·이름·현재가) + /api/stock/{code}/ai(상승확률) 호출 →
      data/track_history/{today}.json 에 기록(entry=당일 현재가)
-  3) 미평가 과거 기록을 익일 일봉(kis.daily_prices)으로 평가(익일종가>entry=적중)
+  3) 미평가 과거 기록을 익일 키움 일봉으로 평가(익일종가>entry=적중)
   4) web/data/track_performance.json 생성(룰 vs AI 4분면·최근표·추적목록) → --push 시 git
 환경변수(.env 또는 web/.env.local): KV_REST_API_URL, KV_REST_API_READ_ONLY_TOKEN(또는 KV_REST_API_TOKEN).
 radar performance.json과 분리(별도 파일) — 레이더 통계·튜닝과 독립.
@@ -18,7 +18,7 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import kis_client as kis
+import kiwoom_client as broker
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -154,7 +154,7 @@ def _signal_and_window(code, date, span=FWD_SPAN):
     after는 close>0 봉만, 날짜 오름차순(after[0]=익일=D+1). days=60으로 25일 만료창 + D+10
     (≈14거래일) + 거래정지 공백에 여유."""
     try:
-        bars = kis.daily_prices(code, days=60)
+        bars = broker.daily_prices(code, days=60)
     except Exception:
         return None, []
     # close가 truthy인 봉만 — 신호일/후일이 거래정지(close=0/누락)면 채점 불가로 보류,

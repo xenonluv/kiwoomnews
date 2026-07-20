@@ -9,7 +9,7 @@
               폭발을 레지스트리(.explosion_registry.json)에 기록 → 최근 6거래일 폭발만 추적.
               (거래대금 순위·등락률 합집합 유니버스는 폐지. 당일 폭발은 /forecast 페이지에 게시.)
    ▼
-  [재매집(반등)] 전일 폭발 종목이 14:30~장종료 5분봉 양봉(몸통%≥1.5%) 2회 이상 스파크   ← KIS 현재가·일봉·분봉
+  [재매집(반등)] 전일 폭발 종목이 14:30~장종료 5분봉 양봉(몸통%≥1.5%) 2회 이상 스파크   ← 키움 현재가·일봉·분봉
                  AND 현재 등락률 −5~+7%(깊은 식음/이미 분출 제외, 조용한 매집 구간).
    ▼
   [조건1·5] 이벤트 캘린더 × 뉴스 민감도 → event_calendar/theme_map (표시 가점)
@@ -34,10 +34,7 @@ from team1_collect import resolve_code, fetch_news, is_individual_stock, UA
 from team2_relevance import score_news, score_material, make_aliases
 from event_calendar import upcoming_events
 from theme_map import match_events, match_sensitivity, THEMES
-if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
-    import kis_client as kis
-else:
-    import kiwoom_client as kis  # 키움 드롭인(기본). RADAR_BROKER=kis 로 KIS 복귀.
+import kiwoom_client as kis  # 기존 호출부 호환 별칭. 운영 브로커는 키움으로 고정.
 import float_ratio
 import alert_release
 import market_state
@@ -2280,7 +2277,7 @@ def main():
     p = ap.parse_args()
     _AUDIT = AuditCollector(
         model_meta=policy_metadata(), dry_run=p.dry_run,
-        broker=os.environ.get("RADAR_BROKER", "kiwoom").lower())
+        broker="kiwoom")
     kis.enable_run_cache()  # 회차 캐시 ON — reaccum/youtong/흔들기의 동일 종목 일봉·현재가 중복조회 제거(속도)
     p.explosion_window = max(1, int(p.explosion_window))
     p.explosion_scan_n = max(1, int(p.explosion_scan_n))

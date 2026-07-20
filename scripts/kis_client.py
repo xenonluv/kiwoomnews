@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""한국투자증권(KIS) Open API 클라이언트 — 표준라이브러리 전용.
+"""RETIRED: 운영 및 cron에서 사용하지 않는 과거 연구 재현용 KIS 클라이언트.
+
+운영 데이터 생성에 사용하면 안 된다. 현재 레이더·백테스트·예약 평가는 키움 API를 사용한다.
 
 .env의 KIS_APP_KEY / KIS_APP_SECRET 사용. 토큰은 .kis_token.json에 캐시
 (유효 1일, 발급은 1분 1회 제한이므로 캐시 필수).

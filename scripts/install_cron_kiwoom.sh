@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# 키움 네임스페이스 cron 설치기 (Mac 프로덕션). ⚠ KIS(stocknews) cron 무손상 —
-# '# KIWOOMNEWS_BEGIN/END' 마커 블록만 sed로 교체/제거하므로 같은 파일명(publish.py 등)이어도 KIS 라인 안 건드림.
+# 키움 네임스페이스 cron 설치기 (Mac 프로덕션).
+# '# KIWOOMNEWS_BEGIN/END' 마커 블록만 교체/제거하므로 다른 cron 작업은 건드리지 않는다.
 #   bash scripts/install_cron_kiwoom.sh            # 설치 (자동매매 DRY = 실발주 안 함, 게시만 활성)
 #   bash scripts/install_cron_kiwoom.sh --live     # 자동매매 실발주 ON (AUTOTRADE_LIVE=1 포함) — 스모크 후에만!
 #   bash scripts/install_cron_kiwoom.sh --dry-run  # 적용될 블록만 출력(설치 안 함)
-#   bash scripts/install_cron_kiwoom.sh --uninstall # 키움 블록만 제거(KIS 무손상)
+#   bash scripts/install_cron_kiwoom.sh --uninstall # 키움 블록만 제거(다른 작업 무손상)
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
@@ -26,8 +26,6 @@ done
 # PYTHONUTF8=1: Mac은 기본 UTF-8이라 사실상 불필요하나 안전용. 자동매매 라인은 --live 시에만 실발주(KV 토글과 이중 게이트).
 BLOCK="$BEGIN
 PATH=/usr/local/bin:/usr/bin:/bin
-# KIS 토큰 — 추적/AI/국면 평가용 일봉 API 토큰 만료시각 고정.
-0 7 * * * cd $REPO && PYTHONUTF8=1 ${PY} scripts/kis_client.py --issue-token >> /tmp/kiwoom_kis_token.log 2>&1
 # 레이더 게시 — 평일 9~20시 5분 간격(정규장+NXT 애프터마켓). 변경 시에만 push → Vercel 재빌드.
 1,6,11,16,21,26,31,36,41,46,51,56 9-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/publish.py >> /tmp/kiwoom_publish.log 2>&1
 # 자동매매 매수 — 15:18 KRX 종가베팅(비-NXT 종목) / 19:50 NXT(NXT 거래가능 종목, 5호가위 지정가)
@@ -39,7 +37,7 @@ PATH=/usr/local/bin:/usr/bin:/bin
 20 16 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
 55 20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_pending_attention.py >> /tmp/kiwoom_autotrade.log 2>&1
 # 익일 자가검증·통계·튜닝 — 레이더/자동매매/추적/AI 클릭/국면 평가
-20 17 * * 1-5 cd $REPO && RADAR_BROKER=kiwoom RADAR_AI_PREDICT=0 PYTHONUTF8=1 ${PY} scripts/radar_backtest.py --push >> /tmp/kiwoom_backtest.log 2>&1
+20 17 * * 1-5 cd $REPO && RADAR_AI_PREDICT=0 PYTHONUTF8=1 ${PY} scripts/radar_backtest.py --push >> /tmp/kiwoom_backtest.log 2>&1
 25 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/autotrade_stats.py --push >> /tmp/kiwoom_autotrade_stats.log 2>&1
 30 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/track_eval.py --push >> /tmp/kiwoom_track_eval.log 2>&1
 35 17 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/ai_click_eval.py --push >> /tmp/kiwoom_ai_click_eval.log 2>&1
@@ -54,12 +52,12 @@ PATH=/usr/local/bin:/usr/bin:/bin
 5,35 16-20 * * 1-5 cd $REPO && PYTHONUTF8=1 ${PY} scripts/night_alert.py >> /tmp/kiwoom_night_alert.log 2>&1
 $END"
 
-# 기존 키움 블록만 제거(다른 cron·KIS 라인 보존)
+# 기존 키움 블록만 제거(다른 cron 작업 보존)
 EXISTING="$(crontab -l 2>/dev/null | sed "/$BEGIN/,/$END/d" || true)"
 
 if [ "$UNINSTALL" = "1" ]; then
   printf '%s\n' "$EXISTING" | crontab -
-  echo "✅ 키움 cron 블록 제거됨 (KIS cron 무손상)."
+  echo "✅ 키움 cron 블록 제거됨 (다른 cron 작업 무손상)."
   exit 0
 fi
 

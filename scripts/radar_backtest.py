@@ -2,7 +2,7 @@
 """레이더 자가 검증·개선 — "당일 종가 매수 → 다음날 올랐나" 누적 백테스트.
 
 매일(장후 17:20 cron) 실행:
-  1. data/radar_history/*.json 의 미평가 수상 종목을 익일 일봉(KIS)과 대조
+  1. data/radar_history/*.json 의 미평가 수상 종목을 익일 키움 일봉과 대조
        적중 = 익일 종가 > 진입가(당일 종가) / 보조: 익일 고가 ≥ +3%, 수익률
   2. 당일 마감 카드(final) 종목의 AI 익일 예측(prob_up)을 history에 기록
        → 익일 평가와 대조해 AI 적중률·확률 보정 검증 (performance.json "ai")
@@ -25,12 +25,8 @@ import subprocess
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
-# 브로커 스위치 — radar.py와 동일(기본 키움 드롭인, RADAR_BROKER=kis 로 KIS 복귀).
-# 익일봉 조회(kis.daily_prices)를 실제 운영 브로커(키움)로 맞춰야 채점이 동작한다.
-if os.environ.get("RADAR_BROKER", "kiwoom").lower() == "kis":
-    import kis_client as kis
-else:
-    import kiwoom_client as kis
+# 기존 호출부가 사용하는 kis 별칭은 유지하되 운영 일봉은 키움으로 고정한다.
+import kiwoom_client as kis
 
 # 흔들기 스윗존 경계는 radar.py를 SSOT로 import(정의 드리프트 차단) — 회장님 룰 결합코호트 판정에 사용.
 from radar import (SHAKEOUT_T2D_SWEET_LO, SHAKEOUT_T2D_SWEET_HI,

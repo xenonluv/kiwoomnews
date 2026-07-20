@@ -6,7 +6,7 @@
   1) Upstash KV: smembers phase:dates → 날짜별 hgetall phase:{date}
      (웹 /api/stock/{code}/phase 가 호출 시 HSETNX로 적재 — 종목·일자당 1건 {phase, confidence})
   2) data/phase_history/{date}.json 에 기록(멱등 — 이미 있으면 보존, 평가결과 불변)
-  3) 미평가 기록을 익일 일봉(kis)으로 채점. entry=신호일 종가. rose=익일종가>신호일종가.
+  3) 미평가 기록을 익일 키움 일봉으로 채점. entry=신호일 종가. rose=익일종가>신호일종가.
      방향 적중(hit): 재매집→rose=True면 적중 / 분산→rose=False면 적중 / 중립→None(방향 무판단, 제외).
   4) 국면별 적중률 + 신뢰도 구간별 적중률(calibration) → web/data/phase_performance.json → --push
 

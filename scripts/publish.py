@@ -38,7 +38,7 @@ RADAR_PASSTHRU = ("--reignition-body-pct", "--reignition-span-min", "--reignitio
 RADAR_BOOL_PASSTHRU = ("--no-reaccum", "--no-reaccum-visible")
 
 
-RADAR_TIMEOUT = 600  # 초 — KIS/Kimi 행 멈춤 시 락 쥔 채 무한 대기 → 사이트 stale 방지
+RADAR_TIMEOUT = 600  # 초 — 브로커/Kimi 행 멈춤 시 락 쥔 채 무한 대기 → 사이트 stale 방지
 
 
 RANK_MODEL_FIELDS = (

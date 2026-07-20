@@ -6,7 +6,7 @@
   1) Upstash KV: smembers aipred:dates → 날짜별 hgetall aipred:{date}
      (웹 /api/stock/{code}/ai 가 클릭 시 HSETNX로 적재 — 종목·일자당 1건)
   2) data/ai_click_history/{date}.json 에 기록(멱등 — 이미 있으면 보존, 평가결과 불변)
-  3) 미평가 기록을 익일 일봉(kis)으로 채점: 익일종가>신호일종가=상승. entry=신호일 종가 재정합.
+  3) 미평가 기록을 익일 키움 일봉으로 채점: 익일종가>신호일종가=상승. entry=신호일 종가 재정합.
   4) 확률 구간 보정표 + Brier + 최적 임계 탐색 → web/data/ai_click_performance.json → --push
 
 설계: 표시·참고용(core 통계·가중치 튜닝과 무관). track_eval(추적목록 15종목)과 별도 표본군
@@ -21,7 +21,6 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import kis_client as kis  # noqa: E402
 from track_eval import _signal_and_window, acquire_git_lock, load_env  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
