@@ -1,10 +1,286 @@
 {
  "date": "20260720",
- "suspects": {},
+ "suspects": {
+  "003680": {
+   "name": "한성기업",
+   "sector": "한성기업",
+   "entry": 12240.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 76,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 8,
+    "re_turnover": 6
+   },
+   "rank": 1,
+   "precut_rank": 1,
+   "published_rank": 1,
+   "published": true,
+   "first_seen_rank": 1,
+   "latest_published_rank": 1,
+   "rank_path": [
+    {
+     "observed_at": "2026-07-20 10:28:51 KST",
+     "precut_rank": 1,
+     "published_rank": 1,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    }
+   ],
+   "rank_bucket": 2,
+   "rank_bucket_at_signal": 2,
+   "rank_reason": "저점매집+폭발회전 179% → bucket 2",
+   "rank_reason_at_signal": "저점매집+폭발회전 179% → bucket 2",
+   "shadow_bucket": [
+    "S1",
+    "S2"
+   ],
+   "shadow_bucket_at_signal": [
+    "S1",
+    "S2"
+   ],
+   "expected_touch7_rate": 86.7,
+   "expected_high_pct": 17.0,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집+회전90",
+    "n": 15,
+    "unique_n": 13,
+    "touch7_rate": 86.7,
+    "expected_high_pct": 17.0,
+    "avg_return": 9.09,
+    "bucket": 2,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "change_pct": -15.7,
+   "change_basis": "KRX",
+   "high_pct": 19.42,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "material": {
+    "grade": "C",
+    "score": 45,
+    "summary": "너무 많이 올랐나…'애국 매수' 한성기업 거래정지 예고, 모나미도 경...",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.11,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시",
+     "공시/대형이벤트",
+     "반도체",
+     "테마/수혜"
+    ],
+    "risk_flags": [
+     "거래정지"
+    ],
+    "evidence": [
+     {
+      "title": "너무 많이 올랐나…'애국 매수' 한성기업 거래정지 예고, 모나미도 경...",
+      "datetime": "202607142043",
+      "source": "머니투데이",
+      "url": "https://n.news.naver.com/mnews/article/008/0005386056",
+      "score": 100
+     },
+     {
+      "title": "주가 다 떨어졌는데 그 와중에 연일 급등…2배 오른 기업",
+      "datetime": "202607150719",
+      "source": "아시아경제",
+      "url": "https://n.news.naver.com/mnews/article/277/0005790028",
+      "score": 92
+     }
+    ],
+    "source_count": 2,
+    "relevant_count": 2
+   },
+   "news": [],
+   "value_eok": 786,
+   "snapshot_open": 14900.0,
+   "snapshot_high": 17340.0,
+   "snapshot_low": 11980.0,
+   "snapshot_close": 12240.0,
+   "snapshot_volume": 5372035.0,
+   "snapshot_value": 78615000000.0,
+   "snapshot_value_eok": 786.1,
+   "snapshot_as_of": "20260720",
+   "signal_date": "20260720",
+   "signal_open": 14900.0,
+   "signal_high": 17340.0,
+   "signal_low": 11980.0,
+   "signal_close": 12250.0,
+   "signal_prev_close": 14520.0,
+   "signal_volume": 5372035.0,
+   "signal_value": 78615000000.0,
+   "signal_value_eok": 786.1,
+   "signal_peak6_price": null,
+   "signal_peak60_price": null,
+   "signal_ma20": null,
+   "signal_ma10": null,
+   "signal_source": "daily_latest",
+   "run_6d_pct": null,
+   "ma20_gap_pct": null,
+   "ma10_margin_pct": 34.23,
+   "float_ratio": 0.5181,
+   "turnover_pct": 167.0,
+   "peak_turnover_pct": 179.2,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260715",
+    "peak_value_eok": 776,
+    "peak_high_pct": 29.99,
+    "peak_turnover_pct": 179.2,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 6675.0,
+    "ma20_margin_pct": 83.37,
+    "cause_summary": "주가 다 떨어졌는데 그 와중에 연일 급등…2배 오른 기업",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 13.29,
+    "time": "09:00",
+    "value_eok": 179,
+    "count": 0
+   },
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 13.29
+    },
+    {
+     "time": "10:05",
+     "body_pct": 2.0
+    },
+    {
+     "time": "10:25",
+     "body_pct": 2.34
+    }
+   ],
+   "alert_now": "경고",
+   "alert_release": false,
+   "alert_release_rule": {
+    "source": "KRX_KOSCOM",
+    "retrieved_via": "NAVER_FINANCE_NOTICE",
+    "notice_date": "20260713",
+    "designation_date": "20260714",
+    "first_review_date_notice": "20260728",
+    "first_review_date_adjusted": null,
+    "threshold_5d_pct": 60.0,
+    "threshold_15d_pct": 100.0,
+    "recent_high_window": 15,
+    "min_elapsed_days": 10,
+    "logic_version": "krx-release-v2",
+    "parse_status": "ok",
+    "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=66111440&code=003680&page_notice=1",
+    "raw_text_hash": "55e051bc957b74d0e20b",
+    "fetched_at": "2026-07-20 10:28:49 KST",
+    "notice_no": "66111440"
+   },
+   "alert_release_checks": {
+    "as_of_date": "20260720",
+    "elapsed_days": 3,
+    "elapsed_ok": false,
+    "five_day_ok": null,
+    "fifteen_day_ok": null,
+    "not_recent_high_ok": null,
+    "halt_days_excluded": [
+     "20260716"
+    ]
+   },
+   "alert_release_error": null,
+   "alert_risk_released": false,
+   "alert_elapsed_days": 3,
+   "shakeout": false,
+   "fade_pct": null,
+   "turnover_2d_pct": null,
+   "peak_dd_pct": null,
+   "strength_tier": null,
+   "strength": null,
+   "turnover_band": null,
+   "dd_band": null,
+   "dd6_pct": null,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260720",
+    "target_trade_date": "20260721",
+    "status": "NOTICE_ONLY",
+    "tradable_next_session": null,
+    "recommendable": true,
+    "auto_buy_allowed": false,
+    "reason_code": "HALT_NOTICE",
+    "reason": "매매거래정지 예고 공시가 있으나 확정 정지는 아닙니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-20T10:28:52+09:00",
+    "expires_at": "2026-07-20T10:38:52+09:00",
+    "evidence": {
+     "notice_id": "67040342",
+     "title": "한성기업(주) 매매거래정지 예고",
+     "published_at": "20260714",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040342&code=003680&page_notice=1",
+     "source_hash": "b8c4b5785d7577f14a42"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "next_market_alert_preview": null,
+   "matched_events": [],
+   "first_seen": "2026-07-20 10:28:51 KST",
+   "evaluated": false,
+   "result": null,
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "rank_model_source_commit": "7f3acab",
+   "final": true
+  }
+ },
  "blocked_suspects": {
   "002070": {
    "name": "비비안",
-   "precut_rank": 1,
+   "precut_rank": 2,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -22,8 +298,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T10:23:49+09:00",
-    "expires_at": "2026-07-20T10:33:49+09:00",
+    "checked_at": "2026-07-20T10:28:53+09:00",
+    "expires_at": "2026-07-20T10:38:53+09:00",
     "evidence": {
      "notice_id": "68135393",
      "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
@@ -38,15 +314,58 @@
     }
    },
    "signal_date": "20260720",
-   "price": 10230.0,
+   "price": 10200.0,
    "pattern": "reaccum",
    "rank_bucket": 3,
    "suspicion_score": 64,
    "first_blocked": "2026-07-20 09:38:50 KST",
-   "last_blocked": "2026-07-20 10:23:48 KST"
+   "last_blocked": "2026-07-20 10:28:51 KST"
+  },
+  "023790": {
+   "name": "동일스틸럭스",
+   "precut_rank": 3,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260720",
+    "target_trade_date": "20260721",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-20T10:28:54+09:00",
+    "expires_at": "2026-07-20T10:38:54+09:00",
+    "evidence": {
+     "notice_id": "7238851",
+     "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
+     "published_at": "20260522",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=7238851&code=023790&page_notice=1",
+     "source_hash": "7194788801603a12d8e1"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260720",
+   "price": 1778.0,
+   "pattern": "shakeout",
+   "rank_bucket": 8,
+   "suspicion_score": 68,
+   "first_blocked": "2026-07-20 10:28:51 KST",
+   "last_blocked": "2026-07-20 10:28:51 KST"
   }
  },
- "as_of": "2026-07-20 10:23:48 KST",
+ "as_of": "2026-07-20 10:28:51 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
