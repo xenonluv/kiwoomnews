@@ -17,13 +17,14 @@
     "high3": false,
     "return_pct": -0.15,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 2.55,
+     "n_bars": 10,
+     "d5_return": -5.4,
+     "d10_return": 22.49,
+     "mfe": 22.49,
      "mae": -10.79
     }
-   }
+   },
+   "fwd_final": true
   },
   "004710": {
    "name": "한솔테크닉스",
@@ -41,13 +42,14 @@
     "high3": false,
     "return_pct": -3.91,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -22.11,
+     "d10_return": -25.75,
      "mfe": 1.51,
-     "mae": -18.56
+     "mae": -30.2
     }
-   }
+   },
+   "fwd_final": true
   },
   "009150": {
    "name": "삼성전기",
@@ -65,13 +67,14 @@
     "high3": true,
     "return_pct": 0.96,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -24.54,
+     "d10_return": -42.31,
      "mfe": 4.95,
-     "mae": -20.6
+     "mae": -46.75
     }
-   }
+   },
+   "fwd_final": true
   },
   "010690": {
    "name": "화신",
@@ -89,13 +92,14 @@
     "high3": false,
     "return_pct": -2.11,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -14.26,
+     "d10_return": -22.11,
      "mfe": 1.44,
-     "mae": -12.54
+     "mae": -25.26
     }
-   }
+   },
+   "fwd_final": true
   },
   "011070": {
    "name": "LG이노텍",
@@ -113,13 +117,14 @@
     "high3": false,
     "return_pct": -7.54,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -17.02,
+     "d10_return": -34.66,
      "mfe": 0.41,
-     "mae": -16.51
+     "mae": -38.53
     }
-   }
+   },
+   "fwd_final": true
   },
   "017670": {
    "name": "SK텔레콤",
@@ -137,13 +142,14 @@
     "high3": false,
     "return_pct": 0.23,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 1.36,
-     "mae": -5.66
+     "n_bars": 10,
+     "d5_return": -3.62,
+     "d10_return": -5.09,
+     "mfe": 2.15,
+     "mae": -7.01
     }
-   }
+   },
+   "fwd_final": true
   },
   "028050": {
    "name": "삼성E&A",
@@ -161,13 +167,14 @@
     "high3": true,
     "return_pct": 8.61,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -0.11,
+     "d10_return": -15.65,
      "mfe": 12.39,
-     "mae": -5.46
+     "mae": -19.54
     }
-   }
+   },
+   "fwd_final": true
   },
   "028260": {
    "name": "삼성물산",
@@ -185,13 +192,14 @@
     "high3": false,
     "return_pct": -7.36,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -9.39,
+     "d10_return": -24.44,
      "mfe": 2.24,
-     "mae": -16.44
+     "mae": -28.71
     }
-   }
+   },
+   "fwd_final": true
   },
   "034730": {
    "name": "SK",
@@ -209,13 +217,14 @@
     "high3": false,
     "return_pct": -8.51,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -24.94,
+     "d10_return": -32.61,
      "mfe": 2.4,
-     "mae": -24.34
+     "mae": -34.89
     }
-   }
+   },
+   "fwd_final": true
   },
   "037710": {
    "name": "광주신세계",
@@ -233,13 +242,14 @@
     "high3": true,
     "return_pct": -2.79,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 12.63,
+     "n_bars": 10,
+     "d5_return": 0.56,
+     "d10_return": -1.12,
+     "mfe": 14.86,
      "mae": -16.42
     }
-   }
+   },
+   "fwd_final": true
   },
   "043260": {
    "name": "성호전자",
@@ -257,13 +267,14 @@
     "high3": true,
     "return_pct": 3.2,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -34.57,
+     "d10_return": -37.88,
      "mfe": 14.0,
-     "mae": -34.23
+     "mae": -40.37
     }
-   }
+   },
+   "fwd_final": true
   },
   "043650": {
    "name": "국순당",
@@ -281,13 +292,14 @@
     "high3": true,
     "return_pct": 3.49,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -7.23,
+     "d10_return": -8.85,
      "mfe": 9.1,
-     "mae": -5.36
+     "mae": -15.71
     }
-   }
+   },
+   "fwd_final": true
   },
   "058730": {
    "name": "다스코",
@@ -305,13 +317,14 @@
     "high3": true,
     "return_pct": 2.73,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 18.91,
-     "mae": -20.57
+     "n_bars": 10,
+     "d5_return": -4.88,
+     "d10_return": 4.4,
+     "mfe": 37.93,
+     "mae": -23.19
     }
-   }
+   },
+   "fwd_final": true
   },
   "080220": {
    "name": "제주반도체",
@@ -329,13 +342,14 @@
     "high3": true,
     "return_pct": -0.58,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -20.79,
+     "d10_return": -29.07,
      "mfe": 4.52,
-     "mae": -19.73
+     "mae": -33.01
     }
-   }
+   },
+   "fwd_final": true
   },
   "085620": {
    "name": "미래에셋생명",
@@ -353,13 +367,14 @@
     "high3": false,
     "return_pct": -1.67,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 4.29,
-     "mae": -7.57
+     "n_bars": 10,
+     "d5_return": -11.71,
+     "d10_return": -23.19,
+     "mfe": 6.19,
+     "mae": -26.19
     }
-   }
+   },
+   "fwd_final": true
   },
   "089030": {
    "name": "테크윙",
@@ -377,13 +392,14 @@
     "high3": true,
     "return_pct": 8.96,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -23.32,
+     "d10_return": -9.61,
      "mfe": 17.35,
-     "mae": -19.12
+     "mae": -29.66
     }
-   }
+   },
+   "fwd_final": true
   },
   "095610": {
    "name": "테스",
@@ -401,13 +417,14 @@
     "high3": true,
     "return_pct": 2.4,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -30.29,
+     "d10_return": 4.57,
      "mfe": 13.7,
-     "mae": -22.5
+     "mae": -35.91
     }
-   }
+   },
+   "fwd_final": true
   },
   "111710": {
    "name": "남화산업",
@@ -425,13 +442,14 @@
     "high3": true,
     "return_pct": 29.91,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -17.25,
+     "d10_return": -29.63,
      "mfe": 29.91,
-     "mae": -17.16
+     "mae": -30.83
     }
-   }
+   },
+   "fwd_final": true
   },
   "122640": {
    "name": "예스티",
@@ -449,13 +467,14 @@
     "high3": true,
     "return_pct": 12.79,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -20.69,
+     "d10_return": -8.48,
      "mfe": 13.51,
-     "mae": -12.5
+     "mae": -30.17
     }
-   }
+   },
+   "fwd_final": true
   },
   "153890": {
    "name": "져스텍",
@@ -473,13 +492,14 @@
     "high3": true,
     "return_pct": -10.7,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -20.07,
+     "d10_return": -49.46,
      "mfe": 9.8,
-     "mae": -29.03
+     "mae": -53.12
     }
-   }
+   },
+   "fwd_final": true
   },
   "204320": {
    "name": "HL만도",
@@ -497,13 +517,14 @@
     "high3": true,
     "return_pct": -1.84,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 3.47,
-     "mae": -6.63
+     "n_bars": 10,
+     "d5_return": -1.22,
+     "d10_return": -8.47,
+     "mfe": 6.73,
+     "mae": -10.61
     }
-   }
+   },
+   "fwd_final": true
   },
   "240810": {
    "name": "원익IPS",
@@ -521,13 +542,14 @@
     "high3": true,
     "return_pct": -1.49,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -32.96,
+     "d10_return": -24.39,
      "mfe": 11.72,
-     "mae": -28.02
+     "mae": -40.21
     }
-   }
+   },
+   "fwd_final": true
   },
   "279570": {
    "name": "케이뱅크",
@@ -545,13 +567,14 @@
     "high3": false,
     "return_pct": -1.41,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
-     "mfe": 1.58,
-     "mae": -3.87
+     "n_bars": 10,
+     "d5_return": -3.7,
+     "d10_return": -2.29,
+     "mfe": 3.7,
+     "mae": -8.1
     }
-   }
+   },
+   "fwd_final": true
   },
   "319660": {
    "name": "피에스케이",
@@ -569,13 +592,14 @@
     "high3": true,
     "return_pct": 7.85,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -17.49,
+     "d10_return": 3.77,
      "mfe": 11.93,
-     "mae": -14.02
+     "mae": -27.69
     }
-   }
+   },
+   "fwd_final": true
   },
   "356680": {
    "name": "엑스게이트",
@@ -593,13 +617,14 @@
     "high3": false,
     "return_pct": -9.57,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -30.16,
+     "d10_return": -36.99,
      "mfe": -2.57,
-     "mae": -26.31
+     "mae": -40.84
     }
-   }
+   },
+   "fwd_final": true
   },
   "413630": {
    "name": "씨피시스템",
@@ -617,13 +642,14 @@
     "high3": true,
     "return_pct": 4.39,
     "fwd": {
-     "n_bars": 3,
-     "d5_return": null,
-     "d10_return": null,
+     "n_bars": 10,
+     "d5_return": -25.61,
+     "d10_return": -19.3,
      "mfe": 7.19,
-     "mae": -19.12
+     "mae": -32.0
     }
-   }
+   },
+   "fwd_final": true
   }
  }
 }
