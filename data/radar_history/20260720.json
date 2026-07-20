@@ -22,9 +22,9 @@
     "re_turnover": 6
    },
    "rank": 1,
-   "precut_rank": 1,
-   "published_rank": 1,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 1,
    "latest_published_rank": 1,
    "rank_path": [
@@ -33,6 +33,15 @@
      "precut_rank": 1,
      "published_rank": 1,
      "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-20 10:33:53 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -274,55 +283,284 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
-  }
- },
- "blocked_suspects": {
-  "002070": {
-   "name": "비비안",
+   "final": false
+  },
+  "012690": {
+   "name": "모나리자",
+   "sector": "모나리자",
+   "entry": 1950.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 67,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 5
+   },
+   "rank": 1,
    "precut_rank": 2,
-   "published": false,
-   "published_rank": null,
-   "final": true,
-   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "published_rank": 1,
+   "published": true,
+   "first_seen_rank": 1,
+   "latest_published_rank": 1,
+   "rank_path": [
+    {
+     "observed_at": "2026-07-20 10:33:53 KST",
+     "precut_rank": 2,
+     "published_rank": 1,
+     "published": true,
+     "rank_bucket": 3,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    }
+   ],
+   "rank_bucket": 3,
+   "rank_bucket_at_signal": 3,
+   "rank_reason": "저점매집+폭발회전 결측 → bucket 3",
+   "rank_reason_at_signal": "저점매집+폭발회전 결측 → bucket 3",
+   "shadow_bucket": [],
+   "shadow_bucket_at_signal": [],
+   "expected_touch7_rate": 81.0,
+   "expected_high_pct": 15.64,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집 기타",
+    "n": 21,
+    "unique_n": 17,
+    "touch7_rate": 81.0,
+    "expected_high_pct": 15.64,
+    "avg_return": 6.94,
+    "bucket": 3,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "change_pct": -10.14,
+   "change_basis": "KRX",
+   "high_pct": 13.36,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "실적",
+   "material": {
+    "grade": "C",
+    "score": 45,
+    "summary": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+    "sentiment": "호재",
+    "reliability": "뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.07,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시/대형이벤트",
+     "실적",
+     "실적/재무",
+     "테마/수혜"
+    ],
+    "risk_flags": [
+     "상장폐지"
+    ],
+    "evidence": [
+     {
+      "title": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+      "datetime": "202607200846",
+      "source": "조선일보",
+      "url": "https://n.news.naver.com/mnews/article/023/0003988497",
+      "score": 100
+     },
+     {
+      "title": "모나리자, 뉴질랜드 1위 위생용품 브랜드 ‘파세오’ 출시",
+      "datetime": "202607081922",
+      "source": "여성신문",
+      "url": "https://n.news.naver.com/mnews/article/310/0000138204",
+      "score": 52
+     },
+     {
+      "title": "모나리자, 프리미엄 화장지 브랜드 '파세오' 론칭…신제품 2종 출시",
+      "datetime": "202607071502",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006324644",
+      "score": 44
+     }
+    ],
+    "source_count": 3,
+    "relevant_count": 3
+   },
+   "news": [
+    {
+     "title": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+     "summary": "한성기업, 모나미, 에넥스 등 상폐 위기 기업에 매수세 몰려 최근 국내 증시에서 상장폐지 우려가 불거진 장수 기업을 응원하려는 개인 투자자들의 매수세가 잇따르고 있다. 한성기업과 모나미에서 시작된 매수세가 에넥스·모나리자·비비안 등...",
+     "office": "조선일보",
+     "datetime": "202607200846",
+     "url": "https://n.news.naver.com/mnews/article/023/0003988497",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "모나리자, 뉴질랜드 1위 위생용품 브랜드 ‘파세오’ 출시",
+     "summary": "모나리자가 글로벌 제지기업 APP그룹의 럭셔리 위생용품 브랜드 '파세오'(PASEO)를 국내 시장에 공식 론칭하고, 신제품 4겹 두루마리 화장지 2종을 선보인다고 밝혔다. 파세오는 싱가포르, 대만 등에서 판매되고 있는 글로벌 위생용품 브랜드로, 특히.",
+     "office": "여성신문",
+     "datetime": "202607081922",
+     "url": "https://n.news.naver.com/mnews/article/310/0000138204",
+     "sentiment": "호재"
+    },
+    {
+     "title": "모나리자, 프리미엄 화장지 브랜드 '파세오' 론칭…신제품 2종 출시",
+     "summary": "모나리자가 세계적 프리미엄 위생용품 브랜드 신제품을 국내에 선보이며 프리미엄 화장지 시장 공략에 나섰다. 파세오 4겹 프리미엄 화장지와 파세오 4겹 프리미엄 와이드 화장지.(사진=모나리자) 생활위생 전문기업 모나리자는 글로벌 제지기업...",
+     "office": "이데일리",
+     "datetime": "202607071502",
+     "url": "https://n.news.naver.com/mnews/article/018/0006324644",
+     "sentiment": "호재"
+    }
+   ],
+   "value_eok": 348,
+   "snapshot_open": 2310.0,
+   "snapshot_high": 2460.0,
+   "snapshot_low": 1941.0,
+   "snapshot_close": 1950.0,
+   "snapshot_volume": 15493702.0,
+   "snapshot_value": 34820000000.0,
+   "snapshot_value_eok": 348.2,
+   "snapshot_as_of": "20260720",
+   "signal_date": "20260720",
+   "signal_open": 2310.0,
+   "signal_high": 2460.0,
+   "signal_low": 1941.0,
+   "signal_close": 1950.0,
+   "signal_prev_close": 2170.0,
+   "signal_volume": 15493702.0,
+   "signal_value": 34820000000.0,
+   "signal_value_eok": 348.2,
+   "signal_peak6_price": null,
+   "signal_peak60_price": null,
+   "signal_ma20": null,
+   "signal_ma10": null,
+   "signal_source": "daily_latest",
+   "run_6d_pct": null,
+   "ma20_gap_pct": null,
+   "ma10_margin_pct": 24.55,
+   "float_ratio": 0.4893,
+   "turnover_pct": 86.6,
+   "peak_turnover_pct": null,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260716",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 1.0,
+    "peak_uppertail": 0.0,
+    "ma20": 1514.0,
+    "ma20_margin_pct": 28.8,
+    "cause_summary": "상장폐지 위기 기업에 몰린 ‘애국 매수’…상한가 속출, 추격 투자는...",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 4.74,
+    "time": "09:25",
+    "value_eok": 10,
+    "count": 0
+   },
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 3.28
+    },
+    {
+     "time": "09:15",
+     "body_pct": 3.18
+    },
+    {
+     "time": "09:25",
+     "body_pct": 4.74
+    },
+    {
+     "time": "09:30",
+     "body_pct": 4.07
+    }
+   ],
+   "alert_now": "주의",
+   "alert_release": null,
+   "alert_release_rule": null,
+   "alert_release_checks": null,
+   "alert_release_error": null,
+   "alert_risk_released": null,
+   "alert_elapsed_days": null,
+   "shakeout": false,
+   "fade_pct": null,
+   "turnover_2d_pct": null,
+   "peak_dd_pct": null,
+   "strength_tier": null,
+   "strength": null,
+   "turnover_band": null,
+   "dd_band": null,
+   "dd6_pct": null,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
    "next_session_eligibility": {
     "schema_version": 1,
     "as_of_date": "20260720",
     "target_trade_date": "20260721",
-    "status": "UNVERIFIED",
-    "tradable_next_session": null,
-    "recommendable": false,
-    "auto_buy_allowed": false,
-    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
-    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T10:28:53+09:00",
-    "expires_at": "2026-07-20T10:38:53+09:00",
-    "evidence": {
-     "notice_id": "68135393",
-     "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
-     "published_at": "20260715",
-     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=68135393&code=002070&page_notice=1",
-     "source_hash": "01d86c3b93368bc98207"
-    },
+    "checked_at": "2026-07-20T10:33:55+09:00",
+    "expires_at": "2026-07-20T10:43:55+09:00",
+    "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
      "pages_checked": 2,
      "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
     }
    },
-   "signal_date": "20260720",
-   "price": 10200.0,
-   "pattern": "reaccum",
-   "rank_bucket": 3,
-   "suspicion_score": 64,
-   "first_blocked": "2026-07-20 09:38:50 KST",
-   "last_blocked": "2026-07-20 10:28:51 KST"
-  },
-  "023790": {
-   "name": "동일스틸럭스",
+   "next_market_alert_preview": null,
+   "matched_events": [],
+   "first_seen": "2026-07-20 10:33:53 KST",
+   "evaluated": false,
+   "result": null,
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "rank_model_source_commit": "7f3acab",
+   "final": true
+  }
+ },
+ "blocked_suspects": {
+  "002070": {
+   "name": "비비안",
    "precut_rank": 3,
    "published": false,
    "published_rank": null,
@@ -341,8 +579,51 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T10:28:54+09:00",
-    "expires_at": "2026-07-20T10:38:54+09:00",
+    "checked_at": "2026-07-20T10:33:55+09:00",
+    "expires_at": "2026-07-20T10:43:55+09:00",
+    "evidence": {
+     "notice_id": "68135393",
+     "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
+     "published_at": "20260715",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=68135393&code=002070&page_notice=1",
+     "source_hash": "01d86c3b93368bc98207"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260720",
+   "price": 10420.0,
+   "pattern": "reaccum",
+   "rank_bucket": 3,
+   "suspicion_score": 64,
+   "first_blocked": "2026-07-20 09:38:50 KST",
+   "last_blocked": "2026-07-20 10:33:53 KST"
+  },
+  "023790": {
+   "name": "동일스틸럭스",
+   "precut_rank": 4,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260720",
+    "target_trade_date": "20260721",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-20T10:33:56+09:00",
+    "expires_at": "2026-07-20T10:43:56+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -357,15 +638,58 @@
     }
    },
    "signal_date": "20260720",
-   "price": 1778.0,
+   "price": 1781.0,
    "pattern": "shakeout",
    "rank_bucket": 8,
    "suspicion_score": 68,
    "first_blocked": "2026-07-20 10:28:51 KST",
-   "last_blocked": "2026-07-20 10:28:51 KST"
+   "last_blocked": "2026-07-20 10:33:53 KST"
+  },
+  "003680": {
+   "name": "한성기업",
+   "precut_rank": 1,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260720",
+    "target_trade_date": "20260721",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-20T10:33:54+09:00",
+    "expires_at": "2026-07-20T10:43:54+09:00",
+    "evidence": {
+     "notice_id": "68427606",
+     "title": "한성기업(주) 매매거래 정지 및 재개(투자경고종목 지정중)",
+     "published_at": "20260715",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=68427606&code=003680&page_notice=1",
+     "source_hash": "7e4295f8d17d728e42a5"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260720",
+   "price": 12470.0,
+   "pattern": "reaccum",
+   "rank_bucket": 2,
+   "suspicion_score": 76,
+   "first_blocked": "2026-07-20 10:33:53 KST",
+   "last_blocked": "2026-07-20 10:33:53 KST"
   }
  },
- "as_of": "2026-07-20 10:28:51 KST",
+ "as_of": "2026-07-20 10:33:53 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
