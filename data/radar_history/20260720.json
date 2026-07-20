@@ -22,8 +22,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-20T09:48:50+09:00",
-    "expires_at": "2026-07-20T09:58:50+09:00",
+    "checked_at": "2026-07-20T09:53:51+09:00",
+    "expires_at": "2026-07-20T10:03:51+09:00",
     "evidence": {
      "notice_id": "68135393",
      "title": "(주)비비안 매매거래정지 및 정지해제(중요내용공시)",
@@ -38,15 +38,15 @@
     }
    },
    "signal_date": "20260720",
-   "price": 11550.0,
+   "price": 11260.0,
    "pattern": "reaccum",
    "rank_bucket": 3,
    "suspicion_score": 63,
    "first_blocked": "2026-07-20 09:38:50 KST",
-   "last_blocked": "2026-07-20 09:48:49 KST"
+   "last_blocked": "2026-07-20 09:53:50 KST"
   }
  },
- "as_of": "2026-07-20 09:48:49 KST",
+ "as_of": "2026-07-20 09:53:50 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
