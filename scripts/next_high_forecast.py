@@ -17,6 +17,7 @@ REPO = os.path.dirname(SCRIPT_DIR)
 sys.path.insert(0, SCRIPT_DIR)
 
 from rank_policy import rank_bucket_info  # noqa: E402
+from next_high_metrics import derive_next_high_metrics  # noqa: E402
 
 
 TOUCH_LEVELS = (7, 11, 13, 15)
@@ -164,6 +165,7 @@ def _result_row(item):
            "name": record.get("name") or item["code"], "backfill": False}
     for key in ("next_open_pct", "next_high_pct", "next_low_pct", "return_pct"):
         row[key] = result.get(key)
+    row.update(derive_next_high_metrics(result.get("entry"), result.get("next_high")))
     return row
 
 
@@ -172,14 +174,17 @@ def _evaluated_rows(histories):
 
 
 def _touch_stats(rows):
-    highs = [_number(row.get("next_high_pct")) for row in rows]
+    highs = [_number(row.get("next_high_pct_raw")) for row in rows]
     highs = [value for value in highs if value is not None]
     out = {"n": len(highs), "touch": {}}
     for level in TOUCH_LEVELS:
-        hits = sum(value >= level for value in highs)
+        flag = f"touch{level}"
+        eligible_n = sum(row.get(flag) is not None for row in rows)
+        hits = sum(row.get(flag) is True for row in rows)
         out["touch"][str(level)] = {
             "hits": hits,
-            "rate": _rounded(hits / len(highs) * 100) if highs else None,
+            "n": eligible_n,
+            "rate": _rounded(hits / eligible_n * 100) if eligible_n else None,
         }
     out.update({
         "avg_high_pct": _rounded(sum(highs) / len(highs), 2) if highs else None,

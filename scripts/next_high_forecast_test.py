@@ -21,7 +21,8 @@ def record(name, high, low, *, evaluated=True):
         "pattern": "shakeout", "shakeout": True, "suspicion_score": 80,
         "strength_tier": 3, "turnover_2d_pct": 200, "peak_dd_pct": -35,
         "evaluated": evaluated,
-        "result": ({"next_high_pct": high, "next_low_pct": low,
+        "result": ({"entry": 1000, "next_high": 1000 + high * 10,
+                    "next_high_pct": high, "next_low_pct": low,
                     "return_pct": 1, "date": "20260102"} if evaluated else None),
     }
 

@@ -23,26 +23,90 @@ RULE_LOGIC_VERSION = "krx-release-v2"
 RELEASE_LOOKBACK_5 = 5
 RELEASE_LOOKBACK_15 = 15
 
-_NOTICE_CACHE = {}   # code -> latest warning event dict
-_RULE_CACHE = {}     # code -> parsed rule dict
+_NOTICE_CACHE = {}   # (code, expected_name) -> latest warning event dict
+_RULE_CACHE = {}     # (code, expected_name) -> parsed rule dict
 
 # 위험→경고 강등(투자위험 지정해제) 직후 판정 창 — 공시일부터 캘린더 3일.
 # KRX는 해제 전일 공시하므로 효력 첫 거래일은 공시+1(평일) 또는 공시+3(금요 공시→월요일)에 걸림.
 # 서산 원형(2026-07-09 해제공시 → 07-10 회전 245% 폭발) 실측으로 도입(회장님 승인 2026-07-10).
 RISK_RELEASE_WINDOW_CDAYS = 3
 
-_ROW_RE = re.compile(r'<a[^>]*class="tit"[^>]*>([^<]+)</a>.*?(\d{4})\.(\d{2})\.(\d{2})', re.S)
-_RISK_CACHE = {}   # code -> "YYYYMMDD"(위험 해제공시일) | None — 실행당 캐시
+_RISK_CACHE = {}   # (code, expected_name) -> structured event — 실행당 캐시
 
 
 def _notice_rows(raw):
     return disclosure_client.parse_notice_rows(raw)
 
 
-def _latest_warning_notice(code, max_pages=8):
+def _normalize_code(code):
+    return str(code or "").strip().lstrip("A").zfill(6)
+
+
+def _normalize_target_name(name):
+    text = str(name or "").strip()
+    text = re.sub(r"(?:\(주\)|주식회사)", "", text)
+    return re.sub(r"\s+", "", text)
+
+
+def parse_notice_target(text):
+    """공시 본문의 대상종목명·증권종류를 파싱한다."""
+    lines = [line.strip() for line in str(text or "").splitlines() if line.strip()]
+    for i, line in enumerate(lines):
+        if "대상종목" not in line:
+            continue
+        tail = line.split("대상종목", 1)[1].strip(" :|\t")
+        parts = [part.strip() for part in tail.split("|") if part.strip()]
+        if not parts and i + 1 < len(lines):
+            parts = [lines[i + 1].strip(" :|\t")]
+            if i + 2 < len(lines) and not re.search(r"\d+\.|지정|사유|해제", lines[i + 2]):
+                parts.append(lines[i + 2].strip(" :|\t"))
+        if parts and parts[0]:
+            return {"parse_status": "ok", "target_name": parts[0],
+                    "security_type": parts[1] if len(parts) > 1 else None}
+    return {"parse_status": "unavailable", "target_name": None, "security_type": None}
+
+
+def notice_target_matches(expected_name, target_name):
+    return bool(_normalize_target_name(expected_name)
+                and _normalize_target_name(expected_name) == _normalize_target_name(target_name))
+
+
+def _fetch_event_body(row):
+    notice_no = str(row.get("notice_id") or
+                    (parse_qs(urlparse(row.get("href") or "").query).get("no") or [""])[0])
+    if not notice_no:
+        raise ValueError("notice_no_missing")
+    url = f"https://finance.naver.com/item/news_notice_read_content.naver?no={notice_no}"
+    raw = get_bytes(url, UA_PC).decode("euc-kr", "ignore")
+    return notice_no, raw, _html_to_text(raw)
+
+
+def _validated_event(row, code, expected_name):
+    notice_no, raw, text = _fetch_event_body(row)
+    target = parse_notice_target(text)
+    evidence = {
+        "requested_code": _normalize_code(code), "requested_name": expected_name,
+        "notice_no": notice_no, "notice_title": row.get("title"),
+        "notice_date": row.get("date"), "notice_target_name": target.get("target_name"),
+        "notice_target_security_type": target.get("security_type"),
+        "target_match": (notice_target_matches(expected_name, target.get("target_name"))
+                         if target.get("parse_status") == "ok" else None),
+        "target_validation_status": ("verified" if target.get("parse_status") == "ok"
+                                     else "target_unparseable"),
+        "source_url": row.get("href"),
+        "raw_text_hash": hashlib.sha256(raw.encode("utf-8")).hexdigest()[:20],
+        "fetched_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+    }
+    return {**row, "notice_no": notice_no, "_notice_raw": raw, "_notice_text": text,
+            "evidence": evidence}
+
+
+def _latest_warning_notice(code, max_pages=8, expected_name=None):
     """최신 투자경고 원이벤트를 찾는다. 해제/조회실패는 fail-safe 상태로 반환한다."""
-    if code in _NOTICE_CACHE:
-        return _NOTICE_CACHE[code]
+    code = _normalize_code(code)
+    cache_key = (code, _normalize_target_name(expected_name))
+    if cache_key in _NOTICE_CACHE:
+        return _NOTICE_CACHE[cache_key]
     found = {"status": "unavailable"}
     try:
         for page in range(1, max_pages + 1):
@@ -62,6 +126,16 @@ def _latest_warning_notice(code, max_pages=8):
                     continue
                 if "투자경고종목" not in title or "지정예고" in title:
                     continue
+                if expected_name:
+                    candidate = _validated_event(row, code, expected_name)
+                    evidence = candidate["evidence"]
+                    if evidence["target_validation_status"] != "verified":
+                        found = {"status": "unavailable", "error": "target_unparseable",
+                                 "evidence": evidence}
+                        break
+                    if not evidence["target_match"]:
+                        continue
+                    row = candidate
                 # 지정해제 및 재지정 예고는 '재지정'보다 해제를 먼저 판별해야 한다.
                 if "지정해제" in title:
                     found = {"status": "released", **row}
@@ -71,19 +145,20 @@ def _latest_warning_notice(code, max_pages=8):
                 if "지정" in title:
                     found = {"status": "designated", **row}
                     break
-            if found.get("status") in ("released", "designated"):
+            if (found.get("status") in ("released", "designated")
+                    or (found.get("status") == "unavailable" and found.get("error"))):
                 break
         else:
             found = {"status": "old"}
     except Exception as exc:
         found = {"status": "unavailable", "error": type(exc).__name__}
-    _NOTICE_CACHE[code] = found
+    _NOTICE_CACHE[cache_key] = found
     return found
 
 
-def designation_notice_date(code, max_pages=8):
+def designation_notice_date(code, max_pages=8, expected_name=None):
     """최근 지정 원공시일. 오래된 지정은 OLD, 해제/실패는 None."""
-    event = _latest_warning_notice(code, max_pages=max_pages)
+    event = _latest_warning_notice(code, max_pages=max_pages, expected_name=expected_name)
     if event.get("status") == "old":
         return "OLD"
     if event.get("status") == "designated":
@@ -158,11 +233,12 @@ def parse_release_rule_text(text, *, notice_date=None, source_url=None, raw_text
     }
 
 
-def fetch_release_rule(code, max_pages=8):
+def fetch_release_rule(code, max_pages=8, expected_name=None):
     """종목별 최신 KRX/KOSCOM 지정공시 해제규칙. 실패를 캐시해 반복 오판/과호출을 막는다."""
-    if code in _RULE_CACHE:
-        return _RULE_CACHE[code]
-    event = _latest_warning_notice(code, max_pages=max_pages)
+    cache_key = (_normalize_code(code), _normalize_target_name(expected_name))
+    if cache_key in _RULE_CACHE:
+        return _RULE_CACHE[cache_key]
+    event = _latest_warning_notice(code, max_pages=max_pages, expected_name=expected_name)
     if event.get("status") != "designated":
         rule = {
             "source": "KRX_KOSCOM",
@@ -173,7 +249,8 @@ def fetch_release_rule(code, max_pages=8):
             "parse_status": "unavailable",
             "parse_error": f"notice_{event.get('status', 'unknown')}",
         }
-        _RULE_CACHE[code] = rule
+        rule["target_evidence"] = event.get("evidence")
+        _RULE_CACHE[cache_key] = rule
         return rule
     try:
         query = parse_qs(urlparse(event["href"]).query)
@@ -181,12 +258,15 @@ def fetch_release_rule(code, max_pages=8):
         if not notice_no:
             raise ValueError("notice_no_missing")
         content_url = f"https://finance.naver.com/item/news_notice_read_content.naver?no={notice_no}"
-        raw = get_bytes(content_url, UA_PC).decode("euc-kr", "ignore")
+        raw = event.get("_notice_raw")
+        if raw is None:
+            raw = get_bytes(content_url, UA_PC).decode("euc-kr", "ignore")
         rule = parse_release_rule_text(
             _html_to_text(raw), notice_date=event.get("date"),
             source_url=event.get("href"), raw_text=raw,
         )
         rule["notice_no"] = str(notice_no)
+        rule["target_evidence"] = event.get("evidence")
     except Exception as exc:
         rule = {
             "source": "KRX_KOSCOM",
@@ -197,7 +277,7 @@ def fetch_release_rule(code, max_pages=8):
             "parse_status": "unavailable",
             "parse_error": type(exc).__name__,
         }
-    _RULE_CACHE[code] = rule
+    _RULE_CACHE[cache_key] = rule
     return rule
 
 
@@ -307,11 +387,12 @@ def evaluate_release(daily, current_price, rule, *, as_of_date=None):
     }
 
 
-def evaluate_release_for(code, daily, current_price, *, as_of_date=None):
+def evaluate_release_for(code, daily, current_price, *, as_of_date=None, expected_name=None):
     """조회+판정 상세 진입점. 어떤 실패도 True로 승격시키지 않는다."""
     try:
         return evaluate_release(
-            daily, current_price, fetch_release_rule(code), as_of_date=as_of_date)
+            daily, current_price, fetch_release_rule(code, expected_name=expected_name),
+            as_of_date=as_of_date)
     except Exception as exc:
         return {
             "value": None,
@@ -326,51 +407,78 @@ def forecast_release(daily, current_price, rule, *, as_of_date=None):
     return evaluate_release(daily, current_price, rule, as_of_date=as_of_date).get("value")
 
 
-def forecast_release_for(code, daily, current_price, *, as_of_date=None):
+def forecast_release_for(code, daily, current_price, *, as_of_date=None, expected_name=None):
     return evaluate_release_for(
-        code, daily, current_price, as_of_date=as_of_date).get("value")
+        code, daily, current_price, as_of_date=as_of_date,
+        expected_name=expected_name).get("value")
 
 
-def risk_release_date(code, max_pages=2):
-    """최근 '투자위험종목 지정해제' 공시일 "YYYYMMDD" | None(해제 아님/재지정/실패).
-
-    designation_notice_date와 같은 공시목록(최신순)에서 '투자위험종목' 이벤트만 본다.
-    최신 위험 이벤트가 '지정해제'면 그 공시일, '지정/재지정'이면 None(현재 위험이거나 재지정됨).
-    예고·매매거래(정지/재개) 파생 공시는 제외. 해제는 최근 며칠 내만 의미 있어 2페이지면 충분."""
-    if code in _RISK_CACHE:
-        return _RISK_CACHE[code]
-    found = None
+def risk_release_event(code, max_pages=2, expected_name=None):
+    """최신 투자위험 이벤트와 대상종목 검증 증거를 구조화해 반환한다."""
+    code = _normalize_code(code)
+    cache_key = (code, _normalize_target_name(expected_name))
+    if cache_key in _RISK_CACHE:
+        return _RISK_CACHE[cache_key]
+    found = {"status": "unavailable", "date": None, "evidence": None}
     try:
         for page in range(1, max_pages + 1):
             raw = get_bytes(
                 f"https://finance.naver.com/item/news_notice.naver?code={code}&page={page}",
                 UA_PC).decode("euc-kr", "ignore")
-            rows = _ROW_RE.findall(raw)
+            rows = _notice_rows(raw)
             if not rows:
-                break                               # 파싱 실패/공시 소진 — None 유지(fail-safe)
-            hit = False
-            for title, y, m, d in rows:
-                if ("투자위험종목" not in title or "지정예고" in title or "매매거래" in title):
+                break
+            for row in rows:
+                title = row["title"]
+                row_code = row.get("code")
+                if row_code and row_code != code:
                     continue
+                if ("투자위험종목" not in title or "지정예고" in title
+                        or "매매거래" in title):
+                    continue
+                if expected_name:
+                    candidate = _validated_event(row, code, expected_name)
+                    evidence = candidate["evidence"]
+                    if evidence["target_validation_status"] != "verified":
+                        found = {"status": "unavailable", "date": None,
+                                 "error": "target_unparseable", "evidence": evidence}
+                        break
+                    if not evidence["target_match"]:
+                        continue
+                    row = candidate
+                evidence = row.get("evidence")
                 if "지정해제" in title:
-                    found, hit = f"{y}{m}{d}", True
-                else:                               # 지정/재지정이 더 최신 — 해제 상태 아님
-                    found, hit = None, True
+                    found = {"status": "released", "date": row.get("date"),
+                             "evidence": evidence}
+                else:
+                    found = {"status": "designated", "date": None, "evidence": evidence}
                 break
-            if hit:
+            if found.get("status") != "unavailable" or found.get("error"):
                 break
-    except Exception:
-        found = None                                # 네트워크/파싱 실패 — 판정 포기(fail-safe)
-    _RISK_CACHE[code] = found
+    except Exception as exc:
+        found = {"status": "unavailable", "date": None,
+                 "error": type(exc).__name__, "evidence": found.get("evidence")}
+    _RISK_CACHE[cache_key] = found
     return found
 
 
-def recent_risk_release(code, today_yyyymmdd, window_days=RISK_RELEASE_WINDOW_CDAYS):
+def risk_release_date(code, max_pages=2, expected_name=None):
+    """최근 '투자위험종목 지정해제' 공시일 "YYYYMMDD" | None(해제 아님/재지정/실패).
+
+    designation_notice_date와 같은 공시목록(최신순)에서 '투자위험종목' 이벤트만 본다.
+    최신 위험 이벤트가 '지정해제'면 그 공시일, '지정/재지정'이면 None(현재 위험이거나 재지정됨).
+    예고·매매거래(정지/재개) 파생 공시는 제외. 해제는 최근 며칠 내만 의미 있어 2페이지면 충분."""
+    event = risk_release_event(code, max_pages=max_pages, expected_name=expected_name)
+    return event.get("date") if event.get("status") == "released" else None
+
+
+def recent_risk_release(code, today_yyyymmdd, window_days=RISK_RELEASE_WINDOW_CDAYS,
+                        expected_name=None):
     """위험→경고 강등(투자위험 지정해제) 직후인지 — 해제공시일부터 캘린더 window_days 내면 True.
 
     True = '최고 단계 규제가 방금 풀린 종목'(억눌림 해소 재료) — rank4에서 alert_release와
     같은 규제해소 관찰 bucket. 판정불가·실패는 False(오분류 방지)."""
-    d = risk_release_date(code)
+    d = risk_release_date(code, expected_name=expected_name)
     if not d or not today_yyyymmdd:
         return False
     try:

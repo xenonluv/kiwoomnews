@@ -48,6 +48,65 @@ def daily_fixture():
 
 
 class ReleaseRuleParseTest(unittest.TestCase):
+    def test_target_match_preserves_preferred_suffix(self):
+        self.assertTrue(ar.notice_target_matches("(주) 금호건설", "금호 건설"))
+        self.assertFalse(ar.notice_target_matches("금호건설", "금호건설우"))
+        self.assertTrue(ar.notice_target_matches("금호건설우", "금호건설우"))
+
+    def test_preferred_notice_is_skipped_for_common_stock(self):
+        list_html = """
+        <a href="/item/news_notice_read.naver?no=2&code=002990" class="tit">
+          금호건설우 투자경고종목 지정해제</a><td class="date">2026.07.20</td>
+        <a href="/item/news_notice_read.naver?no=1&code=002990" class="tit">
+          금호건설 투자경고종목 지정</a><td class="date">2026.06.30</td>
+        """.encode("euc-kr")
+        bodies = {
+            "no=2": "1. 대상종목 | 금호건설우 | 우선주\n" + notice_text(),
+            "no=1": "1. 대상종목 | 금호건설 | 보통주\n" + notice_text(),
+        }
+        def fake_get(url, headers):
+            if "read_content" not in url:
+                return list_html
+            return next(text for key, text in bodies.items() if key in url).encode("euc-kr")
+        ar._NOTICE_CACHE.clear(); ar._RULE_CACHE.clear()
+        with mock.patch.object(ar, "get_bytes", side_effect=fake_get):
+            parsed = ar.fetch_release_rule("002990", expected_name="금호건설")
+        self.assertEqual(parsed["notice_no"], "1")
+        self.assertTrue(parsed["target_evidence"]["target_match"])
+        self.assertEqual(parsed["target_evidence"]["notice_target_name"], "금호건설")
+
+    def test_unparseable_latest_target_stops_fail_safe(self):
+        list_html = """
+        <a href="/item/news_notice_read.naver?no=2&code=002990" class="tit">
+          투자경고종목 지정해제</a><td class="date">2026.07.20</td>
+        <a href="/item/news_notice_read.naver?no=1&code=002990" class="tit">
+          투자경고종목 지정</a><td class="date">2026.06.30</td>
+        """.encode("euc-kr")
+        ar._NOTICE_CACHE.clear(); ar._RULE_CACHE.clear()
+        with mock.patch.object(ar, "get_bytes", side_effect=[list_html, b"no target"]):
+            parsed = ar.fetch_release_rule("002990", expected_name="금호건설")
+        self.assertEqual(parsed["parse_error"], "notice_unavailable")
+        self.assertEqual(parsed["target_evidence"]["target_validation_status"], "target_unparseable")
+
+    def test_risk_release_uses_same_target_validation(self):
+        list_html = """
+        <a href="/item/news_notice_read.naver?no=2&code=002990" class="tit">
+          금호건설우 투자위험종목 지정해제</a><td class="date">2026.07.20</td>
+        <a href="/item/news_notice_read.naver?no=1&code=002990" class="tit">
+          금호건설 투자위험종목 지정해제</a><td class="date">2026.07.19</td>
+        """.encode("euc-kr")
+        def fake_get(url, headers):
+            if "read_content" not in url:
+                return list_html
+            target = "금호건설우" if "no=2" in url else "금호건설"
+            return f"1. 대상종목 | {target} | 보통주".encode("euc-kr")
+        ar._RISK_CACHE.clear()
+        with mock.patch.object(ar, "get_bytes", side_effect=fake_get):
+            event = ar.risk_release_event("002990", expected_name="금호건설")
+        self.assertEqual(event["date"], "20260719")
+        self.assertEqual(event["evidence"]["notice_target_name"], "금호건설")
+        self.assertTrue(event["evidence"]["target_match"])
+
     def test_parses_60_100_from_release_section_not_designation_reason(self):
         parsed = rule(60, 100)
         self.assertEqual(parsed["parse_status"], "ok")

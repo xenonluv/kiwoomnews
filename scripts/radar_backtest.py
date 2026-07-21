@@ -36,6 +36,7 @@ from radar import (SHAKEOUT_T2D_SWEET_LO, SHAKEOUT_T2D_SWEET_HI,
                    RANK_BUCKET_BASELINES, rank_bucket_info)
 from rank_policy import (RANK_BUCKET_PRIORS, RANK_MODEL_EFFECTIVE_FROM,
                          RANK_MODEL_VERSION, RANK_POLICY_NAME)
+from next_high_metrics import derive_next_high_metrics
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -57,6 +58,13 @@ TUNE_BOUND = 0.30       # 기본값 대비 ±30% 제한
 CALIB_MIN_N = 20        # 보정표 구간 유효 최소 표본
 SCORE_BINS = [(40, 60), (60, 75), (75, 101)]
 HIGH3_X = 1.03          # 보조지표: 익일 고가 +3%
+EVALUATED = "EVALUATED"
+EXCLUDED_UNTRADABLE = "EXCLUDED_UNTRADABLE"
+PENDING_MARKET_SESSION = "PENDING_MARKET_SESSION"
+PENDING_DATA_QUALITY = "PENDING_DATA_QUALITY"
+EXPIRED_UNRESOLVED = "EXPIRED_UNRESOLVED"
+EVALUATION_LOGIC_VERSION = "actual-krx-session-v1"
+_BENCHMARK_BARS = None
 
 # 메가스파크×수급 가설 검증 표 (radar.py MEGA_SPARK_X와 정합)
 MEGA_X = 40.0
@@ -123,25 +131,110 @@ def load_history():
     return out
 
 
+def actual_next_market_session(signal_date, benchmark_bars):
+    """삼성전자 KRX 실거래봉으로 신호일 다음 시장 세션을 확정한다."""
+    def traded(bar):
+        try:
+            return float(bar.get("volume")) > 0
+        except (TypeError, ValueError, OverflowError):
+            return False
+    valid = sorted((b for b in benchmark_bars or [] if b.get("date")), key=lambda b: b["date"])
+    signal = next((b for b in valid if b["date"] == signal_date and traded(b)), None)
+    if signal is None:
+        return None
+    return next((b["date"] for b in valid
+                 if b["date"] > signal_date and traded(b)), None)
+
+
+def _market_bars():
+    global _BENCHMARK_BARS
+    if _BENCHMARK_BARS is None:
+        try:
+            _BENCHMARK_BARS = kis.daily_prices("005930", days=40, market="J")
+        except Exception as exc:
+            log(f"  [warn] 시장 기준봉 실패: {exc}")
+            _BENCHMARK_BARS = []
+    return _BENCHMARK_BARS
+
+
+def _is_positive_volume(value):
+    try:
+        return float(value) > 0
+    except (TypeError, ValueError, OverflowError):
+        return False
+
+
+def classify_next_session_bar(signal_date, stock_bars, benchmark_bars):
+    """실제 다음 시장일의 종목 봉을 평가/거래불능/보류로 분류한다."""
+    expected = actual_next_market_session(signal_date, benchmark_bars)
+    if expected is None:
+        return {"status": PENDING_MARKET_SESSION, "signal": None, "next": None,
+                "expected_market_date": None, "reason_code": "MARKET_SESSION_MISSING"}
+    bars = sorted((b for b in stock_bars or [] if b.get("date")), key=lambda b: b["date"])
+    signal = next((b for b in bars if b["date"] == signal_date and b.get("close")), None)
+    if signal is None:
+        return {"status": PENDING_DATA_QUALITY, "signal": None, "next": None,
+                "expected_market_date": expected, "reason_code": "SIGNAL_BAR_MISSING"}
+    target = next((b for b in bars if b["date"] == expected), None)
+    if target is None:
+        later = next((b for b in bars if b["date"] > expected
+                      and _is_positive_volume(b.get("volume"))), None)
+        if later:
+            return {"status": EXCLUDED_UNTRADABLE, "signal": signal, "next": None,
+                    "expected_market_date": expected, "observed_stock_date": later["date"],
+                    "reason_code": "LATE_RESUME_BAR"}
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": None,
+                "expected_market_date": expected, "reason_code": "TARGET_BAR_MISSING"}
+    ohlc = [target.get(key) for key in ("open", "high", "low", "close")]
+    volume = target.get("volume")
+    try:
+        volume = float(volume)
+    except (TypeError, ValueError, OverflowError):
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": target,
+                "expected_market_date": expected, "reason_code": "VOLUME_INVALID"}
+    if not math.isfinite(volume):
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": target,
+                "expected_market_date": expected, "reason_code": "VOLUME_INVALID"}
+    if any(value is None for value in ohlc):
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": target,
+                "expected_market_date": expected, "reason_code": "OHLC_MISSING"}
+    try:
+        numeric_ohlc = [float(value) for value in ohlc]
+    except (TypeError, ValueError, OverflowError):
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": target,
+                "expected_market_date": expected, "reason_code": "OHLC_INVALID"}
+    if any(not math.isfinite(value) for value in numeric_ohlc):
+        return {"status": PENDING_DATA_QUALITY, "signal": signal, "next": target,
+                "expected_market_date": expected, "reason_code": "OHLC_INVALID"}
+    same_ohlc = len(set(numeric_ohlc)) == 1
+    if volume <= 0:
+        return {"status": EXCLUDED_UNTRADABLE if same_ohlc else PENDING_DATA_QUALITY,
+                "signal": signal, "next": target, "expected_market_date": expected,
+                "observed_stock_date": target["date"],
+                "reason_code": "HALT_PLACEHOLDER" if same_ohlc else "ZERO_VOLUME_INCONSISTENT_OHLC"}
+    return {"status": EVALUATED, "signal": signal, "next": target,
+            "expected_market_date": expected, "reason_code": "TRADED"}
+
+
+def next_day_evaluation(code, date):
+    try:
+        bars = kis.daily_prices(code, days=40, market="J")
+    except Exception as e:
+        log(f"  [warn] {code} 일봉 실패: {e}")
+        return {"status": PENDING_DATA_QUALITY, "signal": None, "next": None,
+                "expected_market_date": None, "reason_code": "DAILY_API_ERROR"}
+    return classify_next_session_bar(date, bars, _market_bars())
+
+
 def next_day_bar(code, date):
     """date(YYYYMMDD)의 신호일 봉과 바로 다음 거래일 봉 → (signal_bar, next_bar).
 
     신호일 봉이 조회 윈도우에 없으면 (None, None) — 엉뚱한 후일봉으로
     오평가하는 것을 막는다 (평가 보류, 오래되면 호출부에서 만료 처리).
     """
-    try:
-        bars = kis.daily_prices(code, days=40)
-    except Exception as e:
-        log(f"  [warn] {code} 일봉 실패: {e}")
-        return None, None
-    # 거래정지(종가 0/결측) 봉 제외 — track_eval/ai_click_eval과 동일. D+1이 정지면 close=0이 되어
-    # hit=False·수익률 −100%인 거짓 표본이 core 통계·가중치 튜닝을 오염시키므로, 종가 유효 봉만 본다.
-    bars = [b for b in bars if b.get("close")]
-    sig = next((b for b in bars if b["date"] == date), None)
-    if not sig:
-        return None, None
-    nxt = next((b for b in bars if b["date"] > date), None)
-    return sig, nxt
+    result = next_day_evaluation(code, date)
+    return ((result.get("signal"), result.get("next"))
+            if result.get("status") == EVALUATED else (None, None))
 
 
 def fill_signal_snapshot(code, date, s):
@@ -300,7 +393,7 @@ def fill_signal_snapshot(code, date, s):
 def evaluate():
     """미평가 종목을 익일 일봉과 대조해 history 파일에 결과 역기록."""
     today = datetime.now(KST).strftime("%Y%m%d")
-    n_eval = 0
+    n_eval = n_excluded = 0
     for path, hist in load_history():
         if hist.get("date", "") >= today:
             continue  # 당일분은 익일에 평가
@@ -317,6 +410,15 @@ def evaluate():
             #   (next_high_pct / next_open·next_low 필드 추가 이전에 평가된 표본 — 종가·적중은
             #    멀쩡하나 익절 도달폭·저가 낙폭·시가 갭이 누락됨. 필드 추가 시마다 여기서 소급 채운다.)
             r0 = s.get("result")
+            if s.get("evaluated") and r0 and r0.get("metrics_version") is None:
+                raw_entry = r0.get("entry") or s.get("entry")
+                if raw_entry is not None and r0.get("next_high") is not None:
+                    r0.update(derive_next_high_metrics(raw_entry, r0.get("next_high")))
+                    changed = True
+                    n_heal += 1
+                else:
+                    r0.update(derive_next_high_metrics(None, None))
+                    changed = True
             if (s.get("evaluated") and r0 and s.get("entry")
                     and (r0.get("next_high_pct") is None or r0.get("next_low") is None)):
                 sig0, nb0 = next_day_bar(code, hist["date"])
@@ -324,7 +426,7 @@ def evaluate():
                     e0 = float(sig0["close"]) if sig0.get("close") else float(s["entry"])
                     if e0:
                         if r0.get("next_high_pct") is None:
-                            r0["next_high_pct"] = round((nb0["high"] / e0 - 1) * 100, 2)
+                            r0.update(derive_next_high_metrics(e0, nb0.get("high")))
                         if r0.get("next_low") is None:
                             r0["next_open"] = nb0["open"]
                             r0["next_low"] = nb0["low"]
@@ -334,11 +436,32 @@ def evaluate():
                         n_heal += 1
             if s.get("evaluated") or not s.get("entry"):
                 continue
-            sig, nb = next_day_bar(code, hist["date"])
-            if not sig or not nb:
+            evaluation = next_day_evaluation(code, hist["date"])
+            sig, nb = evaluation.get("signal"), evaluation.get("next")
+            if evaluation["status"] == EXCLUDED_UNTRADABLE:
+                s["evaluated"] = True
+                s["evaluation_status"] = EXCLUDED_UNTRADABLE
+                s["result"] = None
+                s["evaluation_exclusion"] = {
+                    "reason_code": evaluation["reason_code"],
+                    "signal_date": hist["date"],
+                    "expected_market_date": evaluation.get("expected_market_date"),
+                    "observed_stock_date": evaluation.get("observed_stock_date"),
+                    "source_volume": nb.get("volume") if nb else None,
+                    "source_ohlc": ({key: nb.get(key) for key in ("open", "high", "low", "close")}
+                                    if nb else None),
+                    "previous_result": None,
+                    "corrected_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S KST"),
+                    "logic_version": EVALUATION_LOGIC_VERSION,
+                }
+                changed = True; n_excluded += 1
+                log(f"  [exclude] {hist['date']} {s.get('name')} — {evaluation['reason_code']}")
+                continue
+            if evaluation["status"] != EVALUATED or not sig or not nb:
                 if age_days > 25:
                     # 조회 윈도우를 벗어난 오래된 미평가 — 영구 재조회 방지 위해 만료
                     s["evaluated"] = True
+                    s["evaluation_status"] = EXPIRED_UNRESOLVED
                     s["result"] = None
                     changed = True
                     log(f"  [expire] {hist['date']} {s.get('name')} — 평가 불가(만료)")
@@ -346,6 +469,7 @@ def evaluate():
             # entry는 신호일 일봉 종가로 재정합 (장중 마지막 회차 가격 ≠ 확정 종가 대비)
             entry = float(sig["close"]) if sig.get("close") else float(s["entry"])
             ret = (nb["close"] / entry - 1) * 100
+            high_metrics = derive_next_high_metrics(entry, nb.get("high"))
             s["result"] = {
                 "date": nb["date"],
                 "entry": entry,
@@ -358,12 +482,13 @@ def evaluate():
                 "high3": nb["high"] >= entry * HIGH3_X,
                 "return_pct": round(ret, 2),
                 # 익일 고가 도달폭(entry 대비 %) — 회장님 실제 익절선(+7/+13%) 검증·흔들기 밴드 튜닝 핵심 지표
-                "next_high_pct": round((nb["high"] / entry - 1) * 100, 2),
+                **high_metrics,
                 # 익일 시가 갭·저가 도달폭(entry 대비 %) — 손절(-5%) 실발동·최대낙폭·갭 리스크 튜닝용
                 "next_open_pct": round((nb["open"] / entry - 1) * 100, 2),
                 "next_low_pct": round((nb["low"] / entry - 1) * 100, 2),
             }
             s["evaluated"] = True
+            s["evaluation_status"] = EVALUATED
             changed = True
             n_eval += 1
             log(f"  [eval] {hist['date']} {s['name']} entry={entry:.0f} "
@@ -375,7 +500,7 @@ def evaluate():
             log(f"  [heal] {hist['date']} 파생필드(고가폭·시가·저가) 소급 충전 {n_heal}건")
         if changed:
             atomic_write_json(path, hist)
-    log(f"[backtest] 신규 평가 {n_eval}건")
+    log(f"[backtest] 신규 평가 {n_eval}건 · 거래불능 제외 {n_excluded}건")
 
 
 def ai_predict():
@@ -494,14 +619,22 @@ def load_decision_memberships(date):
     return out
 
 
+def is_evaluated_result(record):
+    """legacy 정상 result는 포함하되 명시적 거래불능/만료는 제외한다."""
+    return bool(record.get("evaluated") and isinstance(record.get("result"), dict)
+                and record.get("result")
+                and record.get("evaluation_status") in (None, EVALUATED))
+
+
 def collect_samples():
     """평가 완료 표본 전체 (날짜순)."""
     samples = []
     for _, hist in load_history():
         decisions = load_decision_memberships(hist["date"])
         for code, s in hist.get("suspects", {}).items():
-            if s.get("evaluated") and s.get("result"):
-                r = s["result"]
+            if is_evaluated_result(s):
+                r = {**s["result"], **derive_next_high_metrics(
+                    s["result"].get("entry"), s["result"].get("next_high"))}
                 decision_meta = {}
                 for population, snapshot in decisions.items():
                     row = snapshot["rows"].get(str(code))
@@ -589,6 +722,7 @@ def collect_samples():
                                 "alert_now": s.get("alert_now"),
                                 "alert_release": s.get("alert_release"),
                                 "alert_risk_released": s.get("alert_risk_released"),
+                                "next_session_eligibility": s.get("next_session_eligibility"),
                                 # AI 익일 예측 (ai_predict가 기록 — 없으면 None/"none")
                                 "ai_prob": (s.get("ai_pred") or {}).get("prob_up"),
                                 "ai_dir": (s.get("ai_pred") or {}).get("direction") or "none",
@@ -654,9 +788,43 @@ def collect_samples():
                                 # 익일 고가 도달폭 — 흔들기 밴드별 익절터치율(+7/+13%) 집계용
                                 "next_open_pct": r.get("next_open_pct"),
                                 "next_high_pct": r.get("next_high_pct"),
+                                "next_high_pct_raw": r.get("next_high_pct_raw"),
+                                "touch7": r.get("touch7"),
+                                "touch11": r.get("touch11"),
+                                "touch13": r.get("touch13"),
+                                "touch15": r.get("touch15"),
+                                "metrics_status": r.get("metrics_status"),
+                                "metrics_version": r.get("metrics_version"),
                                 "next_low_pct": r.get("next_low_pct")})
     samples.sort(key=lambda x: (x["date"], x["code"]))  # 동일 신호일 내 순서 안정화
     return samples
+
+
+def collect_evaluation_exclusions():
+    """성과 분모와 분리된 명시적 거래불능 감사행."""
+    rows = []
+    for _, hist in load_history():
+        decisions = load_decision_memberships(hist["date"])
+        for code, s in hist.get("suspects", {}).items():
+            if s.get("evaluation_status") != EXCLUDED_UNTRADABLE:
+                continue
+            row = {
+                "date": hist["date"], "signal_date": s.get("signal_date") or hist["date"],
+                "code": code, "name": s.get("name"), "entry": s.get("entry"),
+                "rank_model_version": s.get("rank_model_version"),
+                "rank_bucket_at_signal": s.get("rank_bucket_at_signal"),
+                "final": s.get("final", True), "final_recorded": "final" in s,
+                "published_rank": s.get("published_rank"), "latest_published_rank": s.get("latest_published_rank"),
+                "first_seen_rank": s.get("first_seen_rank"), "legacy_rank": s.get("rank"),
+                "exclusion": s.get("evaluation_exclusion") or {},
+            }
+            for population, snapshot in decisions.items():
+                item = snapshot["rows"].get(str(code))
+                row[f"{population}_present"] = item is not None if snapshot["recorded"] else None
+                row[f"{population}_rank"] = item.get("_decision_rank") if item else None
+                row[f"{population}_bucket"] = item.get("rank_bucket") if item else None
+            rows.append(row)
+    return rows
 
 
 def build_series(samples):
@@ -1002,14 +1170,20 @@ def _shakeout_stat(grp):
     hits = sum(1 for s in grp if s["hit"])
     rets = [s["return_pct"] for s in grp]
     highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
+    def touch_rows(x):
+        return [s for s in grp if s.get(f"touch{x}") is not None]
     def touch(x):
-        return round(sum(1 for h in highs if h >= x) / len(highs) * 100, 1) if highs else None
+        known = touch_rows(x)
+        return (round(sum(s.get(f"touch{x}") is True for s in known) / len(known) * 100, 1)
+                if known else None)
     return {
         "n": len(grp),
         "hit_rate": round(hits / len(grp) * 100, 1) if grp else None,
         "avg_return": round(sum(rets) / len(rets), 2) if rets else None,
         "avg_high": round(sum(highs) / len(highs), 2) if highs else None,   # 익일 평균 고가 도달폭
         "touch7_rate": touch(7), "touch11_rate": touch(11), "touch13_rate": touch(13),
+        "touch7_n": len(touch_rows(7)), "touch11_n": len(touch_rows(11)),
+        "touch13_n": len(touch_rows(13)),
         "valid": len(grp) >= FEATURE_MIN_N,
     }
 
@@ -1255,14 +1429,16 @@ def _rank_group_stat(grp):
     n = len(grp)
     highs = [s["next_high_pct"] for s in grp if s.get("next_high_pct") is not None]
     rets = [s["return_pct"] for s in grp if s.get("return_pct") is not None]
-    touch7 = sum(1 for h in highs if h >= 7)
-    touch13 = sum(1 for h in highs if h >= 13)
+    touch7_known = [s for s in grp if s.get("touch7") is not None]
+    touch13_known = [s for s in grp if s.get("touch13") is not None]
+    touch7 = sum(s.get("touch7") is True for s in touch7_known)
+    touch13 = sum(s.get("touch13") is True for s in touch13_known)
     return {
         "n": n,
         "unique_n": len({s.get("code") for s in grp if s.get("code")}),
-        "touch7_rate": round(touch7 / len(highs) * 100, 1) if highs else None,
-        "touch13_rate": round(touch13 / len(highs) * 100, 1) if highs else None,
-        "wilson7_lower": round(_wilson_lower(touch7, len(highs)), 1) if highs else None,
+        "touch7_rate": round(touch7 / len(touch7_known) * 100, 1) if touch7_known else None,
+        "touch13_rate": round(touch13 / len(touch13_known) * 100, 1) if touch13_known else None,
+        "wilson7_lower": round(_wilson_lower(touch7, len(touch7_known)), 1) if touch7_known else None,
         "avg_high": round(sum(highs) / len(highs), 2) if highs else None,
         "median_high": round(_median(highs), 2) if highs else None,
         "min_high": round(min(highs), 2) if highs else None,
@@ -1702,7 +1878,7 @@ def rank_eval(samples):
     }
 
 
-def write_evaluation_json(samples):
+def write_evaluation_json(samples, exclusions=None):
     """forward 익일 결과를 날짜별 Mac 로컬 JSON에 파생 저장한다."""
     try:
         from radar_json_store import write_evaluation
@@ -1714,7 +1890,11 @@ def write_evaluation_json(samples):
     for s in samples:
         if _is_forward_sample(s):
             by_date.setdefault(s["date"], []).append(s)
-    for date, day in sorted(by_date.items()):
+    excluded_by_date = {}
+    for row in exclusions or []:
+        excluded_by_date.setdefault(row["date"], []).append(row)
+    for date in sorted(set(by_date) | set(excluded_by_date)):
+        day = by_date.get(date, [])
         actual_by_population = {}
         for population in ("krx_decision", "nxt_decision", "eod", "final", "dropout"):
             rows = [s for s in day if _population_member(s, population)
@@ -1762,6 +1942,22 @@ def write_evaluation_json(samples):
                     "close_pct": s.get("return_pct"),
                 },
                 "status": "evaluated",
+            })
+        for s in sorted(excluded_by_date.get(date, []), key=lambda row: str(row.get("code") or "")):
+            payload["results"].append({
+                "code": s.get("code"), "name": s.get("name"),
+                "rank_model_version": s.get("rank_model_version"),
+                "rank_bucket_at_signal": s.get("rank_bucket_at_signal"),
+                "entry_basis": "KRX_CLOSE", "entry_price": s.get("entry"),
+                "populations": {
+                    population: {"present": _population_member(s, population),
+                                 "decision_rank": _population_rank(s, population),
+                                 "rank_bucket": _population_bucket(s, population),
+                                 "actual_high_rank": None}
+                    for population in ("krx_decision", "nxt_decision", "eod", "final", "dropout")
+                },
+                "next_day": None, "status": "excluded_untradable",
+                "exclusion": s.get("exclusion"),
             })
         result = write_evaluation(payload, trade_date=date)
         if not result.ok:
@@ -1889,7 +2085,7 @@ def strategy_sim_stats():
 
 
 def write_performance(samples, series, bins, weights, dropouts=None,
-                      experimental=None, experimental_dropouts=None):
+                      experimental=None, experimental_dropouts=None, exclusions=None):
     n = len(samples)
     hits = sum(1 for s in samples if s["hit"])
     rets = [s["return_pct"] for s in samples]
@@ -1897,6 +2093,7 @@ def write_performance(samples, series, bins, weights, dropouts=None,
     experimental = experimental or []
     experimental_dropouts = experimental_dropouts or []
     material_all = samples + dropouts + experimental + experimental_dropouts
+    final_high_population = samples + experimental
     rank_all = material_all
     reaccum_experimental = [s for s in experimental + experimental_dropouts
                             if s.get("pattern") == "reaccum"]
@@ -1909,6 +2106,18 @@ def write_performance(samples, series, bins, weights, dropouts=None,
                          if (b.get("code"), b.get("date")) not in _seen]
     shakeout_experimental = shakeout_live + shakeout_backfill
     dn = len(dropouts)
+    exclusions = exclusions or []
+    halt_n = sum((row.get("exclusion") or {}).get("reason_code") == "HALT_PLACEHOLDER"
+                 for row in exclusions)
+    late_n = sum((row.get("exclusion") or {}).get("reason_code") == "LATE_RESUME_BAR"
+                 for row in exclusions)
+    def high_target(level):
+        known = [row for row in final_high_population if row.get(f"touch{level}") is not None]
+        hits = sum(row.get(f"touch{level}") is True for row in known)
+        return {"population": "final_suspects", "hits": hits, "n": len(known),
+                "rate": round(hits / len(known) * 100, 1) if known else None,
+                "unique_n": len({row.get("code") for row in known if row.get("code")}),
+                "signal_day_n": len({row.get("date") for row in known if row.get("date")})}
     out = {
         "as_of": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
         "summary": {
@@ -1917,12 +2126,19 @@ def write_performance(samples, series, bins, weights, dropouts=None,
             "avg_return": round(sum(rets) / n, 2) if n else None,
             "high3_rate": round(sum(1 for s in samples if s["high3"]) / n * 100) if n else None,
             "tracking_days": len(series),
+            "excluded_untradable_n": len(exclusions),
+            "excluded_halt_placeholder_n": halt_n,
+            "excluded_late_resume_n": late_n,
+            "legacy_eligibility_unknown_n": sum(
+                1 for s in material_all if s.get("next_session_eligibility") is None),
             # 장중 탈락군(마감 카드 미잔존) 참고 성적 — 탈락 필터의 효용 검증용.
             # 주 통계·튜닝에는 포함되지 않는다.
             "dropout": ({"n": dn,
                          "hit_rate": round(sum(1 for s in dropouts if s["hit"]) / dn * 100, 1)}
                         if dn else None),
         },
+        "next_session_high_touch_7": high_target(7),
+        "next_session_high_touch_13": high_target(13),
         "series": series,
         "bins": bins,
         "by_pattern": group_stats(samples, "pattern"),
@@ -2042,7 +2258,8 @@ def main():
     ai_predict()  # 당일 마감 카드의 AI 예측 기록 (익일 evaluate가 채점)
     strategy_eval()  # 분할 전략 실측 시뮬(forward 10일 충족분) — history에 누적
     samples = collect_samples()
-    write_evaluation_json(samples)
+    exclusions = collect_evaluation_exclusions()
+    write_evaluation_json(samples, exclusions)
     # 주 통계·튜닝 = 마감 카드 잔존(final) 표본만 — 정석 사용법(종가 매수)과 모집단 일치.
     core = [s for s in samples if s["final"] and not s.get("visible_experimental")]
     experimental = [s for s in samples if s["final"] and s.get("visible_experimental")]
@@ -2053,7 +2270,7 @@ def main():
     bins = build_bins(core)
     weights = save_weights(tune_weights(core))
     perf = write_performance(core, series, bins, weights, dropouts,
-                             experimental, experimental_dropouts)
+                             experimental, experimental_dropouts, exclusions)
     s = perf["summary"]
     print(f"[backtest] 최종카드 표본 {s['n']}건 · 적중률 {s['hit_rate']}% · "
           f"평균수익 {s['avg_return']}% · 고가+3% {s['high3_rate']}% · "

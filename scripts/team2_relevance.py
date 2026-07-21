@@ -9,11 +9,92 @@
   - 재료 키워드(실적/수주/계약/신고가/급등/수출/투자/승인 등)로 관련성·중요도 가중.
   - 종목명 별칭 문제를 피하려 '제거(blacklist) + 재료(whitelist)' 방식 사용.
 """
+import copy
 import re
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
 KST = timezone(timedelta(hours=9))
+
+
+def parse_evidence_datetime(value):
+    """지원되는 뉴스 시각을 KST aware datetime으로 반환한다."""
+    if not value:
+        return None
+    text = str(value).strip()
+    try:
+        dt = parsedate_to_datetime(text)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=KST)
+        return dt.astimezone(KST)
+    except Exception:
+        pass
+    try:
+        dt = datetime.fromisoformat(text.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=KST)
+        return dt.astimezone(KST)
+    except (TypeError, ValueError):
+        pass
+    for fmt in (
+        "%Y%m%d%H%M", "%Y%m%d%H%M%S",
+        "%Y-%m-%d %H:%M:%S KST", "%Y-%m-%d %H:%M:%S",
+        "%Y.%m.%d %H:%M", "%Y.%m.%d. %H:%M",
+        "%Y-%m-%dT%H:%M:%S%z",
+    ):
+        try:
+            dt = datetime.strptime(text, fmt)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=KST)
+            return dt.astimezone(KST)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def material_freshness_view(material, *, as_of):
+    """원본 재료를 변경하지 않고 신호시각 기준 신선도만 재계산한다."""
+    out = copy.deepcopy(material)
+    if not isinstance(out, dict):
+        return out
+    if isinstance(as_of, str):
+        as_of = parse_evidence_datetime(as_of)
+    if not isinstance(as_of, datetime):
+        raise ValueError("as_of must be a parseable datetime")
+    if as_of.tzinfo is None:
+        as_of = as_of.replace(tzinfo=KST)
+    as_of = as_of.astimezone(KST)
+    if "captured_freshness_days" not in out:
+        out["captured_freshness_days"] = out.get("freshness_days")
+
+    evidence = out.get("evidence") if isinstance(out.get("evidence"), list) else []
+    parsed, invalid, future = [], 0, 0
+    for item in evidence:
+        value = item.get("datetime") if isinstance(item, dict) else None
+        dt = parse_evidence_datetime(value)
+        if dt is None:
+            invalid += 1
+        elif dt > as_of:
+            future += 1
+        else:
+            parsed.append(dt)
+    latest = max(parsed) if parsed else None
+    if latest is not None:
+        days = (as_of - latest).total_seconds() / 86400.0
+        status = "complete" if invalid == 0 and future == 0 else "partial"
+    else:
+        days = None
+        status = "future_only" if future and invalid == 0 else "missing"
+    out.update({
+        "freshness_as_of": as_of.isoformat(),
+        "freshness_days": round(days, 2) if days is not None else None,
+        "freshness": _freshness_label(days),
+        "freshness_basis": "evidence_latest_datetime",
+        "evidence_latest_datetime": latest.isoformat() if latest else None,
+        "freshness_parse_status": status,
+        "future_evidence_n": future,
+    })
+    return out
 
 # 종목명 별칭 (공식명 ↔ 뉴스 통용 표기). 영문/약어 종목 위주로 수동 보강.
 MANUAL_ALIAS = {
@@ -210,33 +291,8 @@ def score_news(news, aliases=None):
 
 
 def _age_days(dt_text):
-    if not dt_text:
-        return None
-    s = str(dt_text).strip()
-    candidates = (
-        "%Y%m%d%H%M",
-        "%Y-%m-%d %H:%M:%S KST",
-        "%Y-%m-%d %H:%M:%S",
-        "%Y.%m.%d %H:%M",
-        "%Y.%m.%d. %H:%M",
-        "%Y-%m-%dT%H:%M:%S%z",
-    )
-    try:
-        dt = parsedate_to_datetime(s)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=KST)
-        return (datetime.now(KST) - dt.astimezone(KST)).total_seconds() / 86400
-    except Exception:
-        pass
-    for fmt in candidates:
-        try:
-            dt = datetime.strptime(s, fmt)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=KST)
-            return (datetime.now(KST) - dt.astimezone(KST)).total_seconds() / 86400
-        except Exception:
-            continue
-    return None
+    dt = parse_evidence_datetime(dt_text)
+    return ((datetime.now(KST) - dt).total_seconds() / 86400) if dt else None
 
 
 def _alias_is_subject(title_lower, aliases):

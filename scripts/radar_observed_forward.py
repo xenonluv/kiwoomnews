@@ -14,6 +14,7 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import kiwoom_client as broker
 import radar_json_store as store
+from next_high_metrics import derive_next_high_metrics
 
 KST = timezone(timedelta(hours=9))
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -171,15 +172,19 @@ def evaluate_cohort(date, cache=None):
             continue
         entry = float(signal["close"])
         pct = lambda value: round((float(value) / entry - 1) * 100, 2)
-        high_pct, low_pct = pct(nxt["high"]), pct(nxt["low"])
+        high_metrics = derive_next_high_metrics(entry, nxt["high"])
+        high_pct, low_pct = high_metrics["next_high_pct"], pct(nxt["low"])
         results.append({
             **base, "status": "evaluated", "entry_basis": "KRX_CLOSE", "entry_price": entry,
             "turnover_pct": (row.get("turnover") or {}).get("turnover_pct"),
             "next_day": {"date": nxt["date"], "open": nxt["open"], "high": nxt["high"],
                          "low": nxt["low"], "close": nxt["close"],
                          "open_pct": pct(nxt["open"]), "high_pct": high_pct,
+                         "high_pct_raw": high_metrics["next_high_pct_raw"],
                          "low_pct": low_pct, "close_pct": pct(nxt["close"]),
-                         "touch_up": {str(x): high_pct >= x for x in (3, 7, 11, 13, 15)},
+                         "touch_up": {"3": high_metrics["next_high_pct_raw"] >= 3,
+                                      **{str(x): high_metrics[f"touch{x}"] for x in (7, 11, 13, 15)}},
+                         "metrics_version": high_metrics["metrics_version"],
                          "touch_down": {str(x): low_pct <= -x for x in (3, 5, 7, 10)},
                          "high_low_order": "unknown"},
         })

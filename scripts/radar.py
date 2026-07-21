@@ -379,6 +379,7 @@ def _nxt_change_pct(code, prev_close):
 
 _ALERT_CACHE = {}   # 실행당 종목별 시장경보 캐시(수상종목 ≤reaccum_max이라 회당 소수 콜)
 _LISTING_MARKET_CACHE = {}  # 같은 응답의 stockExchangeType(KOSPI/KOSDAQ) — 호가단위 판정용
+_ALERT_META_CACHE = {}
 
 
 def _alert_level(code):
@@ -388,20 +389,41 @@ def _alert_level(code):
     if code in _ALERT_CACHE:
         return _ALERT_CACHE[code]
     level = None
+    snapshot = {"level": "UNKNOWN", "label": None, "raw_code": None,
+                "lookup_status": "ERROR", "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
+                "checked_at": datetime.now(KST).isoformat()}
     try:
         b = json.loads(get_bytes(f"https://m.stock.naver.com/api/stock/{code}/basic", UA))
         m = b.get("marketAlertType") if isinstance(b, dict) else None
-        level = {"01": "주의", "02": "경고", "03": "위험"}.get((m or {}).get("code") if isinstance(m, dict) else None)
+        raw_code = (m or {}).get("code") if isinstance(m, dict) else None
+        level = {"01": "주의", "02": "경고", "03": "위험"}.get(raw_code)
         exchange = b.get("stockExchangeType") if isinstance(b, dict) else None
         exchange_code = (exchange or {}).get("code") if isinstance(exchange, dict) else None
         _LISTING_MARKET_CACHE[code] = {
             "KS": "KOSPI", "KQ": "KOSDAQ",
         }.get(exchange_code)
+        valid_basic = isinstance(b, dict) and bool(
+            b.get("itemCode") or b.get("stockName") or exchange_code in ("KS", "KQ"))
+        if raw_code in ("01", "02", "03") and valid_basic:
+            snapshot.update({"level": {"01": "ATTENTION", "02": "WARNING", "03": "RISK"}[raw_code],
+                             "label": level, "raw_code": raw_code, "lookup_status": "VERIFIED"})
+        elif raw_code is None and valid_basic:
+            snapshot.update({"level": "NONE", "lookup_status": "VERIFIED"})
+        else:
+            snapshot.update({"level": "UNKNOWN", "raw_code": raw_code,
+                             "lookup_status": "SCHEMA_UNKNOWN"})
     except Exception:
         level = None
         _LISTING_MARKET_CACHE[code] = None
+    _ALERT_META_CACHE[code] = snapshot
     _ALERT_CACHE[code] = level
     return level
+
+
+def _alert_snapshot(code):
+    if code not in _ALERT_CACHE:
+        _alert_level(code)
+    return dict(_ALERT_META_CACHE.get(code) or {})
 
 
 def _listing_market(code):
@@ -2374,6 +2396,7 @@ def main():
     _today_ymd = datetime.now(KST).strftime("%Y%m%d")
     for s in suspects:
         s["alert_now"] = _alert_level(s["code"])
+        s["market_alert_snapshot"] = _alert_snapshot(s["code"])
         s["listing_market"] = _listing_market(s["code"])
         if s["alert_now"] == "경고":
             try:
@@ -2382,7 +2405,8 @@ def main():
                 _al_daily = None
             try:
                 _al_eval = alert_release.evaluate_release_for(
-                    s["code"], _al_daily, s.get("price"), as_of_date=_today_ymd)
+                    s["code"], _al_daily, s.get("price"), as_of_date=_today_ymd,
+                    expected_name=s.get("name"))
                 s["alert_release"] = _al_eval.get("value")
                 s["alert_release_rule"] = _al_eval.get("rule")
                 s["alert_release_checks"] = _al_eval.get("checks")
@@ -2399,7 +2423,11 @@ def main():
                 s["alert_release_error"] = type(exc).__name__
                 s["alert_elapsed_days"] = None
             try:
-                s["alert_risk_released"] = alert_release.recent_risk_release(s["code"], _today_ymd)
+                _risk_event = alert_release.risk_release_event(
+                    s["code"], expected_name=s.get("name"))
+                s["alert_risk_release_evidence"] = _risk_event.get("evidence")
+                s["alert_risk_released"] = alert_release.recent_risk_release(
+                    s["code"], _today_ymd, expected_name=s.get("name"))
             except Exception:
                 s["alert_risk_released"] = False
     # 정렬4.md 최종 합의: very_good_candidate 별도 승격키 제거, 저점매집·급소고회전 실정렬 승격,
