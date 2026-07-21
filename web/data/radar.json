@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21 09:03:59 KST",
+ "generated_at": "2026-07-21 09:39:26 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -47,7 +47,20 @@
   }
  ],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "365660",
+   "name": "레몬헬스케어",
+   "sector": "레몬헬스케어",
+   "change_pct": 8.3,
+   "high_pct": 13.02,
+   "vol_turnover_pct": 98.2,
+   "value_eok": 363,
+   "price": 7570.0,
+   "first_seen": "09:37",
+   "exploded": false
+  }
+ ],
  "suspects": [],
  "blocked_suspects": [],
  "rank_policy_name": "rank4",
