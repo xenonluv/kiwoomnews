@@ -288,8 +288,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T10:09:12+09:00",
-    "expires_at": "2026-07-21T10:19:12+09:00",
+    "checked_at": "2026-07-21T10:14:17+09:00",
+    "expires_at": "2026-07-21T10:24:17+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -304,12 +304,12 @@
     }
    },
    "signal_date": "20260721",
-   "price": 2415.0,
+   "price": 2345.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 63,
    "first_blocked": "2026-07-21 09:54:06 KST",
-   "last_blocked": "2026-07-21 10:09:11 KST"
+   "last_blocked": "2026-07-21 10:14:15 KST"
   },
   "049080": {
    "name": "기가레인",
@@ -331,8 +331,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T10:09:13+09:00",
-    "expires_at": "2026-07-21T10:19:13+09:00",
+    "checked_at": "2026-07-21T10:14:18+09:00",
+    "expires_at": "2026-07-21T10:24:18+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -347,15 +347,15 @@
     }
    },
    "signal_date": "20260721",
-   "price": 11090.0,
+   "price": 11060.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 62,
    "first_blocked": "2026-07-21 09:59:09 KST",
-   "last_blocked": "2026-07-21 10:09:11 KST"
+   "last_blocked": "2026-07-21 10:14:15 KST"
   }
  },
- "as_of": "2026-07-21 10:09:11 KST",
+ "as_of": "2026-07-21 10:14:15 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
