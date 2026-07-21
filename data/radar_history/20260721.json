@@ -22,9 +22,9 @@
     "re_turnover": 0
    },
    "rank": 1,
-   "precut_rank": 2,
-   "published_rank": 1,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 1,
    "latest_published_rank": 1,
    "rank_path": [
@@ -33,6 +33,15 @@
      "precut_rank": 2,
      "published_rank": 1,
      "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-21 10:09:11 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -255,7 +264,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   }
  },
  "blocked_suspects": {
@@ -279,8 +288,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T10:04:11+09:00",
-    "expires_at": "2026-07-21T10:14:11+09:00",
+    "checked_at": "2026-07-21T10:09:12+09:00",
+    "expires_at": "2026-07-21T10:19:12+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -295,16 +304,16 @@
     }
    },
    "signal_date": "20260721",
-   "price": 2470.0,
+   "price": 2415.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 63,
    "first_blocked": "2026-07-21 09:54:06 KST",
-   "last_blocked": "2026-07-21 10:04:10 KST"
+   "last_blocked": "2026-07-21 10:09:11 KST"
   },
   "049080": {
    "name": "기가레인",
-   "precut_rank": 3,
+   "precut_rank": 2,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -322,8 +331,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T10:04:13+09:00",
-    "expires_at": "2026-07-21T10:14:13+09:00",
+    "checked_at": "2026-07-21T10:09:13+09:00",
+    "expires_at": "2026-07-21T10:19:13+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -338,15 +347,15 @@
     }
    },
    "signal_date": "20260721",
-   "price": 11470.0,
+   "price": 11090.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 62,
    "first_blocked": "2026-07-21 09:59:09 KST",
-   "last_blocked": "2026-07-21 10:04:10 KST"
+   "last_blocked": "2026-07-21 10:09:11 KST"
   }
  },
- "as_of": "2026-07-21 10:04:10 KST",
+ "as_of": "2026-07-21 10:09:11 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
