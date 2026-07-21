@@ -1,52 +1,266 @@
 {
  "date": "20260721",
- "suspects": {},
- "blocked_suspects": {
-  "002680": {
-   "name": "한탑",
-   "precut_rank": 1,
-   "published": false,
-   "published_rank": null,
-   "final": false,
-   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+ "suspects": {
+  "320000": {
+   "name": "한울반도체",
+   "sector": "한울반도체",
+   "entry": 14320.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 62,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "rank": 1,
+   "precut_rank": 2,
+   "published_rank": 1,
+   "published": true,
+   "first_seen_rank": 1,
+   "latest_published_rank": 1,
+   "rank_path": [
+    {
+     "observed_at": "2026-07-21 10:04:10 KST",
+     "precut_rank": 2,
+     "published_rank": 1,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    }
+   ],
+   "rank_bucket": 2,
+   "rank_bucket_at_signal": 2,
+   "rank_reason": "저점매집+폭발회전 95% → bucket 2",
+   "rank_reason_at_signal": "저점매집+폭발회전 95% → bucket 2",
+   "shadow_bucket": [],
+   "shadow_bucket_at_signal": [],
+   "expected_touch7_rate": 86.7,
+   "expected_high_pct": 17.0,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집+회전90",
+    "n": 15,
+    "unique_n": 13,
+    "touch7_rate": 86.7,
+    "expected_high_pct": 17.0,
+    "avg_return": 9.09,
+    "bucket": 2,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "change_pct": -10.33,
+   "change_basis": "KRX",
+   "high_pct": 4.76,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "material": {
+    "grade": "A",
+    "score": 82,
+    "summary": "한울반도체, 229억 유증 신고서 또 정정요구…세 번째 제동",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "당일~1일",
+    "freshness_days": 0.07,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "반도체",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "한울반도체, 229억 유증 신고서 또 정정요구…세 번째 제동",
+      "datetime": "202606291647",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006318251",
+      "score": 70
+     },
+     {
+      "title": "[ET특징주] 한울반도체, AI MLCC 전수검사 시스템 개발… 주가 상한가",
+      "datetime": "202607201342",
+      "source": "전자신문",
+      "url": "https://n.news.naver.com/mnews/article/030/0003449076",
+      "score": 58
+     },
+     {
+      "title": "한울반도체, 무라타와 MLCC 장비 협력에 ‘이틀째 상한가’[이런국장...",
+      "datetime": "202606191454",
+      "source": "서울경제",
+      "url": "https://n.news.naver.com/mnews/article/011/0004632945",
+      "score": 42
+     },
+     {
+      "title": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주...",
+      "datetime": "202606220916",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006311796",
+      "score": 34
+     },
+     {
+      "title": "MLCC 업사이클 수혜 예상…한울반도체 4거래일 연속 급등[특징주]",
+      "datetime": "202606230913",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006312775",
+      "score": 29
+     }
+    ],
+    "source_count": 5,
+    "relevant_count": 5
+   },
+   "news": [],
+   "value_eok": 194,
+   "snapshot_open": 16110.0,
+   "snapshot_high": 16730.0,
+   "snapshot_low": 13800.0,
+   "snapshot_close": 14320.0,
+   "snapshot_volume": 1267322.0,
+   "snapshot_value": 19389000000.0,
+   "snapshot_value_eok": 193.9,
+   "snapshot_as_of": "20260721",
+   "signal_date": "20260721",
+   "signal_open": 16110.0,
+   "signal_high": 16730.0,
+   "signal_low": 13800.0,
+   "signal_close": 14320.0,
+   "signal_prev_close": 15970.0,
+   "signal_volume": 1267322.0,
+   "signal_value": 19389000000.0,
+   "signal_value_eok": 193.9,
+   "signal_peak6_price": null,
+   "signal_peak60_price": null,
+   "signal_ma20": null,
+   "signal_ma10": null,
+   "signal_source": "daily_latest",
+   "run_6d_pct": null,
+   "ma20_gap_pct": null,
+   "ma10_margin_pct": 14.65,
+   "float_ratio": 0.662,
+   "turnover_pct": 28.4,
+   "peak_turnover_pct": 95.0,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260720",
+    "peak_value_eok": 686,
+    "peak_high_pct": 29.97,
+    "peak_turnover_pct": 95.0,
+    "peak_ibs": 0.74,
+    "peak_uppertail": 6.4,
+    "ma20": 13840.5,
+    "ma20_margin_pct": 3.46,
+    "cause_summary": "[ET특징주] 한울반도체, AI MLCC 전수검사 시스템 개발… 주가 상한가",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 7.12,
+    "time": "09:10",
+    "value_eok": 17,
+    "count": 0
+   },
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 2.2
+    },
+    {
+     "time": "09:10",
+     "body_pct": 7.12
+    },
+    {
+     "time": "09:35",
+     "body_pct": 2.19
+    }
+   ],
+   "alert_now": null,
+   "alert_release": null,
+   "alert_release_rule": null,
+   "alert_release_checks": null,
+   "alert_release_error": null,
+   "alert_risk_released": null,
+   "alert_elapsed_days": null,
+   "shakeout": false,
+   "fade_pct": null,
+   "turnover_2d_pct": null,
+   "peak_dd_pct": null,
+   "strength_tier": null,
+   "strength": null,
+   "turnover_band": null,
+   "dd_band": null,
+   "dd6_pct": null,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
    "next_session_eligibility": {
     "schema_version": 1,
     "as_of_date": "20260721",
     "target_trade_date": "20260722",
-    "status": "UNVERIFIED",
-    "tradable_next_session": null,
-    "recommendable": false,
-    "auto_buy_allowed": false,
-    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
-    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T09:54:07+09:00",
-    "expires_at": "2026-07-21T10:04:07+09:00",
-    "evidence": {
-     "notice_id": "62706152",
-     "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
-     "published_at": "20260709",
-     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=62706152&code=002680&page_notice=1",
-     "source_hash": "5887e07ab66e03e0e896"
-    },
+    "checked_at": "2026-07-21T10:04:12+09:00",
+    "expires_at": "2026-07-21T10:14:12+09:00",
+    "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
      "pages_checked": 2,
      "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
     }
    },
-   "signal_date": "20260721",
-   "price": 2460.0,
-   "pattern": "reaccum",
-   "rank_bucket": 2,
-   "suspicion_score": 63,
-   "first_blocked": "2026-07-21 09:54:06 KST",
-   "last_blocked": "2026-07-21 09:54:06 KST"
-  },
-  "049080": {
-   "name": "기가레인",
+   "next_market_alert_preview": null,
+   "matched_events": [
+    "2026-07-29_FOMC 금리 결정 ("
+   ],
+   "first_seen": "2026-07-21 10:04:10 KST",
+   "evaluated": false,
+   "result": null,
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "rank_model_source_commit": "7f3acab",
+   "final": true
+  }
+ },
+ "blocked_suspects": {
+  "002680": {
+   "name": "한탑",
    "precut_rank": 1,
    "published": false,
    "published_rank": null,
@@ -65,8 +279,51 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T09:59:11+09:00",
-    "expires_at": "2026-07-21T10:09:11+09:00",
+    "checked_at": "2026-07-21T10:04:11+09:00",
+    "expires_at": "2026-07-21T10:14:11+09:00",
+    "evidence": {
+     "notice_id": "62706152",
+     "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
+     "published_at": "20260709",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=62706152&code=002680&page_notice=1",
+     "source_hash": "5887e07ab66e03e0e896"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260721",
+   "price": 2470.0,
+   "pattern": "reaccum",
+   "rank_bucket": 2,
+   "suspicion_score": 63,
+   "first_blocked": "2026-07-21 09:54:06 KST",
+   "last_blocked": "2026-07-21 10:04:10 KST"
+  },
+  "049080": {
+   "name": "기가레인",
+   "precut_rank": 3,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260721",
+    "target_trade_date": "20260722",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-21T10:04:13+09:00",
+    "expires_at": "2026-07-21T10:14:13+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -81,15 +338,15 @@
     }
    },
    "signal_date": "20260721",
-   "price": 11190.0,
+   "price": 11470.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 62,
    "first_blocked": "2026-07-21 09:59:09 KST",
-   "last_blocked": "2026-07-21 09:59:09 KST"
+   "last_blocked": "2026-07-21 10:04:10 KST"
   }
  },
- "as_of": "2026-07-21 09:59:09 KST",
+ "as_of": "2026-07-21 10:04:10 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
