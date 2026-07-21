@@ -22,9 +22,9 @@
     "re_turnover": 0
    },
    "rank": 1,
-   "precut_rank": 1,
-   "published_rank": 1,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 1,
    "latest_published_rank": 1,
    "rank_path": [
@@ -60,6 +60,15 @@
      "precut_rank": 1,
      "published_rank": 1,
      "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-21 11:29:07 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 2,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -286,22 +295,22 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   },
   "465770": {
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
-   "entry": 4520.0,
+   "entry": 4550.0,
    "score": 0,
    "breakdown": {},
    "suspicion_score": 76,
    "score_breakdown_display": {},
-   "rank": 2,
-   "precut_rank": null,
-   "published_rank": null,
-   "published": false,
+   "rank": 1,
+   "precut_rank": 2,
+   "published_rank": 1,
+   "published": true,
    "first_seen_rank": 1,
-   "latest_published_rank": 2,
+   "latest_published_rank": 1,
    "rank_path": [
     {
      "observed_at": "2026-07-21 10:19:11 KST",
@@ -365,6 +374,15 @@
      "rank_bucket": 5,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-21 11:29:07 KST",
+     "precut_rank": 2,
+     "published_rank": 1,
+     "published": true,
+     "rank_bucket": 5,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
     }
    ],
    "rank_bucket": 5,
@@ -390,7 +408,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": 9.18,
+   "change_pct": 9.9,
    "change_basis": "KRX",
    "high_pct": 27.29,
    "pattern": "shakeout",
@@ -403,7 +421,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.05,
+    "freshness_days": 0.06,
     "directness": "직접",
     "tags": [
      "공시",
@@ -455,34 +473,34 @@
      "sentiment": "호재"
     }
    ],
-   "value_eok": 275,
+   "value_eok": 287,
    "snapshot_open": 4480.0,
    "snapshot_high": 5270.0,
    "snapshot_low": 4180.0,
-   "snapshot_close": 4520.0,
-   "snapshot_volume": 5742102.0,
-   "snapshot_value": 27474000000.0,
-   "snapshot_value_eok": 274.7,
+   "snapshot_close": 4550.0,
+   "snapshot_volume": 6013330.0,
+   "snapshot_value": 28744000000.0,
+   "snapshot_value_eok": 287.4,
    "snapshot_as_of": "20260721",
    "signal_date": "20260721",
    "signal_open": 4480.0,
    "signal_high": 5270.0,
    "signal_low": 4180.0,
-   "signal_close": 4520.0,
+   "signal_close": 4550.0,
    "signal_prev_close": 4140.0,
-   "signal_volume": 5742102.0,
-   "signal_value": 27474000000.0,
-   "signal_value_eok": 274.7,
+   "signal_volume": 6013330.0,
+   "signal_value": 28744000000.0,
+   "signal_value_eok": 287.4,
    "signal_peak6_price": 5270.0,
    "signal_peak60_price": 5970.0,
-   "signal_ma20": 2452.3,
-   "signal_ma10": 2965.6,
+   "signal_ma20": 2453.8,
+   "signal_ma10": 2968.6,
    "signal_source": "daily_latest",
-   "run_6d_pct": 131.3,
-   "ma20_gap_pct": 84.3,
-   "ma10_margin_pct": 52.41,
+   "run_6d_pct": 132.9,
+   "ma20_gap_pct": 85.4,
+   "ma10_margin_pct": 53.27,
    "float_ratio": 0.6245,
-   "turnover_pct": 128.2,
+   "turnover_pct": 134.3,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -515,7 +533,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=72950509&code=465770&page_notice=1",
     "raw_text_hash": "a675160d43258fafc71a",
-    "fetched_at": "2026-07-21 11:19:09 KST",
+    "fetched_at": "2026-07-21 11:29:06 KST",
     "notice_no": "72950509"
    },
    "alert_release_checks": {
@@ -531,14 +549,14 @@
    "alert_risk_released": false,
    "alert_elapsed_days": 1,
    "shakeout": true,
-   "fade_pct": 18.1,
-   "turnover_2d_pct": 158.6,
-   "peak_dd_pct": -24.3,
+   "fade_pct": 17.4,
+   "turnover_2d_pct": 164.7,
+   "peak_dd_pct": -23.8,
    "strength_tier": 2,
    "strength": "조합C(중립)",
    "turnover_band": 1,
    "dd_band": 1,
-   "dd6_pct": -14.2,
+   "dd6_pct": -13.7,
    "very_good": false,
    "very_good_tier": null,
    "very_good_candidate": false,
@@ -557,8 +575,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:19:14+09:00",
-    "expires_at": "2026-07-21T11:29:14+09:00",
+    "checked_at": "2026-07-21T11:29:11+09:00",
+    "expires_at": "2026-07-21T11:39:11+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -576,7 +594,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": false
+   "final": true
   }
  },
  "blocked_suspects": {
@@ -625,7 +643,7 @@
   },
   "049080": {
    "name": "기가레인",
-   "precut_rank": 2,
+   "precut_rank": 1,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -643,8 +661,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:24:06+09:00",
-    "expires_at": "2026-07-21T11:34:06+09:00",
+    "checked_at": "2026-07-21T11:29:09+09:00",
+    "expires_at": "2026-07-21T11:39:09+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -659,12 +677,12 @@
     }
    },
    "signal_date": "20260721",
-   "price": 10900.0,
+   "price": 10710.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 62,
    "first_blocked": "2026-07-21 09:59:09 KST",
-   "last_blocked": "2026-07-21 11:24:04 KST"
+   "last_blocked": "2026-07-21 11:29:07 KST"
   },
   "066910": {
    "name": "손오공",
@@ -686,8 +704,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:24:08+09:00",
-    "expires_at": "2026-07-21T11:34:08+09:00",
+    "checked_at": "2026-07-21T11:29:12+09:00",
+    "expires_at": "2026-07-21T11:39:12+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -702,15 +720,15 @@
     }
    },
    "signal_date": "20260721",
-   "price": 3250.0,
+   "price": 3265.0,
    "pattern": "shakeout",
    "rank_bucket": 8,
    "suspicion_score": 70,
    "first_blocked": "2026-07-21 10:19:11 KST",
-   "last_blocked": "2026-07-21 11:24:04 KST"
+   "last_blocked": "2026-07-21 11:29:07 KST"
   }
  },
- "as_of": "2026-07-21 11:24:04 KST",
+ "as_of": "2026-07-21 11:29:07 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
