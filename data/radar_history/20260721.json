@@ -4,7 +4,7 @@
   "320000": {
    "name": "한울반도체",
    "sector": "한울반도체",
-   "entry": 14220.0,
+   "entry": 14190.0,
    "score": 0,
    "breakdown": {
     "base": 0,
@@ -84,7 +84,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -10.96,
+   "change_pct": -11.15,
    "change_basis": "KRX",
    "high_pct": 4.76,
    "pattern": "reaccum",
@@ -147,24 +147,24 @@
     "relevant_count": 5
    },
    "news": [],
-   "value_eok": 225,
+   "value_eok": 226,
    "snapshot_open": 16110.0,
    "snapshot_high": 16730.0,
    "snapshot_low": 13800.0,
-   "snapshot_close": 14220.0,
-   "snapshot_volume": 1487836.0,
-   "snapshot_value": 22540000000.0,
-   "snapshot_value_eok": 225.4,
+   "snapshot_close": 14190.0,
+   "snapshot_volume": 1492851.0,
+   "snapshot_value": 22611000000.0,
+   "snapshot_value_eok": 226.1,
    "snapshot_as_of": "20260721",
    "signal_date": "20260721",
    "signal_open": 16110.0,
    "signal_high": 16730.0,
    "signal_low": 13800.0,
-   "signal_close": 14220.0,
+   "signal_close": 14190.0,
    "signal_prev_close": 15970.0,
-   "signal_volume": 1487836.0,
-   "signal_value": 22540000000.0,
-   "signal_value_eok": 225.4,
+   "signal_volume": 1492851.0,
+   "signal_value": 22611000000.0,
+   "signal_value_eok": 226.1,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
    "signal_ma20": null,
@@ -172,9 +172,9 @@
    "signal_source": "daily_latest",
    "run_6d_pct": null,
    "ma20_gap_pct": null,
-   "ma10_margin_pct": 13.94,
+   "ma10_margin_pct": 13.73,
    "float_ratio": 0.662,
-   "turnover_pct": 33.4,
+   "turnover_pct": 33.5,
    "peak_turnover_pct": 95.0,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -191,8 +191,8 @@
     "peak_turnover_pct": 95.0,
     "peak_ibs": 0.74,
     "peak_uppertail": 6.4,
-    "ma20": 13835.5,
-    "ma20_margin_pct": 2.78,
+    "ma20": 13834.0,
+    "ma20_margin_pct": 2.57,
     "cause_summary": "[ET특징주] 한울반도체, AI MLCC 전수검사 시스템 개발… 주가 상한가",
     "was_theme_leader": false,
     "source": "live"
@@ -265,8 +265,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:19:12+09:00",
-    "expires_at": "2026-07-21T11:29:12+09:00",
+    "checked_at": "2026-07-21T11:24:06+09:00",
+    "expires_at": "2026-07-21T11:34:06+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -297,9 +297,9 @@
    "suspicion_score": 76,
    "score_breakdown_display": {},
    "rank": 2,
-   "precut_rank": 3,
-   "published_rank": 2,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 1,
    "latest_published_rank": 2,
    "rank_path": [
@@ -353,6 +353,15 @@
      "precut_rank": 3,
      "published_rank": 2,
      "published": true,
+     "rank_bucket": 5,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-21 11:24:04 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 5,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -567,7 +576,7 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
-   "final": true
+   "final": false
   }
  },
  "blocked_suspects": {
@@ -634,8 +643,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:19:12+09:00",
-    "expires_at": "2026-07-21T11:29:12+09:00",
+    "checked_at": "2026-07-21T11:24:06+09:00",
+    "expires_at": "2026-07-21T11:34:06+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -650,16 +659,16 @@
     }
    },
    "signal_date": "20260721",
-   "price": 10950.0,
+   "price": 10900.0,
    "pattern": "reaccum",
    "rank_bucket": 2,
    "suspicion_score": 62,
    "first_blocked": "2026-07-21 09:59:09 KST",
-   "last_blocked": "2026-07-21 11:19:10 KST"
+   "last_blocked": "2026-07-21 11:24:04 KST"
   },
   "066910": {
    "name": "손오공",
-   "precut_rank": 4,
+   "precut_rank": 3,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -677,8 +686,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-21T11:19:15+09:00",
-    "expires_at": "2026-07-21T11:29:15+09:00",
+    "checked_at": "2026-07-21T11:24:08+09:00",
+    "expires_at": "2026-07-21T11:34:08+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -693,15 +702,15 @@
     }
    },
    "signal_date": "20260721",
-   "price": 3265.0,
+   "price": 3250.0,
    "pattern": "shakeout",
-   "rank_bucket": 6,
+   "rank_bucket": 8,
    "suspicion_score": 70,
    "first_blocked": "2026-07-21 10:19:11 KST",
-   "last_blocked": "2026-07-21 11:19:10 KST"
+   "last_blocked": "2026-07-21 11:24:04 KST"
   }
  },
- "as_of": "2026-07-21 11:19:10 KST",
+ "as_of": "2026-07-21 11:24:04 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
