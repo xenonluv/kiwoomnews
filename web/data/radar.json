@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21 09:49:09 KST",
+ "generated_at": "2026-07-21 09:54:06 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,17 +52,252 @@
    "code": "365660",
    "name": "레몬헬스케어",
    "sector": "레몬헬스케어",
-   "change_pct": 3.0,
+   "change_pct": 3.29,
    "high_pct": 13.02,
    "vol_turnover_pct": 98.2,
    "value_eok": 363,
-   "price": 7200.0,
+   "price": 7220.0,
    "first_seen": "09:37",
    "exploded": false
   }
  ],
  "suspects": [],
- "blocked_suspects": [],
+ "blocked_suspects": [
+  {
+   "code": "002680",
+   "name": "한탑",
+   "sector": "한탑",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 63,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 1,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 2460.0,
+   "change_pct": -11.03,
+   "change_basis": "KRX",
+   "high_pct": 0.0,
+   "value_eok": 9,
+   "snapshot_open": 2765.0,
+   "snapshot_high": 2765.0,
+   "snapshot_low": 2410.0,
+   "snapshot_close": 2460.0,
+   "snapshot_volume": 353456.0,
+   "snapshot_value": 894000000.0,
+   "snapshot_value_eok": 8.9,
+   "snapshot_as_of": "20260721",
+   "signal_date": "20260721",
+   "signal_open": 2765.0,
+   "signal_high": 2765.0,
+   "signal_low": 2410.0,
+   "signal_close": 2460.0,
+   "signal_prev_close": 2765.0,
+   "signal_volume": 353456.0,
+   "signal_value": 894000000.0,
+   "signal_value_eok": 8.9,
+   "signal_source": "daily_latest",
+   "turnover_pct": 9.6,
+   "peak_turnover_pct": 99.9,
+   "float_ratio": 0.5692,
+   "turnover_basis": "float",
+   "ma10": 2046.5,
+   "ma10_margin_pct": 20.21,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 4.34,
+    "time": "09:35",
+    "value_eok": 1,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 2.23,
+     "value_eok": 2
+    },
+    {
+     "time": "09:30",
+     "body_pct": 3.27,
+     "value_eok": 0
+    },
+    {
+     "time": "09:35",
+     "body_pct": 4.34,
+     "value_eok": 1
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:05",
+     "body_pct": 2.23
+    },
+    {
+     "time": "09:30",
+     "body_pct": 3.27
+    },
+    {
+     "time": "09:35",
+     "body_pct": 4.34
+    }
+   ],
+   "news": [],
+   "matched_events": [],
+   "theme": "유가",
+   "material": {
+    "grade": "A",
+    "score": 73,
+    "summary": "한탑, 주식병합으로 19일부터 거래 정지",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "오래됨",
+    "freshness_days": 11.25,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "유가"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "한탑, 주식병합으로 19일부터 거래 정지",
+      "datetime": "202606161724",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006307603",
+      "score": 64
+     },
+     {
+      "title": "한탑, 공정위 과징금 금액 확인…&quot;절차에 따라 대응&quot;",
+      "datetime": "202605201634",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006286175",
+      "score": 64
+     },
+     {
+      "title": "한탑, 주식병합 완료 후 거래 재개…&quot;기업가치 재평가 기대&quot;",
+      "datetime": "202607090851",
+      "source": "아시아경제",
+      "url": "https://n.news.naver.com/mnews/article/277/0005787546",
+      "score": 50
+     },
+     {
+      "title": "한탑, 공정위서 243억원 규모 과징금 부과",
+      "datetime": "202605201606",
+      "source": "이데일리",
+      "url": "https://n.news.naver.com/mnews/article/018/0006286147",
+      "score": 26
+     }
+    ],
+    "source_count": 4,
+    "relevant_count": 4
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260720",
+    "peak_value_eok": 101,
+    "peak_high_pct": 27.57,
+    "peak_turnover_pct": 99.9,
+    "peak_ibs": 0.66,
+    "peak_uppertail": 12.1,
+    "ma20": 1958.2,
+    "ma20_margin_pct": 25.62,
+    "cause_summary": "한탑, 공정위서 243억원 규모 과징금 부과",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": "주의",
+   "listing_market": "KOSDAQ",
+   "rank_bucket": 2,
+   "rank_reason": "저점매집+폭발회전 100% → bucket 2",
+   "shadow_bucket": [],
+   "expected_touch7_rate": 86.7,
+   "expected_high_pct": 17.0,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집+회전90",
+    "n": 15,
+    "unique_n": 13,
+    "touch7_rate": 86.7,
+    "expected_high_pct": 17.0,
+    "avg_return": 9.09,
+    "bucket": 2,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "rank_prior": {
+    "source": "chairman_40y_rule",
+    "strength": "strong",
+    "summary": "저점매집과 폭발일 회전율 90% 이상"
+   },
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_source_commit": "7f3acab",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "precut_rank": 1,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260721",
+    "target_trade_date": "20260722",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-21T09:54:07+09:00",
+    "expires_at": "2026-07-21T10:04:07+09:00",
+    "evidence": {
+     "notice_id": "62706152",
+     "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
+     "published_at": "20260709",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=62706152&code=002680&page_notice=1",
+     "source_hash": "5887e07ab66e03e0e896"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "published": false,
+   "published_rank": null,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다."
+  }
+ ],
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
