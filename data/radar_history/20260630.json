@@ -82,7 +82,16 @@
     "next_open": 4350.0,
     "next_low": 4140.0,
     "next_open_pct": 1.99,
-    "next_low_pct": -2.93
+    "next_low_pct": -2.93,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 24.50175849941383,
+    "distance_to_7_pct": 17.501758,
+    "distance_to_13_pct": 11.501758,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true,
    "strategy": {

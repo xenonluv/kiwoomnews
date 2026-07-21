@@ -84,7 +84,16 @@
     "next_open": 45850.0,
     "next_low": 39200.0,
     "next_open_pct": 5.4,
-    "next_low_pct": -9.89
+    "next_low_pct": -9.89,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 15.862068965517242,
+    "distance_to_7_pct": 8.862069,
+    "distance_to_13_pct": 2.862069,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true,
    "strategy": {
@@ -173,7 +182,16 @@
     "next_open": 2890.0,
     "next_low": 2550.0,
     "next_open_pct": -2.86,
-    "next_low_pct": -14.29
+    "next_low_pct": -14.29,
+    "metrics_status": "ok",
+    "next_high_pct_raw": -2.857142857142857,
+    "distance_to_7_pct": -9.857143,
+    "distance_to_13_pct": -15.857143,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true,
    "strategy": {

@@ -127,7 +127,16 @@
     "return_pct": 0.54,
     "next_high_pct": 18.28,
     "next_open_pct": -0.54,
-    "next_low_pct": -5.91
+    "next_low_pct": -5.91,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 18.27956989247312,
+    "distance_to_7_pct": 11.27957,
+    "distance_to_13_pct": 5.27957,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true,
    "live_change_pct": 8.35,

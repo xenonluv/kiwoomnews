@@ -80,11 +80,20 @@
     "hit": false,
     "high3": true,
     "return_pct": -8.3,
-    "next_high_pct": 15.83,
+    "next_high_pct": 24.35,
     "next_open": 11200.0,
     "next_low": 8610.0,
     "next_open_pct": 8.11,
-    "next_low_pct": -16.89
+    "next_low_pct": -16.89,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 24.352331606217618,
+    "distance_to_7_pct": 17.352332,
+    "distance_to_13_pct": 11.352332,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": false,
    "strategy": {

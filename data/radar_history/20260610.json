@@ -34,7 +34,16 @@
     "next_open": 6060.0,
     "next_low": 5640.0,
     "next_open_pct": 0.5,
-    "next_low_pct": -6.47
+    "next_low_pct": -6.47,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 4.8092868988391375,
+    "distance_to_7_pct": -2.190713,
+    "distance_to_13_pct": -8.190713,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    }
   },
   "095610": {
@@ -70,7 +79,16 @@
     "next_open": 173000.0,
     "next_low": 163500.0,
     "next_open_pct": -0.23,
-    "next_low_pct": -5.71
+    "next_low_pct": -5.71,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 7.26643598615917,
+    "distance_to_7_pct": 0.266436,
+    "distance_to_13_pct": -5.733564,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    }
   }
  },

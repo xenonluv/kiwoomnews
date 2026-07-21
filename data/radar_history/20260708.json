@@ -164,7 +164,16 @@
     "return_pct": 23.64,
     "next_high_pct": 28.57,
     "next_open_pct": 10.71,
-    "next_low_pct": 0.43
+    "next_low_pct": 0.43,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 28.571428571428573,
+    "distance_to_7_pct": 21.571429,
+    "distance_to_13_pct": 15.571429,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -302,9 +311,18 @@
     "hit": true,
     "high3": true,
     "return_pct": 1.08,
-    "next_high_pct": 25.04,
+    "next_high_pct": 62.48,
     "next_open_pct": 8.29,
-    "next_low_pct": -13.75
+    "next_low_pct": -13.75,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 62.4750499001996,
+    "distance_to_7_pct": 55.47505,
+    "distance_to_13_pct": 49.47505,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": false
   },
@@ -468,7 +486,16 @@
     "return_pct": 0.0,
     "next_high_pct": 29.22,
     "next_open_pct": -6.09,
-    "next_low_pct": -9.22
+    "next_low_pct": -9.22,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 29.217391304347824,
+    "distance_to_7_pct": 22.217391,
+    "distance_to_13_pct": 16.217391,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -693,7 +720,16 @@
     "return_pct": -10.95,
     "next_high_pct": 0.0,
     "next_open_pct": -4.8,
-    "next_low_pct": -14.49
+    "next_low_pct": -14.49,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 0.0,
+    "distance_to_7_pct": -7.0,
+    "distance_to_13_pct": -13.0,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -783,9 +819,18 @@
     "hit": true,
     "high3": true,
     "return_pct": 9.41,
-    "next_high_pct": 15.87,
+    "next_high_pct": 18.27,
     "next_open_pct": -1.11,
-    "next_low_pct": -1.29
+    "next_low_pct": -1.29,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 18.267419962335218,
+    "distance_to_7_pct": 11.26742,
+    "distance_to_13_pct": 5.26742,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": false
   },
@@ -927,9 +972,18 @@
     "hit": true,
     "high3": true,
     "return_pct": 1.73,
-    "next_high_pct": 9.5,
+    "next_high_pct": 9.81,
     "next_open_pct": -2.16,
-    "next_low_pct": -3.6
+    "next_low_pct": -3.6,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 9.812409812409813,
+    "distance_to_7_pct": 2.81241,
+    "distance_to_13_pct": -3.18759,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -1130,7 +1184,16 @@
     "return_pct": 29.94,
     "next_high_pct": 29.94,
     "next_open_pct": 3.19,
-    "next_low_pct": 0.8
+    "next_low_pct": 0.8,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 29.940119760479043,
+    "distance_to_7_pct": 22.94012,
+    "distance_to_13_pct": 16.94012,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -1220,9 +1283,18 @@
     "hit": false,
     "high3": true,
     "return_pct": -4.28,
-    "next_high_pct": 8.36,
+    "next_high_pct": 12.55,
     "next_open_pct": -2.42,
-    "next_low_pct": -9.57
+    "next_low_pct": -9.57,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 12.548262548262548,
+    "distance_to_7_pct": 5.548263,
+    "distance_to_13_pct": -0.451737,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -1374,7 +1446,16 @@
     "return_pct": -9.43,
     "next_high_pct": 3.18,
     "next_open_pct": -1.98,
-    "next_low_pct": -11.77
+    "next_low_pct": -11.77,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 3.1770833333333335,
+    "distance_to_7_pct": -3.822917,
+    "distance_to_13_pct": -9.822917,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -1542,7 +1623,16 @@
     "return_pct": -10.99,
     "next_high_pct": -1.46,
     "next_open_pct": -2.47,
-    "next_low_pct": -15.13
+    "next_low_pct": -15.13,
+    "metrics_status": "ok",
+    "next_high_pct_raw": -1.4573991031390134,
+    "distance_to_7_pct": -8.457399,
+    "distance_to_13_pct": -14.457399,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -1676,9 +1766,18 @@
     "hit": false,
     "high3": false,
     "return_pct": -12.7,
-    "next_high_pct": 1.67,
+    "next_high_pct": 3.09,
     "next_open_pct": -2.17,
-    "next_low_pct": -19.0
+    "next_low_pct": -19.0,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 3.093812375249501,
+    "distance_to_7_pct": -3.906188,
+    "distance_to_13_pct": -9.906188,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -1840,7 +1939,16 @@
     "return_pct": -10.53,
     "next_high_pct": 6.41,
     "next_open_pct": 0.11,
-    "next_low_pct": -12.6
+    "next_low_pct": -12.6,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 6.406080347448426,
+    "distance_to_7_pct": -0.59392,
+    "distance_to_13_pct": -6.59392,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   }

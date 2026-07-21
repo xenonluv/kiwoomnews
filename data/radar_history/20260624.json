@@ -79,7 +79,16 @@
     "next_open": 20800.0,
     "next_low": 18040.0,
     "next_open_pct": -6.94,
-    "next_low_pct": -19.28
+    "next_low_pct": -19.28,
+    "metrics_status": "ok",
+    "next_high_pct_raw": -6.040268456375839,
+    "distance_to_7_pct": -13.040268,
+    "distance_to_13_pct": -19.040268,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true,
    "ai_pred": {

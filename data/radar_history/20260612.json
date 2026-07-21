@@ -44,11 +44,20 @@
     "hit": false,
     "high3": false,
     "return_pct": -4.09,
-    "next_high_pct": 2.86,
+    "next_high_pct": 1.89,
     "next_open": 36800.0,
     "next_low": 32500.0,
     "next_open_pct": 0.27,
-    "next_low_pct": -11.44
+    "next_low_pct": -11.44,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 1.8893387314439947,
+    "distance_to_7_pct": -5.110661,
+    "distance_to_13_pct": -11.110661,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -85,7 +94,16 @@
     "next_open": 103700.0,
     "next_low": 99300.0,
     "next_open_pct": 1.17,
-    "next_low_pct": -3.12
+    "next_low_pct": -3.12,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 5.365853658536586,
+    "distance_to_7_pct": -1.634146,
+    "distance_to_13_pct": -7.634146,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true,
    "ai_pred": {
@@ -131,7 +149,16 @@
     "next_open": 67700.0,
     "next_low": 66300.0,
     "next_open_pct": 3.68,
-    "next_low_pct": 1.53
+    "next_low_pct": 1.53,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 13.32312404287902,
+    "distance_to_7_pct": 6.323124,
+    "distance_to_13_pct": 0.323124,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": false
    },
    "final": true,
    "ai_pred": {
@@ -177,7 +204,16 @@
     "next_open": 237500.0,
     "next_low": 218000.0,
     "next_open_pct": 2.81,
-    "next_low_pct": -5.63
+    "next_low_pct": -5.63,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 5.627705627705628,
+    "distance_to_7_pct": -1.372294,
+    "distance_to_13_pct": -7.372294,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true,
    "ai_pred": {
@@ -233,11 +269,20 @@
     "hit": true,
     "high3": true,
     "return_pct": 4.5,
-    "next_high_pct": 6.82,
+    "next_high_pct": 5.84,
     "next_open": 342500.0,
     "next_low": 334000.0,
     "next_open_pct": 6.2,
-    "next_low_pct": 3.57
+    "next_low_pct": 3.57,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 5.837173579109063,
+    "distance_to_7_pct": -1.162826,
+    "distance_to_13_pct": -7.162826,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   }

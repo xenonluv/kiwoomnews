@@ -89,7 +89,16 @@
     "return_pct": -4.19,
     "next_high_pct": 15.79,
     "next_open_pct": 5.47,
-    "next_low_pct": -5.08
+    "next_low_pct": -5.08,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 15.792410714285714,
+    "distance_to_7_pct": 8.792411,
+    "distance_to_13_pct": 2.792411,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -204,7 +213,16 @@
     "return_pct": 11.02,
     "next_high_pct": 23.67,
     "next_open_pct": -2.04,
-    "next_low_pct": -4.69
+    "next_low_pct": -4.69,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 23.6734693877551,
+    "distance_to_7_pct": 16.673469,
+    "distance_to_13_pct": 10.673469,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": false
   },
@@ -296,7 +314,16 @@
     "return_pct": -4.47,
     "next_high_pct": 6.84,
     "next_open_pct": -2.09,
-    "next_low_pct": -5.73
+    "next_low_pct": -5.73,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 6.843575418994414,
+    "distance_to_7_pct": -0.156425,
+    "distance_to_13_pct": -6.156425,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -388,7 +415,16 @@
     "return_pct": 2.39,
     "next_high_pct": 10.5,
     "next_open_pct": 0.24,
-    "next_low_pct": -6.56
+    "next_low_pct": -6.56,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 10.501193317422434,
+    "distance_to_7_pct": 3.501193,
+    "distance_to_13_pct": -2.498807,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -507,7 +543,16 @@
     "return_pct": -4.56,
     "next_high_pct": 10.38,
     "next_open_pct": -1.06,
-    "next_low_pct": -7.84
+    "next_low_pct": -7.84,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 10.38135593220339,
+    "distance_to_7_pct": 3.381356,
+    "distance_to_13_pct": -2.618644,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -599,7 +644,16 @@
     "return_pct": 29.94,
     "next_high_pct": 29.94,
     "next_open_pct": 9.88,
-    "next_low_pct": 2.99
+    "next_low_pct": 2.99,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 29.940119760479043,
+    "distance_to_7_pct": 22.94012,
+    "distance_to_13_pct": 16.94012,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -661,9 +715,18 @@
     "hit": false,
     "high3": false,
     "return_pct": 0.0,
-    "next_high_pct": 0.0,
+    "next_high_pct": 4.95,
     "next_open_pct": 0.0,
-    "next_low_pct": 0.0
+    "next_low_pct": 0.0,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 4.94752623688156,
+    "distance_to_7_pct": -2.052474,
+    "distance_to_13_pct": -8.052474,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false,
    "signal_date": "20260707",
@@ -863,7 +926,16 @@
     "return_pct": -3.99,
     "next_high_pct": 9.65,
     "next_open_pct": 0.89,
-    "next_low_pct": -5.43
+    "next_low_pct": -5.43,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 9.645232815964523,
+    "distance_to_7_pct": 2.645233,
+    "distance_to_13_pct": -3.354767,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -955,7 +1027,16 @@
     "return_pct": 4.16,
     "next_high_pct": 18.27,
     "next_open_pct": -2.05,
-    "next_low_pct": -10.44
+    "next_low_pct": -10.44,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 18.267629094947253,
+    "distance_to_7_pct": 11.267629,
+    "distance_to_13_pct": 5.267629,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -1047,7 +1128,16 @@
     "return_pct": 24.0,
     "next_high_pct": 26.25,
     "next_open_pct": 0.0,
-    "next_low_pct": -7.5
+    "next_low_pct": -7.5,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 26.25,
+    "distance_to_7_pct": 19.25,
+    "distance_to_13_pct": 13.25,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -1201,7 +1291,16 @@
     "return_pct": 0.78,
     "next_high_pct": 5.78,
     "next_open_pct": 3.22,
-    "next_low_pct": -6.22
+    "next_low_pct": -6.22,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 5.777777777777778,
+    "distance_to_7_pct": -1.222222,
+    "distance_to_13_pct": -7.222222,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -1342,7 +1441,16 @@
     "return_pct": -13.44,
     "next_high_pct": 1.02,
     "next_open_pct": 0.38,
-    "next_low_pct": -16.65
+    "next_low_pct": -16.65,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 1.0243277848911652,
+    "distance_to_7_pct": -5.975672,
+    "distance_to_13_pct": -11.975672,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -1449,9 +1557,18 @@
     "hit": false,
     "high3": false,
     "return_pct": -11.9,
-    "next_high_pct": -0.58,
+    "next_high_pct": -1.86,
     "next_open_pct": -2.47,
-    "next_low_pct": -12.92
+    "next_low_pct": -12.92,
+    "metrics_status": "ok",
+    "next_high_pct_raw": -1.8624641833810889,
+    "distance_to_7_pct": -8.862464,
+    "distance_to_13_pct": -14.862464,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": false
   },
@@ -1633,7 +1750,16 @@
     "return_pct": 8.71,
     "next_high_pct": 19.13,
     "next_open_pct": 6.27,
-    "next_low_pct": 0.96
+    "next_low_pct": 0.96,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 19.128586609989373,
+    "distance_to_7_pct": 12.128587,
+    "distance_to_13_pct": 6.128587,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": true
   },
@@ -1787,9 +1913,18 @@
     "hit": true,
     "high3": true,
     "return_pct": 9.05,
-    "next_high_pct": 19.85,
+    "next_high_pct": 20.2,
     "next_open_pct": 1.9,
-    "next_low_pct": -1.9
+    "next_low_pct": -1.9,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 20.20497803806735,
+    "distance_to_7_pct": 13.204978,
+    "distance_to_13_pct": 7.204978,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": true,
+    "touch15": true
    },
    "final": false
   },
@@ -1881,7 +2016,16 @@
     "return_pct": -13.52,
     "next_high_pct": 12.25,
     "next_open_pct": 6.08,
-    "next_low_pct": -16.42
+    "next_low_pct": -16.42,
+    "metrics_status": "ok",
+    "next_high_pct_raw": 12.250453720508167,
+    "distance_to_7_pct": 5.250454,
+    "distance_to_13_pct": -0.749546,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": true,
+    "touch11": true,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   },
@@ -2020,7 +2164,16 @@
     "return_pct": -9.61,
     "next_high_pct": -0.9,
     "next_open_pct": -1.5,
-    "next_low_pct": -13.21
+    "next_low_pct": -13.21,
+    "metrics_status": "ok",
+    "next_high_pct_raw": -0.9009009009009009,
+    "distance_to_7_pct": -7.900901,
+    "distance_to_13_pct": -13.900901,
+    "metrics_version": "next-high-raw-v1",
+    "touch7": false,
+    "touch11": false,
+    "touch13": false,
+    "touch15": false
    },
    "final": true
   }
