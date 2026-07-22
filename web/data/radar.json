@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22 10:44:00 KST",
+ "generated_at": "2026-07-22 10:49:02 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,12 +52,24 @@
    "code": "014950",
    "name": "삼익제약",
    "sector": "삼익제약",
-   "change_pct": 1.91,
+   "change_pct": 1.39,
    "high_pct": 13.72,
    "vol_turnover_pct": 57.3,
    "value_eok": 145,
-   "price": 5870.0,
+   "price": 5840.0,
    "first_seen": "10:07",
+   "exploded": false
+  },
+  {
+   "code": "413630",
+   "name": "씨피시스템",
+   "sector": "씨피시스템",
+   "change_pct": 11.26,
+   "high_pct": 18.67,
+   "vol_turnover_pct": 52.9,
+   "value_eok": 203,
+   "price": 3755.0,
+   "first_seen": "10:47",
    "exploded": false
   }
  ],
