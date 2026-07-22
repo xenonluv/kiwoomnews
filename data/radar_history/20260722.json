@@ -4,10 +4,10 @@
   "011090": {
    "name": "에넥스",
    "sector": "에넥스",
-   "entry": 1362.0,
+   "entry": 1388.0,
    "score": 0,
    "breakdown": {},
-   "suspicion_score": 78,
+   "suspicion_score": 77,
    "score_breakdown_display": {},
    "rank": 1,
    "precut_rank": 1,
@@ -28,7 +28,7 @@
    ],
    "rank_bucket": 0,
    "rank_bucket_at_signal": 0,
-   "rank_reason": "매우좋음 Tier2(과낙)(dd6 -51%) → bucket 0",
+   "rank_reason": "매우좋음 Tier2(과낙)(dd6 -50%) → bucket 0",
    "rank_reason_at_signal": "매우좋음 Tier2(과낙)(dd6 -51%) → bucket 0",
    "shadow_bucket": [
     "S2",
@@ -52,7 +52,7 @@
     "basis": "정렬4.md 2026-07-10 확정 스냅샷",
     "population": "overlapping_retro_reference"
    },
-   "change_pct": -6.58,
+   "change_pct": -4.8,
    "change_basis": "KRX",
    "high_pct": 27.23,
    "pattern": "shakeout",
@@ -103,7 +103,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 0.87,
-    "freshness_as_of": "2026-07-22T14:24:46+09:00",
+    "freshness_as_of": "2026-07-22T14:29:41+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T17:31:00+09:00",
     "freshness_parse_status": "complete",
@@ -139,30 +139,30 @@
    "snapshot_open": 1660.0,
    "snapshot_high": 1855.0,
    "snapshot_low": 1328.0,
-   "snapshot_close": 1362.0,
-   "snapshot_volume": 3514825.0,
-   "snapshot_value": 5623000000.0,
-   "snapshot_value_eok": 56.2,
+   "snapshot_close": 1388.0,
+   "snapshot_volume": 3532062.0,
+   "snapshot_value": 5647000000.0,
+   "snapshot_value_eok": 56.5,
    "snapshot_as_of": "20260722",
    "signal_date": "20260722",
    "signal_open": 1660.0,
    "signal_high": 1855.0,
    "signal_low": 1328.0,
-   "signal_close": 1362.0,
+   "signal_close": 1388.0,
    "signal_prev_close": 1458.0,
-   "signal_volume": 3514825.0,
-   "signal_value": 5623000000.0,
-   "signal_value_eok": 56.2,
+   "signal_volume": 3532062.0,
+   "signal_value": 5647000000.0,
+   "signal_value_eok": 56.5,
    "signal_peak6_price": 2800.0,
    "signal_peak60_price": 2800.0,
-   "signal_ma20": 1305.2,
-   "signal_ma10": 1537.3,
+   "signal_ma20": 1306.5,
+   "signal_ma10": 1539.9,
    "signal_source": "daily_latest",
-   "run_6d_pct": 8.5,
-   "ma20_gap_pct": 4.4,
-   "ma10_margin_pct": -11.4,
+   "run_6d_pct": 10.6,
+   "ma20_gap_pct": 6.2,
+   "ma10_margin_pct": -9.86,
    "float_ratio": 0.7101000000000001,
-   "turnover_pct": 41.7,
+   "turnover_pct": 42.0,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -185,7 +185,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T14:24:44.424448+09:00"
+    "checked_at": "2026-07-22T14:29:39.474395+09:00"
    },
    "alert_release": false,
    "alert_release_rule": {
@@ -203,7 +203,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458859&code=011090&page_notice=1",
     "raw_text_hash": "d6a9e6f6d82fa0bb1657",
-    "fetched_at": "2026-07-22 14:24:45 KST",
+    "fetched_at": "2026-07-22 14:29:40 KST",
     "notice_no": "70458859",
     "target_evidence": {
      "requested_code": "011090",
@@ -217,7 +217,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458859&code=011090&page_notice=1",
      "raw_text_hash": "d6a9e6f6d82fa0bb1657",
-     "fetched_at": "2026-07-22 14:24:45 KST"
+     "fetched_at": "2026-07-22 14:29:40 KST"
     }
    },
    "alert_release_checks": {
@@ -234,14 +234,14 @@
    "alert_risk_release_evidence": null,
    "alert_elapsed_days": 3,
    "shakeout": true,
-   "fade_pct": 33.8,
-   "turnover_2d_pct": 86.1,
-   "peak_dd_pct": -51.4,
+   "fade_pct": 32.0,
+   "turnover_2d_pct": 86.3,
+   "peak_dd_pct": -50.4,
    "strength_tier": 2,
    "strength": "조합C(중립)",
    "turnover_band": 1,
    "dd_band": 1,
-   "dd6_pct": -51.4,
+   "dd6_pct": -50.4,
    "very_good": true,
    "very_good_tier": "tier2",
    "very_good_candidate": false,
@@ -260,8 +260,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T14:24:51+09:00",
-    "expires_at": "2026-07-22T14:34:51+09:00",
+    "checked_at": "2026-07-22T14:29:46+09:00",
+    "expires_at": "2026-07-22T14:39:46+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -292,9 +292,9 @@
    "suspicion_score": 75,
    "score_breakdown_display": {},
    "rank": 2,
-   "precut_rank": 4,
-   "published_rank": 2,
-   "published": true,
+   "precut_rank": null,
+   "published_rank": null,
+   "published": false,
    "first_seen_rank": 2,
    "latest_published_rank": 2,
    "rank_path": [
@@ -321,6 +321,15 @@
      "precut_rank": 4,
      "published_rank": 2,
      "published": true,
+     "rank_bucket": 4,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    },
+    {
+     "observed_at": "2026-07-22 14:29:41 KST",
+     "precut_rank": null,
+     "published_rank": null,
+     "published": false,
      "rank_bucket": 4,
      "rank_model_version": "rank4-v1",
      "change_basis": "KRX"
@@ -547,6 +556,334 @@
    "rank_model_effective_from": "20260713",
    "rank_model_effective_at": "2026-07-13 09:00:00 KST",
    "rank_model_source_commit": "7f3acab",
+   "final": false
+  },
+  "005360": {
+   "name": "모나미",
+   "sector": "모나미",
+   "entry": 2070.0,
+   "score": 0,
+   "breakdown": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "suspicion_score": 76,
+   "score_breakdown_display": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 9,
+    "re_turnover": 5
+   },
+   "rank": 2,
+   "precut_rank": 2,
+   "published_rank": 2,
+   "published": true,
+   "first_seen_rank": 2,
+   "latest_published_rank": 2,
+   "rank_path": [
+    {
+     "observed_at": "2026-07-22 14:29:41 KST",
+     "precut_rank": 2,
+     "published_rank": 2,
+     "published": true,
+     "rank_bucket": 2,
+     "rank_model_version": "rank4-v1",
+     "change_basis": "KRX"
+    }
+   ],
+   "rank_bucket": 2,
+   "rank_bucket_at_signal": 2,
+   "rank_reason": "저점매집+폭발회전 185% → bucket 2",
+   "rank_reason_at_signal": "저점매집+폭발회전 185% → bucket 2",
+   "shadow_bucket": [
+    "S1",
+    "S2"
+   ],
+   "shadow_bucket_at_signal": [
+    "S1",
+    "S2"
+   ],
+   "expected_touch7_rate": 86.7,
+   "expected_high_pct": 17.0,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집+회전90",
+    "n": 15,
+    "unique_n": 13,
+    "touch7_rate": 86.7,
+    "expected_high_pct": 17.0,
+    "avg_return": 9.09,
+    "bucket": 2,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "change_pct": -20.84,
+   "change_basis": "KRX",
+   "high_pct": -12.24,
+   "pattern": "reaccum",
+   "prime": false,
+   "theme": "반도체",
+   "material": {
+    "grade": "C",
+    "score": 45,
+    "summary": "모나미·한성·에넥스 연일 상한가…'애국주' 열풍 어디까지",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "1주내",
+    "freshness_days": 6.21,
+    "directness": "직접",
+    "tags": [
+     "S급재료",
+     "공시",
+     "공시/대형이벤트",
+     "반도체",
+     "테마/수혜"
+    ],
+    "risk_flags": [
+     "거래정지",
+     "상장폐지"
+    ],
+    "evidence": [
+     {
+      "title": "모나미·한성·에넥스 연일 상한가…'애국주' 열풍 어디까지",
+      "datetime": "202607151534",
+      "source": "SBS Biz",
+      "url": "https://n.news.naver.com/mnews/article/374/0000521898",
+      "score": 100
+     },
+     {
+      "title": "&quot;애국 기업이면 상한가 간다?&quot;...애국 DNA 또 어디 있나",
+      "datetime": "202607160635",
+      "source": "파이낸셜뉴스",
+      "url": "https://n.news.naver.com/mnews/article/014/0005548831",
+      "score": 94
+     },
+     {
+      "title": "'애국 테마 매수세' 모나미·한성기업 연일 상한가",
+      "datetime": "202607151557",
+      "source": "매일신문",
+      "url": "https://n.news.naver.com/mnews/article/088/0001019226",
+      "score": 85
+     },
+     {
+      "title": "애국 테마 탄 모나미, 3거래일 연속 상한가…20일 거래정지 될 듯",
+      "datetime": "202607160926",
+      "source": "머니투데이",
+      "url": "https://n.news.naver.com/mnews/article/008/0005386843",
+      "score": 75
+     },
+     {
+      "title": "'애국 테마'로 주가 뜬 모나미·에넥스…반짝 급등 넘을까",
+      "datetime": "202607160104",
+      "source": "아시아경제",
+      "url": "https://n.news.naver.com/mnews/article/277/0005790598",
+      "score": 75
+     }
+    ],
+    "source_count": 6,
+    "relevant_count": 6,
+    "captured_freshness_days": 0.02,
+    "freshness_as_of": "2026-07-22T14:29:41+09:00",
+    "freshness_basis": "evidence_latest_datetime",
+    "evidence_latest_datetime": "2026-07-16T09:26:00+09:00",
+    "freshness_parse_status": "complete",
+    "future_evidence_n": 0
+   },
+   "news": [],
+   "value_eok": 243,
+   "snapshot_open": 2275.0,
+   "snapshot_high": 2295.0,
+   "snapshot_low": 1996.0,
+   "snapshot_close": 2070.0,
+   "snapshot_volume": 11285346.0,
+   "snapshot_value": 24281000000.0,
+   "snapshot_value_eok": 242.8,
+   "snapshot_as_of": "20260722",
+   "signal_date": "20260722",
+   "signal_open": 2275.0,
+   "signal_high": 2295.0,
+   "signal_low": 1996.0,
+   "signal_close": 2070.0,
+   "signal_prev_close": 2615.0,
+   "signal_volume": 11285346.0,
+   "signal_value": 24281000000.0,
+   "signal_value_eok": 242.8,
+   "signal_peak6_price": null,
+   "signal_peak60_price": null,
+   "signal_ma20": null,
+   "signal_ma10": null,
+   "signal_source": "daily_latest",
+   "run_6d_pct": null,
+   "ma20_gap_pct": null,
+   "ma10_margin_pct": -18.83,
+   "float_ratio": 0.7098,
+   "turnover_pct": 84.1,
+   "peak_turnover_pct": 184.6,
+   "turnover_basis": "float",
+   "turnover_metric": "vol_float",
+   "theme_leader": false,
+   "spark_max_x": null,
+   "mega_flow": false,
+   "flow_today_buy": false,
+   "deep_shake": null,
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260716",
+    "peak_value_eok": 1054,
+    "peak_high_pct": 29.9,
+    "peak_turnover_pct": 184.6,
+    "peak_ibs": 0.01,
+    "peak_uppertail": 20.0,
+    "ma20": 1895.5,
+    "ma20_margin_pct": 9.21,
+    "cause_summary": "애국 테마 탄 모나미, 3거래일 연속 상한가…20일 거래정지 될 듯",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "reignition": {
+    "body_pct": 3.02,
+    "time": "09:10",
+    "value_eok": 20,
+    "count": 0
+   },
+   "geupso": false,
+   "geupso_bars": [],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:10",
+     "body_pct": 3.02
+    },
+    {
+     "time": "09:20",
+     "body_pct": 2.28
+    },
+    {
+     "time": "14:25",
+     "body_pct": 2.99
+    }
+   ],
+   "alert_now": "경고",
+   "market_alert_snapshot": {
+    "level": "WARNING",
+    "label": "경고",
+    "raw_code": "02",
+    "lookup_status": "VERIFIED",
+    "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
+    "checked_at": "2026-07-22T14:29:36.230370+09:00"
+   },
+   "alert_release": false,
+   "alert_release_rule": {
+    "source": "KRX_KOSCOM",
+    "retrieved_via": "NAVER_FINANCE_NOTICE",
+    "notice_date": "20260714",
+    "designation_date": "20260715",
+    "first_review_date_notice": "20260729",
+    "first_review_date_adjusted": null,
+    "threshold_5d_pct": 60.0,
+    "threshold_15d_pct": 100.0,
+    "recent_high_window": 15,
+    "min_elapsed_days": 10,
+    "logic_version": "krx-release-v2",
+    "parse_status": "ok",
+    "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
+    "raw_text_hash": "045078fa0292aa18bcb1",
+    "fetched_at": "2026-07-22 14:29:37 KST",
+    "notice_no": "67040344",
+    "target_evidence": {
+     "requested_code": "005360",
+     "requested_name": "모나미",
+     "notice_no": "67040344",
+     "notice_title": "(주)모나미 투자경고종목 지정",
+     "notice_date": "20260714",
+     "notice_target_name": "모나미",
+     "notice_target_security_type": "보통주",
+     "target_match": true,
+     "target_validation_status": "verified",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=67040344&code=005360&page_notice=1",
+     "raw_text_hash": "045078fa0292aa18bcb1",
+     "fetched_at": "2026-07-22 14:29:37 KST"
+    }
+   },
+   "alert_release_checks": {
+    "as_of_date": "20260722",
+    "elapsed_days": 4,
+    "elapsed_ok": false,
+    "five_day_ok": null,
+    "fifteen_day_ok": null,
+    "not_recent_high_ok": null,
+    "halt_days_excluded": [
+     "20260720"
+    ]
+   },
+   "alert_release_error": null,
+   "alert_risk_released": false,
+   "alert_risk_release_evidence": null,
+   "alert_elapsed_days": 4,
+   "shakeout": false,
+   "fade_pct": null,
+   "turnover_2d_pct": null,
+   "peak_dd_pct": null,
+   "strength_tier": null,
+   "strength": null,
+   "turnover_band": null,
+   "dd_band": null,
+   "dd6_pct": null,
+   "very_good": false,
+   "very_good_tier": null,
+   "very_good_candidate": false,
+   "tp_hint": null,
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 46,
+    "base_pct": 46,
+    "strong": false,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260722",
+    "target_trade_date": "20260723",
+    "status": "NOTICE_ONLY",
+    "tradable_next_session": null,
+    "recommendable": true,
+    "auto_buy_allowed": false,
+    "reason_code": "HALT_NOTICE",
+    "reason": "매매거래정지 예고 공시가 있으나 확정 정지는 아닙니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-22T14:29:46+09:00",
+    "expires_at": "2026-07-22T14:39:46+09:00",
+    "evidence": {
+     "notice_id": "68428917",
+     "title": "(주)모나미 매매거래정지 예고",
+     "published_at": "20260715",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=68428917&code=005360&page_notice=1",
+     "source_hash": "319db9115fe790a92426"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "next_market_alert_preview": null,
+   "matched_events": [],
+   "first_seen": "2026-07-22 14:29:41 KST",
+   "evaluated": false,
+   "evaluation_status": null,
+   "evaluation_exclusion": null,
+   "result": null,
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "rank_model_source_commit": "7f3acab",
    "final": true
   }
  },
@@ -649,7 +986,7 @@
   },
   "066910": {
    "name": "손오공",
-   "precut_rank": 3,
+   "precut_rank": 4,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -667,8 +1004,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T14:24:53+09:00",
-    "expires_at": "2026-07-22T14:34:53+09:00",
+    "checked_at": "2026-07-22T14:29:49+09:00",
+    "expires_at": "2026-07-22T14:39:49+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -683,7 +1020,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 2520.0,
+   "price": 2525.0,
    "pattern": "reaccum",
    "material": {
     "grade": "A",
@@ -734,7 +1071,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 0.12,
-    "freshness_as_of": "2026-07-22T14:24:46+09:00",
+    "freshness_as_of": "2026-07-22T14:29:41+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
     "freshness_parse_status": "complete",
@@ -748,14 +1085,14 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T14:24:42.947541+09:00"
+    "checked_at": "2026-07-22T14:29:38.225956+09:00"
    },
    "first_blocked": "2026-07-22 11:28:59 KST",
-   "last_blocked": "2026-07-22 14:24:46 KST"
+   "last_blocked": "2026-07-22 14:29:41 KST"
   },
   "023790": {
    "name": "동일스틸럭스",
-   "precut_rank": 2,
+   "precut_rank": 3,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -773,8 +1110,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T14:24:52+09:00",
-    "expires_at": "2026-07-22T14:34:52+09:00",
+    "checked_at": "2026-07-22T14:29:48+09:00",
+    "expires_at": "2026-07-22T14:39:48+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -789,7 +1126,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 1990.0,
+   "price": 1965.0,
    "pattern": "reaccum",
    "material": {
     "grade": "C",
@@ -818,7 +1155,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 32.86,
-    "freshness_as_of": "2026-07-22T14:24:46+09:00",
+    "freshness_as_of": "2026-07-22T14:29:41+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-17T16:19:00+09:00",
     "freshness_parse_status": "complete",
@@ -832,10 +1169,10 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T14:24:42.875204+09:00"
+    "checked_at": "2026-07-22T14:29:37.941255+09:00"
    },
    "first_blocked": "2026-07-22 13:54:03 KST",
-   "last_blocked": "2026-07-22 14:24:46 KST"
+   "last_blocked": "2026-07-22 14:29:41 KST"
   },
   "208640": {
    "name": "썸에이지",
@@ -857,8 +1194,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T14:24:55+09:00",
-    "expires_at": "2026-07-22T14:34:55+09:00",
+    "checked_at": "2026-07-22T14:29:51+09:00",
+    "expires_at": "2026-07-22T14:39:51+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
@@ -873,7 +1210,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 1274.0,
+   "price": 1258.0,
    "pattern": "shakeout",
    "material": {
     "grade": "C",
@@ -882,7 +1219,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 26.18,
+    "freshness_days": 26.19,
     "directness": "직접",
     "tags": [
      "공시/대형이벤트",
@@ -918,28 +1255,28 @@
     ],
     "source_count": 3,
     "relevant_count": 3,
-    "captured_freshness_days": 26.18,
-    "freshness_as_of": "2026-07-22T14:24:46+09:00",
+    "captured_freshness_days": 26.19,
+    "freshness_as_of": "2026-07-22T14:29:41+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
    "rank_bucket": 8,
-   "suspicion_score": 70,
+   "suspicion_score": 71,
    "market_alert_snapshot": {
     "level": "ATTENTION",
     "label": "주의",
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T14:24:46.210240+09:00"
+    "checked_at": "2026-07-22T14:29:40.839433+09:00"
    },
    "first_blocked": "2026-07-22 13:59:12 KST",
-   "last_blocked": "2026-07-22 14:24:46 KST"
+   "last_blocked": "2026-07-22 14:29:41 KST"
   }
  },
- "as_of": "2026-07-22 14:24:46 KST",
+ "as_of": "2026-07-22 14:29:41 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
