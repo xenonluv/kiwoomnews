@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22 11:04:00 KST",
+ "generated_at": "2026-07-22 11:09:00 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,11 +52,11 @@
    "code": "413630",
    "name": "씨피시스템",
    "sector": "씨피시스템",
-   "change_pct": 18.37,
+   "change_pct": 17.04,
    "high_pct": 21.33,
-   "vol_turnover_pct": 87.6,
-   "value_eok": 343,
-   "price": 3995.0,
+   "vol_turnover_pct": 93.4,
+   "value_eok": 367,
+   "price": 3950.0,
    "first_seen": "10:47",
    "exploded": false
   },
@@ -64,12 +64,24 @@
    "code": "014950",
    "name": "삼익제약",
    "sector": "삼익제약",
-   "change_pct": 1.22,
+   "change_pct": 1.74,
    "high_pct": 13.72,
    "vol_turnover_pct": 57.3,
    "value_eok": 145,
-   "price": 5830.0,
+   "price": 5860.0,
    "first_seen": "10:07",
+   "exploded": false
+  },
+  {
+   "code": "012690",
+   "name": "모나리자",
+   "sector": "모나리자",
+   "change_pct": 8.11,
+   "high_pct": 12.49,
+   "vol_turnover_pct": 53.4,
+   "value_eok": 172,
+   "price": 1826.0,
+   "first_seen": "11:07",
    "exploded": false
   }
  ],
