@@ -103,7 +103,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 0.92,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T17:31:00+09:00",
     "freshness_parse_status": "complete",
@@ -185,7 +185,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:36.689654+09:00"
+    "checked_at": "2026-07-22T15:39:33.592037+09:00"
    },
    "alert_release": false,
    "alert_release_rule": {
@@ -203,7 +203,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458859&code=011090&page_notice=1",
     "raw_text_hash": "d6a9e6f6d82fa0bb1657",
-    "fetched_at": "2026-07-22 15:34:37 KST",
+    "fetched_at": "2026-07-22 15:39:34 KST",
     "notice_no": "70458859",
     "target_evidence": {
      "requested_code": "011090",
@@ -217,7 +217,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=70458859&code=011090&page_notice=1",
      "raw_text_hash": "d6a9e6f6d82fa0bb1657",
-     "fetched_at": "2026-07-22 15:34:37 KST"
+     "fetched_at": "2026-07-22 15:39:34 KST"
     }
    },
    "alert_release_checks": {
@@ -260,8 +260,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:44+09:00",
-    "expires_at": "2026-07-22T15:44:44+09:00",
+    "checked_at": "2026-07-22T15:39:41+09:00",
+    "expires_at": "2026-07-22T15:49:41+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -435,7 +435,7 @@
     "source_count": 5,
     "relevant_count": 5,
     "captured_freshness_days": 0.18,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-22T11:17:00+09:00",
     "freshness_parse_status": "complete",
@@ -517,7 +517,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:38.334881+09:00"
+    "checked_at": "2026-07-22T15:39:35.137062+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -553,8 +553,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:49+09:00",
-    "expires_at": "2026-07-22T15:44:49+09:00",
+    "checked_at": "2026-07-22T15:39:46+09:00",
+    "expires_at": "2026-07-22T15:49:46+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1021,7 +1021,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 1.97,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -1103,7 +1103,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:36.388237+09:00"
+    "checked_at": "2026-07-22T15:39:33.318607+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -1139,8 +1139,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:48+09:00",
-    "expires_at": "2026-07-22T15:44:48+09:00",
+    "checked_at": "2026-07-22T15:39:45+09:00",
+    "expires_at": "2026-07-22T15:49:45+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1221,7 +1221,7 @@
      "verified_on": "2026-07-20",
      "scope": "공개 가격조건만 판정"
     },
-    "generated_at": "2026-07-22T15:34:54+09:00",
+    "generated_at": "2026-07-22T15:39:52+09:00",
     "expires_at": "2026-07-23T09:00:00+09:00"
    },
    "matched_events": [],
@@ -1514,10 +1514,10 @@
  "blocked_suspects": {
   "008290": {
    "name": "원풍물산",
-   "precut_rank": 6,
+   "precut_rank": 7,
    "published": false,
    "published_rank": null,
-   "final": false,
+   "final": true,
    "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
    "next_session_eligibility": {
     "schema_version": 1,
@@ -1532,8 +1532,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:14:45+09:00",
-    "expires_at": "2026-07-22T15:24:45+09:00",
+    "checked_at": "2026-07-22T15:39:49+09:00",
+    "expires_at": "2026-07-22T15:49:49+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1548,7 +1548,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 649.0,
+   "price": 625.0,
    "pattern": "shakeout",
    "material": {
     "grade": "C",
@@ -1557,7 +1557,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 20.25,
+    "freshness_days": 20.27,
     "directness": "직접",
     "tags": [
      "반도체"
@@ -1588,25 +1588,25 @@
     ],
     "source_count": 3,
     "relevant_count": 3,
-    "captured_freshness_days": 20.25,
-    "freshness_as_of": "2026-07-22T15:14:33+09:00",
+    "captured_freshness_days": 20.27,
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
-   "rank_bucket": 8,
-   "suspicion_score": 73,
+   "rank_bucket": 5,
+   "suspicion_score": 76,
    "market_alert_snapshot": {
     "level": "ATTENTION",
     "label": "주의",
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:14:31.339039+09:00"
+    "checked_at": "2026-07-22T15:39:33.008852+09:00"
    },
    "first_blocked": "2026-07-22 09:59:01 KST",
-   "last_blocked": "2026-07-22 15:14:33 KST"
+   "last_blocked": "2026-07-22 15:39:35 KST"
   },
   "066910": {
    "name": "손오공",
@@ -1628,8 +1628,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:46+09:00",
-    "expires_at": "2026-07-22T15:44:46+09:00",
+    "checked_at": "2026-07-22T15:39:43+09:00",
+    "expires_at": "2026-07-22T15:49:43+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1695,7 +1695,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 0.12,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
     "freshness_parse_status": "complete",
@@ -1709,10 +1709,10 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:35.009837+09:00"
+    "checked_at": "2026-07-22T15:39:31.594703+09:00"
    },
    "first_blocked": "2026-07-22 11:28:59 KST",
-   "last_blocked": "2026-07-22 15:34:38 KST"
+   "last_blocked": "2026-07-22 15:39:35 KST"
   },
   "023790": {
    "name": "동일스틸럭스",
@@ -1734,8 +1734,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:45+09:00",
-    "expires_at": "2026-07-22T15:44:45+09:00",
+    "checked_at": "2026-07-22T15:39:42+09:00",
+    "expires_at": "2026-07-22T15:49:42+09:00",
     "evidence": {
      "notice_id": "7238851",
      "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1779,7 +1779,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 32.86,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-17T16:19:00+09:00",
     "freshness_parse_status": "complete",
@@ -1793,10 +1793,10 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:34.785422+09:00"
+    "checked_at": "2026-07-22T15:39:31.371522+09:00"
    },
    "first_blocked": "2026-07-22 13:54:03 KST",
-   "last_blocked": "2026-07-22 15:34:38 KST"
+   "last_blocked": "2026-07-22 15:39:35 KST"
   },
   "208640": {
    "name": "썸에이지",
@@ -1818,8 +1818,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:49+09:00",
-    "expires_at": "2026-07-22T15:44:49+09:00",
+    "checked_at": "2026-07-22T15:39:46+09:00",
+    "expires_at": "2026-07-22T15:49:46+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
@@ -1843,7 +1843,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 26.23,
+    "freshness_days": 26.24,
     "directness": "직접",
     "tags": [
      "공시/대형이벤트",
@@ -1879,8 +1879,8 @@
     ],
     "source_count": 3,
     "relevant_count": 3,
-    "captured_freshness_days": 26.23,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "captured_freshness_days": 26.24,
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1894,14 +1894,14 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:38.058826+09:00"
+    "checked_at": "2026-07-22T15:39:34.842386+09:00"
    },
    "first_blocked": "2026-07-22 13:59:12 KST",
-   "last_blocked": "2026-07-22 15:34:38 KST"
+   "last_blocked": "2026-07-22 15:39:35 KST"
   },
   "049080": {
    "name": "기가레인",
-   "precut_rank": 7,
+   "precut_rank": 8,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -1919,8 +1919,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T15:34:51+09:00",
-    "expires_at": "2026-07-22T15:44:51+09:00",
+    "checked_at": "2026-07-22T15:39:50+09:00",
+    "expires_at": "2026-07-22T15:49:50+09:00",
     "evidence": {
      "notice_id": "46174190",
      "title": "(주)기가레인 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1944,7 +1944,7 @@
     "sentiment": "중립",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 8.9,
+    "freshness_days": 8.91,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1964,7 +1964,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 2.87,
-    "freshness_as_of": "2026-07-22T15:34:38+09:00",
+    "freshness_as_of": "2026-07-22T15:39:35+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-13T17:54:00+09:00",
     "freshness_parse_status": "complete",
@@ -1978,13 +1978,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T15:34:33.322900+09:00"
+    "checked_at": "2026-07-22T15:39:30.101479+09:00"
    },
    "first_blocked": "2026-07-22 15:09:31 KST",
-   "last_blocked": "2026-07-22 15:34:38 KST"
+   "last_blocked": "2026-07-22 15:39:35 KST"
   }
  },
- "as_of": "2026-07-22 15:34:38 KST",
+ "as_of": "2026-07-22 15:39:35 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
