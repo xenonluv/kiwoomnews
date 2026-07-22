@@ -22,8 +22,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T10:09:06+09:00",
-    "expires_at": "2026-07-22T10:19:06+09:00",
+    "checked_at": "2026-07-22T10:14:06+09:00",
+    "expires_at": "2026-07-22T10:24:06+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -38,7 +38,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 649.0,
+   "price": 627.0,
    "pattern": "shakeout",
    "material": {
     "grade": "C",
@@ -47,7 +47,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 20.04,
+    "freshness_days": 20.05,
     "directness": "직접",
     "tags": [
      "반도체"
@@ -71,28 +71,28 @@
     ],
     "source_count": 2,
     "relevant_count": 2,
-    "captured_freshness_days": 20.04,
-    "freshness_as_of": "2026-07-22T10:09:04+09:00",
+    "captured_freshness_days": 20.05,
+    "freshness_as_of": "2026-07-22T10:14:05+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
    "rank_bucket": 8,
-   "suspicion_score": 68,
+   "suspicion_score": 70,
    "market_alert_snapshot": {
     "level": "ATTENTION",
     "label": "주의",
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T10:09:04.888684+09:00"
+    "checked_at": "2026-07-22T10:14:05.494032+09:00"
    },
    "first_blocked": "2026-07-22 09:59:01 KST",
-   "last_blocked": "2026-07-22 10:09:04 KST"
+   "last_blocked": "2026-07-22 10:14:05 KST"
   }
  },
- "as_of": "2026-07-22 10:09:04 KST",
+ "as_of": "2026-07-22 10:14:05 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
