@@ -111,8 +111,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T12:04:07+09:00",
-    "expires_at": "2026-07-22T12:14:07+09:00",
+    "checked_at": "2026-07-22T12:09:07+09:00",
+    "expires_at": "2026-07-22T12:19:07+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -127,7 +127,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 2655.0,
+   "price": 2630.0,
    "pattern": "reaccum",
    "material": {
     "grade": "A",
@@ -136,7 +136,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.04,
+    "freshness_days": 1.05,
     "directness": "직접",
     "tags": [
      "공시",
@@ -178,7 +178,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 0.12,
-    "freshness_as_of": "2026-07-22T12:04:04+09:00",
+    "freshness_as_of": "2026-07-22T12:09:03+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
     "freshness_parse_status": "complete",
@@ -192,13 +192,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T12:04:03.421002+09:00"
+    "checked_at": "2026-07-22T12:09:02.634397+09:00"
    },
    "first_blocked": "2026-07-22 11:28:59 KST",
-   "last_blocked": "2026-07-22 12:04:04 KST"
+   "last_blocked": "2026-07-22 12:09:03 KST"
   }
  },
- "as_of": "2026-07-22 12:04:04 KST",
+ "as_of": "2026-07-22 12:09:03 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
