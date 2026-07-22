@@ -215,7 +215,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "046940": {
    "name": "우원개발",
@@ -523,7 +527,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "079650": {
    "name": "서산",
@@ -635,7 +643,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "025950": {
    "name": "동신건설",
@@ -755,7 +767,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "002780": {
    "name": "진흥기업",
