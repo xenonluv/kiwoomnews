@@ -4,7 +4,7 @@
  "blocked_suspects": {
   "008290": {
    "name": "원풍물산",
-   "precut_rank": 2,
+   "precut_rank": 3,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -22,8 +22,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T13:49:11+09:00",
-    "expires_at": "2026-07-22T13:59:11+09:00",
+    "checked_at": "2026-07-22T13:54:11+09:00",
+    "expires_at": "2026-07-22T14:04:11+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -38,7 +38,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 614.0,
+   "price": 653.0,
    "pattern": "shakeout",
    "material": {
     "grade": "C",
@@ -79,28 +79,28 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-22T13:49:05+09:00",
+    "freshness_as_of": "2026-07-22T13:54:03+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
-   "rank_bucket": 5,
-   "suspicion_score": 75,
+   "rank_bucket": 8,
+   "suspicion_score": 71,
    "market_alert_snapshot": {
     "level": "ATTENTION",
     "label": "주의",
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T13:49:05.150188+09:00"
+    "checked_at": "2026-07-22T13:54:03.646739+09:00"
    },
    "first_blocked": "2026-07-22 09:59:01 KST",
-   "last_blocked": "2026-07-22 13:49:05 KST"
+   "last_blocked": "2026-07-22 13:54:03 KST"
   },
   "066910": {
    "name": "손오공",
-   "precut_rank": 1,
+   "precut_rank": 2,
    "published": false,
    "published_rank": null,
    "final": true,
@@ -118,8 +118,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T13:49:09+09:00",
-    "expires_at": "2026-07-22T13:59:09+09:00",
+    "checked_at": "2026-07-22T13:54:09+09:00",
+    "expires_at": "2026-07-22T14:04:09+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -134,7 +134,7 @@
     }
    },
    "signal_date": "20260722",
-   "price": 2585.0,
+   "price": 2565.0,
    "pattern": "reaccum",
    "material": {
     "grade": "A",
@@ -185,7 +185,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 0.12,
-    "freshness_as_of": "2026-07-22T13:49:05+09:00",
+    "freshness_as_of": "2026-07-22T13:54:03+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
     "freshness_parse_status": "complete",
@@ -199,13 +199,97 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T13:49:03.875390+09:00"
+    "checked_at": "2026-07-22T13:54:02.191942+09:00"
    },
    "first_blocked": "2026-07-22 11:28:59 KST",
-   "last_blocked": "2026-07-22 13:49:05 KST"
+   "last_blocked": "2026-07-22 13:54:03 KST"
+  },
+  "023790": {
+   "name": "동일스틸럭스",
+   "precut_rank": 1,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260722",
+    "target_trade_date": "20260723",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-22T13:54:08+09:00",
+    "expires_at": "2026-07-22T14:04:08+09:00",
+    "evidence": {
+     "notice_id": "7238851",
+     "title": "동일스틸럭스(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
+     "published_at": "20260522",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=7238851&code=023790&page_notice=1",
+     "source_hash": "7194788801603a12d8e1"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260722",
+   "price": 1988.0,
+   "pattern": "reaccum",
+   "material": {
+    "grade": "C",
+    "score": 33,
+    "summary": "이란 대규모 전후 재건사업 기대감에 철강주 일제히 급등",
+    "sentiment": "중립",
+    "reliability": "공시+뉴스",
+    "freshness": "오래됨",
+    "freshness_days": 34.9,
+    "directness": "간접",
+    "tags": [
+     "공시",
+     "전쟁",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "이란 대규모 전후 재건사업 기대감에 철강주 일제히 급등",
+      "datetime": "202606171619",
+      "source": "한국경제",
+      "url": "https://n.news.naver.com/mnews/article/015/0005299812",
+      "score": 33
+     }
+    ],
+    "source_count": 1,
+    "relevant_count": 1,
+    "captured_freshness_days": 32.86,
+    "freshness_as_of": "2026-07-22T13:54:03+09:00",
+    "freshness_basis": "evidence_latest_datetime",
+    "evidence_latest_datetime": "2026-06-17T16:19:00+09:00",
+    "freshness_parse_status": "complete",
+    "future_evidence_n": 0
+   },
+   "rank_bucket": 2,
+   "suspicion_score": 67,
+   "market_alert_snapshot": {
+    "level": "ATTENTION",
+    "label": "주의",
+    "raw_code": "01",
+    "lookup_status": "VERIFIED",
+    "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
+    "checked_at": "2026-07-22T13:54:02.123198+09:00"
+   },
+   "first_blocked": "2026-07-22 13:54:03 KST",
+   "last_blocked": "2026-07-22 13:54:03 KST"
   }
  },
- "as_of": "2026-07-22 13:49:05 KST",
+ "as_of": "2026-07-22 13:54:03 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
