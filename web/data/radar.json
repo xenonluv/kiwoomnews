@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22 10:53:59 KST",
+ "generated_at": "2026-07-22 10:58:55 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,11 +52,11 @@
    "code": "413630",
    "name": "씨피시스템",
    "sector": "씨피시스템",
-   "change_pct": 16.3,
-   "high_pct": 18.67,
-   "vol_turnover_pct": 62.8,
-   "value_eok": 242,
-   "price": 3925.0,
+   "change_pct": 19.56,
+   "high_pct": 21.33,
+   "vol_turnover_pct": 78.4,
+   "value_eok": 305,
+   "price": 4035.0,
    "first_seen": "10:47",
    "exploded": false
   },
