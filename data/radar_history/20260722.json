@@ -7,7 +7,7 @@
    "precut_rank": 1,
    "published": false,
    "published_rank": null,
-   "final": true,
+   "final": false,
    "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
    "next_session_eligibility": {
     "schema_version": 1,
@@ -92,7 +92,7 @@
    "last_blocked": "2026-07-22 10:14:05 KST"
   }
  },
- "as_of": "2026-07-22 10:14:05 KST",
+ "as_of": "2026-07-22 10:19:00 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
