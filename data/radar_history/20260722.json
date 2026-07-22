@@ -90,9 +90,115 @@
    },
    "first_blocked": "2026-07-22 09:59:01 KST",
    "last_blocked": "2026-07-22 10:14:05 KST"
+  },
+  "066910": {
+   "name": "손오공",
+   "precut_rank": 1,
+   "published": false,
+   "published_rank": null,
+   "final": true,
+   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260722",
+    "target_trade_date": "20260723",
+    "status": "UNVERIFIED",
+    "tradable_next_session": null,
+    "recommendable": false,
+    "auto_buy_allowed": false,
+    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
+    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-22T11:29:01+09:00",
+    "expires_at": "2026-07-22T11:39:01+09:00",
+    "evidence": {
+     "notice_id": "21698953",
+     "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
+     "published_at": "20260608",
+     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=21698953&code=066910&page_notice=2",
+     "source_hash": "6d09663ccb6b09b23d77"
+    },
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "signal_date": "20260722",
+   "price": 2645.0,
+   "pattern": "reaccum",
+   "material": {
+    "grade": "A",
+    "score": 84,
+    "summary": "손오공, 中 AI 마사지 로봇 ‘R2E’ 국내 독점 유통 계약… AI 웰니스 ...",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "2~3일",
+    "freshness_days": 1.02,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "반도체",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "손오공, 中 AI 마사지 로봇 ‘R2E’ 국내 독점 유통 계약… AI 웰니스 ...",
+      "datetime": "202607211101",
+      "source": "조선비즈",
+      "url": "https://n.news.naver.com/mnews/article/366/0001180553",
+      "score": 80
+     },
+     {
+      "title": "손오공, '애국 매수'에 장초반 상한가",
+      "datetime": "202607200941",
+      "source": "머니투데이",
+      "url": "https://n.news.naver.com/mnews/article/008/0005387852",
+      "score": 64
+     },
+     {
+      "title": "출렁이는 애국테마…모나미·에넥스 '급락' 손오공 '질주'",
+      "datetime": "202607211033",
+      "source": "뉴시스",
+      "url": "https://n.news.naver.com/mnews/article/003/0014077781",
+      "score": 49
+     },
+     {
+      "title": "손오공, 아트토이 작가와 손잡고 IP 비즈니스 생태계 구축",
+      "datetime": "202606110900",
+      "source": "블로터",
+      "url": "https://n.news.naver.com/mnews/article/293/0000086111",
+      "score": 26
+     }
+    ],
+    "source_count": 4,
+    "relevant_count": 4,
+    "captured_freshness_days": 0.12,
+    "freshness_as_of": "2026-07-22T11:28:59+09:00",
+    "freshness_basis": "evidence_latest_datetime",
+    "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
+    "freshness_parse_status": "complete",
+    "future_evidence_n": 0
+   },
+   "rank_bucket": 2,
+   "suspicion_score": 64,
+   "market_alert_snapshot": {
+    "level": "WARNING",
+    "label": "경고",
+    "raw_code": "02",
+    "lookup_status": "VERIFIED",
+    "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
+    "checked_at": "2026-07-22T11:28:58.148007+09:00"
+   },
+   "first_blocked": "2026-07-22 11:28:59 KST",
+   "last_blocked": "2026-07-22 11:28:59 KST"
   }
  },
- "as_of": "2026-07-22 11:23:59 KST",
+ "as_of": "2026-07-22 11:28:59 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
