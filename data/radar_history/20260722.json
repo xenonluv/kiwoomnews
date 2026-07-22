@@ -4,10 +4,10 @@
  "blocked_suspects": {
   "008290": {
    "name": "원풍물산",
-   "precut_rank": 1,
+   "precut_rank": 2,
    "published": false,
    "published_rank": null,
-   "final": false,
+   "final": true,
    "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
    "next_session_eligibility": {
     "schema_version": 1,
@@ -22,8 +22,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T10:14:06+09:00",
-    "expires_at": "2026-07-22T10:24:06+09:00",
+    "checked_at": "2026-07-22T12:49:08+09:00",
+    "expires_at": "2026-07-22T12:59:08+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -38,16 +38,16 @@
     }
    },
    "signal_date": "20260722",
-   "price": 627.0,
+   "price": 634.0,
    "pattern": "shakeout",
    "material": {
     "grade": "C",
-    "score": 29,
+    "score": 32,
     "summary": "원풍물산, 美 선다이오드와 마이크로LED 공정 협력… 방산용 AR 디스플...",
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 20.05,
+    "freshness_days": 20.15,
     "directness": "직접",
     "tags": [
      "반도체"
@@ -67,29 +67,36 @@
       "source": "한국경제",
       "url": "https://n.news.naver.com/mnews/article/015/0005304933",
       "score": 26
+     },
+     {
+      "title": "원풍물산, 차세대 디스플레이 사업 진출 본격화",
+      "datetime": "202606301501",
+      "source": "문화일보",
+      "url": "https://n.news.naver.com/mnews/article/021/0002801373",
+      "score": 26
      }
     ],
-    "source_count": 2,
-    "relevant_count": 2,
-    "captured_freshness_days": 20.05,
-    "freshness_as_of": "2026-07-22T10:14:05+09:00",
+    "source_count": 3,
+    "relevant_count": 3,
+    "captured_freshness_days": 20.15,
+    "freshness_as_of": "2026-07-22T12:49:03+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
    "rank_bucket": 8,
-   "suspicion_score": 70,
+   "suspicion_score": 72,
    "market_alert_snapshot": {
     "level": "ATTENTION",
     "label": "주의",
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T10:14:05.494032+09:00"
+    "checked_at": "2026-07-22T12:49:03.336618+09:00"
    },
    "first_blocked": "2026-07-22 09:59:01 KST",
-   "last_blocked": "2026-07-22 10:14:05 KST"
+   "last_blocked": "2026-07-22 12:49:03 KST"
   },
   "066910": {
    "name": "손오공",
@@ -111,8 +118,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-22T12:44:06+09:00",
-    "expires_at": "2026-07-22T12:54:06+09:00",
+    "checked_at": "2026-07-22T12:49:06+09:00",
+    "expires_at": "2026-07-22T12:59:06+09:00",
     "evidence": {
      "notice_id": "21698953",
      "title": "(주)손오공 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -136,7 +143,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.07,
+    "freshness_days": 1.08,
     "directness": "직접",
     "tags": [
      "공시",
@@ -178,7 +185,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 0.12,
-    "freshness_as_of": "2026-07-22T12:44:03+09:00",
+    "freshness_as_of": "2026-07-22T12:49:03+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T11:01:00+09:00",
     "freshness_parse_status": "complete",
@@ -192,13 +199,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-22T12:44:02.093481+09:00"
+    "checked_at": "2026-07-22T12:49:02.024740+09:00"
    },
    "first_blocked": "2026-07-22 11:28:59 KST",
-   "last_blocked": "2026-07-22 12:44:03 KST"
+   "last_blocked": "2026-07-22 12:49:03 KST"
   }
  },
- "as_of": "2026-07-22 12:44:03 KST",
+ "as_of": "2026-07-22 12:49:03 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
