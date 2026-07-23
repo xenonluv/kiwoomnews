@@ -163,7 +163,7 @@ def _shakeout_group(record, *, history_present):
     if record.get("very_good") is True:
         return "very_good"
     try:
-        return "조합D 단독/강한흔들기" if float(record["strength_tier"]) >= 3 else "약한흔들기"
+        return "조합D 단독" if float(record["strength_tier"]) >= 3 else "약한흔들기"
     except (TypeError, ValueError):
         return "강도 미확인"
 

@@ -106,16 +106,16 @@ type ShakeoutBadgeMeta = {
 
 /**
  * 흔들기 강·약 표시의 단일 판정점.
- * rank_policy.py의 강한 prior(매우좋음 또는 조합D)를 그대로 사용하고,
- * 구버전/결측 데이터는 약한흔들기로 오분류하지 않는다.
+ * very_good·조합D 단독·약한흔들기를 서로 겹치지 않게 표시하고,
+ * 구버전/결측 데이터는 강·약으로 추정하지 않는다.
  */
 function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very_good">): ShakeoutBadgeMeta | null {
   if (!s.shakeout) return null;
-  if (s.very_good) {
+  if (s.very_good === true) {
     return {
       label: "💥 강한흔들기",
       title:
-        "강한흔들기 — 기존 rank4의 매우좋음 기준(dd6 ≤ -30%, rank 0)입니다. 조합D와는 별도의 강한 prior이며, 수익·체결을 보장하거나 자동매수를 지시하지 않습니다.",
+        "강한흔들기 — 매우좋음 기준(dd6 ≤ -30%)을 충족한 흔들기입니다. 조합D 단독과는 별도 분류이며, 수익·체결을 보장하거나 자동매수를 지시하지 않습니다.",
       variant: undefined,
       className: "bg-up px-2.5 py-1 text-base font-black text-white",
     };
@@ -131,11 +131,11 @@ function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very
   }
   if (s.strength_tier >= 3) {
     return {
-      label: "💥 강한흔들기",
+      label: "💥 흔들기 · 조합D 단독",
       title:
-        "강한흔들기 — 기존 rank4 조합D 기준(strength_tier ≥ 3)입니다. 2일 유통회전율과 60일 고점 대비 낙폭의 결합축에서 익일 고가가 강했던 구간이며, 수익·체결을 보장하거나 자동매수를 지시하지 않습니다.",
-      variant: undefined,
-      className: "bg-up px-2.5 py-1 text-base font-black text-white",
+        "조합D 단독 — strength_tier ≥ 3이지만 very_good은 아닌 별도 관찰군입니다. strength_tier는 강도점수가 아니라 2일 유통회전율과 고점 대비 낙폭의 결합축이며, 과열 조합도 포함될 수 있습니다. 강한흔들기나 매수 신호를 의미하지 않습니다.",
+      variant: "warning",
+      className: "border border-warning/60 px-2.5 py-1 text-base font-black",
     };
   }
   return {
@@ -240,6 +240,16 @@ export function SuspectCard({
     (s.run_6d_pct ?? 0) >= 30 ||
     ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);
   const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
+  const comboDOnly =
+    s.shakeout === true &&
+    s.very_good !== true &&
+    s.strength_tier != null &&
+    s.strength_tier >= 3;
+  const turnover2dPct = s.turnover_2d_pct ?? null;
+  const turnover2dOverheated =
+    s.shakeout === true &&
+    turnover2dPct != null &&
+    turnover2dPct > 180;
   const shakeoutBadge = shakeoutBadgeMeta(s);
   const previewBadge = alertPreviewMeta(s.next_market_alert_preview ?? undefined);
   const eligibilityBadge = eligibilityBadgeMeta(s.next_session_eligibility);
@@ -303,7 +313,16 @@ export function SuspectCard({
                 {shakeoutBadge.label}
               </Badge>
             )}
-            {s.shakeout && s.strength && (
+            {turnover2dOverheated && turnover2dPct != null && (
+              <Badge
+                variant="warning"
+                className="border border-warning/70 px-2.5 py-1 text-base font-black"
+                title="신호일과 전일의 유통주식수 대비 거래량 합계가 180%를 초과했습니다. 손바뀜이 매우 큰 구간으로 재상승과 물량소진이 모두 가능한 위험 관찰값입니다. 강한흔들기 판정이나 매수 신호가 아닙니다."
+              >
+                ⚠ 2일 회전 극과열 {turnover2dPct.toFixed(1)}%
+              </Badge>
+            )}
+            {s.shakeout && s.strength && !comboDOnly && (
               <Badge
                 className={
                   s.strength_tier != null && s.strength_tier >= 3

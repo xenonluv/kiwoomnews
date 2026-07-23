@@ -218,7 +218,7 @@ class ShakeoutSignalMinuteCaptureTest(unittest.TestCase):
             set(rows), {"111111", "222222", "333333", "444444", "555555", "666666"}
         )
         self.assertEqual(rows["111111"]["shakeout_group"], "very_good")
-        self.assertEqual(rows["222222"]["shakeout_group"], "조합D 단독/강한흔들기")
+        self.assertEqual(rows["222222"]["shakeout_group"], "조합D 단독")
         self.assertEqual(rows["333333"]["shakeout_group"], "약한흔들기")
         self.assertFalse(rows["333333"]["final_as_of_capture"])
         self.assertTrue(rows["444444"]["history_present"])
