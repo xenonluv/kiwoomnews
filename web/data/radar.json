@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-23 10:23:53 KST",
+ "generated_at": "2026-07-23 10:28:51 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,11 +52,11 @@
    "code": "475150",
    "name": "SK이터닉스",
    "sector": "SK이터닉스",
-   "change_pct": 20.97,
+   "change_pct": 20.16,
    "high_pct": 22.42,
-   "vol_turnover_pct": 53.3,
-   "value_eok": 7415,
-   "price": 75000.0,
+   "vol_turnover_pct": 54.2,
+   "value_eok": 7549,
+   "price": 74500.0,
    "first_seen": "10:07",
    "exploded": false
   }
