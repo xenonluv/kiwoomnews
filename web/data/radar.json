@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-23 16:04:21 KST",
+ "generated_at": "2026-07-23 16:09:16 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -340,7 +340,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 2.99,
-    "freshness_as_of": "2026-07-23T16:04:21+09:00",
+    "freshness_as_of": "2026-07-23T16:09:16+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -381,7 +381,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:04:20.619830+09:00"
+    "checked_at": "2026-07-23T16:09:15.709593+09:00"
    },
    "listing_market": "KOSPI",
    "rank_bucket": 0,
@@ -425,8 +425,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:04:28+09:00",
-    "expires_at": "2026-07-23T16:14:28+09:00",
+    "checked_at": "2026-07-23T16:09:23+09:00",
+    "expires_at": "2026-07-23T16:19:23+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -643,7 +643,7 @@
     "source_count": 5,
     "relevant_count": 5,
     "captured_freshness_days": 1.97,
-    "freshness_as_of": "2026-07-23T16:04:21+09:00",
+    "freshness_as_of": "2026-07-23T16:09:16+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -657,7 +657,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:04:20.925540+09:00"
+    "checked_at": "2026-07-23T16:09:16.014558+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -700,8 +700,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:04:33+09:00",
-    "expires_at": "2026-07-23T16:14:33+09:00",
+    "checked_at": "2026-07-23T16:09:28+09:00",
+    "expires_at": "2026-07-23T16:19:28+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -939,7 +939,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-23T16:04:21+09:00",
+    "freshness_as_of": "2026-07-23T16:09:16+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -967,7 +967,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:04:19.460789+09:00"
+    "checked_at": "2026-07-23T16:09:14.346080+09:00"
    },
    "listing_market": "KOSDAQ",
    "alert_release": false,
@@ -986,7 +986,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
     "raw_text_hash": "e59335513fbf1b9f06f7",
-    "fetched_at": "2026-07-23 16:04:20 KST",
+    "fetched_at": "2026-07-23 16:09:15 KST",
     "notice_no": "74992906",
     "target_evidence": {
      "requested_code": "008290",
@@ -1000,7 +1000,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
      "raw_text_hash": "e59335513fbf1b9f06f7",
-     "fetched_at": "2026-07-23 16:04:20 KST"
+     "fetched_at": "2026-07-23 16:09:15 KST"
     }
    },
    "alert_release_checks": {
@@ -1058,8 +1058,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:04:29+09:00",
-    "expires_at": "2026-07-23T16:14:29+09:00",
+    "checked_at": "2026-07-23T16:09:24+09:00",
+    "expires_at": "2026-07-23T16:19:24+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1229,7 +1229,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 27.25,
+    "freshness_days": 27.26,
     "directness": "직접",
     "tags": [
      "공시/대형이벤트",
@@ -1265,8 +1265,8 @@
     ],
     "source_count": 3,
     "relevant_count": 3,
-    "captured_freshness_days": 27.25,
-    "freshness_as_of": "2026-07-23T16:04:21+09:00",
+    "captured_freshness_days": 27.26,
+    "freshness_as_of": "2026-07-23T16:09:16+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1294,7 +1294,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:04:20.478978+09:00"
+    "checked_at": "2026-07-23T16:09:15.581109+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 3,
@@ -1337,8 +1337,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:04:31+09:00",
-    "expires_at": "2026-07-23T16:14:31+09:00",
+    "checked_at": "2026-07-23T16:09:26+09:00",
+    "expires_at": "2026-07-23T16:19:26+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
