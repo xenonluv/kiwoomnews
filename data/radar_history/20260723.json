@@ -148,7 +148,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 2.13,
+    "freshness_days": 2.14,
     "directness": "직접",
     "tags": [
      "공시",
@@ -200,8 +200,8 @@
     ],
     "source_count": 5,
     "relevant_count": 5,
-    "captured_freshness_days": 2.13,
-    "freshness_as_of": "2026-07-23T20:04:29+09:00",
+    "captured_freshness_days": 2.14,
+    "freshness_as_of": "2026-07-23T20:09:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -291,7 +291,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T20:04:29.045406+09:00"
+    "checked_at": "2026-07-23T20:09:24.311892+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -327,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T20:04:43+09:00",
-    "expires_at": "2026-07-23T20:14:43+09:00",
+    "checked_at": "2026-07-23T20:09:38+09:00",
+    "expires_at": "2026-07-23T20:19:38+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -677,7 +677,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "1주내",
-    "freshness_days": 3.15,
+    "freshness_days": 3.16,
     "directness": "직접",
     "tags": [
      "공시",
@@ -705,8 +705,8 @@
     ],
     "source_count": 2,
     "relevant_count": 2,
-    "captured_freshness_days": 3.15,
-    "freshness_as_of": "2026-07-23T20:04:29+09:00",
+    "captured_freshness_days": 3.16,
+    "freshness_as_of": "2026-07-23T20:09:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -830,7 +830,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T20:04:28.800317+09:00"
+    "checked_at": "2026-07-23T20:09:24.021882+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -873,8 +873,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T20:04:39+09:00",
-    "expires_at": "2026-07-23T20:14:39+09:00",
+    "checked_at": "2026-07-23T20:09:34+09:00",
+    "expires_at": "2026-07-23T20:19:34+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1246,8 +1246,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T20:04:41+09:00",
-    "expires_at": "2026-07-23T20:14:41+09:00",
+    "checked_at": "2026-07-23T20:09:36+09:00",
+    "expires_at": "2026-07-23T20:19:36+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
@@ -1308,7 +1308,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 27.42,
-    "freshness_as_of": "2026-07-23T20:04:29+09:00",
+    "freshness_as_of": "2026-07-23T20:09:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1322,10 +1322,10 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T20:04:28.496959+09:00"
+    "checked_at": "2026-07-23T20:09:23.726188+09:00"
    },
    "first_blocked": "2026-07-23 13:19:18 KST",
-   "last_blocked": "2026-07-23 20:04:29 KST"
+   "last_blocked": "2026-07-23 20:09:24 KST"
   },
   "008290": {
    "name": "원풍물산",
@@ -1347,8 +1347,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T20:04:40+09:00",
-    "expires_at": "2026-07-23T20:14:40+09:00",
+    "checked_at": "2026-07-23T20:09:35+09:00",
+    "expires_at": "2026-07-23T20:19:35+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1404,7 +1404,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-23T20:04:29+09:00",
+    "freshness_as_of": "2026-07-23T20:09:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -1418,13 +1418,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T20:04:27.310524+09:00"
+    "checked_at": "2026-07-23T20:09:22.594078+09:00"
    },
    "first_blocked": "2026-07-23 15:14:34 KST",
-   "last_blocked": "2026-07-23 20:04:29 KST"
+   "last_blocked": "2026-07-23 20:09:24 KST"
   }
  },
- "as_of": "2026-07-23 20:04:29 KST",
+ "as_of": "2026-07-23 20:09:24 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
