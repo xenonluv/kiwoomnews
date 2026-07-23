@@ -201,7 +201,7 @@
     "source_count": 5,
     "relevant_count": 5,
     "captured_freshness_days": 2.09,
-    "freshness_as_of": "2026-07-23T18:59:59+09:00",
+    "freshness_as_of": "2026-07-23T19:04:55+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -291,7 +291,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T18:59:58.851192+09:00"
+    "checked_at": "2026-07-23T19:04:55.665499+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -327,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T19:00:10+09:00",
-    "expires_at": "2026-07-23T19:10:10+09:00",
+    "checked_at": "2026-07-23T19:05:06+09:00",
+    "expires_at": "2026-07-23T19:15:06+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -706,7 +706,7 @@
     "source_count": 2,
     "relevant_count": 2,
     "captured_freshness_days": 3.11,
-    "freshness_as_of": "2026-07-23T18:59:59+09:00",
+    "freshness_as_of": "2026-07-23T19:04:55+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -830,7 +830,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T18:59:58.547278+09:00"
+    "checked_at": "2026-07-23T19:04:55.438925+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -873,8 +873,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T19:00:06+09:00",
-    "expires_at": "2026-07-23T19:10:06+09:00",
+    "checked_at": "2026-07-23T19:05:02+09:00",
+    "expires_at": "2026-07-23T19:15:02+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1246,8 +1246,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T19:00:08+09:00",
-    "expires_at": "2026-07-23T19:10:08+09:00",
+    "checked_at": "2026-07-23T19:05:04+09:00",
+    "expires_at": "2026-07-23T19:15:04+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
@@ -1271,7 +1271,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 27.37,
+    "freshness_days": 27.38,
     "directness": "직접",
     "tags": [
      "공시/대형이벤트",
@@ -1307,8 +1307,8 @@
     ],
     "source_count": 3,
     "relevant_count": 3,
-    "captured_freshness_days": 27.37,
-    "freshness_as_of": "2026-07-23T18:59:59+09:00",
+    "captured_freshness_days": 27.38,
+    "freshness_as_of": "2026-07-23T19:04:55+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1322,10 +1322,10 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T18:59:58.308024+09:00"
+    "checked_at": "2026-07-23T19:04:55.169107+09:00"
    },
    "first_blocked": "2026-07-23 13:19:18 KST",
-   "last_blocked": "2026-07-23 18:59:59 KST"
+   "last_blocked": "2026-07-23 19:04:55 KST"
   },
   "008290": {
    "name": "원풍물산",
@@ -1347,8 +1347,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T19:00:07+09:00",
-    "expires_at": "2026-07-23T19:10:07+09:00",
+    "checked_at": "2026-07-23T19:05:03+09:00",
+    "expires_at": "2026-07-23T19:15:03+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1404,7 +1404,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-23T18:59:59+09:00",
+    "freshness_as_of": "2026-07-23T19:04:55+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -1418,13 +1418,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T18:59:57.282704+09:00"
+    "checked_at": "2026-07-23T19:04:54.087854+09:00"
    },
    "first_blocked": "2026-07-23 15:14:34 KST",
-   "last_blocked": "2026-07-23 18:59:59 KST"
+   "last_blocked": "2026-07-23 19:04:55 KST"
   }
  },
- "as_of": "2026-07-23 18:59:59 KST",
+ "as_of": "2026-07-23 19:04:55 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
