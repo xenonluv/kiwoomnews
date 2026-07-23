@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 import radar
 from radar_audit import AuditCollector
-from rank_policy import policy_metadata
+from rank_policy import RANK_MODEL_VERSION, policy_metadata
 
 
 CODE = "263800"
@@ -160,7 +160,7 @@ def main():
         assert persisted.ok, persisted.error
         root = Path(td)
         assert (root / "schema.json").is_file()
-        assert (root / "models" / "rank4-v1.json").is_file()
+        assert (root / "models" / f"{RANK_MODEL_VERSION}.json").is_file()
         day = root / "2026" / "07" / "13"
         minute = json.loads((day / "minute" / f"{CODE}_KRX.json").read_text(encoding="utf-8"))
         assert minute["bars"][0]["volume"] == 1234

@@ -233,9 +233,15 @@ export function SuspectCard({
   const materialGrade = material?.grade;
   const showMaterial = !!materialGrade && materialGrade !== "N";
   const priorSnapshot = s.rank_bucket_stats_snapshot;
-  const sampleCaution = priorSnapshot?.n != null
+  const veryGoodComboD =
+    s.shakeout === true &&
+    s.very_good === true &&
+    s.very_good_tier != null &&
+    s.strength_tier != null &&
+    s.strength_tier >= 3;
+  const sampleCaution = veryGoodComboD || (priorSnapshot?.n != null
     ? priorSnapshot.n < 10
-    : s.rank_bucket === 1 || s.rank_bucket === 4;
+    : s.rank_bucket === 1 || s.rank_bucket === 4);
   const topCut =
     (s.run_6d_pct ?? 0) >= 30 ||
     ((materialGrade === "C" || materialGrade === "N") && (s.turnover_pct ?? 0) >= 90);

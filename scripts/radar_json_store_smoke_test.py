@@ -10,6 +10,7 @@ from pathlib import Path
 from unittest import mock
 
 import radar_json_store as store
+from rank_policy import RANK_MODEL_VERSION, policy_metadata
 
 
 DAY = "20260713"
@@ -33,7 +34,7 @@ class RadarJsonStoreTest(unittest.TestCase):
             "run": {
                 "trade_date": DAY,
                 "generated_at": STAMP,
-                "rank_model_version": "rank4-v1",
+                "rank_model_version": RANK_MODEL_VERSION,
                 "scan_ok": True,
             },
             "universe": {"scope": "observed_union_not_full_market"},
@@ -43,13 +44,19 @@ class RadarJsonStoreTest(unittest.TestCase):
         }
 
     def test_initialize_schema_and_immutable_model(self):
+        current = policy_metadata()
+        self.assertEqual(store.DEFAULT_MODEL["model_version"], current["rank_model_version"])
+        self.assertEqual(store.DEFAULT_MODEL["policy_name"], current["rank_policy_name"])
+        self.assertEqual(store.DEFAULT_MODEL["source_commit"], current["rank_model_source_commit"])
+        self.assertEqual(store.DEFAULT_MODEL["effective_from"], current["rank_model_effective_from"])
+        self.assertEqual(store.DEFAULT_MODEL["effective_at"], current["rank_model_effective_at"])
         result = store.initialize_store(self.root)
         self.assertTrue(result.ok, result.error)
         schema = self.read_json(self.root / "schema.json")
-        model = self.read_json(self.root / "models" / "rank4-v1.json")
+        model = self.read_json(self.root / "models" / f"{RANK_MODEL_VERSION}.json")
         self.assertEqual(schema["authority"], "local_raw_json")
         self.assertTrue(schema["immutable_scan_files"])
-        self.assertEqual(model["prior"]["strength"], "strong")
+        self.assertEqual(model["prior"]["strength"], "observe")
         self.assertTrue(store.verify_payload_integrity(schema))
         self.assertTrue(store.verify_payload_integrity(model))
 
@@ -69,7 +76,7 @@ class RadarJsonStoreTest(unittest.TestCase):
         self.assertTrue(first.ok, first.error)
         self.assertTrue(second.ok, second.error)
         self.assertTrue((self.root / "schema.json").is_file())
-        self.assertTrue((self.root / "models" / "rank4-v1.json").is_file())
+        self.assertTrue((self.root / "models" / f"{RANK_MODEL_VERSION}.json").is_file())
         self.assertNotEqual(first.path, second.path)
         self.assertTrue(Path(first.path).name.startswith("scan_090312_"))
         original = Path(first.path).read_bytes()

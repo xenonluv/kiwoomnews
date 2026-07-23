@@ -58,7 +58,7 @@ export function RankEvalPanel({ data }: { data: RankEval }) {
 
       {models.length === 0 ? (
         <p className="mt-4 border-t border-white/10 pt-3 text-sm text-warning">
-          rank4-v1 forward 수집 중 · 저장된 모델·신호 bucket·의사결정 시점이 모두 있는 표본만 집계
+          현행 순위 모델 forward 수집 중 · 저장된 모델·신호 bucket·의사결정 시점이 모두 있는 표본만 집계
         </p>
       ) : (
         models.map(([version, model]) => (
@@ -94,7 +94,7 @@ export function RankEvalPanel({ data }: { data: RankEval }) {
       {reference && (
         <p className="mt-3 text-[11px] text-muted-foreground">
           참고 기준선: 구정렬 혼합 {reference.multi_candidate_days}일 · Top1 {reference.top1_hits}/{reference.multi_candidate_days}
-          {" · "}Top3 {reference.top3_hits}/{reference.multi_candidate_days}. rank4-v1 성과에는 포함하지 않습니다.
+          {" · "}Top3 {reference.top3_hits}/{reference.multi_candidate_days}. 현행 모델 성과에는 포함하지 않습니다.
         </p>
       )}
     </section>

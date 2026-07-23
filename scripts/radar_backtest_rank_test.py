@@ -10,14 +10,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import radar_backtest as rb  # noqa: E402
 
 
-def sample(code, date="20260713", bucket=4, high=10.0, rank=1, **extra):
+def sample(code, date=None, bucket=4, high=10.0, rank=1, **extra):
+    date = date or rb.FORWARD_EFFECTIVE_FROM
     row = {
         "date": date,
         "signal_date": date,
         "code": code,
         "name": code,
-        "rank_model_version": "rank4-v1",
-        "rank_model_effective_from": "20260713",
+        "rank_model_version": rb.FORWARD_MODEL_VERSION,
+        "rank_model_effective_from": rb.FORWARD_EFFECTIVE_FROM,
         "rank_bucket_at_signal": bucket,
         "evaluated_entry": 1000,
         "evaluated_entry_basis": "KRX_CLOSE",
@@ -87,13 +88,26 @@ class RankForwardTest(unittest.TestCase):
 
 
 class RankEvalTest(unittest.TestCase):
+    def test_each_model_version_keeps_its_own_effective_window(self):
+        current = sample("V2")
+        legacy = sample(
+            "V1",
+            date="20260713",
+            rank_model_version="rank4-v1",
+            rank_model_effective_from="20260713",
+        )
+        evaluated = rb.rank_eval([legacy, current])["by_model_version"]
+        self.assertEqual(set(evaluated), {"rank4-v1", rb.FORWARD_MODEL_VERSION})
+        # 현행 actionable forward 표에는 v2만 들어간다.
+        self.assertEqual(rb.rank_bucket_stats_forward([legacy, current])["eod"]["sample_n"], 1)
+
     def test_singleton_is_separate_from_topk_denominator(self):
         rows = [
             sample("A", high=12.0, rank=1),
             sample("B", high=5.0, rank=2),
-            sample("C", date="20260714", high=8.0, rank=1),
+            sample("C", date="20260727", high=8.0, rank=1),
         ]
-        stats = rb.rank_eval(rows)["by_model_version"]["rank4-v1"]["populations"]["eod"]
+        stats = rb.rank_eval(rows)["by_model_version"][rb.FORWARD_MODEL_VERSION]["populations"]["eod"]
         self.assertEqual(stats["multi_candidate_days"], 1)
         self.assertEqual(stats["single_candidate"]["days"], 1)
         self.assertEqual(stats["top1_n"], 1)
@@ -104,7 +118,7 @@ class RankEvalTest(unittest.TestCase):
 
     def test_actual_high_tie_has_deterministic_shared_winner(self):
         rows = [sample("A", high=10.0, rank=1), sample("B", high=10.0, rank=2)]
-        stats = rb.rank_eval(rows)["by_model_version"]["rank4-v1"]["populations"]["eod"]
+        stats = rb.rank_eval(rows)["by_model_version"][rb.FORWARD_MODEL_VERSION]["populations"]["eod"]
         self.assertEqual(stats["top1_hit"], 100.0)
         self.assertEqual(stats["winner_published_rank"], [{"rank": 1, "days": 1}])
 
@@ -165,7 +179,10 @@ class EvaluationStoreTest(unittest.TestCase):
                     os.environ.pop(env_key, None)
                 else:
                     os.environ[env_key] = old_root
-            path = os.path.join(root, "2026", "07", "13", "evaluation", "next_day.json")
+            date = rb.FORWARD_EFFECTIVE_FROM
+            path = os.path.join(
+                root, date[:4], date[4:6], date[6:8], "evaluation", "next_day.json"
+            )
             self.assertTrue(os.path.exists(path))
             with open(path, encoding="utf-8") as f:
                 payload = json.load(f)
@@ -173,7 +190,9 @@ class EvaluationStoreTest(unittest.TestCase):
             self.assertEqual(payload["results"][0]["rank_bucket_at_signal"], 4)
             self.assertEqual(payload["results"][0]["entry_price"], 1000)
             self.assertEqual(payload["results"][0]["populations"]["eod"]["rank_bucket"], 4)
-            self.assertTrue(os.path.exists(os.path.join(root, "2026", "07", "13", "manifest.json")))
+            self.assertTrue(os.path.exists(os.path.join(
+                root, date[:4], date[4:6], date[6:8], "manifest.json"
+            )))
 
 
 if __name__ == "__main__":

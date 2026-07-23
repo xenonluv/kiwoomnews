@@ -46,10 +46,14 @@ PERF_PATH = os.path.join(REPO, "web", "data", "performance.json")
 SHAKEOUT_BACKFILL_PATH = os.path.join(REPO, "data", "shakeout_backfill.json")
 LOCAL_RADAR_ROOT = os.path.join(REPO, "data", "local", "radar_raw")
 
-# rank4-v1의 실제 전진검증 하한. 2026-07-10은 장중 혼합 배포일이라
-# 저장된 bucket이 있어도 forward로 인정하지 않는다.
+# 현재 순위 모델의 실제 전진검증 하한. 구버전 신호는 모델별 평가에는 남기되
+# 현행 forward bucket 성과에는 섞지 않는다.
 FORWARD_MODEL_VERSION = RANK_MODEL_VERSION
 FORWARD_EFFECTIVE_FROM = RANK_MODEL_EFFECTIVE_FROM
+KNOWN_FORWARD_EFFECTIVE_FROM = {
+    "rank4-v1": "20260713",
+    FORWARD_MODEL_VERSION: FORWARD_EFFECTIVE_FROM,
+}
 
 # 수상함 점수 항목별 기본 최대치 (radar.py suspicion_score와 정합)
 DEFAULT_WEIGHTS = {"spark": 15.0, "fade": 15.0, "flow": 15.0, "event": 15.0, "ma10": 10.0}
@@ -1610,12 +1614,13 @@ def _is_forward_sample(s, model_version=None):
     if not version or (model_version is not None and version != model_version):
         return False
     signal_date = _date_digits(s.get("signal_date") or s.get("date"))
-    if signal_date == "20260710" or signal_date < FORWARD_EFFECTIVE_FROM:
+    if signal_date == "20260710":
         return False
+    expected_from = KNOWN_FORWARD_EFFECTIVE_FROM.get(version)
     effective = _date_digits(s.get("rank_model_effective_from"))
-    if not effective and version == FORWARD_MODEL_VERSION:
-        effective = FORWARD_EFFECTIVE_FROM
-    if not effective or effective < FORWARD_EFFECTIVE_FROM or signal_date < effective:
+    if not effective:
+        effective = expected_from
+    if not effective or (expected_from and effective < expected_from) or signal_date < effective:
         return False
     return _int_bucket(s.get("rank_bucket_at_signal")) is not None
 
@@ -1636,7 +1641,7 @@ def _forward_population_table(samples, population, model_version=FORWARD_MODEL_V
 
 
 def rank_bucket_stats_forward(samples):
-    """rank4-v1 발효 후 저장된 버킷만 집계한다. 실제 상신 판정도 이 표만 수행한다."""
+    """현행 모델 발효 후 저장된 버킷만 집계한다. 실제 상신 판정도 이 표만 수행한다."""
     eod = _forward_population_table(samples, "eod", include_kill=True)
     return {
         "basis": "forward_saved_signal",
@@ -1872,7 +1877,7 @@ def rank_eval(samples):
                 "multi_candidate_days": 8,
                 "top1_hits": 3,
                 "top3_hits": 6,
-                "note": "구정렬 혼합 기준선이며 rank4-v1 성과에 포함하지 않음",
+                "note": f"구정렬 혼합 기준선이며 {FORWARD_MODEL_VERSION} 성과에 포함하지 않음",
             }
         },
     }
