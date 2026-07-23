@@ -201,7 +201,7 @@
     "source_count": 5,
     "relevant_count": 5,
     "captured_freshness_days": 1.96,
-    "freshness_as_of": "2026-07-23T15:54:13+09:00",
+    "freshness_as_of": "2026-07-23T15:59:17+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -246,9 +246,9 @@
    "snapshot_high": 16950.0,
    "snapshot_low": 13800.0,
    "snapshot_close": 14420.0,
-   "snapshot_volume": 2550085.0,
-   "snapshot_value": 39824000000.0,
-   "snapshot_value_eok": 398.2,
+   "snapshot_volume": 2550509.0,
+   "snapshot_value": 39830000000.0,
+   "snapshot_value_eok": 398.3,
    "snapshot_as_of": "20260723",
    "signal_date": "20260723",
    "signal_open": 13940.0,
@@ -256,9 +256,9 @@
    "signal_low": 13800.0,
    "signal_close": 14420.0,
    "signal_prev_close": 13800.0,
-   "signal_volume": 2550085.0,
-   "signal_value": 39824000000.0,
-   "signal_value_eok": 398.2,
+   "signal_volume": 2550509.0,
+   "signal_value": 39830000000.0,
+   "signal_value_eok": 398.3,
    "signal_peak6_price": 17000.0,
    "signal_peak60_price": 29050.0,
    "signal_ma20": 13117.0,
@@ -291,7 +291,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T15:54:13.174833+09:00"
+    "checked_at": "2026-07-23T15:59:17.280827+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -327,8 +327,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T15:54:25+09:00",
-    "expires_at": "2026-07-23T16:04:25+09:00",
+    "checked_at": "2026-07-23T15:59:29+09:00",
+    "expires_at": "2026-07-23T16:09:29+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -714,7 +714,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 2.98,
-    "freshness_as_of": "2026-07-23T15:54:13+09:00",
+    "freshness_as_of": "2026-07-23T15:59:17+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -751,8 +751,8 @@
    "snapshot_high": 1493.0,
    "snapshot_low": 1081.0,
    "snapshot_close": 1096.0,
-   "snapshot_volume": 4397934.0,
-   "snapshot_value": 5580000000.0,
+   "snapshot_volume": 4400399.0,
+   "snapshot_value": 5582000000.0,
    "snapshot_value_eok": 55.8,
    "snapshot_as_of": "20260723",
    "signal_date": "20260723",
@@ -761,8 +761,8 @@
    "signal_low": 1081.0,
    "signal_close": 1096.0,
    "signal_prev_close": 1235.0,
-   "signal_volume": 4397934.0,
-   "signal_value": 5580000000.0,
+   "signal_volume": 4400399.0,
+   "signal_value": 5582000000.0,
    "signal_value_eok": 55.8,
    "signal_peak6_price": null,
    "signal_peak60_price": null,
@@ -846,7 +846,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T15:54:12.994187+09:00"
+    "checked_at": "2026-07-23T15:59:16.982726+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -857,7 +857,7 @@
    "alert_elapsed_days": null,
    "shakeout": true,
    "fade_pct": 32.2,
-   "turnover_2d_pct": 126.9,
+   "turnover_2d_pct": 127.0,
    "peak_dd_pct": -60.8,
    "strength_tier": 2,
    "strength": "조합C(중립)",
@@ -889,8 +889,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T15:54:21+09:00",
-    "expires_at": "2026-07-23T16:04:21+09:00",
+    "checked_at": "2026-07-23T15:59:25+09:00",
+    "expires_at": "2026-07-23T16:09:25+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1262,8 +1262,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T15:54:23+09:00",
-    "expires_at": "2026-07-23T16:04:23+09:00",
+    "checked_at": "2026-07-23T15:59:27+09:00",
+    "expires_at": "2026-07-23T16:09:27+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
@@ -1324,7 +1324,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 27.25,
-    "freshness_as_of": "2026-07-23T15:54:13+09:00",
+    "freshness_as_of": "2026-07-23T15:59:17+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1338,10 +1338,10 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T15:54:12.699636+09:00"
+    "checked_at": "2026-07-23T15:59:16.695396+09:00"
    },
    "first_blocked": "2026-07-23 13:19:18 KST",
-   "last_blocked": "2026-07-23 15:54:13 KST"
+   "last_blocked": "2026-07-23 15:59:17 KST"
   },
   "008290": {
    "name": "원풍물산",
@@ -1363,8 +1363,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T15:54:21+09:00",
-    "expires_at": "2026-07-23T16:04:21+09:00",
+    "checked_at": "2026-07-23T15:59:25+09:00",
+    "expires_at": "2026-07-23T16:09:25+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1388,7 +1388,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 21.28,
+    "freshness_days": 21.29,
     "directness": "직접",
     "tags": [
      "반도체"
@@ -1420,7 +1420,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-23T15:54:13+09:00",
+    "freshness_as_of": "2026-07-23T15:59:17+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -1434,13 +1434,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T15:54:11.570186+09:00"
+    "checked_at": "2026-07-23T15:59:15.677588+09:00"
    },
    "first_blocked": "2026-07-23 15:14:34 KST",
-   "last_blocked": "2026-07-23 15:54:13 KST"
+   "last_blocked": "2026-07-23 15:59:17 KST"
   }
  },
- "as_of": "2026-07-23 15:54:13 KST",
+ "as_of": "2026-07-23 15:59:17 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
