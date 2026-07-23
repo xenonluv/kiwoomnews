@@ -254,10 +254,15 @@ export function SuspectCard({
     s.strength_tier != null &&
     s.strength_tier >= 3;
   const turnover2dPct = s.turnover_2d_pct ?? null;
+  const turnover2dVeryCaution =
+    s.shakeout === true &&
+    turnover2dPct != null &&
+    turnover2dPct > 200;
   const turnover2dOverheated =
     s.shakeout === true &&
     turnover2dPct != null &&
-    turnover2dPct > 180;
+    turnover2dPct > 180 &&
+    turnover2dPct <= 200;
   const shakeoutBadge = shakeoutBadgeMeta(s);
   const previewBadge = alertPreviewMeta(s.next_market_alert_preview ?? undefined);
   const eligibilityBadge = eligibilityBadgeMeta(s.next_session_eligibility);
@@ -328,6 +333,14 @@ export function SuspectCard({
                 title="신호일과 전일의 유통주식수 대비 거래량 합계가 180%를 초과했습니다. 손바뀜이 매우 큰 구간으로 재상승과 물량소진이 모두 가능한 위험 관찰값입니다. 강한흔들기 판정이나 매수 신호가 아닙니다."
               >
                 ⚠ 2일 회전 극과열 {turnover2dPct.toFixed(1)}%
+              </Badge>
+            )}
+            {turnover2dVeryCaution && turnover2dPct != null && (
+              <Badge
+                className="bg-[#F23645] px-2.5 py-1 text-base font-black text-white"
+                title={`신호일과 전일의 유통주식수 대비 거래량 합계가 ${turnover2dPct.toFixed(1)}%로 200%를 초과했습니다. 물량소진과 익일 급락 위험을 특히 주의해야 하는 관찰값입니다. 순위 자동 강등이나 매수 차단을 의미하지 않습니다.`}
+              >
+                🚨 2일 회전 200% 초과 · 매우주의
               </Badge>
             )}
             {s.shakeout && s.strength && !comboDOnly && (
