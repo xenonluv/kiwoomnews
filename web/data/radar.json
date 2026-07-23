@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-23 13:38:58 KST",
+ "generated_at": "2026-07-23 13:43:59 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -46,17 +46,29 @@
    "estimated": false
   }
  ],
- "explosions": [],
+ "explosions": [
+  {
+   "code": "475150",
+   "name": "SK이터닉스",
+   "sector": "SK이터닉스",
+   "high_pct": 30.0,
+   "vol_turnover_pct": 90.0,
+   "value_eok": 12900,
+   "price": 79900.0,
+   "change_pct": 28.87,
+   "backfill": false
+  }
+ ],
  "youtong": [
   {
    "code": "465770",
    "name": "STX그린로지스",
    "sector": "STX그린로지스",
-   "change_pct": -2.62,
+   "change_pct": -2.12,
    "high_pct": 11.81,
    "vol_turnover_pct": 109.9,
    "value_eok": 240,
-   "price": 4825.0,
+   "price": 4850.0,
    "first_seen": "11:17",
    "exploded": false
   },
@@ -64,23 +76,23 @@
    "code": "475150",
    "name": "SK이터닉스",
    "sector": "SK이터닉스",
-   "change_pct": 29.68,
+   "change_pct": 28.87,
    "high_pct": 30.0,
-   "vol_turnover_pct": 88.5,
-   "value_eok": 12674,
-   "price": 80400.0,
+   "vol_turnover_pct": 90.0,
+   "value_eok": 12900,
+   "price": 79900.0,
    "first_seen": "10:07",
-   "exploded": false
+   "exploded": true
   },
   {
    "code": "218150",
    "name": "미래생명자원",
    "sector": "미래생명자원",
-   "change_pct": -0.59,
+   "change_pct": -1.37,
    "high_pct": 14.31,
    "vol_turnover_pct": 56.3,
    "value_eok": 134,
-   "price": 2535.0,
+   "price": 2515.0,
    "first_seen": "11:47",
    "exploded": false
   },
@@ -88,16 +100,333 @@
    "code": "002140",
    "name": "고려산업",
    "sector": "고려산업",
-   "change_pct": 2.47,
+   "change_pct": 2.22,
    "high_pct": 15.8,
    "vol_turnover_pct": 54.1,
    "value_eok": 153,
-   "price": 2075.0,
+   "price": 2070.0,
    "first_seen": "12:22",
    "exploded": false
   }
  ],
  "suspects": [
+  {
+   "code": "044380",
+   "name": "주연테크",
+   "sector": "주연테크",
+   "pattern": "reaccum",
+   "geupso": false,
+   "geupso_bars": [],
+   "shake": null,
+   "deep_shake": null,
+   "suspicion_score": 62,
+   "calibrated_prob": null,
+   "score_breakdown": {
+    "base": 62,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "score_raw": 0,
+   "score_breakdown_raw": {
+    "base": 0,
+    "re_count": 0,
+    "re_body": 0,
+    "peak_turnover": 0,
+    "re_turnover": 0
+   },
+   "forecast": {
+    "horizon": "3일 내 +7%",
+    "prob_pct": 52,
+    "base_pct": 46,
+    "strong": true,
+    "next_day_7_pct": 25,
+    "note": "과거 실측 확률·보장 아님"
+   },
+   "price": 1102.0,
+   "change_pct": -10.77,
+   "change_basis": "KRX",
+   "high_pct": 20.89,
+   "value_eok": 37,
+   "snapshot_open": 1171.0,
+   "snapshot_high": 1493.0,
+   "snapshot_low": 1101.0,
+   "snapshot_close": 1102.0,
+   "snapshot_volume": 2871356.0,
+   "snapshot_value": 3733000000.0,
+   "snapshot_value_eok": 37.3,
+   "snapshot_as_of": "20260723",
+   "signal_date": "20260723",
+   "signal_open": 1171.0,
+   "signal_high": 1493.0,
+   "signal_low": 1101.0,
+   "signal_close": 1102.0,
+   "signal_prev_close": 1235.0,
+   "signal_volume": 2871356.0,
+   "signal_value": 3733000000.0,
+   "signal_value_eok": 37.3,
+   "signal_source": "daily_latest",
+   "turnover_pct": 34.2,
+   "peak_turnover_pct": null,
+   "float_ratio": 0.6512,
+   "turnover_basis": "float",
+   "ma10": 1005.3,
+   "ma10_margin_pct": 9.62,
+   "spark": {
+    "clusters": []
+   },
+   "spark_max_x": null,
+   "spark_max_pct": null,
+   "mega_flow": false,
+   "reignition": {
+    "body_pct": 27.5,
+    "time": "09:00",
+    "value_eok": 2,
+    "count": 0
+   },
+   "reignition_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 27.5,
+     "value_eok": 2
+    },
+    {
+     "time": "09:25",
+     "body_pct": 4.05,
+     "value_eok": 1
+    },
+    {
+     "time": "09:30",
+     "body_pct": 2.95,
+     "value_eok": 2
+    },
+    {
+     "time": "10:10",
+     "body_pct": 3.35,
+     "value_eok": 1
+    },
+    {
+     "time": "10:40",
+     "body_pct": 2.31,
+     "value_eok": 0
+    },
+    {
+     "time": "11:30",
+     "body_pct": 2.46,
+     "value_eok": 1
+    }
+   ],
+   "low_accum": true,
+   "low_accum_bars": [
+    {
+     "time": "09:00",
+     "body_pct": 27.5
+    },
+    {
+     "time": "09:25",
+     "body_pct": 4.05
+    },
+    {
+     "time": "09:30",
+     "body_pct": 2.95
+    },
+    {
+     "time": "10:10",
+     "body_pct": 3.35
+    },
+    {
+     "time": "10:40",
+     "body_pct": 2.31
+    },
+    {
+     "time": "11:30",
+     "body_pct": 2.46
+    }
+   ],
+   "news": [
+    {
+     "title": "주연테크, 10억 유상증자…화평홀딩스에 제3자배정",
+     "summary": "코스피 상장사 주연테크는 제3자배정 유상증자를 결정했다고 20일 공시했습니다. 주당 1천원에 신주 100만주(보통주)가 발행되며, 제3자배정 대상자는 (주)화평홀딩스(최대주주, 100만주) 입니다.",
+     "office": "SBS Biz",
+     "datetime": "202607201623",
+     "url": "https://n.news.naver.com/mnews/article/374/0000522569",
+     "sentiment": "호재"
+    },
+    {
+     "title": "[특징주] ‘애국 테마주’ 희비…주연테크 상한가·에넥스 24% 급락",
+     "summary": "국내 증시에서 이른바 ‘애국 테마주’를 둘러싼 매수세가 이어지는 가운데 종목별 주가 흐름은 극명하게 엇갈리고 있다. 일부 종목은 상한가를 기록한 반면, 앞서 급등했던 종목에는 차익실현 매물이 쏟아지며 큰 폭의 하락세를 보이고 있다....",
+     "office": "조선비즈",
+     "datetime": "202607200958",
+     "url": "https://n.news.naver.com/mnews/article/366/0001180274",
+     "sentiment": "혼재"
+    },
+    {
+     "title": "주연테크, 게이밍 모니터 'X27F144W' 출시",
+     "summary": "주연테크가 게이밍 모니터 신제품 'X27F144W'를 출시했다. X27F144W는 27형 크기에 144헤르츠(㎐) 고주사율·1밀리세컨드(ms) 응답 속도를 갖춘 모니터다. 일반 60Hz 모니터 대비 부드러운 화면 전환을 제공, 빠른 움직임이 많은 레이",
+     "office": "전자신문",
+     "datetime": "202606221253",
+     "url": "https://n.news.naver.com/mnews/article/030/0003439882",
+     "sentiment": "호재"
+    }
+   ],
+   "matched_events": [],
+   "theme": "실적",
+   "material": {
+    "grade": "A",
+    "score": 84,
+    "summary": "주연테크, 10억 유상증자…화평홀딩스에 제3자배정",
+    "sentiment": "호재",
+    "reliability": "공시+뉴스",
+    "freshness": "2~3일",
+    "freshness_days": 2.89,
+    "directness": "직접",
+    "tags": [
+     "공시",
+     "공시/대형이벤트",
+     "구제/수혈",
+     "실적",
+     "실적/재무",
+     "테마/수혜"
+    ],
+    "risk_flags": [],
+    "evidence": [
+     {
+      "title": "주연테크, 10억 유상증자…화평홀딩스에 제3자배정",
+      "datetime": "202607201623",
+      "source": "SBS Biz",
+      "url": "https://n.news.naver.com/mnews/article/374/0000522569",
+      "score": 86
+     },
+     {
+      "title": "주연테크, 게이밍 모니터 'X27F144W' 출시",
+      "datetime": "202606221253",
+      "source": "전자신문",
+      "url": "https://n.news.naver.com/mnews/article/030/0003439882",
+      "score": 44
+     },
+     {
+      "title": "[특징주] ‘애국 테마주’ 희비…주연테크 상한가·에넥스 24% 급락",
+      "datetime": "202607200958",
+      "source": "조선비즈",
+      "url": "https://n.news.naver.com/mnews/article/366/0001180274",
+      "score": 31
+     }
+    ],
+    "source_count": 3,
+    "relevant_count": 3,
+    "captured_freshness_days": 2.89,
+    "freshness_as_of": "2026-07-23T13:43:59+09:00",
+    "freshness_basis": "evidence_latest_datetime",
+    "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
+    "freshness_parse_status": "complete",
+    "future_evidence_n": 0
+   },
+   "visible_experimental": true,
+   "reaccum": {
+    "peak_date": "20260722",
+    "peak_value_eok": 0,
+    "peak_high_pct": 0.0,
+    "peak_turnover_pct": null,
+    "peak_ibs": 0.35,
+    "peak_uppertail": 41.9,
+    "ma20": 975.1,
+    "ma20_margin_pct": 13.01,
+    "cause_summary": "주연테크, 10억 유상증자…화평홀딩스에 제3자배정",
+    "was_theme_leader": false,
+    "source": "live"
+   },
+   "leader_cohort_prob": null,
+   "alert_now": null,
+   "market_alert_snapshot": {
+    "level": "NONE",
+    "label": null,
+    "raw_code": null,
+    "lookup_status": "VERIFIED",
+    "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
+    "checked_at": "2026-07-23T13:43:59.176528+09:00"
+   },
+   "listing_market": "KOSPI",
+   "rank_bucket": 3,
+   "rank_reason": "저점매집+폭발회전 결측 → bucket 3",
+   "shadow_bucket": [],
+   "expected_touch7_rate": 81.0,
+   "expected_high_pct": 15.64,
+   "rank_bucket_stats_snapshot": {
+    "label": "저점매집 기타",
+    "n": 21,
+    "unique_n": 17,
+    "touch7_rate": 81.0,
+    "expected_high_pct": 15.64,
+    "avg_return": 6.94,
+    "bucket": 3,
+    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
+    "population": "overlapping_retro_reference"
+   },
+   "rank_prior": {
+    "source": "chairman_40y_rule",
+    "strength": "strong",
+    "summary": "저점매집 지문"
+   },
+   "rank_policy_name": "rank4",
+   "rank_model_version": "rank4-v1",
+   "rank_model_source_commit": "7f3acab",
+   "rank_model_effective_from": "20260713",
+   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
+   "precut_rank": 1,
+   "next_session_eligibility": {
+    "schema_version": 1,
+    "as_of_date": "20260723",
+    "target_trade_date": "20260724",
+    "status": "CLEAR_AS_CHECKED",
+    "tradable_next_session": true,
+    "recommendable": true,
+    "auto_buy_allowed": true,
+    "reason_code": "NO_BLOCKING_DISCLOSURE_FOUND",
+    "reason": "확인한 공시 범위에서 다음 거래일 차단 근거를 찾지 못했습니다.",
+    "restriction_start": null,
+    "restriction_end": null,
+    "relisting_expected": null,
+    "checked_at": "2026-07-23T13:44:03+09:00",
+    "expires_at": "2026-07-23T13:54:03+09:00",
+    "evidence": null,
+    "query_scope": {
+     "source": "KRX_KOSCOM",
+     "pages_checked": 2,
+     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
+    }
+   },
+   "published": true,
+   "published_rank": 1,
+   "theme_leader": false,
+   "rank_retro_stats": {
+    "basis": "retro",
+    "population": "all",
+    "model_version": "rank4-v1",
+    "n": 10,
+    "unique_n": 7,
+    "touch7_rate": 70.0,
+    "wilson7_lower": 39.7,
+    "avg_high_pct": 12.74,
+    "median_high_pct": 15.46,
+    "min_high_pct": 0.0,
+    "valid": true
+   },
+   "rank_forward_stats": {
+    "basis": "forward_saved_signal",
+    "population": "eod",
+    "model_version": "rank4-v1",
+    "n": 3,
+    "unique_n": 3,
+    "touch7_rate": 66.7,
+    "wilson7_lower": 20.8,
+    "avg_high_pct": 10.84,
+    "median_high_pct": 7.84,
+    "min_high_pct": 6.87,
+    "valid": false
+   },
+   "next_market_alert_preview": null
+  },
   {
    "code": "320000",
    "name": "한울반도체",
@@ -105,8 +434,8 @@
    "pattern": "shakeout",
    "shakeout": true,
    "tp_hint": "+15% (양극단·표본소)",
-   "fade_pct": 19.1,
-   "suspicion_score": 70,
+   "fade_pct": 19.3,
+   "suspicion_score": 71,
    "score_raw": 0,
    "score_breakdown": {},
    "score_breakdown_raw": {},
@@ -114,50 +443,50 @@
    "forecast": null,
    "shake": null,
    "deep_shake": null,
-   "price": 14320.0,
-   "change_pct": 3.77,
+   "price": 14280.0,
+   "change_pct": 3.48,
    "change_basis": "KRX",
    "high_pct": 22.83,
-   "value_eok": 383,
+   "value_eok": 384,
    "snapshot_open": 13940.0,
    "snapshot_high": 16950.0,
    "snapshot_low": 13800.0,
-   "snapshot_close": 14320.0,
-   "snapshot_volume": 2442832.0,
-   "snapshot_value": 38287000000.0,
-   "snapshot_value_eok": 382.9,
+   "snapshot_close": 14280.0,
+   "snapshot_volume": 2448300.0,
+   "snapshot_value": 38365000000.0,
+   "snapshot_value_eok": 383.6,
    "snapshot_as_of": "20260723",
    "signal_date": "20260723",
    "signal_open": 13940.0,
    "signal_high": 16950.0,
    "signal_low": 13800.0,
-   "signal_close": 14320.0,
+   "signal_close": 14280.0,
    "signal_prev_close": 13800.0,
-   "signal_volume": 2442832.0,
-   "signal_value": 38287000000.0,
-   "signal_value_eok": 382.9,
+   "signal_volume": 2448300.0,
+   "signal_value": 38365000000.0,
+   "signal_value_eok": 383.6,
    "signal_peak6_price": 17000.0,
    "signal_peak60_price": 29050.0,
-   "signal_ma20": 13112.0,
-   "signal_ma10": 13023.0,
+   "signal_ma20": 13110.0,
+   "signal_ma10": 13019.0,
    "signal_source": "daily_latest",
-   "turnover_pct": 54.8,
+   "turnover_pct": 54.9,
    "float_ratio": 0.662,
    "turnover_basis": "float",
-   "turnover_2d_pct": 79.3,
+   "turnover_2d_pct": 79.4,
    "turnover_band": 1,
-   "peak_dd_pct": -50.7,
+   "peak_dd_pct": -50.8,
    "dd_band": 1,
-   "dd6_pct": -15.8,
+   "dd6_pct": -16.0,
    "very_good": false,
    "very_good_tier": null,
    "very_good_candidate": false,
    "strength_tier": 2,
    "strength": "조합C(중립)",
-   "run_6d_pct": 32.0,
-   "ma20_gap_pct": 9.2,
-   "ma10": 13023.0,
-   "ma10_margin_pct": 9.96,
+   "run_6d_pct": 31.6,
+   "ma20_gap_pct": 8.9,
+   "ma10": 13019.0,
+   "ma10_margin_pct": 9.69,
    "spark": {
     "clusters": []
    },
@@ -256,7 +585,7 @@
       "datetime": "202607201342",
       "source": "전자신문",
       "url": "https://n.news.naver.com/mnews/article/030/0003449076",
-      "score": 54
+      "score": 50
      },
      {
       "title": "한울반도체, AI 기반 MLCC 검사장비 고도화 소식에 12%대 강세[특징주...",
@@ -276,7 +605,7 @@
     "source_count": 5,
     "relevant_count": 5,
     "captured_freshness_days": 1.87,
-    "freshness_as_of": "2026-07-23T13:38:58+09:00",
+    "freshness_as_of": "2026-07-23T13:43:59+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -290,7 +619,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T13:38:58.580994+09:00"
+    "checked_at": "2026-07-23T13:43:59.238374+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -333,8 +662,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T13:39:04+09:00",
-    "expires_at": "2026-07-23T13:49:04+09:00",
+    "checked_at": "2026-07-23T13:44:04+09:00",
+    "expires_at": "2026-07-23T13:54:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -343,7 +672,7 @@
     }
    },
    "published": true,
-   "published_rank": 1,
+   "published_rank": 2,
    "theme_leader": false,
    "rank_retro_stats": {
     "basis": "retro",
@@ -374,287 +703,7 @@
    "next_market_alert_preview": null
   }
  ],
- "blocked_suspects": [
-  {
-   "code": "208640",
-   "name": "썸에이지",
-   "sector": "썸에이지",
-   "pattern": "reaccum",
-   "geupso": false,
-   "geupso_bars": [],
-   "shake": null,
-   "deep_shake": null,
-   "suspicion_score": 62,
-   "calibrated_prob": null,
-   "score_breakdown": {
-    "base": 62,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "score_raw": 0,
-   "score_breakdown_raw": {
-    "base": 0,
-    "re_count": 0,
-    "re_body": 0,
-    "peak_turnover": 0,
-    "re_turnover": 0
-   },
-   "forecast": {
-    "horizon": "3일 내 +7%",
-    "prob_pct": 52,
-    "base_pct": 46,
-    "strong": true,
-    "next_day_7_pct": 25,
-    "note": "과거 실측 확률·보장 아님"
-   },
-   "price": 1018.0,
-   "change_pct": -10.31,
-   "change_basis": "KRX",
-   "high_pct": 11.98,
-   "value_eok": 8,
-   "snapshot_open": 1170.0,
-   "snapshot_high": 1271.0,
-   "snapshot_low": 1001.0,
-   "snapshot_close": 1018.0,
-   "snapshot_volume": 742238.0,
-   "snapshot_value": 836000000.0,
-   "snapshot_value_eok": 8.4,
-   "snapshot_as_of": "20260723",
-   "signal_date": "20260723",
-   "signal_open": 1170.0,
-   "signal_high": 1271.0,
-   "signal_low": 1001.0,
-   "signal_close": 1018.0,
-   "signal_prev_close": 1135.0,
-   "signal_volume": 742238.0,
-   "signal_value": 836000000.0,
-   "signal_value_eok": 8.4,
-   "signal_source": "daily_latest",
-   "turnover_pct": 8.1,
-   "peak_turnover_pct": null,
-   "float_ratio": 0.6584,
-   "turnover_basis": "float",
-   "ma10": 849.8,
-   "ma10_margin_pct": 19.79,
-   "spark": {
-    "clusters": []
-   },
-   "spark_max_x": null,
-   "spark_max_pct": null,
-   "mega_flow": false,
-   "reignition": {
-    "body_pct": 3.33,
-    "time": "09:15",
-    "value_eok": 0,
-    "count": 0
-   },
-   "reignition_bars": [
-    {
-     "time": "09:15",
-     "body_pct": 3.33,
-     "value_eok": 0
-    },
-    {
-     "time": "10:50",
-     "body_pct": 2.91,
-     "value_eok": 0
-    },
-    {
-     "time": "11:05",
-     "body_pct": 2.29,
-     "value_eok": 0
-    }
-   ],
-   "low_accum": true,
-   "low_accum_bars": [
-    {
-     "time": "09:15",
-     "body_pct": 3.33
-    },
-    {
-     "time": "10:50",
-     "body_pct": 2.91
-    },
-    {
-     "time": "11:05",
-     "body_pct": 2.29
-    }
-   ],
-   "news": [
-    {
-     "title": "[유상증자 모니터] 신작에 125억…복싱스타 의존 낮출까 I 썸에이지②",
-     "summary": "썸에이지가 유상증자 자금을 신작 개발과 글로벌 출시 마케팅에 투입한다. 기존 매출은 복싱스타 등 일부 게임에 편중돼 있다. 잔액인수 구조로 자금 확보 가능성은 높지만, 조달 효과를 입증하려면 신작 성과가 뒤따라야 한다. 개발·마케팅에...",
-     "office": "블로터",
-     "datetime": "202606261000",
-     "url": "https://n.news.naver.com/mnews/article/293/0000086827",
-     "sentiment": "호재"
-    },
-    {
-     "title": "[유상증자 모니터] 감자·증자로 리스크 방어 I 썸에이지①",
-     "summary": "썸에이지가 무상감자에 이어 주주배정 유상증자를 추진한다. 동전주와 시가총액 요건 강화에 대응해 주가 부담을 낮추고 자기자본을 확충하려는 조치다. 잔액인수 구조로 자금조달 실패 가능성은 제한적이지만, 대규모 신주 발행에 따른 기존 주주...",
-     "office": "블로터",
-     "datetime": "202606251918",
-     "url": "https://n.news.naver.com/mnews/article/293/0000086807",
-     "sentiment": "호재"
-    },
-    {
-     "title": "썸에이지, 무상감자 후 첫 거래에 22%대 급락 [핫종목]",
-     "summary": "무상감자 후 첫 거래를 시작한 썸에이지(208640)가 22%대 급락세다. 25일 오전 10시 2분 썸에이지는 전일 대비 285원(23.44%) 내린 934원에 거래 중이다. 썸에이지는 앞서 액면가 100원의 보통주 10주를 1주로 병합하는 무상감자를",
-     "office": "뉴스1",
-     "datetime": "202606251012",
-     "url": "https://n.news.naver.com/mnews/article/421/0009022648",
-     "sentiment": "악재"
-    }
-   ],
-   "matched_events": [
-    {
-     "id": "2026-07-29_FOMC 금리 결정 (",
-     "title": "FOMC 금리 결정 (7월)",
-     "dday": 6,
-     "categories": [
-      "금리"
-     ],
-     "score": 1.4
-    }
-   ],
-   "theme": "반도체",
-   "material": {
-    "grade": "C",
-    "score": 45,
-    "summary": "[유상증자 모니터] 신작에 125억…복싱스타 의존 낮출까 I 썸에이지②",
-    "sentiment": "호재",
-    "reliability": "뉴스",
-    "freshness": "오래됨",
-    "freshness_days": 27.15,
-    "directness": "직접",
-    "tags": [
-     "공시/대형이벤트",
-     "반도체",
-     "실적/재무"
-    ],
-    "risk_flags": [
-     "감자",
-     "유상증자 모니터] 감자·증자로 리스크"
-    ],
-    "evidence": [
-     {
-      "title": "[유상증자 모니터] 신작에 125억…복싱스타 의존 낮출까 I 썸에이지②",
-      "datetime": "202606261000",
-      "source": "블로터",
-      "url": "https://n.news.naver.com/mnews/article/293/0000086827",
-      "score": 74
-     },
-     {
-      "title": "[유상증자 모니터] 감자·증자로 리스크 방어 I 썸에이지①",
-      "datetime": "202606251918",
-      "source": "블로터",
-      "url": "https://n.news.naver.com/mnews/article/293/0000086807",
-      "score": 50
-     },
-     {
-      "title": "썸에이지, 무상감자 후 첫 거래에 22%대 급락 [핫종목]",
-      "datetime": "202606251012",
-      "source": "뉴스1",
-      "url": "https://n.news.naver.com/mnews/article/421/0009022648",
-      "score": 42
-     }
-    ],
-    "source_count": 3,
-    "relevant_count": 3,
-    "captured_freshness_days": 27.15,
-    "freshness_as_of": "2026-07-23T13:38:58+09:00",
-    "freshness_basis": "evidence_latest_datetime",
-    "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
-    "freshness_parse_status": "complete",
-    "future_evidence_n": 0
-   },
-   "visible_experimental": true,
-   "reaccum": {
-    "peak_date": "20260722",
-    "peak_value_eok": 0,
-    "peak_high_pct": 0.0,
-    "peak_turnover_pct": null,
-    "peak_ibs": 0.27,
-    "peak_uppertail": 31.8,
-    "ma20": 809.0,
-    "ma20_margin_pct": 25.83,
-    "cause_summary": "[유상증자 모니터] 신작에 125억…복싱스타 의존 낮출까 I 썸에이지②",
-    "was_theme_leader": false,
-    "source": "live"
-   },
-   "leader_cohort_prob": null,
-   "alert_now": null,
-   "market_alert_snapshot": {
-    "level": "NONE",
-    "label": null,
-    "raw_code": null,
-    "lookup_status": "VERIFIED",
-    "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T13:38:58.523538+09:00"
-   },
-   "listing_market": "KOSDAQ",
-   "rank_bucket": 3,
-   "rank_reason": "저점매집+폭발회전 결측 → bucket 3",
-   "shadow_bucket": [],
-   "expected_touch7_rate": 81.0,
-   "expected_high_pct": 15.64,
-   "rank_bucket_stats_snapshot": {
-    "label": "저점매집 기타",
-    "n": 21,
-    "unique_n": 17,
-    "touch7_rate": 81.0,
-    "expected_high_pct": 15.64,
-    "avg_return": 6.94,
-    "bucket": 3,
-    "basis": "정렬4.md 2026-07-10 확정 스냅샷",
-    "population": "overlapping_retro_reference"
-   },
-   "rank_prior": {
-    "source": "chairman_40y_rule",
-    "strength": "strong",
-    "summary": "저점매집 지문"
-   },
-   "rank_policy_name": "rank4",
-   "rank_model_version": "rank4-v1",
-   "rank_model_source_commit": "7f3acab",
-   "rank_model_effective_from": "20260713",
-   "rank_model_effective_at": "2026-07-13 09:00:00 KST",
-   "precut_rank": 1,
-   "next_session_eligibility": {
-    "schema_version": 1,
-    "as_of_date": "20260723",
-    "target_trade_date": "20260724",
-    "status": "UNVERIFIED",
-    "tradable_next_session": null,
-    "recommendable": false,
-    "auto_buy_allowed": false,
-    "reason_code": "CONFIRMED_HALT_DATE_UNPARSED",
-    "reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다.",
-    "restriction_start": null,
-    "restriction_end": null,
-    "relisting_expected": null,
-    "checked_at": "2026-07-23T13:39:02+09:00",
-    "expires_at": "2026-07-23T13:49:02+09:00",
-    "evidence": {
-     "notice_id": "39064893",
-     "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
-     "published_at": "20260622",
-     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=39064893&code=208640&page_notice=1",
-     "source_hash": "95c6962b3f6ae21ff3fa"
-    },
-    "query_scope": {
-     "source": "KRX_KOSCOM",
-     "pages_checked": 2,
-     "calendar_source": "KRX holiday rules + 2026 KASA/KASI official almanac"
-    }
-   },
-   "published": false,
-   "published_rank": null,
-   "blocked_reason": "확정 매매거래정지 공시는 확인했지만 정지 시작일을 읽지 못했습니다."
-  }
- ],
+ "blocked_suspects": [],
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v1",
  "rank_model_effective_from": "20260713",
