@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-23 16:29:22 KST",
+ "generated_at": "2026-07-23 16:34:24 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -139,7 +139,7 @@
    "change_pct": 29.96,
    "high_pct": 29.96,
    "vol_turnover_pct": 52.2,
-   "value_eok": 2391,
+   "value_eok": 2392,
    "price": 45550.0,
    "first_seen": "14:22",
    "exploded": false
@@ -284,14 +284,6 @@
      "datetime": "202607200958",
      "url": "https://n.news.naver.com/mnews/article/366/0001180274",
      "sentiment": "혼재"
-    },
-    {
-     "title": "주연테크, 게이밍 모니터 'X27F144W' 출시",
-     "summary": "주연테크가 게이밍 모니터 신제품 'X27F144W'를 출시했다. X27F144W는 27형 크기에 144헤르츠(㎐) 고주사율·1밀리세컨드(ms) 응답 속도를 갖춘 모니터다. 일반 60Hz 모니터 대비 부드러운 화면 전환을 제공, 빠른 움직임이 많은 레이",
-     "office": "전자신문",
-     "datetime": "202606221253",
-     "url": "https://n.news.naver.com/mnews/article/030/0003439882",
-     "sentiment": "호재"
     }
    ],
    "matched_events": [],
@@ -303,14 +295,13 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "1주내",
-    "freshness_days": 3.0,
+    "freshness_days": 3.01,
     "directness": "직접",
     "tags": [
      "공시",
      "공시/대형이벤트",
      "구제/수혈",
      "실적",
-     "실적/재무",
      "테마/수혜"
     ],
     "risk_flags": [],
@@ -323,13 +314,6 @@
       "score": 82
      },
      {
-      "title": "주연테크, 게이밍 모니터 'X27F144W' 출시",
-      "datetime": "202606221253",
-      "source": "전자신문",
-      "url": "https://n.news.naver.com/mnews/article/030/0003439882",
-      "score": 44
-     },
-     {
       "title": "[특징주] ‘애국 테마주’ 희비…주연테크 상한가·에넥스 24% 급락",
       "datetime": "202607200958",
       "source": "조선비즈",
@@ -337,10 +321,10 @@
       "score": 31
      }
     ],
-    "source_count": 3,
-    "relevant_count": 3,
-    "captured_freshness_days": 3.0,
-    "freshness_as_of": "2026-07-23T16:29:22+09:00",
+    "source_count": 2,
+    "relevant_count": 2,
+    "captured_freshness_days": 3.01,
+    "freshness_as_of": "2026-07-23T16:34:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T16:23:00+09:00",
     "freshness_parse_status": "complete",
@@ -381,7 +365,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:29:21.567284+09:00"
+    "checked_at": "2026-07-23T16:34:24.453187+09:00"
    },
    "listing_market": "KOSPI",
    "rank_bucket": 0,
@@ -425,8 +409,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:29:30+09:00",
-    "expires_at": "2026-07-23T16:39:30+09:00",
+    "checked_at": "2026-07-23T16:34:32+09:00",
+    "expires_at": "2026-07-23T16:44:32+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -590,7 +574,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "2~3일",
-    "freshness_days": 1.98,
+    "freshness_days": 1.99,
     "directness": "직접",
     "tags": [
      "공시",
@@ -642,8 +626,8 @@
     ],
     "source_count": 5,
     "relevant_count": 5,
-    "captured_freshness_days": 1.98,
-    "freshness_as_of": "2026-07-23T16:29:22+09:00",
+    "captured_freshness_days": 1.99,
+    "freshness_as_of": "2026-07-23T16:34:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-21T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -657,7 +641,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:29:21.875145+09:00"
+    "checked_at": "2026-07-23T16:34:24.656549+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -700,8 +684,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:29:34+09:00",
-    "expires_at": "2026-07-23T16:39:34+09:00",
+    "checked_at": "2026-07-23T16:34:37+09:00",
+    "expires_at": "2026-07-23T16:44:37+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -939,7 +923,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-23T16:29:22+09:00",
+    "freshness_as_of": "2026-07-23T16:34:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -967,7 +951,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:29:20.325644+09:00"
+    "checked_at": "2026-07-23T16:34:22.976360+09:00"
    },
    "listing_market": "KOSDAQ",
    "alert_release": false,
@@ -986,7 +970,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
     "raw_text_hash": "e59335513fbf1b9f06f7",
-    "fetched_at": "2026-07-23 16:29:20 KST",
+    "fetched_at": "2026-07-23 16:34:23 KST",
     "notice_no": "74992906",
     "target_evidence": {
      "requested_code": "008290",
@@ -1000,7 +984,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
      "raw_text_hash": "e59335513fbf1b9f06f7",
-     "fetched_at": "2026-07-23 16:29:20 KST"
+     "fetched_at": "2026-07-23 16:34:23 KST"
     }
    },
    "alert_release_checks": {
@@ -1058,8 +1042,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:29:31+09:00",
-    "expires_at": "2026-07-23T16:39:31+09:00",
+    "checked_at": "2026-07-23T16:34:33+09:00",
+    "expires_at": "2026-07-23T16:44:33+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1266,7 +1250,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 27.27,
-    "freshness_as_of": "2026-07-23T16:29:22+09:00",
+    "freshness_as_of": "2026-07-23T16:34:24+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-06-26T10:00:00+09:00",
     "freshness_parse_status": "complete",
@@ -1294,7 +1278,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-23T16:29:21.287105+09:00"
+    "checked_at": "2026-07-23T16:34:24.162074+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 3,
@@ -1337,8 +1321,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-23T16:29:32+09:00",
-    "expires_at": "2026-07-23T16:39:32+09:00",
+    "checked_at": "2026-07-23T16:34:35+09:00",
+    "expires_at": "2026-07-23T16:44:35+09:00",
     "evidence": {
      "notice_id": "39064893",
      "title": "(주)썸에이지 주권매매거래정지해제(감자 주권 변경상장)",
