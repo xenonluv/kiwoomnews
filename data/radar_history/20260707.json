@@ -224,7 +224,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "004830": {
    "name": "덕성",
@@ -554,7 +558,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "001210": {
    "name": "금호전기",
@@ -937,7 +945,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "198440": {
    "name": "강동씨앤엘",
@@ -1302,7 +1314,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -7.86
+   }
   },
   "037070": {
    "name": "파세코",
@@ -1452,7 +1468,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -13.23
+   }
   },
   "011230": {
    "name": "삼화전자",
@@ -1570,7 +1590,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -10.9
+   }
   },
   "091590": {
    "name": "남화토건",
@@ -1761,7 +1785,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "228340": {
    "name": "동양파일",
@@ -1926,7 +1954,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "012170": {
    "name": "아센디오",
@@ -2175,7 +2207,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -6.91
+   }
   }
  },
  "as_of": "2026-07-07 22:55:29 KST"
