@@ -45,15 +45,15 @@ SCHEMA_DOCUMENT = {
 DEFAULT_MODEL = {
     "schema_version": SCHEMA_VERSION,
     "record_type": "rank_model",
-    "model_version": "rank4-v2",
+    "model_version": "rank4-v3",
     "policy_name": "rank4",
-    "source_commit": "c70b893",
+    "source_commit": "60ecdf5",
     "effective_from": "20260724",
     "effective_at": "2026-07-24 09:00:00 KST",
     "prior": {
-        "source": "full_market_shakeout_census_202601_202605",
-        "strength": "observe",
-        "summary": "very_good and comboD intersection before Tier1; Tier2-only demoted",
+        "source": "live_final_and_rank4_v1_eod_20260723",
+        "strength": "medium",
+        "summary": "recent-regime comboD-only score>=75 before other rank buckets",
     },
 }
 

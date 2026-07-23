@@ -39,6 +39,14 @@ def sample(code, date=None, bucket=4, high=10.0, rank=1, **extra):
 
 
 class RankForwardTest(unittest.TestCase):
+    def test_prior_is_bucket_specific_not_mislabeled_as_one_source(self):
+        prior = rb.rank_prior()
+        self.assertEqual(prior["source"], "bucket_specific")
+        self.assertEqual(prior["strength"], "mixed")
+        buckets = {row["bucket"]: row for row in prior["buckets"]}
+        self.assertEqual(buckets[0]["source"], "live_final_and_rank4_v1_eod_20260723")
+        self.assertEqual(buckets[4]["strength"], "observe")
+
     def test_retro_reclassifies_but_forward_uses_saved_bucket(self):
         original = rb.rank_bucket_info
         rb.rank_bucket_info = lambda _: {"rank_bucket": 2, "shadow_bucket": []}
@@ -89,17 +97,29 @@ class RankForwardTest(unittest.TestCase):
 
 class RankEvalTest(unittest.TestCase):
     def test_each_model_version_keeps_its_own_effective_window(self):
-        current = sample("V2")
+        current = sample("V3")
+        replaced = sample(
+            "V2",
+            date="20260724",
+            rank_model_version="rank4-v2",
+            rank_model_effective_from="20260724",
+        )
         legacy = sample(
             "V1",
             date="20260713",
             rank_model_version="rank4-v1",
             rank_model_effective_from="20260713",
         )
-        evaluated = rb.rank_eval([legacy, current])["by_model_version"]
-        self.assertEqual(set(evaluated), {"rank4-v1", rb.FORWARD_MODEL_VERSION})
-        # 현행 actionable forward 표에는 v2만 들어간다.
-        self.assertEqual(rb.rank_bucket_stats_forward([legacy, current])["eod"]["sample_n"], 1)
+        evaluated = rb.rank_eval([legacy, replaced, current])["by_model_version"]
+        self.assertEqual(
+            set(evaluated),
+            {"rank4-v1", "rank4-v2", rb.FORWARD_MODEL_VERSION},
+        )
+        # 현행 actionable forward 표에는 v3만 들어간다.
+        self.assertEqual(
+            rb.rank_bucket_stats_forward([legacy, replaced, current])["eod"]["sample_n"],
+            1,
+        )
 
     def test_singleton_is_separate_from_topk_denominator(self):
         rows = [

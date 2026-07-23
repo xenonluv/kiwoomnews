@@ -52,6 +52,7 @@ FORWARD_MODEL_VERSION = RANK_MODEL_VERSION
 FORWARD_EFFECTIVE_FROM = RANK_MODEL_EFFECTIVE_FROM
 KNOWN_FORWARD_EFFECTIVE_FROM = {
     "rank4-v1": "20260713",
+    "rank4-v2": "20260724",
     FORWARD_MODEL_VERSION: FORWARD_EFFECTIVE_FROM,
 }
 
@@ -1658,13 +1659,13 @@ def rank_bucket_stats_forward(samples):
 
 
 def rank_prior():
-    """성과와 섞지 않는 회장님 40년 경험칙 prior 메타데이터."""
+    """성과와 섞지 않는 bucket별 근거 prior 메타데이터."""
     return {
         "policy_name": RANK_POLICY_NAME,
         "model_version": FORWARD_MODEL_VERSION,
         "effective_from": FORWARD_EFFECTIVE_FROM,
-        "source": "chairman_40y_rule",
-        "strength": "strong",
+        "source": "bucket_specific",
+        "strength": "mixed",
         "auto_reorder": False,
         "buckets": [
             {"bucket": bucket,

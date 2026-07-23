@@ -56,7 +56,7 @@ class RadarJsonStoreTest(unittest.TestCase):
         model = self.read_json(self.root / "models" / f"{RANK_MODEL_VERSION}.json")
         self.assertEqual(schema["authority"], "local_raw_json")
         self.assertTrue(schema["immutable_scan_files"])
-        self.assertEqual(model["prior"]["strength"], "observe")
+        self.assertEqual(model["prior"]["strength"], "medium")
         self.assertTrue(store.verify_payload_integrity(schema))
         self.assertTrue(store.verify_payload_integrity(model))
 

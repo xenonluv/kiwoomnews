@@ -384,10 +384,10 @@ export interface Suspect {
   /** 경고 지정 경과 매매일수(1=첫날·999=오래된 지정) — history 전진검증용 기록 전용 */
   alert_elapsed_days?: number | null;
   /** 💥 흔들기 — 당일 고가 +20%↑ 터치 후 페이드 15%p↑ & 회전 40%↑ & MA20 위(금호건설·동양파일 6/25 원형).
-   *  rank_bucket 4~8에서 조합D·점수 조건으로 세분화. */
+   *  rank_bucket 0·4~8에서 조합D·점수 조건으로 세분화. */
   shakeout?: boolean;
   fade_pct?: number | null;
-  /** ⭐ 매우좋음 — 흔들기 AND 6일 고점대비 낙폭 dd6≤-30%(전수조사 익일 +7% 터치 72%). rank 1 승격 */
+  /** ⭐ 매우좋음 — 흔들기 AND 6일 고점대비 낙폭 dd6≤-30%. rank4-v3 bucket 4 표본관찰 */
   very_good?: boolean;
   /** ⭐ 매우좋음 dd6 전용 티어: tier1(-45<dd6≤-30) | tier2(≤-45 과낙) | candidate(-30<dd6≤-25, 표시만) */
   very_good_tier?: "tier1" | "tier2" | "candidate" | null;

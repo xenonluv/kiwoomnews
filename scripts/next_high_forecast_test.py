@@ -65,6 +65,12 @@ class ForecastTest(unittest.TestCase):
         self.assertEqual(report["bucket_evidence"]["touch"]["15"]["rate"], 50.0)
         self.assertEqual(report["forecast"]["point_high_pct"], 12.5)
         self.assertEqual(report["forecast"]["point_high_price"], 1125)
+        self.assertEqual(report["signal"]["rank_bucket"], 4)
+        self.assertEqual(report["signal"]["current_retro_bucket"], 5)
+        self.assertIsNone(report["signal"]["rank_reason"])
+        self.assertIn("bucket 5", report["signal"]["current_retro_reason"])
+        self.assertTrue(any("bucket 4" in w and "bucket 5" in w
+                            for w in report["warnings"]))
 
     def test_historical_name_is_not_presented_as_current_forecast(self):
         report = nhf.analyze("과거1", repo=self.repo, allow_network=False)

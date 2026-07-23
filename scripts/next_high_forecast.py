@@ -284,9 +284,10 @@ def analyze(query, repo=REPO, allow_network=True):
     forecast_valid = known_result is None
 
     bucket_meta = rank_bucket_info(signal)
-    bucket = signal.get("rank_bucket")
-    if bucket is None:
-        bucket = bucket_meta.get("rank_bucket")
+    signal_bucket = signal.get("rank_bucket")
+    # 현재 소급 비교는 현재 정책 bucket끼리만 묶는다. 구버전 신호의 저장 bucket을
+    # 현재 정책으로 재분류한 과거행에 그대로 조인하면 모델 의미가 섞인다.
+    bucket = bucket_meta.get("rank_bucket")
     evaluated = _evaluated_rows(histories)
     bucket_rows = [row for row in evaluated
                    if rank_bucket_info(row).get("rank_bucket") == bucket]
@@ -314,6 +315,10 @@ def analyze(query, repo=REPO, allow_network=True):
         warnings.append(f"흔들기 전체는 라이브 {len(live)}건보다 소급 {len(retro)}건이 많음")
     if not signal.get("rank_model_version"):
         warnings.append("신호 당시 rank_model_version 미기록 또는 혼합 배포")
+    if signal_bucket is not None and signal_bucket != bucket:
+        warnings.append(
+            f"신호 당시 bucket {signal_bucket}와 현재 소급 bucket {bucket}을 분리해 계산"
+        )
     if (_number(signal.get("turnover_2d_pct")) or 0) >= 180:
         warnings.append("2일 회전율 극과열 구간")
     if (signal.get("material") or {}).get("grade") in (None, "N"):
@@ -330,8 +335,12 @@ def analyze(query, repo=REPO, allow_network=True):
         "signal": {
             "date": signal_date, "close": close, "pattern": signal.get("pattern"),
             "shakeout": bool(signal.get("shakeout")),
-            "suspicion_score": signal.get("suspicion_score"), "rank_bucket": bucket,
-            "rank_reason": signal.get("rank_reason") or bucket_meta.get("rank_reason"),
+            "suspicion_score": signal.get("suspicion_score"),
+            "rank_bucket": signal_bucket if signal_bucket is not None else bucket,
+            "current_retro_bucket": bucket,
+            "rank_reason": (signal.get("rank_reason") if signal_bucket is not None
+                            else bucket_meta.get("rank_reason")),
+            "current_retro_reason": bucket_meta.get("rank_reason"),
             "rank_model_version": signal.get("rank_model_version"),
             "change_pct": signal.get("change_pct"), "high_pct": signal.get("high_pct"),
             "fade_pct": signal.get("fade_pct"),

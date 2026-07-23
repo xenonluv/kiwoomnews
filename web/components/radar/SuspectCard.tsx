@@ -58,6 +58,8 @@ function priorLabel(source: string) {
   const labels: Record<string, string> = {
     chairman_40y_rule: "회장님 40년 경험칙",
     census_140k: "14만건 전수조사",
+    live_final_and_rank4_v1_eod_20260723: "최근 final·EOD",
+    live_final_20260723: "최근 final",
     agreed_rule: "합의 규칙",
     fallback: "기본 규칙",
   };
@@ -120,11 +122,11 @@ function shakeoutBadgeMeta(s: Pick<Suspect, "shakeout" | "strength_tier" | "very
       className: "bg-up px-2.5 py-1 text-base font-black text-white",
     };
   }
-  if (s.strength_tier == null) {
+  if (s.very_good == null || s.strength_tier == null) {
     return {
-      label: "💥 흔들기 · 강도 미확인",
+      label: "💥 흔들기 · 분류 미확인",
       title:
-        "흔들기 조건은 충족했지만 강도 결합축이 저장되지 않은 데이터입니다. 강한흔들기나 약한흔들기로 추정하지 않습니다.",
+        "흔들기 조건은 충족했지만 very_good 또는 강도 결합축이 저장되지 않은 데이터입니다. 강한흔들기·조합D 단독·약한흔들기로 추정하지 않습니다.",
       variant: "outline",
       className: "border-white/30 px-2.5 py-1 text-base font-bold text-muted-foreground",
     };
@@ -248,7 +250,7 @@ export function SuspectCard({
   const highRiskMomentum = s.alert_now === "경고" || s.alert_now === "위험";
   const comboDOnly =
     s.shakeout === true &&
-    s.very_good !== true &&
+    s.very_good === false &&
     s.strength_tier != null &&
     s.strength_tier >= 3;
   const turnover2dPct = s.turnover_2d_pct ?? null;
@@ -296,7 +298,7 @@ export function SuspectCard({
             {s.very_good && (
               <Badge
                 className="bg-[#f59e0b] px-2.5 py-1 text-base font-black text-black"
-                title="⭐ 매우좋음 — 흔들기 AND 6일 고점 대비 낙폭 −30%↑. Tier1은 −45~-30 적정 깊은눌림, Tier2는 ≤−45 과낙 구간. 최상단 승격 — 예측·매수추천 아님, 장중 익절 신호"
+                title="⭐ 매우좋음 — 흔들기 AND 6일 고점 대비 낙폭 −30%↑. Tier1은 −45~-30 적정 깊은눌림, Tier2는 ≤−45 과낙 구간. rank4-v3에서는 bucket 4 표본관찰 — 예측·매수추천 아님, 장중 익절 신호"
               >
                 {veryGoodLabel}
               </Badge>

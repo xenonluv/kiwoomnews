@@ -6,29 +6,29 @@ stored model version always identifies the exact policy used at signal time.
 """
 
 RANK_POLICY_NAME = "rank4"
-RANK_MODEL_VERSION = "rank4-v2"
+RANK_MODEL_VERSION = "rank4-v3"
 # 정책 변경이 시작된 승인 기준점. 배포 커밋 자체는 이 상수를 포함하므로 부모 커밋을 기록한다.
-RANK_MODEL_SOURCE_COMMIT = "c70b893"
-# 7/23 장후 변경이므로 당일 v1 의사결정과 섞지 않고 다음 거래일 신호부터 forward로 인정한다.
+RANK_MODEL_SOURCE_COMMIT = "60ecdf5"
+# 7/23 장후 v2 발효 전에 교체하므로 당일 v1 기록은 그대로 두고 다음 거래일부터 v3로 인정한다.
 RANK_MODEL_EFFECTIVE_FROM = "20260724"
 RANK_MODEL_EFFECTIVE_AT = "2026-07-24 09:00:00 KST"
 
 
 RANK_BUCKET_BASELINES = {
-    # rank4-v2 승인 시점의 참고 근거다. 실제 forward calibration과 섞지 않는다.
-    # bucket 0 내부는 강한흔들기+조합D를 먼저, Tier1 단독을 다음으로 정렬한다.
-    # 교집합은 전 시장 n=2라 100%를 기대확률로 노출하지 않고 관찰 우선순위로만 사용한다.
-    0: {"label": "강한흔들기+조합D 우선 · Tier1", "n": 34, "unique_n": 30,
-        "touch7_rate": 73.5, "expected_high_pct": 15.15, "avg_return": 1.45,
-        "note": "전 시장 현행 bucket0 25/34=73.5%; 강한흔들기+조합D 2/2는 n<10 관찰 우선"},
+    # rank4-v3 승인 시점의 최근 live final 참고 근거다. 장기 소급·새 forward와 섞지 않는다.
+    # 1~5월 current-retro는 같은 조건의 +7이 84/169(49.7%)여서 최근 국면 prior로만 사용한다.
+    0: {"label": "조합D 단독+75점 최우선", "n": 15, "unique_n": 14,
+        "touch7_rate": 86.7, "expected_high_pct": 17.59, "avg_return": 4.15,
+        "note": "최근 live final +7 13/15·+13 11/15; rank4-v1 EOD +7 6/7. 장기 고정확률 아님"},
     1: {"label": "급소+회전150", "n": 5, "unique_n": 3, "touch7_rate": 100.0,
         "expected_high_pct": 27.42, "avg_return": 17.74},
     2: {"label": "저점매집+회전90", "n": 15, "unique_n": 13, "touch7_rate": 86.7,
         "expected_high_pct": 17.00, "avg_return": 9.09},
     3: {"label": "저점매집 기타", "n": 21, "unique_n": 17, "touch7_rate": 81.0,
         "expected_high_pct": 15.64, "avg_return": 6.94},
-    4: {"label": "흔들기+조합D+75점", "n": 9, "unique_n": 8, "touch7_rate": 88.9,
-        "expected_high_pct": 17.75, "avg_return": 3.30},
+    4: {"label": "강한흔들기 교집합·Tier1 관찰", "n": 2, "unique_n": 2,
+        "touch7_rate": None, "expected_high_pct": None, "avg_return": None,
+        "note": "live final 2건(CS 교집합·금호전기 Tier1 단독). 2/2를 기대확률로 노출하지 않음"},
     5: {"label": "흔들기+75점", "n": 12, "unique_n": 10, "touch7_rate": 83.3,
         "expected_high_pct": 17.39, "avg_return": 4.12},
     6: {"label": "흔들기+조합D", "n": 15, "unique_n": 12, "touch7_rate": 80.0,
@@ -47,13 +47,14 @@ RANK_BUCKET_BASELINES = {
 
 
 RANK_BUCKET_PRIORS = {
-    0: {"source": "full_market_shakeout_census_202601_202605",
-        "strength": "observe",
-        "summary": "강한흔들기+조합D를 Tier1 단독보다 먼저 관찰; 교집합 n<10"},
+    0: {"source": "live_final_and_rank4_v1_eod_20260723",
+        "strength": "medium",
+        "summary": "최근 국면 조합D 단독+75점 final 13/15·EOD 6/7; 장기 소급은 별도"},
     1: {"source": "chairman_40y_rule", "strength": "strong", "summary": "매수급소와 폭발일 회전율 150% 이상"},
     2: {"source": "chairman_40y_rule", "strength": "strong", "summary": "저점매집과 폭발일 회전율 90% 이상"},
     3: {"source": "chairman_40y_rule", "strength": "strong", "summary": "저점매집 지문"},
-    4: {"source": "agreed_rule", "strength": "strong", "summary": "흔들기·조합D·75점 이상"},
+    4: {"source": "live_final_20260723", "strength": "observe",
+        "summary": "강한흔들기 교집합·Tier1은 live n=2 소표본 관찰"},
     5: {"source": "agreed_rule", "strength": "medium", "summary": "흔들기·75점 이상"},
     6: {"source": "agreed_rule", "strength": "medium", "summary": "흔들기·조합D"},
     7: {"source": "agreed_rule", "strength": "medium", "summary": "75점 이상 기타"},
@@ -101,11 +102,23 @@ def _is_very_good_combo_d(x):
     )
 
 
+def _is_combo_d_only(x):
+    """명시적으로 강한흔들기가 아닌 조합D.
+
+    very_good 결측을 False로 추정해 최상단에 올리지 않는다.
+    """
+    return (
+        x.get("shakeout") is True
+        and x.get("very_good") is False
+        and _is_combo_d(x)
+    )
+
+
 def _very_good_sort_rank(x):
-    """bucket 0 내부 우선순위.
+    """강한흔들기 관찰 bucket 내부 우선순위.
 
     강한흔들기+조합D는 소표본 관찰 우선순위이며 기대확률 하드게이트가 아니다.
-    Tier2 단독은 bucket 0에 들어오지 않지만 방어적으로 마지막 값으로 남긴다.
+    Tier2 단독은 관찰 bucket에 들어오지 않지만 방어적으로 마지막 값으로 남긴다.
     """
     tier = x.get("very_good_tier")
     if _is_very_good_combo_d(x):
@@ -134,20 +147,20 @@ def rank_shadow_buckets(x):
 
 
 def rank_bucket_info(x):
-    """Return the versioned rank4-v2 bucket and evidence snapshot."""
+    """Return the versioned rank4-v3 bucket and evidence snapshot."""
     score = _as_float(x.get("suspicion_score"), 0) or 0
     pt = _as_float(x.get("peak_turnover_pct"))
     bucket, reason = 11, "기타 suspects → bucket 11"
     if _is_very_good_combo_d(x):
         vt = x.get("very_good_tier")
         label = "Tier1" if vt == "tier1" else "Tier2(과낙)"
-        bucket, reason = 0, (
+        bucket, reason = 4, (
             f"강한흔들기 {label}+조합D"
-            f"(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 0 관찰우선"
+            f"(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 4 표본관찰"
         )
     elif x.get("very_good") is True and x.get("very_good_tier") == "tier1":
-        bucket, reason = 0, (
-            f"매우좋음 Tier1 단독(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 0"
+        bucket, reason = 4, (
+            f"매우좋음 Tier1 단독(dd6 {_fmt_pct(x.get('dd6_pct'))}) → bucket 4 표본관찰"
         )
     elif x.get("geupso") and pt is not None and pt >= 150:
         bucket, reason = 1, f"급소+폭발회전 {_fmt_pct(pt)} → bucket 1"
@@ -155,8 +168,8 @@ def rank_bucket_info(x):
         bucket, reason = 2, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 2"
     elif x.get("low_accum"):
         bucket, reason = 3, f"저점매집+폭발회전 {_fmt_pct(pt)} → bucket 3"
-    elif x.get("shakeout") and _is_combo_d(x) and score >= 75:
-        bucket, reason = 4, f"흔들기+조합D+{score:.0f}점 → bucket 4"
+    elif _is_combo_d_only(x) and score >= 75:
+        bucket, reason = 0, f"조합D 단독+{score:.0f}점(최근 국면 고가강) → bucket 0"
     elif x.get("shakeout") and score >= 75:
         bucket, reason = 5, f"흔들기+{score:.0f}점 → bucket 5"
     elif x.get("shakeout") and _is_combo_d(x):
@@ -172,8 +185,9 @@ def rank_bucket_info(x):
 
     snap = dict(RANK_BUCKET_BASELINES.get(bucket, {}))
     snap["bucket"] = bucket
-    snap["basis"] = "rank4-v2 2026-07-23 승인 스냅샷"
-    snap["population"] = "bucket_specific_retro_reference"
+    snap["basis"] = "rank4-v3 2026-07-23 최근 국면 승인 스냅샷"
+    # 신호 당시 함께 고정되는 prior 스냅샷이다. 이후 소급/forward 실측과 섞지 않는다.
+    snap["population"] = "signal_time_prior_reference"
     prior = dict(RANK_BUCKET_PRIORS.get(bucket, {}))
     return {
         "rank_bucket": bucket,
