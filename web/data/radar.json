@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-24 17:04:33 KST",
+ "generated_at": "2026-07-24 17:09:30 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -159,8 +159,8 @@
    "sector": "현대힘스",
    "change_pct": 22.5,
    "high_pct": 28.49,
-   "vol_turnover_pct": 88.5,
-   "value_eok": 3109,
+   "vol_turnover_pct": 88.6,
+   "value_eok": 3111,
    "price": 15950.0,
    "first_seen": "10:12",
    "exploded": false
@@ -407,8 +407,8 @@
     ],
     "source_count": 5,
     "relevant_count": 5,
-    "captured_freshness_days": 4.27,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "captured_freshness_days": 4.28,
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T10:28:00+09:00",
     "freshness_parse_status": "complete",
@@ -422,7 +422,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:32.262828+09:00"
+    "checked_at": "2026-07-24T17:09:29.405351+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 4,
@@ -468,8 +468,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:41+09:00",
-    "expires_at": "2026-07-24T17:14:41+09:00",
+    "checked_at": "2026-07-24T17:09:38+09:00",
+    "expires_at": "2026-07-24T17:19:38+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -582,6 +582,14 @@
    "low_accum_bars": [],
    "news": [
     {
+     "title": "HD현대에너지솔루션, 2분기 영업익 361억원…&quot;분기 최대&quot;",
+     "summary": "HD현대에너지솔루션이 해외 태양광 모듈 판매 확대와 판가 상승에 힘입어 올해 2분기 사상 최대 분기 영업이익을 기록했다. HD현대에너지솔루션은 올해 2분기 연결 기준 매출 1650억원, 영업이익 361억원을 기록했다고 24일 밝혔다. 지난해 같은...",
+     "office": "지디넷코리아",
+     "datetime": "202607241705",
+     "url": "https://n.news.naver.com/mnews/article/092/0002431824",
+     "sentiment": "호재"
+    },
+    {
      "title": "HD현대에너지솔루션, 美매출 4.2배·분기 영업익 '역대 최대'",
      "summary": "HD현대에너지솔루션이 미국 태양광 매출을 1년 만에 4배 이상 늘리고 국내외 모듈 판가를 끌어올리며 분기 기준 역대 최대 영업이익을 거뒀다. 실적 호조와 함께 글로벌 태양광 모듈 제조사 재무건전성 평가에서도 1위를 기록하며 장기 제품...",
      "office": "데일리안",
@@ -607,7 +615,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.09,
+    "freshness_days": 0.0,
     "directness": "직접",
     "tags": [
      "S급재료",
@@ -631,14 +639,21 @@
       "source": "데일리안",
       "url": "https://n.news.naver.com/mnews/article/119/0003114668",
       "score": 100
+     },
+     {
+      "title": "HD현대에너지솔루션, 2분기 영업익 361억원…&quot;분기 최대&quot;",
+      "datetime": "202607241705",
+      "source": "지디넷코리아",
+      "url": "https://n.news.naver.com/mnews/article/092/0002431824",
+      "score": 100
      }
     ],
-    "source_count": 2,
-    "relevant_count": 2,
-    "captured_freshness_days": 0.09,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "source_count": 3,
+    "relevant_count": 3,
+    "captured_freshness_days": 0.0,
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
-    "evidence_latest_datetime": "2026-07-24T14:52:00+09:00",
+    "evidence_latest_datetime": "2026-07-24T17:05:00+09:00",
     "freshness_parse_status": "complete",
     "future_evidence_n": 0
    },
@@ -650,7 +665,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:33.277738+09:00"
+    "checked_at": "2026-07-24T17:09:30.416837+09:00"
    },
    "listing_market": "KOSPI",
    "rank_bucket": 5,
@@ -695,8 +710,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:44+09:00",
-    "expires_at": "2026-07-24T17:14:44+09:00",
+    "checked_at": "2026-07-24T17:09:41+09:00",
+    "expires_at": "2026-07-24T17:19:41+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -817,7 +832,7 @@
     "sentiment": "중립",
     "reliability": "공시+뉴스",
     "freshness": "당일~1일",
-    "freshness_days": 0.32,
+    "freshness_days": 0.33,
     "directness": "직접",
     "tags": [
      "공시",
@@ -836,8 +851,8 @@
     ],
     "source_count": 1,
     "relevant_count": 1,
-    "captured_freshness_days": 0.32,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "captured_freshness_days": 0.33,
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-24T09:20:00+09:00",
     "freshness_parse_status": "complete",
@@ -851,7 +866,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:32.535874+09:00"
+    "checked_at": "2026-07-24T17:09:29.714418+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 5,
@@ -896,8 +911,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:45+09:00",
-    "expires_at": "2026-07-24T17:14:45+09:00",
+    "checked_at": "2026-07-24T17:09:41+09:00",
+    "expires_at": "2026-07-24T17:19:41+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1025,7 +1040,7 @@
     "source_count": 0,
     "relevant_count": 0,
     "captured_freshness_days": null,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_days": null,
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": null,
@@ -1040,7 +1055,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:33.074987+09:00"
+    "checked_at": "2026-07-24T17:09:30.309630+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 6,
@@ -1083,8 +1098,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:45+09:00",
-    "expires_at": "2026-07-24T17:14:45+09:00",
+    "checked_at": "2026-07-24T17:09:42+09:00",
+    "expires_at": "2026-07-24T17:19:42+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1232,7 +1247,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 17.01,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-07T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -1246,7 +1261,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:32.151263+09:00"
+    "checked_at": "2026-07-24T17:09:29.107184+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -1289,8 +1304,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:48+09:00",
-    "expires_at": "2026-07-24T17:14:48+09:00",
+    "checked_at": "2026-07-24T17:09:44+09:00",
+    "expires_at": "2026-07-24T17:19:44+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1500,7 +1515,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -1528,7 +1543,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:30.589636+09:00"
+    "checked_at": "2026-07-24T17:09:27.685537+09:00"
    },
    "listing_market": "KOSDAQ",
    "alert_release": false,
@@ -1547,7 +1562,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
     "raw_text_hash": "e59335513fbf1b9f06f7",
-    "fetched_at": "2026-07-24 17:04:31 KST",
+    "fetched_at": "2026-07-24 17:09:28 KST",
     "notice_no": "74992906",
     "target_evidence": {
      "requested_code": "008290",
@@ -1561,7 +1576,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
      "raw_text_hash": "e59335513fbf1b9f06f7",
-     "fetched_at": "2026-07-24 17:04:31 KST"
+     "fetched_at": "2026-07-24 17:09:28 KST"
     }
    },
    "alert_release_checks": {
@@ -1617,8 +1632,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:40+09:00",
-    "expires_at": "2026-07-24T17:14:40+09:00",
+    "checked_at": "2026-07-24T17:09:37+09:00",
+    "expires_at": "2026-07-24T17:19:37+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1727,7 +1742,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "오래됨",
-    "freshness_days": 15.34,
+    "freshness_days": 15.35,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1767,8 +1782,8 @@
     ],
     "source_count": 4,
     "relevant_count": 4,
-    "captured_freshness_days": 15.34,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "captured_freshness_days": 15.35,
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-09T08:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -1782,7 +1797,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:32.826754+09:00"
+    "checked_at": "2026-07-24T17:09:30.007278+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 4,
@@ -1826,8 +1841,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:43+09:00",
-    "expires_at": "2026-07-24T17:14:43+09:00",
+    "checked_at": "2026-07-24T17:09:39+09:00",
+    "expires_at": "2026-07-24T17:19:39+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1981,7 +1996,7 @@
     "source_count": 2,
     "relevant_count": 2,
     "captured_freshness_days": 1.29,
-    "freshness_as_of": "2026-07-24T17:04:33+09:00",
+    "freshness_as_of": "2026-07-24T17:09:30+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-23T10:07:00+09:00",
     "freshness_parse_status": "complete",
@@ -1995,7 +2010,7 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T17:04:31.753960+09:00"
+    "checked_at": "2026-07-24T17:09:28.817485+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -2038,8 +2053,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T17:04:46+09:00",
-    "expires_at": "2026-07-24T17:14:46+09:00",
+    "checked_at": "2026-07-24T17:09:42+09:00",
+    "expires_at": "2026-07-24T17:19:42+09:00",
     "evidence": {
      "notice_id": "8745663",
      "title": "(주)휴림에이텍 주권매매거래정지해제(감자 주권 변경상장)",
