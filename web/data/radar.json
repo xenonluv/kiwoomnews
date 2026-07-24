@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-24 18:14:59 KST",
+ "generated_at": "2026-07-24 18:19:02 KST",
  "market_session": "closed",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,8 +52,8 @@
    "name": "현대힘스",
    "sector": "현대힘스",
    "high_pct": 28.49,
-   "vol_turnover_pct": 90.5,
-   "value_eok": 3183,
+   "vol_turnover_pct": 90.7,
+   "value_eok": 3188,
    "price": 15950.0,
    "change_pct": 22.5,
    "backfill": false
@@ -170,8 +170,8 @@
    "sector": "현대힘스",
    "change_pct": 22.5,
    "high_pct": 28.49,
-   "vol_turnover_pct": 90.5,
-   "value_eok": 3183,
+   "vol_turnover_pct": 90.7,
+   "value_eok": 3188,
    "price": 15950.0,
    "first_seen": "10:12",
    "exploded": true
@@ -369,7 +369,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "1주내",
-    "freshness_days": 4.32,
+    "freshness_days": 4.33,
     "directness": "직접",
     "tags": [
      "공시",
@@ -418,8 +418,8 @@
     ],
     "source_count": 5,
     "relevant_count": 5,
-    "captured_freshness_days": 4.32,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "captured_freshness_days": 4.33,
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T10:28:00+09:00",
     "freshness_parse_status": "complete",
@@ -433,7 +433,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:57.754917+09:00"
+    "checked_at": "2026-07-24T18:19:01.151065+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 4,
@@ -479,8 +479,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:07+09:00",
-    "expires_at": "2026-07-24T18:25:07+09:00",
+    "checked_at": "2026-07-24T18:19:11+09:00",
+    "expires_at": "2026-07-24T18:29:11+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -662,7 +662,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 0.04,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-24T17:15:00+09:00",
     "freshness_parse_status": "complete",
@@ -676,7 +676,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:58.868750+09:00"
+    "checked_at": "2026-07-24T18:19:02.210816+09:00"
    },
    "listing_market": "KOSPI",
    "rank_bucket": 5,
@@ -721,8 +721,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:10+09:00",
-    "expires_at": "2026-07-24T18:25:10+09:00",
+    "checked_at": "2026-07-24T18:19:13+09:00",
+    "expires_at": "2026-07-24T18:29:13+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -863,7 +863,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 0.37,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-24T09:20:00+09:00",
     "freshness_parse_status": "complete",
@@ -877,7 +877,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:58.067902+09:00"
+    "checked_at": "2026-07-24T18:19:01.416331+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 5,
@@ -922,8 +922,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:10+09:00",
-    "expires_at": "2026-07-24T18:25:10+09:00",
+    "checked_at": "2026-07-24T18:19:14+09:00",
+    "expires_at": "2026-07-24T18:29:14+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1051,7 +1051,7 @@
     "source_count": 0,
     "relevant_count": 0,
     "captured_freshness_days": null,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_days": null,
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": null,
@@ -1066,7 +1066,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:58.761100+09:00"
+    "checked_at": "2026-07-24T18:19:01.915122+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 6,
@@ -1109,8 +1109,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:11+09:00",
-    "expires_at": "2026-07-24T18:25:11+09:00",
+    "checked_at": "2026-07-24T18:19:14+09:00",
+    "expires_at": "2026-07-24T18:29:14+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1258,7 +1258,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 17.06,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-07T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -1272,7 +1272,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:57.470558+09:00"
+    "checked_at": "2026-07-24T18:19:00.852117+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -1315,8 +1315,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:14+09:00",
-    "expires_at": "2026-07-24T18:25:14+09:00",
+    "checked_at": "2026-07-24T18:19:17+09:00",
+    "expires_at": "2026-07-24T18:29:17+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1526,7 +1526,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -1554,7 +1554,7 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:55.985004+09:00"
+    "checked_at": "2026-07-24T18:18:59.391105+09:00"
    },
    "listing_market": "KOSDAQ",
    "alert_release": false,
@@ -1573,7 +1573,7 @@
     "parse_status": "ok",
     "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
     "raw_text_hash": "e59335513fbf1b9f06f7",
-    "fetched_at": "2026-07-24 18:14:56 KST",
+    "fetched_at": "2026-07-24 18:18:59 KST",
     "notice_no": "74992906",
     "target_evidence": {
      "requested_code": "008290",
@@ -1587,7 +1587,7 @@
      "target_validation_status": "verified",
      "source_url": "https://finance.naver.com/item/news_notice_read.naver?no=74992906&code=008290&page_notice=1",
      "raw_text_hash": "e59335513fbf1b9f06f7",
-     "fetched_at": "2026-07-24 18:14:56 KST"
+     "fetched_at": "2026-07-24 18:18:59 KST"
     }
    },
    "alert_release_checks": {
@@ -1643,8 +1643,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:07+09:00",
-    "expires_at": "2026-07-24T18:25:07+09:00",
+    "checked_at": "2026-07-24T18:19:10+09:00",
+    "expires_at": "2026-07-24T18:29:10+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -1794,7 +1794,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 15.39,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-09T08:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -1808,7 +1808,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:58.303822+09:00"
+    "checked_at": "2026-07-24T18:19:01.697155+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 4,
@@ -1852,8 +1852,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:08+09:00",
-    "expires_at": "2026-07-24T18:25:08+09:00",
+    "checked_at": "2026-07-24T18:19:12+09:00",
+    "expires_at": "2026-07-24T18:29:12+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2007,7 +2007,7 @@
     "source_count": 2,
     "relevant_count": 2,
     "captured_freshness_days": 1.34,
-    "freshness_as_of": "2026-07-24T18:14:59+09:00",
+    "freshness_as_of": "2026-07-24T18:19:02+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-23T10:07:00+09:00",
     "freshness_parse_status": "complete",
@@ -2021,7 +2021,7 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T18:14:57.181698+09:00"
+    "checked_at": "2026-07-24T18:19:00.569169+09:00"
    },
    "listing_market": "KOSDAQ",
    "rank_bucket": 8,
@@ -2064,8 +2064,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T18:15:12+09:00",
-    "expires_at": "2026-07-24T18:25:12+09:00",
+    "checked_at": "2026-07-24T18:19:15+09:00",
+    "expires_at": "2026-07-24T18:29:15+09:00",
     "evidence": {
      "notice_id": "8745663",
      "title": "(주)휴림에이텍 주권매매거래정지해제(감자 주권 변경상장)",
