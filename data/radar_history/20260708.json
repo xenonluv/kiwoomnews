@@ -175,7 +175,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "001210": {
    "name": "금호전기",
@@ -324,7 +328,11 @@
     "touch13": true,
     "touch15": true
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "042040": {
    "name": "케이피엠테크",
@@ -731,7 +739,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -11.25
+   }
   },
   "477850": {
    "name": "마키나락스",
@@ -985,7 +997,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "win",
+    "ret_net": 6.7
+   }
   },
   "003680": {
    "name": "한성기업",
@@ -1457,7 +1473,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -9.73
+   }
   },
   "010960": {
    "name": "삼호개발",
@@ -1634,7 +1654,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": true
+   "final": true,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -11.29
+   }
   },
   "091590": {
    "name": "남화토건",
@@ -1779,7 +1803,11 @@
     "touch13": false,
     "touch15": false
    },
-   "final": false
+   "final": false,
+   "strategy": {
+    "outcome": "stop",
+    "ret_net": -13.0
+   }
   },
   "285800": {
    "name": "진영",

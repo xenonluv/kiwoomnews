@@ -37,7 +37,8 @@
    "first_seen": "2026-06-13 13:54:44 KST",
    "evaluated": true,
    "result": null,
-   "final": true
+   "final": true,
+   "strategy": null
   },
   "058470": {
    "name": "리노공업",
@@ -75,7 +76,8 @@
    "first_seen": "2026-06-13 13:54:44 KST",
    "evaluated": true,
    "result": null,
-   "final": true
+   "final": true,
+   "strategy": null
   },
   "067310": {
    "name": "하나마이크론",
@@ -113,7 +115,8 @@
    "first_seen": "2026-06-13 13:54:44 KST",
    "evaluated": true,
    "result": null,
-   "final": true
+   "final": true,
+   "strategy": null
   }
  },
  "as_of": "2026-06-13 13:54:44 KST"
