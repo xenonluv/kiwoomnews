@@ -502,7 +502,7 @@
     "source_count": 0,
     "relevant_count": 0,
     "captured_freshness_days": null,
-    "freshness_as_of": "2026-07-24T12:03:53+09:00",
+    "freshness_as_of": "2026-07-24T12:08:49+09:00",
     "freshness_days": null,
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": null,
@@ -515,9 +515,9 @@
    "snapshot_high": 1220.0,
    "snapshot_low": 980.0,
    "snapshot_close": 1010.0,
-   "snapshot_volume": 5069832.0,
-   "snapshot_value": 5513000000.0,
-   "snapshot_value_eok": 55.1,
+   "snapshot_volume": 5082738.0,
+   "snapshot_value": 5526000000.0,
+   "snapshot_value_eok": 55.3,
    "snapshot_as_of": "20260724",
    "signal_date": "20260724",
    "signal_open": 990.0,
@@ -525,9 +525,9 @@
    "signal_low": 980.0,
    "signal_close": 1010.0,
    "signal_prev_close": 939.0,
-   "signal_volume": 5069832.0,
-   "signal_value": 5513000000.0,
-   "signal_value_eok": 55.1,
+   "signal_volume": 5082738.0,
+   "signal_value": 5526000000.0,
+   "signal_value_eok": 55.3,
    "signal_peak6_price": 1236.0,
    "signal_peak60_price": 2900.0,
    "signal_ma20": 944.0,
@@ -537,7 +537,7 @@
    "ma20_gap_pct": 7.0,
    "ma10_margin_pct": 5.79,
    "float_ratio": 0.3761,
-   "turnover_pct": 47.5,
+   "turnover_pct": 47.6,
    "peak_turnover_pct": null,
    "turnover_basis": "float",
    "turnover_metric": "vol_float",
@@ -560,7 +560,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T12:03:53.349261+09:00"
+    "checked_at": "2026-07-24T12:08:49.002779+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -571,7 +571,7 @@
    "alert_elapsed_days": null,
    "shakeout": true,
    "fade_pct": 22.4,
-   "turnover_2d_pct": 51.4,
+   "turnover_2d_pct": 51.5,
    "peak_dd_pct": -65.2,
    "strength_tier": 3,
    "strength": "조합D(통계상 고가강)",
@@ -596,8 +596,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T12:03:57+09:00",
-    "expires_at": "2026-07-24T12:13:57+09:00",
+    "checked_at": "2026-07-24T12:08:53+09:00",
+    "expires_at": "2026-07-24T12:18:53+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -641,8 +641,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T12:03:56+09:00",
-    "expires_at": "2026-07-24T12:13:56+09:00",
+    "checked_at": "2026-07-24T12:08:52+09:00",
+    "expires_at": "2026-07-24T12:18:52+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -657,7 +657,7 @@
     }
    },
    "signal_date": "20260724",
-   "price": 445.0,
+   "price": 437.0,
    "pattern": "reaccum",
    "material": {
     "grade": "C",
@@ -666,7 +666,7 @@
     "sentiment": "호재",
     "reliability": "뉴스",
     "freshness": "오래됨",
-    "freshness_days": 22.12,
+    "freshness_days": 22.13,
     "directness": "직접",
     "tags": [
      "반도체"
@@ -698,7 +698,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-24T12:03:53+09:00",
+    "freshness_as_of": "2026-07-24T12:08:49+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -712,13 +712,13 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T12:03:52.116024+09:00"
+    "checked_at": "2026-07-24T12:08:47.867341+09:00"
    },
    "first_blocked": "2026-07-24 11:18:58 KST",
-   "last_blocked": "2026-07-24 12:03:53 KST"
+   "last_blocked": "2026-07-24 12:08:49 KST"
   }
  },
- "as_of": "2026-07-24 12:03:53 KST",
+ "as_of": "2026-07-24 12:08:49 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v3",
  "rank_model_effective_from": "20260724",
