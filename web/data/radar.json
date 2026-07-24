@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-24 09:03:17 KST",
+ "generated_at": "2026-07-24 09:38:46 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -47,7 +47,20 @@
   }
  ],
  "explosions": [],
- "youtong": [],
+ "youtong": [
+  {
+   "code": "014970",
+   "name": "삼륭물산",
+   "sector": "삼륭물산",
+   "change_pct": 24.41,
+   "high_pct": 29.32,
+   "vol_turnover_pct": 55.5,
+   "value_eok": 83,
+   "price": 5580.0,
+   "first_seen": "09:37",
+   "exploded": false
+  }
+ ],
  "suspects": [],
  "blocked_suspects": [],
  "rank_policy_name": "rank4",
