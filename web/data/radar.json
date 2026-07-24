@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-24 09:43:44 KST",
+ "generated_at": "2026-07-24 09:48:49 KST",
  "market_session": "open",
  "disclaimer": "본 정보는 투자 참고용이며 매수 추천이 아닙니다. 투자 판단과 책임은 본인에게 있습니다.",
  "params": {
@@ -52,11 +52,11 @@
    "code": "014970",
    "name": "삼륭물산",
    "sector": "삼륭물산",
-   "change_pct": 20.4,
+   "change_pct": 18.84,
    "high_pct": 29.32,
-   "vol_turnover_pct": 57.2,
-   "value_eok": 86,
-   "price": 5400.0,
+   "vol_turnover_pct": 59.3,
+   "value_eok": 89,
+   "price": 5330.0,
    "first_seen": "09:37",
    "exploded": false
   }
