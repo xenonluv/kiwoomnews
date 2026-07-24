@@ -260,7 +260,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 0.26,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-24T09:20:00+09:00",
     "freshness_parse_status": "complete",
@@ -317,7 +317,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:03.744027+09:00"
+    "checked_at": "2026-07-24T15:40:52.653433+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -353,8 +353,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:14+09:00",
-    "expires_at": "2026-07-24T15:44:14+09:00",
+    "checked_at": "2026-07-24T15:41:03+09:00",
+    "expires_at": "2026-07-24T15:51:03+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -813,7 +813,7 @@
     "source_count": 0,
     "relevant_count": 0,
     "captured_freshness_days": null,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_days": null,
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": null,
@@ -871,7 +871,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:04.197370+09:00"
+    "checked_at": "2026-07-24T15:40:53.159381+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -907,8 +907,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:15+09:00",
-    "expires_at": "2026-07-24T15:44:15+09:00",
+    "checked_at": "2026-07-24T15:41:04+09:00",
+    "expires_at": "2026-07-24T15:51:04+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1361,7 +1361,7 @@
     "sentiment": "호재",
     "reliability": "공시+뉴스",
     "freshness": "1주내",
-    "freshness_days": 4.21,
+    "freshness_days": 4.22,
     "directness": "직접",
     "tags": [
      "공시",
@@ -1410,8 +1410,8 @@
     ],
     "source_count": 5,
     "relevant_count": 5,
-    "captured_freshness_days": 4.21,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "captured_freshness_days": 4.22,
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-20T10:28:00+09:00",
     "freshness_parse_status": "complete",
@@ -1493,7 +1493,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:03.516350+09:00"
+    "checked_at": "2026-07-24T15:40:52.388084+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -1529,8 +1529,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:11+09:00",
-    "expires_at": "2026-07-24T15:44:11+09:00",
+    "checked_at": "2026-07-24T15:41:01+09:00",
+    "expires_at": "2026-07-24T15:51:01+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -1703,7 +1703,7 @@
     "source_count": 2,
     "relevant_count": 2,
     "captured_freshness_days": 0.03,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-24T14:52:00+09:00",
     "freshness_parse_status": "complete",
@@ -1777,7 +1777,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:04.394038+09:00"
+    "checked_at": "2026-07-24T15:40:53.484259+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -1813,8 +1813,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:14+09:00",
-    "expires_at": "2026-07-24T15:44:14+09:00",
+    "checked_at": "2026-07-24T15:41:03+09:00",
+    "expires_at": "2026-07-24T15:51:03+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2232,7 +2232,7 @@
     "source_count": 1,
     "relevant_count": 1,
     "captured_freshness_days": 16.95,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-07T16:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -2298,7 +2298,7 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:03.265981+09:00"
+    "checked_at": "2026-07-24T15:40:52.107204+09:00"
    },
    "alert_release": null,
    "alert_release_rule": null,
@@ -2334,8 +2334,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:17+09:00",
-    "expires_at": "2026-07-24T15:44:17+09:00",
+    "checked_at": "2026-07-24T15:41:06+09:00",
+    "expires_at": "2026-07-24T15:51:06+09:00",
     "evidence": null,
     "query_scope": {
      "source": "KRX_KOSCOM",
@@ -2379,8 +2379,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:11+09:00",
-    "expires_at": "2026-07-24T15:44:11+09:00",
+    "checked_at": "2026-07-24T15:41:00+09:00",
+    "expires_at": "2026-07-24T15:51:00+09:00",
     "evidence": {
      "notice_id": "1639772",
      "title": "원풍물산(주) 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2436,7 +2436,7 @@
     "source_count": 3,
     "relevant_count": 3,
     "captured_freshness_days": 20.2,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-02T09:08:00+09:00",
     "freshness_parse_status": "complete",
@@ -2450,10 +2450,10 @@
     "raw_code": "02",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:01.793678+09:00"
+    "checked_at": "2026-07-24T15:40:50.611170+09:00"
    },
    "first_blocked": "2026-07-24 11:18:58 KST",
-   "last_blocked": "2026-07-24 15:34:04 KST"
+   "last_blocked": "2026-07-24 15:40:53 KST"
   },
   "002680": {
    "name": "한탑",
@@ -2475,8 +2475,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:12+09:00",
-    "expires_at": "2026-07-24T15:44:12+09:00",
+    "checked_at": "2026-07-24T15:41:01+09:00",
+    "expires_at": "2026-07-24T15:51:01+09:00",
     "evidence": {
      "notice_id": "62706152",
      "title": "(주)한탑 주권매매거래정지해제(액면병합 주권 변경상장)",
@@ -2541,7 +2541,7 @@
     "source_count": 4,
     "relevant_count": 4,
     "captured_freshness_days": 15.28,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-09T08:51:00+09:00",
     "freshness_parse_status": "complete",
@@ -2555,10 +2555,10 @@
     "raw_code": null,
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:03.891823+09:00"
+    "checked_at": "2026-07-24T15:40:52.973984+09:00"
    },
    "first_blocked": "2026-07-24 13:33:50 KST",
-   "last_blocked": "2026-07-24 15:34:04 KST"
+   "last_blocked": "2026-07-24 15:40:53 KST"
   },
   "078590": {
    "name": "휴림에이텍",
@@ -2580,8 +2580,8 @@
     "restriction_start": null,
     "restriction_end": null,
     "relisting_expected": null,
-    "checked_at": "2026-07-24T15:34:15+09:00",
-    "expires_at": "2026-07-24T15:44:15+09:00",
+    "checked_at": "2026-07-24T15:41:04+09:00",
+    "expires_at": "2026-07-24T15:51:04+09:00",
     "evidence": {
      "notice_id": "8745663",
      "title": "(주)휴림에이텍 주권매매거래정지해제(감자 주권 변경상장)",
@@ -2632,7 +2632,7 @@
     "source_count": 2,
     "relevant_count": 2,
     "captured_freshness_days": 1.23,
-    "freshness_as_of": "2026-07-24T15:34:04+09:00",
+    "freshness_as_of": "2026-07-24T15:40:53+09:00",
     "freshness_basis": "evidence_latest_datetime",
     "evidence_latest_datetime": "2026-07-23T10:07:00+09:00",
     "freshness_parse_status": "complete",
@@ -2646,13 +2646,13 @@
     "raw_code": "01",
     "lookup_status": "VERIFIED",
     "source": "NAVER_BASIC_MARKET_ALERT_PROXY",
-    "checked_at": "2026-07-24T15:34:02.982368+09:00"
+    "checked_at": "2026-07-24T15:40:51.827241+09:00"
    },
    "first_blocked": "2026-07-24 14:54:11 KST",
-   "last_blocked": "2026-07-24 15:34:04 KST"
+   "last_blocked": "2026-07-24 15:40:53 KST"
   }
  },
- "as_of": "2026-07-24 15:34:04 KST",
+ "as_of": "2026-07-24 15:40:53 KST",
  "rank_policy_name": "rank4",
  "rank_model_version": "rank4-v3",
  "rank_model_effective_from": "20260724",
